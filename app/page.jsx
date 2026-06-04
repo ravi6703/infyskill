@@ -11,12 +11,12 @@ const stats = [
 ];
 
 const tools = [
+  ["/university", "🎓 For Universities", "Upload any degree curriculum: subject-by-subject coverage, gaps, and a blended overlay under NEP 2020's 40% online-credit allowance.", true],
   ["/diagnostic", "🎯 60-Second Diagnostic", "Pick a role, self-assess, set your pace — get a personalized week-by-week journey that skips what you already know.", true],
   ["/journeys", "🚀 Career Journeys", `${journeys.length} AI-era roles in 6 career families. Module-level plans with live labs, masterclasses, hackathons and a capstone.`, false],
   ["/analyzer", "📋 JD → Journey", "Paste any job description — get extracted skills, coverage % and a custom week plan in seconds.", false],
-  ["/university", "🎓 University Mapping", "Map any degree curriculum: subject-by-subject coverage, gaps, and module-level embed plans under NEP 2020.", false],
   ["/catalog", "📚 Course Catalog", "Search 259 courses down to individual video tags.", false],
-  ["/nexus", "📡 NEXUS Feed", "Emerging AI roles detected from live job postings, auto-converted into journeys.", false],
+  ["/partners", "📊 Partner Dashboard", "What institutions get: program coverage analytics, cohort engagement and employability mapping.", false],
 ];
 
 export default function Home() {
@@ -32,8 +32,8 @@ export default function Home() {
           live labs with mentors, industry masterclasses, hackathons and a coached capstone that ends in a job, not just a certificate.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href="/diagnostic" className="btn-primary text-base">Find my path in 60 seconds →</Link>
-          <Link href="/journeys" className="btn-ghost">Browse {journeys.length} journeys</Link>
+          <Link href="/diagnostic" className="btn-primary text-base">I&apos;m a learner — find my path →</Link>
+          <Link href="/university" className="btn-ghost text-base">I&apos;m an institution — map my curriculum →</Link>
         </div>
         <p className="mt-6 text-xs text-slate-500">Evidence-based blend: ~40% async · ~25% live · ~20% projects · masterclasses, coaching & assessments</p>
       </section>

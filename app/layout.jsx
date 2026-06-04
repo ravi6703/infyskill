@@ -10,9 +10,9 @@ export const metadata = {
 };
 
 const footerCols = [
-  ["Learn", [["/diagnostic", "Diagnostic"], ["/journeys", "Career Journeys"], ["/catalog", "Course Catalog"], ["/calendar", "Cohort Calendar"], ["/mentors", "Coaches"]]],
-  ["Tools", [["/analyzer", "JD Analyzer"], ["/compare", "Compare Roles"], ["/skills", "Skill Taxonomy"], ["/nexus", "NEXUS Feed"], ["/pricing", "Pricing & ROI"]]],
-  ["For Organizations", [["/university", "University Mapping"], ["/partners", "Partner Dashboard"], ["/employers", "Hire Talent"], ["/outcomes", "Outcomes & Trust"]]],
+  ["Learn", [["/diagnostic", "Diagnostic"], ["/journeys", "Career Journeys"], ["/catalog", "Course Catalog"], ["/pricing", "Founding Cohort"]]],
+  ["Tools", [["/analyzer", "JD Analyzer"], ["/compare", "Compare Roles"], ["/skills", "Skill Taxonomy"], ["/portfolio", "My Portfolio"]]],
+  ["For Institutions", [["/university", "Curriculum Mapping"], ["/partners", "Partner Dashboard"], ["/outcomes", "Outcomes & Trust"]]],
 ];
 
 export default function RootLayout({ children }) {

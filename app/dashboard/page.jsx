@@ -73,9 +73,8 @@ export default function Dashboard() {
           <p className="text-xs uppercase tracking-wider text-slate-500">Quick actions</p>
           <div className="mt-2 space-y-2 text-sm">
             <Link href="/portfolio" className="block text-brand-400 hover:underline">📁 My portfolio ({(active.deliverables || []).length} deliverables)</Link>
-            <Link href="/jobs" className="block text-brand-400 hover:underline">💼 Jobs matching my journey</Link>
-            <Link href="/mentors" className="block text-brand-400 hover:underline">🧑‍🏫 Book a coach session</Link>
-            <Link href="/calendar" className="block text-brand-400 hover:underline">📅 Upcoming cohorts & masterclasses</Link>
+            <Link href="/compare" className="block text-brand-400 hover:underline">↔ Compare my role with another</Link>
+            <Link href="/pricing" className="block text-brand-400 hover:underline">🚀 Join the founding cohort</Link>
           </div>
         </div>
       </div>

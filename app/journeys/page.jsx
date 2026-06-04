@@ -38,8 +38,7 @@ export default function Journeys() {
             <h2 className="text-xl font-bold text-white">{bucket}</h2>
             <p className="mt-1 text-sm text-slate-500">{BUCKET_DESC[bucket]}</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {list.map((j, idx) => {
-                const cohort = new Date(Date.now() + ((8 - new Date().getDay()) % 7 || 7) * 864e5 + (idx % 3) * 7 * 864e5);
+              {list.map((j) => {
                 return (
                   <Link key={j.slug} href={`/journeys/${j.slug}`} className="card group flex flex-col p-5 transition hover:border-brand-500 hover:shadow-lg hover:shadow-brand-950">
                     <div className="flex items-start justify-between gap-2">
@@ -65,7 +64,7 @@ export default function Journeys() {
                     {j.salary?.growth && <p className="mt-1.5 text-[11px] text-amber-300/90">📈 {j.salary.growth}</p>}
 
                     <div className="mt-auto flex items-center justify-between pt-3">
-                      <span className="text-[11px] text-slate-500">Next cohort: <span className="text-slate-300">{cohort.toLocaleDateString("en-IN", { day: "numeric", month: "short" })}</span></span>
+                      <span className="text-[11px] text-slate-500">Self-paced free · <span className="text-slate-300">founding cohort opening</span></span>
                       <span className="text-xs font-semibold text-brand-400 group-hover:underline">Week-by-week plan →</span>
                     </div>
                   </Link>

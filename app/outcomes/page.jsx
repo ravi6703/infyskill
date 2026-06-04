@@ -3,11 +3,6 @@ import Link from "next/link";
 export const metadata = { title: "Outcomes & Trust — PathFinder AI" };
 
 const STATS = [["30,000+", "learners trained last academic year"], ["80+", "institutions incl. 10 IIMs, 2 IITs"], ["300K+", "learners enrolled via Coursera"], ["200+", "industry-aligned courses"]];
-const STORIES = [
-  { name: "Priya S.", from: "B.Com graduate, Indore", to: "AI Business Analyst @ fintech startup", quote: "The diagnostic skipped what I knew from my Excel days and the weekly deliverables became my interview portfolio." },
-  { name: "Arjun M.", from: "Support engineer, 4 yrs", to: "Agentic AI Engineer @ GCC, Bengaluru", quote: "Fast-track mode meant zero beginner fluff. The hackathon project is literally what I demoed in my final interview." },
-  { name: "Fatima K.", from: "Final-year BCA student", to: "GenAI App Developer (campus placement)", quote: "My university ran the curriculum overlay — the capstone counted for credits AND got me placed." },
-];
 
 export default function Outcomes() {
   return (
@@ -33,17 +28,12 @@ export default function Outcomes() {
           ))}
         </div>
       </section>
-      <section className="mt-8">
-        <h2 className="text-lg font-bold text-white">Learner stories <span className="text-xs font-normal text-slate-500">(illustrative personas for preview)</span></h2>
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
-          {STORIES.map((s) => (
-            <div key={s.name} className="card p-5">
-              <p className="text-sm italic text-slate-300">“{s.quote}”</p>
-              <p className="mt-4 text-sm font-bold text-white">{s.name}</p>
-              <p className="text-xs text-slate-500">{s.from} → <span className="text-emerald-400">{s.to}</span></p>
-            </div>
-          ))}
-        </div>
+      <section className="card mt-8 border-dashed border-slate-700 p-6 text-center">
+        <h2 className="text-lg font-bold text-white">Founding cohort stories — coming here</h2>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-slate-400">
+          We publish only real, verifiable learner outcomes. The first PathFinder cohort&apos;s results — completion, placements and
+          capstone showcases — will appear on this page as they happen.
+        </p>
       </section>
       <div className="mt-8 text-center">
         <Link href="/diagnostic" className="btn-primary">Start your journey →</Link>
