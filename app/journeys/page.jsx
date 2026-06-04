@@ -38,20 +38,39 @@ export default function Journeys() {
             <h2 className="text-xl font-bold text-white">{bucket}</h2>
             <p className="mt-1 text-sm text-slate-500">{BUCKET_DESC[bucket]}</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {list.map((j) => (
-                <Link key={j.slug} href={`/journeys/${j.slug}`} className="card group flex flex-col p-5 transition hover:border-brand-500">
-                  <h3 className="font-bold text-white group-hover:text-brand-300">{j.role}</h3>
-                  <p className="mt-1 line-clamp-2 text-xs text-slate-400">{j.persona}</p>
-                  <div className="mt-3 flex flex-wrap gap-2 text-xs">
-                    <span className="chip bg-slate-800 text-slate-300">{j.weeks} wks default</span>
-                    <span className={`chip ${j.readiness >= 80 ? "bg-emerald-900/60 text-emerald-300" : "bg-amber-900/60 text-amber-300"}`}>{j.readiness}% ready</span>
-                  </div>
-                  {j.salary && (
-                    <p className="mt-3 text-xs text-slate-400">💰 <span className="text-emerald-300">{j.salary.india}</span> · {j.salary.global}</p>
-                  )}
-                  {j.salary?.growth && <p className="mt-1 text-[11px] text-slate-500">📈 {j.salary.growth}</p>}
-                </Link>
-              ))}
+              {list.map((j, idx) => {
+                const cohort = new Date(Date.now() + ((8 - new Date().getDay()) % 7 || 7) * 864e5 + (idx % 3) * 7 * 864e5);
+                return (
+                  <Link key={j.slug} href={`/journeys/${j.slug}`} className="card group flex flex-col p-5 transition hover:border-brand-500 hover:shadow-lg hover:shadow-brand-950">
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="font-bold text-white group-hover:text-brand-300">{j.role}</h3>
+                      <span className="chip shrink-0 bg-slate-800 text-slate-300">{j.level.split("→")[0]}</span>
+                    </div>
+                    <p className="mt-1 line-clamp-2 text-xs text-slate-400">{j.persona}</p>
+
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {j.skills.slice(0, 4).map((s) => <span key={s} className="chip bg-brand-950 text-brand-300">{s}</span>)}
+                      <span className="chip bg-slate-800/60 text-slate-500">+{Math.max(0, j.skills.length - 4)} skills</span>
+                    </div>
+
+                    <div className="mt-4 grid grid-cols-3 gap-2 border-y border-slate-800 py-2.5 text-center">
+                      <div><p className="text-sm font-bold text-white">{j.weeks} wks</p><p className="text-[10px] text-slate-500">@10 hrs/week</p></div>
+                      <div><p className="text-sm font-bold text-white">{Math.round(j.weeks * 10)}h</p><p className="text-[10px] text-slate-500">total effort</p></div>
+                      <div><p className="text-sm font-bold text-emerald-300">{(j.salary?.india || "").split("–")[0] || "—"}+</p><p className="text-[10px] text-slate-500">entry (India)</p></div>
+                    </div>
+
+                    <p className="mt-2.5 text-[11px] text-slate-400" title="What's inside every journey">
+                      ▶ Self-paced modules · 🎙 2 live labs/wk · ★ Masterclasses · 🏆 Hackathon · 🎓 Coached capstone
+                    </p>
+                    {j.salary?.growth && <p className="mt-1.5 text-[11px] text-amber-300/90">📈 {j.salary.growth}</p>}
+
+                    <div className="mt-auto flex items-center justify-between pt-3">
+                      <span className="text-[11px] text-slate-500">Next cohort: <span className="text-slate-300">{cohort.toLocaleDateString("en-IN", { day: "numeric", month: "short" })}</span></span>
+                      <span className="text-xs font-semibold text-brand-400 group-hover:underline">Week-by-week plan →</span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </section>
         );
