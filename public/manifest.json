@@ -1,0 +1,10 @@
+{
+  "name": "PathFinder AI by Board Infinity",
+  "short_name": "PathFinder",
+  "description": "Dynamic AI-era career journeys, week by week.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#4f46e5",
+  "icons": []
+}

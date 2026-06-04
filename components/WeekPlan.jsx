@@ -1,6 +1,19 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Radar from "./Radar";
+import { WeeklyLoadChart, PhaseChart } from "./PlanCharts";
+import modulesAll from "../data/modules.json";
+import { alternativesFor } from "../lib/engine";
+
+function bumpStreak() {
+  try {
+    const today = new Date().toDateString();
+    const s = JSON.parse(localStorage.getItem("pf_streak") || "{}");
+    if (s.lastDay === today) return;
+    const yest = new Date(Date.now() - 864e5).toDateString();
+    localStorage.setItem("pf_streak", JSON.stringify({ lastDay: today, count: s.lastDay === yest ? (s.count || 0) + 1 : 1 }));
+  } catch {}
+}
 
 const PHASE_CLS = {
   "Foundation": "border-l-sky-500", "Core Build": "border-l-brand-500",
@@ -12,17 +25,45 @@ export default function WeekPlan({ plan, planKey }) {
   useEffect(() => {
     try { setDone(JSON.parse(localStorage.getItem(`pf_progress_${planKey}`) || "{}")); } catch {}
   }, [planKey]);
+  const [swaps, setSwaps] = useState({}); // moduleId -> replacement module
+  const [swapOpen, setSwapOpen] = useState(null);
   function toggle(wn) {
     const next = { ...done, [wn]: !done[wn] };
     setDone(next);
-    try { localStorage.setItem(`pf_progress_${planKey}`, JSON.stringify(next)); } catch {}
+    bumpStreak();
+    try {
+      localStorage.setItem(`pf_progress_${planKey}`, JSON.stringify(next));
+      localStorage.setItem("pf_active_plan", JSON.stringify({ key: planKey, totalWeeks: plan.totalWeeks, hoursPerWeek: plan.hoursPerWeek, ts: Date.now(), deliverables: plan.weeks.filter((w) => next[w.n]).map((w) => w.deliverable) }));
+    } catch {}
+  }
+  function doSwap(origId, alt) {
+    setSwaps((s) => ({ ...s, [origId]: alt ? { id: alt.id, course: alt.course, num: alt.num, title: alt.title, hours: alt.hours, skills: alt.skills.slice(0, 4), videos: alt.videos } : undefined }));
+    setSwapOpen(null);
   }
   const doneCount = useMemo(() => plan.weeks.filter((w) => done[w.n]).length, [done, plan]);
   const progress = Math.round((doneCount / plan.totalWeeks) * 100);
 
+  const projected = useMemo(() => {
+    const remaining = plan.totalWeeks - doneCount;
+    const d = new Date(Date.now() + remaining * 7 * 864e5);
+    return d.toLocaleDateString("en-IN", { month: "short", year: "numeric", day: "numeric" });
+  }, [doneCount, plan]);
+
   return (
     <div>
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-6">
+      <div className="mt-4 flex flex-wrap items-center gap-2 print:hidden">
+        <button onClick={() => window.print()} className="btn-ghost text-xs">🖨 Print / save PDF</button>
+        <a className="btn-ghost text-xs" target="_blank" rel="noreferrer"
+          href={`https://wa.me/?text=${encodeURIComponent(`My ${plan.totalWeeks}-week learning journey on PathFinder AI by Board Infinity — ${plan.totalHours} hours, ${plan.moduleCount} modules. Build yours: https://infyskill.vercel.app/diagnostic`)}`}>
+          Share on WhatsApp
+        </a>
+        <a className="btn-ghost text-xs" target="_blank" rel="noreferrer"
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://infyskill.vercel.app/diagnostic")}`}>
+          Share on LinkedIn
+        </a>
+        <span className="ml-auto text-xs text-slate-500">📅 Projected completion: <span className="text-slate-300">{projected}</span></span>
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-6">
         {[["Weeks", plan.totalWeeks], ["Total hours", plan.totalHours], ["Modules", plan.moduleCount],
           ["From courses", plan.courseCount], ["Hrs/week", plan.hoursPerWeek], ["Progress", `${progress}%`]].map(([l, v]) => (
           <div key={l} className="card p-3 text-center">
@@ -50,12 +91,21 @@ export default function WeekPlan({ plan, planKey }) {
         </div>
       </div>
 
-      {plan.radar?.length >= 3 && (
-        <div className="card mt-4 p-4">
-          <p className="text-center text-xs font-semibold uppercase tracking-wider text-slate-400">Skill coverage radar — plan (filled) vs role target (dashed)</p>
-          <Radar data={plan.radar} />
+      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+        {plan.radar?.length >= 3 && (
+          <div className="card p-4">
+            <p className="text-center text-xs font-semibold uppercase tracking-wider text-slate-400">Skill coverage radar — plan (filled) vs role target (dashed)</p>
+            <Radar data={plan.radar} />
+          </div>
+        )}
+        <div className="card flex flex-col justify-center p-4">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Effort by phase</p>
+          <div className="mt-3"><PhaseChart weeks={plan.weeks} /></div>
+          <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-400">Weekly load (hours, stacked by type)</p>
+          <div className="mt-2"><WeeklyLoadChart weeks={plan.weeks} hoursPerWeek={plan.hoursPerWeek} /></div>
+          <p className="mt-1 text-[10px] text-slate-500">🏆 hackathon week · 🎓 capstone weeks</p>
         </div>
-      )}
+      </div>
 
       <div className="mt-8 space-y-4">
         {plan.weeks.map((w) => (
@@ -77,13 +127,33 @@ export default function WeekPlan({ plan, planKey }) {
               <div className="mt-3">
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-brand-400">Async · {w.asyncHours}h self-paced</p>
                 <ul className="mt-1 space-y-1.5">
-                  {w.async.map((a) => (
-                    <li key={a.id} className="rounded-lg bg-slate-950/60 px-3 py-2 text-sm">
-                      <span className="text-slate-200">Module {a.num}: {a.title}</span>
-                      <span className="ml-2 text-xs text-slate-500">{a.hours}h · {a.videos} videos · from “{a.course}”</span>
-                      <div className="mt-0.5 text-[11px] text-slate-500">{a.skills.join(" · ")}</div>
-                    </li>
-                  ))}
+                  {w.async.map((orig) => {
+                    const a = swaps[orig.id] || orig;
+                    const alts = swapOpen === orig.id ? alternativesFor(orig.id, modulesAll, orig.skills) : null;
+                    return (
+                      <li key={orig.id} className="rounded-lg bg-slate-950/60 px-3 py-2 text-sm">
+                        <div className="flex flex-wrap items-baseline gap-x-2">
+                          <span className="text-slate-200">Module {a.num}: {a.title}</span>
+                          <span className="text-xs text-slate-500">{a.hours}h · {a.videos} videos · from “{a.course}”</span>
+                          <button onClick={() => setSwapOpen(swapOpen === orig.id ? null : orig.id)} className="ml-auto text-[11px] text-brand-400 hover:underline">
+                            {swaps[orig.id] ? "↩ revert" : "⇄ swap"}
+                          </button>
+                        </div>
+                        <div className="mt-0.5 text-[11px] text-slate-500">Why: directly builds {a.skills.slice(0, 3).join(", ")} required by this role</div>
+                        {swapOpen === orig.id && (
+                          <div className="mt-2 space-y-1 border-t border-slate-800 pt-2">
+                            {swaps[orig.id] && <button onClick={() => doSwap(orig.id, null)} className="block w-full rounded bg-slate-900 px-2 py-1.5 text-left text-xs text-slate-300 hover:bg-slate-800">↩ Restore original: {orig.title}</button>}
+                            {(alts || []).filter((x) => x.id !== (swaps[orig.id]?.id)).map((alt) => (
+                              <button key={alt.id} onClick={() => doSwap(orig.id, alt)} className="block w-full rounded bg-slate-900 px-2 py-1.5 text-left text-xs text-slate-300 hover:bg-slate-800">
+                                ⇄ Module {alt.num}: {alt.title} <span className="text-slate-500">({alt.hours}h · {alt.course})</span>
+                              </button>
+                            ))}
+                            {alts && alts.length === 0 && <p className="text-xs text-slate-500">No equivalent module teaches these skills — this one&apos;s unique.</p>}
+                          </div>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             )}
