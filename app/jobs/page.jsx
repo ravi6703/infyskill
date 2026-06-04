@@ -17,10 +17,12 @@ const JOBS = [
 
 export default function Jobs() {
   const [activeRole, setActiveRole] = useState(null);
+  const [fromJourney, setFromJourney] = useState(false);
   useEffect(() => {
     try {
       const a = JSON.parse(localStorage.getItem("pf_active_plan") || "null");
-      if (a) setActiveRole(journeys.find((j) => a.key.includes(j.slug)) || null);
+      const j = a && journeys.find((x) => a.key.includes(x.slug));
+      if (j) { setActiveRole(j); setFromJourney(true); }
     } catch {}
   }, []);
 
@@ -36,11 +38,18 @@ export default function Jobs() {
     <div>
       <h1 className="text-3xl font-extrabold text-white">Job Matches</h1>
       <p className="mt-2 max-w-2xl text-slate-400">
-        Live roles matched against your journey skills. {activeRole
-          ? <>Matching against your <span className="text-brand-300">{activeRole.role}</span> journey.</>
-          : <>Start a journey to see your match % — <Link href="/diagnostic" className="text-brand-400">take the diagnostic</Link>.</>}
+        Live roles matched against the skills a journey builds.
         <span className="text-xs"> (Demo feed — NEXUS integration live-feeds this in production.)</span>
       </p>
+      <div className="card mt-4 flex flex-wrap items-center gap-3 p-3">
+        <span className="text-sm text-slate-300">Match against:</span>
+        <select className="input w-auto text-sm" value={activeRole?.slug || ""} onChange={(e) => { setActiveRole(journeys.find((j) => j.slug === e.target.value) || null); setFromJourney(false); }}>
+          <option value="">— pick a target role —</option>
+          {journeys.map((j) => <option key={j.slug} value={j.slug}>{j.role}</option>)}
+        </select>
+        {activeRole && fromJourney && <span className="chip bg-emerald-900/60 text-emerald-300">✓ from your active journey</span>}
+        {!activeRole && <Link href="/diagnostic" className="text-xs text-brand-400 hover:underline">or take the diagnostic →</Link>}
+      </div>
       <div className="mt-8 space-y-3">
         {scored.map((j) => (
           <div key={j.title + j.co} className="card flex flex-wrap items-center gap-4 p-4">

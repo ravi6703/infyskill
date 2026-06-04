@@ -62,15 +62,53 @@ export default function WeekPlan({ plan, planKey }) {
   const [done, setDone] = useState({});       // week-level
   const [itemDone, setItemDone] = useState({}); // item-level
   const [swaps, setSwaps] = useState({});
+  const [removed, setRemoved] = useState({});   // moduleId -> true (user removed)
+  const [added, setAdded] = useState({});       // weekN -> [module]
   const [swapOpen, setSwapOpen] = useState(null);
+  const [addOpen, setAddOpen] = useState(null); // weekN with add-search open
+  const [addQuery, setAddQuery] = useState("");
   const [preview, setPreview] = useState(null);
 
   useEffect(() => {
     try {
       setDone(JSON.parse(localStorage.getItem(`pf_progress_${planKey}`) || "{}"));
       setItemDone(JSON.parse(localStorage.getItem(`pf_items_${planKey}`) || "{}"));
+      const e = JSON.parse(localStorage.getItem(`pf_edits_${planKey}`) || "{}");
+      setSwaps(e.swaps || {}); setRemoved(e.removed || {}); setAdded(e.added || {});
+      // register as active journey immediately (powers Jobs match %, Dashboard, Portfolio)
+      const prog = JSON.parse(localStorage.getItem(`pf_progress_${planKey}`) || "{}");
+      localStorage.setItem("pf_active_plan", JSON.stringify({
+        key: planKey, totalWeeks: plan.totalWeeks, hoursPerWeek: plan.hoursPerWeek, ts: Date.now(),
+        deliverables: plan.weeks.filter((w) => prog[w.n]).map((w) => w.deliverable),
+      }));
     } catch {}
-  }, [planKey]);
+  }, [planKey, plan]);
+
+  function persistEdits(s, r, a) {
+    try { localStorage.setItem(`pf_edits_${planKey}`, JSON.stringify({ swaps: s, removed: r, added: a })); } catch {}
+  }
+  function removeModule(id) {
+    const r = { ...removed, [id]: !removed[id] };
+    setRemoved(r); persistEdits(swaps, r, added);
+  }
+  function addModule(wn, m) {
+    const lite = { id: m.id, course: m.course, num: m.num, title: m.title, hours: m.hours, skills: m.skills.slice(0, 4), videos: m.videos, lessons: m.lessons, level: m.level };
+    const a = { ...added, [wn]: [...(added[wn] || []), lite] };
+    setAdded(a); persistEdits(swaps, removed, a); setAddOpen(null); setAddQuery("");
+  }
+  function unAdd(wn, id) {
+    const a = { ...added, [wn]: (added[wn] || []).filter((x) => x.id !== id) };
+    setAdded(a); persistEdits(swaps, removed, a);
+  }
+  function resetEdits() {
+    setSwaps({}); setRemoved({}); setAdded({}); persistEdits({}, {}, {});
+  }
+  const editCount = Object.values(removed).filter(Boolean).length + Object.values(added).flat().length + Object.values(swaps).filter(Boolean).length;
+  const searchResults = useMemo(() => {
+    if (!addQuery || addQuery.length < 3) return [];
+    const q = addQuery.toLowerCase();
+    return modulesAll.filter((m) => m.title.toLowerCase().includes(q) || m.course.toLowerCase().includes(q) || m.skills.some((s) => s.toLowerCase().includes(q))).slice(0, 6);
+  }, [addQuery]);
 
   function persist(weeks, items) {
     try {
@@ -120,6 +158,12 @@ export default function WeekPlan({ plan, planKey }) {
         <a className="btn-ghost text-xs" target="_blank" rel="noreferrer"
           href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://infyskill.vercel.app/diagnostic")}`}>Share on LinkedIn</a>
         <span className="ml-auto text-xs text-slate-500">📅 Projected completion: <span className="text-slate-300">{projected}</span></span>
+        {editCount > 0 && (
+          <span className="flex items-center gap-2 text-xs">
+            <span className="chip bg-brand-900/60 text-brand-300">✏️ Customized · {editCount} edit{editCount > 1 ? "s" : ""}</span>
+            <button onClick={resetEdits} className="text-slate-500 hover:text-white">reset</button>
+          </span>
+        )}
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-6">
@@ -207,7 +251,24 @@ export default function WeekPlan({ plan, planKey }) {
                 <div className="mt-3">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-brand-400">▶ Async · {w.asyncHours}h self-paced · watch Mon–Wed</p>
                   <ul className="mt-1 space-y-1.5">
+                    {(added[w.n] || []).map((a) => (
+                      <li key={a.id} className="rounded-lg border border-dashed border-brand-800 bg-slate-950/60 px-3 py-2.5 text-sm">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                          <input type="checkbox" checked={!!itemDone[a.id]} onChange={() => toggleItem(a.id, w.n, w)} className="h-4 w-4 accent-emerald-500" />
+                          <span className="text-slate-200">Module {a.num}: {a.title}</span>
+                          <span className="chip bg-brand-900/60 text-brand-300">added by you</span>
+                          <span className="text-xs text-slate-500">{a.hours}h · {a.videos} videos · from “{a.course}”</span>
+                          <button onClick={() => unAdd(w.n, a.id)} className="ml-auto text-[11px] text-rose-400 hover:underline">✕ remove</button>
+                        </div>
+                      </li>
+                    ))}
                     {w.async.map((orig) => {
+                      if (removed[orig.id]) return (
+                        <li key={orig.id} className="rounded-lg bg-slate-950/40 px-3 py-2 text-xs text-slate-600">
+                          <span className="line-through">Module {orig.num}: {orig.title}</span> — removed by you
+                          <button onClick={() => removeModule(orig.id)} className="ml-2 text-brand-400 hover:underline">↩ restore</button>
+                        </li>
+                      );
                       const a = swaps[orig.id] || orig;
                       const alts = swapOpen === orig.id ? alternativesFor(orig.id, modulesAll, orig.skills) : null;
                       const cslug = slugOf[a.course];
@@ -222,6 +283,7 @@ export default function WeekPlan({ plan, planKey }) {
                             <span className="ml-auto flex gap-2 text-[11px]">
                               <button onClick={() => setPreview(preview === orig.id ? null : orig.id)} className="text-slate-400 hover:text-white">{preview === orig.id ? "hide" : "▶ preview"}</button>
                               <button onClick={() => setSwapOpen(swapOpen === orig.id ? null : orig.id)} className="text-brand-400 hover:underline">{swaps[orig.id] ? "↩ revert" : "⇄ swap"}</button>
+                              <button onClick={() => removeModule(orig.id)} title="Remove from my plan" className="text-rose-400/80 hover:text-rose-300">✕</button>
                             </span>
                           </div>
                           <div className="mt-1 flex flex-wrap items-center gap-1.5">
@@ -251,6 +313,25 @@ export default function WeekPlan({ plan, planKey }) {
                       );
                     })}
                   </ul>
+                  <div className="mt-2">
+                    {addOpen === w.n ? (
+                      <div className="rounded-lg border border-slate-700 bg-slate-950/60 p-2">
+                        <input autoFocus className="input text-xs" placeholder="Search 866 modules by title, course or skill (e.g. Kubernetes, Tableau, prompt)…"
+                          value={addQuery} onChange={(e) => setAddQuery(e.target.value)} />
+                        <div className="mt-1 space-y-1">
+                          {searchResults.map((m) => (
+                            <button key={m.id} onClick={() => addModule(w.n, m)} className="block w-full rounded bg-slate-900 px-2 py-1.5 text-left text-xs text-slate-300 hover:bg-slate-800">
+                              + Module {m.num}: {m.title} <span className="text-slate-500">({m.hours}h · {m.course})</span>
+                            </button>
+                          ))}
+                          {addQuery.length >= 3 && searchResults.length === 0 && <p className="px-2 py-1 text-xs text-slate-500">No modules match.</p>}
+                        </div>
+                        <button onClick={() => { setAddOpen(null); setAddQuery(""); }} className="mt-1 px-2 text-[11px] text-slate-500 hover:text-white">close</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => setAddOpen(w.n)} className="text-[11px] text-brand-400 hover:underline">+ Add a module to this week</button>
+                    )}
+                  </div>
                 </div>
               )}
 
