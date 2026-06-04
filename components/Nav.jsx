@@ -3,11 +3,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  ["/journeys", "Career Journeys"],
-  ["/catalog", "Course Catalog"],
+  ["/diagnostic", "Diagnostic"],
+  ["/journeys", "Journeys"],
+  ["/catalog", "Catalog"],
   ["/skills", "Skills"],
   ["/analyzer", "JD Analyzer"],
-  ["/university", "University Mapping"],
+  ["/university", "University"],
+  ["/nexus", "NEXUS"],
 ];
 
 export default function Nav() {
