@@ -103,18 +103,40 @@ export default function University() {
 
       <section className="mt-14">
         <h2 className="text-xl font-bold text-white">Pre-analyzed degree benchmarks</h2>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="card mt-3 border-brand-900 p-4 text-sm text-slate-300">
+          <p className="font-semibold text-white">What is this?</p>
+          <p className="mt-1 text-slate-400">We already ran 9 common Indian degree structures through the same engine you see above. Each card answers one question for a university:
+            <span className="text-brand-300"> “How much of this degree can Board Infinity deliver from its recorded library, today?”</span></p>
+          <ul className="mt-2 space-y-1 text-xs text-slate-400">
+            <li>• <span className="text-emerald-300">Coverage %</span> = subjects fully matched to a course count 1, partially matched count ½, unmatched count 0 — divided by total core subjects.</li>
+            <li>• <span className="text-emerald-300">Covered subjects</span> → delivered as async modules + live tutorials under NEP 2020&apos;s 40% online-credit allowance, with semester hackathons and a final-year capstone.</li>
+            <li>• <span className="text-amber-300">Gaps</span> (theory, math, law, labs) → stay with university faculty. That&apos;s deliberate — we supply the industry-aligned layer, the university keeps the academic core.</li>
+          </ul>
+          <p className="mt-2 text-xs text-slate-500">Click any degree to see the subject-by-subject evidence. These are benchmarks against typical syllabi — upload your actual curriculum above for your exact number.</p>
+        </div>
+        <div className="mt-4 space-y-3">
           {degrees.map((d) => (
-            <div key={d.name} className="card p-4">
-              <h3 className="text-sm font-bold text-white">{d.name}</h3>
-              <div className="mt-2 flex items-center gap-3">
-                <div className="h-2 flex-1 overflow-hidden rounded bg-slate-800">
-                  <div className="h-full bg-gradient-to-r from-brand-500 to-accent-500" style={{ width: `${d.coverage_pct}%` }} />
+            <details key={d.name} className="card p-4">
+              <summary className="cursor-pointer">
+                <div className="inline-flex w-[calc(100%-1.5rem)] flex-wrap items-center gap-3">
+                  <h3 className="text-sm font-bold text-white">{d.name}</h3>
+                  <div className="h-2 min-w-32 flex-1 overflow-hidden rounded bg-slate-800">
+                    <div className="h-full bg-gradient-to-r from-brand-500 to-accent-500" style={{ width: `${d.coverage_pct}%` }} />
+                  </div>
+                  <span className="text-sm font-bold text-white">{d.coverage_pct}%</span>
+                  <span className="text-xs text-slate-500">{d.mapped} of {d.total} subjects</span>
                 </div>
-                <span className="text-sm font-bold text-white">{d.coverage_pct}%</span>
+              </summary>
+              <div className="mt-3 space-y-1.5 border-t border-slate-800 pt-3">
+                {(d.subjects || []).map((s, i) => (
+                  <div key={i} className="flex flex-wrap items-center gap-2 rounded-lg bg-slate-950/60 px-3 py-2 text-xs">
+                    <span className={`chip ${s.coverage === "Full" ? "bg-emerald-900/60 text-emerald-300" : s.coverage === "Partial" ? "bg-sky-900/60 text-sky-300" : "bg-amber-900/60 text-amber-300"}`}>{s.coverage}</span>
+                    <span className="font-semibold text-slate-200">{s.subject}</span>
+                    <span className="ml-auto text-slate-500">{s.mapped && s.mapped !== "-" ? `→ ${s.mapped}` : "University-retained / to be produced"}</span>
+                  </div>
+                ))}
               </div>
-              <p className="mt-1 text-xs text-slate-500">{d.mapped} of {d.total} subjects mapped</p>
-            </div>
+            </details>
           ))}
         </div>
       </section>

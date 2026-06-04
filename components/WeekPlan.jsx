@@ -185,7 +185,7 @@ export default function WeekPlan({ plan, planKey }) {
               <div className="mt-2 flex flex-wrap gap-2">
                 {w.addons.map((a, i) => (
                   <button key={i} className="chip border border-dashed border-slate-600 bg-slate-900 text-slate-300 hover:border-brand-500" title="Add-on — coming soon">
-                    {a.kind === "coach" ? "🧑‍🏫" : a.kind === "resume" ? "📄" : "🎤"} {a.label}
+                    {a.kind === "coach" ? "🧑‍🏫" : a.kind === "resume" ? "📄" : a.kind === "jobs" ? "💼" : "🎤"} {a.label}
                   </button>
                 ))}
               </div>

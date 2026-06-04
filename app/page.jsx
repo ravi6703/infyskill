@@ -56,22 +56,28 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="card mt-12 p-6">
-        <h2 className="text-xl font-bold text-white">Add-ons on every journey</h2>
-        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+      <section className="card mt-12 border-emerald-900/50 p-6">
+        <h2 className="text-xl font-bold text-white">🚀 Career Launchpad — the last mile of every journey</h2>
+        <p className="mt-1 text-sm text-slate-400">The journey doesn&apos;t end at a certificate. Its final weeks convert your learning into the actual job role:</p>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-lg border border-dashed border-slate-700 p-4">
             <p className="font-semibold text-white">🧑‍🏫 Personal Coach</p>
-            <p className="mt-1 text-sm text-slate-400">1:1 guidance on hackathon and capstone weeks — scoping, reviews, career strategy.</p>
+            <p className="mt-1 text-sm text-slate-400">1:1 guidance through hackathon & capstone — then placement strategy for your target role.</p>
           </div>
           <div className="rounded-lg border border-dashed border-slate-700 p-4">
             <p className="font-semibold text-white">📄 AI Resume Builder</p>
-            <p className="mt-1 text-sm text-slate-400">Auto-drafts your resume from journey evidence — modules, projects, verified skills (Infy Resume Copilot).</p>
+            <p className="mt-1 text-sm text-slate-400">Auto-drafts a role-targeted resume from your journey evidence — projects, deliverables, verified skills (Infy Resume Copilot).</p>
           </div>
           <div className="rounded-lg border border-dashed border-slate-700 p-4">
             <p className="font-semibold text-white">🎤 AI Mock Interview</p>
-            <p className="mt-1 text-sm text-slate-400">Role-specific interview simulation with feedback, unlocked at journey end (Infy Interview).</p>
+            <p className="mt-1 text-sm text-slate-400">Interview simulation built from your target role&apos;s real JD patterns, with feedback (Infy Interview).</p>
+          </div>
+          <div className="rounded-lg border border-dashed border-slate-700 p-4">
+            <p className="font-semibold text-white">💼 Job Matching</p>
+            <p className="mt-1 text-sm text-slate-400">Your verified profile enters the employer talent pool; live roles ranked by skill match (InfyTalent).</p>
           </div>
         </div>
+        <p className="mt-4 text-xs text-slate-500">Sequence in the final weeks: capstone defense → AI resume → AI mock interviews → coach placement session → employer pool listing.</p>
       </section>
     </div>
   );
