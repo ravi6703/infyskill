@@ -11,9 +11,8 @@ const primary = [
   ["/dashboard", "Dashboard"],
 ];
 const more = [
-  ["/catalog", "Course Catalog"], ["/skills", "Skill Taxonomy"], ["/compare", "Compare Journeys"],
-  ["/partners", "Partner Dashboard"], ["/outcomes", "Outcomes & Trust"], ["/portfolio", "My Portfolio"],
-  ["/pricing", "Founding Cohort"],
+  ["/compare", "Compare Journeys"], ["/portfolio", "My Portfolio"], ["/catalog", "Course Catalog"],
+  ["/partners", "Partner Dashboard"], ["/outcomes", "Outcomes & Trust"], ["/pricing", "Founding Cohort"],
 ];
 
 export default function Nav() {
