@@ -4,6 +4,7 @@ import Link from "next/link";
 import journeys from "../../data/journeys.json";
 import modules from "../../data/modules.json";
 import { buildWeekPlan, clustersFor } from "../../lib/engine";
+import { WeeklyLoadChart } from "../../components/PlanCharts";
 
 const COLORS = ["#818cf8", "#34d399", "#fb923c"];
 
@@ -74,9 +75,22 @@ export default function Compare() {
     ["India salary", (j) => j.salary?.india, "text-emerald-300"],
     ["Global salary", (j) => j.salary?.global],
     ["Demand signal", (j) => j.salary?.growth, "text-slate-400 text-xs"],
+    ["Hackathons + capstone weeks", (j) => j.plan ? `${j.plan.weeks.filter((w) => w.type !== "content").length} project weeks` : "—"],
+    ["Live sessions across journey", (j) => j.plan ? `${j.plan.weeks.reduce((a, w) => a + w.sync.length, 0)} sessions` : "—"],
+    ["Masterclasses", (j) => j.plan ? `${j.plan.weeks.filter((w) => w.masterclass).length}` : "—"],
+    ["Indicative cost (Pro, full journey)", (j) => j.plan ? `₹${Math.round(j.plan.totalWeeks / 4.33 * 4999).toLocaleString("en-IN")}` : "—", "text-amber-300"],
     ["Async / Live / Project blend", (j) => j.plan ? `${j.plan.blend.async}% / ${j.plan.blend.sync}% / ${j.plan.blend.project}%` : "—"],
     ["Best entry profile", (j) => j.persona, "text-slate-400 text-xs"],
   ];
+
+  function chooseHint() {
+    if (picked.length < 2) return null;
+    const byWeeks = [...picked].sort((a, b) => (a.plan?.totalWeeks || 99) - (b.plan?.totalWeeks || 99));
+    const bySalary = [...picked].sort((a, b) => parseFloat((b.salary?.india || "0").replace(/[^\d–-]/g, "").split(/[–-]/)[1] || 0) - parseFloat((a.salary?.india || "0").replace(/[^\d–-]/g, "").split(/[–-]/)[1] || 0));
+    const easiest = [...picked].sort((a, b) => (a.level.startsWith("Beg") ? 0 : 1) - (b.level.startsWith("Beg") ? 0 : 1))[0];
+    return { fastest: byWeeks[0], highestCeiling: bySalary[0], easiest };
+  }
+  const hint = chooseHint();
 
   return (
     <div>
@@ -131,6 +145,56 @@ export default function Compare() {
               </tr>
             </tbody>
           </table>
+        </div>
+      )}
+
+      {hint && (
+        <div className="card mt-6 border-brand-700 p-5">
+          <h2 className="text-lg font-bold text-white">🧭 Which should you choose?</h2>
+          <div className="mt-3 grid gap-3 sm:grid-cols-3 text-sm">
+            <div className="rounded-lg bg-slate-950/60 p-4">
+              <p className="text-xs uppercase tracking-wider text-slate-500">Fastest to job-ready</p>
+              <p className="mt-1 font-bold text-white">{hint.fastest.role}</p>
+              <p className="text-xs text-slate-400">{hint.fastest.plan?.totalWeeks} weeks at 10 h/wk</p>
+            </div>
+            <div className="rounded-lg bg-slate-950/60 p-4">
+              <p className="text-xs uppercase tracking-wider text-slate-500">Highest salary ceiling</p>
+              <p className="mt-1 font-bold text-white">{hint.highestCeiling.role}</p>
+              <p className="text-xs text-emerald-300">{hint.highestCeiling.salary?.india}</p>
+            </div>
+            <div className="rounded-lg bg-slate-950/60 p-4">
+              <p className="text-xs uppercase tracking-wider text-slate-500">Easiest entry</p>
+              <p className="mt-1 font-bold text-white">{hint.easiest.role}</p>
+              <p className="text-xs text-slate-400">{hint.easiest.level}</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-slate-500">Rule-of-thumb guidance from the live plans — take the diagnostic for a personal recommendation.</p>
+        </div>
+      )}
+
+      {picked.length >= 2 && (
+        <div className={`mt-6 grid gap-4 ${picked.length === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3"}`}>
+          {picked.map((j, i) => (
+            <div key={j.slug} className="card p-4">
+              <p className="text-sm font-bold" style={{ color: COLORS[i] }}>{j.role}</p>
+              <p className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">Weekly load across the journey</p>
+              {j.plan && <WeeklyLoadChart weeks={j.plan.weeks} hoursPerWeek={10} />}
+              <p className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">First 3 weeks — what you&apos;d actually study</p>
+              <ul className="mt-1 space-y-1">
+                {(j.plan?.weeks || []).slice(0, 3).map((w) => (
+                  <li key={w.n} className="rounded bg-slate-950/60 px-2.5 py-1.5 text-xs text-slate-300">
+                    W{w.n}: {w.theme} <span className="text-slate-500">— {w.async.map((a) => a.title).slice(0, 2).join("; ")}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">Skills unique to this role (vs your other picks)</p>
+              <div className="mt-1 flex flex-wrap gap-1.5">
+                {j.skills.filter((s) => !picked.some((o) => o.slug !== j.slug && o.skills.includes(s))).slice(0, 8).map((s) => (
+                  <span key={s} className="chip bg-slate-800 text-slate-300">{s}</span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       )}
 

@@ -4,10 +4,10 @@ import courses from "../data/courses.json";
 import skills from "../data/skills.json";
 
 const stats = [
-  [courses.length, "Recorded courses"],
-  ["866", "Composable modules"],
-  ["16,812", "Tagged content items"],
-  [skills.length.toLocaleString(), "Canonical skills"],
+  [journeys.length, "AI-era career paths"],
+  ["3,700+ hrs", "of industry-aligned learning"],
+  ["30,000+", "learners trained last year"],
+  ["80+", "institutions incl. 10 IIMs & 2 IITs"],
 ];
 
 const tools = [
@@ -28,8 +28,8 @@ export default function Home() {
           Your AI-era career, planned <span className="bg-gradient-to-r from-brand-400 to-accent-500 bg-clip-text text-transparent">week by week</span> — down to the module
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-slate-300">
-          PathFinder AI composes personalized learning journeys from 866 skill-tagged modules —
-          blending self-paced content, live labs, industry masterclasses, hackathons and a coached capstone.
+          PathFinder AI builds a learning journey for exactly you — blending self-paced content,
+          live labs with mentors, industry masterclasses, hackathons and a coached capstone that ends in a job, not just a certificate.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link href="/diagnostic" className="btn-primary text-base">Find my path in 60 seconds →</Link>

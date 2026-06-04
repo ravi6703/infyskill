@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-4">
             <div>
               <p className="font-bold text-white">PathFinder AI</p>
-              <p className="mt-2 text-xs text-slate-500">by Board Infinity · 259 courses · 866 modules · 16,812 tagged items · 3,585 skills</p>
+              <p className="mt-2 text-xs text-slate-500">by Board Infinity — Asia&apos;s career-first ecosystem. CII, NSDC & NASSCOM approved.</p>
             </div>
             {footerCols.map(([title, links]) => (
               <div key={title}>

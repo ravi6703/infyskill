@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 import journeys from "../../data/journeys.json";
 import modules from "../../data/modules.json";
-import { buildWeekPlan, clustersFor } from "../../lib/engine";
+import { buildWeekPlan, clustersFor, skillsByCluster } from "../../lib/engine";
 import WeekPlan from "../../components/WeekPlan";
 import Radar from "../../components/Radar";
 import { ScoreRing } from "../../components/PlanCharts";
@@ -31,6 +31,7 @@ export default function Diagnostic() {
 
   const journey = journeys.find((j) => j.slug === role);
   const clusters = useMemo(() => (journey ? clustersFor(journey.skills).slice(0, 7) : []), [journey]);
+  const clusterSkills = useMemo(() => (journey ? Object.fromEntries(skillsByCluster(journey.skills)) : {}), [journey]);
   const roleTools = useMemo(() => (journey ? journey.skills.filter((s) => /^[A-Z]/.test(s) && s.length < 16).slice(0, 12) : []), [journey]);
 
   const maxWeeks = TIMELINES.find(([v]) => v === timeline)[2];
@@ -137,20 +138,39 @@ export default function Diagnostic() {
       {step === 3 && journey && (
         <div className="mt-8">
           <h2 className="text-lg font-bold text-white">3 · Skill self-assessment for {journey.role}</h2>
-          <p className="mt-1 text-sm text-slate-400">“Comfortable” or above = we skip those modules. Your live readiness updates as you answer.</p>
+          <p className="mt-1 text-sm text-slate-400">Each skill area lists the exact skills this role needs from it — rate against those, not the label.</p>
+          <div className="card mt-3 p-3 text-[11px] text-slate-400">
+            <span className="font-semibold text-slate-200">How to rate yourself:</span>{" "}
+            <span className="text-slate-300">New to this</span> = never touched it ·{" "}
+            <span className="text-slate-300">Basics</span> = tutorials or college projects only ·{" "}
+            <span className="text-emerald-300">Comfortable</span> = used in real work/projects → <span className="text-emerald-300">we skip these modules</span> ·{" "}
+            <span className="text-slate-300">Strong</span> = could teach or interview on it
+          </div>
           <div className="mt-4 grid gap-6 lg:grid-cols-[1fr,260px]">
             <div className="space-y-3">
-              {clusters.map(([cl]) => (
-                <div key={cl} className="card flex flex-wrap items-center gap-3 p-3">
-                  <span className="flex-1 text-sm font-semibold text-slate-200">{cl}</span>
-                  <div className="flex gap-1">
-                    {LEVELS.map((l, i) => (
-                      <button key={l} onClick={() => setRatings((r) => ({ ...r, [cl]: i }))}
-                        className={`rounded px-2 py-1 text-[11px] transition ${(ratings[cl] ?? -1) === i ? "bg-brand-600 text-white" : "bg-slate-800 text-slate-400 hover:text-white"}`}>{l}</button>
-                    ))}
+              {clusters.map(([cl]) => {
+                const sks = clusterSkills[cl] || [];
+                const shown = sks.slice(0, 6);
+                const label = cl === "General Professional" ? "General & Workplace Skills" : cl;
+                return (
+                  <div key={cl} className="card p-3">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="flex-1 text-sm font-semibold text-slate-200">{label}</span>
+                      <div className="flex gap-1">
+                        {LEVELS.map((l, i) => (
+                          <button key={l} onClick={() => setRatings((r) => ({ ...r, [cl]: i }))}
+                            className={`rounded px-2 py-1 text-[11px] transition ${(ratings[cl] ?? -1) === i ? "bg-brand-600 text-white" : "bg-slate-800 text-slate-400 hover:text-white"}`}>{l}</button>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                      <span className="text-[10px] uppercase tracking-wider text-slate-600">This role needs:</span>
+                      {shown.map((s) => <span key={s} className="chip bg-slate-800/80 text-slate-400">{s}</span>)}
+                      {sks.length > shown.length && <span className="text-[11px] text-slate-600">+{sks.length - shown.length} more</span>}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
               <div className="card p-3">
                 <p className="text-sm font-semibold text-slate-200">Tools you&apos;ve already used (tap all that apply)</p>
                 <div className="mt-2 flex flex-wrap gap-2">
