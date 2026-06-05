@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import modules from "../data/modules.json";
-import { buildWeekPlan, clustersFor } from "../lib/engine";
+import { buildWeekPlan, clustersFor, skillsByCluster } from "../lib/engine";
 import WeekPlan from "./WeekPlan";
 import ValueModel from "./ValueModel";
 
@@ -11,16 +11,21 @@ export default function JourneyPlanner({ journey, view }) {
   const [hpw, setHpw] = useState(10);
   const [timeline, setTimeline] = useState("6");
   const [known, setKnown] = useState([]);
+  const [knownSkills, setKnownSkills] = useState([]);
   const clusters = useMemo(() => clustersFor(journey.skills).slice(0, 8), [journey]);
+  const clusterSkills = useMemo(() => Object.fromEntries(skillsByCluster(journey.skills)), [journey]);
   const maxWeeks = TIMELINES.find(([v]) => v === timeline)[2];
 
   const plan = useMemo(
-    () => buildWeekPlan(journey.skills, modules, { knownClusters: known, hoursPerWeek: hpw, roleName: journey.role, maxWeeks }),
-    [journey, hpw, known, maxWeeks]
+    () => buildWeekPlan(journey.skills, modules, { knownClusters: known, knownSkills, hoursPerWeek: hpw, roleName: journey.role, maxWeeks }),
+    [journey, hpw, known, knownSkills, maxWeeks]
   );
 
   function toggleKnown(cl) {
     setKnown((k) => (k.includes(cl) ? k.filter((x) => x !== cl) : [...k, cl]));
+  }
+  function toggleSkill(s) {
+    setKnownSkills((k) => (k.includes(s) ? k.filter((x) => x !== s) : [...k, s]));
   }
 
   const counts = useMemo(() => plan && ({
@@ -63,14 +68,29 @@ export default function JourneyPlanner({ journey, view }) {
             </span>
           )}
         </div>
-        <p className="mt-4 text-sm text-slate-300">Skills you already have (we&apos;ll skip those modules):</p>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {clusters.map(([cl]) => (
-            <button key={cl} onClick={() => toggleKnown(cl)}
-              className={`chip border transition ${known.includes(cl) ? "border-emerald-500 bg-emerald-900/50 text-emerald-300" : "border-slate-700 bg-slate-900 text-slate-300 hover:border-brand-500"}`}>
-              {known.includes(cl) ? "✓ " : ""}{cl}
-            </button>
-          ))}
+        <p className="mt-4 text-sm text-slate-300">What do you already know? Tick a whole area, or individual skills for sharper mapping:</p>
+        <div className="mt-2 space-y-2">
+          {clusters.map(([cl]) => {
+            const sks = (clusterSkills[cl] || []).slice(0, 6);
+            const label = cl === "General Professional" ? "General & Workplace Skills" : cl;
+            return (
+              <div key={cl} className="rounded-lg bg-slate-950/50 px-3 py-2">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <button onClick={() => toggleKnown(cl)}
+                    className={`chip border font-semibold transition ${known.includes(cl) ? "border-emerald-500 bg-emerald-900/50 text-emerald-300" : "border-slate-600 bg-slate-900 text-slate-200 hover:border-brand-500"}`}>
+                    {known.includes(cl) ? "✓ " : ""}{label}
+                  </button>
+                  <span className="mx-1 text-[10px] uppercase tracking-wider text-slate-600">or just:</span>
+                  {sks.map((s) => (
+                    <button key={s} onClick={() => toggleSkill(s)} disabled={known.includes(cl)}
+                      className={`chip border transition disabled:opacity-30 ${knownSkills.includes(s) ? "border-emerald-500 bg-emerald-900/40 text-emerald-300" : "border-slate-700/70 bg-slate-900/70 text-slate-400 hover:border-brand-500"}`}>
+                      {knownSkills.includes(s) ? "✓ " : ""}{s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 

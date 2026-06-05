@@ -50,16 +50,23 @@ export default function Diagnostic() {
     if (step !== 5 || !journey) return null;
     const known = clusters.filter(([cl]) => (ratings[cl] || 0) >= 2).map(([cl]) => cl);
     return buildWeekPlan(journey.skills, modules, {
-      knownClusters: known, hoursPerWeek: hpw, roleName: journey.role,
+      knownClusters: known, knownSkills: tools, hoursPerWeek: hpw, roleName: journey.role,
       maxWeeks, fastTrack, projectFirst: style === "project",
     });
-  }, [step, journey, ratings, hpw, clusters, maxWeeks, fastTrack, style]);
+  }, [step, journey, ratings, tools, hpw, clusters, maxWeeks, fastTrack, style]);
 
-  const currentRadar = useMemo(() => clusters.map(([cl]) => ({ cluster: cl, target: 100, plan: ((ratings[cl] ?? 0) / 3) * 100 })), [clusters, ratings]);
+  // cluster score = the better of (self-rating) or (fraction of its sub-skills ticked)
+  const clusterScore = (cl) => {
+    const sks = clusterSkills[cl] || [];
+    const ticked = sks.filter((s) => tools.includes(s)).length;
+    const frac = sks.length ? ticked / sks.length : 0;
+    return Math.max((ratings[cl] ?? 0) / 3, frac);
+  };
+  const currentRadar = useMemo(() => clusters.map(([cl]) => ({ cluster: cl, target: 100, plan: clusterScore(cl) * 100 })), [clusters, ratings, tools, clusterSkills]);
   const readiness = useMemo(() => {
     if (!clusters.length) return 0;
-    return Math.round((clusters.reduce((a, [cl]) => a + (ratings[cl] ?? 0), 0) / (clusters.length * 3)) * 100);
-  }, [clusters, ratings]);
+    return Math.round((clusters.reduce((a, [cl]) => a + clusterScore(cl), 0) / clusters.length) * 100);
+  }, [clusters, ratings, tools, clusterSkills]);
 
   function finish() {
     setStep(5);
@@ -172,8 +179,13 @@ export default function Diagnostic() {
                       </div>
                     </div>
                     <div className="mt-2 flex flex-wrap items-center gap-1.5">
-                      <span className="text-[10px] uppercase tracking-wider text-slate-600">This role needs:</span>
-                      {shown.map((s) => <span key={s} className="chip bg-slate-800/80 text-slate-400">{s}</span>)}
+                      <span className="text-[10px] uppercase tracking-wider text-slate-600">Tap the ones you already know:</span>
+                      {shown.map((s) => (
+                        <button key={s} onClick={() => setTools((x) => x.includes(s) ? x.filter((y) => y !== s) : [...x, s])}
+                          className={`chip border transition ${tools.includes(s) ? "border-emerald-500 bg-emerald-900/50 text-emerald-300" : "border-slate-700 bg-slate-800/80 text-slate-400 hover:border-brand-500"}`}>
+                          {tools.includes(s) ? "✓ " : ""}{s}
+                        </button>
+                      ))}
                       {sks.length > shown.length && <span className="text-[11px] text-slate-600">+{sks.length - shown.length} more</span>}
                     </div>
                   </div>
