@@ -33,7 +33,7 @@ export default function Journey({ params, searchParams }) {
         )}
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
-        <Link href="/diagnostic" className="btn-primary text-sm">Take the 60-second diagnostic →</Link>
+        <Link href={`/diagnostic?role=${j.slug}`} className="btn-primary text-sm">Customize for me — 60-second diagnostic →</Link>
         <Link href={`/compare?roles=${j.slug}`} className="btn-ghost text-sm">Compare with another role</Link>
       </div>
       <JourneyPlanner journey={j} view={view} />

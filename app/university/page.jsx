@@ -129,6 +129,20 @@ export default function University() {
     }).filter((x) => x.pct >= 25).sort((a, b) => b.pct - a.pct).slice(0, 5);
   }, [result]);
 
+  // Role intelligence: for the top target role, which skills does this curriculum NOT yet build?
+  const roleIntel = useMemo(() => {
+    if (!result || !roleMap.length) return null;
+    const mapped = result.groups.flatMap((g) => g.analysis.subjects.map((s) => s.mapped)).filter(Boolean);
+    const pool = new Set(mapped.flatMap((t) => (courseByTitle[t]?.skills || [])).map((s) => s.toLowerCase()));
+    const top = roleMap.slice(0, 2).map((r) => {
+      const j = journeys.find((x) => x.slug === r.slug);
+      const missing = j.skills.filter((s) => !pool.has(s.toLowerCase())).slice(0, 8);
+      return { ...r, missing };
+    });
+    const gapSubjects = result.groups.flatMap((g) => g.analysis.subjects.filter((s) => s.status === "Gap").map((s) => s.subject));
+    return { top, gapSubjects };
+  }, [result, roleMap]);
+
   function buildOverlay(key, subject) {
     const subjectSkills = extractSkills(subject.subject + " " + (subject.skills || []).join(" "), skills);
     const mods = selectModules(subjectSkills.length ? subjectSkills : [subject.subject], modules, { maxHours: 12 }).slice(0, 4);
@@ -323,6 +337,38 @@ export default function University() {
               </div>
             </div>
           </div>
+
+          {roleIntel && (
+            <div className="card border-violet-900/60 p-5">
+              <h3 className="text-lg font-bold text-white">🧠 Role Intelligence & Curriculum Design</h3>
+              <p className="mt-1 text-xs text-slate-400">How this curriculum aligns to live job roles, where the gaps are, and how we customize the journey to your requirement.</p>
+              <div className="mt-3 grid gap-3 md:grid-cols-2">
+                {roleIntel.top.map((r) => (
+                  <div key={r.slug} className="rounded-xl bg-slate-950/60 p-4">
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm font-bold text-white">{r.role}</p>
+                      <span className="chip bg-violet-900/60 text-violet-300">{r.pct}% aligned</span>
+                    </div>
+                    {r.missing.length > 0 ? (
+                      <>
+                        <p className="mt-2 text-[11px] uppercase tracking-wider text-amber-400">Gap skills the overlay adds</p>
+                        <div className="mt-1.5 flex flex-wrap gap-1.5">
+                          {r.missing.map((s) => <span key={s} className="chip bg-amber-900/50 text-amber-300">+ {s}</span>)}
+                        </div>
+                      </>
+                    ) : <p className="mt-2 text-xs text-emerald-400">Fully aligned with the overlay.</p>}
+                  </div>
+                ))}
+              </div>
+              {roleIntel.gapSubjects.length > 0 && (
+                <p className="mt-3 text-xs text-slate-500">Faculty-retained subjects ({roleIntel.gapSubjects.slice(0, 4).join(", ")}{roleIntel.gapSubjects.length > 4 ? "…" : ""}) stay untouched — by design.</p>
+              )}
+              <p className="mt-3 rounded-lg border border-dashed border-violet-800 bg-violet-950/30 px-4 py-3 text-sm text-slate-300">
+                🎛 <span className="font-semibold text-white">Custom curriculum design:</span> target different roles, swap the role mix per specialization track, or weight semesters differently —
+                the engine re-composes the journey to your requirement. That&apos;s what the proposal call is for.
+              </p>
+            </div>
+          )}
 
           <div className="card border-emerald-900/60 p-6">
             <h3 className="text-lg font-bold text-white">📋 Your partnership blueprint</h3>

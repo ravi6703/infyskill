@@ -29,6 +29,14 @@ export default function Diagnostic() {
   const [style, setStyle] = useState("project");
   const [goal, setGoal] = useState("switch");
 
+  // deep link: /diagnostic?role=<slug> — learner clicked a role page CTA
+  useState(() => {
+    if (typeof window !== "undefined") {
+      const r = new URLSearchParams(window.location.search).get("role");
+      if (r && journeys.some((j) => j.slug === r)) { setRole(r); setStep(1); }
+    }
+  });
+
   const journey = journeys.find((j) => j.slug === role);
   const clusters = useMemo(() => (journey ? clustersFor(journey.skills).slice(0, 7) : []), [journey]);
   const clusterSkills = useMemo(() => (journey ? Object.fromEntries(skillsByCluster(journey.skills)) : {}), [journey]);
@@ -247,6 +255,33 @@ export default function Diagnostic() {
               </div>
             </div>
           </div>
+          {/* YOU: BEFORE → AFTER — the outcome, from the learner's side */}
+          {plan && (
+            <div className="card mt-4 border-emerald-900/60 p-5">
+              <h3 className="text-lg font-bold text-white">Your transformation — today vs after completion</h3>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">📍 You today</p>
+                  <p className="mt-2 text-3xl font-extrabold text-slate-300">{readiness}%<span className="ml-2 text-sm font-normal text-slate-500">role-ready</span></p>
+                  <ul className="mt-3 space-y-1 text-sm text-slate-400">
+                    <li>• {clusters.filter(([cl]) => (ratings[cl] || 0) >= 2).length} of {clusters.length} skill areas at working level</li>
+                    <li>• No role-specific portfolio evidence yet</li>
+                    <li>• Profile: {BACKGROUNDS.find(([v]) => v === profile.background)?.[1].replace(/^[^ ]+ /, "")}, {profile.exp} yrs</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl border border-emerald-700 bg-emerald-950/30 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">🎯 You on {new Date(Date.now() + plan.totalWeeks * 7 * 864e5).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</p>
+                  <p className="mt-2 text-3xl font-extrabold text-emerald-300">{journey.role}<span className="ml-2 text-sm font-normal text-slate-400">interview-ready</span></p>
+                  <ul className="mt-3 space-y-1 text-sm text-slate-300">
+                    <li>✓ {plan.moduleCount} modules across all {clusters.length} skill areas — verified by checkpoints</li>
+                    <li>✓ Hackathon demo + coached capstone = 2 portfolio assets</li>
+                    <li>✓ AI resume + mock interviews done · listed for employers</li>
+                    <li>✓ Target band: <span className="text-emerald-300">{journey.salary?.india}</span> (India) · {journey.salary?.global}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
           {plan ? <WeekPlan plan={plan} planKey={`diag-${journey.slug}`} /> : <p className="mt-6 animate-pulse text-slate-500">Composing…</p>}
           <div className="mt-6 flex gap-3">
             <button onClick={() => setStep(4)} className="btn-ghost">← Adjust preferences</button>
