@@ -10,6 +10,7 @@ import { buildWeekPlan } from "../../lib/engine";
 import WeekPlan from "../../components/WeekPlan";
 import { ScoreRing } from "../../components/PlanCharts";
 import { sbInsert } from "../../lib/supabase";
+import ValueModel from "../../components/ValueModel";
 
 const SAMPLE = `We are hiring a GenAI Engineer to build production LLM applications.
 Requirements: Python, LangChain or LangGraph, RAG pipelines, vector databases (Pinecone),
@@ -170,7 +171,31 @@ export default function Analyzer() {
             </div>
           </section>
 
-          {plan && <WeekPlan plan={plan} planKey={`jd-${result.skills.slice(0, 3).join("-")}`} />}
+          {plan && (
+            <>
+              <div className="card border-emerald-900/50 p-5">
+                <h2 className="text-lg font-bold text-white">📐 Custom solution for THIS JD — not a template</h2>
+                <p className="mt-1 text-xs text-slate-400">
+                  Composed from {plan.moduleCount} specific modules across {plan.courseCount} courses, selected only because they teach the {result.covered.length} skills this JD demands.
+                  A different JD produces a different blueprint.
+                </p>
+                <div className="mt-3 grid grid-cols-2 gap-2 text-center sm:grid-cols-5">
+                  {[["▶ Async", `${plan.blend.async}% · ${plan.moduleCount} modules`],
+                    ["🎙 Sync", `${plan.weeks.reduce((a, w) => a + w.sync.length, 0)} live sessions`],
+                    ["★ Masterclass", `${plan.weeks.filter((w) => w.masterclass).length} expert sessions`],
+                    ["🏆 Hackathon", "1 build sprint"],
+                    ["🎓 Capstone", `${plan.weeks.filter((w) => w.type === "capstone").length} coached weeks`]].map(([k, v]) => (
+                    <div key={k} className="rounded-lg bg-slate-950/60 p-2.5">
+                      <p className="text-xs font-bold text-white">{k}</p>
+                      <p className="mt-0.5 text-[10px] text-slate-400">{v}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3"><ValueModel audience={persona === "employer" ? "university" : "learner"} /></div>
+              </div>
+              <WeekPlan plan={plan} planKey={`jd-${result.skills.slice(0, 3).join("-")}`} />
+            </>
+          )}
 
           {persona === "employer" && (
             <section className="card border-emerald-900/60 p-5">

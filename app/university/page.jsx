@@ -10,6 +10,7 @@ import { analyzeCurriculum, extractSkills } from "../../lib/match";
 import { selectModules } from "../../lib/engine";
 import { ScoreRing } from "../../components/PlanCharts";
 import { sbInsert } from "../../lib/supabase";
+import ValueModel from "../../components/ValueModel";
 
 const SAMPLE = `Semester 3
 Programming Fundamentals with Python
@@ -123,6 +124,10 @@ export default function University() {
         </div>
       </section>
 
+      <div className="mt-8">
+        <ValueModel audience="university" />
+      </div>
+
       <section className="mt-8">
         <h2 className="text-lg font-bold text-white">⚡ One-click analysis — pick your degree</h2>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -163,7 +168,7 @@ export default function University() {
               <p className="mt-1 text-xs text-slate-400">With the overlay + final-year capstone, this degree feeds directly into these AI-era roles:</p>
               <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
                 {roleMap.map((r) => (
-                  <Link key={r.slug} href={`/journeys/${r.slug}`} className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 transition hover:border-brand-500">
+                  <Link key={r.slug} href={`/journeys/${r.slug}?view=university`} className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 transition hover:border-brand-500">
                     <p className="text-sm font-semibold text-white">{r.role}</p>
                     <div className="mt-2 h-1.5 w-full overflow-hidden rounded bg-slate-800">
                       <div className="h-full bg-gradient-to-r from-brand-500 to-accent-500" style={{ width: `${r.pct}%` }} />

@@ -3,8 +3,9 @@ import { useMemo, useState } from "react";
 import modules from "../data/modules.json";
 import { buildWeekPlan, clustersFor } from "../lib/engine";
 import WeekPlan from "./WeekPlan";
+import ValueModel from "./ValueModel";
 
-export default function JourneyPlanner({ journey }) {
+export default function JourneyPlanner({ journey, view }) {
   const [hpw, setHpw] = useState(10);
   const [known, setKnown] = useState([]);
   const clusters = useMemo(() => clustersFor(journey.skills).slice(0, 8), [journey]);
@@ -18,9 +19,19 @@ export default function JourneyPlanner({ journey }) {
     setKnown((k) => (k.includes(cl) ? k.filter((x) => x !== cl) : [...k, cl]));
   }
 
+  const counts = useMemo(() => plan && ({
+    modules: plan.moduleCount, asyncPct: plan.blend.async,
+    sync: plan.weeks.reduce((a, w) => a + (w.sync || []).length, 0),
+    masterclasses: plan.weeks.filter((w) => w.masterclass).length,
+    capstoneWeeks: plan.weeks.filter((w) => w.type === "capstone").length,
+  }), [plan]);
+
   return (
     <div>
-      <div className="card mt-8 p-5">
+      <div className="mt-8">
+        <ValueModel audience={view === "university" ? "university" : "learner"} counts={counts} toggle />
+      </div>
+      <div className="card mt-4 p-5">
         <h2 className="text-lg font-bold text-white">Personalize this journey</h2>
         <p className="mt-1 text-sm text-slate-400">The plan below recomputes live — module by module, week by week.</p>
         <div className="mt-4 flex flex-wrap items-center gap-4">

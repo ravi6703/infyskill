@@ -2,6 +2,7 @@ import Link from "next/link";
 import journeys from "../data/journeys.json";
 import courses from "../data/courses.json";
 import skills from "../data/skills.json";
+import ValueModel from "../components/ValueModel";
 
 const stats = [
   [journeys.length, "AI-era career paths"],
@@ -37,6 +38,10 @@ export default function Home() {
         </div>
         <p className="mt-6 text-xs text-slate-500">Evidence-based blend: ~40% async · ~25% live · ~20% projects · masterclasses, coaching & assessments</p>
       </section>
+
+      <div className="mt-10">
+        <ValueModel audience="university" toggle />
+      </div>
 
       <section className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
         {stats.map(([v, l]) => (

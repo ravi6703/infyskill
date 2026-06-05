@@ -10,9 +10,10 @@ export function generateMetadata({ params }) {
   return { title: `${j ? j.role : "Journey"} — PathFinder AI` };
 }
 
-export default function Journey({ params }) {
+export default function Journey({ params, searchParams }) {
   const j = journeys.find((x) => x.slug === params.slug);
   if (!j) return <p>Not found.</p>;
+  const view = searchParams?.view === "university" ? "university" : "learner";
   return (
     <div>
       <Link href="/journeys" className="text-sm text-brand-400">← All journeys</Link>
@@ -35,7 +36,7 @@ export default function Journey({ params }) {
         <Link href="/diagnostic" className="btn-primary text-sm">Take the 60-second diagnostic →</Link>
         <Link href={`/compare?roles=${j.slug}`} className="btn-ghost text-sm">Compare with another role</Link>
       </div>
-      <JourneyPlanner journey={j} />
+      <JourneyPlanner journey={j} view={view} />
       <section className="mt-10">
         <h2 className="text-lg font-bold text-white">Content gaps we&apos;re building for this journey</h2>
         <ul className="mt-3 space-y-2">
