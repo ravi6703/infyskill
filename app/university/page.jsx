@@ -184,7 +184,7 @@ export default function University() {
         <div className="mt-3 flex flex-wrap gap-2">
           {degrees.map((d) => (
             <button key={d.name} onClick={() => { runBenchmark(d); }} className={`chip border px-3 py-1.5 transition ${result?.degreeName === d.name ? "border-brand-500 bg-brand-900/60 text-brand-200" : "border-slate-700 bg-slate-900 text-slate-300 hover:border-brand-500"}`}>
-              {d.name.replace(/\s*\(.*\)/, "")} · {d.coverage_pct}%
+              {d.name.replace("Bachelor of Computer Applications", "").replace("Master of Computer Applications", "").replace("Bachelor of Business Administration", "").replace(/\(\s*\)/, "").trim()}
             </button>
           ))}
         </div>
