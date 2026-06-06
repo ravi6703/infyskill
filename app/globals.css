@@ -1,11 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body { @apply bg-slate-950 text-slate-200 antialiased; }
-.card { @apply bg-slate-900 border border-slate-800 rounded-xl; }
-.btn { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-semibold transition; }
-.btn-primary { @apply btn bg-brand-600 hover:bg-brand-500 text-white; }
-.btn-ghost { @apply btn border border-slate-700 hover:border-brand-500 text-slate-200; }
-.chip { @apply inline-block rounded-full px-2.5 py-0.5 text-xs font-medium; }
-.input { @apply w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm focus:outline-none focus:border-brand-500; }
+body { @apply bg-ink-50 text-ink-800 antialiased; font-family: "Lato", system-ui, sans-serif; }
+
+h1, h2, h3, h4 { @apply text-ink-900; }
+
+.card { @apply bg-white border border-ink-200 rounded-xl shadow-card; }
+.btn { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-bold transition; }
+.btn-primary { @apply btn bg-brand-500 hover:bg-brand-600 text-white; }
+.btn-ghost { @apply btn border border-ink-300 hover:border-brand-500 hover:text-brand-600 text-ink-700 bg-white; }
+.btn-peel { @apply btn bg-peel-500 hover:bg-peel-600 text-white; }
+.chip { @apply inline-block rounded-full px-2.5 py-0.5 text-xs font-bold; }
+.chip-blue { @apply chip bg-brand-50 text-brand-600; }
+.chip-peel { @apply chip bg-peel-50 text-peel-700; }
+.chip-rose { @apply chip bg-rose-50 text-rose-600; }
+.chip-gray { @apply chip bg-ink-100 text-ink-600; }
+.chip-green { @apply chip bg-[#E8F8F2] text-[#1A8B66]; }
+.input { @apply w-full rounded-lg bg-white border border-ink-300 px-3 py-2 text-sm text-ink-800 placeholder:text-ink-400 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-50; }
+.muted { @apply text-ink-500; }

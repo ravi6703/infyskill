@@ -1,88 +1,74 @@
 import Link from "next/link";
-import journeys from "../data/journeys.json";
+import specializations from "../data/journeys.json";
 import courses from "../data/courses.json";
-import skills from "../data/skills.json";
-import ValueModel from "../components/ValueModel";
 
 const stats = [
-  [journeys.length, "AI-era career paths"],
-  ["3,700+ hrs", "of industry-aligned learning"],
-  ["30,000+", "learners trained last year"],
-  ["80+", "institutions incl. 10 IIMs & 2 IITs"],
+  [courses.length, "Skill-tagged courses"],
+  [specializations.length, "AI-era specializations"],
+  ["4", "Degree programs"],
+  ["5-part", "Blended delivery model"],
 ];
 
-const tools = [
-  ["/university", "🎓 For Universities", "Upload any degree curriculum: subject-by-subject coverage, gaps, and a blended overlay under NEP 2020's 40% online-credit allowance.", true],
-  ["/diagnostic", "🎯 60-Second Diagnostic", "Pick a role, self-assess, set your pace — get a personalized week-by-week journey that skips what you already know.", true],
-  ["/journeys", "🚀 Career Journeys", `${journeys.length} AI-era roles in 6 career families. Module-level plans with live labs, masterclasses, hackathons and a capstone.`, false],
-  ["/analyzer", "📋 JD → Journey", "Paste any job description — get extracted skills, coverage % and a custom week plan in seconds.", false],
-  ["/catalog", "📚 Course Catalog", "Search 259 courses down to individual video tags.", false],
-  ["/partners", "📊 Partner Dashboard", "What institutions get: program coverage analytics, cohort engagement and employability mapping.", false],
+const products = [
+  ["/catalog", "Course Catalog", "Browse every course by category. Each course is skill-tagged and opens a visual learning roadmap — like roadmap.sh, for Board Infinity.", "chip-blue"],
+  ["/specializations", "Specializations", "AI-era job roles built from our content + new-age roles. See the full journey, skills and outcomes to land the role.", "chip-peel"],
+  ["/degrees", "Degree Programs", "Board Infinity's own best-of-best degree programs — with delivery model, target roles, and how they out-perform a standard university degree.", "chip-rose"],
 ];
 
 export default function Home() {
   return (
     <div>
-      <section className="rounded-2xl bg-gradient-to-br from-brand-900 via-slate-900 to-slate-950 px-6 py-16 text-center">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-400">Board Infinity presents</p>
-        <h1 className="mx-auto max-w-3xl text-4xl font-black text-white sm:text-5xl">
-          Your AI-era career, planned <span className="bg-gradient-to-r from-brand-400 to-accent-500 bg-clip-text text-transparent">week by week</span> — down to the module
+      <section className="overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 px-6 py-16 text-center text-white">
+        <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-100">Board Infinity · PathFinder AI</p>
+        <h1 className="mx-auto max-w-3xl text-4xl font-black sm:text-5xl">
+          From a course, to a skill, to a <span className="text-peel-400">career</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-slate-300">
-          PathFinder AI builds a learning journey for exactly you — blending self-paced content,
-          live labs with mentors, industry masterclasses, hackathons and a coached capstone that ends in a job, not just a certificate.
+        <p className="mx-auto mt-4 max-w-2xl text-brand-50">
+          Skill-tagged courses with visual roadmaps, AI-era specializations, and Board Infinity degree programs —
+          all built on a blended model of self-paced content, live mentorship, masterclasses, hackathons and capstones.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href="/diagnostic" className="btn-primary text-base">I&apos;m a learner — find my path →</Link>
-          <Link href="/university" className="btn-ghost text-base">I&apos;m an institution — map my curriculum →</Link>
+          <Link href="/diagnostic" className="btn bg-white text-brand-600 hover:bg-brand-50">Take the career diagnostic →</Link>
+          <Link href="/specializations" className="btn border border-white/40 text-white hover:bg-white/10">Explore specializations</Link>
         </div>
-        <p className="mt-6 text-xs text-slate-500">Evidence-based blend: ~40% async · ~25% live · ~20% projects · masterclasses, coaching & assessments</p>
       </section>
 
-      <div className="mt-10">
-        <ValueModel audience="university" toggle />
-      </div>
-
-      <section className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <section className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
         {stats.map(([v, l]) => (
           <div key={l} className="card p-5 text-center">
-            <div className="text-3xl font-extrabold text-white">{v}</div>
-            <div className="mt-1 text-sm text-slate-400">{l}</div>
+            <div className="text-3xl font-black text-brand-600">{v}</div>
+            <div className="mt-1 text-sm text-ink-500">{l}</div>
           </div>
         ))}
       </section>
 
-      <section className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {tools.map(([href, title, desc, hot]) => (
-          <Link key={href} href={href} className={`card group p-6 transition hover:border-brand-500 ${hot ? "border-brand-700 bg-gradient-to-br from-brand-950 to-slate-900" : ""}`}>
-            <h3 className="text-lg font-bold text-white group-hover:text-brand-300">{title} →</h3>
-            <p className="mt-2 text-sm text-slate-400">{desc}</p>
+      <section className="mt-12 grid gap-5 md:grid-cols-3">
+        {products.map(([href, title, desc, chip]) => (
+          <Link key={href} href={href} className="card group flex flex-col p-6 transition hover:-translate-y-0.5 hover:shadow-lift">
+            <span className={`${chip} w-fit`}>{title}</span>
+            <h3 className="mt-3 text-xl font-black text-ink-900 group-hover:text-brand-600">{title}</h3>
+            <p className="mt-2 flex-1 text-sm text-ink-600">{desc}</p>
+            <span className="mt-4 text-sm font-bold text-brand-600 group-hover:underline">Open →</span>
           </Link>
         ))}
       </section>
 
-      <section className="card mt-12 border-emerald-900/50 p-6">
-        <h2 className="text-xl font-bold text-white">🚀 Career Launchpad — the last mile of every journey</h2>
-        <p className="mt-1 text-sm text-slate-400">The journey doesn&apos;t end at a certificate. Its final weeks convert your learning into the actual job role:</p>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-lg border border-dashed border-slate-700 p-4">
-            <p className="font-semibold text-white">🧑‍🏫 Personal Coach</p>
-            <p className="mt-1 text-sm text-slate-400">1:1 guidance through hackathon & capstone — then placement strategy for your target role.</p>
-          </div>
-          <div className="rounded-lg border border-dashed border-slate-700 p-4">
-            <p className="font-semibold text-white">📄 AI Resume Builder</p>
-            <p className="mt-1 text-sm text-slate-400">Auto-drafts a role-targeted resume from your journey evidence — projects, deliverables, verified skills (Infy Resume Copilot).</p>
-          </div>
-          <div className="rounded-lg border border-dashed border-slate-700 p-4">
-            <p className="font-semibold text-white">🎤 AI Mock Interview</p>
-            <p className="mt-1 text-sm text-slate-400">Interview simulation built from your target role&apos;s real JD patterns, with feedback (Infy Interview).</p>
-          </div>
-          <div className="rounded-lg border border-dashed border-slate-700 p-4">
-            <p className="font-semibold text-white">💼 Job Matching</p>
-            <p className="mt-1 text-sm text-slate-400">Your verified profile enters the employer talent pool; live roles ranked by skill match (InfyTalent).</p>
-          </div>
+      <section className="card mt-12 p-6">
+        <h2 className="text-xl font-black text-ink-900">The Board Infinity delivery model</h2>
+        <p className="mt-1 text-sm text-ink-500">Every specialization and degree blends five components — the mix that bridges the education-to-industry gap.</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {[["▶", "Async content", "Self-paced, high-engagement", "border-t-brand-500"],
+            ["🎙", "Live sync", "Mentor & SME sessions", "border-t-peel-500"],
+            ["★", "Masterclass", "Industry experts, 10+ yrs", "border-t-flame-500"],
+            ["🏆", "Hackathon", "Practical, judged builds", "border-t-rose-500"],
+            ["🎓", "Capstone", "Hands-on, coached project", "border-t-brand-400"]].map(([icon, name, sub, b]) => (
+            <div key={name} className={`rounded-xl border border-ink-200 border-t-4 ${b} bg-ink-50 p-4`}>
+              <div className="text-2xl">{icon}</div>
+              <p className="mt-1 font-bold text-ink-900">{name}</p>
+              <p className="text-xs text-ink-500">{sub}</p>
+            </div>
+          ))}
         </div>
-        <p className="mt-4 text-xs text-slate-500">Sequence in the final weeks: capstone defense → AI resume → AI mock interviews → coach placement session → employer pool listing.</p>
       </section>
     </div>
   );

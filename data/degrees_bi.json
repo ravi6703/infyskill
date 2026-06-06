@@ -1,0 +1,75 @@
+[
+  {
+    "slug": "bsc-ai-engineering",
+    "name": "B.Sc. in AI Engineering",
+    "tagline": "Become the engineer who builds and ships AI systems.",
+    "duration": "3 years · 6 semesters",
+    "level": "Undergraduate",
+    "delivery": { "async": 45, "sync": 25, "masterclass": 10, "hackathon": 8, "capstone": 12 },
+    "roles": ["ai-machine-learning-engineer", "genai-application-developer", "mlops-ai-platform-engineer", "agentic-ai-engineer"],
+    "terms": [
+      { "name": "Sem 1-2 · Foundations", "themes": ["Python & Programming", "Math & Statistics for AI", "Web & APIs", "Version Control"], "milestone": "Junior Developer ready" },
+      { "name": "Sem 3-4 · Core AI/ML", "themes": ["Machine Learning", "Deep Learning", "NLP & Transformers", "Data Pipelines"], "milestone": "ML Engineer foundation" },
+      { "name": "Sem 5-6 · GenAI & Production", "themes": ["Generative AI & LLMs", "Agentic AI & RAG", "MLOps & Cloud Deployment", "AI Governance"], "milestone": "Production AI Engineer" }
+    ],
+    "vsUniversity": {
+      "biStrength": ["Live industry projects every semester", "GenAI & Agentic AI (taught nowhere in standard CS)", "MLOps + cloud deployment hands-on", "Capstone aligned to a real job role", "Masterclasses by practitioners with 10+ yrs"],
+      "uniGap": ["Outdated syllabi — GenAI/LLMs rarely covered", "Theory-heavy, little deployment practice", "No portfolio / capstone tied to roles", "Faculty rarely from current industry"]
+    }
+  },
+  {
+    "slug": "pgd-applied-genai",
+    "name": "PG Diploma in Applied GenAI",
+    "tagline": "Go from graduate to GenAI builder in one intensive year.",
+    "duration": "1 year · 3 terms",
+    "level": "Postgraduate Diploma",
+    "delivery": { "async": 40, "sync": 28, "masterclass": 12, "hackathon": 10, "capstone": 10 },
+    "roles": ["genai-application-developer", "agentic-ai-engineer", "llm-fine-tuning-rag-engineer", "prompt-engineer-ai-interaction-designer"],
+    "terms": [
+      { "name": "Term 1 · GenAI Foundations", "themes": ["Generative AI & LLMs", "Prompt Engineering", "Python for AI", "OpenAI/DeepSeek APIs"], "milestone": "GenAI App Developer" },
+      { "name": "Term 2 · Agents & RAG", "themes": ["LangChain & LangGraph", "RAG Pipelines", "Vector Databases", "Multi-Agent Systems"], "milestone": "Agentic AI Engineer" },
+      { "name": "Term 3 · Production & Capstone", "themes": ["Fine-Tuning (LoRA/QLoRA)", "MLOps & Serving", "Evaluation & Guardrails", "Capstone"], "milestone": "Production GenAI Engineer" }
+    ],
+    "vsUniversity": {
+      "biStrength": ["100% current AI-era stack", "Build 4+ shippable GenAI products", "Agentic systems & fine-tuning hands-on", "Direct path to ₹12-60 LPA roles", "Industry mentorship throughout"],
+      "uniGap": ["No equivalent program exists in most universities", "GenAI treated as elective, not core", "No applied product-building", "1-2 year lag behind industry"]
+    }
+  },
+  {
+    "slug": "bsc-data-science",
+    "name": "B.Sc. in Data Science & Analytics",
+    "tagline": "Turn data into decisions — and into a data career.",
+    "duration": "3 years · 6 semesters",
+    "level": "Undergraduate",
+    "delivery": { "async": 48, "sync": 24, "masterclass": 8, "hackathon": 8, "capstone": 12 },
+    "roles": ["data-engineer-ai-era", "ai-data-analyst-analytics-engineer", "ai-business-analyst", "ai-in-finance-fintech-analyst"],
+    "terms": [
+      { "name": "Sem 1-2 · Data Foundations", "themes": ["Python & SQL", "Statistics", "Excel & Visualization", "Databases"], "milestone": "Data Analyst ready" },
+      { "name": "Sem 3-4 · Analytics & BI", "themes": ["Tableau & Power BI", "Data Pipelines", "Data Governance", "Cloud Data (Snowflake)"], "milestone": "Analytics Engineer" },
+      { "name": "Sem 5-6 · ML & AI for Data", "themes": ["Machine Learning", "Time Series & Forecasting", "AI Dashboards", "Capstone"], "milestone": "AI Data Engineer" }
+    ],
+    "vsUniversity": {
+      "biStrength": ["Modern stack: Snowflake, Power BI, Python", "AI-augmented analytics (the 2026 baseline)", "Live dashboards & real datasets", "Capstone tied to data roles", "Industry-graded portfolio"],
+      "uniGap": ["Often stuck on legacy tools", "Stats theory without modern tooling", "No cloud data warehousing", "Weak placement-to-role mapping"]
+    }
+  },
+  {
+    "slug": "mba-ai-business",
+    "name": "MBA in AI-Powered Business",
+    "tagline": "Lead products, marketing and finance in the AI era.",
+    "duration": "2 years · 4 semesters",
+    "level": "Postgraduate",
+    "delivery": { "async": 42, "sync": 26, "masterclass": 14, "hackathon": 6, "capstone": 12 },
+    "roles": ["ai-product-manager", "ai-augmented-marketing-specialist", "ai-in-finance-fintech-analyst", "ai-operations-transformation-manager"],
+    "terms": [
+      { "name": "Sem 1 · Business Core", "themes": ["Business Management", "Financial Analysis", "Marketing Foundations", "Data for Decisions"], "milestone": "Business Analyst" },
+      { "name": "Sem 2 · AI Fluency", "themes": ["Generative AI for Business", "No-Code AI & Automation", "AI in Marketing", "AI in Finance"], "milestone": "AI-fluent manager" },
+      { "name": "Sem 3 · Specialize", "themes": ["AI Product Management", "Growth & Attribution", "FinTech & Forecasting", "AI Governance"], "milestone": "AI Product/Function lead" },
+      { "name": "Sem 4 · Lead & Capstone", "themes": ["AI Transformation", "Leadership", "Strategy", "Capstone"], "milestone": "AI Business Leader" }
+    ],
+    "vsUniversity": {
+      "biStrength": ["AI woven into every function — not an add-on", "No-code AI tools hands-on", "Live business capstone", "Masterclasses by CXOs", "Direct path to AI PM / AI marketing roles"],
+      "uniGap": ["Generic MBA with one 'digital' elective", "Case studies, little AI tooling practice", "No role-specific specialization", "Slow to adopt GenAI in curriculum"]
+    }
+  }
+]
