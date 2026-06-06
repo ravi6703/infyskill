@@ -6,7 +6,7 @@ export function generateStaticParams() {
 }
 export function generateMetadata({ params }) {
   const c = courses.find((x) => x.slug === params.slug);
-  return { title: `${c ? c.title : "Course"} — PathFinder AI` };
+  return { title: `${c ? c.title : "Course"} — InfyAI` };
 }
 
 export default function CoursePage({ params }) {

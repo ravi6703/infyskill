@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div>
       <section className="overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 px-6 py-16 text-center text-white">
-        <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-100">Board Infinity · PathFinder AI</p>
+        <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-100">Board Infinity · InfyAI</p>
         <h1 className="mx-auto max-w-3xl text-4xl font-black sm:text-5xl">
           From a course, to a skill, to a <span className="text-peel-400">career</span>
         </h1>

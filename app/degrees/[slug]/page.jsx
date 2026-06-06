@@ -8,7 +8,7 @@ export function generateStaticParams() {
 }
 export function generateMetadata({ params }) {
   const d = degrees.find((x) => x.slug === params.slug);
-  return { title: `${d ? d.name : "Degree"} — PathFinder AI` };
+  return { title: `${d ? d.name : "Degree"} — InfyAI` };
 }
 
 const PILLARS = [["async", "▶ Async", "border-t-brand-500"], ["sync", "🎙 Live sync", "border-t-peel-500"], ["masterclass", "★ Masterclass", "border-t-flame-500"], ["hackathon", "🏆 Hackathon", "border-t-rose-500"], ["capstone", "🎓 Capstone", "border-t-brand-400"]];

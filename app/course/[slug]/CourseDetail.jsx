@@ -1,7 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { sbSelect } from "../../../lib/supabase";
+import specs from "../../../data/journeys.json";
+
+const clean = (t) => t.replace(/^[:\s]+/, "");
 
 const ICON = { Video: "▶", Reading: "📄", Practice: "✏️", Assignment: "🧪", Quiz: "❓", Discussion: "💬", Lab: "🔬", Project: "🚀" };
 const SIDE = ["left", "right"];
@@ -24,6 +27,15 @@ export default function CourseDetail({ course }) {
 
   const totalVideos = data ? data.items.filter((i) => i.item_type === "Video").length : null;
 
+  // VISION: which specializations this course's skills feed into
+  const unlocks = useMemo(() => {
+    const cs = new Set(course.skills.map((s) => s.toLowerCase()));
+    return specs.map((sp) => {
+      const hits = sp.skills.filter((s) => cs.has(s.toLowerCase()));
+      return { sp, hits, pct: Math.round((hits.length / Math.max(6, sp.skills.length)) * 100) };
+    }).filter((x) => x.hits.length >= 2).sort((a, b) => b.hits.length - a.hits.length).slice(0, 4);
+  }, [course.skills]);
+
   return (
     <div>
       <Link href="/catalog" className="text-sm font-bold text-brand-600">← Catalog</Link>
@@ -35,7 +47,7 @@ export default function CourseDetail({ course }) {
               <span className="chip-blue">{course.domain}</span>
               <span className="chip-peel">{course.proficiency}</span>
             </div>
-            <h1 className="mt-3 text-3xl font-black text-ink-900">{course.title}</h1>
+            <h1 className="mt-3 text-3xl font-black text-ink-900">{clean(course.title)}</h1>
           </div>
           {data && (
             <div className="grid grid-cols-3 gap-4 text-center">
@@ -52,6 +64,27 @@ export default function CourseDetail({ course }) {
           </div>
         </div>
       </div>
+
+      {/* VISION — where this course takes you */}
+      {unlocks.length > 0 && (
+        <section className="mt-6 overflow-hidden rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-5">
+          <p className="text-xs font-bold uppercase tracking-widest text-brand-600">Why this matters</p>
+          <h2 className="mt-1 text-lg font-black text-ink-900">This course is a step toward {unlocks.length} AI-era role{unlocks.length > 1 ? "s" : ""}</h2>
+          <p className="mt-1 text-sm text-ink-600">A course → builds verified skills → which power real specializations → leading to a career. Here&apos;s where these skills take you:</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {unlocks.map(({ sp, hits, pct }) => (
+              <Link key={sp.slug} href={`/specializations/${sp.slug}`} className="card p-4 transition hover:-translate-y-0.5 hover:shadow-lift">
+                <p className="font-black text-ink-900">{sp.role}</p>
+                {sp.salary && <p className="mt-0.5 text-sm font-bold text-teal-600">{sp.salary.india}</p>}
+                <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-ink-100">
+                  <div className="h-full bg-gradient-to-r from-brand-400 to-brand-600" style={{ width: `${Math.min(100, pct)}%` }} />
+                </div>
+                <p className="mt-1 text-[11px] text-ink-500">{hits.length} of this role&apos;s skills come from this course</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-xl font-black text-ink-900">Learning Roadmap</h2>

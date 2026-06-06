@@ -3,7 +3,7 @@ import Link from "next/link";
 import Nav from "../components/Nav";
 
 export const metadata = {
-  title: "PathFinder AI — Board Infinity",
+  title: "InfyAI — Board Infinity",
   description: "Skill-tagged course catalog, AI-era specializations and Board Infinity degree programs with a blended delivery model.",
   icons: { icon: "/favicon.svg" },
 };
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-3">
             <div>
               <img src="/bi-logo.svg" alt="Board Infinity" className="h-9 w-auto" />
-              <p className="mt-3 text-xs text-ink-500">Asia&apos;s #1 career-first learning ecosystem. PathFinder AI — skill intelligence, specializations & degree programs.</p>
+              <p className="mt-3 text-xs text-ink-500">Asia&apos;s #1 career-first learning ecosystem. InfyAI — skill intelligence, specializations & degree programs.</p>
             </div>
             {footerCols.map(([title, items]) => (
               <div key={title}>

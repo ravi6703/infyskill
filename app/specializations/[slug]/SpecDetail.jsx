@@ -157,32 +157,45 @@ export default function SpecDetail({ spec }) {
         )}
       </section>
 
-      {/* the journey — stages only, no course content */}
+      {/* the journey — stages with skills gained + delivery icons (no course content) */}
       <section className="mt-10">
         <h2 className="text-xl font-black text-ink-900">Your journey to the role</h2>
-        <p className="mt-1 text-sm text-ink-500">Four stages, each blending the five-part delivery model. The detailed week-by-week plan is generated for you in the diagnostic.</p>
+        <p className="mt-1 text-sm text-ink-500">Each stage builds new skills through the blended model. Your week-by-week plan is generated in the diagnostic.</p>
         <div className="relative mt-5 space-y-4 border-l-2 border-brand-100 pl-6">
-          {spec.stages.map((st, i) => {
-            const comps = st.components;
-            const types = [...new Set(comps.map((c) => c.type))];
-            return (
-              <div key={st.name} className="relative">
-                <span className="absolute -left-[31px] top-1 grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-[10px] font-black text-white">{i + 1}</span>
-                <div className="card p-4">
-                  <p className="font-black text-ink-900">{st.name}</p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {types.map((t) => <span key={t} className="chip-gray">{t}</span>)}
+          {(() => {
+            const DELIV = { Async: "▶", Sync: "🎙", Masterclass: "★", Hackathon: "🏆", Capstone: "🎓", Assessment: "✦" };
+            const per = Math.ceil(clusters.length / Math.max(1, spec.stages.length));
+            return spec.stages.map((st, i) => {
+              const types = [...new Set(st.components.map((c) => c.type))];
+              const stageSkills = clusters.slice(i * per, (i + 1) * per).flatMap(([, sks]) => sks.slice(0, 3));
+              return (
+                <div key={st.name} className="relative">
+                  <span className="absolute -left-[31px] top-2 grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-[10px] font-black text-white">{i + 1}</span>
+                  <div className="card p-4">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <p className="font-black text-ink-900">{st.name}</p>
+                      <div className="flex gap-1.5 text-sm" title={types.join(" · ")}>
+                        {types.map((t) => <span key={t} title={t}>{DELIV[t] || "•"}</span>)}
+                      </div>
+                    </div>
+                    {stageSkills.length > 0 && (
+                      <div className="mt-2">
+                        <p className="text-[11px] font-bold uppercase tracking-wider text-teal-600">+ Skills you gain</p>
+                        <div className="mt-1 flex flex-wrap gap-1.5">
+                          {stageSkills.map((s) => <span key={s} className="chip-green">{s}</span>)}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <p className="mt-2 text-xs text-ink-500">Focus: {[...new Set(comps.flatMap((c) => c.content.split(/[:&-]/)[0].trim()).slice(0, 2))].join(" · ")}</p>
                 </div>
-              </div>
-            );
-          })}
+              );
+            });
+          })()}
           <div className="relative">
-            <span className="absolute -left-[31px] top-1 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎯</span>
+            <span className="absolute -left-[31px] top-2 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎯</span>
             <div className="card border-peel-200 bg-peel-50 p-4">
-              <p className="font-black text-ink-900">Outcome — {spec.role}</p>
-              <p className="mt-1 text-sm text-ink-600">Capstone + hackathon portfolio, verified skills, and interview-readiness for {spec.salary?.india} roles.</p>
+              <p className="font-black text-ink-900">🎯 Outcome — {spec.role}</p>
+              <p className="mt-1 text-sm text-ink-600">Capstone + hackathon portfolio, verified skills, and interview-readiness for <b className="text-teal-600">{spec.salary?.india}</b> roles.</p>
             </div>
           </div>
         </div>

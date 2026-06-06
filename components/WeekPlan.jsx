@@ -149,7 +149,7 @@ export default function WeekPlan({ plan, planKey }) {
       <div className="mt-4 flex flex-wrap items-center gap-2 print:hidden">
         <button onClick={() => window.print()} className="btn-ghost text-xs">🖨 Print</button>
         <a className="btn-ghost text-xs" target="_blank" rel="noreferrer"
-          href={`https://wa.me/?text=${encodeURIComponent(`My ${plan.totalWeeks}-week learning journey on PathFinder AI by Board Infinity — ${plan.totalHours} hours, ${plan.moduleCount} modules. Build yours: https://infyskill.vercel.app/diagnostic`)}`}>Share</a>
+          href={`https://wa.me/?text=${encodeURIComponent(`My ${plan.totalWeeks}-week learning journey on InfyAI by Board Infinity — ${plan.totalHours} hours, ${plan.moduleCount} modules. Build yours: https://infyskill.vercel.app/diagnostic`)}`}>Share</a>
         <button onClick={() => { setCustomize(!customize); setSwapOpen(null); setAddOpen(null); }}
           className={`btn text-xs ${customize ? "bg-brand-600 text-ink-900" : "border border-ink-300 text-ink-700"}`}>
           ✏️ {customize ? "Done customizing" : "Customize plan"}

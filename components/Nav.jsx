@@ -17,7 +17,7 @@ export default function Nav() {
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <img src="/bi-logo.svg" alt="Board Infinity" className="h-8 w-auto" />
           <span className="hidden h-6 w-px bg-ink-200 sm:block" />
-          <span className="hidden text-sm font-bold text-ink-700 sm:block">PathFinder <span className="text-brand-500">AI</span></span>
+          <span className="hidden text-lg font-black text-ink-800 sm:block">Infy<span className="text-brand-500">AI</span></span>
         </Link>
         <nav className="flex flex-wrap items-center gap-1 text-sm font-bold">
           {links.map(([href, label]) => (

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import degrees from "../../data/degrees_bi.json";
 
-export const metadata = { title: "Degree Programs — PathFinder AI" };
+export const metadata = { title: "Degree Programs — InfyAI" };
 
 export default function Degrees() {
   return (
