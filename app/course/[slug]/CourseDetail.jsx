@@ -67,52 +67,46 @@ export default function CourseDetail({ course }) {
       {err && <p className="mt-6 text-rose-600">Could not load roadmap: {err}</p>}
       {!data && !err && <p className="mt-6 animate-pulse text-ink-400">Building the roadmap…</p>}
 
-      {/* SKILL JOURNEY — topics + cumulative skills, no course content */}
+      {/* SKILL JOURNEY — a skill ladder built from the course's skill set, no curriculum */}
       {data && view === "skill" && (() => {
-        const seen = new Set();
-        const steps = data.modules.map((m) => {
-          const fresh = (m.skills || []).filter((s) => { const k = s.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
-          return { m, fresh, total: seen.size };
-        });
-        const totalSkills = seen.size;
+        const JUNK = /^(beginner|intermediate|advanced|course|navigation|orientation|exam|career|introduction|overview|fundamentals|syllabus)/i;
+        const sk = course.skills.filter((s) => !JUNK.test(s));
+        const n = sk.length;
+        const third = Math.max(1, Math.ceil(n / 3));
+        const stages = [
+          { name: "Foundational", icon: "1", color: "bg-brand-400", tint: "border-brand-200", skills: sk.slice(0, third), note: "Where you begin — the core concepts." },
+          { name: "Core skills", icon: "2", color: "bg-brand-500", tint: "border-brand-200", skills: sk.slice(third, third * 2), note: "Apply the fundamentals to real work." },
+          { name: "Advanced & applied", icon: "3", color: "bg-brand-600", tint: "border-brand-200", skills: sk.slice(third * 2), note: "Job-ready depth and specialization." },
+        ].filter((s) => s.skills.length);
+        let acc = 0;
         return (
-          <div className="mt-6">
-            <div className="relative space-y-4 border-l-2 border-brand-100 pl-6">
-              <div className="relative">
-                <span className="absolute -left-[31px] top-1 grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-[10px] font-black text-white">▸</span>
-                <p className="text-sm font-bold text-ink-500">You start with the fundamentals →</p>
-              </div>
-              {steps.map((st, i) => (
-                <div key={st.m.id} className="relative">
-                  <span className="absolute -left-[33px] top-1 grid h-6 w-6 place-items-center rounded-full bg-brand-500 text-[11px] font-black text-white">{i + 1}</span>
-                  <div className="card p-4">
+          <div className="mt-6 relative space-y-4 border-l-2 border-brand-100 pl-6">
+            {stages.map((st) => {
+              acc += st.skills.length;
+              return (
+                <div key={st.name} className="relative">
+                  <span className={`absolute -left-[33px] top-2 grid h-6 w-6 place-items-center rounded-full ${st.color} text-[11px] font-black text-white`}>{st.icon}</span>
+                  <div className={`card border-l-4 ${st.tint} p-4`}>
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <p className="font-black text-ink-900">{st.m.title}</p>
-                      <span className="chip-blue">{st.total}/{totalSkills} skills</span>
+                      <p className="font-black text-ink-900">{st.name}</p>
+                      <span className="chip-blue">{acc}/{n} skills mastered</span>
                     </div>
-                    {st.fresh.length > 0 ? (
-                      <div className="mt-2">
-                        <p className="text-[11px] font-bold uppercase tracking-wider text-[#1A8B66]">+ New skills you gather here</p>
-                        <div className="mt-1.5 flex flex-wrap gap-1.5">
-                          {st.fresh.map((s) => <span key={s} className="chip-green">+ {s}</span>)}
-                        </div>
-                      </div>
-                    ) : <p className="mt-2 text-xs text-ink-400">Reinforces & deepens earlier skills.</p>}
-                    {/* cumulative skill bar */}
-                    <div className="mt-3 h-1.5 w-full overflow-hidden rounded bg-ink-100">
-                      <div className="h-full bg-gradient-to-r from-brand-400 to-brand-600 transition-all" style={{ width: `${Math.round((st.total / totalSkills) * 100)}%` }} />
+                    <p className="mt-0.5 text-xs text-ink-500">{st.note}</p>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {st.skills.map((s) => <span key={s} className="chip-green">✓ {s}</span>)}
+                    </div>
+                    <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-ink-100">
+                      <div className="h-full bg-gradient-to-r from-brand-400 to-brand-600 transition-all" style={{ width: `${Math.round((acc / n) * 100)}%` }} />
                     </div>
                   </div>
                 </div>
-              ))}
-              <div className="relative">
-                <span className="absolute -left-[31px] top-1 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎯</span>
-                <div className="card border-peel-200 bg-peel-50 p-4">
-                  <p className="font-black text-ink-900">Job-ready with {totalSkills} skills</p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {course.skills.map((s) => <span key={s} className="chip-peel">{s}</span>)}
-                  </div>
-                </div>
+              );
+            })}
+            <div className="relative">
+              <span className="absolute -left-[31px] top-2 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎯</span>
+              <div className="card border-peel-200 bg-peel-50 p-4">
+                <p className="font-black text-ink-900">Job-ready — {n} skills mastered</p>
+                <p className="mt-1 text-sm text-ink-600">These map directly to roles in <a href="/specializations" className="font-bold text-brand-600 hover:underline">Specializations</a>.</p>
               </div>
             </div>
           </div>
