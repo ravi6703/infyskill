@@ -1,6 +1,7 @@
 import Link from "next/link";
 import degrees from "../../../data/degrees_bi.json";
 import specs from "../../../data/journeys.json";
+import DegreeTerms from "./DegreeTerms";
 
 export function generateStaticParams() {
   return degrees.map((d) => ({ slug: d.slug }));
@@ -21,37 +22,22 @@ export default function Degree({ params }) {
     <div>
       <Link href="/degrees" className="text-sm font-bold text-brand-600">← All degree programs</Link>
 
-      <div className="mt-3 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 p-6 text-white">
+      <div className="relative mt-3 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 p-6 text-white">
         <span className="chip bg-white/15 text-white">{d.level} · {d.duration}</span>
-        <h1 className="mt-2 text-3xl font-black">{d.name}</h1>
+        <h1 className="mt-2 text-3xl font-black text-white">{d.name}</h1>
         <p className="mt-2 max-w-2xl text-brand-50">{d.tagline}</p>
+        <svg className="pointer-events-none absolute -right-10 -top-10 h-56 w-56 opacity-20" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="80" stroke="white" strokeWidth="1.5" />
+          <circle cx="100" cy="100" r="55" stroke="white" strokeWidth="1.5" strokeDasharray="6 6" />
+          <circle cx="100" cy="20" r="6" fill="white" /><circle cx="180" cy="100" r="6" fill="white" /><circle cx="100" cy="180" r="6" fill="white" />
+        </svg>
       </div>
 
       {/* program journey */}
       <section className="mt-10">
         <h2 className="text-xl font-black text-ink-900">The program journey</h2>
-        <p className="mt-1 text-sm text-ink-500">Each term blends the five-part delivery model and ends at a job-ready milestone.</p>
-        <div className="relative mt-5 space-y-4 border-l-2 border-brand-100 pl-6">
-          {d.terms.map((t, i) => (
-            <div key={t.name} className="relative">
-              <span className="absolute -left-[31px] top-1 grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-[10px] font-black text-white">{i + 1}</span>
-              <div className="card p-4">
-                <p className="font-black text-ink-900">{t.name}</p>
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {t.themes.map((th) => <span key={th} className="chip-blue">{th}</span>)}
-                </div>
-                <p className="mt-2 text-sm text-[#1A8B66]">🎯 Milestone: {t.milestone}</p>
-              </div>
-            </div>
-          ))}
-          <div className="relative">
-            <span className="absolute -left-[31px] top-1 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎓</span>
-            <div className="card border-peel-200 bg-peel-50 p-4">
-              <p className="font-black text-ink-900">Graduation — industry-ready</p>
-              <p className="mt-1 text-sm text-ink-600">Degree + verified skills + capstone portfolio, prepared for the roles below.</p>
-            </div>
-          </div>
-        </div>
+        <p className="mt-1 text-sm text-ink-500">Click any term to open its mini-roadmap and delivery mix. Each ends at a job-ready milestone.</p>
+        <DegreeTerms terms={d.terms} delivery={d.delivery} />
       </section>
 
       {/* roles you graduate into */}
