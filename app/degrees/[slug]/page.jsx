@@ -35,8 +35,8 @@ export default function Degree({ params }) {
 
       {/* program journey */}
       <section className="mt-10">
-        <h2 className="text-xl font-black text-ink-900">The program journey</h2>
-        <p className="mt-1 text-sm text-ink-500">Click any term to open its mini-roadmap and delivery mix. Each ends at a job-ready milestone.</p>
+        <h2 className="text-xl font-black text-ink-900">The program journey — trimester by trimester</h2>
+        <p className="mt-1 text-sm text-ink-500">A focused, one-thing-at-a-time model: each trimester is a short, deep block with its own delivery mix. Click any trimester to expand.</p>
         <DegreeTerms terms={d.terms} delivery={d.delivery} />
       </section>
 

@@ -26,7 +26,10 @@ export default function DegreeTerms({ terms, delivery }) {
               <button onClick={() => setOpen(isOpen ? -1 : i)} className="flex w-full flex-wrap items-center justify-between gap-2 p-4 text-left hover:bg-ink-50">
                 <div>
                   <p className="font-black text-ink-900">{t.name}</p>
-                  <p className="text-xs text-ink-500">{courses.length} modules · ends at <b className="text-teal-600">{t.milestone}</b></p>
+                  <p className="text-xs text-ink-500">
+                    {courses.length} focused module{courses.length > 1 ? "s" : ""}
+                    {t.milestone && t.milestone !== "Focused term" ? <> · milestone: <b className="text-teal-600">{t.milestone}</b></> : <> · {t.themes?.[0]}</>}
+                  </p>
                 </div>
                 <span className="text-sm font-bold text-brand-600">{isOpen ? "Hide curriculum ▴" : "View curriculum ▾"}</span>
               </button>

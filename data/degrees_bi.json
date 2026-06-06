@@ -3,7 +3,7 @@
   "slug": "bsc-ai-engineering",
   "name": "B.Sc. in AI Engineering",
   "tagline": "Become the engineer who builds and ships AI systems.",
-  "duration": "3 years \u00b7 6 semesters",
+  "duration": "3 years \u00b7 9 trimesters",
   "level": "Undergraduate",
   "delivery": {
    "async": 45,
@@ -20,14 +20,11 @@
   ],
   "terms": [
    {
-    "name": "Sem 1-2 \u00b7 Foundations",
+    "name": "Year 1 \u00b7 Trimester 1",
     "themes": [
-     "Python & Programming",
-     "Math & Statistics for AI",
-     "Web & APIs",
-     "Version Control"
+     "Python Programming"
     ],
-    "milestone": "Junior Developer ready",
+    "milestone": "Python Programming",
     "courses": [
      {
       "course": "Dive Deep into Python",
@@ -40,7 +37,16 @@
       ],
       "delivery": "Async",
       "outcome": "Master Python Programming & Data Structures"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 1 \u00b7 Trimester 2",
+    "themes": [
+     "Math & Logic for AI"
+    ],
+    "milestone": "Math & Logic for AI",
+    "courses": [
      {
       "course": "Quantitative Aptitude Mastery\u2014 Exam & Recruitment Prep",
       "slug": "quantitative-aptitude-mastery-exam-recruitment-prep",
@@ -52,7 +58,16 @@
       ],
       "delivery": "Async",
       "outcome": "Master Quantitative Aptitude & Vedic Mathematics"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 1 \u00b7 Trimester 3",
+    "themes": [
+     "Web, APIs & Git"
+    ],
+    "milestone": "Junior Developer ready",
+    "courses": [
      {
       "course": "API Integration - End to End Web Development",
       "slug": "api-integration-end-to-end-web-development",
@@ -64,30 +79,15 @@
       ],
       "delivery": "Sync",
       "outcome": "Master REST API Development & GraphQL"
-     },
-     {
-      "course": "Version Control with Git and GitHub",
-      "slug": "version-control-with-git-and-github",
-      "skills": [
-       "Git",
-       "GitHub",
-       "Version Control",
-       "Code Review"
-      ],
-      "delivery": "Masterclass",
-      "outcome": "Master Git & GitHub"
      }
     ]
    },
    {
-    "name": "Sem 3-4 \u00b7 Core AI/ML",
+    "name": "Year 2 \u00b7 Trimester 1",
     "themes": [
-     "Machine Learning",
-     "Deep Learning",
-     "NLP & Transformers",
-     "Data Pipelines"
+     "Machine Learning"
     ],
-    "milestone": "ML Engineer foundation",
+    "milestone": "Machine Learning",
     "courses": [
      {
       "course": "Applied Machine Learning Systems with FastAPI for Developers",
@@ -100,7 +100,16 @@
       ],
       "delivery": "Async",
       "outcome": "Master scikit-learn & FastAPI"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 2 \u00b7 Trimester 2",
+    "themes": [
+     "Deep Learning"
+    ],
+    "milestone": "Deep Learning",
+    "courses": [
      {
       "course": "Deep Learning: Train Neural Networks and Deploy with Docker",
       "slug": "deep-learning-train-neural-networks-and-deploy-with-docker",
@@ -112,7 +121,16 @@
       ],
       "delivery": "Async",
       "outcome": "Master Deep Learning & PyTorch"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 2 \u00b7 Trimester 3",
+    "themes": [
+     "NLP & Transformers"
+    ],
+    "milestone": "ML Engineer foundation",
+    "courses": [
      {
       "course": "Transformers and NLP: Fine-Tuning Models with Hugging Face",
       "slug": "transformers-and-nlp-fine-tuning-models-with-hugging-face",
@@ -124,37 +142,15 @@
       ],
       "delivery": "Sync",
       "outcome": "Master Transformers & Hugging Face"
-     },
-     {
-      "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
-      "slug": "managing-data-lakes-pipelines-with-google-cloud-dataplex",
-      "skills": [
-       "Google Cloud Dataplex",
-       "Data Lake Management",
-       "Data Pipelines",
-       "Data Governance"
-      ],
-      "delivery": "Masterclass",
-      "outcome": "Master Google Cloud Dataplex & Data Lake Management"
-     },
-     {
-      "course": "Semester Hackathon",
-      "slug": null,
-      "skills": [],
-      "delivery": "Hackathon",
-      "outcome": "Judged by industry mentors"
      }
     ]
    },
    {
-    "name": "Sem 5-6 \u00b7 GenAI & Production",
+    "name": "Year 3 \u00b7 Trimester 1",
     "themes": [
-     "Generative AI & LLMs",
-     "Agentic AI & RAG",
-     "MLOps & Cloud Deployment",
-     "AI Governance"
+     "Generative AI & LLMs"
     ],
-    "milestone": "Production AI Engineer",
+    "milestone": "Generative AI & LLMs",
     "courses": [
      {
       "course": "Generative AI: Fine-Tuning LLMs and Diffusion Models",
@@ -167,7 +163,16 @@
       ],
       "delivery": "Async",
       "outcome": "Master Fine-Tuning & LoRA"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 3 \u00b7 Trimester 2",
+    "themes": [
+     "Agentic AI & RAG"
+    ],
+    "milestone": "Agentic AI & RAG",
+    "courses": [
      {
       "course": "RAG Systems & Agentic Workflows with Pinecone and LangGraph",
       "slug": "rag-systems-agentic-workflows-with-pinecone-and-langgraph",
@@ -177,9 +182,18 @@
        "Pinecone",
        "Vector Databases"
       ],
-      "delivery": "Async",
+      "delivery": "Masterclass",
       "outcome": "Master RAG Pipelines & LangGraph"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 3 \u00b7 Trimester 3",
+    "themes": [
+     "MLOps, Governance & Capstone"
+    ],
+    "milestone": "Production AI Engineer",
+    "courses": [
      {
       "course": "MLOps and LLMOps: Deploying and Scaling AI in Production",
       "slug": "mlops-and-llmops-deploying-and-scaling-ai-in-production",
@@ -189,20 +203,8 @@
        "Model Versioning",
        "LLM Evaluation"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master MLOps & CI/CD"
-     },
-     {
-      "course": "AI Risk and Compliance: Audit and Governance Foundations",
-      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
-      "skills": [
-       "AI Governance",
-       "Red Teaming",
-       "Adversarial Robustness",
-       "Regulatory Compliance"
-      ],
-      "delivery": "Masterclass",
-      "outcome": "Master AI Governance & Red Teaming"
      },
      {
       "course": "Capstone \u2014 Production AI Engineer",
@@ -234,7 +236,7 @@
   "slug": "pgd-applied-genai",
   "name": "PG Diploma in Applied GenAI",
   "tagline": "Go from graduate to GenAI builder in one intensive year.",
-  "duration": "1 year \u00b7 3 terms",
+  "duration": "1 year \u00b7 3 trimesters",
   "level": "Postgraduate Diploma",
   "delivery": {
    "async": 40,
@@ -251,12 +253,9 @@
   ],
   "terms": [
    {
-    "name": "Term 1 \u00b7 GenAI Foundations",
+    "name": "Trimester 1 \u00b7 GenAI Foundations",
     "themes": [
-     "Generative AI & LLMs",
-     "Prompt Engineering",
-     "Python for AI",
-     "OpenAI/DeepSeek APIs"
+     "Generative AI & Prompting"
     ],
     "milestone": "GenAI App Developer",
     "courses": [
@@ -271,54 +270,15 @@
       ],
       "delivery": "Async",
       "outcome": "Master Fine-Tuning & LoRA"
-     },
-     {
-      "course": "Generative AI Prompt Engineering Basics",
-      "slug": "generative-ai-prompt-engineering-basics",
-      "skills": [
-       "Prompt Engineering",
-       "Generative AI",
-       "Large Language Models",
-       "Few-Shot Learning"
-      ],
-      "delivery": "Async",
-      "outcome": "Master Prompt Engineering & Generative AI"
-     },
-     {
-      "course": "Dive Deep into Python",
-      "slug": "dive-deep-into-python",
-      "skills": [
-       "Python Programming",
-       "Object-Oriented Programming",
-       "Data Structures",
-       "Exception Handling"
-      ],
-      "delivery": "Sync",
-      "outcome": "Master Python Programming & Data Structures"
-     },
-     {
-      "course": "Building Applications with DeepSeek",
-      "slug": "building-applications-with-deepseek",
-      "skills": [
-       "DeepSeek",
-       "AI-Assisted Development",
-       "Prompt Engineering",
-       "RAG Pipelines"
-      ],
-      "delivery": "Masterclass",
-      "outcome": "Master DeepSeek & AI-Assisted Development"
      }
     ]
    },
    {
-    "name": "Term 2 \u00b7 Agents & RAG",
+    "name": "Trimester 2 \u00b7 Agents & RAG",
     "themes": [
-     "LangChain & LangGraph",
-     "RAG Pipelines",
-     "Vector Databases",
-     "Multi-Agent Systems"
+     "RAG & Multi-Agent"
     ],
-    "milestone": "Agentic AI Engineer",
+    "milestone": "Focused term",
     "courses": [
      {
       "course": "RAG Systems & Agentic Workflows with Pinecone and LangGraph",
@@ -329,42 +289,11 @@
        "Pinecone",
        "Vector Databases"
       ],
-      "delivery": "Async",
+      "delivery": "Sync",
       "outcome": "Master RAG Pipelines & LangGraph"
      },
      {
-      "course": "AI Systems Design: RAG Pipelines and LLM Architecture",
-      "slug": "ai-systems-design-rag-pipelines-and-llm-architecture",
-      "skills": [
-       "RAG Pipelines",
-       "LLM Architecture",
-       "Prompt Engineering",
-       "Vector Databases"
-      ],
-      "delivery": "Async",
-      "outcome": "Master RAG Pipelines & LLM Architecture"
-     },
-     {
-      "course": "Vector Databases",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Industry-aligned module"
-     },
-     {
-      "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
-      "slug": "designing-multi-agent-systems-collaboration-and-workflows",
-      "skills": [
-       "Multi-Agent Systems",
-       "CrewAI",
-       "LangGraph",
-       "AutoGen"
-      ],
-      "delivery": "Masterclass",
-      "outcome": "Master Multi-Agent Systems & CrewAI"
-     },
-     {
-      "course": "Semester Hackathon",
+      "course": "Trimester Hackathon",
       "slug": null,
       "skills": [],
       "delivery": "Hackathon",
@@ -373,57 +302,18 @@
     ]
    },
    {
-    "name": "Term 3 \u00b7 Production & Capstone",
+    "name": "Trimester 3 \u00b7 Production & Capstone",
     "themes": [
-     "Fine-Tuning (LoRA/QLoRA)",
-     "MLOps & Serving",
-     "Evaluation & Guardrails",
-     "Capstone"
+     "Fine-Tuning & MLOps"
     ],
     "milestone": "Production GenAI Engineer",
     "courses": [
      {
-      "course": "Transformers and NLP: Fine-Tuning Models with Hugging Face",
-      "slug": "transformers-and-nlp-fine-tuning-models-with-hugging-face",
-      "skills": [
-       "Transformers",
-       "Natural Language Processing",
-       "Hugging Face",
-       "Fine-Tuning"
-      ],
-      "delivery": "Async",
-      "outcome": "Master Transformers & Hugging Face"
-     },
-     {
-      "course": "MLOps and LLMOps: Deploying and Scaling AI in Production",
-      "slug": "mlops-and-llmops-deploying-and-scaling-ai-in-production",
-      "skills": [
-       "MLOps",
-       "CI/CD",
-       "Model Versioning",
-       "LLM Evaluation"
-      ],
-      "delivery": "Async",
-      "outcome": "Master MLOps & CI/CD"
-     },
-     {
-      "course": "AI Risk and Compliance: Audit and Governance Foundations",
-      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
-      "skills": [
-       "AI Governance",
-       "Red Teaming",
-       "Adversarial Robustness",
-       "Regulatory Compliance"
-      ],
-      "delivery": "Sync",
-      "outcome": "Master AI Governance & Red Teaming"
-     },
-     {
-      "course": "Capstone",
+      "course": "Fine-Tuning & MLOps",
       "slug": null,
       "skills": [],
-      "delivery": "Masterclass",
-      "outcome": "Industry-aligned module"
+      "delivery": "Async",
+      "outcome": "Focused industry module"
      },
      {
       "course": "Capstone \u2014 Production GenAI Engineer",
@@ -455,7 +345,7 @@
   "slug": "bsc-data-science",
   "name": "B.Sc. in Data Science & Analytics",
   "tagline": "Turn data into decisions \u2014 and into a data career.",
-  "duration": "3 years \u00b7 6 semesters",
+  "duration": "3 years \u00b7 9 trimesters",
   "level": "Undergraduate",
   "delivery": {
    "async": 48,
@@ -472,14 +362,11 @@
   ],
   "terms": [
    {
-    "name": "Sem 1-2 \u00b7 Data Foundations",
+    "name": "Year 1 \u00b7 Trimester 1",
     "themes": [
-     "Python & SQL",
-     "Statistics",
-     "Excel & Visualization",
-     "Databases"
+     "Python & SQL"
     ],
-    "milestone": "Data Analyst ready",
+    "milestone": "Python & SQL",
     "courses": [
      {
       "course": "Dive Deep into Python",
@@ -492,31 +379,16 @@
       ],
       "delivery": "Async",
       "outcome": "Master Python Programming & Data Structures"
-     },
-     {
-      "course": "Data Interpretation & Insights: Exam & Recruitment Prep",
-      "slug": "data-interpretation-insights-exam-recruitment-prep",
-      "skills": [
-       "Data Interpretation",
-       "Tabular Analysis",
-       "Bar Chart Analysis",
-       "Line Chart Analysis"
-      ],
-      "delivery": "Async",
-      "outcome": "Master Data Interpretation & Tabular Analysis"
-     },
-     {
-      "course": "Excel Essentials and Beyond",
-      "slug": "excel-essentials-and-beyond",
-      "skills": [
-       "Microsoft Excel",
-       "Data Analysis",
-       "Data Visualization",
-       "Pivot Tables"
-      ],
-      "delivery": "Sync",
-      "outcome": "Master Microsoft Excel & Data Analysis"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 1 \u00b7 Trimester 2",
+    "themes": [
+     "Databases"
+    ],
+    "milestone": "Databases",
+    "courses": [
      {
       "course": "Managing Databases - End to End Web Development",
       "slug": "managing-databases-end-to-end-web-development",
@@ -526,20 +398,38 @@
        "NoSQL",
        "REST API Development"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master SQL & MongoDB"
      }
     ]
    },
    {
-    "name": "Sem 3-4 \u00b7 Analytics & BI",
+    "name": "Year 1 \u00b7 Trimester 3",
     "themes": [
-     "Tableau & Power BI",
-     "Data Pipelines",
-     "Data Governance",
-     "Cloud Data (Snowflake)"
+     "Statistics & Excel"
     ],
-    "milestone": "Analytics Engineer",
+    "milestone": "Data Analyst ready",
+    "courses": [
+     {
+      "course": "Data Interpretation & Insights: Exam & Recruitment Prep",
+      "slug": "data-interpretation-insights-exam-recruitment-prep",
+      "skills": [
+       "Data Interpretation",
+       "Tabular Analysis",
+       "Bar Chart Analysis",
+       "Line Chart Analysis"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Data Interpretation & Tabular Analysis"
+     }
+    ]
+   },
+   {
+    "name": "Year 2 \u00b7 Trimester 1",
+    "themes": [
+     "Tableau & Power BI"
+    ],
+    "milestone": "Tableau & Power BI",
     "courses": [
      {
       "course": "Data Visualization with Tableau",
@@ -552,31 +442,16 @@
       ],
       "delivery": "Async",
       "outcome": "Master Tableau & Data Visualization"
-     },
-     {
-      "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
-      "slug": "managing-data-lakes-pipelines-with-google-cloud-dataplex",
-      "skills": [
-       "Google Cloud Dataplex",
-       "Data Lake Management",
-       "Data Pipelines",
-       "Data Governance"
-      ],
-      "delivery": "Async",
-      "outcome": "Master Google Cloud Dataplex & Data Lake Management"
-     },
-     {
-      "course": "Learn Data Governance Workflows with Databricks Tools",
-      "slug": "learn-data-governance-workflows-with-databricks-tools",
-      "skills": [
-       "Data Governance",
-       "Databricks",
-       "Delta Lake",
-       "Data Cataloging"
-      ],
-      "delivery": "Sync",
-      "outcome": "Master Data Governance & Databricks"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 2 \u00b7 Trimester 2",
+    "themes": [
+     "Cloud Data (Snowflake)"
+    ],
+    "milestone": "Cloud Data (Snowflake)",
+    "courses": [
      {
       "course": "Prepare for SnowPro Core Exam Architecture & SQL",
       "slug": "prepare-for-snowpro-core-exam-architecture-sql",
@@ -586,27 +461,38 @@
        "Data Warehousing",
        "Data Modeling"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master Snowflake & SQL"
-     },
-     {
-      "course": "Semester Hackathon",
-      "slug": null,
-      "skills": [],
-      "delivery": "Hackathon",
-      "outcome": "Judged by industry mentors"
      }
     ]
    },
    {
-    "name": "Sem 5-6 \u00b7 ML & AI for Data",
+    "name": "Year 2 \u00b7 Trimester 3",
     "themes": [
-     "Machine Learning",
-     "Time Series & Forecasting",
-     "AI Dashboards",
-     "Capstone"
+     "Data Pipelines & Governance"
     ],
-    "milestone": "AI Data Engineer",
+    "milestone": "Analytics Engineer",
+    "courses": [
+     {
+      "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
+      "slug": "managing-data-lakes-pipelines-with-google-cloud-dataplex",
+      "skills": [
+       "Google Cloud Dataplex",
+       "Data Lake Management",
+       "Data Pipelines",
+       "Data Governance"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master Google Cloud Dataplex & Data Lake Management"
+     }
+    ]
+   },
+   {
+    "name": "Year 3 \u00b7 Trimester 1",
+    "themes": [
+     "Machine Learning"
+    ],
+    "milestone": "Machine Learning",
     "courses": [
      {
       "course": "Applied Machine Learning Systems with FastAPI for Developers",
@@ -619,19 +505,37 @@
       ],
       "delivery": "Async",
       "outcome": "Master scikit-learn & FastAPI"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 3 \u00b7 Trimester 2",
+    "themes": [
+     "Forecasting & Time Series"
+    ],
+    "milestone": "Forecasting & Time Series",
+    "courses": [
      {
-      "course": "Forecasting for Marketers: Mastering Google Analytics",
-      "slug": "forecasting-for-marketers-mastering-google-analytics",
+      "course": "Apply AI & Machine Learning to Financial Forecasting",
+      "slug": "apply-ai-machine-learning-to-financial-forecasting",
       "skills": [
-       "Google Analytics 4",
-       "Marketing Forecasting",
-       "Attribution Modeling",
-       "UTM Tracking"
+       "Machine Learning",
+       "Financial Forecasting",
+       "Feature Engineering",
+       "Time Series Analysis"
       ],
-      "delivery": "Async",
-      "outcome": "Master Google Analytics 4 & Marketing Forecasting"
-     },
+      "delivery": "Sync",
+      "outcome": "Master Machine Learning & Financial Forecasting"
+     }
+    ]
+   },
+   {
+    "name": "Year 3 \u00b7 Trimester 3",
+    "themes": [
+     "AI Analytics & Capstone"
+    ],
+    "milestone": "AI Data Engineer",
+    "courses": [
      {
       "course": "Master Data Transformation at Scale with Power BI Desktop",
       "slug": "master-data-transformation-at-scale-with-power-bi-desktop",
@@ -641,15 +545,8 @@
        "Power Query",
        "Data Visualization"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Power BI & DAX"
-     },
-     {
-      "course": "Capstone",
-      "slug": null,
-      "skills": [],
-      "delivery": "Masterclass",
-      "outcome": "Industry-aligned module"
      },
      {
       "course": "Capstone \u2014 AI Data Engineer",
@@ -681,7 +578,7 @@
   "slug": "mba-ai-business",
   "name": "MBA in AI-Powered Business",
   "tagline": "Lead products, marketing and finance in the AI era.",
-  "duration": "2 years \u00b7 4 semesters",
+  "duration": "2 years \u00b7 6 trimesters",
   "level": "Postgraduate",
   "delivery": {
    "async": 42,
@@ -698,14 +595,11 @@
   ],
   "terms": [
    {
-    "name": "Sem 1 \u00b7 Business Core",
+    "name": "Year 1 \u00b7 Trimester 1",
     "themes": [
-     "Business Management",
-     "Financial Analysis",
-     "Marketing Foundations",
-     "Data for Decisions"
+     "Business & Finance Core"
     ],
-    "milestone": "Business Analyst",
+    "milestone": "Business & Finance Core",
     "courses": [
      {
       "course": "Fundamentals of Business Management",
@@ -718,19 +612,16 @@
       ],
       "delivery": "Async",
       "outcome": "Master Financial Analysis & Marketing Strategy"
-     },
-     {
-      "course": "Master Financial Analysis & Modeling Fundamentals",
-      "slug": "master-financial-analysis-modeling-fundamentals",
-      "skills": [
-       "Financial Statement Analysis",
-       "Financial Modeling",
-       "Ratio Analysis",
-       "Valuation"
-      ],
-      "delivery": "Async",
-      "outcome": "Master Financial Modeling & Ratio Analysis"
-     },
+     }
+    ]
+   },
+   {
+    "name": "Year 1 \u00b7 Trimester 2",
+    "themes": [
+     "Marketing & Data"
+    ],
+    "milestone": "Marketing & Data",
+    "courses": [
      {
       "course": "Mastering Brand Awareness: Fundamentals to Advanced",
       "slug": "mastering-brand-awareness-fundamentals-to-advanced",
@@ -740,57 +631,39 @@
        "Brand Positioning",
        "Digital Marketing"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Brand Awareness & Brand Identity"
-     },
-     {
-      "course": "Excel Essentials and Beyond",
-      "slug": "excel-essentials-and-beyond",
-      "skills": [
-       "Microsoft Excel",
-       "Data Analysis",
-       "Data Visualization",
-       "Pivot Tables"
-      ],
-      "delivery": "Masterclass",
-      "outcome": "Master Microsoft Excel & Data Analysis"
      }
     ]
    },
    {
-    "name": "Sem 2 \u00b7 AI Fluency",
+    "name": "Year 1 \u00b7 Trimester 3",
     "themes": [
-     "Generative AI for Business",
-     "No-Code AI & Automation",
-     "AI in Marketing",
-     "AI in Finance"
+     "AI for Business"
     ],
     "milestone": "AI-fluent manager",
     "courses": [
      {
-      "course": "Generative AI in Marketing",
-      "slug": "generative-ai-in-marketing",
+      "course": "No-Code AI Essentials: Master AI Concepts & Use Cases",
+      "slug": "no-code-ai-essentials-master-ai-concepts-use-cases",
       "skills": [
+       "AI Literacy",
        "Generative AI",
-       "Content Marketing",
-       "AI Tools",
-       "Marketing Automation"
+       "No-Code AI Tools",
+       "LLM Applications"
       ],
-      "delivery": "Async",
-      "outcome": "Master Generative AI & Content Marketing"
-     },
-     {
-      "course": "Operationalizing No-Code AI with Zapier - Automation & Plans",
-      "slug": "operationalizing-no-code-ai-with-zapier-automation-plans",
-      "skills": [
-       "Zapier",
-       "No-Code Automation",
-       "AI Workflow Automation",
-       "Power Automate"
-      ],
-      "delivery": "Async",
-      "outcome": "Master Zapier & No-Code Automation"
-     },
+      "delivery": "Sync",
+      "outcome": "Master AI Literacy & Generative AI"
+     }
+    ]
+   },
+   {
+    "name": "Year 2 \u00b7 Trimester 1",
+    "themes": [
+     "AI in Marketing & Finance"
+    ],
+    "milestone": "AI in Marketing & Finance",
+    "courses": [
      {
       "course": "AI-Powered Brand Strategy & Marketing Analytics",
       "slug": "ai-powered-brand-strategy-marketing-analytics",
@@ -800,32 +673,17 @@
        "AI in Marketing",
        "Predictive Modeling"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Brand Strategy & Marketing Analytics"
-     },
-     {
-      "course": "Generative AI in Finance",
-      "slug": "generative-ai-in-finance",
-      "skills": [
-       "Generative AI",
-       "Financial Analysis",
-       "Risk Assessment",
-       "Fraud Detection"
-      ],
-      "delivery": "Masterclass",
-      "outcome": "Master Generative AI & Financial Analysis"
      }
     ]
    },
    {
-    "name": "Sem 3 \u00b7 Specialize",
+    "name": "Year 2 \u00b7 Trimester 2",
     "themes": [
-     "AI Product Management",
-     "Growth & Attribution",
-     "FinTech & Forecasting",
-     "AI Governance"
+     "AI Product & Strategy"
     ],
-    "milestone": "AI Product/Function lead",
+    "milestone": "AI Product & Strategy",
     "courses": [
      {
       "course": "Strategic Product Management",
@@ -836,61 +694,15 @@
        "Market Analysis",
        "Product Launch"
       ],
-      "delivery": "Async",
-      "outcome": "Master Agile Methodology & Product Strategy"
-     },
-     {
-      "course": "AI-Driven Attribution Testing",
-      "slug": "ai-driven-attribution-testing",
-      "skills": [
-       "Attribution Modeling",
-       "AI-Driven Attribution",
-       "Machine Learning",
-       "Marketing Analytics"
-      ],
-      "delivery": "Async",
-      "outcome": "Master Attribution Modeling & AI-Driven Attribution"
-     },
-     {
-      "course": "Apply AI & Machine Learning to Financial Forecasting",
-      "slug": "apply-ai-machine-learning-to-financial-forecasting",
-      "skills": [
-       "Machine Learning",
-       "Financial Forecasting",
-       "Feature Engineering",
-       "Time Series Analysis"
-      ],
-      "delivery": "Sync",
-      "outcome": "Master Machine Learning & Financial Forecasting"
-     },
-     {
-      "course": "AI Risk and Compliance: Audit and Governance Foundations",
-      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
-      "skills": [
-       "AI Governance",
-       "Red Teaming",
-       "Adversarial Robustness",
-       "Regulatory Compliance"
-      ],
       "delivery": "Masterclass",
-      "outcome": "Master AI Governance & Red Teaming"
-     },
-     {
-      "course": "Semester Hackathon",
-      "slug": null,
-      "skills": [],
-      "delivery": "Hackathon",
-      "outcome": "Judged by industry mentors"
+      "outcome": "Master Agile Methodology & Product Strategy"
      }
     ]
    },
    {
-    "name": "Sem 4 \u00b7 Lead & Capstone",
+    "name": "Year 2 \u00b7 Trimester 3",
     "themes": [
-     "AI Transformation",
-     "Leadership",
-     "Strategy",
-     "Capstone"
+     "Transformation & Capstone"
     ],
     "milestone": "AI Business Leader",
     "courses": [
@@ -905,37 +717,6 @@
       ],
       "delivery": "Async",
       "outcome": "Master Hybrid Team Management & AI Integration"
-     },
-     {
-      "course": "Coach and Develop High-Performing Teams",
-      "slug": "coach-and-develop-high-performing-teams",
-      "skills": [
-       "Coaching",
-       "Feedback Frameworks",
-       "Performance Management",
-       "GROW Model"
-      ],
-      "delivery": "Async",
-      "outcome": "Master Coaching & Feedback Frameworks"
-     },
-     {
-      "course": "Fundamentals of Management Consulting",
-      "slug": "fundamentals-of-management-consulting",
-      "skills": [
-       "Management Consulting",
-       "Strategic Frameworks",
-       "Case Interviews",
-       "Guesstimates"
-      ],
-      "delivery": "Sync",
-      "outcome": "Master Management Consulting & Strategic Frameworks"
-     },
-     {
-      "course": "Capstone",
-      "slug": null,
-      "skills": [],
-      "delivery": "Masterclass",
-      "outcome": "Industry-aligned module"
      },
      {
       "course": "Capstone \u2014 AI Business Leader",
