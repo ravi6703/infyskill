@@ -5,10 +5,19 @@ module.exports = {
     extend: {
       fontFamily: { sans: ["Lato", "system-ui", "sans-serif"] },
       keyframes: {
-        fadeUp: { "0%": { opacity: 0, transform: "translateY(12px)" }, "100%": { opacity: 1, transform: "translateY(0)" } },
+        fadeUp: { "0%": { opacity: 0, transform: "translateY(14px)" }, "100%": { opacity: 1, transform: "translateY(0)" } },
         fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } },
+        reveal: { "0%": { opacity: 0, transform: "translateY(10px) scale(.97)" }, "100%": { opacity: 1, transform: "translate(0) scale(1)" } },
+        marquee: { "0%": { transform: "translateX(0)" }, "100%": { transform: "translateX(-50%)" } },
+        floaty: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-8px)" } },
       },
-      animation: { fadeUp: "fadeUp .4s ease both", fadeIn: "fadeIn .3s ease both" },
+      animation: {
+        fadeUp: "fadeUp .5s cubic-bezier(.4,0,.2,1) both",
+        fadeIn: "fadeIn .4s ease both",
+        reveal: "reveal .25s cubic-bezier(.4,0,.2,1) both",
+        marquee: "marquee 28s linear infinite",
+        floaty: "floaty 6s ease-in-out infinite",
+      },
       colors: {
         sky2: "#00B2FF",
         teal: { 50: "#E6F9F1", 500: "#3AAE89", 600: "#2C8E70" },

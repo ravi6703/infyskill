@@ -1,7 +1,9 @@
 import Link from "next/link";
 import degrees from "../../data/degrees_bi.json";
+import { Motif } from "../../components/Art";
 
 export const metadata = { title: "Degree Programs — InfyAI" };
+const MOTIF = ["degree", "specialization", "catalog", "diagnostic"];
 
 export default function Degrees() {
   return (
@@ -14,14 +16,15 @@ export default function Degrees() {
       <Link href="/degrees/compare" className="btn-ghost mt-4 text-sm">🎓 For universities: compare your curriculum & see the gap →</Link>
 
       <div className="mt-8 grid gap-5 lg:grid-cols-2">
-        {degrees.map((d) => (
-          <Link key={d.slug} href={`/degrees/${d.slug}`} className="card group flex flex-col p-6 transition hover:-translate-y-0.5 hover:shadow-lift">
+        {degrees.map((d, i) => (
+          <Link key={d.slug} href={`/degrees/${d.slug}`} className="card group flex flex-col p-6 transition hover:-translate-y-0.5 hover:shadow-lift animate-fadeUp" style={{ animationDelay: `${i * 70}ms` }}>
             <div className="flex items-start justify-between gap-3">
               <div>
                 <span className="chip-peel">{d.level}</span>
                 <h2 className="mt-2 text-xl font-black text-ink-900 group-hover:text-brand-600">{d.name}</h2>
                 <p className="mt-1 text-sm text-ink-500">{d.tagline}</p>
               </div>
+              <Motif variant={MOTIF[i % MOTIF.length]} className="h-16 w-20 shrink-0 transition group-hover:scale-105" />
             </div>
             <p className="mt-3 text-sm font-bold text-ink-700">{d.duration}</p>
             <div className="mt-3">

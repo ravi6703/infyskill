@@ -69,8 +69,7 @@ export default function Specializations() {
                   {s.skills.slice(0, 3).map((k) => <span key={k} className="chip-blue">{k}</span>)}
                   <span className="chip-gray">+{Math.max(0, s.skills.length - 3)} skills</span>
                 </div>
-                {s.salary && <p className="mt-3 border-t border-ink-100 pt-3 text-sm font-bold text-[#1A8B66]">{s.salary.india}</p>}
-                <span className="mt-3 text-sm font-bold text-brand-600 group-hover:underline">View specialization →</span>
+                <span className="mt-3 border-t border-ink-100 pt-3 text-sm font-bold text-brand-600 group-hover:underline">View specialization →</span>
               </Link>
             ))}
           </div>
