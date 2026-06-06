@@ -67,32 +67,12 @@ export default function Degree({ params }) {
         </div>
       </section>
 
-      {/* vs university */}
-      <section className="mt-10">
-        <h2 className="text-xl font-black text-ink-900">How this out-performs a standard university degree</h2>
-        <p className="mt-1 text-sm text-ink-500">The education-to-industry gap — and how this program bridges it.</p>
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <div className="card border-[#BFE9D7] bg-[#F0FBF6] p-5">
-            <p className="font-black text-[#1A8B66]">✓ Board Infinity program</p>
-            <ul className="mt-3 space-y-2">
-              {d.vsUniversity.biStrength.map((x) => <li key={x} className="flex gap-2 text-sm text-ink-700"><span className="text-[#1A8B66]">✓</span>{x}</li>)}
-            </ul>
-          </div>
-          <div className="card border-rose-200 bg-rose-50 p-5">
-            <p className="font-black text-rose-600">✕ Typical university degree</p>
-            <ul className="mt-3 space-y-2">
-              {d.vsUniversity.uniGap.map((x) => <li key={x} className="flex gap-2 text-sm text-ink-700"><span className="text-rose-500">✕</span>{x}</li>)}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <div className="card mt-10 flex flex-wrap items-center justify-between gap-4 border-brand-200 bg-brand-50 p-6">
         <div>
-          <p className="font-black text-ink-900">Partner with us on {d.name}</p>
-          <p className="text-sm text-ink-600">Universities can adopt this program, or map it against an existing degree to bridge the gap.</p>
+          <p className="font-black text-ink-900">For universities: map your curriculum against {d.name}</p>
+          <p className="text-sm text-ink-600">Upload your existing syllabus — we parse it, tag the skills, compare against this ideal program, and return gap analysis, content suggestions and role outcomes.</p>
         </div>
-        <Link href="/diagnostic" className="btn-primary">Explore the journey →</Link>
+        <Link href="/degrees/compare" className="btn-primary">Compare my curriculum →</Link>
       </div>
     </div>
   );
