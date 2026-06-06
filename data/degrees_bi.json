@@ -37,7 +37,8 @@
        "Exception Handling"
       ],
       "delivery": "Async",
-      "outcome": "Master Python Programming & Data Structures"
+      "outcome": "Master Python Programming & Data Structures",
+      "hours": 30
      },
      {
       "course": "Quantitative Aptitude Mastery\u2014 Exam & Recruitment Prep",
@@ -49,9 +50,12 @@
        "Speed Calculation"
       ],
       "delivery": "Sync",
-      "outcome": "Master Quantitative Aptitude & Vedic Mathematics"
+      "outcome": "Master Quantitative Aptitude & Vedic Mathematics",
+      "hours": 18
      }
-    ]
+    ],
+    "hours": 48,
+    "credits": 1.6
    },
    {
     "name": "Year 1 \u00b7 Trimester 2",
@@ -71,7 +75,8 @@
        "Spring Framework"
       ],
       "delivery": "Async",
-      "outcome": "Master Java & Data Structures"
+      "outcome": "Master Java & Data Structures",
+      "hours": 25
      },
      {
       "course": "Version Control with Git and GitHub",
@@ -83,9 +88,12 @@
        "Code Review"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master Git & GitHub"
+      "outcome": "Master Git & GitHub",
+      "hours": 13
      }
-    ]
+    ],
+    "hours": 38,
+    "credits": 1.3
    },
    {
     "name": "Year 1 \u00b7 Trimester 3",
@@ -105,7 +113,8 @@
        "Web Development"
       ],
       "delivery": "Async",
-      "outcome": "Master REST API Development & GraphQL"
+      "outcome": "Master REST API Development & GraphQL",
+      "hours": 11
      },
      {
       "course": "Managing Databases - End to End Web Development",
@@ -117,16 +126,20 @@
        "REST API Development"
       ],
       "delivery": "Sync",
-      "outcome": "Master SQL & MongoDB"
+      "outcome": "Master SQL & MongoDB",
+      "hours": 13
      },
      {
       "course": "Applied Hackathon",
       "slug": null,
       "skills": [],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges"
+      "outcome": "Build & demo to industry judges",
+      "hours": 40
      }
-    ]
+    ],
+    "hours": 64,
+    "credits": 2.1
    },
    {
     "name": "Year 2 \u00b7 Trimester 1",
@@ -146,7 +159,8 @@
        "Feature Engineering"
       ],
       "delivery": "Async",
-      "outcome": "Master scikit-learn & FastAPI"
+      "outcome": "Master scikit-learn & FastAPI",
+      "hours": 22
      },
      {
       "course": "Machine Learning Fundamentals for Java Developers",
@@ -158,9 +172,12 @@
        "DeepLearning4j"
       ],
       "delivery": "Sync",
-      "outcome": "Master Machine Learning & Java"
+      "outcome": "Master Machine Learning & Java",
+      "hours": 12
      }
-    ]
+    ],
+    "hours": 34,
+    "credits": 1.1
    },
    {
     "name": "Year 2 \u00b7 Trimester 2",
@@ -180,7 +197,8 @@
        "Neural Networks"
       ],
       "delivery": "Async",
-      "outcome": "Master Deep Learning & PyTorch"
+      "outcome": "Master Deep Learning & PyTorch",
+      "hours": 15
      },
      {
       "course": "Deep Learning: Advanced Backbones and Efficient GPU Training",
@@ -192,9 +210,12 @@
        "Mixed Precision Training"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master PyTorch Lightning & Vision Transformers"
+      "outcome": "Master PyTorch Lightning & Vision Transformers",
+      "hours": 21
      }
-    ]
+    ],
+    "hours": 36,
+    "credits": 1.2
    },
    {
     "name": "Year 2 \u00b7 Trimester 3",
@@ -214,7 +235,8 @@
        "Fine-Tuning"
       ],
       "delivery": "Async",
-      "outcome": "Master Transformers & Hugging Face"
+      "outcome": "Master Transformers & Hugging Face",
+      "hours": 18
      },
      {
       "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
@@ -226,16 +248,20 @@
        "Data Governance"
       ],
       "delivery": "Sync",
-      "outcome": "Master Google Cloud Dataplex & Data Lake Management"
+      "outcome": "Master Google Cloud Dataplex & Data Lake Management",
+      "hours": 4
      },
      {
       "course": "Applied Hackathon",
       "slug": null,
       "skills": [],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges"
+      "outcome": "Build & demo to industry judges",
+      "hours": 40
      }
-    ]
+    ],
+    "hours": 62,
+    "credits": 2.1
    },
    {
     "name": "Year 3 \u00b7 Trimester 1",
@@ -255,7 +281,8 @@
        "PEFT"
       ],
       "delivery": "Async",
-      "outcome": "Master Fine-Tuning & LoRA"
+      "outcome": "Master Fine-Tuning & LoRA",
+      "hours": 19
      },
      {
       "course": "Generative AI Prompt Engineering Basics",
@@ -267,9 +294,12 @@
        "Few-Shot Learning"
       ],
       "delivery": "Sync",
-      "outcome": "Master Prompt Engineering & Generative AI"
+      "outcome": "Master Prompt Engineering & Generative AI",
+      "hours": 9
      }
-    ]
+    ],
+    "hours": 28,
+    "credits": 0.9
    },
    {
     "name": "Year 3 \u00b7 Trimester 2",
@@ -289,7 +319,8 @@
        "Vector Databases"
       ],
       "delivery": "Async",
-      "outcome": "Master RAG Pipelines & LangGraph"
+      "outcome": "Master RAG Pipelines & LangGraph",
+      "hours": 20
      },
      {
       "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
@@ -301,9 +332,12 @@
        "AutoGen"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master Multi-Agent Systems & CrewAI"
+      "outcome": "Master Multi-Agent Systems & CrewAI",
+      "hours": 16
      }
-    ]
+    ],
+    "hours": 36,
+    "credits": 1.2
    },
    {
     "name": "Year 3 \u00b7 Trimester 3",
@@ -323,7 +357,8 @@
        "LLM Evaluation"
       ],
       "delivery": "Async",
-      "outcome": "Master MLOps & CI/CD"
+      "outcome": "Master MLOps & CI/CD",
+      "hours": 17
      },
      {
       "course": "AI Risk and Compliance: Audit and Governance Foundations",
@@ -335,16 +370,20 @@
        "Regulatory Compliance"
       ],
       "delivery": "Sync",
-      "outcome": "Master AI Governance & Red Teaming"
+      "outcome": "Master AI Governance & Red Teaming",
+      "hours": 17
      },
      {
       "course": "Capstone \u2014 Production AI Engineer",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
-      "outcome": "Portfolio-grade, coached & assessed"
+      "outcome": "Portfolio-grade, coached & assessed",
+      "hours": 120
      }
-    ]
+    ],
+    "hours": 154,
+    "credits": 5.1
    }
   ],
   "vsUniversity": {
@@ -361,6 +400,17 @@
     "No portfolio / capstone tied to roles",
     "Faculty rarely from current industry"
    ]
+  },
+  "credits": {
+   "target": 120,
+   "targetHours": 3600,
+   "biCredits": 17,
+   "biHours": 500,
+   "facultyCredits": 103,
+   "facultyHours": 3090,
+   "nepCap": 48,
+   "nepCapHours": 1440,
+   "withinNep": true
   }
  },
  {
@@ -402,7 +452,8 @@
        "GANs"
       ],
       "delivery": "Async",
-      "outcome": "Master Generative AI & Large Language Models"
+      "outcome": "Master Generative AI & Large Language Models",
+      "hours": 2
      },
      {
       "course": "Generative AI Prompt Engineering Basics",
@@ -414,7 +465,8 @@
        "Few-Shot Learning"
       ],
       "delivery": "Sync",
-      "outcome": "Master Prompt Engineering & Generative AI"
+      "outcome": "Master Prompt Engineering & Generative AI",
+      "hours": 9
      },
      {
       "course": "Building Applications with DeepSeek",
@@ -426,9 +478,12 @@
        "RAG Pipelines"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master DeepSeek & AI-Assisted Development"
+      "outcome": "Master DeepSeek & AI-Assisted Development",
+      "hours": 16
      }
-    ]
+    ],
+    "hours": 27,
+    "credits": 0.9
    },
    {
     "name": "Trimester 2 \u00b7 Agents & RAG",
@@ -449,7 +504,8 @@
        "Vector Databases"
       ],
       "delivery": "Async",
-      "outcome": "Master RAG Pipelines & LLM Architecture"
+      "outcome": "Master RAG Pipelines & LLM Architecture",
+      "hours": 17
      },
      {
       "course": "RAG Systems & Agentic Workflows with Pinecone and LangGraph",
@@ -461,7 +517,8 @@
        "Vector Databases"
       ],
       "delivery": "Sync",
-      "outcome": "Master RAG Pipelines & LangGraph"
+      "outcome": "Master RAG Pipelines & LangGraph",
+      "hours": 20
      },
      {
       "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
@@ -473,16 +530,20 @@
        "AutoGen"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master Multi-Agent Systems & CrewAI"
+      "outcome": "Master Multi-Agent Systems & CrewAI",
+      "hours": 16
      },
      {
       "course": "Applied Hackathon",
       "slug": null,
       "skills": [],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges"
+      "outcome": "Build & demo to industry judges",
+      "hours": 40
      }
-    ]
+    ],
+    "hours": 93,
+    "credits": 3.1
    },
    {
     "name": "Trimester 3 \u00b7 Production & Capstone",
@@ -503,7 +564,8 @@
        "PEFT"
       ],
       "delivery": "Async",
-      "outcome": "Master Fine-Tuning & LoRA"
+      "outcome": "Master Fine-Tuning & LoRA",
+      "hours": 19
      },
      {
       "course": "MLOps and LLMOps: Deploying and Scaling AI in Production",
@@ -515,7 +577,8 @@
        "LLM Evaluation"
       ],
       "delivery": "Sync",
-      "outcome": "Master MLOps & CI/CD"
+      "outcome": "Master MLOps & CI/CD",
+      "hours": 17
      },
      {
       "course": "AI Risk and Compliance: Audit and Governance Foundations",
@@ -527,16 +590,20 @@
        "Regulatory Compliance"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master AI Governance & Red Teaming"
+      "outcome": "Master AI Governance & Red Teaming",
+      "hours": 17
      },
      {
       "course": "Capstone \u2014 Production GenAI Engineer",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
-      "outcome": "Portfolio-grade, coached & assessed"
+      "outcome": "Portfolio-grade, coached & assessed",
+      "hours": 120
      }
-    ]
+    ],
+    "hours": 173,
+    "credits": 5.8
    }
   ],
   "vsUniversity": {
@@ -553,6 +620,17 @@
     "No applied product-building",
     "1-2 year lag behind industry"
    ]
+  },
+  "credits": {
+   "target": 44,
+   "targetHours": 1320,
+   "biCredits": 10,
+   "biHours": 293,
+   "facultyCredits": 34,
+   "facultyHours": 1020,
+   "nepCap": 18,
+   "nepCapHours": 540,
+   "withinNep": true
   }
  },
  {
@@ -593,7 +671,8 @@
        "Exception Handling"
       ],
       "delivery": "Async",
-      "outcome": "Master Python Programming & Data Structures"
+      "outcome": "Master Python Programming & Data Structures",
+      "hours": 30
      },
      {
       "course": "Data Interpretation & Insights: Exam & Recruitment Prep",
@@ -605,9 +684,12 @@
        "Line Chart Analysis"
       ],
       "delivery": "Sync",
-      "outcome": "Master Data Interpretation & Tabular Analysis"
+      "outcome": "Master Data Interpretation & Tabular Analysis",
+      "hours": 13
      }
-    ]
+    ],
+    "hours": 43,
+    "credits": 1.4
    },
    {
     "name": "Year 1 \u00b7 Trimester 2",
@@ -627,7 +709,8 @@
        "REST API Development"
       ],
       "delivery": "Async",
-      "outcome": "Master SQL & MongoDB"
+      "outcome": "Master SQL & MongoDB",
+      "hours": 13
      },
      {
       "course": "Mastering SQL and Data Management with Teradata",
@@ -639,9 +722,12 @@
        "Query Optimization"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master Teradata SQL & Query Optimization"
+      "outcome": "Master Teradata SQL & Query Optimization",
+      "hours": 12
      }
-    ]
+    ],
+    "hours": 25,
+    "credits": 0.8
    },
    {
     "name": "Year 1 \u00b7 Trimester 3",
@@ -661,7 +747,8 @@
        "Pivot Tables"
       ],
       "delivery": "Async",
-      "outcome": "Master Microsoft Excel & Data Analysis"
+      "outcome": "Master Microsoft Excel & Data Analysis",
+      "hours": 39
      },
      {
       "course": "Data Visualization with Tableau",
@@ -673,16 +760,20 @@
        "Calculated Fields"
       ],
       "delivery": "Sync",
-      "outcome": "Master Tableau & Data Visualization"
+      "outcome": "Master Tableau & Data Visualization",
+      "hours": 21
      },
      {
       "course": "Applied Hackathon",
       "slug": null,
       "skills": [],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges"
+      "outcome": "Build & demo to industry judges",
+      "hours": 40
      }
-    ]
+    ],
+    "hours": 100,
+    "credits": 3.3
    },
    {
     "name": "Year 2 \u00b7 Trimester 1",
@@ -702,7 +793,8 @@
        "Data Visualization"
       ],
       "delivery": "Async",
-      "outcome": "Master Power BI & DAX"
+      "outcome": "Master Power BI & DAX",
+      "hours": 4
      },
      {
       "course": "Learn Data Governance Workflows with Databricks Tools",
@@ -714,9 +806,12 @@
        "Data Cataloging"
       ],
       "delivery": "Sync",
-      "outcome": "Master Data Governance & Databricks"
+      "outcome": "Master Data Governance & Databricks",
+      "hours": 7
      }
-    ]
+    ],
+    "hours": 11,
+    "credits": 0.4
    },
    {
     "name": "Year 2 \u00b7 Trimester 2",
@@ -736,7 +831,8 @@
        "Data Modeling"
       ],
       "delivery": "Async",
-      "outcome": "Master Snowflake & SQL"
+      "outcome": "Master Snowflake & SQL",
+      "hours": 15
      },
      {
       "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
@@ -748,9 +844,12 @@
        "Data Governance"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master Google Cloud Dataplex & Data Lake Management"
+      "outcome": "Master Google Cloud Dataplex & Data Lake Management",
+      "hours": 4
      }
-    ]
+    ],
+    "hours": 19,
+    "credits": 0.6
    },
    {
     "name": "Year 2 \u00b7 Trimester 3",
@@ -770,7 +869,8 @@
        "Feature Engineering"
       ],
       "delivery": "Async",
-      "outcome": "Master scikit-learn & FastAPI"
+      "outcome": "Master scikit-learn & FastAPI",
+      "hours": 22
      },
      {
       "course": "Machine Learning Fundamentals for Java Developers",
@@ -782,16 +882,20 @@
        "DeepLearning4j"
       ],
       "delivery": "Sync",
-      "outcome": "Master Machine Learning & Java"
+      "outcome": "Master Machine Learning & Java",
+      "hours": 12
      },
      {
       "course": "Applied Hackathon",
       "slug": null,
       "skills": [],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges"
+      "outcome": "Build & demo to industry judges",
+      "hours": 40
      }
-    ]
+    ],
+    "hours": 74,
+    "credits": 2.5
    },
    {
     "name": "Year 3 \u00b7 Trimester 1",
@@ -811,16 +915,20 @@
        "Time Series Analysis"
       ],
       "delivery": "Async",
-      "outcome": "Master Machine Learning & Financial Forecasting"
+      "outcome": "Master Machine Learning & Financial Forecasting",
+      "hours": 20
      },
      {
       "course": "Anomaly Detection",
       "slug": null,
       "skills": [],
       "delivery": "Sync",
-      "outcome": "Industry-aligned module"
+      "outcome": "Industry-aligned module",
+      "hours": 25
      }
-    ]
+    ],
+    "hours": 45,
+    "credits": 1.5
    },
    {
     "name": "Year 3 \u00b7 Trimester 2",
@@ -840,7 +948,8 @@
        "AI-Assisted Coding"
       ],
       "delivery": "Async",
-      "outcome": "Master Generative AI & Large Language Models"
+      "outcome": "Master Generative AI & Large Language Models",
+      "hours": 4
      },
      {
       "course": "No-Code AI Essentials: Master AI Concepts & Use Cases",
@@ -852,9 +961,12 @@
        "LLM Applications"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master AI Literacy & Generative AI"
+      "outcome": "Master AI Literacy & Generative AI",
+      "hours": 22
      }
-    ]
+    ],
+    "hours": 26,
+    "credits": 0.9
    },
    {
     "name": "Year 3 \u00b7 Trimester 3",
@@ -869,23 +981,28 @@
       "slug": null,
       "skills": [],
       "delivery": "Async",
-      "outcome": "Industry-aligned module"
+      "outcome": "Industry-aligned module",
+      "hours": 25
      },
      {
       "course": "Data Ethics & Governance",
       "slug": null,
       "skills": [],
       "delivery": "Sync",
-      "outcome": "Industry-aligned module"
+      "outcome": "Industry-aligned module",
+      "hours": 25
      },
      {
       "course": "Capstone \u2014 AI Data Engineer",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
-      "outcome": "Portfolio-grade, coached & assessed"
+      "outcome": "Portfolio-grade, coached & assessed",
+      "hours": 120
      }
-    ]
+    ],
+    "hours": 170,
+    "credits": 5.7
    }
   ],
   "vsUniversity": {
@@ -902,6 +1019,17 @@
     "No cloud data warehousing",
     "Weak placement-to-role mapping"
    ]
+  },
+  "credits": {
+   "target": 120,
+   "targetHours": 3600,
+   "biCredits": 17,
+   "biHours": 513,
+   "facultyCredits": 103,
+   "facultyHours": 3090,
+   "nepCap": 48,
+   "nepCapHours": 1440,
+   "withinNep": true
   }
  },
  {
@@ -942,7 +1070,8 @@
        "Operations Management"
       ],
       "delivery": "Async",
-      "outcome": "Master Financial Analysis & Marketing Strategy"
+      "outcome": "Master Financial Analysis & Marketing Strategy",
+      "hours": 16
      },
      {
       "course": "Master Financial Analysis & Modeling Fundamentals",
@@ -954,9 +1083,12 @@
        "Valuation"
       ],
       "delivery": "Sync",
-      "outcome": "Master Financial Modeling & Ratio Analysis"
+      "outcome": "Master Financial Modeling & Ratio Analysis",
+      "hours": 22
      }
-    ]
+    ],
+    "hours": 38,
+    "credits": 1.3
    },
    {
     "name": "Year 1 \u00b7 Trimester 2",
@@ -976,7 +1108,8 @@
        "Digital Marketing"
       ],
       "delivery": "Async",
-      "outcome": "Master Brand Awareness & Brand Identity"
+      "outcome": "Master Brand Awareness & Brand Identity",
+      "hours": 13
      },
      {
       "course": "Excel Essentials and Beyond",
@@ -988,9 +1121,12 @@
        "Pivot Tables"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master Microsoft Excel & Data Analysis"
+      "outcome": "Master Microsoft Excel & Data Analysis",
+      "hours": 39
      }
-    ]
+    ],
+    "hours": 52,
+    "credits": 1.7
    },
    {
     "name": "Year 1 \u00b7 Trimester 3",
@@ -1010,7 +1146,8 @@
        "LLM Applications"
       ],
       "delivery": "Async",
-      "outcome": "Master AI Literacy & Generative AI"
+      "outcome": "Master AI Literacy & Generative AI",
+      "hours": 22
      },
      {
       "course": "Generative AI in Marketing",
@@ -1022,16 +1159,20 @@
        "Marketing Automation"
       ],
       "delivery": "Sync",
-      "outcome": "Master Generative AI & Content Marketing"
+      "outcome": "Master Generative AI & Content Marketing",
+      "hours": 5
      },
      {
       "course": "Applied Hackathon",
       "slug": null,
       "skills": [],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges"
+      "outcome": "Build & demo to industry judges",
+      "hours": 40
      }
-    ]
+    ],
+    "hours": 67,
+    "credits": 2.2
    },
    {
     "name": "Year 2 \u00b7 Trimester 1",
@@ -1051,7 +1192,8 @@
        "Predictive Modeling"
       ],
       "delivery": "Async",
-      "outcome": "Master Brand Strategy & Marketing Analytics"
+      "outcome": "Master Brand Strategy & Marketing Analytics",
+      "hours": 14
      },
      {
       "course": "Advanced Google Analytics 4: Optimization and Attribution",
@@ -1063,9 +1205,12 @@
        "BigQuery"
       ],
       "delivery": "Sync",
-      "outcome": "Master Google Analytics 4 & Marketing Attribution"
+      "outcome": "Master Google Analytics 4 & Marketing Attribution",
+      "hours": 16
      }
-    ]
+    ],
+    "hours": 30,
+    "credits": 1.0
    },
    {
     "name": "Year 2 \u00b7 Trimester 2",
@@ -1085,7 +1230,8 @@
        "Fraud Detection"
       ],
       "delivery": "Async",
-      "outcome": "Master Generative AI & Financial Analysis"
+      "outcome": "Master Generative AI & Financial Analysis",
+      "hours": 5
      },
      {
       "course": "Strategic Product Management",
@@ -1097,9 +1243,12 @@
        "Product Launch"
       ],
       "delivery": "Masterclass",
-      "outcome": "Master Agile Methodology & Product Strategy"
+      "outcome": "Master Agile Methodology & Product Strategy",
+      "hours": 21
      }
-    ]
+    ],
+    "hours": 26,
+    "credits": 0.9
    },
    {
     "name": "Year 2 \u00b7 Trimester 3",
@@ -1119,7 +1268,8 @@
        "Team Collaboration"
       ],
       "delivery": "Async",
-      "outcome": "Master Hybrid Team Management & AI Integration"
+      "outcome": "Master Hybrid Team Management & AI Integration",
+      "hours": 5
      },
      {
       "course": "Fundamentals of Management Consulting",
@@ -1131,16 +1281,20 @@
        "Guesstimates"
       ],
       "delivery": "Sync",
-      "outcome": "Master Management Consulting & Strategic Frameworks"
+      "outcome": "Master Management Consulting & Strategic Frameworks",
+      "hours": 13
      },
      {
       "course": "Capstone \u2014 AI Business Leader",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
-      "outcome": "Portfolio-grade, coached & assessed"
+      "outcome": "Portfolio-grade, coached & assessed",
+      "hours": 120
      }
-    ]
+    ],
+    "hours": 138,
+    "credits": 4.6
    }
   ],
   "vsUniversity": {
@@ -1157,6 +1311,17 @@
     "No role-specific specialization",
     "Slow to adopt GenAI in curriculum"
    ]
+  },
+  "credits": {
+   "target": 96,
+   "targetHours": 2880,
+   "biCredits": 12,
+   "biHours": 351,
+   "facultyCredits": 84,
+   "facultyHours": 2520,
+   "nepCap": 38,
+   "nepCapHours": 1140,
+   "withinNep": true
   }
  }
 ]

@@ -27,8 +27,9 @@ export default function DegreeTerms({ terms, delivery }) {
                 <div>
                   <p className="font-black text-ink-900">{t.name}</p>
                   <p className="text-xs text-ink-500">
-                    {courses.length} focused module{courses.length > 1 ? "s" : ""}
-                    {t.milestone && t.milestone !== "Focused term" ? <> · milestone: <b className="text-teal-600">{t.milestone}</b></> : <> · {t.themes?.[0]}</>}
+                    {courses.length} subject{courses.length > 1 ? "s" : ""}
+                    {t.credits ? <> · {t.credits} credits · {t.hours} hrs</> : null}
+                    {t.milestone && t.milestone !== "Focused term" && t.milestone !== t.themes?.[0] ? <> · milestone: <b className="text-teal-600">{t.milestone}</b></> : null}
                   </p>
                 </div>
                 <span className="text-sm font-bold text-brand-600">{isOpen ? "Hide curriculum ▴" : "View curriculum ▾"}</span>

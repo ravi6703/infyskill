@@ -33,6 +33,35 @@ export default function Degree({ params }) {
         </svg>
       </div>
 
+      {/* credit & hours model */}
+      {d.credits && (
+        <section className="mt-8">
+          <h2 className="text-xl font-black text-ink-900">Credits & hours</h2>
+          <p className="mt-1 text-sm text-ink-500">Modelled on the National Credit Framework (1 credit = 30 learning hours). Board Infinity delivers the industry layer within UGC&apos;s 40% online-credit allowance; faculty delivers the academic core.</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-4">
+            <div className="card p-4 text-center"><p className="text-2xl font-black text-ink-900">{d.credits.target}</p><p className="text-[11px] text-ink-500">total credits · {d.credits.targetHours.toLocaleString()} hrs</p></div>
+            <div className="card border-brand-200 p-4 text-center"><p className="text-2xl font-black text-brand-600">{d.credits.biCredits}</p><p className="text-[11px] text-ink-500">BI-delivered · {d.credits.biHours} hrs (async + live + projects)</p></div>
+            <div className="card p-4 text-center"><p className="text-2xl font-black text-ink-700">{d.credits.facultyCredits}</p><p className="text-[11px] text-ink-500">faculty-delivered core</p></div>
+            <div className={`card p-4 text-center ${d.credits.withinNep ? "border-teal-500/40 bg-teal-50" : "border-rose-200 bg-rose-50"}`}>
+              <p className={`text-2xl font-black ${d.credits.withinNep ? "text-teal-600" : "text-rose-600"}`}>{d.credits.withinNep ? "✓" : "✗"}</p>
+              <p className="text-[11px] text-ink-500">{d.credits.biCredits} of {d.credits.nepCap} online-eligible credits (NEP 40%)</p>
+            </div>
+          </div>
+          {/* stacked bar: BI vs faculty vs headroom */}
+          <div className="mt-3 flex h-3 w-full overflow-hidden rounded-full bg-ink-100">
+            <div className="bg-brand-500" style={{ width: `${(d.credits.biCredits / d.credits.target) * 100}%` }} title={`BI ${d.credits.biCredits} cr`} />
+            <div className="bg-teal-500/40" style={{ width: `${((d.credits.nepCap - d.credits.biCredits) / d.credits.target) * 100}%` }} title="online headroom" />
+            <div className="bg-ink-300" style={{ width: `${((d.credits.target - d.credits.nepCap) / d.credits.target) * 100}%` }} title="faculty core" />
+          </div>
+          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-ink-500">
+            <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-brand-500" />BI today ({d.credits.biCredits} cr)</span>
+            <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-teal-500/40" />Online headroom (up to {d.credits.nepCap} cr)</span>
+            <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-ink-300" />Faculty academic core</span>
+          </div>
+          <p className="mt-2 text-[11px] text-ink-400">BI content shown is what&apos;s tagged and available today; the program scales toward the full online-eligible allowance as content is added.</p>
+        </section>
+      )}
+
       {/* program journey */}
       <section className="mt-10">
         <h2 className="text-xl font-black text-ink-900">The program journey — trimester by trimester</h2>
