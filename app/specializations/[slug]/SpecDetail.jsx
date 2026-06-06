@@ -90,8 +90,9 @@ export default function SpecDetail({ spec }) {
         </div>
       )}
 
-      <div className="mt-4">
+      <div className="mt-4 flex flex-wrap gap-3">
         <Link href={`/diagnostic?role=${spec.slug}`} className="btn-primary">Personalize this for me — career diagnostic →</Link>
+        <Link href={`/compare?with=${spec.slug}`} className="btn-ghost">⇄ Compare with another role</Link>
       </div>
 
       {/* skills you'll achieve */}
