@@ -24,7 +24,6 @@ export default function CourseDetail({ course }) {
       sbSelect("pf_items", `course=eq.${t}&order=id`),
     ]).then(([modules, lessons, items]) => {
       setData({ modules, lessons, items });
-      setOpen(modules[0]?.id ?? null); // auto-open first module so depth is visible
     }).catch((e) => setErr(String(e)));
   }, [course.title]);
 
@@ -226,21 +225,18 @@ export default function CourseDetail({ course }) {
                     </button>
 
                     {isOpen && (
-                      <div className={`mt-2 space-y-2 ${side === "right" ? "" : "md:text-left"}`}>
+                      <div className={`mt-2 space-y-1.5 ${side === "right" ? "" : "md:text-left"}`}>
                         {lessons.map((l) => {
                           const items = data.items.filter((i) => i.module_num === l.module_num && i.lesson_num === l.lesson_num);
+                          const mix = {}; items.forEach((i) => { mix[i.item_type] = (mix[i.item_type] || 0) + 1; });
                           return (
-                            <div key={l.id} className="rounded-lg border border-ink-200 bg-ink-50 p-3 text-left">
+                            <div key={l.id} className="rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-left">
                               <p className="text-sm font-bold text-brand-700">Lesson {l.lesson_num}: {l.title}</p>
-                              <ul className="mt-1.5 space-y-1">
-                                {items.map((i) => (
-                                  <li key={i.id} className="flex items-baseline gap-2 text-sm text-ink-600">
-                                    <span>{ICON[i.item_type] || "•"}</span>
-                                    <span className="flex-1">{i.title}</span>
-                                    {i.duration && <span className="text-xs text-ink-400">{i.duration}</span>}
-                                  </li>
+                              <p className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-ink-500">
+                                {Object.entries(mix).sort((a, b) => b[1] - a[1]).map(([k, v]) => (
+                                  <span key={k}>{ICON[k] || "•"} {v} {k.toLowerCase()}{v > 1 ? "s" : ""}</span>
                                 ))}
-                              </ul>
+                              </p>
                             </div>
                           );
                         })}

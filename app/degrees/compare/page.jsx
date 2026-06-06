@@ -9,33 +9,61 @@ import skillMeta from "../../../data/skills.json";
 const clean = (t) => t.replace(/^[:\s]+/, "");
 const CLUSTER_OF = Object.fromEntries(skillMeta.map((s) => [s.name.toLowerCase(), s.cluster]));
 
-function tokens(s) {
-  return new Set(s.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter((w) => w.length > 3));
-}
-const courseTok = courses.map((c) => ({ c, tok: tokens(c.title), sk: c.skills }));
+// generic academic/marketing connector words that must NOT drive a match
+const STOP = new Set("management systems system design introduction intro advanced advance advances fundamentals foundation foundations applied techniques technique application applications principles principle concepts concept methods method modern professional practical essentials mastering master overview using core tools tool models model basics basic prep preparation complete decoding roadmap insights with for and the from your into key".split(" "));
+// unambiguous single-word tech subjects we can safely recover (token -> preferred title substrings in priority order)
+const RECOVER = {
+  programming: ["python", "java programming", "programming"],
+  database: ["managing databases", "sql", "database"],
+  dbms: ["managing databases", "sql", "database"],
+  algorithms: ["data structures", "algorithm"],
+  python: ["python"], java: ["java"], cryptography: ["cryptography"], networking: ["network"],
+};
 
-// match a subject line to a BI course (by title-token overlap or skill keyword)
-function matchSubject(subject) {
-  const st = tokens(subject);
-  let best = null, score = 0;
-  for (const { c, tok } of courseTok) {
-    let inter = 0;
-    for (const w of st) if (tok.has(w)) inter++;
-    const sc = inter / Math.max(2, Math.min(st.size, tok.size));
-    if (sc > score) { score = sc; best = c; }
+function mean(s) {
+  const seen = new Set(), out = [];
+  for (const w of s.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)) {
+    if (w.length > 3 && !STOP.has(w) && !seen.has(w)) { seen.add(w); out.push(w); }
   }
-  // skill keyword fallback
-  if (score < 0.34) {
-    for (const { c, sk } of courseTok) {
-      const hit = sk.some((s) => { const sl = s.toLowerCase(); return [...st].some((w) => sl.includes(w)); });
-      if (hit) { best = best || c; score = Math.max(score, 0.34); break; }
+  return out;
+}
+const courseIdx = courses.map((c) => {
+  const tt = new Set(mean(c.title));
+  const skills = (c.skills || []).map((s) => new Set(mean(s)));
+  return { c, tt, skills };
+});
+
+// Conservative matcher: only attaches a course on a genuine multi-token skill/title match.
+// Weak/single-generic-token subjects fall to Gap (honest) rather than a misleading course.
+function matchSubject(subject) {
+  const Sarr = mean(subject), S = new Set(Sarr);
+  if (S.size === 0) return { subject, status: "Gap", course: null };
+  let best = null, bp = 0, bs = 0, bestLen = 999;
+  for (const { c, tt, skills } of courseIdx) {
+    let skillBest = 0, ms = 0;
+    for (const k of skills) {
+      let inter = 0; for (const t of S) if (k.has(t)) inter++;
+      if (inter >= 2) { const uni = new Set([...S, ...k]).size; skillBest = Math.max(skillBest, Math.max(inter / S.size, inter / uni)); ms++; }
+    }
+    let ti = 0; for (const t of S) if (tt.has(t)) ti++;
+    const tcont = ti >= 2 ? ti / S.size : 0;
+    const primary = Math.max(skillBest, 0.7 * tcont), secondary = ti + 0.01 * ms;
+    if (primary > bp || (primary === bp && (secondary > bs || (secondary === bs && c.title.length < bestLen)))) {
+      bp = primary; bs = secondary; best = c; bestLen = c.title.length;
     }
   }
-  const status = score >= 0.5 ? "Full" : score >= 0.34 ? "Partial" : "Gap";
+  // single-token tech recovery -> Partial
+  if (bp < 0.4 && S.size === 1 && RECOVER[Sarr[0]]) {
+    for (const sub of RECOVER[Sarr[0]]) {
+      const hit = courses.find((c) => c.title.toLowerCase().includes(sub));
+      if (hit) return { subject, status: "Partial", course: hit };
+    }
+  }
+  const status = bp >= 0.6 ? "Full" : bp >= 0.4 ? "Partial" : "Gap";
   return { subject, status, course: status === "Gap" ? null : best };
 }
 
-const FACULTY_KEEP = /operating system|computer network|discrete|theory of computation|linear algebra|microeconom|business law|organizational behaviour|probability|calculus|research method|thesis/i;
+const FACULTY_KEEP = /operating system|computer network|discrete|theory of computation|linear algebra|micro ?econom|macro ?econom|business law|organi[sz]ational behaviour|probability|calculus|differential|metric space|matrix|numerical|signal|physics|ethics|entrepreneur|accounting|research method|thesis|economics|mathematics|statistics|english|language l/i;
 
 function loadScript(src) {
   return new Promise((res, rej) => {
@@ -81,12 +109,14 @@ export default function DegreeCompare() {
     const full = rows.filter((r) => r.status === "Full").length;
     const partial = rows.filter((r) => r.status === "Partial").length;
     const gaps = rows.filter((r) => r.status === "Gap");
+    const facultyGaps = gaps.filter((g) => FACULTY_KEEP.test(g.subject)).length;
+    const buildGaps = gaps.length - facultyGaps;
     const coverage = Math.round(((full + partial * 0.5) / rows.length) * 100);
     // roles this curriculum (covered courses' skills) prepares for
     const pool = new Set(rows.filter((r) => r.course).flatMap((r) => r.course.skills.map((s) => s.toLowerCase())));
     const roles = specs.map((sp) => ({ sp, hits: sp.skills.filter((s) => pool.has(s.toLowerCase())).length }))
       .filter((r) => r.hits >= 3).sort((a, b) => b.hits - a.hits).slice(0, 4);
-    setResult({ name, rows, full, partial, gaps, coverage, roles });
+    setResult({ name, rows, full, partial, gaps, facultyGaps, buildGaps, coverage, roles });
   }
   function runRef() { const r = refs.find((x) => x.id === refId); analyze(r.subjects, r.name); }
   function cleanLines(raw) {
@@ -177,18 +207,21 @@ export default function DegreeCompare() {
           <div className="card border-brand-200 p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h2 className="text-xl font-black text-ink-900">{result.name}</h2>
-              <span className="text-3xl font-black text-brand-600">{result.coverage}%<span className="ml-1 text-sm font-bold text-ink-500">deliverable by BI</span></span>
+              <span className="text-3xl font-black text-brand-600">{result.coverage}%<span className="ml-1 text-sm font-bold text-ink-500">AI-era layer by BI</span></span>
             </div>
-            <div className="mt-2 flex gap-3 text-sm">
-              <span className="text-teal-600 font-bold">{result.full} fully covered</span>
-              <span className="text-brand-600 font-bold">{result.partial} partial</span>
-              <span className="text-peel-700 font-bold">{result.gaps.length} gaps</span>
+            <p className="mt-1 text-sm text-ink-600">Board Infinity delivers the <b className="text-ink-800">applied AI, data &amp; industry layer</b>. The academic core (math, theory, economics, law) stays with faculty by design — this isn&apos;t a gap to fill, it&apos;s the right division of labour.</p>
+            <div className="mt-3 flex flex-wrap gap-3 text-sm">
+              <span className="text-teal-600 font-bold">{result.full} BI-delivered</span>
+              <span className="text-brand-600 font-bold">{result.partial} partial / overlay</span>
+              <span className="text-ink-500 font-bold">{result.facultyGaps} faculty core</span>
+              <span className="text-peel-700 font-bold">{result.buildGaps} to build</span>
             </div>
           </div>
 
           {/* subject-by-subject */}
           <div className="card p-5">
             <h3 className="font-black text-ink-900">Subject-by-subject mapping</h3>
+            <p className="mt-1 text-xs text-ink-400">Matches are generated automatically by skill tagging and are <b className="text-ink-500">indicative, pending academic review</b> — not a final accreditation mapping.</p>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               {result.rows.map((r, i) => (
                 <div key={i} className="flex flex-wrap items-center gap-2 rounded-lg bg-ink-50 px-3 py-2">
