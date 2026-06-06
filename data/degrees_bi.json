@@ -22,7 +22,8 @@
    {
     "name": "Year 1 \u00b7 Trimester 1",
     "themes": [
-     "Python Programming"
+     "Python Programming",
+     "Problem Solving & Logic"
     ],
     "milestone": "Python Programming",
     "courses": [
@@ -37,16 +38,7 @@
       ],
       "delivery": "Async",
       "outcome": "Master Python Programming & Data Structures"
-     }
-    ]
-   },
-   {
-    "name": "Year 1 \u00b7 Trimester 2",
-    "themes": [
-     "Math & Logic for AI"
-    ],
-    "milestone": "Math & Logic for AI",
-    "courses": [
+     },
      {
       "course": "Quantitative Aptitude Mastery\u2014 Exam & Recruitment Prep",
       "slug": "quantitative-aptitude-mastery-exam-recruitment-prep",
@@ -56,15 +48,50 @@
        "Number Systems",
        "Speed Calculation"
       ],
-      "delivery": "Async",
+      "delivery": "Sync",
       "outcome": "Master Quantitative Aptitude & Vedic Mathematics"
+     }
+    ]
+   },
+   {
+    "name": "Year 1 \u00b7 Trimester 2",
+    "themes": [
+     "Data Structures & Algorithms",
+     "Version Control & Collaboration"
+    ],
+    "milestone": "Data Structures & Algorithms",
+    "courses": [
+     {
+      "course": "Data Structures & Backend with Java",
+      "slug": "data-structures-backend-with-java",
+      "skills": [
+       "Java",
+       "Data Structures",
+       "Spring Boot",
+       "Spring Framework"
+      ],
+      "delivery": "Async",
+      "outcome": "Master Java & Data Structures"
+     },
+     {
+      "course": "Version Control with Git and GitHub",
+      "slug": "version-control-with-git-and-github",
+      "skills": [
+       "Git",
+       "GitHub",
+       "Version Control",
+       "Code Review"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master Git & GitHub"
      }
     ]
    },
    {
     "name": "Year 1 \u00b7 Trimester 3",
     "themes": [
-     "Web, APIs & Git"
+     "Web & APIs",
+     "Databases"
     ],
     "milestone": "Junior Developer ready",
     "courses": [
@@ -77,15 +104,35 @@
        "API Design",
        "Web Development"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master REST API Development & GraphQL"
+     },
+     {
+      "course": "Managing Databases - End to End Web Development",
+      "slug": "managing-databases-end-to-end-web-development",
+      "skills": [
+       "SQL",
+       "MongoDB",
+       "NoSQL",
+       "REST API Development"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master SQL & MongoDB"
+     },
+     {
+      "course": "Applied Hackathon",
+      "slug": null,
+      "skills": [],
+      "delivery": "Hackathon",
+      "outcome": "Build & demo to industry judges"
      }
     ]
    },
    {
     "name": "Year 2 \u00b7 Trimester 1",
     "themes": [
-     "Machine Learning"
+     "Machine Learning",
+     "Feature Engineering & MLOps Intro"
     ],
     "milestone": "Machine Learning",
     "courses": [
@@ -100,13 +147,26 @@
       ],
       "delivery": "Async",
       "outcome": "Master scikit-learn & FastAPI"
+     },
+     {
+      "course": "Machine Learning Fundamentals for Java Developers",
+      "slug": "machine-learning-fundamentals-for-java-developers",
+      "skills": [
+       "Machine Learning",
+       "Java",
+       "Weka",
+       "DeepLearning4j"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Machine Learning & Java"
      }
     ]
    },
    {
     "name": "Year 2 \u00b7 Trimester 2",
     "themes": [
-     "Deep Learning"
+     "Deep Learning",
+     "GPU & Model Training"
     ],
     "milestone": "Deep Learning",
     "courses": [
@@ -121,13 +181,26 @@
       ],
       "delivery": "Async",
       "outcome": "Master Deep Learning & PyTorch"
+     },
+     {
+      "course": "Deep Learning: Advanced Backbones and Efficient GPU Training",
+      "slug": "deep-learning-advanced-backbones-and-efficient-gpu-training",
+      "skills": [
+       "PyTorch Lightning",
+       "Vision Transformers",
+       "ConvNeXt",
+       "Mixed Precision Training"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master PyTorch Lightning & Vision Transformers"
      }
     ]
    },
    {
     "name": "Year 2 \u00b7 Trimester 3",
     "themes": [
-     "NLP & Transformers"
+     "NLP & Transformers",
+     "Data Pipelines"
     ],
     "milestone": "ML Engineer foundation",
     "courses": [
@@ -140,15 +213,35 @@
        "Hugging Face",
        "Fine-Tuning"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Transformers & Hugging Face"
+     },
+     {
+      "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
+      "slug": "managing-data-lakes-pipelines-with-google-cloud-dataplex",
+      "skills": [
+       "Google Cloud Dataplex",
+       "Data Lake Management",
+       "Data Pipelines",
+       "Data Governance"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Google Cloud Dataplex & Data Lake Management"
+     },
+     {
+      "course": "Applied Hackathon",
+      "slug": null,
+      "skills": [],
+      "delivery": "Hackathon",
+      "outcome": "Build & demo to industry judges"
      }
     ]
    },
    {
     "name": "Year 3 \u00b7 Trimester 1",
     "themes": [
-     "Generative AI & LLMs"
+     "Generative AI & LLMs",
+     "Prompt Engineering"
     ],
     "milestone": "Generative AI & LLMs",
     "courses": [
@@ -163,13 +256,26 @@
       ],
       "delivery": "Async",
       "outcome": "Master Fine-Tuning & LoRA"
+     },
+     {
+      "course": "Generative AI Prompt Engineering Basics",
+      "slug": "generative-ai-prompt-engineering-basics",
+      "skills": [
+       "Prompt Engineering",
+       "Generative AI",
+       "Large Language Models",
+       "Few-Shot Learning"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Prompt Engineering & Generative AI"
      }
     ]
    },
    {
     "name": "Year 3 \u00b7 Trimester 2",
     "themes": [
-     "Agentic AI & RAG"
+     "Agentic AI & RAG",
+     "Multi-Agent Systems"
     ],
     "milestone": "Agentic AI & RAG",
     "courses": [
@@ -182,15 +288,28 @@
        "Pinecone",
        "Vector Databases"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master RAG Pipelines & LangGraph"
+     },
+     {
+      "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
+      "slug": "designing-multi-agent-systems-collaboration-and-workflows",
+      "skills": [
+       "Multi-Agent Systems",
+       "CrewAI",
+       "LangGraph",
+       "AutoGen"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master Multi-Agent Systems & CrewAI"
      }
     ]
    },
    {
     "name": "Year 3 \u00b7 Trimester 3",
     "themes": [
-     "MLOps, Governance & Capstone"
+     "MLOps & Production",
+     "AI Governance & Safety"
     ],
     "milestone": "Production AI Engineer",
     "courses": [
@@ -205,6 +324,18 @@
       ],
       "delivery": "Async",
       "outcome": "Master MLOps & CI/CD"
+     },
+     {
+      "course": "AI Risk and Compliance: Audit and Governance Foundations",
+      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
+      "skills": [
+       "AI Governance",
+       "Red Teaming",
+       "Adversarial Robustness",
+       "Regulatory Compliance"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master AI Governance & Red Teaming"
      },
      {
       "course": "Capstone \u2014 Production AI Engineer",
@@ -255,31 +386,71 @@
    {
     "name": "Trimester 1 \u00b7 GenAI Foundations",
     "themes": [
-     "Generative AI & Prompting"
+     "Generative AI & LLMs",
+     "Prompt Engineering",
+     "LLM APIs"
     ],
     "milestone": "GenAI App Developer",
     "courses": [
      {
-      "course": "Generative AI: Fine-Tuning LLMs and Diffusion Models",
-      "slug": "generative-ai-fine-tuning-llms-and-diffusion-models",
+      "course": "The Rise of Generative AI",
+      "slug": "the-rise-of-generative-ai",
       "skills": [
-       "Fine-Tuning",
-       "LoRA",
-       "QLoRA",
-       "PEFT"
+       "Generative AI",
+       "Large Language Models",
+       "Transformers",
+       "GANs"
       ],
       "delivery": "Async",
-      "outcome": "Master Fine-Tuning & LoRA"
+      "outcome": "Master Generative AI & Large Language Models"
+     },
+     {
+      "course": "Generative AI Prompt Engineering Basics",
+      "slug": "generative-ai-prompt-engineering-basics",
+      "skills": [
+       "Prompt Engineering",
+       "Generative AI",
+       "Large Language Models",
+       "Few-Shot Learning"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Prompt Engineering & Generative AI"
+     },
+     {
+      "course": "Building Applications with DeepSeek",
+      "slug": "building-applications-with-deepseek",
+      "skills": [
+       "DeepSeek",
+       "AI-Assisted Development",
+       "Prompt Engineering",
+       "RAG Pipelines"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master DeepSeek & AI-Assisted Development"
      }
     ]
    },
    {
     "name": "Trimester 2 \u00b7 Agents & RAG",
     "themes": [
-     "RAG & Multi-Agent"
+     "RAG Pipelines",
+     "Agentic Workflows",
+     "Multi-Agent Systems"
     ],
-    "milestone": "Focused term",
+    "milestone": "Agentic AI Engineer",
     "courses": [
+     {
+      "course": "AI Systems Design: RAG Pipelines and LLM Architecture",
+      "slug": "ai-systems-design-rag-pipelines-and-llm-architecture",
+      "skills": [
+       "RAG Pipelines",
+       "LLM Architecture",
+       "Prompt Engineering",
+       "Vector Databases"
+      ],
+      "delivery": "Async",
+      "outcome": "Master RAG Pipelines & LLM Architecture"
+     },
      {
       "course": "RAG Systems & Agentic Workflows with Pinecone and LangGraph",
       "slug": "rag-systems-agentic-workflows-with-pinecone-and-langgraph",
@@ -293,27 +464,70 @@
       "outcome": "Master RAG Pipelines & LangGraph"
      },
      {
-      "course": "Trimester Hackathon",
+      "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
+      "slug": "designing-multi-agent-systems-collaboration-and-workflows",
+      "skills": [
+       "Multi-Agent Systems",
+       "CrewAI",
+       "LangGraph",
+       "AutoGen"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master Multi-Agent Systems & CrewAI"
+     },
+     {
+      "course": "Applied Hackathon",
       "slug": null,
       "skills": [],
       "delivery": "Hackathon",
-      "outcome": "Judged by industry mentors"
+      "outcome": "Build & demo to industry judges"
      }
     ]
    },
    {
     "name": "Trimester 3 \u00b7 Production & Capstone",
     "themes": [
-     "Fine-Tuning & MLOps"
+     "Fine-Tuning (LoRA/QLoRA)",
+     "MLOps & Serving",
+     "Evaluation & Guardrails"
     ],
     "milestone": "Production GenAI Engineer",
     "courses": [
      {
-      "course": "Fine-Tuning & MLOps",
-      "slug": null,
-      "skills": [],
+      "course": "Generative AI: Fine-Tuning LLMs and Diffusion Models",
+      "slug": "generative-ai-fine-tuning-llms-and-diffusion-models",
+      "skills": [
+       "Fine-Tuning",
+       "LoRA",
+       "QLoRA",
+       "PEFT"
+      ],
       "delivery": "Async",
-      "outcome": "Focused industry module"
+      "outcome": "Master Fine-Tuning & LoRA"
+     },
+     {
+      "course": "MLOps and LLMOps: Deploying and Scaling AI in Production",
+      "slug": "mlops-and-llmops-deploying-and-scaling-ai-in-production",
+      "skills": [
+       "MLOps",
+       "CI/CD",
+       "Model Versioning",
+       "LLM Evaluation"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master MLOps & CI/CD"
+     },
+     {
+      "course": "AI Risk and Compliance: Audit and Governance Foundations",
+      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
+      "skills": [
+       "AI Governance",
+       "Red Teaming",
+       "Adversarial Robustness",
+       "Regulatory Compliance"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master AI Governance & Red Teaming"
      },
      {
       "course": "Capstone \u2014 Production GenAI Engineer",
@@ -364,9 +578,10 @@
    {
     "name": "Year 1 \u00b7 Trimester 1",
     "themes": [
-     "Python & SQL"
+     "Python for Data",
+     "Statistics & Aptitude"
     ],
-    "milestone": "Python & SQL",
+    "milestone": "Python for Data",
     "courses": [
      {
       "course": "Dive Deep into Python",
@@ -379,37 +594,7 @@
       ],
       "delivery": "Async",
       "outcome": "Master Python Programming & Data Structures"
-     }
-    ]
-   },
-   {
-    "name": "Year 1 \u00b7 Trimester 2",
-    "themes": [
-     "Databases"
-    ],
-    "milestone": "Databases",
-    "courses": [
-     {
-      "course": "Managing Databases - End to End Web Development",
-      "slug": "managing-databases-end-to-end-web-development",
-      "skills": [
-       "SQL",
-       "MongoDB",
-       "NoSQL",
-       "REST API Development"
-      ],
-      "delivery": "Async",
-      "outcome": "Master SQL & MongoDB"
-     }
-    ]
-   },
-   {
-    "name": "Year 1 \u00b7 Trimester 3",
-    "themes": [
-     "Statistics & Excel"
-    ],
-    "milestone": "Data Analyst ready",
-    "courses": [
+     },
      {
       "course": "Data Interpretation & Insights: Exam & Recruitment Prep",
       "slug": "data-interpretation-insights-exam-recruitment-prep",
@@ -425,12 +610,59 @@
     ]
    },
    {
-    "name": "Year 2 \u00b7 Trimester 1",
+    "name": "Year 1 \u00b7 Trimester 2",
     "themes": [
-     "Tableau & Power BI"
+     "Databases & SQL",
+     "SQL at Scale"
     ],
-    "milestone": "Tableau & Power BI",
+    "milestone": "Databases & SQL",
     "courses": [
+     {
+      "course": "Managing Databases - End to End Web Development",
+      "slug": "managing-databases-end-to-end-web-development",
+      "skills": [
+       "SQL",
+       "MongoDB",
+       "NoSQL",
+       "REST API Development"
+      ],
+      "delivery": "Async",
+      "outcome": "Master SQL & MongoDB"
+     },
+     {
+      "course": "Mastering SQL and Data Management with Teradata",
+      "slug": "mastering-sql-and-data-management-with-teradata",
+      "skills": [
+       "Teradata SQL",
+       "Data Definition Language",
+       "Data Manipulation Language",
+       "Query Optimization"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master Teradata SQL & Query Optimization"
+     }
+    ]
+   },
+   {
+    "name": "Year 1 \u00b7 Trimester 3",
+    "themes": [
+     "Excel & Visualization",
+     "Tableau"
+    ],
+    "milestone": "Data Analyst ready",
+    "courses": [
+     {
+      "course": "Excel Essentials and Beyond",
+      "slug": "excel-essentials-and-beyond",
+      "skills": [
+       "Microsoft Excel",
+       "Data Analysis",
+       "Data Visualization",
+       "Pivot Tables"
+      ],
+      "delivery": "Async",
+      "outcome": "Master Microsoft Excel & Data Analysis"
+     },
      {
       "course": "Data Visualization with Tableau",
       "slug": "data-visualization-with-tableau",
@@ -440,17 +672,59 @@
        "Dashboard Design",
        "Calculated Fields"
       ],
-      "delivery": "Async",
+      "delivery": "Sync",
       "outcome": "Master Tableau & Data Visualization"
+     },
+     {
+      "course": "Applied Hackathon",
+      "slug": null,
+      "skills": [],
+      "delivery": "Hackathon",
+      "outcome": "Build & demo to industry judges"
+     }
+    ]
+   },
+   {
+    "name": "Year 2 \u00b7 Trimester 1",
+    "themes": [
+     "Power BI & BI",
+     "Data Governance"
+    ],
+    "milestone": "Power BI & BI",
+    "courses": [
+     {
+      "course": "Master Data Transformation at Scale with Power BI Desktop",
+      "slug": "master-data-transformation-at-scale-with-power-bi-desktop",
+      "skills": [
+       "Power BI",
+       "DAX",
+       "Power Query",
+       "Data Visualization"
+      ],
+      "delivery": "Async",
+      "outcome": "Master Power BI & DAX"
+     },
+     {
+      "course": "Learn Data Governance Workflows with Databricks Tools",
+      "slug": "learn-data-governance-workflows-with-databricks-tools",
+      "skills": [
+       "Data Governance",
+       "Databricks",
+       "Delta Lake",
+       "Data Cataloging"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Data Governance & Databricks"
      }
     ]
    },
    {
     "name": "Year 2 \u00b7 Trimester 2",
     "themes": [
-     "Cloud Data (Snowflake)"
+     "Cloud Data Warehousing",
+     "Data Lakes & Pipelines"
     ],
-    "milestone": "Cloud Data (Snowflake)",
+    "milestone": "Cloud Data Warehousing",
     "courses": [
      {
       "course": "Prepare for SnowPro Core Exam Architecture & SQL",
@@ -463,16 +737,7 @@
       ],
       "delivery": "Async",
       "outcome": "Master Snowflake & SQL"
-     }
-    ]
-   },
-   {
-    "name": "Year 2 \u00b7 Trimester 3",
-    "themes": [
-     "Data Pipelines & Governance"
-    ],
-    "milestone": "Analytics Engineer",
-    "courses": [
+     },
      {
       "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
       "slug": "managing-data-lakes-pipelines-with-google-cloud-dataplex",
@@ -488,11 +753,12 @@
     ]
    },
    {
-    "name": "Year 3 \u00b7 Trimester 1",
+    "name": "Year 2 \u00b7 Trimester 3",
     "themes": [
-     "Machine Learning"
+     "Machine Learning",
+     "Feature Engineering"
     ],
-    "milestone": "Machine Learning",
+    "milestone": "Analytics Engineer",
     "courses": [
      {
       "course": "Applied Machine Learning Systems with FastAPI for Developers",
@@ -505,13 +771,33 @@
       ],
       "delivery": "Async",
       "outcome": "Master scikit-learn & FastAPI"
+     },
+     {
+      "course": "Machine Learning Fundamentals for Java Developers",
+      "slug": "machine-learning-fundamentals-for-java-developers",
+      "skills": [
+       "Machine Learning",
+       "Java",
+       "Weka",
+       "DeepLearning4j"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Machine Learning & Java"
+     },
+     {
+      "course": "Applied Hackathon",
+      "slug": null,
+      "skills": [],
+      "delivery": "Hackathon",
+      "outcome": "Build & demo to industry judges"
      }
     ]
    },
    {
-    "name": "Year 3 \u00b7 Trimester 2",
+    "name": "Year 3 \u00b7 Trimester 1",
     "themes": [
-     "Forecasting & Time Series"
+     "Forecasting & Time Series",
+     "Anomaly Detection"
     ],
     "milestone": "Forecasting & Time Series",
     "courses": [
@@ -524,29 +810,73 @@
        "Feature Engineering",
        "Time Series Analysis"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Machine Learning & Financial Forecasting"
+     },
+     {
+      "course": "Anomaly Detection",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Industry-aligned module"
+     }
+    ]
+   },
+   {
+    "name": "Year 3 \u00b7 Trimester 2",
+    "themes": [
+     "Generative AI for Data",
+     "AI Dashboards & Automation"
+    ],
+    "milestone": "Generative AI for Data",
+    "courses": [
+     {
+      "course": "Generative AI in Software Development",
+      "slug": "generative-ai-in-software-development",
+      "skills": [
+       "Generative AI",
+       "Large Language Models",
+       "Prompt Engineering",
+       "AI-Assisted Coding"
+      ],
+      "delivery": "Async",
+      "outcome": "Master Generative AI & Large Language Models"
+     },
+     {
+      "course": "No-Code AI Essentials: Master AI Concepts & Use Cases",
+      "slug": "no-code-ai-essentials-master-ai-concepts-use-cases",
+      "skills": [
+       "AI Literacy",
+       "Generative AI",
+       "No-Code AI Tools",
+       "LLM Applications"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master AI Literacy & Generative AI"
      }
     ]
    },
    {
     "name": "Year 3 \u00b7 Trimester 3",
     "themes": [
-     "AI Analytics & Capstone"
+     "Big Data & Deployment",
+     "Data Ethics & Governance"
     ],
     "milestone": "AI Data Engineer",
     "courses": [
      {
-      "course": "Master Data Transformation at Scale with Power BI Desktop",
-      "slug": "master-data-transformation-at-scale-with-power-bi-desktop",
-      "skills": [
-       "Power BI",
-       "DAX",
-       "Power Query",
-       "Data Visualization"
-      ],
+      "course": "Big Data & Deployment",
+      "slug": null,
+      "skills": [],
       "delivery": "Async",
-      "outcome": "Master Power BI & DAX"
+      "outcome": "Industry-aligned module"
+     },
+     {
+      "course": "Data Ethics & Governance",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Industry-aligned module"
      },
      {
       "course": "Capstone \u2014 AI Data Engineer",
@@ -597,9 +927,10 @@
    {
     "name": "Year 1 \u00b7 Trimester 1",
     "themes": [
-     "Business & Finance Core"
+     "Business & Management",
+     "Financial Analysis"
     ],
-    "milestone": "Business & Finance Core",
+    "milestone": "Business & Management",
     "courses": [
      {
       "course": "Fundamentals of Business Management",
@@ -612,15 +943,28 @@
       ],
       "delivery": "Async",
       "outcome": "Master Financial Analysis & Marketing Strategy"
+     },
+     {
+      "course": "Master Financial Analysis & Modeling Fundamentals",
+      "slug": "master-financial-analysis-modeling-fundamentals",
+      "skills": [
+       "Financial Statement Analysis",
+       "Financial Modeling",
+       "Ratio Analysis",
+       "Valuation"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Financial Modeling & Ratio Analysis"
      }
     ]
    },
    {
     "name": "Year 1 \u00b7 Trimester 2",
     "themes": [
-     "Marketing & Data"
+     "Marketing Foundations",
+     "Business Analytics"
     ],
-    "milestone": "Marketing & Data",
+    "milestone": "Marketing Foundations",
     "courses": [
      {
       "course": "Mastering Brand Awareness: Fundamentals to Advanced",
@@ -633,13 +977,26 @@
       ],
       "delivery": "Async",
       "outcome": "Master Brand Awareness & Brand Identity"
+     },
+     {
+      "course": "Excel Essentials and Beyond",
+      "slug": "excel-essentials-and-beyond",
+      "skills": [
+       "Microsoft Excel",
+       "Data Analysis",
+       "Data Visualization",
+       "Pivot Tables"
+      ],
+      "delivery": "Masterclass",
+      "outcome": "Master Microsoft Excel & Data Analysis"
      }
     ]
    },
    {
     "name": "Year 1 \u00b7 Trimester 3",
     "themes": [
-     "AI for Business"
+     "AI for Business",
+     "Generative AI for Business"
     ],
     "milestone": "AI-fluent manager",
     "courses": [
@@ -652,17 +1009,37 @@
        "No-Code AI Tools",
        "LLM Applications"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master AI Literacy & Generative AI"
+     },
+     {
+      "course": "Generative AI in Marketing",
+      "slug": "generative-ai-in-marketing",
+      "skills": [
+       "Generative AI",
+       "Content Marketing",
+       "AI Tools",
+       "Marketing Automation"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Generative AI & Content Marketing"
+     },
+     {
+      "course": "Applied Hackathon",
+      "slug": null,
+      "skills": [],
+      "delivery": "Hackathon",
+      "outcome": "Build & demo to industry judges"
      }
     ]
    },
    {
     "name": "Year 2 \u00b7 Trimester 1",
     "themes": [
-     "AI in Marketing & Finance"
+     "AI in Marketing",
+     "Growth & Attribution"
     ],
-    "milestone": "AI in Marketing & Finance",
+    "milestone": "AI in Marketing",
     "courses": [
      {
       "course": "AI-Powered Brand Strategy & Marketing Analytics",
@@ -675,16 +1052,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Brand Strategy & Marketing Analytics"
+     },
+     {
+      "course": "Advanced Google Analytics 4: Optimization and Attribution",
+      "slug": "advanced-google-analytics-4-optimization-and-attribution",
+      "skills": [
+       "Google Analytics 4",
+       "Marketing Attribution",
+       "Looker Studio",
+       "BigQuery"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Google Analytics 4 & Marketing Attribution"
      }
     ]
    },
    {
     "name": "Year 2 \u00b7 Trimester 2",
     "themes": [
-     "AI Product & Strategy"
+     "AI in Finance",
+     "AI Product Management"
     ],
-    "milestone": "AI Product & Strategy",
+    "milestone": "AI in Finance",
     "courses": [
+     {
+      "course": "Generative AI in Finance",
+      "slug": "generative-ai-in-finance",
+      "skills": [
+       "Generative AI",
+       "Financial Analysis",
+       "Risk Assessment",
+       "Fraud Detection"
+      ],
+      "delivery": "Async",
+      "outcome": "Master Generative AI & Financial Analysis"
+     },
      {
       "course": "Strategic Product Management",
       "slug": "strategic-product-management",
@@ -702,7 +1104,8 @@
    {
     "name": "Year 2 \u00b7 Trimester 3",
     "themes": [
-     "Transformation & Capstone"
+     "AI Transformation & Leadership",
+     "Strategy & Consulting"
     ],
     "milestone": "AI Business Leader",
     "courses": [
@@ -717,6 +1120,18 @@
       ],
       "delivery": "Async",
       "outcome": "Master Hybrid Team Management & AI Integration"
+     },
+     {
+      "course": "Fundamentals of Management Consulting",
+      "slug": "fundamentals-of-management-consulting",
+      "skills": [
+       "Management Consulting",
+       "Strategic Frameworks",
+       "Case Interviews",
+       "Guesstimates"
+      ],
+      "delivery": "Sync",
+      "outcome": "Master Management Consulting & Strategic Frameworks"
      },
      {
       "course": "Capstone \u2014 AI Business Leader",
