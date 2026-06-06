@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import courses from "../../data/courses.json";
 
+const clean = (t) => t.replace(/^[:\s]+/, "");
 const domains = [...new Set(courses.map((c) => c.domain))].sort();
 const byDomainCount = Object.fromEntries(domains.map((d) => [d, courses.filter((c) => c.domain === d).length]));
 const LEVELS = ["Beginner", "Intermediate", "Advanced"];
@@ -58,7 +59,7 @@ export default function Catalog() {
               <span className="chip-blue">{c.domain}</span>
               <span className={LEVEL_CHIP[c.proficiency] || "chip-gray"}>{c.proficiency}</span>
             </div>
-            <h3 className="mt-3 line-clamp-2 font-black text-ink-900 group-hover:text-brand-600">{c.title}</h3>
+            <h3 className="mt-3 line-clamp-2 font-black text-ink-900 group-hover:text-brand-600">{clean(c.title)}</h3>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {c.skills.slice(0, 4).map((s) => <span key={s} className="chip-gray">{s}</span>)}
               {c.skills.length > 4 && <span className="chip-gray">+{c.skills.length - 4}</span>}
