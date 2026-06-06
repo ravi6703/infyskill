@@ -24,10 +24,10 @@ export default function Home() {
       <section className="grid items-center gap-8 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 px-6 py-12 text-white md:grid-cols-2 md:py-16">
         <div className="animate-fadeUp">
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-100">Board Infinity · InfyAI</p>
-          <h1 className="text-4xl font-black sm:text-5xl">From a course, to a skill, to a <span className="text-peel-400">career</span></h1>
+          <h1 className="text-4xl font-black sm:text-5xl">The skill intelligence behind every AI-era <span className="text-peel-400">career</span></h1>
           <p className="mt-4 max-w-xl text-brand-50">
-            Skill-tagged courses with visual roadmaps, AI-era specializations, and Board Infinity degree programs —
-            all on a blended model of self-paced content, live mentorship, masterclasses, hackathons and capstones.
+            InfyAI maps every course to real skills and the roles that hire for them — delivered through one blended model:
+            self-paced content, live mentorship, masterclasses, hackathons and capstones.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/diagnostic" className="btn bg-white text-brand-600 hover:bg-brand-50">Take the career diagnostic →</Link>
