@@ -73,11 +73,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Python Programming",
+      "course": "Masterclass: Problem Solving & Logic",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Problem Solving & Logic"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Problem Solving & Logic — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -138,11 +140,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Data Structures & Algorithms",
+      "course": "Masterclass: Version Control & Collaboration",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Version Control & Collaboration"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Version Control & Collaboration — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -203,19 +207,25 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Web & APIs",
+      "course": "Masterclass: Databases",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Databases"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Databases — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Applied Hackathon",
+      "course": "Hackathon: build a Web & APIs project",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "REST API Development",
+       "GraphQL",
+       "API Design"
+      ],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges",
+      "outcome": "48-hour team sprint applying REST API Development, GraphQL, API Design — shipped & judged by industry mentors",
       "hours": 40
      }
     ],
@@ -276,11 +286,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Machine Learning",
+      "course": "Masterclass: Feature Engineering & MLOps Intro",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Feature Engineering & MLOps Intro"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Feature Engineering & MLOps Intro — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -341,11 +353,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Deep Learning",
+      "course": "Masterclass: GPU & Model Training",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "GPU & Model Training"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on GPU & Model Training — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -406,19 +420,25 @@
       "hours": null
      },
      {
-      "course": "Masterclass: NLP & Transformers",
+      "course": "Masterclass: Data Pipelines",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Data Pipelines"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Data Pipelines — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Applied Hackathon",
+      "course": "Hackathon: build a NLP & Transformers project",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Transformers",
+       "Natural Language Processing",
+       "Hugging Face"
+      ],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges",
+      "outcome": "48-hour team sprint applying Transformers, Natural Language Processing, Hugging Face — shipped & judged by industry mentors",
       "hours": 40
      }
     ],
@@ -479,11 +499,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Generative AI & LLMs",
+      "course": "Masterclass: Prompt Engineering",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Prompt Engineering"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Prompt Engineering — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -544,11 +566,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Agentic AI & RAG",
+      "course": "Masterclass: Multi-Agent Systems",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Multi-Agent Systems"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Multi-Agent Systems — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -609,20 +633,26 @@
       "hours": null
      },
      {
-      "course": "Masterclass: MLOps & Production",
+      "course": "Masterclass: AI Governance & Safety",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "AI Governance & Safety"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on AI Governance & Safety — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Capstone — Production AI Engineer",
+      "course": "Capstone: Production AI Engineer",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "MLOps",
+       "CI/CD",
+       "Model Versioning"
+      ],
       "delivery": "Capstone",
-      "outcome": "Portfolio-grade, coached & assessed",
-      "hours": 120
+      "outcome": "Design, build & defend a production-grade project using MLOps, CI/CD, Model Versioning — your portfolio centrepiece",
+      "hours": null
      }
     ],
     "hours": 154,
@@ -746,11 +776,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Generative AI & LLMs",
+      "course": "Masterclass: LLM APIs",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "LLM APIs"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on LLM APIs — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -826,19 +858,25 @@
       "hours": null
      },
      {
-      "course": "Masterclass: RAG Pipelines",
+      "course": "Masterclass: Multi-Agent Systems",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Multi-Agent Systems"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Multi-Agent Systems — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Applied Hackathon",
+      "course": "Hackathon: build a RAG Pipelines project",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "RAG Pipelines",
+       "LLM Architecture",
+       "Prompt Engineering"
+      ],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges",
+      "outcome": "48-hour team sprint applying RAG Pipelines, LLM Architecture, Prompt Engineering — shipped & judged by industry mentors",
       "hours": 40
      }
     ],
@@ -914,20 +952,26 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Fine-Tuning (LoRA/QLoRA)",
+      "course": "Masterclass: Evaluation & Guardrails",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Evaluation & Guardrails"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Evaluation & Guardrails — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Capstone — Production GenAI Engineer",
+      "course": "Capstone: Production GenAI Engineer",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Fine-Tuning",
+       "LoRA",
+       "QLoRA"
+      ],
       "delivery": "Capstone",
-      "outcome": "Portfolio-grade, coached & assessed",
-      "hours": 120
+      "outcome": "Design, build & defend a production-grade project using Fine-Tuning, LoRA, QLoRA — your portfolio centrepiece",
+      "hours": null
      }
     ],
     "hours": 173,
@@ -1036,11 +1080,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Python for Data",
+      "course": "Masterclass: Statistics & Aptitude",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Statistics & Aptitude"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Statistics & Aptitude — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -1101,11 +1147,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Databases & SQL",
+      "course": "Masterclass: SQL at Scale",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "SQL at Scale"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on SQL at Scale — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -1166,19 +1214,25 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Excel & Visualization",
+      "course": "Masterclass: Tableau",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Tableau"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Tableau — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Applied Hackathon",
+      "course": "Hackathon: build a Excel & Visualization project",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Microsoft Excel",
+       "Data Analysis",
+       "Data Visualization"
+      ],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges",
+      "outcome": "48-hour team sprint applying Microsoft Excel, Data Analysis, Data Visualization — shipped & judged by industry mentors",
       "hours": 40
      }
     ],
@@ -1239,11 +1293,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Power BI & BI",
+      "course": "Masterclass: Data Governance",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Data Governance"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Data Governance — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -1304,11 +1360,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Cloud Data Warehousing",
+      "course": "Masterclass: Data Lakes & Pipelines",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Data Lakes & Pipelines"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Data Lakes & Pipelines — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -1369,19 +1427,25 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Machine Learning",
+      "course": "Masterclass: Feature Engineering",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Feature Engineering"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Feature Engineering — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Applied Hackathon",
+      "course": "Hackathon: build a Machine Learning project",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "scikit-learn",
+       "FastAPI",
+       "Machine Learning Pipelines"
+      ],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges",
+      "outcome": "48-hour team sprint applying scikit-learn, FastAPI, Machine Learning Pipelines — shipped & judged by industry mentors",
       "hours": 40
      }
     ],
@@ -1429,20 +1493,14 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Forecasting & Time Series",
+      "course": "Masterclass: Anomaly Detection",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Anomaly Detection"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Anomaly Detection — real architectures, trade-offs and industry war stories",
       "hours": null
-     },
-     {
-      "course": "Anomaly Detection",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Industry-aligned module",
-      "hours": 25
      }
     ],
     "hours": 45,
@@ -1502,11 +1560,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Generative AI for Data",
+      "course": "Masterclass: AI Dashboards & Automation",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "AI Dashboards & Automation"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on AI Dashboards & Automation — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -1541,36 +1601,22 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Big Data & Deployment",
+      "course": "Masterclass: Data Ethics & Governance",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Data Ethics & Governance"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Data Ethics & Governance — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Big Data & Deployment",
-      "slug": null,
-      "skills": [],
-      "delivery": "Async",
-      "outcome": "Industry-aligned module",
-      "hours": 25
-     },
-     {
-      "course": "Data Ethics & Governance",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Industry-aligned module",
-      "hours": 25
-     },
-     {
-      "course": "Capstone — AI Data Engineer",
+      "course": "Capstone: AI Data Engineer",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
-      "outcome": "Portfolio-grade, coached & assessed",
-      "hours": 120
+      "outcome": "Design, build & defend a production-grade project using Big Data & Deployment, Data Ethics & Governance — your portfolio centrepiece",
+      "hours": null
      }
     ],
     "hours": 170,
@@ -1679,11 +1725,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Business & Management",
+      "course": "Masterclass: Financial Analysis",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Financial Analysis"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Financial Analysis — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -1744,11 +1792,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: Marketing Foundations",
+      "course": "Masterclass: Business Analytics",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Business Analytics"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Business Analytics — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -1809,19 +1859,25 @@
       "hours": null
      },
      {
-      "course": "Masterclass: AI for Business",
+      "course": "Masterclass: Generative AI for Business",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Generative AI for Business"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Generative AI for Business — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Applied Hackathon",
+      "course": "Hackathon: build a AI for Business project",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "AI Literacy",
+       "Generative AI",
+       "No-Code AI Tools"
+      ],
       "delivery": "Hackathon",
-      "outcome": "Build & demo to industry judges",
+      "outcome": "48-hour team sprint applying AI Literacy, Generative AI, No-Code AI Tools — shipped & judged by industry mentors",
       "hours": 40
      }
     ],
@@ -1882,11 +1938,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: AI in Marketing",
+      "course": "Masterclass: Growth & Attribution",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Growth & Attribution"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Growth & Attribution — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -1947,11 +2005,13 @@
       "hours": null
      },
      {
-      "course": "Masterclass: AI in Finance",
+      "course": "Masterclass: AI Product Management",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "AI Product Management"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on AI Product Management — real architectures, trade-offs and industry war stories",
       "hours": null
      }
     ],
@@ -2012,20 +2072,26 @@
       "hours": null
      },
      {
-      "course": "Masterclass: AI Transformation & Leadership",
+      "course": "Masterclass: Strategy & Consulting",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Strategy & Consulting"
+      ],
       "delivery": "Masterclass",
-      "outcome": "Practitioner deep-dive with a working professional",
+      "outcome": "Live practitioner deep-dive on Strategy & Consulting — real architectures, trade-offs and industry war stories",
       "hours": null
      },
      {
-      "course": "Capstone — AI Business Leader",
+      "course": "Capstone: AI Business Leader",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Hybrid Team Management",
+       "AI Integration",
+       "Digital Transformation"
+      ],
       "delivery": "Capstone",
-      "outcome": "Portfolio-grade, coached & assessed",
-      "hours": 120
+      "outcome": "Design, build & defend a production-grade project using Hybrid Team Management, AI Integration, Digital Transformation — your portfolio centrepiece",
+      "hours": null
      }
     ],
     "hours": 138,
