@@ -1,6 +1,9 @@
 "use client";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { skillsByCluster } from "../../../lib/engine";
+import courses from "../../../data/courses.json";
+import allSpecs from "../../../data/journeys.json";
 
 const STATUS = {
   available: ["Ready", "chip-green"], planned: ["In production", "chip-blue"], create: ["Coming soon", "chip-peel"],
@@ -15,7 +18,20 @@ const PILLARS = [
 
 export default function SpecDetail({ spec }) {
   const clusters = skillsByCluster(spec.skills).slice(0, 8);
-  const stageNames = spec.stages.map((s) => s.name);
+  const [skill, setSkill] = useState(null);
+
+  const skillInfo = useMemo(() => {
+    if (!skill) return null;
+    const sl = skill.toLowerCase();
+    const teaching = courses.filter((c) => c.skills.some((s) => s.toLowerCase() === sl));
+    const roles = allSpecs.filter((s) => s.slug !== spec.slug && s.skills.some((k) => k.toLowerCase() === sl));
+    return { teaching: teaching.slice(0, 6), teachCount: teaching.length, roles: roles.slice(0, 5) };
+  }, [skill, spec.slug]);
+
+  const SkillChip = ({ s }) => (
+    <button onClick={() => setSkill(skill === s ? null : s)}
+      className={`chip transition ${skill === s ? "bg-brand-500 text-white" : "chip-blue hover:bg-brand-100"}`}>{s}</button>
+  );
 
   return (
     <div>
@@ -52,18 +68,49 @@ export default function SpecDetail({ spec }) {
       {/* skills you'll achieve */}
       <section className="mt-10">
         <h2 className="text-xl font-black text-ink-900">Skills you&apos;ll achieve</h2>
-        <p className="mt-1 text-sm text-ink-500">Grouped by area — this is the competency map for the role.</p>
+        <p className="mt-1 text-sm text-ink-500">Grouped by area — the competency map for this role. <span className="font-bold text-brand-600">Click any skill</span> to see where it&apos;s taught.</p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {clusters.map(([cl, sks]) => (
             <div key={cl} className="card p-4">
               <p className="font-black text-ink-900">{cl === "General Professional" ? "Professional & Workplace" : cl}</p>
               <div className="mt-2 flex flex-wrap gap-1.5">
-                {sks.slice(0, 8).map((s) => <span key={s} className="chip-blue">{s}</span>)}
-                {sks.length > 8 && <span className="chip-gray">+{sks.length - 8}</span>}
+                {sks.map((s) => <SkillChip key={s} s={s} />)}
               </div>
             </div>
           ))}
         </div>
+
+        {/* skill detail panel */}
+        {skill && skillInfo && (
+          <div className="card mt-4 animate-fadeUp border-brand-200 p-5">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-black text-ink-900">{skill}</h3>
+              <button onClick={() => setSkill(null)} className="text-sm font-bold text-ink-500 hover:text-ink-800">✕ close</button>
+            </div>
+            <div className="mt-3 grid gap-4 md:grid-cols-2">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-wider text-ink-500">Taught in {skillInfo.teachCount} Board Infinity course{skillInfo.teachCount !== 1 ? "s" : ""}</p>
+                {skillInfo.teaching.length ? (
+                  <ul className="mt-2 space-y-1.5">
+                    {skillInfo.teaching.map((c) => (
+                      <li key={c.slug}><Link href={`/course/${c.slug}`} className="text-sm font-bold text-brand-600 hover:underline">▶ {c.title}</Link></li>
+                    ))}
+                    {skillInfo.teachCount > skillInfo.teaching.length && <li className="text-xs text-ink-400">+{skillInfo.teachCount - skillInfo.teaching.length} more in the catalog</li>}
+                  </ul>
+                ) : <p className="mt-2 text-sm text-peel-700">New-age skill — premium content in production.</p>}
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-wider text-ink-500">Also valued in these roles</p>
+                {skillInfo.roles.length ? (
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {skillInfo.roles.map((r) => <Link key={r.slug} href={`/specializations/${r.slug}`} className="chip-gray hover:bg-brand-50 hover:text-brand-600">{r.role}</Link>)}
+                  </div>
+                ) : <p className="mt-2 text-sm text-ink-500">Specialized to this role.</p>}
+                <p className="mt-3 text-xs text-ink-400">💡 A skill that appears across roles is a high-leverage one to learn first.</p>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* the journey — stages only, no course content */}

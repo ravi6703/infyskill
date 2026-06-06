@@ -4,7 +4,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: { sans: ["Lato", "system-ui", "sans-serif"] },
+      keyframes: {
+        fadeUp: { "0%": { opacity: 0, transform: "translateY(12px)" }, "100%": { opacity: 1, transform: "translateY(0)" } },
+        fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } },
+      },
+      animation: { fadeUp: "fadeUp .4s ease both", fadeIn: "fadeIn .3s ease both" },
       colors: {
+        sky2: "#00B2FF",
+        teal: { 50: "#E6F9F1", 500: "#3AAE89", 600: "#2C8E70" },
         // Board Infinity — Primary Blue
         brand: {
           50: "#E6F7FF", 100: "#A3DDFF", 200: "#74C0F2", 300: "#49A2E6",
@@ -32,8 +39,8 @@ module.exports = {
         // Neutral ramp
         ink: {
           0: "#FFFFFF", 50: "#FAFAFA", 100: "#F5F5F5", 200: "#F0F0F0",
-          300: "#D9D9D9", 400: "#BFBFBF", 500: "#8C8C8C", 600: "#595959",
-          700: "#434343", 800: "#262626", 900: "#1F1F1F", 950: "#141414",
+          300: "#D9D9D9", 400: "#C1C8D1", 500: "#728197", 600: "#4A5464",
+          700: "#3A4250", 800: "#23282F", 900: "#1A1E24", 950: "#0F1216",
         },
       },
       boxShadow: {
