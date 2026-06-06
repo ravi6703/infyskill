@@ -33,8 +33,6 @@ export default function DegreeTerms({ terms, delivery }) {
                         {k < t.themes.length - 1 && <span className="text-ink-300">→</span>}
                       </span>
                     ))}
-                    <span className="text-ink-300">→</span>
-                    <span className="rounded-lg bg-teal-50 px-2.5 py-1 text-xs font-bold text-teal-600">🎯 {t.milestone}</span>
                   </div>
 
                   {/* delivery mix for the term */}
