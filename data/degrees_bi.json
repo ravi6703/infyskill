@@ -402,15 +402,16 @@
    ]
   },
   "credits": {
-   "target": 120,
-   "targetHours": 3600,
+   "target": 128,
+   "targetHours": 3840,
    "biCredits": 17,
    "biHours": 500,
-   "facultyCredits": 103,
-   "facultyHours": 3090,
-   "nepCap": 48,
-   "nepCapHours": 1440,
-   "withinNep": true
+   "facultyCredits": 111,
+   "facultyHours": 3330,
+   "nepCap": 51,
+   "nepCapHours": 1530,
+   "withinNep": true,
+   "benchmark": "IIT Hyderabad B.Tech AI (128 cr)"
   }
  },
  {
@@ -630,7 +631,8 @@
    "facultyHours": 1020,
    "nepCap": 18,
    "nepCapHours": 540,
-   "withinNep": true
+   "withinNep": true,
+   "benchmark": "1-yr PG Diploma (NCrF ~44 cr)"
   }
  },
  {
@@ -1021,15 +1023,16 @@
    ]
   },
   "credits": {
-   "target": 120,
-   "targetHours": 3600,
+   "target": 142,
+   "targetHours": 4260,
    "biCredits": 17,
    "biHours": 513,
-   "facultyCredits": 103,
-   "facultyHours": 3090,
-   "nepCap": 48,
-   "nepCapHours": 1440,
-   "withinNep": true
+   "facultyCredits": 125,
+   "facultyHours": 3750,
+   "nepCap": 57,
+   "nepCapHours": 1710,
+   "withinNep": true,
+   "benchmark": "IIT Madras BS Data Science (142 cr)"
   }
  },
  {
@@ -1321,7 +1324,8 @@
    "facultyHours": 2520,
    "nepCap": 38,
    "nepCapHours": 1140,
-   "withinNep": true
+   "withinNep": true,
+   "benchmark": "IIM Bangalore PGPBA (~96 cr)"
   }
  }
 ]

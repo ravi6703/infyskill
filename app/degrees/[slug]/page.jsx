@@ -37,7 +37,7 @@ export default function Degree({ params }) {
       {d.credits && (
         <section className="mt-8">
           <h2 className="text-xl font-black text-ink-900">Credits & hours</h2>
-          <p className="mt-1 text-sm text-ink-500">Modelled on the National Credit Framework (1 credit = 30 learning hours). Board Infinity delivers the industry layer within UGC&apos;s 40% online-credit allowance; faculty delivers the academic core.</p>
+          <p className="mt-1 text-sm text-ink-500">Modelled on the National Credit Framework (1 credit = 30 learning hours){d.credits.benchmark ? <>, benchmarked against <b className="text-ink-700">{d.credits.benchmark}</b></> : null}. Board Infinity delivers the industry layer within UGC&apos;s 40% online-credit allowance; faculty delivers the academic core.</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-4">
             <div className="card p-4 text-center"><p className="text-2xl font-black text-ink-900">{d.credits.target}</p><p className="text-[11px] text-ink-500">total credits · {d.credits.targetHours.toLocaleString()} hrs</p></div>
             <div className="card border-brand-200 p-4 text-center"><p className="text-2xl font-black text-brand-600">{d.credits.biCredits}</p><p className="text-[11px] text-ink-500">BI-delivered · {d.credits.biHours} hrs (async + live + projects)</p></div>

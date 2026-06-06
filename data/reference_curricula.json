@@ -1,52 +1,682 @@
 [
-  {
-    "id": "btech-cse-ai",
-    "name": "B.Tech CSE (AI specialization)",
-    "ref": "Benchmarked against IIIT-Hyderabad / IIT-Madras CSE-AI structure",
-    "subjects": [
-      "Programming and Data Structures", "Discrete Mathematics", "Computer Organization",
-      "Design and Analysis of Algorithms", "Database Management Systems", "Operating Systems",
-      "Computer Networks", "Probability and Statistics", "Machine Learning", "Deep Learning",
-      "Natural Language Processing", "Computer Vision", "Software Engineering",
-      "Cloud Computing", "Theory of Computation", "Artificial Intelligence",
-      "Reinforcement Learning", "Big Data Systems", "Capstone / Thesis"
-    ]
-  },
-  {
-    "id": "msc-data-science",
-    "name": "M.Sc. Data Science",
-    "ref": "Benchmarked against IISc / IIT-M Data Science & AI program",
-    "subjects": [
-      "Statistical Foundations", "Linear Algebra and Optimization", "Python for Data Science",
-      "Data Structures and Algorithms", "Database Systems and SQL", "Data Visualization",
-      "Machine Learning", "Deep Learning", "Big Data and Distributed Computing",
-      "Data Engineering and Pipelines", "Time Series Analysis", "Natural Language Processing",
-      "Cloud and MLOps", "Data Ethics and Governance", "Research Project"
-    ]
-  },
-  {
-    "id": "mba-bizanalytics",
-    "name": "MBA (Business Analytics / AI)",
-    "ref": "Benchmarked against IIM-Bangalore / ISB analytics electives",
-    "subjects": [
-      "Principles of Management", "Financial Accounting", "Marketing Management",
-      "Operations Management", "Business Statistics", "Microeconomics",
-      "Business Analytics and Data Visualization", "Predictive Modeling",
-      "AI for Business Strategy", "Marketing Analytics", "Financial Modeling",
-      "Operations and Supply Chain Analytics", "Business Law", "Organizational Behaviour",
-      "Capstone Consulting Project"
-    ]
-  },
-  {
-    "id": "bca-general",
-    "name": "BCA (Computer Applications)",
-    "ref": "Benchmarked against typical UGC BCA structure",
-    "subjects": [
-      "Programming in C", "Object-Oriented Programming with Java", "Data Structures",
-      "Database Management Systems", "Web Technologies (HTML/CSS/JS)", "Operating Systems",
-      "Computer Networks", "Software Engineering", "Python Programming",
-      "Mobile Application Development", "Cloud Computing", "Discrete Mathematics",
-      "Statistics", "Frontend Frameworks", "Major Project"
-    ]
-  }
+ {
+  "id": "btech-cse-ai",
+  "name": "B.Tech in AI / CSE-AI",
+  "ref": "Benchmarked against IIT Hyderabad \u00b7 128 credits",
+  "source": "https://ai.iith.ac.in/btech-curriculum/index.html",
+  "subjects": [
+   {
+    "year": 1,
+    "semester": 1,
+    "code": "MA1110",
+    "name": "Calculus I",
+    "credits": 1
+   },
+   {
+    "year": 1,
+    "semester": 1,
+    "code": "MA1220",
+    "name": "Calculus II",
+    "credits": 1
+   },
+   {
+    "year": 1,
+    "semester": 1,
+    "code": "EP1108",
+    "name": "Modern Physics (Science Basket)",
+    "credits": 2
+   },
+   {
+    "year": 1,
+    "semester": 1,
+    "code": "ID1063",
+    "name": "Programming",
+    "credits": 3
+   },
+   {
+    "year": 1,
+    "semester": 1,
+    "code": "EE1030/AI1000",
+    "name": "Matrix Theory",
+    "credits": 3
+   },
+   {
+    "year": 1,
+    "semester": 1,
+    "code": "CS1010",
+    "name": "Discrete Math for Computer Science",
+    "credits": 3
+   },
+   {
+    "year": 1,
+    "semester": 1,
+    "code": "AI1001",
+    "name": "Intro to Modern AI",
+    "credits": 1
+   },
+   {
+    "year": 1,
+    "semester": 1,
+    "code": "LA1760",
+    "name": "Communication Skills",
+    "credits": 2
+   },
+   {
+    "year": 1,
+    "semester": 2,
+    "code": "MA1150",
+    "name": "Differential Equations",
+    "credits": 1
+   },
+   {
+    "year": 1,
+    "semester": 2,
+    "code": "AI1233",
+    "name": "Optimization - I",
+    "credits": 3
+   },
+   {
+    "year": 1,
+    "semester": 2,
+    "code": "AI1013",
+    "name": "Programming for AI",
+    "credits": 2
+   },
+   {
+    "year": 1,
+    "semester": 2,
+    "code": "AI1100",
+    "name": "Intro to Classical AI",
+    "credits": 1
+   },
+   {
+    "year": 1,
+    "semester": 2,
+    "code": "AI1110",
+    "name": "Probability and Random Variables",
+    "credits": 3
+   },
+   {
+    "year": 1,
+    "semester": 2,
+    "code": "EM3020",
+    "name": "Intro to Entrepreneurship",
+    "credits": 1
+   },
+   {
+    "year": 2,
+    "semester": 3,
+    "code": "MA2150",
+    "name": "Introduction to Metric Spaces",
+    "credits": 1
+   },
+   {
+    "year": 2,
+    "semester": 3,
+    "code": "MA3060",
+    "name": "Numerical Analysis",
+    "credits": 3
+   },
+   {
+    "year": 2,
+    "semester": 3,
+    "code": "ID2230",
+    "name": "Data Structures & Applications",
+    "credits": 3
+   },
+   {
+    "year": 2,
+    "semester": 3,
+    "code": "EE1206",
+    "name": "Linear Systems and Signal Processing",
+    "credits": 3
+   },
+   {
+    "year": 2,
+    "semester": 3,
+    "code": "CS3550",
+    "name": "DBMS - I",
+    "credits": 1
+   },
+   {
+    "year": 2,
+    "semester": 3,
+    "code": "AI2200",
+    "name": "Concentration Inequalities",
+    "credits": 1
+   },
+   {
+    "year": 2,
+    "semester": 3,
+    "code": "AI2000",
+    "name": "Foundations of Machine Learning",
+    "credits": 3
+   },
+   {
+    "year": 2,
+    "semester": 4,
+    "code": "AI2100",
+    "name": "Deep Learning",
+    "credits": 3
+   },
+   {
+    "year": 2,
+    "semester": 4,
+    "code": "AI2113",
+    "name": "Optimization - II",
+    "credits": 3
+   },
+   {
+    "year": 2,
+    "semester": 4,
+    "code": "CS2443",
+    "name": "Algorithms",
+    "credits": 3
+   }
+  ]
+ },
+ {
+  "id": "msc-data-science",
+  "name": "BS / M.Sc Data Science",
+  "ref": "Benchmarked against IIT Madras \u00b7 142 credits",
+  "source": "https://study.iitm.ac.in/ds/academics.html",
+  "subjects": [
+   {
+    "level": "Foundation",
+    "code": "BSMA1001",
+    "name": "Mathematics for Data Science I",
+    "credits": 4
+   },
+   {
+    "level": "Foundation",
+    "code": "BSMA1002",
+    "name": "Statistics for Data Science I",
+    "credits": 4
+   },
+   {
+    "level": "Foundation",
+    "code": "BSCS1001",
+    "name": "Computational Thinking",
+    "credits": 4
+   },
+   {
+    "level": "Foundation",
+    "code": "BSHS1001",
+    "name": "English I",
+    "credits": 4
+   },
+   {
+    "level": "Foundation",
+    "code": "BSMA1003",
+    "name": "Mathematics for Data Science II",
+    "credits": 4
+   },
+   {
+    "level": "Foundation",
+    "code": "BSMA1004",
+    "name": "Statistics for Data Science II",
+    "credits": 4
+   },
+   {
+    "level": "Foundation",
+    "code": "BSCS1002",
+    "name": "Programming in Python",
+    "credits": 4
+   },
+   {
+    "level": "Foundation",
+    "code": "BSHS1002",
+    "name": "English II",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Programming",
+    "code": "BSCS2001",
+    "name": "Database Management Systems",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Programming",
+    "code": "BSCS2002",
+    "name": "Programming, Data Structures and Algorithms using Python",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Programming",
+    "code": "BSCS2003",
+    "name": "Modern Application Development I",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Programming",
+    "code": "BSCS2003P",
+    "name": "Modern Application Development I \u2014 Project",
+    "credits": 2
+   },
+   {
+    "level": "Diploma \u2014 Programming",
+    "code": "BSCS2005",
+    "name": "Programming Concepts using Java",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Programming",
+    "code": "BSCS2006",
+    "name": "Modern Application Development II",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Programming",
+    "code": "BSCS2006P",
+    "name": "Modern Application Development II \u2014 Project",
+    "credits": 2
+   },
+   {
+    "level": "Diploma \u2014 Programming",
+    "code": "BSSE2001",
+    "name": "System Commands",
+    "credits": 3
+   },
+   {
+    "level": "Diploma \u2014 Data Science",
+    "code": "BSCS2004",
+    "name": "Machine Learning Foundations",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Data Science",
+    "code": "BSMS2001",
+    "name": "Business Data Management",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Data Science",
+    "code": "BSCS2007",
+    "name": "Machine Learning Techniques",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Data Science",
+    "code": "BSCS2008",
+    "name": "Machine Learning Practice",
+    "credits": 4
+   },
+   {
+    "level": "Diploma \u2014 Data Science",
+    "code": "BSCS2008P",
+    "name": "Machine Learning Practice \u2014 Project",
+    "credits": 2
+   },
+   {
+    "level": "Diploma \u2014 Data Science",
+    "code": "BSSE2002",
+    "name": "Tools in Data Science",
+    "credits": 3
+   },
+   {
+    "level": "Diploma \u2014 Data Science (Option 1)",
+    "code": "BSMS2001P",
+    "name": "Business Data Management \u2014 Project",
+    "credits": 2
+   },
+   {
+    "level": "Diploma \u2014 Data Science (Option 1)",
+    "code": "BSMS2002",
+    "name": "Business Analytics",
+    "credits": 4
+   }
+  ]
+ },
+ {
+  "id": "mba-bizanalytics",
+  "name": "MBA (Business Analytics / AI)",
+  "ref": "Benchmarked against IIM Bangalore \u00b7 94.5 to 100.5 (approx) credits",
+  "source": "https://www.iimb.ac.in/programmes/pgpba/programme-structure",
+  "subjects": [
+   {
+    "year": 1,
+    "term": "Term I",
+    "name": "Accounting for Decisions",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term I",
+    "name": "Advances in Business Communication",
+    "credits": 1.5,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term I",
+    "name": "Marketing Management",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term I",
+    "name": "Economics for Managers",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term I",
+    "name": "Organizational Behaviour and Design",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term I",
+    "name": "Decision Sciences - I (Statistics/Quantitative Methods)",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term II",
+    "name": "Corporate Finance",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term II",
+    "name": "Communication in the Digital Age",
+    "credits": 1.5,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term II",
+    "name": "Managing People and Performance in Organisation",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term II",
+    "name": "Operations Management",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term II",
+    "name": "Decision Sciences - II",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term II",
+    "name": "Competition and Strategy",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term III",
+    "name": "Business, Government and Society: Ethics and Responsible Business",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term III",
+    "name": "Introduction to Computing",
+    "credits": 1.5,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term III",
+    "name": "Time Series and Forecasting Techniques",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term III",
+    "name": "Machine Learning and Applications",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term III",
+    "name": "Macroeconomics",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 1,
+    "term": "Term III",
+    "name": "Entrepreneurial Mindset and Action",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 2,
+    "term": "Term IV",
+    "name": "Natural Language Processing (NLP)",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 2,
+    "term": "Term IV",
+    "name": "Artificial Intelligence and Deep Learning",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 2,
+    "term": "Term IV",
+    "name": "Multivariate Data Analysis",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 2,
+    "term": "Term IV",
+    "name": "Optimisation",
+    "credits": 3,
+    "type": "Core"
+   },
+   {
+    "year": 2,
+    "term": "Terms IV-VI",
+    "name": "Field Electives \u2014 Business Analytics domain (minimum 12 credits / 4 electives)",
+    "credits": "12 minimum",
+    "type": "Elective \u2014 Analytics"
+   },
+   {
+    "year": 2,
+    "term": "Terms IV-VI",
+    "name": "Free Electives \u2014 General Management / Analytics (remaining)",
+    "credits": "variable",
+    "type": "Elective \u2014 General"
+   }
+  ]
+ },
+ {
+  "id": "bca-general",
+  "name": "BCA (Computer Applications)",
+  "ref": "Benchmarked against Bangalore University and Bangalore City University \u00b7 144 credits",
+  "source": "https://www.sabs.ac.in/downloads/bca-syllabus-nep.pdf",
+  "subjects": [
+   {
+    "semester": 1,
+    "code": "CA-C1T",
+    "name": "Discrete Structures",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 1,
+    "code": "CA-C2T",
+    "name": "Problem Solving Techniques (Algorithms + C Programming)",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 1,
+    "code": "CA-C3T",
+    "name": "Data Structures",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 1,
+    "code": "CA-C4L",
+    "name": "C Programming Lab",
+    "credits": 2,
+    "type": "Lab"
+   },
+   {
+    "semester": 1,
+    "code": "CA-C5L",
+    "name": "Data Structures Lab",
+    "credits": 2,
+    "type": "Lab"
+   },
+   {
+    "semester": 1,
+    "code": "OE1",
+    "name": "Open Elective 1",
+    "credits": 3,
+    "type": "Open Elective"
+   },
+   {
+    "semester": 1,
+    "code": "LANG",
+    "name": "Language L1 + L2 (e.g., Kannada/Hindi/English)",
+    "credits": 6,
+    "type": "Language/AECC"
+   },
+   {
+    "semester": 1,
+    "code": "SEC-I",
+    "name": "Office Management Tools (Skill Enhancement)",
+    "credits": 2,
+    "type": "Skill Enhancement"
+   },
+   {
+    "semester": 2,
+    "code": "CA-C6T",
+    "name": "Computer Architecture",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 2,
+    "code": "CA-C7T",
+    "name": "Object Oriented Programming using Java",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 2,
+    "code": "CA-C8T",
+    "name": "Database Management Systems (DBMS)",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 2,
+    "code": "CA-C9L",
+    "name": "Java Programming Lab",
+    "credits": 2,
+    "type": "Lab"
+   },
+   {
+    "semester": 2,
+    "code": "CA-C10L",
+    "name": "Database Management Systems Lab",
+    "credits": 2,
+    "type": "Lab"
+   },
+   {
+    "semester": 2,
+    "code": "OE2",
+    "name": "Open Elective 2",
+    "credits": 3,
+    "type": "Open Elective"
+   },
+   {
+    "semester": 3,
+    "code": "CA-C11T",
+    "name": "Operating Systems",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 3,
+    "code": "CA-C12T",
+    "name": "Computer Networks",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 3,
+    "code": "CA-C13T",
+    "name": "Python Programming",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 3,
+    "code": "CA-C14L",
+    "name": "Computer Networks Lab",
+    "credits": 2,
+    "type": "Lab"
+   },
+   {
+    "semester": 3,
+    "code": "CA-C15L",
+    "name": "Python Programming Lab",
+    "credits": 2,
+    "type": "Lab"
+   },
+   {
+    "semester": 3,
+    "code": "OE3",
+    "name": "Open Elective 3",
+    "credits": 3,
+    "type": "Open Elective"
+   },
+   {
+    "semester": 3,
+    "code": "SEC-II",
+    "name": "Computer Assembly and Repair (Skill Enhancement)",
+    "credits": 2,
+    "type": "Skill Enhancement"
+   },
+   {
+    "semester": 4,
+    "code": "CA-C16T",
+    "name": "Software Engineering",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 4,
+    "code": "CA-C17T",
+    "name": "Artificial Intelligence",
+    "credits": 3,
+    "type": "Core Theory"
+   },
+   {
+    "semester": 4,
+    "code": "CA-C18T",
+    "name": "Internet Technologies",
+    "credits": 3,
+    "type": "Core Theory"
+   }
+  ]
+ }
 ]

@@ -45,7 +45,8 @@ export default function DegreeCompare() {
   const [sent, setSent] = useState(false);
 
   function analyze(subjects, name) {
-    const rows = subjects.map(matchSubject);
+    const names = subjects.map((s) => (typeof s === "string" ? s : s.name));
+    const rows = names.map(matchSubject);
     const full = rows.filter((r) => r.status === "Full").length;
     const partial = rows.filter((r) => r.status === "Partial").length;
     const gaps = rows.filter((r) => r.status === "Gap");
@@ -87,7 +88,12 @@ export default function DegreeCompare() {
               className={`chip border transition ${refId === r.id && result?.name === r.name ? "bg-brand-500 text-white" : "chip-gray hover:bg-brand-50"}`}>{r.name}</button>
           ))}
         </div>
-        <p className="mt-1 text-xs text-ink-400">{refs.find((r) => r.id === refId)?.ref}</p>
+        <p className="mt-1 text-xs text-ink-400">
+          {refs.find((r) => r.id === refId)?.ref}
+          {refs.find((r) => r.id === refId)?.source && (
+            <> · <a href={refs.find((r) => r.id === refId).source} target="_blank" rel="noreferrer" className="text-brand-600 hover:underline">official source ↗</a></>
+          )}
+        </p>
 
         <details className="mt-4">
           <summary className="cursor-pointer text-sm font-bold text-ink-800">…or paste your own curriculum (one subject per line)</summary>
