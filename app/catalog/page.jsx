@@ -27,26 +27,22 @@ export default function Catalog() {
       <h1 className="text-3xl font-black text-ink-900">Course Catalog</h1>
       <p className="mt-2 text-ink-500">{courses.length} courses across {domains.length} categories. Every course is skill-tagged — open one to see its visual learning roadmap.</p>
 
-      <div className="card mt-6 grid grid-cols-1 gap-3 p-4 sm:grid-cols-[1fr_auto_auto_auto] sm:items-center">
+      <div className="card mt-6 grid grid-cols-1 gap-3 p-4 sm:grid-cols-[1fr_auto_auto] sm:items-center">
         <input className="input" placeholder="Search course or skill…" value={q} onChange={(e) => setQ(e.target.value)} />
-        <select className="input w-full font-bold sm:w-56" value={domain} onChange={(e) => setDomain(e.target.value)}>
-          <option value="">All categories ({courses.length})</option>
-          {domains.map((d) => <option key={d} value={d}>{d} ({byDomainCount[d]})</option>)}
-        </select>
         <select className="input w-full font-bold sm:w-40" value={level} onChange={(e) => setLevel(e.target.value)}>
           <option value="">All levels</option>
           {LEVELS.map((l) => <option key={l}>{l}</option>)}
         </select>
         <button onClick={() => { setQ(""); setDomain(""); setLevel(""); }}
           disabled={!(domain || level || q)}
-          className="rounded-lg border border-ink-300 px-4 py-2 text-sm font-bold text-ink-600 transition hover:border-brand-500 hover:text-brand-600 disabled:opacity-40">
+          className="rounded-full border border-ink-300 px-4 py-2 text-sm font-bold text-ink-600 transition hover:border-brand-500 hover:text-brand-600 disabled:opacity-40">
           Clear
         </button>
       </div>
 
-      {/* quick category pills */}
+      {/* category pills (single source of category filtering) */}
       <div className="mt-3 flex flex-wrap gap-2">
-        <button onClick={() => setDomain("")} className={`chip ${!domain ? "bg-brand-500 text-white" : "chip-gray"}`}>All</button>
+        <button onClick={() => setDomain("")} className={`chip ${!domain ? "bg-brand-500 text-white" : "chip-gray"}`}>All <span className="opacity-60">{courses.length}</span></button>
         {domains.map((d) => (
           <button key={d} onClick={() => setDomain(d)} className={`chip ${domain === d ? "bg-brand-500 text-white" : "chip-gray"}`}>
             {d} <span className="opacity-60">{byDomainCount[d]}</span>
