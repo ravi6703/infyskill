@@ -10,6 +10,7 @@ export default function CourseDetail({ course }) {
   const [data, setData] = useState(null);
   const [err, setErr] = useState(null);
   const [open, setOpen] = useState(null);
+  const [view, setView] = useState("skill"); // "skill" | "content"
 
   useEffect(() => {
     const t = encodeURIComponent(course.title);
@@ -52,15 +53,73 @@ export default function CourseDetail({ course }) {
         </div>
       </div>
 
-      <div className="mt-8 flex items-center gap-3">
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-xl font-black text-ink-900">Learning Roadmap</h2>
-        <span className="chip-gray">follow top → bottom</span>
+        <div className="flex rounded-lg border border-ink-200 bg-ink-50 p-1 text-sm font-bold">
+          <button onClick={() => setView("skill")} className={`rounded-md px-3 py-1.5 transition ${view === "skill" ? "bg-brand-500 text-white" : "text-ink-600 hover:text-brand-600"}`}>🎯 Skill Journey</button>
+          <button onClick={() => setView("content")} className={`rounded-md px-3 py-1.5 transition ${view === "content" ? "bg-brand-500 text-white" : "text-ink-600 hover:text-brand-600"}`}>📚 Course Content</button>
+        </div>
       </div>
+      <p className="mt-1 text-sm text-ink-500">
+        {view === "skill" ? "How your skills build, topic by topic — no curriculum, just the progression." : "The full curriculum — modules, lessons and videos."}
+      </p>
 
       {err && <p className="mt-6 text-rose-600">Could not load roadmap: {err}</p>}
       {!data && !err && <p className="mt-6 animate-pulse text-ink-400">Building the roadmap…</p>}
 
-      {data && (
+      {/* SKILL JOURNEY — topics + cumulative skills, no course content */}
+      {data && view === "skill" && (() => {
+        const seen = new Set();
+        const steps = data.modules.map((m) => {
+          const fresh = (m.skills || []).filter((s) => { const k = s.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
+          return { m, fresh, total: seen.size };
+        });
+        const totalSkills = seen.size;
+        return (
+          <div className="mt-6">
+            <div className="relative space-y-4 border-l-2 border-brand-100 pl-6">
+              <div className="relative">
+                <span className="absolute -left-[31px] top-1 grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-[10px] font-black text-white">▸</span>
+                <p className="text-sm font-bold text-ink-500">You start with the fundamentals →</p>
+              </div>
+              {steps.map((st, i) => (
+                <div key={st.m.id} className="relative">
+                  <span className="absolute -left-[33px] top-1 grid h-6 w-6 place-items-center rounded-full bg-brand-500 text-[11px] font-black text-white">{i + 1}</span>
+                  <div className="card p-4">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <p className="font-black text-ink-900">{st.m.title}</p>
+                      <span className="chip-blue">{st.total}/{totalSkills} skills</span>
+                    </div>
+                    {st.fresh.length > 0 ? (
+                      <div className="mt-2">
+                        <p className="text-[11px] font-bold uppercase tracking-wider text-[#1A8B66]">+ New skills you gather here</p>
+                        <div className="mt-1.5 flex flex-wrap gap-1.5">
+                          {st.fresh.map((s) => <span key={s} className="chip-green">+ {s}</span>)}
+                        </div>
+                      </div>
+                    ) : <p className="mt-2 text-xs text-ink-400">Reinforces & deepens earlier skills.</p>}
+                    {/* cumulative skill bar */}
+                    <div className="mt-3 h-1.5 w-full overflow-hidden rounded bg-ink-100">
+                      <div className="h-full bg-gradient-to-r from-brand-400 to-brand-600 transition-all" style={{ width: `${Math.round((st.total / totalSkills) * 100)}%` }} />
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <div className="relative">
+                <span className="absolute -left-[31px] top-1 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎯</span>
+                <div className="card border-peel-200 bg-peel-50 p-4">
+                  <p className="font-black text-ink-900">Job-ready with {totalSkills} skills</p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {course.skills.map((s) => <span key={s} className="chip-peel">{s}</span>)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+
+      {data && view === "content" && (
         <div className="relative mt-6">
           {/* center spine */}
           <div className="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2 bg-brand-100 md:block" />
