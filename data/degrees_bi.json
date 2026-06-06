@@ -3,7 +3,7 @@
   "slug": "bsc-ai-engineering",
   "name": "B.Sc. in AI Engineering",
   "tagline": "Become the engineer who builds and ships AI systems.",
-  "duration": "3 years \u00b7 9 trimesters",
+  "duration": "3 years · 9 trimesters",
   "level": "Undergraduate",
   "delivery": {
    "async": 45,
@@ -20,7 +20,7 @@
   ],
   "terms": [
    {
-    "name": "Year 1 \u00b7 Trimester 1",
+    "name": "Year 1 · Trimester 1",
     "themes": [
      "Python Programming",
      "Problem Solving & Logic"
@@ -41,7 +41,7 @@
       "hours": 30
      },
      {
-      "course": "Quantitative Aptitude Mastery\u2014 Exam & Recruitment Prep",
+      "course": "Quantitative Aptitude Mastery— Exam & Recruitment Prep",
       "slug": "quantitative-aptitude-mastery-exam-recruitment-prep",
       "skills": [
        "Quantitative Aptitude",
@@ -49,16 +49,32 @@
        "Number Systems",
        "Speed Calculation"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Quantitative Aptitude & Vedic Mathematics",
       "hours": 18
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Python Programming",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Python Programming",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 48,
     "credits": 1.6
    },
    {
-    "name": "Year 1 \u00b7 Trimester 2",
+    "name": "Year 1 · Trimester 2",
     "themes": [
      "Data Structures & Algorithms",
      "Version Control & Collaboration"
@@ -87,16 +103,32 @@
        "Version Control",
        "Code Review"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master Git & GitHub",
       "hours": 13
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Data Structures & Algorithms",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Data Structures & Algorithms",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 38,
     "credits": 1.3
    },
    {
-    "name": "Year 1 \u00b7 Trimester 3",
+    "name": "Year 1 · Trimester 3",
     "themes": [
      "Web & APIs",
      "Databases"
@@ -125,9 +157,25 @@
        "NoSQL",
        "REST API Development"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master SQL & MongoDB",
       "hours": 13
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Web & APIs",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Web & APIs",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      },
      {
       "course": "Applied Hackathon",
@@ -142,7 +190,7 @@
     "credits": 2.1
    },
    {
-    "name": "Year 2 \u00b7 Trimester 1",
+    "name": "Year 2 · Trimester 1",
     "themes": [
      "Machine Learning",
      "Feature Engineering & MLOps Intro"
@@ -171,16 +219,32 @@
        "Weka",
        "DeepLearning4j"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Machine Learning & Java",
       "hours": 12
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Machine Learning",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Machine Learning",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 34,
     "credits": 1.1
    },
    {
-    "name": "Year 2 \u00b7 Trimester 2",
+    "name": "Year 2 · Trimester 2",
     "themes": [
      "Deep Learning",
      "GPU & Model Training"
@@ -209,16 +273,32 @@
        "ConvNeXt",
        "Mixed Precision Training"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master PyTorch Lightning & Vision Transformers",
       "hours": 21
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Deep Learning",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Deep Learning",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 36,
     "credits": 1.2
    },
    {
-    "name": "Year 2 \u00b7 Trimester 3",
+    "name": "Year 2 · Trimester 3",
     "themes": [
      "NLP & Transformers",
      "Data Pipelines"
@@ -247,9 +327,25 @@
        "Data Pipelines",
        "Data Governance"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Google Cloud Dataplex & Data Lake Management",
       "hours": 4
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on NLP & Transformers",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: NLP & Transformers",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      },
      {
       "course": "Applied Hackathon",
@@ -264,7 +360,7 @@
     "credits": 2.1
    },
    {
-    "name": "Year 3 \u00b7 Trimester 1",
+    "name": "Year 3 · Trimester 1",
     "themes": [
      "Generative AI & LLMs",
      "Prompt Engineering"
@@ -293,16 +389,32 @@
        "Large Language Models",
        "Few-Shot Learning"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Prompt Engineering & Generative AI",
       "hours": 9
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Generative AI & LLMs",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Generative AI & LLMs",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 28,
     "credits": 0.9
    },
    {
-    "name": "Year 3 \u00b7 Trimester 2",
+    "name": "Year 3 · Trimester 2",
     "themes": [
      "Agentic AI & RAG",
      "Multi-Agent Systems"
@@ -331,16 +443,32 @@
        "LangGraph",
        "AutoGen"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master Multi-Agent Systems & CrewAI",
       "hours": 16
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Agentic AI & RAG",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Agentic AI & RAG",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 36,
     "credits": 1.2
    },
    {
-    "name": "Year 3 \u00b7 Trimester 3",
+    "name": "Year 3 · Trimester 3",
     "themes": [
      "MLOps & Production",
      "AI Governance & Safety"
@@ -369,12 +497,28 @@
        "Adversarial Robustness",
        "Regulatory Compliance"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master AI Governance & Red Teaming",
       "hours": 17
      },
      {
-      "course": "Capstone \u2014 Production AI Engineer",
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on MLOps & Production",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: MLOps & Production",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
+     },
+     {
+      "course": "Capstone — Production AI Engineer",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
@@ -395,7 +539,7 @@
     "Masterclasses by practitioners with 10+ yrs"
    ],
    "uniGap": [
-    "Outdated syllabi \u2014 GenAI/LLMs rarely covered",
+    "Outdated syllabi — GenAI/LLMs rarely covered",
     "Theory-heavy, little deployment practice",
     "No portfolio / capstone tied to roles",
     "Faculty rarely from current industry"
@@ -418,7 +562,7 @@
   "slug": "pgd-applied-genai",
   "name": "PG Diploma in Applied GenAI",
   "tagline": "Go from graduate to GenAI builder in one intensive year.",
-  "duration": "1 year \u00b7 3 trimesters",
+  "duration": "1 year · 3 trimesters",
   "level": "Postgraduate Diploma",
   "delivery": {
    "async": 40,
@@ -435,7 +579,7 @@
   ],
   "terms": [
    {
-    "name": "Trimester 1 \u00b7 GenAI Foundations",
+    "name": "Trimester 1 · GenAI Foundations",
     "themes": [
      "Generative AI & LLMs",
      "Prompt Engineering",
@@ -465,7 +609,7 @@
        "Large Language Models",
        "Few-Shot Learning"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Prompt Engineering & Generative AI",
       "hours": 9
      },
@@ -478,16 +622,32 @@
        "Prompt Engineering",
        "RAG Pipelines"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master DeepSeek & AI-Assisted Development",
       "hours": 16
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Generative AI & LLMs",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Generative AI & LLMs",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 27,
     "credits": 0.9
    },
    {
-    "name": "Trimester 2 \u00b7 Agents & RAG",
+    "name": "Trimester 2 · Agents & RAG",
     "themes": [
      "RAG Pipelines",
      "Agentic Workflows",
@@ -517,7 +677,7 @@
        "Pinecone",
        "Vector Databases"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master RAG Pipelines & LangGraph",
       "hours": 20
      },
@@ -530,9 +690,25 @@
        "LangGraph",
        "AutoGen"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master Multi-Agent Systems & CrewAI",
       "hours": 16
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on RAG Pipelines",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: RAG Pipelines",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      },
      {
       "course": "Applied Hackathon",
@@ -547,7 +723,7 @@
     "credits": 3.1
    },
    {
-    "name": "Trimester 3 \u00b7 Production & Capstone",
+    "name": "Trimester 3 · Production & Capstone",
     "themes": [
      "Fine-Tuning (LoRA/QLoRA)",
      "MLOps & Serving",
@@ -577,7 +753,7 @@
        "Model Versioning",
        "LLM Evaluation"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master MLOps & CI/CD",
       "hours": 17
      },
@@ -590,12 +766,28 @@
        "Adversarial Robustness",
        "Regulatory Compliance"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master AI Governance & Red Teaming",
       "hours": 17
      },
      {
-      "course": "Capstone \u2014 Production GenAI Engineer",
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Fine-Tuning (LoRA/QLoRA)",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Fine-Tuning (LoRA/QLoRA)",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
+     },
+     {
+      "course": "Capstone — Production GenAI Engineer",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
@@ -612,7 +804,7 @@
     "100% current AI-era stack",
     "Build 4+ shippable GenAI products",
     "Agentic systems & fine-tuning hands-on",
-    "Direct path to \u20b912-60 LPA roles",
+    "Direct path to ₹12-60 LPA roles",
     "Industry mentorship throughout"
    ],
    "uniGap": [
@@ -638,8 +830,8 @@
  {
   "slug": "bsc-data-science",
   "name": "B.Sc. in Data Science & Analytics",
-  "tagline": "Turn data into decisions \u2014 and into a data career.",
-  "duration": "3 years \u00b7 9 trimesters",
+  "tagline": "Turn data into decisions — and into a data career.",
+  "duration": "3 years · 9 trimesters",
   "level": "Undergraduate",
   "delivery": {
    "async": 48,
@@ -656,7 +848,7 @@
   ],
   "terms": [
    {
-    "name": "Year 1 \u00b7 Trimester 1",
+    "name": "Year 1 · Trimester 1",
     "themes": [
      "Python for Data",
      "Statistics & Aptitude"
@@ -685,16 +877,32 @@
        "Bar Chart Analysis",
        "Line Chart Analysis"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Data Interpretation & Tabular Analysis",
       "hours": 13
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Python for Data",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Python for Data",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 43,
     "credits": 1.4
    },
    {
-    "name": "Year 1 \u00b7 Trimester 2",
+    "name": "Year 1 · Trimester 2",
     "themes": [
      "Databases & SQL",
      "SQL at Scale"
@@ -723,16 +931,32 @@
        "Data Manipulation Language",
        "Query Optimization"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master Teradata SQL & Query Optimization",
       "hours": 12
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Databases & SQL",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Databases & SQL",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 25,
     "credits": 0.8
    },
    {
-    "name": "Year 1 \u00b7 Trimester 3",
+    "name": "Year 1 · Trimester 3",
     "themes": [
      "Excel & Visualization",
      "Tableau"
@@ -761,9 +985,25 @@
        "Dashboard Design",
        "Calculated Fields"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Tableau & Data Visualization",
       "hours": 21
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Excel & Visualization",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Excel & Visualization",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      },
      {
       "course": "Applied Hackathon",
@@ -778,7 +1018,7 @@
     "credits": 3.3
    },
    {
-    "name": "Year 2 \u00b7 Trimester 1",
+    "name": "Year 2 · Trimester 1",
     "themes": [
      "Power BI & BI",
      "Data Governance"
@@ -807,16 +1047,32 @@
        "Delta Lake",
        "Data Cataloging"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Data Governance & Databricks",
       "hours": 7
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Power BI & BI",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Power BI & BI",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 11,
     "credits": 0.4
    },
    {
-    "name": "Year 2 \u00b7 Trimester 2",
+    "name": "Year 2 · Trimester 2",
     "themes": [
      "Cloud Data Warehousing",
      "Data Lakes & Pipelines"
@@ -845,16 +1101,32 @@
        "Data Pipelines",
        "Data Governance"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master Google Cloud Dataplex & Data Lake Management",
       "hours": 4
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Cloud Data Warehousing",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Cloud Data Warehousing",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 19,
     "credits": 0.6
    },
    {
-    "name": "Year 2 \u00b7 Trimester 3",
+    "name": "Year 2 · Trimester 3",
     "themes": [
      "Machine Learning",
      "Feature Engineering"
@@ -883,9 +1155,25 @@
        "Weka",
        "DeepLearning4j"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Machine Learning & Java",
       "hours": 12
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Machine Learning",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Machine Learning",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      },
      {
       "course": "Applied Hackathon",
@@ -900,7 +1188,7 @@
     "credits": 2.5
    },
    {
-    "name": "Year 3 \u00b7 Trimester 1",
+    "name": "Year 3 · Trimester 1",
     "themes": [
      "Forecasting & Time Series",
      "Anomaly Detection"
@@ -921,6 +1209,22 @@
       "hours": 20
      },
      {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Forecasting & Time Series",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Forecasting & Time Series",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
+     },
+     {
       "course": "Anomaly Detection",
       "slug": null,
       "skills": [],
@@ -933,7 +1237,7 @@
     "credits": 1.5
    },
    {
-    "name": "Year 3 \u00b7 Trimester 2",
+    "name": "Year 3 · Trimester 2",
     "themes": [
      "Generative AI for Data",
      "AI Dashboards & Automation"
@@ -962,22 +1266,54 @@
        "No-Code AI Tools",
        "LLM Applications"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master AI Literacy & Generative AI",
       "hours": 22
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Generative AI for Data",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Generative AI for Data",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 26,
     "credits": 0.9
    },
    {
-    "name": "Year 3 \u00b7 Trimester 3",
+    "name": "Year 3 · Trimester 3",
     "themes": [
      "Big Data & Deployment",
      "Data Ethics & Governance"
     ],
     "milestone": "AI Data Engineer",
     "courses": [
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Big Data & Deployment",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Big Data & Deployment",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
+     },
      {
       "course": "Big Data & Deployment",
       "slug": null,
@@ -995,7 +1331,7 @@
       "hours": 25
      },
      {
-      "course": "Capstone \u2014 AI Data Engineer",
+      "course": "Capstone — AI Data Engineer",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
@@ -1039,7 +1375,7 @@
   "slug": "mba-ai-business",
   "name": "MBA in AI-Powered Business",
   "tagline": "Lead products, marketing and finance in the AI era.",
-  "duration": "2 years \u00b7 6 trimesters",
+  "duration": "2 years · 6 trimesters",
   "level": "Postgraduate",
   "delivery": {
    "async": 42,
@@ -1056,7 +1392,7 @@
   ],
   "terms": [
    {
-    "name": "Year 1 \u00b7 Trimester 1",
+    "name": "Year 1 · Trimester 1",
     "themes": [
      "Business & Management",
      "Financial Analysis"
@@ -1085,16 +1421,32 @@
        "Ratio Analysis",
        "Valuation"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Financial Modeling & Ratio Analysis",
       "hours": 22
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Business & Management",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Business & Management",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 38,
     "credits": 1.3
    },
    {
-    "name": "Year 1 \u00b7 Trimester 2",
+    "name": "Year 1 · Trimester 2",
     "themes": [
      "Marketing Foundations",
      "Business Analytics"
@@ -1123,16 +1475,32 @@
        "Data Visualization",
        "Pivot Tables"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master Microsoft Excel & Data Analysis",
       "hours": 39
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on Marketing Foundations",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: Marketing Foundations",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 52,
     "credits": 1.7
    },
    {
-    "name": "Year 1 \u00b7 Trimester 3",
+    "name": "Year 1 · Trimester 3",
     "themes": [
      "AI for Business",
      "Generative AI for Business"
@@ -1161,9 +1529,25 @@
        "AI Tools",
        "Marketing Automation"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Generative AI & Content Marketing",
       "hours": 5
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on AI for Business",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: AI for Business",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      },
      {
       "course": "Applied Hackathon",
@@ -1178,7 +1562,7 @@
     "credits": 2.2
    },
    {
-    "name": "Year 2 \u00b7 Trimester 1",
+    "name": "Year 2 · Trimester 1",
     "themes": [
      "AI in Marketing",
      "Growth & Attribution"
@@ -1207,16 +1591,32 @@
        "Looker Studio",
        "BigQuery"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Google Analytics 4 & Marketing Attribution",
       "hours": 16
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on AI in Marketing",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: AI in Marketing",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 30,
     "credits": 1.0
    },
    {
-    "name": "Year 2 \u00b7 Trimester 2",
+    "name": "Year 2 · Trimester 2",
     "themes": [
      "AI in Finance",
      "AI Product Management"
@@ -1245,16 +1645,32 @@
        "Market Analysis",
        "Product Launch"
       ],
-      "delivery": "Masterclass",
+      "delivery": "Async",
       "outcome": "Master Agile Methodology & Product Strategy",
       "hours": 21
+     },
+     {
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on AI in Finance",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: AI in Finance",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
      }
     ],
     "hours": 26,
     "credits": 0.9
    },
    {
-    "name": "Year 2 \u00b7 Trimester 3",
+    "name": "Year 2 · Trimester 3",
     "themes": [
      "AI Transformation & Leadership",
      "Strategy & Consulting"
@@ -1262,7 +1678,7 @@
     "milestone": "AI Business Leader",
     "courses": [
      {
-      "course": "The Future of Work \u2013 Managing Hybrid & AI-Augmented Teams",
+      "course": "The Future of Work – Managing Hybrid & AI-Augmented Teams",
       "slug": "the-future-of-work-managing-hybrid-ai-augmented-teams",
       "skills": [
        "Hybrid Team Management",
@@ -1283,12 +1699,28 @@
        "Case Interviews",
        "Guesstimates"
       ],
-      "delivery": "Sync",
+      "delivery": "Async",
       "outcome": "Master Management Consulting & Strategic Frameworks",
       "hours": 13
      },
      {
-      "course": "Capstone \u2014 AI Business Leader",
+      "course": "Live mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly live tutorials + 1:1 coaching on AI Transformation & Leadership",
+      "hours": null
+     },
+     {
+      "course": "Industry masterclass: AI Transformation & Leadership",
+      "slug": null,
+      "skills": [],
+      "delivery": "Masterclass",
+      "outcome": "Live session with a practitioner from the field",
+      "hours": null
+     },
+     {
+      "course": "Capstone — AI Business Leader",
       "slug": null,
       "skills": [],
       "delivery": "Capstone",
@@ -1302,7 +1734,7 @@
   ],
   "vsUniversity": {
    "biStrength": [
-    "AI woven into every function \u2014 not an add-on",
+    "AI woven into every function — not an add-on",
     "No-code AI tools hands-on",
     "Live business capstone",
     "Masterclasses by CXOs",

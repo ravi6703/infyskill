@@ -19,8 +19,30 @@ function parse(name) {
   return { year: ym ? +ym[1] : 1, tri: tm ? tm[1] : name };
 }
 
+function CourseRow({ c }) {
+  const d = DELIV[c.delivery] || DELIV.Async;
+  return (
+    <div className="flex flex-wrap items-center gap-3 rounded-xl border border-ink-200 bg-white p-3">
+      <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
+      <div className="min-w-0 flex-1">
+        {c.slug
+          ? <Link href={`/course/${c.slug}`} className="font-bold text-ink-900 hover:text-brand-600">{c.course}</Link>
+          : <span className="font-bold text-ink-900">{c.course}</span>}
+        <p className="text-xs text-ink-500">{c.outcome}</p>
+      </div>
+      {c.skills?.length > 0 && (
+        <div className="hidden flex-wrap gap-1 sm:flex">
+          {c.skills.slice(0, 3).map((s) => <span key={s} className="chip-gray">{s}</span>)}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function TriCard({ t, idx, delivery, open, onToggle }) {
   const courses = t.courses || [];
+  const recorded = courses.filter((c) => c.delivery === "Async");
+  const live = courses.filter((c) => c.delivery !== "Async");
   const { tri } = parse(t.name);
   return (
     <div className="relative">
@@ -30,7 +52,7 @@ function TriCard({ t, idx, delivery, open, onToggle }) {
           <div>
             <p className="font-black text-ink-900">{tri}</p>
             <p className="text-xs text-ink-500">
-              {courses.length} subject{courses.length > 1 ? "s" : ""}
+              {recorded.length} self-paced course{recorded.length !== 1 ? "s" : ""}{live.length ? <> · {live.length} live element{live.length !== 1 ? "s" : ""}</> : null}
               {t.credits ? <> · {t.credits} credits · {t.hours} hrs</> : null}
               {t.milestone && t.milestone !== "Focused term" && t.milestone !== t.themes?.[0] ? <> · milestone: <b className="text-teal-600">{t.milestone}</b></> : null}
             </p>
@@ -40,27 +62,18 @@ function TriCard({ t, idx, delivery, open, onToggle }) {
 
         {open && (
           <div className="animate-fadeUp border-t border-ink-100 p-4">
-            <div className="space-y-2">
-              {courses.map((c, k) => {
-                const d = DELIV[c.delivery] || DELIV.Async;
-                return (
-                  <div key={k} className="flex flex-wrap items-center gap-3 rounded-xl border border-ink-200 bg-white p-3">
-                    <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
-                    <div className="min-w-0 flex-1">
-                      {c.slug
-                        ? <Link href={`/course/${c.slug}`} className="font-bold text-ink-900 hover:text-brand-600">{c.course}</Link>
-                        : <span className="font-bold text-ink-900">{c.course}</span>}
-                      <p className="text-xs text-ink-500">{c.outcome}</p>
-                    </div>
-                    {c.skills?.length > 0 && (
-                      <div className="hidden flex-wrap gap-1 sm:flex">
-                        {c.skills.slice(0, 3).map((s) => <span key={s} className="chip-gray">{s}</span>)}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+            {recorded.length > 0 && (
+              <>
+                <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-brand-600">▶ Self-paced courses (recorded)</p>
+                <div className="space-y-2">{recorded.map((c, k) => <CourseRow key={k} c={c} />)}</div>
+              </>
+            )}
+            {live.length > 0 && (
+              <>
+                <p className="mb-2 mt-4 text-[11px] font-bold uppercase tracking-wider text-peel-700">+ Live &amp; applied layer (on top of the content)</p>
+                <div className="space-y-2">{live.map((c, k) => <CourseRow key={k} c={c} />)}</div>
+              </>
+            )}
 
             <p className="mt-4 text-[11px] font-bold uppercase tracking-wider text-ink-500">How this trimester is delivered</p>
             <div className="mt-2 flex h-2.5 w-full overflow-hidden rounded-full">

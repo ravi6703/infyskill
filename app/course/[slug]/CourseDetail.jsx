@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { sbSelect } from "../../../lib/supabase";
 import specs from "../../../data/journeys.json";
+import allCourses from "../../../data/courses.json";
 
 const clean = (t) => t.replace(/^[:\s]+/, "");
 
@@ -21,11 +22,16 @@ export default function CourseDetail({ course }) {
       sbSelect("pf_modules", `course=eq.${t}&order=id`),
       sbSelect("pf_lessons", `course=eq.${t}&order=id`),
       sbSelect("pf_items", `course=eq.${t}&order=id`),
-    ]).then(([modules, lessons, items]) => setData({ modules, lessons, items }))
-      .catch((e) => setErr(String(e)));
+    ]).then(([modules, lessons, items]) => {
+      setData({ modules, lessons, items });
+      setOpen(modules[0]?.id ?? null); // auto-open first module so depth is visible
+    }).catch((e) => setErr(String(e)));
   }, [course.title]);
 
   const totalVideos = data ? data.items.filter((i) => i.item_type === "Video").length : null;
+  const totalItems = data ? data.items.length : null;
+  const totalHours = data ? Math.round(data.modules.reduce((s, m) => s + (Number(m.hours) || 0), 0)) : null;
+  const ITEM_MIX = data ? (() => { const c = {}; data.items.forEach((i) => { c[i.item_type] = (c[i.item_type] || 0) + 1; }); return c; })() : {};
 
   // VISION: which specializations this course's skills feed into
   const unlocks = useMemo(() => {
@@ -50,10 +56,11 @@ export default function CourseDetail({ course }) {
             <h1 className="mt-3 text-3xl font-black text-ink-900">{clean(course.title)}</h1>
           </div>
           {data && (
-            <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="grid grid-cols-4 gap-4 text-center">
               <div><p className="text-2xl font-black text-brand-600">{data.modules.length}</p><p className="text-[11px] text-ink-500">modules</p></div>
               <div><p className="text-2xl font-black text-brand-600">{data.lessons.length}</p><p className="text-[11px] text-ink-500">lessons</p></div>
               <div><p className="text-2xl font-black text-brand-600">{totalVideos}</p><p className="text-[11px] text-ink-500">videos</p></div>
+              {totalHours > 0 && <div><p className="text-2xl font-black text-brand-600">{totalHours}</p><p className="text-[11px] text-ink-500">hours</p></div>}
             </div>
           )}
         </div>
@@ -89,67 +96,103 @@ export default function CourseDetail({ course }) {
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-xl font-black text-ink-900">Learning Roadmap</h2>
         <div className="flex rounded-lg border border-ink-200 bg-ink-50 p-1 text-sm font-bold">
-          <button onClick={() => setView("skill")} className={`rounded-md px-3 py-1.5 transition ${view === "skill" ? "bg-brand-500 text-white" : "text-ink-600 hover:text-brand-600"}`}>🎯 Skill Journey</button>
+          <button onClick={() => setView("skill")} className={`rounded-md px-3 py-1.5 transition ${view === "skill" ? "bg-brand-500 text-white" : "text-ink-600 hover:text-brand-600"}`}>🎯 Skills &amp; Careers</button>
           <button onClick={() => setView("content")} className={`rounded-md px-3 py-1.5 transition ${view === "content" ? "bg-brand-500 text-white" : "text-ink-600 hover:text-brand-600"}`}>📚 Course Content</button>
         </div>
       </div>
       <p className="mt-1 text-sm text-ink-500">
-        {view === "skill" ? "How your skills build, topic by topic — no curriculum, just the progression." : "The full curriculum — modules, lessons and videos."}
+        {view === "skill" ? "Every skill in this course, ranked by how many AI-era roles demand it — and where to go next." : "The full curriculum — modules, lessons and videos."}
       </p>
 
       {err && <p className="mt-6 text-rose-600">Could not load roadmap: {err}</p>}
       {!data && !err && <p className="mt-6 animate-pulse text-ink-400">Building the roadmap…</p>}
 
-      {/* SKILL JOURNEY — a skill ladder built from the course's skill set, no curriculum */}
+      {/* SKILLS & CAREERS — each skill ranked by market demand across AI-era roles + where to go next */}
       {data && view === "skill" && (() => {
-        const JUNK = /^(beginner|intermediate|advanced|course|navigation|orientation|exam|career|introduction|overview|fundamentals|syllabus)/i;
+        const JUNK = /^(beginner|intermediate|advanced|course|navigation|orientation|exam|syllabus)/i;
         const sk = course.skills.filter((s) => !JUNK.test(s));
-        const n = sk.length;
-        const third = Math.max(1, Math.ceil(n / 3));
-        const stages = [
-          { name: "Foundational", icon: "1", color: "bg-brand-400", tint: "border-brand-200", skills: sk.slice(0, third), note: "Where you begin — the core concepts." },
-          { name: "Core skills", icon: "2", color: "bg-brand-500", tint: "border-brand-200", skills: sk.slice(third, third * 2), note: "Apply the fundamentals to real work." },
-          { name: "Advanced & applied", icon: "3", color: "bg-brand-600", tint: "border-brand-200", skills: sk.slice(third * 2), note: "Job-ready depth and specialization." },
-        ].filter((s) => s.skills.length);
-        let acc = 0;
+        // demand per skill: which specializations (roles) list this skill
+        const rows = sk.map((s) => {
+          const sl = s.toLowerCase();
+          const roles = specs.filter((sp) => sp.skills.some((x) => x.toLowerCase() === sl));
+          return { skill: s, roles };
+        }).sort((a, b) => b.roles.length - a.roles.length);
+        const maxR = Math.max(1, ...rows.map((r) => r.roles.length));
+        const rolesTouched = new Set(rows.flatMap((r) => r.roles.map((x) => x.slug))).size;
+        // where to go next: other courses sharing >=2 skills
+        const mySlug = course.slug;
+        const myset = new Set(sk.map((s) => s.toLowerCase()));
+        const next = allCourses.filter((c) => c.slug !== mySlug)
+          .map((c) => ({ c, overlap: (c.skills || []).filter((s) => myset.has(s.toLowerCase())).length }))
+          .filter((x) => x.overlap >= 2).sort((a, b) => b.overlap - a.overlap).slice(0, 4);
+
         return (
-          <div className="mt-6 relative space-y-4 border-l-2 border-brand-100 pl-6">
-            {stages.map((st) => {
-              acc += st.skills.length;
-              return (
-                <div key={st.name} className="relative">
-                  <span className={`absolute -left-[33px] top-2 grid h-6 w-6 place-items-center rounded-full ${st.color} text-[11px] font-black text-white`}>{st.icon}</span>
-                  <div className={`card border-l-4 ${st.tint} p-4`}>
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <p className="font-black text-ink-900">{st.name}</p>
-                      <span className="chip-blue">{acc}/{n} skills mastered</span>
-                    </div>
-                    <p className="mt-0.5 text-xs text-ink-500">{st.note}</p>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      {st.skills.map((s) => <span key={s} className="chip-green">✓ {s}</span>)}
-                    </div>
-                    <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-ink-100">
-                      <div className="h-full bg-gradient-to-r from-brand-400 to-brand-600 transition-all" style={{ width: `${Math.round((acc / n) * 100)}%` }} />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-            <div className="relative">
-              <span className="absolute -left-[31px] top-2 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎯</span>
-              <div className="card border-peel-200 bg-peel-50 p-4">
-                <p className="font-black text-ink-900">Job-ready — {n} skills mastered</p>
-                <p className="mt-1 text-sm text-ink-600">These map directly to roles in <a href="/specializations" className="font-bold text-brand-600 hover:underline">Specializations</a>.</p>
-              </div>
+          <div className="mt-6 space-y-5">
+            {/* market summary */}
+            <div className="overflow-hidden rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-600">Market lens</p>
+              <p className="mt-1 text-lg font-black text-ink-900">{sk.length} skills · in demand across {rolesTouched} AI-era role{rolesTouched !== 1 ? "s" : ""}</p>
+              <p className="mt-1 text-sm text-ink-600">Each skill below is ranked by how many of our tracked roles actually hire for it — so you can see exactly why it&apos;s worth learning.</p>
             </div>
+
+            {/* per-skill demand */}
+            <div className="space-y-2">
+              {rows.map(({ skill, roles }) => (
+                <div key={skill} className="card p-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="font-black text-ink-900">{skill}</p>
+                    {roles.length > 0
+                      ? <span className="chip-green">🔥 {roles.length} role{roles.length > 1 ? "s" : ""} hire for this</span>
+                      : <span className="chip-gray">Supporting skill</span>}
+                  </div>
+                  <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-ink-100">
+                    <div className="h-full bg-gradient-to-r from-brand-400 to-brand-600" style={{ width: `${Math.round((roles.length / maxR) * 100)}%` }} />
+                  </div>
+                  {roles.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {roles.slice(0, 5).map((r) => (
+                        <Link key={r.slug} href={`/specializations/${r.slug}`} className="chip-blue hover:bg-brand-100">{r.role} →</Link>
+                      ))}
+                      {roles.length > 5 && <span className="chip-gray">+{roles.length - 5} more</span>}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* where to go next */}
+            {next.length > 0 && (
+              <div className="card border-peel-200 bg-peel-50 p-5">
+                <p className="text-xs font-bold uppercase tracking-widest text-peel-700">Where to go next</p>
+                <p className="mt-1 text-sm text-ink-600">Courses that build on these same skills — your natural next step.</p>
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  {next.map(({ c, overlap }) => (
+                    <Link key={c.slug} href={`/course/${c.slug}`} className="card p-3 transition hover:-translate-y-0.5 hover:shadow-lift">
+                      <p className="font-bold text-ink-900">{clean(c.title)}</p>
+                      <p className="mt-0.5 text-[11px] text-ink-500">shares {overlap} skills with this course</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         );
       })()}
 
       {data && view === "content" && (
         <div className="relative mt-6">
+          {/* depth summary */}
+          <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-1 rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-sm">
+            <span className="font-black text-ink-900">{data.modules.length} modules</span>
+            <span className="text-ink-600">{data.lessons.length} lessons</span>
+            <span className="text-ink-600">{totalItems} learning items</span>
+            {Object.entries(ITEM_MIX).sort((a, b) => b[1] - a[1]).map(([k, v]) => (
+              <span key={k} className="text-ink-500">{ICON[k] || "•"} {v} {k.toLowerCase()}{v > 1 ? "s" : ""}</span>
+            ))}
+            {totalHours > 0 && <span className="ml-auto font-bold text-brand-600">~{totalHours} hrs total</span>}
+          </div>
           {/* center spine */}
-          <div className="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2 bg-brand-100 md:block" />
+          <div className="absolute left-1/2 top-[68px] hidden h-[calc(100%-68px)] w-0.5 -translate-x-1/2 bg-brand-100 md:block" />
           <div className="space-y-5">
             {/* start node */}
             <div className="flex justify-center">
@@ -158,6 +201,8 @@ export default function CourseDetail({ course }) {
 
             {data.modules.map((m, idx) => {
               const lessons = data.lessons.filter((l) => l.module_num === m.module_num);
+              const mVids = data.items.filter((i) => i.module_num === m.module_num && i.item_type === "Video").length;
+              const mHrs = Math.round(Number(m.hours) || 0);
               const isOpen = open === m.id;
               const side = SIDE[idx % 2];
               const mods = (m.skills || []).slice(0, 4);
@@ -177,7 +222,7 @@ export default function CourseDetail({ course }) {
                       <div className={`mt-2 flex flex-wrap gap-1.5 ${side === "right" ? "" : "md:justify-end"}`}>
                         {mods.map((s) => <span key={s} className="chip-gray">{s}</span>)}
                       </div>
-                      <p className={`mt-2 text-xs font-bold text-brand-600`}>{lessons.length} lessons · {isOpen ? "hide" : "expand"} ▾</p>
+                      <p className={`mt-2 text-xs font-bold text-brand-600`}>{lessons.length} lessons · {mVids} videos{mHrs > 0 ? ` · ${mHrs} hrs` : ""} · {isOpen ? "hide" : "expand"} ▾</p>
                     </button>
 
                     {isOpen && (
