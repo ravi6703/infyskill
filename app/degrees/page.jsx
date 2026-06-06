@@ -11,6 +11,7 @@ export default function Degrees() {
         Not a university syllabus retro-fitted — these are Board Infinity&apos;s own best-of-best programs, designed from our content library and
         delivered through the blended model. Each shows the journey, the roles you graduate into, and how it out-performs a standard university degree.
       </p>
+      <Link href="/degrees/compare" className="btn-ghost mt-4 text-sm">🎓 For universities: compare your curriculum & see the gap →</Link>
 
       <div className="mt-8 grid gap-5 lg:grid-cols-2">
         {degrees.map((d) => (

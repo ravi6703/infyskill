@@ -1,0 +1,52 @@
+[
+  {
+    "id": "btech-cse-ai",
+    "name": "B.Tech CSE (AI specialization)",
+    "ref": "Benchmarked against IIIT-Hyderabad / IIT-Madras CSE-AI structure",
+    "subjects": [
+      "Programming and Data Structures", "Discrete Mathematics", "Computer Organization",
+      "Design and Analysis of Algorithms", "Database Management Systems", "Operating Systems",
+      "Computer Networks", "Probability and Statistics", "Machine Learning", "Deep Learning",
+      "Natural Language Processing", "Computer Vision", "Software Engineering",
+      "Cloud Computing", "Theory of Computation", "Artificial Intelligence",
+      "Reinforcement Learning", "Big Data Systems", "Capstone / Thesis"
+    ]
+  },
+  {
+    "id": "msc-data-science",
+    "name": "M.Sc. Data Science",
+    "ref": "Benchmarked against IISc / IIT-M Data Science & AI program",
+    "subjects": [
+      "Statistical Foundations", "Linear Algebra and Optimization", "Python for Data Science",
+      "Data Structures and Algorithms", "Database Systems and SQL", "Data Visualization",
+      "Machine Learning", "Deep Learning", "Big Data and Distributed Computing",
+      "Data Engineering and Pipelines", "Time Series Analysis", "Natural Language Processing",
+      "Cloud and MLOps", "Data Ethics and Governance", "Research Project"
+    ]
+  },
+  {
+    "id": "mba-bizanalytics",
+    "name": "MBA (Business Analytics / AI)",
+    "ref": "Benchmarked against IIM-Bangalore / ISB analytics electives",
+    "subjects": [
+      "Principles of Management", "Financial Accounting", "Marketing Management",
+      "Operations Management", "Business Statistics", "Microeconomics",
+      "Business Analytics and Data Visualization", "Predictive Modeling",
+      "AI for Business Strategy", "Marketing Analytics", "Financial Modeling",
+      "Operations and Supply Chain Analytics", "Business Law", "Organizational Behaviour",
+      "Capstone Consulting Project"
+    ]
+  },
+  {
+    "id": "bca-general",
+    "name": "BCA (Computer Applications)",
+    "ref": "Benchmarked against typical UGC BCA structure",
+    "subjects": [
+      "Programming in C", "Object-Oriented Programming with Java", "Data Structures",
+      "Database Management Systems", "Web Technologies (HTML/CSS/JS)", "Operating Systems",
+      "Computer Networks", "Software Engineering", "Python Programming",
+      "Mobile Application Development", "Cloud Computing", "Discrete Mathematics",
+      "Statistics", "Frontend Frameworks", "Major Project"
+    ]
+  }
+]
