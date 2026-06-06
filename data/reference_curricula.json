@@ -2,8 +2,7 @@
  {
   "id": "btech-cse-ai",
   "name": "B.Tech in AI / CSE-AI",
-  "ref": "Benchmarked against IIT Hyderabad \u00b7 128 credits",
-  "source": "https://ai.iith.ac.in/btech-curriculum/index.html",
+  "ref": "Benchmarked against leading B.Tech AI programs \u00b7 128 credits",
   "subjects": [
    {
     "year": 1,
@@ -178,8 +177,7 @@
  {
   "id": "msc-data-science",
   "name": "BS / M.Sc Data Science",
-  "ref": "Benchmarked against IIT Madras \u00b7 142 credits",
-  "source": "https://study.iitm.ac.in/ds/academics.html",
+  "ref": "Benchmarked against leading BS Data Science programs \u00b7 142 credits",
   "subjects": [
    {
     "level": "Foundation",
@@ -330,8 +328,7 @@
  {
   "id": "mba-bizanalytics",
   "name": "MBA (Business Analytics / AI)",
-  "ref": "Benchmarked against IIM Bangalore \u00b7 94.5 to 100.5 (approx) credits",
-  "source": "https://www.iimb.ac.in/programmes/pgpba/programme-structure",
+  "ref": "Benchmarked against top MBA Business Analytics programs \u00b7 94.5 to 100.5 (approx) credits",
   "subjects": [
    {
     "year": 1,
@@ -506,8 +503,7 @@
  {
   "id": "bca-general",
   "name": "BCA (Computer Applications)",
-  "ref": "Benchmarked against Bangalore University and Bangalore City University \u00b7 144 credits",
-  "source": "https://www.sabs.ac.in/downloads/bca-syllabus-nep.pdf",
+  "ref": "Benchmarked against NEP-aligned BCA programs \u00b7 144 credits",
   "subjects": [
    {
     "semester": 1,
