@@ -54,19 +54,30 @@
       "hours": 18
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Python Programming",
+       "Problem Solving & Logic"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Python Programming",
+      "outcome": "Topics taught live: Python Programming, Problem Solving & Logic — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Python Programming",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Python Programming",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -108,19 +119,30 @@
       "hours": 13
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Data Structures & Algorithms",
+       "Version Control & Collaboration"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Data Structures & Algorithms",
+      "outcome": "Topics taught live: Data Structures & Algorithms, Version Control & Collaboration — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Data Structures & Algorithms",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Data Structures & Algorithms",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -162,19 +184,30 @@
       "hours": 13
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Web & APIs",
+       "Databases"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Web & APIs",
+      "outcome": "Topics taught live: Web & APIs, Databases — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Web & APIs",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Web & APIs",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -224,19 +257,30 @@
       "hours": 12
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Machine Learning",
+       "Feature Engineering & MLOps Intro"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Machine Learning",
+      "outcome": "Topics taught live: Machine Learning, Feature Engineering & MLOps Intro — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Machine Learning",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Machine Learning",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -278,19 +322,30 @@
       "hours": 21
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Deep Learning",
+       "GPU & Model Training"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Deep Learning",
+      "outcome": "Topics taught live: Deep Learning, GPU & Model Training — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Deep Learning",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Deep Learning",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -332,19 +387,30 @@
       "hours": 4
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "NLP & Transformers",
+       "Data Pipelines"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on NLP & Transformers",
+      "outcome": "Topics taught live: NLP & Transformers, Data Pipelines — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: NLP & Transformers",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: NLP & Transformers",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -394,19 +460,30 @@
       "hours": 9
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Generative AI & LLMs",
+       "Prompt Engineering"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Generative AI & LLMs",
+      "outcome": "Topics taught live: Generative AI & LLMs, Prompt Engineering — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Generative AI & LLMs",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Generative AI & LLMs",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -448,19 +525,30 @@
       "hours": 16
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Agentic AI & RAG",
+       "Multi-Agent Systems"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Agentic AI & RAG",
+      "outcome": "Topics taught live: Agentic AI & RAG, Multi-Agent Systems — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Agentic AI & RAG",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Agentic AI & RAG",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -502,19 +590,30 @@
       "hours": 17
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "MLOps & Production",
+       "AI Governance & Safety"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on MLOps & Production",
+      "outcome": "Topics taught live: MLOps & Production, AI Governance & Safety — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: MLOps & Production",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: MLOps & Production",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -627,19 +726,31 @@
       "hours": 16
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Generative AI & LLMs",
+       "Prompt Engineering",
+       "LLM APIs"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Generative AI & LLMs",
+      "outcome": "Topics taught live: Generative AI & LLMs, Prompt Engineering, LLM APIs — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Generative AI & LLMs",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Generative AI & LLMs",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -695,19 +806,31 @@
       "hours": 16
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "RAG Pipelines",
+       "Agentic Workflows",
+       "Multi-Agent Systems"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on RAG Pipelines",
+      "outcome": "Topics taught live: RAG Pipelines, Agentic Workflows, Multi-Agent Systems — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: RAG Pipelines",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: RAG Pipelines",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -771,19 +894,31 @@
       "hours": 17
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Fine-Tuning (LoRA/QLoRA)",
+       "MLOps & Serving",
+       "Evaluation & Guardrails"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Fine-Tuning (LoRA/QLoRA)",
+      "outcome": "Topics taught live: Fine-Tuning (LoRA/QLoRA), MLOps & Serving, Evaluation & Guardrails — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Fine-Tuning (LoRA/QLoRA)",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Fine-Tuning (LoRA/QLoRA)",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -882,19 +1017,30 @@
       "hours": 13
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Python for Data",
+       "Statistics & Aptitude"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Python for Data",
+      "outcome": "Topics taught live: Python for Data, Statistics & Aptitude — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Python for Data",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Python for Data",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -936,19 +1082,30 @@
       "hours": 12
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Databases & SQL",
+       "SQL at Scale"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Databases & SQL",
+      "outcome": "Topics taught live: Databases & SQL, SQL at Scale — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Databases & SQL",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Databases & SQL",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -990,19 +1147,30 @@
       "hours": 21
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Excel & Visualization",
+       "Tableau"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Excel & Visualization",
+      "outcome": "Topics taught live: Excel & Visualization, Tableau — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Excel & Visualization",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Excel & Visualization",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -1052,19 +1220,30 @@
       "hours": 7
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Power BI & BI",
+       "Data Governance"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Power BI & BI",
+      "outcome": "Topics taught live: Power BI & BI, Data Governance — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Power BI & BI",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Power BI & BI",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -1106,19 +1285,30 @@
       "hours": 4
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Cloud Data Warehousing",
+       "Data Lakes & Pipelines"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Cloud Data Warehousing",
+      "outcome": "Topics taught live: Cloud Data Warehousing, Data Lakes & Pipelines — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Cloud Data Warehousing",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Cloud Data Warehousing",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -1160,19 +1350,30 @@
       "hours": 12
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Machine Learning",
+       "Feature Engineering"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Machine Learning",
+      "outcome": "Topics taught live: Machine Learning, Feature Engineering — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Machine Learning",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Machine Learning",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -1209,19 +1410,30 @@
       "hours": 20
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Forecasting & Time Series",
+       "Anomaly Detection"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Forecasting & Time Series",
+      "outcome": "Topics taught live: Forecasting & Time Series, Anomaly Detection — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Forecasting & Time Series",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Forecasting & Time Series",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -1271,19 +1483,30 @@
       "hours": 22
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Generative AI for Data",
+       "AI Dashboards & Automation"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Generative AI for Data",
+      "outcome": "Topics taught live: Generative AI for Data, AI Dashboards & Automation — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Generative AI for Data",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Generative AI for Data",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -1299,19 +1522,30 @@
     "milestone": "AI Data Engineer",
     "courses": [
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Big Data & Deployment",
+       "Data Ethics & Governance"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Big Data & Deployment",
+      "outcome": "Topics taught live: Big Data & Deployment, Data Ethics & Governance — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Big Data & Deployment",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Big Data & Deployment",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -1426,19 +1660,30 @@
       "hours": 22
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Business & Management",
+       "Financial Analysis"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Business & Management",
+      "outcome": "Topics taught live: Business & Management, Financial Analysis — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Business & Management",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Business & Management",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -1480,19 +1725,30 @@
       "hours": 39
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "Marketing Foundations",
+       "Business Analytics"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on Marketing Foundations",
+      "outcome": "Topics taught live: Marketing Foundations, Business Analytics — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: Marketing Foundations",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: Marketing Foundations",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -1534,19 +1790,30 @@
       "hours": 5
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "AI for Business",
+       "Generative AI for Business"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on AI for Business",
+      "outcome": "Topics taught live: AI for Business, Generative AI for Business — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: AI for Business",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: AI for Business",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
@@ -1596,19 +1863,30 @@
       "hours": 16
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "AI in Marketing",
+       "Growth & Attribution"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on AI in Marketing",
+      "outcome": "Topics taught live: AI in Marketing, Growth & Attribution — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: AI in Marketing",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: AI in Marketing",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -1650,19 +1928,30 @@
       "hours": 21
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "AI in Finance",
+       "AI Product Management"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on AI in Finance",
+      "outcome": "Topics taught live: AI in Finance, AI Product Management — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: AI in Finance",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: AI in Finance",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      }
     ],
@@ -1704,19 +1993,30 @@
       "hours": 13
      },
      {
-      "course": "Live mentorship & doubt-solving",
+      "course": "Live classes (instructor-led)",
       "slug": null,
-      "skills": [],
+      "skills": [
+       "AI Transformation & Leadership",
+       "Strategy & Consulting"
+      ],
       "delivery": "Sync",
-      "outcome": "Weekly live tutorials + 1:1 coaching on AI Transformation & Leadership",
+      "outcome": "Topics taught live: AI Transformation & Leadership, Strategy & Consulting — worked examples, problem-solving & code review",
       "hours": null
      },
      {
-      "course": "Industry masterclass: AI Transformation & Leadership",
+      "course": "Mentorship & doubt-solving",
+      "slug": null,
+      "skills": [],
+      "delivery": "Sync",
+      "outcome": "Weekly 1:1 coaching and doubt-clearing",
+      "hours": null
+     },
+     {
+      "course": "Masterclass: AI Transformation & Leadership",
       "slug": null,
       "skills": [],
       "delivery": "Masterclass",
-      "outcome": "Live session with a practitioner from the field",
+      "outcome": "Practitioner deep-dive with a working professional",
       "hours": null
      },
      {
