@@ -10,7 +10,7 @@ import { sbSelect } from "../lib/supabase";
 
 const PHASE_DOT = { "Foundation": "bg-sky-500", "Core Build": "bg-brand-500", "Specialization": "bg-violet-500", "Career Launch": "bg-rose-500" };
 const LEVEL = ["Beginner", "Intermediate", "Advanced"];
-const LEVEL_CLS = ["bg-[#E8F8F2] text-[#1A8B66]", "bg-brand-50 text-brand-600", "bg-flame-50 text-flame-600"];
+const LEVEL_CLS = ["bg-emerald-900/60 text-emerald-300", "bg-sky-900/60 text-sky-300", "bg-violet-900/60 text-violet-300"];
 const slugOf = Object.fromEntries(coursesAll.map((c) => [c.title, c.slug]));
 
 function bumpStreak() {
@@ -36,14 +36,14 @@ function ModulePreview({ course, num }) {
     sbSelect("pf_items", `course=eq.${encodeURIComponent(course)}&module_num=eq.${encodeURIComponent(num)}&order=id&limit=40`)
       .then(setItems).catch(() => setItems([]));
   }, [course, num]);
-  if (!items) return <p className="mt-2 animate-pulse text-xs text-ink-500">Loading curriculum…</p>;
+  if (!items) return <p className="mt-2 animate-pulse text-xs text-slate-500">Loading curriculum…</p>;
   return (
-    <ul className="mt-2 max-h-56 space-y-1 overflow-y-auto border-t border-ink-200 pt-2">
+    <ul className="mt-2 max-h-56 space-y-1 overflow-y-auto border-t border-slate-800 pt-2">
       {items.map((i) => (
-        <li key={i.id} className="flex items-baseline gap-2 text-xs text-ink-500">
+        <li key={i.id} className="flex items-baseline gap-2 text-xs text-slate-400">
           <span>{i.item_type === "Video" ? "▶" : i.item_type === "Reading" ? "📄" : "✏️"}</span>
           <span className="flex-1">{i.item_type}: {i.title}</span>
-          {i.duration && <span className="text-ink-400">{i.duration}</span>}
+          {i.duration && <span className="text-slate-600">{i.duration}</span>}
         </li>
       ))}
     </ul>
@@ -151,16 +151,16 @@ export default function WeekPlan({ plan, planKey }) {
         <a className="btn-ghost text-xs" target="_blank" rel="noreferrer"
           href={`https://wa.me/?text=${encodeURIComponent(`My ${plan.totalWeeks}-week learning journey on InfyAI by Board Infinity — ${plan.totalHours} hours, ${plan.moduleCount} modules. Build yours: https://infyskill.vercel.app/diagnostic`)}`}>Share</a>
         <button onClick={() => { setCustomize(!customize); setSwapOpen(null); setAddOpen(null); }}
-          className={`btn text-xs ${customize ? "bg-brand-600 text-ink-900" : "border border-ink-300 text-ink-700"}`}>
+          className={`btn text-xs ${customize ? "bg-brand-600 text-white" : "border border-slate-700 text-slate-300"}`}>
           ✏️ {customize ? "Done customizing" : "Customize plan"}
         </button>
         {editCount > 0 && (
           <span className="flex items-center gap-2 text-xs">
-            <span className="chip bg-brand-50 text-brand-600">{editCount} edit{editCount > 1 ? "s" : ""}</span>
-            <button onClick={resetEdits} className="text-ink-500 hover:text-ink-900">reset</button>
+            <span className="chip bg-brand-900/60 text-brand-300">{editCount} edit{editCount > 1 ? "s" : ""}</span>
+            <button onClick={resetEdits} className="text-slate-500 hover:text-white">reset</button>
           </span>
         )}
-        <span className="ml-auto text-xs text-ink-500">📅 Done by <span className="text-ink-700">{projected}</span></span>
+        <span className="ml-auto text-xs text-slate-500">📅 Done by <span className="text-slate-300">{projected}</span></span>
       </div>
 
       {/* summary stats */}
@@ -168,8 +168,8 @@ export default function WeekPlan({ plan, planKey }) {
         {[["Weeks", plan.totalWeeks], ["Hours", plan.totalHours], ["Modules", plan.moduleCount],
           ["Courses", plan.courseCount], ["Hrs/week", plan.hoursPerWeek], ["Progress", `${progress}%`]].map(([l, v]) => (
           <div key={l} className="card p-3 text-center">
-            <div className="text-xl font-bold text-ink-900">{v}</div>
-            <div className="text-[11px] uppercase tracking-wide text-ink-500">{l}</div>
+            <div className="text-xl font-bold text-white">{v}</div>
+            <div className="text-[11px] uppercase tracking-wide text-slate-400">{l}</div>
           </div>
         ))}
       </div>
@@ -183,7 +183,7 @@ export default function WeekPlan({ plan, planKey }) {
           <div className="bg-fuchsia-500" style={{ width: `${plan.blend.masterclassCoaching}%` }} />
           <div className="bg-slate-500" style={{ width: `${plan.blend.assessment}%` }} />
         </div>
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-ink-500">
+        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-slate-400">
           <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-brand-500" />Async {plan.blend.async}%</span>
           <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-violet-500" />Live {plan.blend.sync}%</span>
           <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-rose-500" />Projects {plan.blend.project}%</span>
@@ -193,25 +193,25 @@ export default function WeekPlan({ plan, planKey }) {
       </div>
 
       <details className="card mt-4 p-4 print:hidden">
-        <summary className="cursor-pointer text-sm font-semibold text-ink-700">📊 Charts: skill radar · effort by phase · weekly load</summary>
+        <summary className="cursor-pointer text-sm font-semibold text-slate-300">📊 Charts: skill radar · effort by phase · weekly load</summary>
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
           {plan.radar?.length >= 3 && (
             <div>
-              <p className="text-center text-xs font-semibold uppercase tracking-wider text-ink-500">Plan (filled) vs role target (dashed)</p>
+              <p className="text-center text-xs font-semibold uppercase tracking-wider text-slate-400">Plan (filled) vs role target (dashed)</p>
               <Radar data={plan.radar} />
             </div>
           )}
           <div className="flex flex-col justify-center">
-            <p className="text-xs font-semibold uppercase tracking-wider text-ink-500">Effort by phase</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Effort by phase</p>
             <div className="mt-3"><PhaseChart weeks={plan.weeks} /></div>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-500">Weekly load</p>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-400">Weekly load</p>
             <div className="mt-2"><WeeklyLoadChart weeks={plan.weeks} hoursPerWeek={plan.hoursPerWeek} /></div>
           </div>
         </div>
       </details>
 
-      <p className="mt-5 text-xs text-ink-500 print:hidden">
-        Rhythm: <span className="text-ink-700">Mon–Wed videos · Tue/Thu 8pm live · Sat deliverable</span> · tick items as you finish — weeks complete themselves · click any week to open it
+      <p className="mt-5 text-xs text-slate-500 print:hidden">
+        Rhythm: <span className="text-slate-300">Mon–Wed videos · Tue/Thu 8pm live · Sat deliverable</span> · tick items as you finish — weeks complete themselves · click any week to open it
       </p>
 
       {/* week list — collapsed by default, current week open */}
@@ -225,44 +225,44 @@ export default function WeekPlan({ plan, planKey }) {
             <div key={w.n} className={`card overflow-hidden ${done[w.n] ? "opacity-60" : ""}`}>
               {/* header row */}
               <button onClick={() => setExpanded((x) => ({ ...x, [w.n]: !x[w.n] }))}
-                className="flex w-full flex-wrap items-center gap-3 px-4 py-3 text-left hover:bg-ink-50">
+                className="flex w-full flex-wrap items-center gap-3 px-4 py-3 text-left hover:bg-slate-900/60">
                 <span onClick={(e) => toggleWeek(w.n, e)} title="Mark week done"
-                  className={`grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full border text-xs font-bold transition ${done[w.n] ? "border-[#1A8B66] bg-[#1A8B66] text-ink-900" : "border-ink-300 text-ink-700 hover:border-brand-500"}`}>
+                  className={`grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full border text-xs font-bold transition ${done[w.n] ? "border-emerald-500 bg-emerald-600 text-white" : "border-slate-600 text-slate-300 hover:border-brand-500"}`}>
                   {done[w.n] ? "✓" : w.n}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-bold text-ink-900">Week {w.n} · {w.theme}</p>
-                  <p className="text-[11px] text-ink-500">
+                  <p className="truncate text-sm font-bold text-white">Week {w.n} · {w.theme}</p>
+                  <p className="text-[11px] text-slate-500">
                     <span className={`mr-1.5 inline-block h-1.5 w-1.5 rounded-full ${PHASE_DOT[w.phase]}`} />
                     {w.phase} · {weekDates(w.n)} · {totalH}h
                   </p>
                 </div>
-                {w.type === "hackathon" && <span className="chip bg-flame-50 text-flame-600">🏆</span>}
-                {w.type === "capstone" && <span className="chip bg-rose-50 text-rose-600">🎓</span>}
-                {w.masterclass && !isOpen && <span className="chip bg-flame-50 text-flame-600">★</span>}
+                {w.type === "hackathon" && <span className="chip bg-orange-900/60 text-orange-300">🏆</span>}
+                {w.type === "capstone" && <span className="chip bg-rose-900/60 text-rose-300">🎓</span>}
+                {w.masterclass && !isOpen && <span className="chip bg-fuchsia-900/60 text-fuchsia-300">★</span>}
                 <div className="hidden items-center gap-2 sm:flex">
-                  <div className="h-1.5 w-14 overflow-hidden rounded bg-ink-100">
+                  <div className="h-1.5 w-14 overflow-hidden rounded bg-slate-800">
                     <div className="h-full bg-emerald-500" style={{ width: `${pct}%` }} />
                   </div>
-                  <span className="w-8 text-right text-[11px] text-ink-500">{pct}%</span>
+                  <span className="w-8 text-right text-[11px] text-slate-500">{pct}%</span>
                 </div>
-                <span className="text-ink-500">{isOpen ? "▴" : "▾"}</span>
+                <span className="text-slate-500">{isOpen ? "▴" : "▾"}</span>
               </button>
 
               {isOpen && (
-                <div className="border-t border-ink-200 px-4 pb-4 pt-3">
+                <div className="border-t border-slate-800 px-4 pb-4 pt-3">
                   {(effAsync.length > 0 || (added[w.n] || []).length > 0) && (
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-wider text-brand-600">▶ Watch · {w.asyncHours}h self-paced</p>
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-brand-400">▶ Watch · {w.asyncHours}h self-paced</p>
                       <ul className="mt-1.5 space-y-1.5">
                         {(added[w.n] || []).map((a) => (
-                          <li key={a.id} className="rounded-lg border border-dashed border-brand-200 bg-ink-50 px-3 py-2 text-sm">
+                          <li key={a.id} className="rounded-lg border border-dashed border-brand-800 bg-slate-950/60 px-3 py-2 text-sm">
                             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                               <input type="checkbox" checked={!!itemDone[a.id]} onChange={() => toggleItem(a.id, w.n, w)} className="h-4 w-4 accent-emerald-500" />
-                              <span className="text-ink-800">{a.title}</span>
-                              <span className="chip bg-brand-50 text-brand-600">added</span>
-                              <span className="text-xs text-ink-500">{a.hours}h</span>
-                              {customize && <button onClick={() => unAdd(w.n, a.id)} className="ml-auto text-[11px] text-rose-500 hover:underline">✕</button>}
+                              <span className="text-slate-200">{a.title}</span>
+                              <span className="chip bg-brand-900/60 text-brand-300">added</span>
+                              <span className="text-xs text-slate-500">{a.hours}h</span>
+                              {customize && <button onClick={() => unAdd(w.n, a.id)} className="ml-auto text-[11px] text-rose-400 hover:underline">✕</button>}
                             </div>
                           </li>
                         ))}
@@ -270,9 +270,9 @@ export default function WeekPlan({ plan, planKey }) {
                           if (removed[orig.id]) {
                             if (!customize) return null;
                             return (
-                              <li key={orig.id} className="rounded-lg bg-ink-50 px-3 py-2 text-xs text-ink-400">
+                              <li key={orig.id} className="rounded-lg bg-slate-950/40 px-3 py-2 text-xs text-slate-600">
                                 <span className="line-through">{orig.title}</span> — removed
-                                <button onClick={() => removeModule(orig.id)} className="ml-2 text-brand-600 hover:underline">↩ restore</button>
+                                <button onClick={() => removeModule(orig.id)} className="ml-2 text-brand-400 hover:underline">↩ restore</button>
                               </li>
                             );
                           }
@@ -280,39 +280,39 @@ export default function WeekPlan({ plan, planKey }) {
                           const alts = swapOpen === orig.id ? alternativesFor(orig.id, modulesAll, orig.skills) : null;
                           const cslug = slugOf[a.course];
                           return (
-                            <li key={orig.id} className="rounded-lg bg-ink-50 px-3 py-2.5 text-sm">
+                            <li key={orig.id} className="rounded-lg bg-slate-950/60 px-3 py-2.5 text-sm">
                               <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                                 <input type="checkbox" checked={!!itemDone[orig.id]} onChange={() => toggleItem(orig.id, w.n, w)} className="h-4 w-4 accent-emerald-500" />
-                                <span className={`text-ink-800 ${itemDone[orig.id] ? "line-through opacity-60" : ""}`}>{a.title}</span>
+                                <span className={`text-slate-200 ${itemDone[orig.id] ? "line-through opacity-60" : ""}`}>{a.title}</span>
                                 <span className={`chip ${LEVEL_CLS[a.level ?? 1]}`}>{LEVEL[a.level ?? 1]}</span>
-                                <span className="text-xs text-ink-500">{a.hours}h · {a.videos} videos</span>
+                                <span className="text-xs text-slate-500">{a.hours}h · {a.videos} videos</span>
                                 <span className="ml-auto flex gap-2.5 text-[11px]">
-                                  <button onClick={() => setPreview(preview === orig.id ? null : orig.id)} className="text-ink-500 hover:text-ink-900">{preview === orig.id ? "hide" : "▶ preview"}</button>
+                                  <button onClick={() => setPreview(preview === orig.id ? null : orig.id)} className="text-slate-400 hover:text-white">{preview === orig.id ? "hide" : "▶ preview"}</button>
                                   {customize && (
                                     <>
-                                      <button onClick={() => setSwapOpen(swapOpen === orig.id ? null : orig.id)} className="text-brand-600 hover:underline">{swaps[orig.id] ? "↩" : "⇄ swap"}</button>
-                                      <button onClick={() => removeModule(orig.id)} className="text-rose-500/80 hover:text-rose-600">✕</button>
+                                      <button onClick={() => setSwapOpen(swapOpen === orig.id ? null : orig.id)} className="text-brand-400 hover:underline">{swaps[orig.id] ? "↩" : "⇄ swap"}</button>
+                                      <button onClick={() => removeModule(orig.id)} className="text-rose-400/80 hover:text-rose-300">✕</button>
                                     </>
                                   )}
                                 </span>
                               </div>
-                              <p className="mt-1 truncate text-[11px] text-ink-500">
+                              <p className="mt-1 truncate text-[11px] text-slate-500">
                                 {a.skills.join(" · ")}
-                                {customize && cslug && <Link href={`/course/${cslug}`} className="ml-2 text-ink-400 hover:text-brand-600">from “{a.course}” →</Link>}
+                                {customize && cslug && <Link href={`/course/${cslug}`} className="ml-2 text-slate-600 hover:text-brand-300">from “{a.course}” →</Link>}
                               </p>
                               {preview === orig.id && <ModulePreview course={a.course} num={a.num} />}
                               {customize && swapOpen === orig.id && (
-                                <div className="mt-2 space-y-1 border-t border-ink-200 pt-2">
-                                  {swaps[orig.id] && <button onClick={() => doSwap(orig.id, null)} className="block w-full rounded bg-white px-2 py-1.5 text-left text-xs text-ink-700 hover:bg-ink-100">↩ Restore: {orig.title}</button>}
+                                <div className="mt-2 space-y-1 border-t border-slate-800 pt-2">
+                                  {swaps[orig.id] && <button onClick={() => doSwap(orig.id, null)} className="block w-full rounded bg-slate-900 px-2 py-1.5 text-left text-xs text-slate-300 hover:bg-slate-800">↩ Restore: {orig.title}</button>}
                                   {(alts || []).filter((x) => x.id !== (swaps[orig.id]?.id)).map((alt) => {
                                     const shared = alt.skills.filter((s) => orig.skills.includes(s)).length;
                                     return (
-                                      <button key={alt.id} onClick={() => doSwap(orig.id, alt)} className="block w-full rounded bg-white px-2 py-1.5 text-left text-xs text-ink-700 hover:bg-ink-100">
-                                        ⇄ {alt.title} <span className="text-ink-500">· {alt.hours}h · {alt.course}</span> <span className="text-[#1A8B66]">{shared} shared skills</span>
+                                      <button key={alt.id} onClick={() => doSwap(orig.id, alt)} className="block w-full rounded bg-slate-900 px-2 py-1.5 text-left text-xs text-slate-300 hover:bg-slate-800">
+                                        ⇄ {alt.title} <span className="text-slate-500">· {alt.hours}h · {alt.course}</span> <span className="text-emerald-400">{shared} shared skills</span>
                                       </button>
                                     );
                                   })}
-                                  {alts && alts.length === 0 && <p className="text-xs text-ink-500">No equivalent module — this one&apos;s unique.</p>}
+                                  {alts && alts.length === 0 && <p className="text-xs text-slate-500">No equivalent module — this one&apos;s unique.</p>}
                                 </div>
                               )}
                             </li>
@@ -322,20 +322,20 @@ export default function WeekPlan({ plan, planKey }) {
                       {customize && (
                         <div className="mt-2">
                           {addOpen === w.n ? (
-                            <div className="rounded-lg border border-ink-300 bg-ink-50 p-2">
+                            <div className="rounded-lg border border-slate-700 bg-slate-950/60 p-2">
                               <input autoFocus className="input text-xs" placeholder="Search 866 modules by title, course or skill…" value={addQuery} onChange={(e) => setAddQuery(e.target.value)} />
                               <div className="mt-1 space-y-1">
                                 {searchResults.map((m) => (
-                                  <button key={m.id} onClick={() => addModule(w.n, m)} className="block w-full rounded bg-white px-2 py-1.5 text-left text-xs text-ink-700 hover:bg-ink-100">
-                                    + {m.title} <span className="text-ink-500">({m.hours}h · {m.course})</span>
+                                  <button key={m.id} onClick={() => addModule(w.n, m)} className="block w-full rounded bg-slate-900 px-2 py-1.5 text-left text-xs text-slate-300 hover:bg-slate-800">
+                                    + {m.title} <span className="text-slate-500">({m.hours}h · {m.course})</span>
                                   </button>
                                 ))}
-                                {addQuery.length >= 3 && searchResults.length === 0 && <p className="px-2 py-1 text-xs text-ink-500">No modules match.</p>}
+                                {addQuery.length >= 3 && searchResults.length === 0 && <p className="px-2 py-1 text-xs text-slate-500">No modules match.</p>}
                               </div>
-                              <button onClick={() => { setAddOpen(null); setAddQuery(""); }} className="mt-1 px-2 text-[11px] text-ink-500 hover:text-ink-900">close</button>
+                              <button onClick={() => { setAddOpen(null); setAddQuery(""); }} className="mt-1 px-2 text-[11px] text-slate-500 hover:text-white">close</button>
                             </div>
                           ) : (
-                            <button onClick={() => setAddOpen(w.n)} className="text-[11px] text-brand-600 hover:underline">+ Add a module to this week</button>
+                            <button onClick={() => setAddOpen(w.n)} className="text-[11px] text-brand-400 hover:underline">+ Add a module to this week</button>
                           )}
                         </div>
                       )}
@@ -344,8 +344,8 @@ export default function WeekPlan({ plan, planKey }) {
 
                   {w.project && (
                     <div className="mt-3">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider text-rose-500">🛠 Build · ~{w.project.hours}h</p>
-                      <label className="mt-1 flex items-center gap-2 rounded-lg bg-ink-50 px-3 py-2 text-sm text-ink-800">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-rose-400">🛠 Build · ~{w.project.hours}h</p>
+                      <label className="mt-1 flex items-center gap-2 rounded-lg bg-slate-950/60 px-3 py-2 text-sm text-slate-200">
                         <input type="checkbox" checked={!!itemDone[`${w.n}-proj`]} onChange={() => toggleItem(`${w.n}-proj`, w.n, w)} className="h-4 w-4 accent-emerald-500" />
                         <span className={itemDone[`${w.n}-proj`] ? "line-through opacity-60" : ""}>{w.project.title}</span>
                       </label>
@@ -353,32 +353,32 @@ export default function WeekPlan({ plan, planKey }) {
                   )}
 
                   <div className="mt-3">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-flame-600">🎙 Attend · Tue/Thu 8pm IST</p>
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-violet-400">🎙 Attend · Tue/Thu 8pm IST</p>
                     <ul className="mt-1 space-y-1">
                       {w.sync.map((s, i) => (
                         <li key={i}>
-                          <label className="flex items-center gap-2 text-sm text-ink-700">
+                          <label className="flex items-center gap-2 text-sm text-slate-300">
                             <input type="checkbox" checked={!!itemDone[`${w.n}-sync-${i}`]} onChange={() => toggleItem(`${w.n}-sync-${i}`, w.n, w)} className="h-4 w-4 accent-emerald-500" />
-                            <span className={itemDone[`${w.n}-sync-${i}`] ? "line-through opacity-60" : ""}>{s.title} <span className="text-xs text-ink-500">({s.hours}h)</span></span>
+                            <span className={itemDone[`${w.n}-sync-${i}`] ? "line-through opacity-60" : ""}>{s.title} <span className="text-xs text-slate-500">({s.hours}h)</span></span>
                           </label>
                         </li>
                       ))}
-                      {w.masterclass && <li className="text-sm text-flame-600">★ {w.masterclass.title} <span className="text-xs text-ink-500">({w.masterclass.hours}h)</span></li>}
-                      {w.assessment && <li className="text-sm text-ink-700">✦ {w.assessment.title}</li>}
+                      {w.masterclass && <li className="text-sm text-fuchsia-300">★ {w.masterclass.title} <span className="text-xs text-slate-500">({w.masterclass.hours}h)</span></li>}
+                      {w.assessment && <li className="text-sm text-slate-300">✦ {w.assessment.title}</li>}
                     </ul>
                   </div>
 
-                  <div className="mt-3 rounded-lg border border-ink-200 bg-ink-50 px-3 py-2.5">
-                    <p className="text-sm text-[#1A8B66]">📦 Submit by Sunday: <span className="text-ink-800">{w.deliverable}</span></p>
+                  <div className="mt-3 rounded-lg border border-slate-800 bg-slate-950/40 px-3 py-2.5">
+                    <p className="text-sm text-emerald-300">📦 Submit by Sunday: <span className="text-slate-200">{w.deliverable}</span></p>
                     {effAsync.length > 0 && (
-                      <p className="mt-1 text-[11px] text-ink-500">🎯 Unlocks: {[...new Set(effAsync.flatMap((a) => (swaps[a.id] || a).skills))].slice(0, 4).join(" · ")}</p>
+                      <p className="mt-1 text-[11px] text-slate-500">🎯 Unlocks: {[...new Set(effAsync.flatMap((a) => (swaps[a.id] || a).skills))].slice(0, 4).join(" · ")}</p>
                     )}
                   </div>
 
                   {w.addons?.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-2">
                       {w.addons.map((a, i) => (
-                        <button key={i} className="chip border border-dashed border-ink-300 bg-white text-ink-700 hover:border-brand-500" title="Career Launchpad — coming soon">
+                        <button key={i} className="chip border border-dashed border-slate-600 bg-slate-900 text-slate-300 hover:border-brand-500" title="Career Launchpad — coming soon">
                           {a.kind === "coach" ? "🧑‍🏫" : a.kind === "resume" ? "📄" : a.kind === "jobs" ? "💼" : "🎤"} {a.label}
                         </button>
                       ))}

@@ -30,7 +30,7 @@ export function WeeklyLoadChart({ weeks, hoursPerWeek }) {
                   {w.type === "hackathon" ? "🏆" : "🎓"}
                 </text>
               )}
-              <text x={pad + i * bw + bw / 2} y={H - 10} textAnchor="middle" fontSize="8.5" fill="#8C8C8C">W{w.n}</text>
+              <text x={pad + i * bw + bw / 2} y={H - 10} textAnchor="middle" fontSize="8.5" fill="#64748b">W{w.n}</text>
             </g>
           );
         })}
@@ -52,11 +52,11 @@ export function PhaseChart({ weeks }) {
     <div className="space-y-2">
       {entries.map(([p, h]) => (
         <div key={p} className="flex items-center gap-3">
-          <span className="w-32 shrink-0 text-xs text-ink-500">{p}</span>
-          <div className="h-3 flex-1 overflow-hidden rounded bg-ink-100">
+          <span className="w-32 shrink-0 text-xs text-slate-400">{p}</span>
+          <div className="h-3 flex-1 overflow-hidden rounded bg-slate-800">
             <div className="h-full rounded" style={{ width: `${(h / total) * 100}%`, background: COLORS[p] }} />
           </div>
-          <span className="w-14 text-right text-xs text-ink-700">{Math.round(h)}h</span>
+          <span className="w-14 text-right text-xs text-slate-300">{Math.round(h)}h</span>
         </div>
       ))}
     </div>
@@ -68,13 +68,13 @@ export function ScoreRing({ value, label, size = 110 }) {
   return (
     <div className="flex flex-col items-center">
       <svg width={size} height={size}>
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#E6F7FF" strokeWidth="9" />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#1e293b" strokeWidth="9" />
         <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="url(#g)" strokeWidth="9" strokeLinecap="round"
           strokeDasharray={`${(value / 100) * c} ${c}`} transform={`rotate(-90 ${size / 2} ${size / 2})`} />
         <defs><linearGradient id="g"><stop offset="0%" stopColor="#6366f1" /><stop offset="100%" stopColor="#a855f7" /></linearGradient></defs>
-        <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fill="#1F1F1F" fontSize="20" fontWeight="800">{value}</text>
+        <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fill="#fff" fontSize="20" fontWeight="800">{value}</text>
       </svg>
-      <span className="mt-1 text-xs text-ink-500">{label}</span>
+      <span className="mt-1 text-xs text-slate-400">{label}</span>
     </div>
   );
 }

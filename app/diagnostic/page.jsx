@@ -78,44 +78,44 @@ export default function Diagnostic() {
   }
 
   const Btn = ({ on, children, ...p }) => (
-    <button {...p} className={`btn text-sm ${on ? "bg-brand-600 text-ink-900" : "border border-ink-300 text-ink-700 hover:border-brand-500"}`}>{children}</button>
+    <button {...p} className={`btn text-sm ${on ? "bg-brand-600 text-white" : "border border-slate-700 text-slate-300 hover:border-brand-500"}`}>{children}</button>
   );
 
   return (
     <div className="mx-auto max-w-4xl">
-      <h1 className="text-3xl font-extrabold text-ink-900">Career Diagnostic</h1>
-      <p className="mt-1 text-sm text-ink-500">5 quick steps → a plan built for exactly you: background, experience, skills, time and goal.</p>
+      <h1 className="text-3xl font-extrabold text-white">Career Diagnostic</h1>
+      <p className="mt-1 text-sm text-slate-400">5 quick steps → a plan built for exactly you: background, experience, skills, time and goal.</p>
       <div className="mt-4 flex gap-2">
-        {[1, 2, 3, 4, 5].map((s) => <div key={s} className={`h-1.5 flex-1 rounded ${step >= s ? "bg-brand-500" : "bg-ink-100"}`} />)}
+        {[1, 2, 3, 4, 5].map((s) => <div key={s} className={`h-1.5 flex-1 rounded ${step >= s ? "bg-brand-500" : "bg-slate-800"}`} />)}
       </div>
 
       {step === 1 && (
         <div className="mt-8 space-y-6">
           <div>
-            <h2 className="text-lg font-bold text-ink-900">1 · About you</h2>
-            <p className="mt-1 text-sm text-ink-500">This calibrates the difficulty and pace of your plan.</p>
+            <h2 className="text-lg font-bold text-white">1 · About you</h2>
+            <p className="mt-1 text-sm text-slate-400">This calibrates the difficulty and pace of your plan.</p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-ink-700">Where are you today?</p>
+            <p className="text-sm font-semibold text-slate-300">Where are you today?</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {BACKGROUNDS.map(([v, l]) => <Btn key={v} on={profile.background === v} onClick={() => setProfile((p) => ({ ...p, background: v }))}>{l}</Btn>)}
             </div>
           </div>
           <div>
-            <p className="text-sm font-semibold text-ink-700">Total work experience</p>
+            <p className="text-sm font-semibold text-slate-300">Total work experience</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {EXPERIENCE.map(([v, l]) => <Btn key={v} on={profile.exp === v} onClick={() => setProfile((p) => ({ ...p, exp: v }))}>{l}</Btn>)}
             </div>
-            {fastTrack && <p className="mt-2 text-xs text-[#1A8B66]">✓ Fast-track enabled — we&apos;ll skip beginner-level modules where your self-assessment allows.</p>}
+            {fastTrack && <p className="mt-2 text-xs text-emerald-400">✓ Fast-track enabled — we&apos;ll skip beginner-level modules where your self-assessment allows.</p>}
           </div>
           <div>
-            <p className="text-sm font-semibold text-ink-700">Education background</p>
+            <p className="text-sm font-semibold text-slate-300">Education background</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {EDUCATION.map(([v, l]) => <Btn key={v} on={profile.edu === v} onClick={() => setProfile((p) => ({ ...p, edu: v }))}>{l}</Btn>)}
             </div>
           </div>
           <div>
-            <p className="text-sm font-semibold text-ink-700">Current role / field (optional)</p>
+            <p className="text-sm font-semibold text-slate-300">Current role / field (optional)</p>
             <input className="input mt-2 max-w-md" placeholder="e.g. Accounts executive, BPO team lead, B.Tech student…" value={profile.currentRole} onChange={(e) => setProfile((p) => ({ ...p, currentRole: e.target.value }))} />
           </div>
           <button disabled={!profile.background || !profile.exp} onClick={() => setStep(2)} className="btn-primary disabled:opacity-40">Continue →</button>
@@ -124,22 +124,22 @@ export default function Diagnostic() {
 
       {step === 2 && (
         <div className="mt-8">
-          <h2 className="text-lg font-bold text-ink-900">2 · Your target</h2>
-          <p className="mt-1 text-sm text-ink-500">Pick a role (grouped by career family) and when you want to be job-ready.</p>
+          <h2 className="text-lg font-bold text-white">2 · Your target</h2>
+          <p className="mt-1 text-sm text-slate-400">Pick a role (grouped by career family) and when you want to be job-ready.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <span className="text-sm text-ink-700">Job-ready in:</span>
+            <span className="text-sm text-slate-300">Job-ready in:</span>
             {TIMELINES.map(([v, l]) => <Btn key={v} on={timeline === v} onClick={() => { setTimeline(v); setHpw(v === "3" ? 15 : v === "12" ? 5 : 10); }}>{l}</Btn>)}
           </div>
           <div className="mt-5 space-y-5">
             {ORDER.map((b) => (
               <div key={b}>
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand-600">{b}</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-400">{b}</p>
                 <div className="mt-2 grid gap-2 sm:grid-cols-2">
                   {journeys.filter((j) => j.bucket === b).map((j) => (
                     <button key={j.slug} onClick={() => { setRole(j.slug); setStep(3); }}
                       className={`card p-3 text-left text-sm transition hover:border-brand-500 ${role === j.slug ? "border-brand-500" : ""}`}>
-                      <span className="font-semibold text-ink-900">{j.role}</span>
-                      <span className="mt-0.5 block text-xs text-ink-500">{j.salary?.india} · {j.weeks} wks typical</span>
+                      <span className="font-semibold text-white">{j.role}</span>
+                      <span className="mt-0.5 block text-xs text-slate-500">{j.salary?.india} · {j.weeks} wks typical</span>
                     </button>
                   ))}
                 </div>
@@ -152,14 +152,14 @@ export default function Diagnostic() {
 
       {step === 3 && journey && (
         <div className="mt-8">
-          <h2 className="text-lg font-bold text-ink-900">3 · Skill self-assessment for {journey.role}</h2>
-          <p className="mt-1 text-sm text-ink-500">Each skill area lists the exact skills this role needs from it — rate against those, not the label.</p>
-          <div className="card mt-3 p-3 text-[11px] text-ink-500">
-            <span className="font-semibold text-ink-800">How to rate yourself:</span>{" "}
-            <span className="text-ink-700">New to this</span> = never touched it ·{" "}
-            <span className="text-ink-700">Basics</span> = tutorials or college projects only ·{" "}
-            <span className="text-[#1A8B66]">Comfortable</span> = used in real work/projects → <span className="text-[#1A8B66]">we skip these modules</span> ·{" "}
-            <span className="text-ink-700">Strong</span> = could teach or interview on it
+          <h2 className="text-lg font-bold text-white">3 · Skill self-assessment for {journey.role}</h2>
+          <p className="mt-1 text-sm text-slate-400">Each skill area lists the exact skills this role needs from it — rate against those, not the label.</p>
+          <div className="card mt-3 p-3 text-[11px] text-slate-400">
+            <span className="font-semibold text-slate-200">How to rate yourself:</span>{" "}
+            <span className="text-slate-300">New to this</span> = never touched it ·{" "}
+            <span className="text-slate-300">Basics</span> = tutorials or college projects only ·{" "}
+            <span className="text-emerald-300">Comfortable</span> = used in real work/projects → <span className="text-emerald-300">we skip these modules</span> ·{" "}
+            <span className="text-slate-300">Strong</span> = could teach or interview on it
           </div>
           <div className="mt-4 grid gap-6 lg:grid-cols-[1fr,260px]">
             <div className="space-y-3">
@@ -170,33 +170,33 @@ export default function Diagnostic() {
                 return (
                   <div key={cl} className="card p-3">
                     <div className="flex flex-wrap items-center gap-3">
-                      <span className="flex-1 text-sm font-semibold text-ink-800">{label}</span>
+                      <span className="flex-1 text-sm font-semibold text-slate-200">{label}</span>
                       <div className="flex gap-1">
                         {LEVELS.map((l, i) => (
                           <button key={l} onClick={() => setRatings((r) => ({ ...r, [cl]: i }))}
-                            className={`rounded px-2 py-1 text-[11px] transition ${(ratings[cl] ?? -1) === i ? "bg-brand-600 text-ink-900" : "bg-ink-100 text-ink-500 hover:text-ink-900"}`}>{l}</button>
+                            className={`rounded px-2 py-1 text-[11px] transition ${(ratings[cl] ?? -1) === i ? "bg-brand-600 text-white" : "bg-slate-800 text-slate-400 hover:text-white"}`}>{l}</button>
                         ))}
                       </div>
                     </div>
                     <div className="mt-2 flex flex-wrap items-center gap-1.5">
-                      <span className="text-[10px] uppercase tracking-wider text-ink-400">Tap the ones you already know:</span>
+                      <span className="text-[10px] uppercase tracking-wider text-slate-600">Tap the ones you already know:</span>
                       {shown.map((s) => (
                         <button key={s} onClick={() => setTools((x) => x.includes(s) ? x.filter((y) => y !== s) : [...x, s])}
-                          className={`chip border transition ${tools.includes(s) ? "border-[#1A8B66] bg-[#E8F8F2] text-[#1A8B66]" : "border-ink-300 bg-ink-100 text-ink-500 hover:border-brand-500"}`}>
+                          className={`chip border transition ${tools.includes(s) ? "border-emerald-500 bg-emerald-900/50 text-emerald-300" : "border-slate-700 bg-slate-800/80 text-slate-400 hover:border-brand-500"}`}>
                           {tools.includes(s) ? "✓ " : ""}{s}
                         </button>
                       ))}
-                      {sks.length > shown.length && <span className="text-[11px] text-ink-400">+{sks.length - shown.length} more</span>}
+                      {sks.length > shown.length && <span className="text-[11px] text-slate-600">+{sks.length - shown.length} more</span>}
                     </div>
                   </div>
                 );
               })}
               <div className="card p-3">
-                <p className="text-sm font-semibold text-ink-800">Tools you&apos;ve already used (tap all that apply)</p>
+                <p className="text-sm font-semibold text-slate-200">Tools you&apos;ve already used (tap all that apply)</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {roleTools.map((t) => (
                     <button key={t} onClick={() => setTools((x) => x.includes(t) ? x.filter((y) => y !== t) : [...x, t])}
-                      className={`chip border ${tools.includes(t) ? "border-[#1A8B66] bg-[#E8F8F2] text-[#1A8B66]" : "border-ink-300 bg-white text-ink-700"}`}>
+                      className={`chip border ${tools.includes(t) ? "border-emerald-500 bg-emerald-900/50 text-emerald-300" : "border-slate-700 bg-slate-900 text-slate-300"}`}>
                       {tools.includes(t) ? "✓ " : ""}{t}
                     </button>
                   ))}
@@ -206,7 +206,7 @@ export default function Diagnostic() {
             <div className="card h-fit p-4 text-center">
               <ScoreRing value={readiness} label="Current readiness" />
               <div className="mt-2"><Radar data={currentRadar} size={240} /></div>
-              <p className="text-[11px] text-ink-500">Your current skills (filled) vs role target (dashed)</p>
+              <p className="text-[11px] text-slate-500">Your current skills (filled) vs role target (dashed)</p>
             </div>
           </div>
           <div className="mt-6 flex gap-3">
@@ -218,22 +218,22 @@ export default function Diagnostic() {
 
       {step === 4 && (
         <div className="mt-8 space-y-6">
-          <h2 className="text-lg font-bold text-ink-900">4 · How you&apos;ll learn</h2>
+          <h2 className="text-lg font-bold text-white">4 · How you&apos;ll learn</h2>
           <div>
-            <p className="text-sm font-semibold text-ink-700">Time you can give <span className="font-normal text-ink-500">(suggested {suggestedHpw} hrs/week for your {TIMELINES.find(([v]) => v === timeline)[1]} target)</span></p>
+            <p className="text-sm font-semibold text-slate-300">Time you can give <span className="font-normal text-slate-500">(suggested {suggestedHpw} hrs/week for your {TIMELINES.find(([v]) => v === timeline)[1]} target)</span></p>
             <div className="mt-2 flex flex-wrap gap-2">
               {[5, 10, 15].map((h) => <Btn key={h} on={hpw === h} onClick={() => setHpw(h)}>{h} hrs/week{h === suggestedHpw ? " ✦" : ""}</Btn>)}
             </div>
           </div>
           <div>
-            <p className="text-sm font-semibold text-ink-700">Learning style</p>
+            <p className="text-sm font-semibold text-slate-300">Learning style</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {STYLES.map(([v, l]) => <Btn key={v} on={style === v} onClick={() => setStyle(v)}>{l}</Btn>)}
             </div>
-            <p className="mt-1 text-xs text-ink-500">{style === "project" ? "Hackathon moves earlier in your journey — you build from week ~40%." : "Concepts build steadily; hackathon arrives after core content."}</p>
+            <p className="mt-1 text-xs text-slate-500">{style === "project" ? "Hackathon moves earlier in your journey — you build from week ~40%." : "Concepts build steadily; hackathon arrives after core content."}</p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-ink-700">Your goal</p>
+            <p className="text-sm font-semibold text-slate-300">Your goal</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {GOALS.map(([v, l]) => <Btn key={v} on={goal === v} onClick={() => setGoal(v)}>{l}</Btn>)}
             </div>
@@ -247,54 +247,54 @@ export default function Diagnostic() {
 
       {step === 5 && journey && (
         <div className="mt-8">
-          <div className="card border-brand-200 bg-gradient-to-br from-brand-50 to-white p-5">
+          <div className="card border-brand-700 bg-gradient-to-br from-brand-950 to-slate-900 p-5">
             <div className="flex flex-wrap items-center gap-6">
               <ScoreRing value={readiness} label="Starting readiness" />
               <div className="flex-1">
-                <p className="text-xs uppercase tracking-widest text-brand-600">Your personalized journey</p>
-                <h2 className="mt-1 text-2xl font-extrabold text-ink-900">{journey.role}</h2>
-                <p className="mt-1 text-sm text-ink-700">
+                <p className="text-xs uppercase tracking-widest text-brand-400">Your personalized journey</p>
+                <h2 className="mt-1 text-2xl font-extrabold text-white">{journey.role}</h2>
+                <p className="mt-1 text-sm text-slate-300">
                   {BACKGROUNDS.find(([v]) => v === profile.background)?.[1].replace(/^[^ ]+ /, "")} · {profile.exp} yrs exp · job-ready in ~{TIMELINES.find(([v]) => v === timeline)[1]} at {hpw} hrs/week
-                  {fastTrack && <span className="text-[#1A8B66]"> · fast-track on</span>}
-                  {style === "project" && <span className="text-flame-600"> · project-first</span>}
+                  {fastTrack && <span className="text-emerald-400"> · fast-track on</span>}
+                  {style === "project" && <span className="text-violet-300"> · project-first</span>}
                 </p>
                 {journey.salary && (
-                  <p className="mt-2 text-sm">🎯 Outcome: <span className="text-[#1A8B66]">{journey.salary.india}</span> (India) · {journey.salary.global} (global) · <span className="text-ink-500">{journey.salary.growth}</span></p>
+                  <p className="mt-2 text-sm">🎯 Outcome: <span className="text-emerald-300">{journey.salary.india}</span> (India) · {journey.salary.global} (global) · <span className="text-slate-400">{journey.salary.growth}</span></p>
                 )}
                 {plan && plan.totalWeeks > maxWeeks && (
-                  <p className="mt-2 text-xs text-peel-700">⚠ Full coverage needs {plan.totalWeeks} weeks — beyond your {maxWeeks}-week target. We trimmed to the highest-impact modules; increase hrs/week to cover more.</p>
+                  <p className="mt-2 text-xs text-amber-300">⚠ Full coverage needs {plan.totalWeeks} weeks — beyond your {maxWeeks}-week target. We trimmed to the highest-impact modules; increase hrs/week to cover more.</p>
                 )}
               </div>
             </div>
           </div>
           {/* YOU: BEFORE → AFTER — the outcome, from the learner's side */}
           {plan && (
-            <div className="card mt-4 border-[#BFE9D7] p-5">
-              <h3 className="text-lg font-bold text-ink-900">Your transformation — today vs after completion</h3>
+            <div className="card mt-4 border-emerald-900/60 p-5">
+              <h3 className="text-lg font-bold text-white">Your transformation — today vs after completion</h3>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl border border-ink-200 bg-ink-50 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-ink-500">📍 You today</p>
-                  <p className="mt-2 text-3xl font-extrabold text-ink-700">{readiness}%<span className="ml-2 text-sm font-normal text-ink-500">role-ready</span></p>
-                  <ul className="mt-3 space-y-1 text-sm text-ink-500">
+                <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">📍 You today</p>
+                  <p className="mt-2 text-3xl font-extrabold text-slate-300">{readiness}%<span className="ml-2 text-sm font-normal text-slate-500">role-ready</span></p>
+                  <ul className="mt-3 space-y-1 text-sm text-slate-400">
                     <li>• {clusters.filter(([cl]) => (ratings[cl] || 0) >= 2).length} of {clusters.length} skill areas at working level</li>
                     <li>• No role-specific portfolio evidence yet</li>
                     <li>• Profile: {BACKGROUNDS.find(([v]) => v === profile.background)?.[1].replace(/^[^ ]+ /, "")}, {profile.exp} yrs</li>
                   </ul>
                 </div>
-                <div className="rounded-xl border border-[#BFE9D7] bg-[#F0FBF6] p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-[#1A8B66]">🎯 You on {new Date(Date.now() + plan.totalWeeks * 7 * 864e5).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</p>
-                  <p className="mt-2 text-3xl font-extrabold text-[#1A8B66]">{journey.role}<span className="ml-2 text-sm font-normal text-ink-500">interview-ready</span></p>
-                  <ul className="mt-3 space-y-1 text-sm text-ink-700">
+                <div className="rounded-xl border border-emerald-700 bg-emerald-950/30 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">🎯 You on {new Date(Date.now() + plan.totalWeeks * 7 * 864e5).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</p>
+                  <p className="mt-2 text-3xl font-extrabold text-emerald-300">{journey.role}<span className="ml-2 text-sm font-normal text-slate-400">interview-ready</span></p>
+                  <ul className="mt-3 space-y-1 text-sm text-slate-300">
                     <li>✓ {plan.moduleCount} modules across all {clusters.length} skill areas — verified by checkpoints</li>
                     <li>✓ Hackathon demo + coached capstone = 2 portfolio assets</li>
                     <li>✓ AI resume + mock interviews done · listed for employers</li>
-                    <li>✓ Target band: <span className="text-[#1A8B66]">{journey.salary?.india}</span> (India) · {journey.salary?.global}</li>
+                    <li>✓ Target band: <span className="text-emerald-300">{journey.salary?.india}</span> (India) · {journey.salary?.global}</li>
                   </ul>
                 </div>
               </div>
             </div>
           )}
-          {plan ? <WeekPlan plan={plan} planKey={`diag-${journey.slug}`} /> : <p className="mt-6 animate-pulse text-ink-500">Composing…</p>}
+          {plan ? <WeekPlan plan={plan} planKey={`diag-${journey.slug}`} /> : <p className="mt-6 animate-pulse text-slate-500">Composing…</p>}
           <div className="mt-6 flex gap-3">
             <button onClick={() => setStep(4)} className="btn-ghost">← Adjust preferences</button>
             <button onClick={() => setStep(3)} className="btn-ghost">← Redo self-assessment</button>
