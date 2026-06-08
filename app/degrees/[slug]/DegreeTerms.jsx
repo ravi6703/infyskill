@@ -21,18 +21,40 @@ function parse(name) {
 
 function CourseRow({ c }) {
   const d = DELIV[c.delivery] || DELIV.Async;
+  const partial = c.moduleCount && c.selectedCount && c.selectedCount < c.moduleCount;
   return (
-    <div className="flex flex-wrap items-center gap-3 rounded-xl border border-ink-200 bg-white p-3">
-      <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
-      <div className="min-w-0 flex-1">
-        {c.slug
-          ? <Link href={`/course/${c.slug}`} className="font-bold text-ink-900 hover:text-brand-600">{c.course}</Link>
-          : <span className="font-bold text-ink-900">{c.course}</span>}
-        <p className="text-xs text-ink-500">{c.outcome}</p>
+    <div className="rounded-xl border border-ink-200 bg-white p-3">
+      <div className="flex flex-wrap items-center gap-3">
+        <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
+        <div className="min-w-0 flex-1">
+          {c.slug
+            ? <Link href={`/course/${c.slug}`} className="font-bold text-ink-900 hover:text-brand-600">{c.course}</Link>
+            : <span className="font-bold text-ink-900">{c.course}</span>}
+          <p className="text-xs text-ink-500">{c.outcome}</p>
+        </div>
+        {c.hours ? <span className="shrink-0 text-[11px] font-bold text-ink-400">{c.hours} hrs</span> : null}
+        {c.skills?.length > 0 && (
+          <div className="hidden flex-wrap gap-1 sm:flex">
+            {c.skills.slice(0, 3).map((s) => <span key={s} className="chip-gray">{s}</span>)}
+          </div>
+        )}
       </div>
-      {c.skills?.length > 0 && (
-        <div className="hidden flex-wrap gap-1 sm:flex">
-          {c.skills.slice(0, 3).map((s) => <span key={s} className="chip-gray">{s}</span>)}
+
+      {/* module breakdown — which modules of the course this trimester uses */}
+      {c.modules?.length > 0 && (
+        <div className="mt-2.5 border-t border-ink-100 pt-2.5">
+          <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wider text-ink-400">
+            {partial ? <>Selected modules <span className="text-peel-600">({c.selectedCount} of {c.moduleCount})</span></> : <>Modules ({c.moduleCount})</>}
+          </p>
+          <ol className="space-y-1">
+            {c.modules.map((m, i) => (
+              <li key={i} className="flex items-baseline gap-2 text-xs text-ink-600">
+                <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-brand-50 text-[9px] font-black text-brand-600">{i + 1}</span>
+                <span className="flex-1">{m.title}</span>
+                {m.hours ? <span className="shrink-0 text-[10px] text-ink-400">{m.hours} h</span> : null}
+              </li>
+            ))}
+          </ol>
         </div>
       )}
     </div>

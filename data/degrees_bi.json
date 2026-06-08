@@ -38,7 +38,35 @@
       ],
       "delivery": "Async",
       "outcome": "Master Python Programming & Data Structures",
-      "hours": 30
+      "hours": 29.7,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Foundations of Python Programming",
+        "hours": 7.9,
+        "level": 0,
+        "skills": []
+       },
+       {
+        "title": "Python Programming Essentials",
+        "hours": 6.2,
+        "level": 0,
+        "skills": []
+       },
+       {
+        "title": "Python Data Structures and Functions",
+        "hours": 7.4,
+        "level": 0,
+        "skills": []
+       },
+       {
+        "title": "Python OOPs and File Handling",
+        "hours": 8.2,
+        "level": 0,
+        "skills": []
+       }
+      ]
      },
      {
       "course": "Quantitative Aptitude Mastery— Exam & Recruitment Prep",
@@ -51,7 +79,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Quantitative Aptitude & Vedic Mathematics",
-      "hours": 18
+      "hours": 13.7,
+      "moduleCount": 3,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Vedic Maths for Speed & Accuracy",
+        "hours": 8.2,
+        "level": 0,
+        "skills": [
+         "Vedic Mathematics",
+         "Speed Calculation",
+         "Mental Math"
+        ]
+       },
+       {
+        "title": "Understanding Number Systems from Scratch",
+        "hours": 5.5,
+        "level": 0,
+        "skills": [
+         "Number Systems",
+         "Numerical Reasoning",
+         "Divisibility"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -83,8 +135,8 @@
       "hours": null
      }
     ],
-    "hours": 48,
-    "credits": 1.6
+    "hours": 43,
+    "credits": 1.4
    },
    {
     "name": "Year 1 · Trimester 2",
@@ -105,7 +157,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Java & Data Structures",
-      "hours": 25
+      "hours": 25.0,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Data Structures in Java",
+        "hours": 12.0,
+        "level": 1,
+        "skills": [
+         "Java",
+         "Data Structures",
+         "Collections Framework"
+        ]
+       },
+       {
+        "title": "Spring and Spring Boot Introduction",
+        "hours": 5.3,
+        "level": 1,
+        "skills": [
+         "Spring Framework",
+         "Spring Boot",
+         "Dependency Injection"
+        ]
+       },
+       {
+        "title": "RESTFul web services and Spring Boot Security",
+        "hours": 7.7,
+        "level": 1,
+        "skills": [
+         "REST API Development",
+         "Hibernate",
+         "JPA"
+        ]
+       }
+      ]
      },
      {
       "course": "Version Control with Git and GitHub",
@@ -118,7 +204,21 @@
       ],
       "delivery": "Async",
       "outcome": "Master Git & GitHub",
-      "hours": 13
+      "hours": 3.5,
+      "moduleCount": 3,
+      "selectedCount": 1,
+      "modules": [
+       {
+        "title": "Reviews",
+        "hours": 3.5,
+        "level": 0,
+        "skills": [
+         "Code Review",
+         "Testing Methodologies",
+         "Checklists"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -150,8 +250,8 @@
       "hours": null
      }
     ],
-    "hours": 38,
-    "credits": 1.3
+    "hours": 28,
+    "credits": 0.9
    },
    {
     "name": "Year 1 · Trimester 3",
@@ -172,7 +272,29 @@
       ],
       "delivery": "Async",
       "outcome": "Master REST API Development & GraphQL",
-      "hours": 11
+      "hours": 10.6,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Introduction to APIs",
+        "hours": 4.8,
+        "level": 1,
+        "skills": []
+       },
+       {
+        "title": "Consuming APIs",
+        "hours": 4.1,
+        "level": 1,
+        "skills": []
+       },
+       {
+        "title": "Integrating APIs in Web Applications",
+        "hours": 1.7,
+        "level": 1,
+        "skills": []
+       }
+      ]
      },
      {
       "course": "Managing Databases - End to End Web Development",
@@ -185,7 +307,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master SQL & MongoDB",
-      "hours": 13
+      "hours": 13.4,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Introduction to Databases",
+        "hours": 5.3,
+        "level": 1,
+        "skills": [
+         "SQL",
+         "NoSQL",
+         "Database Design"
+        ]
+       },
+       {
+        "title": "Database Management and Administration",
+        "hours": 4.1,
+        "level": 1,
+        "skills": [
+         "MongoDB",
+         "CRUD Operations",
+         "Database Administration"
+        ]
+       },
+       {
+        "title": "Building and Consuming APIs",
+        "hours": 4.0,
+        "level": 1,
+        "skills": [
+         "REST API Development",
+         "JWT Authentication",
+         "Express.js"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -251,7 +407,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master scikit-learn & FastAPI",
-      "hours": 22
+      "hours": 21.6,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Core ML Algorithms and Workflows",
+        "hours": 6.3,
+        "level": 1,
+        "skills": [
+         "scikit-learn",
+         "Machine Learning Pipelines",
+         "Model Evaluation"
+        ]
+       },
+       {
+        "title": "Data Preparation and Feature Engineering",
+        "hours": 4.7,
+        "level": 1,
+        "skills": [
+         "Feature Engineering",
+         "Data Preprocessing",
+         "Machine Learning Pipelines"
+        ]
+       },
+       {
+        "title": "Building and Testing ML Code",
+        "hours": 5.7,
+        "level": 1,
+        "skills": [
+         "Software Testing",
+         "Machine Learning Pipelines",
+         "Logging"
+        ]
+       },
+       {
+        "title": "Serving and Deploying ML Models",
+        "hours": 4.9,
+        "level": 1,
+        "skills": [
+         "FastAPI",
+         "Docker",
+         "Model Deployment"
+        ]
+       }
+      ]
      },
      {
       "course": "Machine Learning Fundamentals for Java Developers",
@@ -264,7 +464,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master Machine Learning & Java",
-      "hours": 12
+      "hours": 12.4,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Introduction to Machine Learning and Java",
+        "hours": 3.9,
+        "level": 1,
+        "skills": [
+         "Machine Learning",
+         "Java",
+         "ML Libraries"
+        ]
+       },
+       {
+        "title": "Supervised Learning in Java",
+        "hours": 3.4,
+        "level": 1,
+        "skills": [
+         "Supervised Learning",
+         "Regression Analysis",
+         "Classification"
+        ]
+       },
+       {
+        "title": "Unsupervised Learning in Java",
+        "hours": 2.6,
+        "level": 1,
+        "skills": [
+         "Unsupervised Learning",
+         "Clustering",
+         "Dimensionality Reduction"
+        ]
+       },
+       {
+        "title": "Applied ML with Java",
+        "hours": 2.5,
+        "level": 1,
+        "skills": [
+         "Data Preprocessing",
+         "Cross-Validation",
+         "ML Pipelines"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -318,7 +562,23 @@
       ],
       "delivery": "Async",
       "outcome": "Master Deep Learning & PyTorch",
-      "hours": 15
+      "hours": 8.0,
+      "moduleCount": 4,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Foundations of Neural Networks",
+        "hours": 4.2,
+        "level": 2,
+        "skills": []
+       },
+       {
+        "title": "Deploying Deep Learning Models",
+        "hours": 3.8,
+        "level": 2,
+        "skills": []
+       }
+      ]
      },
      {
       "course": "Deep Learning: Advanced Backbones and Efficient GPU Training",
@@ -331,7 +591,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master PyTorch Lightning & Vision Transformers",
-      "hours": 21
+      "hours": 15.7,
+      "moduleCount": 4,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Modern Backbone Architectures (ConvNeXt & Vision Transformers)",
+        "hours": 5.3,
+        "level": 2,
+        "skills": [
+         "ConvNeXt",
+         "Vision Transformers",
+         "CNN Architectures"
+        ]
+       },
+       {
+        "title": "Training Dynamics & Stabilization Techniques",
+        "hours": 5.1,
+        "level": 2,
+        "skills": [
+         "RMSNorm",
+         "SwiGLU",
+         "Rotary Position Embeddings"
+        ]
+       },
+       {
+        "title": "Efficient Training on Limited GPUs",
+        "hours": 5.3,
+        "level": 2,
+        "skills": [
+         "Mixed Precision Training",
+         "Gradient Accumulation",
+         "Distributed Training"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -363,8 +657,8 @@
       "hours": null
      }
     ],
-    "hours": 36,
-    "credits": 1.2
+    "hours": 24,
+    "credits": 0.8
    },
    {
     "name": "Year 2 · Trimester 3",
@@ -385,7 +679,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Transformers & Hugging Face",
-      "hours": 18
+      "hours": 13.5,
+      "moduleCount": 4,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Transformer Architecture and Foundations",
+        "hours": 4.5,
+        "level": 2,
+        "skills": [
+         "Transformers",
+         "Self-Attention",
+         "Word Embeddings"
+        ]
+       },
+       {
+        "title": "Fine-Tuning Pre-Trained Models",
+        "hours": 4.3,
+        "level": 2,
+        "skills": [
+         "Fine-Tuning",
+         "Hugging Face",
+         "Tokenization"
+        ]
+       },
+       {
+        "title": "Evaluation Reproducibility and Version Control",
+        "hours": 4.7,
+        "level": 2,
+        "skills": [
+         "DVC",
+         "ML Pipelines",
+         "Model Versioning"
+        ]
+       }
+      ]
      },
      {
       "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
@@ -398,7 +726,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Google Cloud Dataplex & Data Lake Management",
-      "hours": 4
+      "hours": 4.4,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Getting Started with Google Cloud Dataplex",
+        "hours": 2.3,
+        "level": 1,
+        "skills": [
+         "Google Cloud Dataplex",
+         "Data Lake Management",
+         "Data Integration"
+        ]
+       },
+       {
+        "title": "Implementing Data Management with Dataplex",
+        "hours": 2.1,
+        "level": 1,
+        "skills": [
+         "Data Pipelines",
+         "Cloud Analytics",
+         "Data Governance"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -442,8 +794,8 @@
       "hours": 40
      }
     ],
-    "hours": 62,
-    "credits": 2.1
+    "hours": 58,
+    "credits": 1.9
    },
    {
     "name": "Year 3 · Trimester 1",
@@ -464,7 +816,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Fine-Tuning & LoRA",
-      "hours": 19
+      "hours": 9.6,
+      "moduleCount": 4,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "PEFT - LoRA QLoRA & SFT Pipelines",
+        "hours": 5,
+        "level": 2,
+        "skills": [
+         "PEFT",
+         "LoRA",
+         "QLoRA"
+        ]
+       },
+       {
+        "title": "The Hands-On Project - The Specialist LLM",
+        "hours": 4.6,
+        "level": 2,
+        "skills": [
+         "Fine-Tuning",
+         "LoRA",
+         "QLoRA"
+        ]
+       }
+      ]
      },
      {
       "course": "Generative AI Prompt Engineering Basics",
@@ -477,7 +853,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Prompt Engineering & Generative AI",
-      "hours": 9
+      "hours": 8.9,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Introduction to Generative AI and Core Concepts",
+        "hours": 7.2,
+        "level": 0,
+        "skills": [
+         "Generative AI",
+         "Large Language Models",
+         "Prompt Engineering"
+        ]
+       },
+       {
+        "title": "Mastering Prompt Engineering for AI Optimization",
+        "hours": 1.7,
+        "level": 0,
+        "skills": [
+         "Prompt Engineering",
+         "LangChain",
+         "AI Ethics"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -509,8 +909,8 @@
       "hours": null
      }
     ],
-    "hours": 28,
-    "credits": 0.9
+    "hours": 18,
+    "credits": 0.6
    },
    {
     "name": "Year 3 · Trimester 2",
@@ -531,7 +931,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master RAG Pipelines & LangGraph",
-      "hours": 20
+      "hours": 19.5,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Fundamentals of Retrieval-Augmented Generation (RAG)",
+        "hours": 4.1,
+        "level": 2,
+        "skills": [
+         "RAG Pipelines",
+         "Embeddings",
+         "Retrieval Optimization"
+        ]
+       },
+       {
+        "title": "Vector Databases and Semantic Search",
+        "hours": 5.4,
+        "level": 2,
+        "skills": [
+         "Vector Databases",
+         "Pinecone",
+         "Semantic Search"
+        ]
+       },
+       {
+        "title": "Conversational Agents and Workflows",
+        "hours": 5.7,
+        "level": 2,
+        "skills": [
+         "AI Agents",
+         "LangGraph",
+         "LangChain"
+        ]
+       },
+       {
+        "title": "Optimization Debugging and Observability",
+        "hours": 4.3,
+        "level": 2,
+        "skills": [
+         "LangFuse",
+         "AI Observability",
+         "RAG Pipelines"
+        ]
+       }
+      ]
      },
      {
       "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
@@ -544,7 +988,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Multi-Agent Systems & CrewAI",
-      "hours": 16
+      "hours": 12.3,
+      "moduleCount": 4,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Foundations of Multi-Agent Collaboration",
+        "hours": 4.1,
+        "level": 2,
+        "skills": [
+         "Multi-Agent Systems",
+         "Agent Coordination",
+         "Distributed Intelligence"
+        ]
+       },
+       {
+        "title": "Designing Role-Based Multi-Agent Workflows",
+        "hours": 4.5,
+        "level": 2,
+        "skills": [
+         "CrewAI",
+         "Workflow Design",
+         "Agent Communication"
+        ]
+       },
+       {
+        "title": "Orchestrating and Evaluating Multi-Agent Systems",
+        "hours": 3.7,
+        "level": 2,
+        "skills": [
+         "Agno",
+         "Workflow Orchestration",
+         "System Evaluation"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -576,8 +1054,8 @@
       "hours": null
      }
     ],
-    "hours": 36,
-    "credits": 1.2
+    "hours": 32,
+    "credits": 1.1
    },
    {
     "name": "Year 3 · Trimester 3",
@@ -598,7 +1076,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master MLOps & CI/CD",
-      "hours": 17
+      "hours": 17.4,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Operationalizing AI Pipelines (CI/CD CT/CD Versioning)",
+        "hours": 4.9,
+        "level": 1,
+        "skills": [
+         "CI/CD",
+         "Model Versioning",
+         "MLOps"
+        ]
+       },
+       {
+        "title": "LLMOps Fundamentals: Context Prompts Inference Optimization",
+        "hours": 4.5,
+        "level": 1,
+        "skills": [
+         "MLOps",
+         "Prompt Engineering",
+         "Inference Optimization"
+        ]
+       },
+       {
+        "title": "Evaluation: From Vibes to Metrics",
+        "hours": 3.9,
+        "level": 1,
+        "skills": [
+         "LLM Evaluation",
+         "Evaluation Datasets",
+         "CI/CD"
+        ]
+       },
+       {
+        "title": "Observability & Tracing for Production AI",
+        "hours": 4.1,
+        "level": 1,
+        "skills": [
+         "Observability",
+         "Experiment Tracking",
+         "Model Monitoring"
+        ]
+       }
+      ]
      },
      {
       "course": "AI Risk and Compliance: Audit and Governance Foundations",
@@ -611,7 +1133,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master AI Governance & Red Teaming",
-      "hours": 17
+      "hours": 8.5,
+      "moduleCount": 4,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Adversarial Robustness & Red Teaming AI Systems",
+        "hours": 4.3,
+        "level": 2,
+        "skills": [
+         "Red Teaming",
+         "Adversarial Robustness",
+         "LLM Security"
+        ]
+       },
+       {
+        "title": "Regulatory Compliance: EU AI Act NIST RMF & Copyright",
+        "hours": 4.2,
+        "level": 2,
+        "skills": [
+         "Regulatory Compliance",
+         "EU AI Act",
+         "NIST AI RMF"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -655,8 +1201,8 @@
       "hours": null
      }
     ],
-    "hours": 154,
-    "credits": 5.1
+    "hours": 26,
+    "credits": 0.9
    }
   ],
   "vsUniversity": {
@@ -727,7 +1273,21 @@
       ],
       "delivery": "Async",
       "outcome": "Master Generative AI & Large Language Models",
-      "hours": 2
+      "hours": 2.4,
+      "moduleCount": 1,
+      "selectedCount": 1,
+      "modules": [
+       {
+        "title": "The Rise of Generative AI: A Journey Through History and Relevance",
+        "hours": 2.4,
+        "level": 0,
+        "skills": [
+         "Generative AI",
+         "AI History",
+         "Large Language Models"
+        ]
+       }
+      ]
      },
      {
       "course": "Generative AI Prompt Engineering Basics",
@@ -740,7 +1300,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Prompt Engineering & Generative AI",
-      "hours": 9
+      "hours": 8.9,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Introduction to Generative AI and Core Concepts",
+        "hours": 7.2,
+        "level": 0,
+        "skills": [
+         "Generative AI",
+         "Large Language Models",
+         "Prompt Engineering"
+        ]
+       },
+       {
+        "title": "Mastering Prompt Engineering for AI Optimization",
+        "hours": 1.7,
+        "level": 0,
+        "skills": [
+         "Prompt Engineering",
+         "LangChain",
+         "AI Ethics"
+        ]
+       }
+      ]
      },
      {
       "course": "Building Applications with DeepSeek",
@@ -753,7 +1337,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master DeepSeek & AI-Assisted Development",
-      "hours": 16
+      "hours": 15.8,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Getting Started with DeepSeek for Developers",
+        "hours": 5.2,
+        "level": 1,
+        "skills": [
+         "DeepSeek",
+         "Large Language Models",
+         "AI-Assisted Development"
+        ]
+       },
+       {
+        "title": "Application Development with DeepSeek",
+        "hours": 4.9,
+        "level": 1,
+        "skills": [
+         "DeepSeek",
+         "AI-Assisted Development",
+         "Code Generation"
+        ]
+       },
+       {
+        "title": "Real-World Applications and Strategic Takeaways",
+        "hours": 5.7,
+        "level": 1,
+        "skills": [
+         "RAG Pipelines",
+         "Embeddings",
+         "AI Agents"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -809,7 +1427,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master RAG Pipelines & LLM Architecture",
-      "hours": 17
+      "hours": 12.9,
+      "moduleCount": 4,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "The Modern AI Stack: Models Orchestration Vector Databases",
+        "hours": 4.5,
+        "level": 2,
+        "skills": [
+         "LLM Architecture",
+         "Vector Databases",
+         "LangChain"
+        ]
+       },
+       {
+        "title": "Data Strategy for RAG and Fine-Tuning",
+        "hours": 4.2,
+        "level": 2,
+        "skills": [
+         "RAG Pipelines",
+         "Fine-Tuning",
+         "Data Preprocessing"
+        ]
+       },
+       {
+        "title": "Prototyping & Building the Company Brain",
+        "hours": 4.2,
+        "level": 2,
+        "skills": [
+         "RAG Pipelines",
+         "Streamlit",
+         "LLM Architecture"
+        ]
+       }
+      ]
      },
      {
       "course": "RAG Systems & Agentic Workflows with Pinecone and LangGraph",
@@ -822,7 +1474,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master RAG Pipelines & LangGraph",
-      "hours": 20
+      "hours": 19.5,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Fundamentals of Retrieval-Augmented Generation (RAG)",
+        "hours": 4.1,
+        "level": 2,
+        "skills": [
+         "RAG Pipelines",
+         "Embeddings",
+         "Retrieval Optimization"
+        ]
+       },
+       {
+        "title": "Vector Databases and Semantic Search",
+        "hours": 5.4,
+        "level": 2,
+        "skills": [
+         "Vector Databases",
+         "Pinecone",
+         "Semantic Search"
+        ]
+       },
+       {
+        "title": "Conversational Agents and Workflows",
+        "hours": 5.7,
+        "level": 2,
+        "skills": [
+         "AI Agents",
+         "LangGraph",
+         "LangChain"
+        ]
+       },
+       {
+        "title": "Optimization Debugging and Observability",
+        "hours": 4.3,
+        "level": 2,
+        "skills": [
+         "LangFuse",
+         "AI Observability",
+         "RAG Pipelines"
+        ]
+       }
+      ]
      },
      {
       "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
@@ -835,7 +1531,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Multi-Agent Systems & CrewAI",
-      "hours": 16
+      "hours": 12.3,
+      "moduleCount": 4,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Foundations of Multi-Agent Collaboration",
+        "hours": 4.1,
+        "level": 2,
+        "skills": [
+         "Multi-Agent Systems",
+         "Agent Coordination",
+         "Distributed Intelligence"
+        ]
+       },
+       {
+        "title": "Designing Role-Based Multi-Agent Workflows",
+        "hours": 4.5,
+        "level": 2,
+        "skills": [
+         "CrewAI",
+         "Workflow Design",
+         "Agent Communication"
+        ]
+       },
+       {
+        "title": "Orchestrating and Evaluating Multi-Agent Systems",
+        "hours": 3.7,
+        "level": 2,
+        "skills": [
+         "Agno",
+         "Workflow Orchestration",
+         "System Evaluation"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -880,8 +1610,8 @@
       "hours": 40
      }
     ],
-    "hours": 93,
-    "credits": 3.1
+    "hours": 85,
+    "credits": 2.8
    },
    {
     "name": "Trimester 3 · Production & Capstone",
@@ -903,7 +1633,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Fine-Tuning & LoRA",
-      "hours": 19
+      "hours": 9.6,
+      "moduleCount": 4,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "PEFT - LoRA QLoRA & SFT Pipelines",
+        "hours": 5,
+        "level": 2,
+        "skills": [
+         "PEFT",
+         "LoRA",
+         "QLoRA"
+        ]
+       },
+       {
+        "title": "The Hands-On Project - The Specialist LLM",
+        "hours": 4.6,
+        "level": 2,
+        "skills": [
+         "Fine-Tuning",
+         "LoRA",
+         "QLoRA"
+        ]
+       }
+      ]
      },
      {
       "course": "MLOps and LLMOps: Deploying and Scaling AI in Production",
@@ -916,7 +1670,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master MLOps & CI/CD",
-      "hours": 17
+      "hours": 17.4,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Operationalizing AI Pipelines (CI/CD CT/CD Versioning)",
+        "hours": 4.9,
+        "level": 1,
+        "skills": [
+         "CI/CD",
+         "Model Versioning",
+         "MLOps"
+        ]
+       },
+       {
+        "title": "LLMOps Fundamentals: Context Prompts Inference Optimization",
+        "hours": 4.5,
+        "level": 1,
+        "skills": [
+         "MLOps",
+         "Prompt Engineering",
+         "Inference Optimization"
+        ]
+       },
+       {
+        "title": "Evaluation: From Vibes to Metrics",
+        "hours": 3.9,
+        "level": 1,
+        "skills": [
+         "LLM Evaluation",
+         "Evaluation Datasets",
+         "CI/CD"
+        ]
+       },
+       {
+        "title": "Observability & Tracing for Production AI",
+        "hours": 4.1,
+        "level": 1,
+        "skills": [
+         "Observability",
+         "Experiment Tracking",
+         "Model Monitoring"
+        ]
+       }
+      ]
      },
      {
       "course": "AI Risk and Compliance: Audit and Governance Foundations",
@@ -929,7 +1727,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master AI Governance & Red Teaming",
-      "hours": 17
+      "hours": 8.5,
+      "moduleCount": 4,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Adversarial Robustness & Red Teaming AI Systems",
+        "hours": 4.3,
+        "level": 2,
+        "skills": [
+         "Red Teaming",
+         "Adversarial Robustness",
+         "LLM Security"
+        ]
+       },
+       {
+        "title": "Regulatory Compliance: EU AI Act NIST RMF & Copyright",
+        "hours": 4.2,
+        "level": 2,
+        "skills": [
+         "Regulatory Compliance",
+         "EU AI Act",
+         "NIST AI RMF"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -974,8 +1796,8 @@
       "hours": null
      }
     ],
-    "hours": 173,
-    "credits": 5.8
+    "hours": 36,
+    "credits": 1.2
    }
   ],
   "vsUniversity": {
@@ -1045,7 +1867,35 @@
       ],
       "delivery": "Async",
       "outcome": "Master Python Programming & Data Structures",
-      "hours": 30
+      "hours": 29.7,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Foundations of Python Programming",
+        "hours": 7.9,
+        "level": 0,
+        "skills": []
+       },
+       {
+        "title": "Python Programming Essentials",
+        "hours": 6.2,
+        "level": 0,
+        "skills": []
+       },
+       {
+        "title": "Python Data Structures and Functions",
+        "hours": 7.4,
+        "level": 0,
+        "skills": []
+       },
+       {
+        "title": "Python OOPs and File Handling",
+        "hours": 8.2,
+        "level": 0,
+        "skills": []
+       }
+      ]
      },
      {
       "course": "Data Interpretation & Insights: Exam & Recruitment Prep",
@@ -1058,7 +1908,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Data Interpretation & Tabular Analysis",
-      "hours": 13
+      "hours": 13.3,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Foundations of Data Interpretation",
+        "hours": 7,
+        "level": 0,
+        "skills": [
+         "Data Interpretation",
+         "Tabular Analysis",
+         "Bar Chart Analysis"
+        ]
+       },
+       {
+        "title": "Advanced Data Interpretation Techniques",
+        "hours": 6.3,
+        "level": 0,
+        "skills": [
+         "Line Chart Analysis",
+         "Pie Chart Analysis",
+         "Data Visualization"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1112,7 +1986,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master SQL & MongoDB",
-      "hours": 13
+      "hours": 13.4,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Introduction to Databases",
+        "hours": 5.3,
+        "level": 1,
+        "skills": [
+         "SQL",
+         "NoSQL",
+         "Database Design"
+        ]
+       },
+       {
+        "title": "Database Management and Administration",
+        "hours": 4.1,
+        "level": 1,
+        "skills": [
+         "MongoDB",
+         "CRUD Operations",
+         "Database Administration"
+        ]
+       },
+       {
+        "title": "Building and Consuming APIs",
+        "hours": 4.0,
+        "level": 1,
+        "skills": [
+         "REST API Development",
+         "JWT Authentication",
+         "Express.js"
+        ]
+       }
+      ]
      },
      {
       "course": "Mastering SQL and Data Management with Teradata",
@@ -1125,7 +2033,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Teradata SQL & Query Optimization",
-      "hours": 12
+      "hours": 11.6,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Mastering Teradata SQL",
+        "hours": 4.2,
+        "level": 2,
+        "skills": [
+         "Teradata SQL",
+         "DDL Statements",
+         "DML Statements"
+        ]
+       },
+       {
+        "title": "Transactions and Data Protection",
+        "hours": 3.2,
+        "level": 2,
+        "skills": [
+         "Transaction Management",
+         "Data Protection",
+         "Fallback Tables"
+        ]
+       },
+       {
+        "title": "Advanced SQL Techniques",
+        "hours": 4.2,
+        "level": 2,
+        "skills": [
+         "SQL",
+         "Query Optimization",
+         "Access Rights Management"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1179,7 +2121,71 @@
       ],
       "delivery": "Async",
       "outcome": "Master Microsoft Excel & Data Analysis",
-      "hours": 39
+      "hours": 38.8,
+      "moduleCount": 6,
+      "selectedCount": 6,
+      "modules": [
+       {
+        "title": "Excel Proficiency Essentials",
+        "hours": 8.1,
+        "level": 0,
+        "skills": [
+         "Microsoft Excel",
+         "Cell Formatting",
+         "Data Management"
+        ]
+       },
+       {
+        "title": "Excel Data Analysis and Visualization",
+        "hours": 6.5,
+        "level": 0,
+        "skills": [
+         "Data Analysis",
+         "Excel Functions",
+         "Conditional Formatting"
+        ]
+       },
+       {
+        "title": "Excel Advanced Functions and Temporal Functions",
+        "hours": 6.3,
+        "level": 0,
+        "skills": [
+         "Excel Functions",
+         "Date Functions",
+         "Time Analysis"
+        ]
+       },
+       {
+        "title": "Excel Data Manipulation and Advanced Lookups",
+        "hours": 6.4,
+        "level": 0,
+        "skills": [
+         "Lookup Functions",
+         "Data Manipulation",
+         "Text Functions"
+        ]
+       },
+       {
+        "title": "Excel Data Analysis Visualization and Presentation",
+        "hours": 6.2,
+        "level": 0,
+        "skills": [
+         "Pivot Tables",
+         "Data Visualization",
+         "Charts"
+        ]
+       },
+       {
+        "title": "Excel Advanced Data Visualization and Insightful Dashboards",
+        "hours": 5.3,
+        "level": 0,
+        "skills": [
+         "Dashboard Design",
+         "Advanced Charts",
+         "Data Visualization"
+        ]
+       }
+      ]
      },
      {
       "course": "Data Visualization with Tableau",
@@ -1192,7 +2198,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master Tableau & Data Visualization",
-      "hours": 21
+      "hours": 20.7,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Basics of Tableau",
+        "hours": 5.3,
+        "level": 1,
+        "skills": [
+         "Tableau",
+         "Data Visualization",
+         "Data Connection"
+        ]
+       },
+       {
+        "title": "Fundamentals of Tableau",
+        "hours": 5.0,
+        "level": 1,
+        "skills": [
+         "Tableau",
+         "Data Transformation",
+         "Calculated Fields"
+        ]
+       },
+       {
+        "title": "Tableau Charts: From Basic to Advanced Visualizations",
+        "hours": 5.1,
+        "level": 1,
+        "skills": [
+         "Chart Design",
+         "Data Visualization",
+         "Tableau"
+        ]
+       },
+       {
+        "title": "Advanced Tableau: Techniques and Dashboard Design",
+        "hours": 5.3,
+        "level": 1,
+        "skills": [
+         "Dashboard Design",
+         "Forecasting",
+         "Advanced Calculations"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1258,7 +2308,23 @@
       ],
       "delivery": "Async",
       "outcome": "Master Power BI & DAX",
-      "hours": 4
+      "hours": 3.7,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Essentials of PowerBI: From Installation to Data Management",
+        "hours": 1.8,
+        "level": 1,
+        "skills": []
+       },
+       {
+        "title": "Advanced PowerBI: Visualization Dashboards and Security",
+        "hours": 1.9,
+        "level": 1,
+        "skills": []
+       }
+      ]
      },
      {
       "course": "Learn Data Governance Workflows with Databricks Tools",
@@ -1271,7 +2337,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Data Governance & Databricks",
-      "hours": 7
+      "hours": 7.0,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Data Governance and Databricks - Fundamentals",
+        "hours": 3.7,
+        "level": 1,
+        "skills": [
+         "Data Governance",
+         "Databricks",
+         "Data Quality Management"
+        ]
+       },
+       {
+        "title": "Data Governance and Databricks - Application",
+        "hours": 3.3,
+        "level": 1,
+        "skills": [
+         "Databricks",
+         "Data Cataloging",
+         "Data Lineage"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1325,7 +2415,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Snowflake & SQL",
-      "hours": 15
+      "hours": 14.8,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Snowflake Fundamentals",
+        "hours": 5.6,
+        "level": 1,
+        "skills": [
+         "Snowflake",
+         "Data Warehousing",
+         "Data Loading"
+        ]
+       },
+       {
+        "title": "Snowflake Operations and Management",
+        "hours": 4.0,
+        "level": 1,
+        "skills": [
+         "Snowflake Administration",
+         "Performance Optimization",
+         "Data Security"
+        ]
+       },
+       {
+        "title": "Advanced Features and Analytics in Snowflake",
+        "hours": 5.2,
+        "level": 1,
+        "skills": [
+         "SQL",
+         "Time Travel",
+         "Semi-Structured Data"
+        ]
+       }
+      ]
      },
      {
       "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
@@ -1338,7 +2462,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Google Cloud Dataplex & Data Lake Management",
-      "hours": 4
+      "hours": 4.4,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Getting Started with Google Cloud Dataplex",
+        "hours": 2.3,
+        "level": 1,
+        "skills": [
+         "Google Cloud Dataplex",
+         "Data Lake Management",
+         "Data Integration"
+        ]
+       },
+       {
+        "title": "Implementing Data Management with Dataplex",
+        "hours": 2.1,
+        "level": 1,
+        "skills": [
+         "Data Pipelines",
+         "Cloud Analytics",
+         "Data Governance"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1392,7 +2540,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master scikit-learn & FastAPI",
-      "hours": 22
+      "hours": 21.6,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Core ML Algorithms and Workflows",
+        "hours": 6.3,
+        "level": 1,
+        "skills": [
+         "scikit-learn",
+         "Machine Learning Pipelines",
+         "Model Evaluation"
+        ]
+       },
+       {
+        "title": "Data Preparation and Feature Engineering",
+        "hours": 4.7,
+        "level": 1,
+        "skills": [
+         "Feature Engineering",
+         "Data Preprocessing",
+         "Machine Learning Pipelines"
+        ]
+       },
+       {
+        "title": "Building and Testing ML Code",
+        "hours": 5.7,
+        "level": 1,
+        "skills": [
+         "Software Testing",
+         "Machine Learning Pipelines",
+         "Logging"
+        ]
+       },
+       {
+        "title": "Serving and Deploying ML Models",
+        "hours": 4.9,
+        "level": 1,
+        "skills": [
+         "FastAPI",
+         "Docker",
+         "Model Deployment"
+        ]
+       }
+      ]
      },
      {
       "course": "Machine Learning Fundamentals for Java Developers",
@@ -1405,7 +2597,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master Machine Learning & Java",
-      "hours": 12
+      "hours": 12.4,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Introduction to Machine Learning and Java",
+        "hours": 3.9,
+        "level": 1,
+        "skills": [
+         "Machine Learning",
+         "Java",
+         "ML Libraries"
+        ]
+       },
+       {
+        "title": "Supervised Learning in Java",
+        "hours": 3.4,
+        "level": 1,
+        "skills": [
+         "Supervised Learning",
+         "Regression Analysis",
+         "Classification"
+        ]
+       },
+       {
+        "title": "Unsupervised Learning in Java",
+        "hours": 2.6,
+        "level": 1,
+        "skills": [
+         "Unsupervised Learning",
+         "Clustering",
+         "Dimensionality Reduction"
+        ]
+       },
+       {
+        "title": "Applied ML with Java",
+        "hours": 2.5,
+        "level": 1,
+        "skills": [
+         "Data Preprocessing",
+         "Cross-Validation",
+         "ML Pipelines"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1471,7 +2707,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Machine Learning & Financial Forecasting",
-      "hours": 20
+      "hours": 15.0,
+      "moduleCount": 4,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Machine Learning Foundations for Finance",
+        "hours": 5.4,
+        "level": 2,
+        "skills": [
+         "Machine Learning",
+         "Regression Analysis",
+         "Time Series Analysis"
+        ]
+       },
+       {
+        "title": "Feature Engineering for Financial Modeling",
+        "hours": 4.9,
+        "level": 2,
+        "skills": [
+         "Feature Engineering",
+         "Technical Indicators",
+         "Volatility Analysis"
+        ]
+       },
+       {
+        "title": "AI & Machine Learning Applications in Modern Finance",
+        "hours": 4.7,
+        "level": 2,
+        "skills": [
+         "Credit Scoring",
+         "Portfolio Optimization",
+         "Sentiment Analysis"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1503,8 +2773,8 @@
       "hours": null
      }
     ],
-    "hours": 45,
-    "credits": 1.5
+    "hours": 15,
+    "credits": 0.5
    },
    {
     "name": "Year 3 · Trimester 2",
@@ -1525,7 +2795,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Generative AI & Large Language Models",
-      "hours": 4
+      "hours": 4.4,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Foundations of Generative AI in Software Development",
+        "hours": 2.1,
+        "level": 1,
+        "skills": [
+         "Generative AI",
+         "Large Language Models",
+         "API Integration"
+        ]
+       },
+       {
+        "title": "AI in Software Engineering",
+        "hours": 2.3,
+        "level": 1,
+        "skills": [
+         "AI-Assisted Coding",
+         "GitHub Copilot",
+         "RAG Pipelines"
+        ]
+       }
+      ]
      },
      {
       "course": "No-Code AI Essentials: Master AI Concepts & Use Cases",
@@ -1538,7 +2832,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master AI Literacy & Generative AI",
-      "hours": 22
+      "hours": 11.3,
+      "moduleCount": 4,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Foundations of AI for Business Leaders",
+        "hours": 5.9,
+        "level": 0,
+        "skills": [
+         "AI Literacy",
+         "Generative AI",
+         "Large Language Models"
+        ]
+       },
+       {
+        "title": "No-Code AI Tools & Platforms",
+        "hours": 5.4,
+        "level": 0,
+        "skills": [
+         "No-Code AI Tools",
+         "ChatGPT",
+         "Microsoft Copilot"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1570,8 +2888,8 @@
       "hours": null
      }
     ],
-    "hours": 26,
-    "credits": 0.9
+    "hours": 16,
+    "credits": 0.5
    },
    {
     "name": "Year 3 · Trimester 3",
@@ -1619,8 +2937,8 @@
       "hours": null
      }
     ],
-    "hours": 170,
-    "credits": 5.7
+    "hours": 0,
+    "credits": 0.0
    }
   ],
   "vsUniversity": {
@@ -1690,7 +3008,23 @@
       ],
       "delivery": "Async",
       "outcome": "Master Financial Analysis & Marketing Strategy",
-      "hours": 16
+      "hours": 10.3,
+      "moduleCount": 3,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Basics of Marketing & Sales",
+        "hours": 5.2,
+        "level": 0,
+        "skills": []
+       },
+       {
+        "title": "Basics of Operations & Supply Chain",
+        "hours": 5.1,
+        "level": 0,
+        "skills": []
+       }
+      ]
      },
      {
       "course": "Master Financial Analysis & Modeling Fundamentals",
@@ -1703,7 +3037,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Financial Modeling & Ratio Analysis",
-      "hours": 22
+      "hours": 17.0,
+      "moduleCount": 4,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Financial Statement Analysis Foundations",
+        "hours": 6.9,
+        "level": 1,
+        "skills": [
+         "Financial Statement Analysis",
+         "Income Statement",
+         "Balance Sheet"
+        ]
+       },
+       {
+        "title": "Ratio Analysis & Performance Diagnostics",
+        "hours": 5.0,
+        "level": 1,
+        "skills": [
+         "Ratio Analysis",
+         "DuPont Analysis",
+         "Working Capital Management"
+        ]
+       },
+       {
+        "title": "Financial Modeling Foundations",
+        "hours": 5.1,
+        "level": 1,
+        "skills": [
+         "Financial Modeling",
+         "Scenario Analysis",
+         "Valuation"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1735,8 +3103,8 @@
       "hours": null
      }
     ],
-    "hours": 38,
-    "credits": 1.3
+    "hours": 27,
+    "credits": 0.9
    },
    {
     "name": "Year 1 · Trimester 2",
@@ -1757,7 +3125,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master Brand Awareness & Brand Identity",
-      "hours": 13
+      "hours": 13.4,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Introduction to Brand Awareness",
+        "hours": 3.6,
+        "level": 0,
+        "skills": [
+         "Brand Awareness",
+         "Brand Recognition",
+         "Consumer Behavior"
+        ]
+       },
+       {
+        "title": "Branding Fundamentals and Strategy",
+        "hours": 3.4,
+        "level": 0,
+        "skills": [
+         "Brand Identity",
+         "Market Segmentation",
+         "Brand Positioning"
+        ]
+       },
+       {
+        "title": "Digital Channels and Brand Visibility",
+        "hours": 3.1,
+        "level": 0,
+        "skills": [
+         "Digital Marketing",
+         "Content Strategy",
+         "Social Media Marketing"
+        ]
+       },
+       {
+        "title": "Measuring and Optimizing Brand Awareness",
+        "hours": 3.3,
+        "level": 0,
+        "skills": [
+         "Brand Metrics",
+         "Brand Sentiment",
+         "Social Listening"
+        ]
+       }
+      ]
      },
      {
       "course": "Excel Essentials and Beyond",
@@ -1770,7 +3182,71 @@
       ],
       "delivery": "Async",
       "outcome": "Master Microsoft Excel & Data Analysis",
-      "hours": 39
+      "hours": 38.8,
+      "moduleCount": 6,
+      "selectedCount": 6,
+      "modules": [
+       {
+        "title": "Excel Proficiency Essentials",
+        "hours": 8.1,
+        "level": 0,
+        "skills": [
+         "Microsoft Excel",
+         "Cell Formatting",
+         "Data Management"
+        ]
+       },
+       {
+        "title": "Excel Data Analysis and Visualization",
+        "hours": 6.5,
+        "level": 0,
+        "skills": [
+         "Data Analysis",
+         "Excel Functions",
+         "Conditional Formatting"
+        ]
+       },
+       {
+        "title": "Excel Advanced Functions and Temporal Functions",
+        "hours": 6.3,
+        "level": 0,
+        "skills": [
+         "Excel Functions",
+         "Date Functions",
+         "Time Analysis"
+        ]
+       },
+       {
+        "title": "Excel Data Manipulation and Advanced Lookups",
+        "hours": 6.4,
+        "level": 0,
+        "skills": [
+         "Lookup Functions",
+         "Data Manipulation",
+         "Text Functions"
+        ]
+       },
+       {
+        "title": "Excel Data Analysis Visualization and Presentation",
+        "hours": 6.2,
+        "level": 0,
+        "skills": [
+         "Pivot Tables",
+         "Data Visualization",
+         "Charts"
+        ]
+       },
+       {
+        "title": "Excel Advanced Data Visualization and Insightful Dashboards",
+        "hours": 5.3,
+        "level": 0,
+        "skills": [
+         "Dashboard Design",
+         "Advanced Charts",
+         "Data Visualization"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1824,7 +3300,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master AI Literacy & Generative AI",
-      "hours": 22
+      "hours": 11.3,
+      "moduleCount": 4,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Foundations of AI for Business Leaders",
+        "hours": 5.9,
+        "level": 0,
+        "skills": [
+         "AI Literacy",
+         "Generative AI",
+         "Large Language Models"
+        ]
+       },
+       {
+        "title": "No-Code AI Tools & Platforms",
+        "hours": 5.4,
+        "level": 0,
+        "skills": [
+         "No-Code AI Tools",
+         "ChatGPT",
+         "Microsoft Copilot"
+        ]
+       }
+      ]
      },
      {
       "course": "Generative AI in Marketing",
@@ -1837,7 +3337,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Generative AI & Content Marketing",
-      "hours": 5
+      "hours": 4.9,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "AI for Content Creation",
+        "hours": 2.5,
+        "level": 0,
+        "skills": [
+         "Generative AI",
+         "Content Marketing",
+         "AI Tools"
+        ]
+       },
+       {
+        "title": "AI-Powered Marketing Execution",
+        "hours": 2.4,
+        "level": 0,
+        "skills": [
+         "Marketing Automation",
+         "Personalization",
+         "Ad Optimization"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1881,8 +3405,8 @@
       "hours": 40
      }
     ],
-    "hours": 67,
-    "credits": 2.2
+    "hours": 56,
+    "credits": 1.9
    },
    {
     "name": "Year 2 · Trimester 1",
@@ -1903,7 +3427,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master Brand Strategy & Marketing Analytics",
-      "hours": 14
+      "hours": 14.3,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Introduction to AI in Branding",
+        "hours": 4.2,
+        "level": 1,
+        "skills": [
+         "AI in Marketing",
+         "Brand Strategy",
+         "Responsible AI"
+        ]
+       },
+       {
+        "title": "Data-Driven Brand Insights and Analytics",
+        "hours": 3.7,
+        "level": 1,
+        "skills": [
+         "Brand Analytics",
+         "Sentiment Analysis",
+         "Brand Equity Measurement"
+        ]
+       },
+       {
+        "title": "AI in Brand Strategy Optimization",
+        "hours": 3.3,
+        "level": 1,
+        "skills": [
+         "Predictive Modeling",
+         "Marketing Automation",
+         "A/B Testing"
+        ]
+       },
+       {
+        "title": "Capstone Project: AI-Driven Brand Dashboard",
+        "hours": 3.1,
+        "level": 1,
+        "skills": [
+         "Power BI",
+         "Data Visualization",
+         "Data Storytelling"
+        ]
+       }
+      ]
      },
      {
       "course": "Advanced Google Analytics 4: Optimization and Attribution",
@@ -1916,7 +3484,51 @@
       ],
       "delivery": "Async",
       "outcome": "Master Google Analytics 4 & Marketing Attribution",
-      "hours": 16
+      "hours": 16.3,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Integrating AI and GA4 for Advanced Insights",
+        "hours": 5,
+        "level": 2,
+        "skills": [
+         "Google Analytics 4",
+         "AI-Powered Analytics",
+         "Data Governance"
+        ]
+       },
+       {
+        "title": "Predictive Audience Segmentation and Personalization",
+        "hours": 3.9,
+        "level": 2,
+        "skills": [
+         "Predictive Audience Segmentation",
+         "Campaign Optimization",
+         "Google Analytics 4"
+        ]
+       },
+       {
+        "title": "Attribution Analysis and Optimization",
+        "hours": 3.7,
+        "level": 2,
+        "skills": [
+         "Marketing Attribution",
+         "Campaign Optimization",
+         "Looker Studio"
+        ]
+       },
+       {
+        "title": "Capstone — AI-Driven Campaign Optimization Plan",
+        "hours": 3.7,
+        "level": 2,
+        "skills": [
+         "Campaign Optimization",
+         "Google Analytics 4",
+         "Data Visualization"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -1948,7 +3560,7 @@
       "hours": null
      }
     ],
-    "hours": 30,
+    "hours": 31,
     "credits": 1.0
    },
    {
@@ -1970,7 +3582,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Generative AI & Financial Analysis",
-      "hours": 5
+      "hours": 5.4,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Foundations of Generative AI in Finance",
+        "hours": 3.0,
+        "level": 1,
+        "skills": [
+         "Generative AI",
+         "Financial Analysis",
+         "AI Forecasting"
+        ]
+       },
+       {
+        "title": "Advanced Applications and Risk Management with Generative AI",
+        "hours": 2.4,
+        "level": 1,
+        "skills": [
+         "Fraud Detection",
+         "Risk Assessment",
+         "Financial Compliance"
+        ]
+       }
+      ]
      },
      {
       "course": "Strategic Product Management",
@@ -1983,7 +3619,29 @@
       ],
       "delivery": "Async",
       "outcome": "Master Agile Methodology & Product Strategy",
-      "hours": 21
+      "hours": 15.1,
+      "moduleCount": 4,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Product Management Techniques",
+        "hours": 6.5,
+        "level": 1,
+        "skills": []
+       },
+       {
+        "title": "Market Analysis and Product Strategy",
+        "hours": 4.1,
+        "level": 1,
+        "skills": []
+       },
+       {
+        "title": "Product Development Lifecycle and Tools",
+        "hours": 4.5,
+        "level": 1,
+        "skills": []
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -2015,8 +3673,8 @@
       "hours": null
      }
     ],
-    "hours": 26,
-    "credits": 0.9
+    "hours": 20,
+    "credits": 0.7
    },
    {
     "name": "Year 2 · Trimester 3",
@@ -2037,7 +3695,31 @@
       ],
       "delivery": "Async",
       "outcome": "Master Hybrid Team Management & AI Integration",
-      "hours": 5
+      "hours": 5.4,
+      "moduleCount": 2,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Understanding the Hybrid and AI-Augmented Work Environment",
+        "hours": 2.6,
+        "level": 1,
+        "skills": [
+         "Hybrid Team Management",
+         "AI Integration",
+         "Digital Transformation"
+        ]
+       },
+       {
+        "title": "Managing Performance Inclusion & Culture in Distributed Teams",
+        "hours": 2.8,
+        "level": 1,
+        "skills": [
+         "Inclusion and Equity",
+         "AI Tools for Productivity",
+         "Performance Management"
+        ]
+       }
+      ]
      },
      {
       "course": "Fundamentals of Management Consulting",
@@ -2050,7 +3732,41 @@
       ],
       "delivery": "Async",
       "outcome": "Master Management Consulting & Strategic Frameworks",
-      "hours": 13
+      "hours": 12.9,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Introduction to Management Consulting",
+        "hours": 5.3,
+        "level": 1,
+        "skills": [
+         "Management Consulting",
+         "Career Paths",
+         "Case Interviews"
+        ]
+       },
+       {
+        "title": "Use of guesstimates in Management Consulting",
+        "hours": 3.4,
+        "level": 1,
+        "skills": [
+         "Guesstimates",
+         "Estimation Techniques",
+         "Analytical Thinking"
+        ]
+       },
+       {
+        "title": "Management Consulting tools",
+        "hours": 4.2,
+        "level": 1,
+        "skills": [
+         "Strategic Frameworks",
+         "BCG Matrix",
+         "SWOT Analysis"
+        ]
+       }
+      ]
      },
      {
       "course": "Live classes (instructor-led)",
@@ -2094,8 +3810,8 @@
       "hours": null
      }
     ],
-    "hours": 138,
-    "credits": 4.6
+    "hours": 18,
+    "credits": 0.6
    }
   ],
   "vsUniversity": {
