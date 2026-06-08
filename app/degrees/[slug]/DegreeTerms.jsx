@@ -40,13 +40,14 @@ function CourseRow({ c }) {
         )}
       </div>
 
-      {/* module breakdown — which modules of the course this trimester uses */}
+      {/* module breakdown — collapsible: which modules of the course this trimester uses */}
       {c.modules?.length > 0 && (
-        <div className="mt-2.5 border-t border-ink-100 pt-2.5">
-          <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wider text-ink-400">
-            {partial ? <>Selected modules <span className="text-peel-600">({c.selectedCount} of {c.moduleCount})</span></> : <>Modules ({c.moduleCount})</>}
-          </p>
-          <ol className="space-y-1">
+        <details className="mt-2.5 border-t border-ink-100 pt-2.5">
+          <summary className="flex cursor-pointer items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-ink-400 hover:text-brand-600">
+            <span>{partial ? <>Selected modules <span className="text-peel-600">({c.selectedCount} of {c.moduleCount})</span></> : <>Modules ({c.moduleCount})</>}</span>
+            <span className="text-brand-500">▾</span>
+          </summary>
+          <ol className="mt-2 space-y-1">
             {c.modules.map((m, i) => (
               <li key={i} className="flex items-baseline gap-2 text-xs text-ink-600">
                 <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-brand-50 text-[9px] font-black text-brand-600">{i + 1}</span>
@@ -55,7 +56,7 @@ function CourseRow({ c }) {
               </li>
             ))}
           </ol>
-        </div>
+        </details>
       )}
     </div>
   );
