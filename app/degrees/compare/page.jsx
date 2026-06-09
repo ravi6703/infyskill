@@ -138,7 +138,9 @@ export default function DegreeCompare() {
     const roles = specs.map((sp) => ({ sp, hits: sp.skills.filter((s) => pool.has(s.toLowerCase())).length }))
       .filter((r) => r.hits >= 3).sort((a, b) => b.hits - a.hits).slice(0, 4);
 
-    setResult({ name, rows, full, partial, present, aiGaps, aiReady, aiTotal: AI_DEMAND.length, roles });
+    // full coverage grid for the visual matrix
+    const aiGrid = AI_DEMAND.map((d) => ({ skill: d.skill, roles: d.roles, present: presentSet.has(d.skill), course: presentSet.has(d.skill) ? null : courseForSkill(d.skill) }));
+    setResult({ name, rows, full, partial, present, aiGaps, aiGrid, aiReady, aiTotal: AI_DEMAND.length, roles });
   }
   function loadSample() {
     const r = refs[0];
@@ -186,6 +188,21 @@ export default function DegreeCompare() {
 
   const STATUS = { Full: "chip-green", Partial: "chip-blue", Gap: "chip-peel" };
 
+  // circular readiness gauge
+  function Gauge({ value }) {
+    const r = 52, c = 2 * Math.PI * r, off = c * (1 - value / 100);
+    const col = value >= 60 ? "#3AAE89" : value >= 35 ? "#FCA106" : "#D13845";
+    return (
+      <svg viewBox="0 0 130 130" className="h-32 w-32 shrink-0">
+        <circle cx="65" cy="65" r={r} fill="none" stroke="#E2E8F0" strokeWidth="11" />
+        <circle cx="65" cy="65" r={r} fill="none" stroke={col} strokeWidth="11" strokeLinecap="round"
+          strokeDasharray={c} strokeDashoffset={off} transform="rotate(-90 65 65)" style={{ transition: "stroke-dashoffset .8s cubic-bezier(.4,0,.2,1)" }} />
+        <text x="65" y="60" textAnchor="middle" className="fill-ink-900" style={{ fontSize: 26, fontWeight: 900 }}>{value}%</text>
+        <text x="65" y="80" textAnchor="middle" className="fill-ink-500" style={{ fontSize: 9, fontWeight: 700 }}>AI-ERA READY</text>
+      </svg>
+    );
+  }
+
   return (
     <div>
       <Link href="/degrees" className="text-sm font-bold text-brand-600">← Degree programs</Link>
@@ -215,22 +232,49 @@ export default function DegreeCompare() {
 
       {result && (
         <div className="mt-8 space-y-6">
-          {/* AI-era readiness summary */}
+          {/* AI-era readiness — gauge + headline */}
           <div className="card border-brand-200 p-5">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h2 className="text-xl font-black text-ink-900">{result.name}</h2>
-              <span className={`text-3xl font-black ${result.aiReady >= 60 ? "text-teal-600" : result.aiReady >= 35 ? "text-peel-600" : "text-rose-600"}`}>{result.aiReady}%<span className="ml-1 text-sm font-bold text-ink-500">AI-era ready</span></span>
-            </div>
-            <p className="mt-1 text-sm text-ink-600">Your curriculum already covers <b className="text-ink-800">{result.present.length} of {result.aiTotal}</b> of today&apos;s most in-demand AI-era skills. Below: what&apos;s missing, and the Board Infinity content that adds it.</p>
-            <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full bg-ink-100">
-              <div className="h-full rounded-full bg-gradient-to-r from-brand-400 to-teal-500" style={{ width: `${result.aiReady}%` }} />
-            </div>
-            {result.present.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {result.present.slice(0, 12).map((s) => <span key={s} className="chip-green">✓ {s}</span>)}
-                {result.present.length > 12 && <span className="chip-gray">+{result.present.length - 12} more</span>}
+            <div className="flex flex-wrap items-center gap-5">
+              <Gauge value={result.aiReady} />
+              <div className="min-w-0 flex-1">
+                <h2 className="text-xl font-black text-ink-900">{result.name}</h2>
+                <p className="mt-1 text-sm text-ink-600">Scored against the <b className="text-ink-800">{result.aiTotal} most in-demand AI-era skills</b> across our tracked roles. Your curriculum covers <b className="text-teal-600">{result.present.length}</b>; <b className="text-peel-700">{result.aiTotal - result.present.length}</b> are missing — and each maps to a Board Infinity course below.</p>
+                <div className="mt-3 flex flex-wrap gap-4 text-sm">
+                  <span className="font-black text-teal-600">{result.present.length} covered</span>
+                  <span className="font-black text-peel-700">{result.aiTotal - result.present.length} to add</span>
+                  <span className="font-black text-brand-600">{result.roles.length} roles unlock</span>
+                </div>
               </div>
-            )}
+            </div>
+          </div>
+
+          {/* INNOVATIVE: AI-era skill coverage matrix — gaps light up */}
+          <div className="card p-5">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 className="font-black text-ink-900">AI-era skill coverage map</h3>
+              <div className="flex gap-3 text-[11px] font-bold">
+                <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded bg-teal-500" /> covered</span>
+                <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded bg-peel-400" /> gap → BI fills</span>
+              </div>
+            </div>
+            <p className="mt-1 text-xs text-ink-400">Every tile is an in-demand skill. Green = your curriculum already teaches it. Amber = a gap — hover/click for the Board Infinity course that adds it.</p>
+            <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+              {result.aiGrid.map((g) => (
+                g.present ? (
+                  <div key={g.skill} className="flex items-center gap-2 rounded-lg border border-teal-200 bg-teal-50 px-3 py-2 text-xs font-bold text-teal-700">
+                    <span>✓</span><span className="truncate" title={g.skill}>{g.skill}</span>
+                  </div>
+                ) : g.course ? (
+                  <Link key={g.skill} href={`/course/${g.course.slug}`} title={`Add via: ${clean(g.course.title)}`}
+                    className="group flex flex-col justify-between rounded-lg border border-peel-300 bg-peel-50 px-3 py-2 text-xs transition hover:border-peel-400 hover:shadow-card">
+                    <span className="font-bold text-peel-800">{g.skill}</span>
+                    <span className="mt-0.5 truncate text-[10px] text-brand-600 group-hover:underline">✚ {clean(g.course.title).slice(0, 26)}</span>
+                  </Link>
+                ) : (
+                  <div key={g.skill} className="rounded-lg border border-peel-200 bg-peel-50/60 px-3 py-2 text-xs font-bold text-peel-700">{g.skill}<span className="mt-0.5 block text-[10px] font-normal text-ink-400">BI to produce</span></div>
+                )
+              ))}
+            </div>
           </div>
 
           {/* THE GAP — AI-era skills the curriculum is missing, each with the BI content that adds it */}

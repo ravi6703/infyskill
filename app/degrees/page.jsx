@@ -42,6 +42,28 @@ export default function Degrees() {
           </Link>
         ))}
       </div>
+
+      {/* what the institution gains — common to all programs */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-black text-ink-900">What your institution gains</h2>
+        <p className="mt-1 text-sm text-ink-500">Why colleges run these as powered programs rather than building them alone.</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["🎓", "NEP & UGC compliant", "Online credits sit inside the 40% allowance and map to the NCrF (1 credit = 30 hours). Plugs into your existing degree without breaking accreditation."],
+            ["💼", "Industry-ready graduates", "Every trimester ends in a hackathon or capstone; students graduate with a portfolio and skills mapped to real AI-era roles — better placements and rankings."],
+            ["👩‍🏫", "Lower faculty load", "Recorded async content is built once and reusable every batch. Faculty shift from lecturing basics to mentoring and the academic core."],
+            ["🤝", "No new hiring", "Board Infinity supplies the SMEs, masterclasses and live industry sessions. Your faculty keeps full academic governance."],
+            ["⚡", "Fast to launch", "A ready blended curriculum — trimester structure, delivery model and tagged content — deploys in weeks, not a multi-year committee cycle."],
+            ["📊", "Measurable outcomes", "Skill-level tracking, employability scoring and role-readiness give you data for NAAC/NBA reviews and placement reporting."],
+          ].map(([icon, title, body]) => (
+            <div key={title} className="card p-4">
+              <div className="text-2xl">{icon}</div>
+              <p className="mt-1 font-black text-ink-900">{title}</p>
+              <p className="mt-1 text-sm text-ink-600">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
