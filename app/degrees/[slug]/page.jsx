@@ -98,6 +98,28 @@ export default function Degree({ params }) {
         </div>
       </section>
 
+      {/* what the institution gains */}
+      <section className="mt-10">
+        <h2 className="text-xl font-black text-ink-900">What your institution gains</h2>
+        <p className="mt-1 text-sm text-ink-500">Why colleges run this as a powered program rather than building it alone.</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["🎓", "NEP & UGC compliant", "Online credits sit inside the 40% allowance and map to the NCrF (1 credit = 30 hours). Plugs into your existing degree without breaking accreditation."],
+            ["💼", "Industry-ready graduates", "Every trimester ends in a hackathon or capstone; students graduate with a portfolio and skills mapped to real AI-era roles — better placements and rankings."],
+            ["👩‍🏫", "Lower faculty load", "Recorded async content is built once and reusable every batch. Faculty shift from lecturing basics to mentoring and the academic core."],
+            ["🤝", "No new hiring", "Board Infinity supplies the SMEs, masterclasses and live industry sessions. Your faculty keeps full academic governance."],
+            ["⚡", "Fast to launch", "A ready blended curriculum — trimester structure, delivery model and tagged content — deploys in weeks, not a multi-year committee cycle."],
+            ["📊", "Measurable outcomes", "Skill-level tracking, employability scoring and role-readiness give you data for NAAC/NBA reviews and placement reporting."],
+          ].map(([icon, title, body]) => (
+            <div key={title} className="card p-4">
+              <div className="text-2xl">{icon}</div>
+              <p className="mt-1 font-black text-ink-900">{title}</p>
+              <p className="mt-1 text-sm text-ink-600">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <div className="card mt-10 flex flex-wrap items-center justify-between gap-4 border-brand-200 bg-brand-50 p-6">
         <div>
           <p className="font-black text-ink-900">For universities: map your curriculum against {d.name}</p>
