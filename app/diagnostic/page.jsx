@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import journeys from "../../data/journeys.json";
 import modules from "../../data/modules.json";
 import { buildWeekPlan, clustersFor, skillsByCluster } from "../../lib/engine";
@@ -28,6 +28,11 @@ export default function Diagnostic() {
   const [hpw, setHpw] = useState(10);
   const [style, setStyle] = useState("project");
   const [goal, setGoal] = useState("switch");
+  // AI assessment state
+  const [aiQs, setAiQs] = useState(null);   // null=not loaded · []=failed (fallback) · [...]=questions
+  const [aiAns, setAiAns] = useState({});
+  const [aiLoading, setAiLoading] = useState(false);
+  const [analysis, setAnalysis] = useState(null);
 
   // deep link: /diagnostic?role=<slug> — learner clicked a role page CTA
   useState(() => {
@@ -67,6 +72,41 @@ export default function Diagnostic() {
     if (!clusters.length) return 0;
     return Math.round((clusters.reduce((a, [cl]) => a + clusterScore(cl), 0) / clusters.length) * 100);
   }, [clusters, ratings, tools, clusterSkills]);
+
+  // load an AI-generated, profile-adapted assessment when entering step 3
+  useEffect(() => {
+    if (step !== 3 || !journey || aiQs !== null || aiLoading) return;
+    let cancelled = false;
+    (async () => {
+      setAiLoading(true);
+      try {
+        const res = await fetch("/api/diagnostic", {
+          method: "POST", headers: { "content-type": "application/json" },
+          body: JSON.stringify({ action: "assess", role: journey.role, clusters: clusters.map(([cl]) => cl), profile }),
+        });
+        const d = await res.json();
+        if (!cancelled) setAiQs(d.ok && d.questions?.length ? d.questions : []);
+      } catch { if (!cancelled) setAiQs([]); }
+      if (!cancelled) setAiLoading(false);
+    })();
+    return () => { cancelled = true; };
+  }, [step, journey, aiQs, aiLoading, clusters, profile]);
+
+  function gotoAssessment() { setAiQs(null); setAiAns({}); setAnalysis(null); setStep(3); }
+
+  function submitAssessment() {
+    const per = {};
+    aiQs.forEach((q, i) => { const cl = q.cluster; per[cl] = per[cl] || { c: 0, t: 0 }; per[cl].t++; if (aiAns[i] === q.correct) per[cl].c++; });
+    const newRatings = {};
+    Object.entries(per).forEach(([cl, { c, t }]) => { const p = t ? c / t : 0; newRatings[cl] = p >= 0.75 ? 3 : p >= 0.5 ? 2 : p >= 0.25 ? 1 : 0; });
+    setRatings(newRatings);
+    const overall = Math.round(aiQs.filter((q, i) => aiAns[i] === q.correct).length / aiQs.length * 100);
+    fetch("/api/diagnostic", {
+      method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ action: "analyze", role: journey.role, profile, overall, scored: Object.entries(per).map(([cluster, { c, t }]) => ({ cluster, correct: c, total: t })) }),
+    }).then((r) => r.json()).then((d) => { if (d.ok) setAnalysis(d.analysis); }).catch(() => {});
+    setStep(4);
+  }
 
   function finish() {
     setStep(5);
@@ -136,7 +176,7 @@ export default function Diagnostic() {
                 <p className="text-xs font-bold uppercase tracking-wider text-brand-600">{b}</p>
                 <div className="mt-2 grid gap-2 sm:grid-cols-2">
                   {journeys.filter((j) => j.bucket === b).map((j) => (
-                    <button key={j.slug} onClick={() => { setRole(j.slug); setStep(3); }}
+                    <button key={j.slug} onClick={() => { setRole(j.slug); setAiQs(null); setAiAns({}); setAnalysis(null); setStep(3); }}
                       className={`card p-3 text-left text-sm transition hover:border-brand-400 hover:shadow-lift ${role === j.slug ? "border-brand-500" : ""}`}>
                       <span className="font-bold text-ink-900">{j.role}</span>
                       <span className="mt-0.5 block text-xs text-ink-500">{j.salary?.india} · {j.weeks} wks typical</span>
@@ -150,10 +190,54 @@ export default function Diagnostic() {
         </div>
       )}
 
-      {step === 3 && journey && (
+      {step === 3 && journey && (aiQs === null || aiLoading) && (
+        <div className="mt-8">
+          <h2 className="text-lg font-black text-ink-900">3 · Skill check for {journey.role}</h2>
+          <p className="mt-1 text-sm text-ink-500">Generating a short, personalised assessment for your profile…</p>
+          <div className="card mt-4 grid place-items-center gap-3 p-10 text-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600" />
+            <p className="text-sm text-ink-500">Writing questions adapted to a {BACKGROUNDS.find(([v]) => v === profile.background)?.[1].replace(/^[^ ]+ /, "") || "candidate"} targeting {journey.role}…</p>
+          </div>
+        </div>
+      )}
+
+      {step === 3 && journey && Array.isArray(aiQs) && aiQs.length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-lg font-black text-ink-900">3 · Skill check for {journey.role}</h2>
+          <p className="mt-1 text-sm text-ink-500">A few questions that <b className="text-ink-700">actually test</b> where you stand — generated for your background, not self-rated. We score your answers to find the real gaps.</p>
+          <div className="mt-4 space-y-3">
+            {aiQs.map((q, i) => (
+              <div key={i} className="card p-4">
+                <div className="flex flex-wrap items-start gap-2">
+                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-50 text-xs font-black text-brand-600">{i + 1}</span>
+                  <p className="flex-1 font-bold text-ink-900">{q.q}</p>
+                  <span className="chip-gray shrink-0 text-[10px]">{q.cluster}</span>
+                </div>
+                <div className="mt-2 space-y-1.5 pl-8">
+                  {q.options.map((o, oi) => (
+                    <button key={oi} onClick={() => setAiAns((a) => ({ ...a, [i]: oi }))}
+                      className={`flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-left text-sm transition ${aiAns[i] === oi ? "border-brand-500 bg-brand-50 text-ink-900" : "border-ink-200 bg-white text-ink-700 hover:border-brand-300"}`}>
+                      <span className={`grid h-4 w-4 shrink-0 place-items-center rounded-full border ${aiAns[i] === oi ? "border-brand-600 bg-brand-600 text-white" : "border-ink-300"}`}>{aiAns[i] === oi ? "●" : ""}</span>
+                      <span className="flex-1">{o}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <button onClick={() => setStep(2)} className="btn-ghost">← Back</button>
+            <button disabled={Object.keys(aiAns).length < aiQs.length} onClick={submitAssessment} className="btn-primary disabled:opacity-40">See my results →</button>
+            <span className="text-xs text-ink-400">{Object.keys(aiAns).length}/{aiQs.length} answered</span>
+          </div>
+        </div>
+      )}
+
+      {/* fallback: self-rating (used only if the AI assessment is unavailable) */}
+      {step === 3 && journey && Array.isArray(aiQs) && aiQs.length === 0 && (
         <div className="mt-8">
           <h2 className="text-lg font-black text-ink-900">3 · Skill self-assessment for {journey.role}</h2>
-          <p className="mt-1 text-sm text-ink-500">Each skill area lists the exact skills this role needs from it — rate against those, not the label.</p>
+          <p className="mt-1 text-sm text-ink-500">Rate yourself across the skill areas this role needs.</p>
           <div className="card mt-3 p-3 text-[11px] text-ink-500">
             <span className="font-bold text-ink-700">How to rate yourself:</span>{" "}
             <span className="text-ink-600">New to this</span> = never touched it ·{" "}
@@ -267,6 +351,30 @@ export default function Diagnostic() {
               </div>
             </div>
           </div>
+
+          {/* AI capability read (from the scored skill-check) */}
+          {analysis && (
+            <div className="card mt-4 border-brand-200 p-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-600">AI capability assessment</p>
+              <p className="mt-1 text-base font-bold text-ink-900">{analysis.verdict}</p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                {analysis.strengths?.length > 0 && (
+                  <div className="rounded-xl border border-teal-200 bg-teal-50 p-3">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-teal-600">✓ Strengths</p>
+                    <ul className="mt-1 space-y-0.5 text-sm text-ink-700">{analysis.strengths.map((s, i) => <li key={i}>• {s}</li>)}</ul>
+                  </div>
+                )}
+                {analysis.gaps?.length > 0 && (
+                  <div className="rounded-xl border border-peel-200 bg-peel-50 p-3">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-peel-700">⚠ Prioritise these gaps</p>
+                    <ul className="mt-1 space-y-0.5 text-sm text-ink-700">{analysis.gaps.map((s, i) => <li key={i}>• {s}</li>)}</ul>
+                  </div>
+                )}
+              </div>
+              {analysis.focus && <p className="mt-3 text-sm text-ink-600">🎯 <b className="text-ink-800">Where to start:</b> {analysis.focus}</p>}
+            </div>
+          )}
+
           {/* YOU: BEFORE → AFTER — the outcome, from the learner's side */}
           {plan && (
             <div className="card mt-4 p-5">
@@ -297,7 +405,7 @@ export default function Diagnostic() {
           {plan ? <WeekPlan plan={plan} planKey={`diag-${journey.slug}`} /> : <p className="mt-6 animate-pulse text-ink-400">Composing…</p>}
           <div className="mt-6 flex gap-3">
             <button onClick={() => setStep(4)} className="btn-ghost">← Adjust preferences</button>
-            <button onClick={() => setStep(3)} className="btn-ghost">← Redo self-assessment</button>
+            <button onClick={gotoAssessment} className="btn-ghost">← Retake skill check</button>
           </div>
         </div>
       )}

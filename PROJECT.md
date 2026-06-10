@@ -2,9 +2,9 @@
 
 > **Purpose of this file:** the single source of truth for the InfyAI project. Read it at the start of any session to get full context. Update it at the end of any session that changes decisions, state, or conventions. Tell Claude *"update the project doc"* and it will sync this file.
 
-_Last updated: 2026-06-07 · current version: v9.24_
+_Last updated: 2026-06-07 · current version: v9.25_
 
-**Project files (in this folder):** `InfyAI_PROJECT.md` (this doc) · `InfyAI_Founder_Demo_Playbook.md` (demo script + not-now list) · `InfyAI_SkillTagging_Verification.md` (skill-tag audit & cluster remediation list) · `InfyAI_Specialization_Journey_Gaps.md` (per-role journey gaps: map vs build) · `InfyAI_Gap_Report.xlsx` (the gap report as a workbook: Summary/Priorities, Journey Gaps, Skill-Cluster Fixes — internal, not on website).
+**Project files (in this folder):** `InfyAI_PROJECT.md` (this doc) · `InfyAI_Founder_Demo_Playbook.md` (demo script + not-now list) · `InfyAI_SkillTagging_Verification.md` (skill-tag audit & cluster remediation list) · `InfyAI_Specialization_Journey_Gaps.md` (per-role journey gaps: map vs build) · `InfyAI_Gap_Report.xlsx` (the gap report as a workbook: Summary/Priorities, Journey Gaps, Skill-Cluster Fixes — internal, not on website) · `InfyAI_Journey_Availability_Internal.xlsx` (per-role available-vs-to-build, internal).
 
 ---
 
@@ -78,6 +78,7 @@ Park these unless a real buyer/pilot demands them: student accounts/auth, paymen
 ## 7. Changelog (append newest at top)
 
 - **v9.20** — Regulatory-alignment workstream (Phase 1). Built dual-compliant (**UGC FYUGP + AICTE**) curriculum for **B.Sc. (Hons.) AI Engineering** as the template degree: 4-yr/8-sem, **160 credits** (up from 128), 6 UGC baskets + AICTE category crosswalk, NEP/NCrF/NHEQF mapping, 4 entry/exit awards (Cert/Diploma/Degree/Honours at 40/80/120/160), 38-course semester plan, compliance checklist + gap analysis. Deliverable: `BSc_AI_Engineering_Regulatory_Curriculum.docx`. Decisions: B.Sc. AI Eng first; align to **both** regulators (dual-approved). Sequence: Step 2 delivery-model mapping → Step 3 map the 38 courses to the existing 259-course catalog (Covered/Partial/Gap) → Step 4 build content; then replicate to PG Dip GenAI, B.Sc. DS, MBA.
+- **v9.25** — Spec journey: removed available/to-build/planned **status from the public page** (it's internal — now in `InfyAI_Journey_Availability_Internal.xlsx`); each journey item is **click-to-expand** showing what it covers (async→real modules + View-course link; live/masterclass/etc→agenda). Course **hours bug fixed** (pf_modules has no hours column → compute from local module data). Added secure server-side `/api/diagnostic` route (Anthropic key via `ANTHROPIC_API_KEY` env, not yet wired to UI). **Principle reaffirmed:** content availability / "to build" status is INTERNAL only, never client-facing.
 - **v9.24** — Spec view refinements: coaches on spec pages (skill-matched, role-assigned); "% ready today" readiness badge + bar; market context in hero (demand + sectors by family); decluttered (removed redundant delivery-model pillar grid).
 - **NEXT (queued):** (a) dual-gap report in `/degrees/compare` — add **syllabus gap vs ideal curriculum** alongside the existing **job-orientation (AI-era skills) gap** + suggestions, as one shareable report; (b) Career Diagnostic — make it **branching** (fresher vs working-pro → different next questions) + add **lightweight skill-check questions** that score real answers instead of self-claims (full adaptive-AI assessment needs an API key — phase 2).
 - **v9.23** — Specialization pages: FULL journey week-by-week with the 5-part delivery model + content availability (every element tagged Async/Sync/Masterclass/Hackathon/Capstone/Assessment and marked available-now / BI-to-build / planned; week ranges per stage; mix bar; available-vs-build counts).

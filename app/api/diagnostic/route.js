@@ -1,31 +1,34 @@
-// Server-side AI diagnostic — the Anthropic key lives ONLY in process.env.ANTHROPIC_API_KEY
+// Server-side AI diagnostic — the OpenAI key lives ONLY in process.env.OPENAI_API_KEY
 // (set in Vercel → Project → Settings → Environment Variables). Never sent to the browser.
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const MODEL = process.env.DIAGNOSTIC_MODEL || "claude-sonnet-4-6";
+const MODEL = process.env.DIAGNOSTIC_MODEL || "gpt-4o-mini";
 
-function extractJSON(text) {
-  if (!text) return null;
-  // strip code fences and grab the first {...} or [...] block
-  const cleaned = text.replace(/```json|```/g, "").trim();
-  const m = cleaned.match(/[[{][\s\S]*[\]}]/);
-  try { return JSON.parse(m ? m[0] : cleaned); } catch { return null; }
-}
-
-async function callClaude(key, prompt, maxTokens = 1600) {
-  const r = await fetch("https://api.anthropic.com/v1/messages", {
+async function callOpenAI(key, prompt, maxTokens = 1800) {
+  const r = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
-    headers: { "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({ model: MODEL, max_tokens: maxTokens, messages: [{ role: "user", content: prompt }] }),
+    headers: { Authorization: `Bearer ${key}`, "content-type": "application/json" },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: "You are a senior technical interviewer. You respond with ONLY valid JSON, no markdown, no prose." },
+        { role: "user", content: prompt },
+      ],
+      response_format: { type: "json_object" },
+      temperature: 0.4,
+      max_tokens: maxTokens,
+    }),
   });
-  if (!r.ok) throw new Error("anthropic_" + r.status);
+  if (!r.ok) throw new Error("openai_" + r.status);
   const j = await r.json();
-  return j?.content?.[0]?.text || "";
+  return j?.choices?.[0]?.message?.content || "";
 }
+
+function parse(text) { try { return JSON.parse(text); } catch { return null; } }
 
 export async function POST(req) {
-  const key = process.env.ANTHROPIC_API_KEY;
+  const key = process.env.OPENAI_API_KEY;
   if (!key) return Response.json({ ok: false, reason: "no_key" });
 
   let body;
@@ -35,23 +38,22 @@ export async function POST(req) {
   try {
     if (action === "assess") {
       const { role, clusters = [], profile = {} } = body;
-      const level = profile.exp === "0" ? "absolute fundamentals (fresher / no experience)"
-        : profile.exp === "1-3" ? "early-career applied" : "experienced / advanced applied";
-      const prompt = `You are a senior technical interviewer designing a SHORT diagnostic to gauge a candidate's REAL capability for the role of "${role}".
-Candidate profile: background=${profile.background||"unknown"}, experience=${profile.exp||"unknown"}, education=${profile.edu||"unknown"}, current role="${profile.currentRole||"n/a"}".
+      const level = profile.exp === "0" ? "absolute fundamentals (fresher / no experience) — test foundational understanding"
+        : profile.exp === "1-3" ? "early-career applied — test ability to apply concepts on the job"
+        : "experienced / advanced — test applied judgement, trade-offs and edge cases";
+      const prompt = `Design a SHORT diagnostic that measures a candidate's REAL capability for the role "${role}".
+Candidate: background=${profile.background || "?"}, experience=${profile.exp || "?"}, education=${profile.edu || "?"}, current="${profile.currentRole || "n/a"}".
 Calibrate difficulty to: ${level}.
-Skill areas to probe (use these as the "cluster" values): ${clusters.join(", ") || "core skills for the role"}.
-
-Generate exactly 6 multiple-choice questions that TEST real understanding (mix of conceptual + practical scenario), NOT self-rating. Spread them across the skill areas. Adapt wording and difficulty to the candidate's profile (a fresher gets foundational checks; an experienced candidate gets applied/edge-case scenarios).
-
-Return ONLY valid JSON, an array of 6 objects, each:
-{"q":"question text","options":["a","b","c","d"],"correct":<0-3>,"cluster":"<one of the skill areas>","why":"one-line explanation of the correct answer"}
-No prose, no markdown — JSON array only.`;
-      const text = await callClaude(key, prompt, 1800);
-      const qs = extractJSON(text);
-      if (!Array.isArray(qs) || !qs.length) return Response.json({ ok: false, reason: "parse" });
+Skill areas to probe (use EXACTLY these strings as the "cluster" field): ${clusters.join(" | ") || "core skills for this role"}.
+Write 6 multiple-choice questions that TEST understanding (mix conceptual + practical scenario), spread across the skill areas, adapted to the candidate's profile.
+Return JSON of the shape:
+{"questions":[{"q":"...","options":["a","b","c","d"],"correct":0,"cluster":"<one of the skill areas>","why":"one-line explanation"}]}
+Exactly 6 questions. correct is the 0-based index of the right option.`;
+      const data = parse(await callOpenAI(key, prompt, 2000));
+      const qs = Array.isArray(data?.questions) ? data.questions : [];
       const clean = qs.filter((x) => x && x.q && Array.isArray(x.options) && x.options.length >= 2 && Number.isInteger(x.correct))
         .slice(0, 6).map((x) => ({ q: String(x.q), options: x.options.slice(0, 4).map(String), correct: Math.max(0, Math.min(3, x.correct)), cluster: String(x.cluster || clusters[0] || "Core"), why: String(x.why || "") }));
+      if (!clean.length) return Response.json({ ok: false, reason: "parse" });
       return Response.json({ ok: true, questions: clean });
     }
 
@@ -59,13 +61,10 @@ No prose, no markdown — JSON array only.`;
       const { role, profile = {}, scored = [], overall = 0 } = body;
       const lines = scored.map((s) => `- ${s.cluster}: ${s.correct}/${s.total} correct`).join("\n");
       const prompt = `A candidate took a diagnostic for the role "${role}". Profile: background=${profile.background}, experience=${profile.exp}, education=${profile.edu}.
-Per-skill results:\n${lines}\nOverall correct: ${overall}%.
-
-Write a crisp, honest capability assessment. Return ONLY valid JSON:
-{"verdict":"one-sentence honest read of where they stand for this role","strengths":["..."],"gaps":["the 2-4 specific skill areas to prioritise, most important first"],"focus":"one sentence on what their learning plan should emphasise first"}
-No prose outside JSON.`;
-      const text = await callClaude(key, prompt, 700);
-      const a = extractJSON(text);
+Per-skill results:\n${lines}\nOverall: ${overall}% correct.
+Give an honest capability read. Return JSON:
+{"verdict":"one honest sentence on where they stand for this role","strengths":["..."],"gaps":["2-4 specific skill areas to prioritise, most important first"],"focus":"one sentence on what their plan should emphasise first"}`;
+      const a = parse(await callOpenAI(key, prompt, 600));
       if (!a) return Response.json({ ok: false, reason: "parse" });
       return Response.json({ ok: true, analysis: a });
     }
