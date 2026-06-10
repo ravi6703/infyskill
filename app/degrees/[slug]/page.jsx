@@ -44,17 +44,23 @@ export default function Degree({ params }) {
             <span className="chip bg-ink-100 text-ink-700">{d.credits.target} credits</span>
             <span className="chip-green">✓ {d.regulatory.award}</span>
           </div>
-          <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+          <p className="mt-4 text-xs text-ink-400">Each box is an AICTE-required course category — tap one to see the AI-focused courses it covers.</p>
+          <div className="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {d.regulatory.categories.map((c) => (
-              <div key={c.code} className="rounded-xl border border-ink-200 bg-white p-3">
-                <div className="flex items-baseline justify-between">
-                  <p className="text-sm font-bold text-ink-800">{c.name}</p>
-                  <p className="text-lg font-black text-brand-600">{c.credits}</p>
-                </div>
-                <p className="mt-0.5 text-[11px] text-ink-500">
-                  {c.min ? (<>min {c.min} cr {c.credits >= c.min ? <span className="font-bold text-teal-600">· ✓ met</span> : null}</>) : (<>credits</>)}
-                </p>
-              </div>
+              <details key={c.code} className="group rounded-xl border border-ink-200 bg-white p-3 [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold text-ink-800">{c.label || c.name}</p>
+                    <p className="mt-0.5 text-[11px] text-ink-500">{c.name}{c.min ? (<> · min {c.min} cr {c.credits >= c.min ? <span className="font-bold text-teal-600">✓</span> : null}</>) : null}</p>
+                  </div>
+                  <span className="flex shrink-0 items-center gap-1"><span className="text-lg font-black text-brand-600">{c.credits}</span><span className="text-[10px] text-ink-400 transition group-open:rotate-180">▼</span></span>
+                </summary>
+                {c.covers?.length > 0 && (
+                  <ul className="mt-2 space-y-1 border-t border-ink-100 pt-2">
+                    {c.covers.map((n, i) => (<li key={i} className="flex gap-1.5 text-[11px] leading-snug text-ink-600"><span className="text-brand-400">•</span><span>{n}</span></li>))}
+                  </ul>
+                )}
+              </details>
             ))}
           </div>
           {d.regulatory.exits?.length > 1 && (

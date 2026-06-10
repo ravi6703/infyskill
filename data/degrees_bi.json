@@ -1767,7 +1767,7 @@
       "delivery": "Async",
       "category": "OE",
       "credits": 3,
-      "outcome": "Industry course mapped to Open Elective II — Cyber Security Fundamentals",
+      "outcome": "Industry course mapped to Computer Networks",
       "hours": 18,
       "moduleCount": 3,
       "selectedCount": 3,
@@ -1814,7 +1814,7 @@
       ],
       "masterclass": null,
       "project": {
-       "title": "Applied project: Open Elective II — Cyber Security Fundamentals",
+       "title": "Applied project: Computer Networks",
        "note": "graded, portfolio-ready"
       }
      },
@@ -2584,44 +2584,114 @@
     {
      "name": "Humanities & Social Science",
      "code": "HS",
+     "label": "Communication, Ethics & Management",
      "credits": 15,
-     "min": 15
+     "min": 15,
+     "covers": [
+      "Communication Skills & Technical English",
+      "Universal Human Values",
+      "Economics for Engineers",
+      "Principles of Management & Organizational Behaviour",
+      "Professional Ethics & Responsible AI"
+     ]
     },
     {
      "name": "Basic Science",
      "code": "BS",
+     "label": "Mathematical & Computing Foundations",
      "credits": 23,
-     "min": 23
+     "min": 23,
+     "covers": [
+      "Engineering Mathematics I (Calculus & Linear Algebra)",
+      "Physics for Computing & AI Hardware",
+      "Engineering Mathematics II (Probability & Statistics)",
+      "Discrete Mathematics & Graph Theory",
+      "Optimization Techniques for AI",
+      "Numerical & Statistical Computing"
+     ]
     },
     {
      "name": "Engineering Science",
      "code": "ES",
+     "label": "Core Computer Science & Engineering",
      "credits": 22,
-     "min": 22
+     "min": 22,
+     "covers": [
+      "Programming for Problem Solving (Python)",
+      "Digital Logic & Computer Organization",
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "Operating Systems",
+      "Computer Networks"
+     ]
     },
     {
      "name": "Program Core (AI)",
      "code": "PC",
+     "label": "AI & Machine Learning Core",
      "credits": 54,
-     "min": 54
+     "min": 54,
+     "covers": [
+      "Database Management Systems",
+      "Design & Analysis of Algorithms",
+      "Introduction to AI & Knowledge Representation",
+      "Machine Learning",
+      "Software Engineering & DevOps",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Data Engineering & Big Data Systems",
+      "Computer Vision",
+      "AI Systems Design & MLOps",
+      "Big Data Analytics & Distributed AI",
+      "Generative AI & Large Language Models",
+      "Reinforcement Learning",
+      "Edge AI & Model Deployment",
+      "AI Security, Privacy & Risk Management"
+     ]
     },
     {
      "name": "Professional Elective",
      "code": "PE",
+     "label": "AI Specialization Electives",
      "credits": 18,
-     "min": 18
+     "min": 18,
+     "covers": [
+      "Professional Elective I — Agentic AI & Multi-Agent Systems",
+      "Professional Elective II — RAG & Vector Databases",
+      "Professional Elective III — AI for Time-Series & Forecasting",
+      "Professional Elective IV — AI for Robotics & Autonomous Systems",
+      "Professional Elective V — Recommender Systems",
+      "Professional Elective VI — Responsible & Explainable AI (XAI)"
+     ]
     },
     {
      "name": "Open Elective",
      "code": "OE",
+     "label": "Open / Multidisciplinary Electives",
      "credits": 15,
-     "min": 15
+     "min": 15,
+     "covers": [
+      "Open Elective I — Cloud Computing",
+      "Open Elective II — Cyber Security Fundamentals",
+      "Open Elective III — Innovation, IPR & Entrepreneurship",
+      "Open Elective IV — Data Visualization & BI",
+      "Open Elective V — Project Management & Design Thinking"
+     ]
     },
     {
      "name": "Employment Enhancement",
      "code": "EEC",
+     "label": "Internships, Projects & Capstone",
      "credits": 16,
-     "min": 16
+     "min": 16,
+     "covers": [
+      "Mini Project",
+      "Summer Internship I (after Year 2)",
+      "Seminar & Technical Communication",
+      "Summer Internship II / Industry Practicum (after Year 3)",
+      "Major Project / Dissertation — Phase I",
+      "Major Project / Dissertation — Phase II"
+     ]
     }
    ],
    "exits": [
@@ -3076,7 +3146,7 @@
       "delivery": "Async",
       "category": "CC",
       "credits": 4,
-      "outcome": "Industry course mapped to Agentic AI & Multi-Agent Systems",
+      "outcome": "Industry course mapped to Professional Elective I — Agentic AI & Multi-Agent Systems",
       "hours": 24,
       "moduleCount": 4,
       "selectedCount": 4,
@@ -3137,7 +3207,7 @@
        "note": "practitioner-led"
       },
       "project": {
-       "title": "Applied project: Agentic AI & Multi-Agent Systems",
+       "title": "Applied project: Professional Elective I — Agentic AI & Multi-Agent Systems",
        "note": "graded, portfolio-ready"
       }
      },
@@ -3459,26 +3529,50 @@
     {
      "name": "Core Courses",
      "code": "CC",
+     "label": "Core Courses",
      "credits": 28,
-     "min": 20
+     "min": 20,
+     "covers": [
+      "Foundations of Generative AI & LLMs",
+      "Prompt Engineering",
+      "Building LLM Applications",
+      "Retrieval-Augmented Generation & Vector Databases",
+      "Agentic AI & Multi-Agent Systems",
+      "Fine-Tuning & Model Customization",
+      "GenAI Ops & Deployment (LLMOps)"
+     ]
     },
     {
      "name": "Discipline Elective",
      "code": "DSE",
+     "label": "Specialization Electives",
      "credits": 6,
-     "min": 4
+     "min": 4,
+     "covers": [
+      "AI Agent Architecture",
+      "No-Code / Low-Code AI Solutions"
+     ]
     },
     {
      "name": "Skill / Practicum",
      "code": "SEC",
+     "label": "Skills & Practical Courses",
      "credits": 6,
-     "min": 4
+     "min": 4,
+     "covers": [
+      "Python for AI (bridge)",
+      "Responsible AI & Governance"
+     ]
     },
     {
      "name": "Capstone / Project",
      "code": "PROJ",
+     "label": "Capstone Project",
      "credits": 4,
-     "min": 4
+     "min": 4,
+     "covers": [
+      "Capstone Project (Applied GenAI)"
+     ]
     }
    ],
    "exits": [
@@ -3688,7 +3782,7 @@
       "delivery": "Async",
       "category": "AEC",
       "credits": 2,
-      "outcome": "Industry course mapped to Communication & Technical Writing",
+      "outcome": "Industry course mapped to Seminar & Technical Communication",
       "hours": 24,
       "moduleCount": 4,
       "selectedCount": 4,
@@ -3742,7 +3836,7 @@
       ],
       "masterclass": null,
       "project": {
-       "title": "Applied project: Communication & Technical Writing",
+       "title": "Applied project: Seminar & Technical Communication",
        "note": "graded, portfolio-ready"
       }
      },
@@ -4263,7 +4357,7 @@
       "delivery": "Async",
       "category": "Major",
       "credits": 4,
-      "outcome": "Industry course mapped to Database Systems & Warehousing (Teradata)",
+      "outcome": "Industry course mapped to Data Engineering & Big Data Systems",
       "hours": 18,
       "moduleCount": 3,
       "selectedCount": 3,
@@ -4305,9 +4399,12 @@
         "note": "worked examples & Q&A"
        }
       ],
-      "masterclass": null,
+      "masterclass": {
+       "title": "Masterclass: Fundamentals of Teradata: Architecture, Storage & Operations",
+       "note": "practitioner-led"
+      },
       "project": {
-       "title": "Applied project: Database Systems & Warehousing (Teradata)",
+       "title": "Applied project: Data Engineering & Big Data Systems",
        "note": "graded, portfolio-ready"
       }
      },
@@ -4600,7 +4697,7 @@
       "delivery": "Async",
       "category": "AEC",
       "credits": 2,
-      "outcome": "Industry course mapped to Professional Communication & Soft Skills",
+      "outcome": "Industry course mapped to Communication Skills & Technical English",
       "hours": 24,
       "moduleCount": 4,
       "selectedCount": 4,
@@ -4653,7 +4750,7 @@
       ],
       "masterclass": null,
       "project": {
-       "title": "Applied project: Professional Communication & Soft Skills",
+       "title": "Applied project: Communication Skills & Technical English",
        "note": "graded, portfolio-ready"
       }
      },
@@ -4821,7 +4918,7 @@
       "delivery": "Async",
       "category": "Major",
       "credits": 4,
-      "outcome": "Industry course mapped to Data Engineering & Pipelines",
+      "outcome": "Industry course mapped to Data Engineering & Big Data Systems",
       "hours": 18,
       "moduleCount": 3,
       "selectedCount": 3,
@@ -4863,9 +4960,12 @@
         "note": "worked examples & Q&A"
        }
       ],
-      "masterclass": null,
+      "masterclass": {
+       "title": "Masterclass: Fundamentals of Teradata: Architecture, Storage & Operations",
+       "note": "practitioner-led"
+      },
       "project": {
-       "title": "Applied project: Data Engineering & Pipelines",
+       "title": "Applied project: Data Engineering & Big Data Systems",
        "note": "graded, portfolio-ready"
       }
      },
@@ -4881,7 +4981,7 @@
       "delivery": "Async",
       "category": "MDC",
       "credits": 3,
-      "outcome": "Industry course mapped to Open Elective I — Cloud for Data",
+      "outcome": "Industry course mapped to Open Elective I — Cloud Computing",
       "hours": 24,
       "moduleCount": 4,
       "selectedCount": 4,
@@ -4919,7 +5019,7 @@
       ],
       "masterclass": null,
       "project": {
-       "title": "Applied project: Open Elective I — Cloud for Data",
+       "title": "Applied project: Open Elective I — Cloud Computing",
        "note": "graded, portfolio-ready"
       }
      },
@@ -5282,7 +5382,7 @@
       "delivery": "Async",
       "category": "MDC",
       "credits": 3,
-      "outcome": "Industry course mapped to Open Elective II — Cyber Security",
+      "outcome": "Industry course mapped to Computer Networks",
       "hours": 18,
       "moduleCount": 3,
       "selectedCount": 3,
@@ -5329,7 +5429,7 @@
       ],
       "masterclass": null,
       "project": {
-       "title": "Applied project: Open Elective II — Cyber Security",
+       "title": "Applied project: Computer Networks",
        "note": "graded, portfolio-ready"
       }
      },
@@ -5671,7 +5771,7 @@
       "delivery": "Async",
       "category": "PE",
       "credits": 4,
-      "outcome": "Industry course mapped to Professional Elective II — Agentic AI",
+      "outcome": "Industry course mapped to Professional Elective I — Agentic AI & Multi-Agent Systems",
       "hours": 24,
       "moduleCount": 4,
       "selectedCount": 4,
@@ -5732,7 +5832,7 @@
        "note": "practitioner-led"
       },
       "project": {
-       "title": "Applied project: Professional Elective II — Agentic AI",
+       "title": "Applied project: Professional Elective I — Agentic AI & Multi-Agent Systems",
        "note": "graded, portfolio-ready"
       }
      },
@@ -5748,7 +5848,7 @@
       "delivery": "Async",
       "category": "MDC",
       "credits": 3,
-      "outcome": "Industry course mapped to Open Elective III — Product Management",
+      "outcome": "Industry course mapped to Open Elective V — Project Management & Design Thinking",
       "hours": 18,
       "moduleCount": 3,
       "selectedCount": 3,
@@ -5792,7 +5892,7 @@
       ],
       "masterclass": null,
       "project": {
-       "title": "Applied project: Open Elective III — Product Management",
+       "title": "Applied project: Open Elective V — Project Management & Design Thinking",
        "note": "graded, portfolio-ready"
       }
      },
@@ -5849,50 +5949,119 @@
     {
      "name": "Major (Core)",
      "code": "Major",
+     "label": "Data Science Core",
      "credits": 88,
-     "min": 80
+     "min": 80,
+     "covers": [
+      "Programming for Data Science (Python)",
+      "Descriptive Statistics & Probability",
+      "Mathematics for Data Science I (Linear Algebra & Calculus)",
+      "Data Structures for Analytics",
+      "Inferential Statistics & Hypothesis Testing",
+      "Databases & SQL",
+      "Mathematics for Data Science II (Discrete & Optimization)",
+      "Machine Learning Foundations",
+      "Data Visualization with Tableau",
+      "Database Systems & Warehousing (Teradata)",
+      "Big Data & Distributed Processing",
+      "Business Intelligence with Power BI",
+      "Statistical Computing with R/Python",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Data Engineering & Pipelines",
+      "Time-Series Analysis & Forecasting",
+      "Generative AI for Data Science",
+      "MLOps & Model Deployment",
+      "Advanced Machine Learning",
+      "Recommender & Ranking Systems",
+      "Causal Inference & Experimentation",
+      "AI Governance, Privacy & Risk"
+     ]
     },
     {
      "name": "Minor",
      "code": "Minor",
+     "label": "Domain Specialization (Minor)",
      "credits": 11,
-     "min": null
+     "min": null,
+     "covers": [
+      "Minor I — Domain Analytics (Finance/Marketing)",
+      "Minor II — Domain Analytics",
+      "Minor III — Domain Capstone"
+     ]
     },
     {
      "name": "Multidisciplinary/OE",
      "code": "MDC",
+     "label": "Multidisciplinary / Open",
      "credits": 12,
-     "min": 9
+     "min": 9,
+     "covers": [
+      "Introduction to Data Science & Society",
+      "Open Elective I — Cloud for Data",
+      "Open Elective II — Cyber Security",
+      "Open Elective III — Product Management"
+     ]
     },
     {
      "name": "Ability Enhancement",
      "code": "AEC",
+     "label": "Communication & Ability",
      "credits": 4,
-     "min": 6
+     "min": 6,
+     "covers": [
+      "Communication & Technical Writing",
+      "Professional Communication & Soft Skills"
+     ]
     },
     {
      "name": "Skill Enhancement",
      "code": "SEC",
+     "label": "Skills & Practical Courses",
      "credits": 9,
-     "min": 6
+     "min": 6,
+     "covers": [
+      "Spreadsheets & Data Tools (Excel)",
+      "Data Wrangling & EDA",
+      "Skill — Data Storytelling"
+     ]
     },
     {
      "name": "Value-Added",
      "code": "VAC",
+     "label": "Value-Added (Ethics, IKS, Environment)",
      "credits": 9,
-     "min": 6
+     "min": 6,
+     "covers": [
+      "Environmental Science",
+      "Indian Knowledge Systems / Design Thinking",
+      "Responsible AI & Data Ethics"
+     ]
     },
     {
      "name": "Professional Elective",
      "code": "PE",
+     "label": "AI Specialization Electives",
      "credits": 8,
-     "min": null
+     "min": null,
+     "covers": [
+      "Professional Elective I — RAG & LLM Systems",
+      "Professional Elective II — Agentic AI"
+     ]
     },
     {
      "name": "Internship/Project/Research",
      "code": "EEC",
+     "label": "Internships, Projects & Capstone",
      "credits": 19,
-     "min": null
+     "min": null,
+     "covers": [
+      "Mini Project",
+      "Industry Practicum",
+      "Research Methodology & Seminar",
+      "Dissertation — Phase I",
+      "Capstone / Dissertation — Phase II"
+     ]
     }
    ],
    "exits": [
@@ -6024,7 +6193,7 @@
       "delivery": "Async",
       "category": "CC",
       "credits": 4,
-      "outcome": "Industry course mapped to Managerial Economics",
+      "outcome": "Industry course mapped to Economics for Engineers",
       "hours": 30,
       "moduleCount": 5,
       "selectedCount": 5,
@@ -6091,12 +6260,9 @@
         "note": "worked examples & Q&A"
        }
       ],
-      "masterclass": {
-       "title": "Masterclass: Prepare for CFA Level 1: Economics and Global Markets",
-       "note": "practitioner-led"
-      },
+      "masterclass": null,
       "project": {
-       "title": "Applied project: Managerial Economics",
+       "title": "Applied project: Economics for Engineers",
        "note": "graded, portfolio-ready"
       }
      },
@@ -6307,7 +6473,7 @@
       "delivery": "Async",
       "category": "SEC",
       "credits": 3,
-      "outcome": "Industry course mapped to Business Communication",
+      "outcome": "Industry course mapped to Communication Skills & Technical English",
       "hours": 24,
       "moduleCount": 4,
       "selectedCount": 4,
@@ -6360,7 +6526,7 @@
       ],
       "masterclass": null,
       "project": {
-       "title": "Applied project: Business Communication",
+       "title": "Applied project: Communication Skills & Technical English",
        "note": "graded, portfolio-ready"
       }
      },
@@ -7433,7 +7599,7 @@
       "delivery": "Async",
       "category": "CC",
       "credits": 3,
-      "outcome": "Industry course mapped to Leadership & Change Management",
+      "outcome": "Industry course mapped to Organizational Behaviour",
       "hours": 24,
       "moduleCount": 4,
       "selectedCount": 4,
@@ -7494,7 +7660,7 @@
        "note": "practitioner-led"
       },
       "project": {
-       "title": "Applied project: Leadership & Change Management",
+       "title": "Applied project: Organizational Behaviour",
        "note": "graded, portfolio-ready"
       }
      },
@@ -7608,26 +7774,65 @@
     {
      "name": "Core (Foundation)",
      "code": "CC",
+     "label": "Core Courses",
      "credits": 50,
-     "min": null
+     "min": null,
+     "covers": [
+      "Principles & Practice of Management",
+      "Managerial Economics",
+      "Financial Accounting & Analysis",
+      "Organizational Behaviour",
+      "Quantitative Methods & Business Statistics",
+      "Business Law, Ethics & Governance",
+      "Marketing Management",
+      "Financial Management",
+      "Human Resource Management",
+      "Operations & Supply Chain Management",
+      "Business Analytics & Data Visualization",
+      "Strategic Management",
+      "Leadership & Change Management",
+      "Business Ethics, Governance & Responsible AI"
+     ]
     },
     {
      "name": "Functional Elective (AI specialization)",
      "code": "FE",
+     "label": "AI-Business Functional Electives",
      "credits": 31,
-     "min": null
+     "min": null,
+     "covers": [
+      "Entrepreneurship & New Venture Creation",
+      "Generative AI in Marketing",
+      "Generative AI in Finance",
+      "Generative AI in HR",
+      "AI-Powered Brand & Market Strategy",
+      "Marketing & Customer Analytics",
+      "AI Strategy & Digital Transformation",
+      "Financial Forecasting with AI",
+      "No-Code Automation for Business"
+     ]
     },
     {
      "name": "Skill / Value-Added",
      "code": "SEC",
+     "label": "Skills & Practical Courses",
      "credits": 6,
-     "min": null
+     "min": null,
+     "covers": [
+      "Business Communication",
+      "AI for Business — Foundations"
+     ]
     },
     {
      "name": "Internship / Capstone",
      "code": "EEC",
+     "label": "Internships, Projects & Capstone",
      "credits": 14,
-     "min": null
+     "min": null,
+     "covers": [
+      "Summer Internship Project (SIP)",
+      "Capstone / Dissertation"
+     ]
     }
    ],
    "exits": [
