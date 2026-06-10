@@ -2,7 +2,7 @@
 
 > **Purpose of this file:** the single source of truth for the InfyAI project. Read it at the start of any session to get full context. Update it at the end of any session that changes decisions, state, or conventions. Tell Claude *"update the project doc"* and it will sync this file.
 
-_Last updated: 2026-06-07 · current version: v9.23_
+_Last updated: 2026-06-07 · current version: v9.24_
 
 **Project files (in this folder):** `InfyAI_PROJECT.md` (this doc) · `InfyAI_Founder_Demo_Playbook.md` (demo script + not-now list) · `InfyAI_SkillTagging_Verification.md` (skill-tag audit & cluster remediation list) · `InfyAI_Specialization_Journey_Gaps.md` (per-role journey gaps: map vs build) · `InfyAI_Gap_Report.xlsx` (the gap report as a workbook: Summary/Priorities, Journey Gaps, Skill-Cluster Fixes — internal, not on website).
 
@@ -27,7 +27,7 @@ _Last updated: 2026-06-07 · current version: v9.23_
 | Home | `/` | University-first hero → "Compare your curriculum". Learner path secondary. |
 | Course Catalog | `/catalog` | All 259 skill-tagged courses; each opens a visual roadmap. |
 | Course detail | `/course/[slug]` | "Skills & Careers" (skill→roles demand) + "Course Content" (modules/lessons/items, collapsible). |
-| Specializations | `/specializations` | 21 AI-era job roles (role-centric, no course dump). |
+| Specializations | `/specializations` | 20 AI-era job roles (role-centric, no course dump). |
 | Spec detail | `/specializations/[slug]` | Skills, journey, role outcomes, compare CTA. |
 | Role compare | `/compare` | Side-by-side role comparison. |
 | Degree Programs | `/degrees` | 4 BI degrees + "What your institution gains" (common benefits). |
@@ -53,7 +53,7 @@ Everything else (old pages: analyzer, dashboard, nexus, jobs, etc.) **redirects*
 ## 4. Current state / counts
 
 - **259** skill-tagged courses · **866** modules · full lesson/video depth in Supabase.
-- **21** specializations (content-backed; 5 hollow ones removed — see changelog v9.17/v9.18).
+- **20** specializations (content-backed; 5 hollow ones removed — see changelog v9.17/v9.18).
 - **4** degree programs: B.Sc. AI Engineering (128cr), PG Diploma Applied GenAI (44cr), B.Sc. Data Science (142cr), MBA AI-Powered Business (96cr).
 - Credit model: NCrF (1 credit = 30 notional learning hours), NEP 2020 40% online-credit allowance.
 - Degree benchmarks are grounded in real published university structures (names removed from the UI per request; credit totals retained).
@@ -78,6 +78,8 @@ Park these unless a real buyer/pilot demands them: student accounts/auth, paymen
 ## 7. Changelog (append newest at top)
 
 - **v9.20** — Regulatory-alignment workstream (Phase 1). Built dual-compliant (**UGC FYUGP + AICTE**) curriculum for **B.Sc. (Hons.) AI Engineering** as the template degree: 4-yr/8-sem, **160 credits** (up from 128), 6 UGC baskets + AICTE category crosswalk, NEP/NCrF/NHEQF mapping, 4 entry/exit awards (Cert/Diploma/Degree/Honours at 40/80/120/160), 38-course semester plan, compliance checklist + gap analysis. Deliverable: `BSc_AI_Engineering_Regulatory_Curriculum.docx`. Decisions: B.Sc. AI Eng first; align to **both** regulators (dual-approved). Sequence: Step 2 delivery-model mapping → Step 3 map the 38 courses to the existing 259-course catalog (Covered/Partial/Gap) → Step 4 build content; then replicate to PG Dip GenAI, B.Sc. DS, MBA.
+- **v9.24** — Spec view refinements: coaches on spec pages (skill-matched, role-assigned); "% ready today" readiness badge + bar; market context in hero (demand + sectors by family); decluttered (removed redundant delivery-model pillar grid).
+- **NEXT (queued):** (a) dual-gap report in `/degrees/compare` — add **syllabus gap vs ideal curriculum** alongside the existing **job-orientation (AI-era skills) gap** + suggestions, as one shareable report; (b) Career Diagnostic — make it **branching** (fresher vs working-pro → different next questions) + add **lightweight skill-check questions** that score real answers instead of self-claims (full adaptive-AI assessment needs an API key — phase 2).
 - **v9.23** — Specialization pages: FULL journey week-by-week with the 5-part delivery model + content availability (every element tagged Async/Sync/Masterclass/Hackathon/Capstone/Assessment and marked available-now / BI-to-build / planned; week ranges per stage; mix bar; available-vs-build counts).
 - **v9.22** — Holistic course experience: each course page shows the full blended program (self-paced w/ real module topics + live classes on specific topics + masterclass agenda + applied project + hackathon + mentorship + assessment); coach network redesigned, coaches assigned to masterclass/project/mentor.
 - **v9.21** — Skill→cluster remediation (100 fixes); merged AI Ethics into "AI Governance & Ethics Officer" (21→20 roles); enriched AI Business Analyst 13→19 skills.

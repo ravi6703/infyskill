@@ -6,8 +6,10 @@ import specs from "../../../data/journeys.json";
 import allCourses from "../../../data/courses.json";
 import coaches from "../../../data/coaches.json";
 import skillMeta from "../../../data/skills.json";
+import allModules from "../../../data/modules.json";
 
 const clean = (t) => t.replace(/^[:\s]+/, "");
+const normCourse = (t) => t.replace(/^[:\s]+/, "").trim().toLowerCase();
 const CLUSTER_OF = Object.fromEntries(skillMeta.map((s) => [s.name.toLowerCase(), s.cluster]));
 const initials = (n) => n.split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("");
 
@@ -33,7 +35,8 @@ export default function CourseDetail({ course }) {
 
   const totalVideos = data ? data.items.filter((i) => i.item_type === "Video").length : null;
   const totalItems = data ? data.items.length : null;
-  const totalHours = data ? Math.round(data.modules.reduce((s, m) => s + (Number(m.hours) || 0), 0)) : null;
+  // hours live in the local module data (Supabase pf_modules has no hours column)
+  const totalHours = useMemo(() => Math.round(allModules.filter((m) => normCourse(m.course) === normCourse(course.title)).reduce((s, m) => s + (Number(m.hours) || 0), 0)), [course.title]);
   const ITEM_MIX = data ? (() => { const c = {}; data.items.forEach((i) => { c[i.item_type] = (c[i.item_type] || 0) + 1; }); return c; })() : {};
 
   // VISION: which specializations this course's skills feed into

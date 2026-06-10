@@ -5,8 +5,13 @@ import { skillsByCluster } from "../../../lib/engine";
 import allSpecs from "../../../data/journeys.json";
 import skillMeta from "../../../data/skills.json";
 import coaches from "../../../data/coaches.json";
+import allCourses from "../../../data/courses.json";
+import allModules from "../../../data/modules.json";
 
 const CLUSTER_OF = Object.fromEntries(skillMeta.map((s) => [s.name.toLowerCase(), s.cluster]));
+const normT = (t) => (t || "").replace(/^[:\s]+/, "").trim().toLowerCase();
+const COURSE_BY_TITLE = Object.fromEntries(allCourses.map((c) => [normT(c.title), c]));
+const MODULES_BY_COURSE = (() => { const m = {}; allModules.forEach((x) => { const k = normT(x.course); (m[k] = m[k] || []).push(x.title); }); return m; })();
 const initials = (n) => n.split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("");
 // family-level market context (indicative, India)
 const MARKET = {
@@ -217,15 +222,8 @@ export default function SpecDetail({ spec }) {
         const MIX = [["ASYNC", "bg-brand-500"], ["SYNC", "bg-peel-500"], ["MASTERCLASS", "bg-flame-500"], ["HACKATHON", "bg-rose-500"], ["CAPSTONE", "bg-teal-500"]];
         return (
           <section className="mt-10">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h2 className="text-xl font-black text-ink-900">The full journey — week by week</h2>
-              <span className={`rounded-full px-3 py-1 text-sm font-black ${readyPct >= 60 ? "bg-teal-50 text-teal-700" : readyPct >= 35 ? "bg-peel-50 text-peel-700" : "bg-rose-50 text-rose-600"}`}>{readyPct}% ready today</span>
-            </div>
-            <p className="mt-1 text-sm text-ink-500">Every element of this role&apos;s path, mapped to the Board Infinity delivery model. <span className="text-teal-600 font-bold">{nAvail} available now</span>, <span className="text-peel-700 font-bold">{nBuild} to build</span>{nPlan ? <>, <span className="text-ink-400 font-bold">{nPlan} planned</span></> : null} · {weeks} weeks total.</p>
-            {/* readiness bar */}
-            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-ink-100" title={`${readyPct}% of this journey is available today`}>
-              <div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600" style={{ width: `${readyPct}%` }} />
-            </div>
+            <h2 className="text-xl font-black text-ink-900">The full journey — week by week</h2>
+            <p className="mt-1 text-sm text-ink-500">Every element of this role&apos;s path, mapped to the Board Infinity delivery model · {weeks} weeks total. Click any item to see what it covers.</p>
 
             {/* delivery-mix bar */}
             <div className="mt-3 flex h-2.5 w-full overflow-hidden rounded-full">
@@ -246,16 +244,39 @@ export default function SpecDetail({ spec }) {
                         <p className="font-black text-ink-900">{st.name}</p>
                         <span className="text-[11px] font-bold uppercase tracking-wider text-brand-600">Weeks {ranges[i][0]}–{ranges[i][1]}</span>
                       </div>
-                      {/* delivery components with availability */}
+                      {/* delivery components — click to see what each covers */}
                       <div className="mt-3 space-y-1.5">
                         {st.components.map((c, k) => {
-                          const d = DELIV[c.type] || DELIV.Async; const a = AVAIL[c.status] || AVAIL.available;
+                          const d = DELIV[c.type] || DELIV.Async;
+                          const matched = COURSE_BY_TITLE[normT(c.content)];
+                          const mods = matched ? (MODULES_BY_COURSE[normT(c.content)] || []) : [];
+                          const covers = c.type === "Sync" ? `Instructor-led working sessions, code-alongs & live doubt-solving on ${stageSkills.slice(0, 3).join(", ") || st.name}.`
+                            : c.type === "Masterclass" ? "A practitioner deep-dive — real-world architectures, trade-offs and war stories on this topic."
+                            : c.type === "Hackathon" ? "A timed, judged build — apply the stage's skills end-to-end and demo to mentors."
+                            : c.type === "Capstone" ? "A coached, portfolio-grade project applying everything in this stage."
+                            : c.type === "Assessment" ? "A scored skill checkpoint to verify you've mastered this stage before moving on."
+                            : "Self-paced recorded modules.";
                           return (
-                            <div key={k} className="flex flex-wrap items-center gap-2 rounded-lg border border-ink-100 bg-white px-3 py-2">
-                              <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
-                              <span className="min-w-0 flex-1 text-sm text-ink-800">{c.content}</span>
-                              <span className={`shrink-0 text-[11px] font-bold ${a.cls}`}>{a.label}</span>
-                            </div>
+                            <details key={k} className="group rounded-lg border border-ink-100 bg-white">
+                              <summary className="flex cursor-pointer flex-wrap items-center gap-2 px-3 py-2 hover:bg-ink-50">
+                                <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
+                                <span className="min-w-0 flex-1 text-sm font-medium text-ink-800">{c.content}</span>
+                                <span className="shrink-0 text-[11px] font-bold text-brand-600 group-open:hidden">what&apos;s covered ▾</span>
+                                <span className="shrink-0 text-[11px] font-bold text-brand-600 hidden group-open:inline">hide ▴</span>
+                              </summary>
+                              <div className="border-t border-ink-100 px-3 py-2.5">
+                                <p className="text-xs text-ink-600">{covers}</p>
+                                {mods.length > 0 && (
+                                  <>
+                                    <p className="mt-2 text-[10px] font-bold uppercase tracking-wider text-ink-400">Modules covered</p>
+                                    <ul className="mt-1 space-y-0.5">
+                                      {mods.map((m, mi) => <li key={mi} className="flex items-baseline gap-1.5 text-xs text-ink-600"><span className="text-brand-400">•</span><span>{m}</span></li>)}
+                                    </ul>
+                                  </>
+                                )}
+                                {matched && <Link href={`/course/${matched.slug}`} className="mt-2 inline-block text-xs font-bold text-brand-600 hover:underline">View full course →</Link>}
+                              </div>
+                            </details>
                           );
                         })}
                       </div>
@@ -279,7 +300,7 @@ export default function SpecDetail({ spec }) {
                 </div>
               </div>
             </div>
-            <p className="mt-3 text-[11px] text-ink-400">&quot;Available now&quot; = mapped to existing Board Infinity content; &quot;to build&quot; = live element or content to be produced. Personalise the pace in the <Link href="/diagnostic" className="text-brand-600 hover:underline">diagnostic</Link>.</p>
+            <p className="mt-3 text-[11px] text-ink-400">Personalise the pace and difficulty in the <Link href="/diagnostic" className="text-brand-600 hover:underline">career diagnostic</Link>.</p>
           </section>
         );
       })()}
