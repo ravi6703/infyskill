@@ -17,6 +17,9 @@ const STYLES = [["project", "🛠 Project-first (build early, learn by doing)"],
 const GOALS = [["switch", "Switch career"], ["upskill", "Upskill in current role"], ["first-job", "First job"], ["freelance", "Freelance / side income"]];
 
 const ORDER = ["Core AI Engineering", "Data Careers", "Product, Strategy & Governance", "Security", "AI-Augmented Business Functions", "Emerging & Specialist"];
+const EXCITES = [["Building & shipping systems", "Building & shipping systems"], ["Working with data & insights", "Working with data & insights"], ["Product, strategy & people", "Product, strategy & people"], ["Creative, content & design", "Creative, content & design"], ["Automating business problems", "Automating business problems"]];
+const APTITUDE = [["Coding & logic", "Coding & logic"], ["Math & statistics", "Math & statistics"], ["Communication & leadership", "Communication & leadership"], ["Design & UX", "Design & UX"], ["Domain / business knowledge", "Domain / business knowledge"]];
+const IMPACT = [["Cutting-edge AI", "Cutting-edge AI"], ["Data & analytics", "Data & analytics"], ["Product & business", "Product & business"], ["Security & trust", "Security & trust"], ["Marketing / HR / Finance / Ops", "Marketing / HR / Finance / Ops"]];
 
 export default function Diagnostic() {
   const [step, setStep] = useState(1);
@@ -33,6 +36,11 @@ export default function Diagnostic() {
   const [aiAns, setAiAns] = useState({});
   const [aiLoading, setAiLoading] = useState(false);
   const [analysis, setAnalysis] = useState(null);
+  // "help me find my role" state
+  const [findMode, setFindMode] = useState(false);
+  const [prefs, setPrefs] = useState({ excites: null, aptitude: null, impact: null });
+  const [recs, setRecs] = useState(null);
+  const [recLoading, setRecLoading] = useState(false);
 
   // deep link: /diagnostic?role=<slug> — learner clicked a role page CTA
   useState(() => {
@@ -92,7 +100,25 @@ export default function Diagnostic() {
     return () => { cancelled = true; };
   }, [step, journey, aiQs, aiLoading, clusters, profile]);
 
+  function pickRole(slug) { setRole(slug); setAiQs(null); setAiAns({}); setAnalysis(null); setStep(3); }
   function gotoAssessment() { setAiQs(null); setAiAns({}); setAnalysis(null); setStep(3); }
+
+  async function recommend() {
+    setRecLoading(true); setRecs(null);
+    try {
+      const res = await fetch("/api/diagnostic", {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ action: "recommend", profile, prefs, roles: journeys.map((j) => ({ role: j.role, bucket: j.bucket })) }),
+      });
+      const d = await res.json();
+      const recsWithSlug = (d.ok ? d.recommendations : []).map((r) => {
+        const j = journeys.find((x) => x.role === r.role) || journeys.find((x) => x.role.toLowerCase() === r.role.toLowerCase());
+        return j ? { ...r, slug: j.slug, salary: j.salary } : null;
+      }).filter(Boolean);
+      setRecs(recsWithSlug);
+    } catch { setRecs([]); }
+    setRecLoading(false);
+  }
 
   function submitAssessment() {
     const per = {};
@@ -165,27 +191,68 @@ export default function Diagnostic() {
       {step === 2 && (
         <div className="mt-8">
           <h2 className="text-lg font-black text-ink-900">2 · Your target</h2>
-          <p className="mt-1 text-sm text-ink-500">Pick a role (grouped by career family) and when you want to be job-ready.</p>
+          <p className="mt-1 text-sm text-ink-500">Know the role you want, or let the diagnostic suggest one based on you.</p>
+
+          {/* mode toggle */}
+          <div className="mt-3 inline-flex rounded-lg border border-ink-200 bg-ink-50 p-1 text-sm font-bold">
+            <button onClick={() => setFindMode(false)} className={`rounded-md px-3 py-1.5 transition ${!findMode ? "bg-brand-500 text-white" : "text-ink-600 hover:text-brand-600"}`}>I know my role</button>
+            <button onClick={() => setFindMode(true)} className={`rounded-md px-3 py-1.5 transition ${findMode ? "bg-brand-500 text-white" : "text-ink-600 hover:text-brand-600"}`}>✨ Help me find my role</button>
+          </div>
+
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <span className="text-sm text-ink-600">Job-ready in:</span>
             {TIMELINES.map(([v, l]) => <Btn key={v} on={timeline === v} onClick={() => { setTimeline(v); setHpw(v === "3" ? 15 : v === "12" ? 5 : 10); }}>{l}</Btn>)}
           </div>
-          <div className="mt-5 space-y-5">
-            {ORDER.map((b) => (
-              <div key={b}>
-                <p className="text-xs font-bold uppercase tracking-wider text-brand-600">{b}</p>
-                <div className="mt-2 grid gap-2 sm:grid-cols-2">
-                  {journeys.filter((j) => j.bucket === b).map((j) => (
-                    <button key={j.slug} onClick={() => { setRole(j.slug); setAiQs(null); setAiAns({}); setAnalysis(null); setStep(3); }}
-                      className={`card p-3 text-left text-sm transition hover:border-brand-400 hover:shadow-lift ${role === j.slug ? "border-brand-500" : ""}`}>
-                      <span className="font-bold text-ink-900">{j.role}</span>
-                      <span className="mt-0.5 block text-xs text-ink-500">{j.salary?.india} · {j.weeks} wks typical</span>
-                    </button>
-                  ))}
-                </div>
+
+          {/* FIND MY ROLE — AI recommends from interests */}
+          {findMode ? (
+            <div className="mt-5">
+              <div className="card p-4 space-y-4">
+                <div><p className="text-sm font-bold text-ink-700">What kind of work excites you most?</p><div className="mt-2 flex flex-wrap gap-2">{EXCITES.map(([v, l]) => <Btn key={v} on={prefs.excites === v} onClick={() => setPrefs((p) => ({ ...p, excites: v }))}>{l}</Btn>)}</div></div>
+                <div><p className="text-sm font-bold text-ink-700">Your strongest aptitude?</p><div className="mt-2 flex flex-wrap gap-2">{APTITUDE.map(([v, l]) => <Btn key={v} on={prefs.aptitude === v} onClick={() => setPrefs((p) => ({ ...p, aptitude: v }))}>{l}</Btn>)}</div></div>
+                <div><p className="text-sm font-bold text-ink-700">Where do you want impact?</p><div className="mt-2 flex flex-wrap gap-2">{IMPACT.map(([v, l]) => <Btn key={v} on={prefs.impact === v} onClick={() => setPrefs((p) => ({ ...p, impact: v }))}>{l}</Btn>)}</div></div>
+                <button disabled={!prefs.excites || !prefs.aptitude || !prefs.impact || recLoading} onClick={recommend} className="btn-primary disabled:opacity-40">{recLoading ? "Thinking…" : "✨ Recommend roles for me →"}</button>
               </div>
-            ))}
-          </div>
+
+              {recLoading && <div className="mt-4 grid place-items-center gap-2 py-6"><div className="h-7 w-7 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600" /><p className="text-sm text-ink-500">Matching you to AI-era roles…</p></div>}
+
+              {Array.isArray(recs) && recs.length > 0 && (
+                <div className="mt-5">
+                  <p className="text-xs font-bold uppercase tracking-wider text-brand-600">Recommended for you</p>
+                  <div className="mt-2 grid gap-3 sm:grid-cols-3">
+                    {recs.map((r) => (
+                      <button key={r.slug} onClick={() => pickRole(r.slug)} className="card p-4 text-left transition hover:-translate-y-0.5 hover:shadow-lift">
+                        <div className="flex items-center justify-between"><span className="font-black text-ink-900">{r.role}</span><span className="rounded-full bg-teal-50 px-2 py-0.5 text-xs font-black text-teal-700">{r.fit}% fit</span></div>
+                        <p className="mt-1 text-xs text-ink-600">{r.why}</p>
+                        {r.salary && <p className="mt-2 text-xs font-bold text-brand-600">{r.salary.india}</p>}
+                        <span className="mt-2 inline-block text-xs font-bold text-brand-600">Assess me for this →</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {Array.isArray(recs) && recs.length === 0 && !recLoading && (
+                <p className="mt-4 text-sm text-ink-500">Couldn&apos;t generate a recommendation — pick a role directly from the list (toggle &quot;I know my role&quot;).</p>
+              )}
+            </div>
+          ) : (
+            <div className="mt-5 space-y-5">
+              {ORDER.map((b) => (
+                <div key={b}>
+                  <p className="text-xs font-bold uppercase tracking-wider text-brand-600">{b}</p>
+                  <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                    {journeys.filter((j) => j.bucket === b).map((j) => (
+                      <button key={j.slug} onClick={() => pickRole(j.slug)}
+                        className={`card p-3 text-left text-sm transition hover:border-brand-400 hover:shadow-lift ${role === j.slug ? "border-brand-500" : ""}`}>
+                        <span className="font-bold text-ink-900">{j.role}</span>
+                        <span className="mt-0.5 block text-xs text-ink-500">{j.salary?.india} · {j.weeks} wks typical</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
           <button onClick={() => setStep(1)} className="btn-ghost mt-6">← Back</button>
         </div>
       )}

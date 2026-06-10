@@ -69,6 +69,21 @@ Give an honest capability read. Return JSON:
       return Response.json({ ok: true, analysis: a });
     }
 
+    if (action === "recommend") {
+      const { profile = {}, prefs = {}, roles = [] } = body;
+      const roleList = roles.map((r) => `${r.role} [${r.bucket}]`).join("\n");
+      const prompt = `Recommend the best-fit AI-era career roles for this person, choosing ONLY from the exact list below.
+Profile: background=${profile.background || "?"}, experience=${profile.exp || "?"}, education=${profile.edu || "?"}, current="${profile.currentRole || "n/a"}".
+What excites them: ${prefs.excites || "?"}. Strongest aptitude: ${prefs.aptitude || "?"}. Desired impact area: ${prefs.impact || "?"}.
+Roles (use EXACT names):\n${roleList}
+Return JSON: {"recommendations":[{"role":"<exact name from the list>","why":"one specific sentence on why it fits them","fit":<55-95>}]} — top 3, best first.`;
+      const data = parse(await callOpenAI(key, prompt, 600));
+      const recs = Array.isArray(data?.recommendations) ? data.recommendations : [];
+      const valid = recs.filter((r) => r && r.role).slice(0, 3).map((r) => ({ role: String(r.role), why: String(r.why || ""), fit: Math.max(40, Math.min(99, Number(r.fit) || 70)) }));
+      if (!valid.length) return Response.json({ ok: false, reason: "parse" });
+      return Response.json({ ok: true, recommendations: valid });
+    }
+
     return Response.json({ ok: false, reason: "unknown_action" });
   } catch (e) {
     return Response.json({ ok: false, reason: String(e.message || e) });
