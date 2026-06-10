@@ -56,12 +56,45 @@ export default function CourseDetail({ course }) {
       .filter((x) => x.hit > 0).sort((a, b) => b.hit - a.hit || b.co.years - a.co.years).slice(0, 3).map((x) => x.co),
   [courseClusters]);
 
-  // live, BI-delivered add-ons derived from the course's own skills
-  const top2 = course.skills.filter((s) => /^[A-Z]/.test(s)).slice(0, 2);
-  const addons = [
-    { icon: "★", label: "Masterclass", live: true, title: `Industry masterclass: ${top2[0] || clean(course.title)}`, note: "Live practitioner deep-dive — real architectures, trade-offs & war stories" },
-    { icon: "🚀", label: "Project", live: true, title: `Applied project: build with ${top2.join(" & ") || "these skills"}`, note: "Live, coached, graded — a portfolio-ready deliverable" },
-  ];
+  // coaches who deliver the live layer for this course
+  const masterCoach = matchedCoaches[0];
+  const projectCoach = matchedCoaches[1] || matchedCoaches[0];
+
+  // the holistic, BI-delivered learning experience for THIS course — specific topics from its own modules/skills
+  const experience = useMemo(() => {
+    const sk = course.skills.filter((s) => /^[A-Z]/.test(s));
+    const top = sk.slice(0, 3);
+    const modTitles = (data?.modules || []).map((m) => clean(m.title));
+    const liveTopics = (modTitles.length ? modTitles : top).slice(0, 3);
+    const items = [];
+    items.push({ icon: "▶", label: "Self-paced content", color: "brand",
+      title: "Recorded modules — learn at your own pace",
+      detail: data ? `${data.modules.length} modules · ${totalVideos} videos · ~${totalHours} hrs. Topics: ${modTitles.slice(0, 3).join("; ")}${modTitles.length > 3 ? "…" : ""}` : "Recorded video modules with readings & quizzes." });
+    items.push({ icon: "🎙", label: "Live classes", color: "peel",
+      title: "Instructor-led sessions on the hard parts",
+      detail: `Taught live: ${liveTopics.join("; ")} — worked examples, problem-solving & live doubt-clearing.` });
+    items.push({ icon: "★", label: "Masterclass", color: "flame",
+      title: `Industry masterclass: ${top[0] || clean(course.title)}`,
+      detail: `Agenda: ${top[0] || "the core topic"} in production · real architectures & trade-offs · common pitfalls and how practitioners solve them.`,
+      coach: masterCoach });
+    items.push({ icon: "🚀", label: "Applied project", color: "teal",
+      title: `Build a ${top.slice(0, 2).join(" & ") || "real-world"} project`,
+      detail: "Coached, graded, portfolio-ready — apply the skills end-to-end on a real brief.",
+      coach: projectCoach });
+    if ((data?.modules?.length || 0) >= 3)
+      items.push({ icon: "🏆", label: "Hackathon", color: "rose",
+        title: `48-hour build sprint`,
+        detail: `Ship a ${course.domain || "working"} solution under time pressure, demoed to industry judges.` });
+    items.push({ icon: "🤝", label: "Mentorship", color: "ink",
+      title: "Weekly mentorship & doubt-solving",
+      detail: "1:1 coaching with a practitioner from the network below." });
+    items.push({ icon: "✅", label: "Assessment", color: "teal",
+      title: "Skill checkpoints & certificate",
+      detail: "Verified skill checks at each stage + a completion certificate employers recognise." });
+    return items;
+  }, [course.skills, course.domain, data, totalVideos, totalHours, masterCoach, projectCoach]);
+
+  const COLOR = { brand: "border-brand-200 bg-brand-50 text-brand-700", peel: "border-peel-200 bg-peel-50 text-peel-700", flame: "border-flame-200 bg-flame-50 text-flame-700", teal: "border-teal-200 bg-teal-50 text-teal-700", rose: "border-rose-200 bg-rose-50 text-rose-600", ink: "border-ink-200 bg-ink-100 text-ink-600" };
 
   return (
     <div>
@@ -114,48 +147,59 @@ export default function CourseDetail({ course }) {
         </section>
       )}
 
-      {/* Live add-ons + coaches — the Board Infinity layer on top of the recorded course */}
-      <div className="mt-6 grid gap-4 lg:grid-cols-2">
-        {/* live add-ons */}
-        <section className="card p-5">
-          <p className="text-xs font-bold uppercase tracking-widest text-peel-600">Board Infinity live layer</p>
-          <h2 className="mt-1 text-lg font-black text-ink-900">Add live, on top of this course</h2>
-          <p className="mt-1 text-sm text-ink-500">Recorded content is self-paced; these are delivered <b className="text-ink-700">live</b> by Board Infinity — optional for institutions and cohorts.</p>
-          <div className="mt-3 space-y-2">
-            {addons.map((a) => (
-              <div key={a.label} className="flex items-start gap-3 rounded-xl border border-ink-200 bg-white p-3">
-                <span className="chip border border-flame-200 bg-flame-50 text-flame-700 shrink-0">{a.icon} {a.label}</span>
-                <div className="min-w-0">
-                  <p className="text-sm font-bold text-ink-900">{a.title} <span className="ml-1 align-middle text-[10px] font-black uppercase tracking-wide text-peel-600">● Live</span></p>
-                  <p className="text-xs text-ink-500">{a.note}</p>
+      {/* THE COMPLETE LEARNING EXPERIENCE — holistic, specific, derived from this course's own content */}
+      <section className="mt-6 card p-5">
+        <p className="text-xs font-bold uppercase tracking-widest text-peel-600">Board Infinity · the complete learning experience</p>
+        <h2 className="mt-1 text-lg font-black text-ink-900">What we deliver for this course</h2>
+        <p className="mt-1 text-sm text-ink-500">Not just recorded videos — a full blended program. Recorded content is self-paced; everything marked <span className="font-bold text-peel-600">● Live</span> is delivered live by Board Infinity.</p>
+        <div className="relative mt-4 space-y-2 border-l-2 border-brand-100 pl-5">
+          {experience.map((x, i) => {
+            const isLive = ["Live classes", "Masterclass", "Applied project", "Hackathon", "Mentorship"].includes(x.label);
+            return (
+              <div key={i} className="relative rounded-xl border border-ink-200 bg-white p-3">
+                <span className="absolute -left-[26px] top-4 grid h-4 w-4 place-items-center rounded-full bg-brand-500 text-[8px] text-white">{i + 1}</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className={`chip border ${COLOR[x.color]} shrink-0`}>{x.icon} {x.label}</span>
+                  <span className="text-sm font-bold text-ink-900">{x.title}</span>
+                  {isLive && <span className="text-[10px] font-black uppercase tracking-wide text-peel-600">● Live</span>}
+                  {x.coach && <span className="ml-auto text-[11px] text-ink-500">led by <b className="text-ink-700">{x.coach.name}</b></span>}
                 </div>
+                <p className="mt-1 text-xs text-ink-500">{x.detail}</p>
               </div>
-            ))}
-          </div>
-        </section>
+            );
+          })}
+        </div>
+        <p className="mt-3 text-[11px] text-ink-400">Live elements &amp; project briefs are a proposed design; topics are auto-derived from this course&apos;s modules and finalised with the delivery team.</p>
+      </section>
 
-        {/* coaches who can take this */}
-        {matchedCoaches.length > 0 && (
-          <section className="card p-5">
-            <p className="text-xs font-bold uppercase tracking-widest text-brand-600">From our coach network</p>
-            <h2 className="mt-1 text-lg font-black text-ink-900">Coaches who can teach this</h2>
-            <p className="mt-1 text-sm text-ink-500">Industry practitioners on the Board Infinity platform, matched to this course&apos;s skills.</p>
-            <div className="mt-3 space-y-2">
-              {matchedCoaches.map((c) => (
-                <div key={c.name} className="flex items-center gap-3 rounded-xl border border-ink-200 bg-white p-3">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-50 text-sm font-black text-brand-600">{initials(c.name)}</span>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm font-bold text-ink-900">{c.name}</p>
-                    <p className="text-xs text-ink-500">{c.title} · {c.company}</p>
-                  </div>
-                  <span className="shrink-0 text-[11px] font-bold text-teal-600">{c.years}+ yrs</span>
-                </div>
-              ))}
+      {/* coach network — who delivers the live layer */}
+      {matchedCoaches.length > 0 && (
+        <section className="mt-6 card p-5">
+          <div className="flex flex-wrap items-end justify-between gap-2">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-600">From our coach network</p>
+              <h2 className="mt-1 text-lg font-black text-ink-900">Coaches who deliver this course live</h2>
+              <p className="mt-1 text-sm text-ink-500">Industry practitioners matched to this course&apos;s skills — they run the live classes, masterclass &amp; project coaching above.</p>
             </div>
-            <p className="mt-2 text-[10px] text-ink-400">Representative coach profiles.</p>
-          </section>
-        )}
-      </div>
+            <Link href="/specializations" className="text-xs font-bold text-brand-600 hover:underline">Explore roles →</Link>
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {matchedCoaches.map((c, i) => {
+              const role = i === 0 ? "Masterclass" : i === 1 ? "Project coach" : "Live mentor";
+              return (
+                <div key={c.name} className="rounded-xl border border-ink-200 bg-white p-4 text-center transition hover:-translate-y-0.5 hover:shadow-lift">
+                  <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-brand-100 to-brand-50 text-lg font-black text-brand-600">{initials(c.name)}</span>
+                  <p className="mt-2 font-black text-ink-900">{c.name}</p>
+                  <p className="text-xs text-ink-500">{c.title}</p>
+                  <p className="text-[11px] text-ink-400">{c.company} · {c.years}+ yrs</p>
+                  <span className="mt-2 inline-block chip-peel text-[10px]">Leads: {role}</span>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-3 text-[10px] text-ink-400">Representative coach profiles, matched by skill.</p>
+        </section>
+      )}
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-xl font-black text-ink-900">Learning Roadmap</h2>
