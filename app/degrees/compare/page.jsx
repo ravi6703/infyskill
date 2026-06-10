@@ -140,7 +140,24 @@ export default function DegreeCompare() {
 
     // full coverage grid for the visual matrix
     const aiGrid = AI_DEMAND.map((d) => ({ skill: d.skill, roles: d.roles, present: presentSet.has(d.skill), course: presentSet.has(d.skill) ? null : courseForSkill(d.skill) }));
-    setResult({ name, rows, full, partial, present, aiGaps, aiGrid, aiReady, aiTotal: AI_DEMAND.length, roles });
+
+    // ---- LENS A: syllabus gap vs the best-fit ideal program ----
+    const upTok = names.map((n) => new Set(mean(n)));
+    const coveredByUpload = (ideal) => {
+      const it = mean(ideal); if (!it.length) return false;
+      return upTok.some((ut) => { let inter = 0; for (const t of it) if (ut.has(t)) inter++; return inter >= 2 || (inter >= 1 && inter / it.length >= 0.5); });
+    };
+    const refScored = refs.map((r) => {
+      const subs = r.subjects.map((s) => (typeof s === "string" ? s : s.name));
+      return { ref: r, subs, matched: subs.filter(coveredByUpload).length };
+    }).sort((a, b) => b.matched - a.matched);
+    const best = refScored[0];
+    const syllabusGaps = best.subs.filter((s) => !coveredByUpload(s));
+    const syllabusTotal = best.subs.length;
+    const syllabusPct = Math.round(((syllabusTotal - syllabusGaps.length) / syllabusTotal) * 100);
+
+    setResult({ name, rows, full, partial, present, aiGaps, aiGrid, aiReady, aiTotal: AI_DEMAND.length, roles,
+      idealName: best.ref.name, idealRef: best.ref.ref, syllabusGaps, syllabusTotal, syllabusPct });
   }
   function loadSample() {
     const r = refs[0];
@@ -208,8 +225,8 @@ export default function DegreeCompare() {
       <Link href="/degrees" className="text-sm font-bold text-brand-600">← Degree programs</Link>
       <div className="mt-3 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 p-6 text-white">
         <p className="text-xs font-bold uppercase tracking-widest text-brand-100">For universities</p>
-        <h1 className="mt-1 text-3xl font-black text-white">How AI-era ready is your curriculum?</h1>
-        <p className="mt-2 max-w-2xl text-brand-50">Upload your syllabus. We tag the skills, score it against today&apos;s most in-demand AI-era skills, show exactly what&apos;s missing, and the Board Infinity content + roles that close the gap.</p>
+        <h1 className="mt-1 text-3xl font-black text-white">How future-ready is your curriculum?</h1>
+        <p className="mt-2 max-w-2xl text-brand-50">Upload your syllabus. We run a two-lens gap analysis — <b>syllabus</b> (vs an ideal AI-era program) and <b>job-orientation</b> (vs what employers hire for) — and show exactly what&apos;s missing plus the Board Infinity content + roles that close the gap.</p>
       </div>
 
       <div className="card mt-6 p-5">
@@ -232,7 +249,33 @@ export default function DegreeCompare() {
 
       {result && (
         <div className="mt-8 space-y-6">
-          {/* AI-era readiness — gauge + headline */}
+          <div className="rounded-2xl border border-ink-200 bg-ink-50 p-4">
+            <p className="text-sm font-black text-ink-900">Two-lens gap report for <span className="text-brand-600">{result.name}</span></p>
+            <p className="mt-0.5 text-xs text-ink-500">We assess your curriculum two ways: <b className="text-ink-700">A — syllabus</b> (vs an ideal program) and <b className="text-ink-700">B — job-orientation</b> (vs what employers hire for) — then show how Board Infinity closes both.</p>
+          </div>
+
+          {/* ===== LENS A — Syllabus gap vs ideal program ===== */}
+          <div className="card p-5">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-brand-600">Lens A · Syllabus gap</p>
+                <h3 className="mt-1 font-black text-ink-900">Vs the ideal program — <span className="text-ink-600">{result.idealName}</span></h3>
+              </div>
+              <span className={`text-2xl font-black ${result.syllabusPct >= 70 ? "text-teal-600" : result.syllabusPct >= 45 ? "text-peel-600" : "text-rose-600"}`}>{result.syllabusPct}%<span className="ml-1 text-xs font-bold text-ink-500">syllabus match</span></span>
+            </div>
+            <p className="mt-1 text-xs text-ink-400">Your curriculum is matched subject-by-subject against a benchmark AI-era program ({result.idealRef}). Subjects below appear in the ideal program but not in yours.</p>
+            {result.syllabusGaps.length > 0 ? (
+              <div className="mt-3">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-peel-700">Subjects/topics your curriculum is missing</p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {result.syllabusGaps.map((s, i) => <span key={i} className="chip-peel">{s}</span>)}
+                </div>
+              </div>
+            ) : <p className="mt-3 text-sm text-teal-600 font-bold">✓ Your curriculum covers the ideal program's subjects.</p>}
+          </div>
+
+          {/* ===== LENS B — Job-orientation (AI-era skills) ===== */}
+          <p className="text-xs font-bold uppercase tracking-widest text-brand-600">Lens B · Job-orientation gap</p>
           <div className="card border-brand-200 p-5">
             <div className="flex flex-wrap items-center gap-5">
               <Gauge value={result.aiReady} />
