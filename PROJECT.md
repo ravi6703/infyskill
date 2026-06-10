@@ -2,7 +2,9 @@
 
 > **Purpose of this file:** the single source of truth for the InfyAI project. Read it at the start of any session to get full context. Update it at the end of any session that changes decisions, state, or conventions. Tell Claude *"update the project doc"* and it will sync this file.
 
-_Last updated: 2026-06-07 · current version: v9.18_
+_Last updated: 2026-06-07 · current version: v9.19_
+
+**Project files (in this folder):** `InfyAI_PROJECT.md` (this doc) · `InfyAI_Founder_Demo_Playbook.md` (demo script + not-now list) · `InfyAI_SkillTagging_Verification.md` (skill-tag audit & cluster remediation list) · `InfyAI_Specialization_Journey_Gaps.md` (per-role journey gaps: map vs build) · `InfyAI_Gap_Report.xlsx` (the gap report as a workbook: Summary/Priorities, Journey Gaps, Skill-Cluster Fixes — internal, not on website).
 
 ---
 
@@ -75,6 +77,9 @@ Park these unless a real buyer/pilot demands them: student accounts/auth, paymen
 
 ## 7. Changelog (append newest at top)
 
+- **v9.20** — Regulatory-alignment workstream (Phase 1). Built dual-compliant (**UGC FYUGP + AICTE**) curriculum for **B.Sc. (Hons.) AI Engineering** as the template degree: 4-yr/8-sem, **160 credits** (up from 128), 6 UGC baskets + AICTE category crosswalk, NEP/NCrF/NHEQF mapping, 4 entry/exit awards (Cert/Diploma/Degree/Honours at 40/80/120/160), 38-course semester plan, compliance checklist + gap analysis. Deliverable: `BSc_AI_Engineering_Regulatory_Curriculum.docx`. Decisions: B.Sc. AI Eng first; align to **both** regulators (dual-approved). Sequence: Step 2 delivery-model mapping → Step 3 map the 38 courses to the existing 259-course catalog (Covered/Partial/Gap) → Step 4 build content; then replicate to PG Dip GenAI, B.Sc. DS, MBA.
+- **v9.19** — Degree hierarchy = **per-course delivery model**: each course in a trimester carries its own blend (async modules + live sync sessions + masterclass for advanced courses + mini-project); Hackathon/Capstone/Mentorship are trimester-level milestones. Added PROJECT.md.
+- **Audit (2026-06-07)** — Skill-tagging verification: course→skill tags are clean; the issue is skill→cluster ("Professional & Workplace" is a 2,063-skill catch-all with ~80 mis-bucketed technical/finance skills). See `InfyAI_SkillTagging_Verification.md`. **Fix pending** (data-only, in `data/skills.json`).
 - **v9.18** — Removed 2 borderline specializations (AI Trainer/Data Annotation, Conversation Designer). 23 → **21**.
 - **v9.17** — Removed 3 hollow roles (AI Healthcare Data Analyst, Digital Twin, Robotics) — no domain content.
 - **v9.16** — Benefits moved to common `/degrees` page; innovative compare (readiness gauge + skill-coverage matrix).
@@ -89,6 +94,9 @@ Park these unless a real buyer/pilot demands them: student accounts/auth, paymen
 
 ## 8. Open items / decisions pending
 
+- **Skill→cluster remediation** (from the verification audit): reassign ~80 mis-bucketed skills out of "Professional & Workplace"; fix vSphere Clustering→ML, Heuristic Evaluation→Finance. Data-only fix in `data/skills.json`. Awaiting go-ahead on a full proposed diff.
+- **#2 (done 2026-06-07):** specialization journey-gap doc delivered → `InfyAI_Specialization_Journey_Gaps.md`. Key follow-ups for the user: MAP SQL into 3 data/analyst roles (content exists); BUILD data-eng stack (Spark/Kafka/Airflow/dbt) + vendor-neutral LLM-API course.
+- **#3 (todo):** course pages — add live masterclass/project + a coaches feature (dummy skill-mapped coach data: name, experience, designation; clean, not cluttered).
 - Specialization naming: consider merging "AI Governance & Compliance Officer" + "AI Ethics Officer" (overlap); consider reframing the 5 business-function roles explicitly as "AI-Augmented [Marketing/HR/Finance/Supply-Chain]".
 - Grow tagged BI content to raise degree credit coverage.
 - **Security housekeeping:** revoke the GitHub PAT and Vercel token that were pasted in the build chat.

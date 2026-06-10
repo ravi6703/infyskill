@@ -4,8 +4,12 @@ import Link from "next/link";
 import { sbSelect } from "../../../lib/supabase";
 import specs from "../../../data/journeys.json";
 import allCourses from "../../../data/courses.json";
+import coaches from "../../../data/coaches.json";
+import skillMeta from "../../../data/skills.json";
 
 const clean = (t) => t.replace(/^[:\s]+/, "");
+const CLUSTER_OF = Object.fromEntries(skillMeta.map((s) => [s.name.toLowerCase(), s.cluster]));
+const initials = (n) => n.split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("");
 
 const ICON = { Video: "▶", Reading: "📄", Practice: "✏️", Assignment: "🧪", Quiz: "❓", Discussion: "💬", Lab: "🔬", Project: "🚀" };
 const SIDE = ["left", "right"];
@@ -40,6 +44,24 @@ export default function CourseDetail({ course }) {
       return { sp, hits, pct: Math.round((hits.length / Math.max(6, sp.skills.length)) * 100) };
     }).filter((x) => x.hits.length >= 2).sort((a, b) => b.hits.length - a.hits.length).slice(0, 4);
   }, [course.skills]);
+
+  // dominant clusters of this course's skills → match coaches
+  const courseClusters = useMemo(() => {
+    const c = {};
+    course.skills.forEach((s) => { const cl = CLUSTER_OF[s.toLowerCase()]; if (cl) c[cl] = (c[cl] || 0) + 1; });
+    return new Set(Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([cl]) => cl));
+  }, [course.skills]);
+  const matchedCoaches = useMemo(() =>
+    coaches.map((co) => ({ co, hit: co.clusters.filter((cl) => courseClusters.has(cl)).length }))
+      .filter((x) => x.hit > 0).sort((a, b) => b.hit - a.hit || b.co.years - a.co.years).slice(0, 3).map((x) => x.co),
+  [courseClusters]);
+
+  // live, BI-delivered add-ons derived from the course's own skills
+  const top2 = course.skills.filter((s) => /^[A-Z]/.test(s)).slice(0, 2);
+  const addons = [
+    { icon: "★", label: "Masterclass", live: true, title: `Industry masterclass: ${top2[0] || clean(course.title)}`, note: "Live practitioner deep-dive — real architectures, trade-offs & war stories" },
+    { icon: "🚀", label: "Project", live: true, title: `Applied project: build with ${top2.join(" & ") || "these skills"}`, note: "Live, coached, graded — a portfolio-ready deliverable" },
+  ];
 
   return (
     <div>
@@ -91,6 +113,49 @@ export default function CourseDetail({ course }) {
           </div>
         </section>
       )}
+
+      {/* Live add-ons + coaches — the Board Infinity layer on top of the recorded course */}
+      <div className="mt-6 grid gap-4 lg:grid-cols-2">
+        {/* live add-ons */}
+        <section className="card p-5">
+          <p className="text-xs font-bold uppercase tracking-widest text-peel-600">Board Infinity live layer</p>
+          <h2 className="mt-1 text-lg font-black text-ink-900">Add live, on top of this course</h2>
+          <p className="mt-1 text-sm text-ink-500">Recorded content is self-paced; these are delivered <b className="text-ink-700">live</b> by Board Infinity — optional for institutions and cohorts.</p>
+          <div className="mt-3 space-y-2">
+            {addons.map((a) => (
+              <div key={a.label} className="flex items-start gap-3 rounded-xl border border-ink-200 bg-white p-3">
+                <span className="chip border border-flame-200 bg-flame-50 text-flame-700 shrink-0">{a.icon} {a.label}</span>
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-ink-900">{a.title} <span className="ml-1 align-middle text-[10px] font-black uppercase tracking-wide text-peel-600">● Live</span></p>
+                  <p className="text-xs text-ink-500">{a.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* coaches who can take this */}
+        {matchedCoaches.length > 0 && (
+          <section className="card p-5">
+            <p className="text-xs font-bold uppercase tracking-widest text-brand-600">From our coach network</p>
+            <h2 className="mt-1 text-lg font-black text-ink-900">Coaches who can teach this</h2>
+            <p className="mt-1 text-sm text-ink-500">Industry practitioners on the Board Infinity platform, matched to this course&apos;s skills.</p>
+            <div className="mt-3 space-y-2">
+              {matchedCoaches.map((c) => (
+                <div key={c.name} className="flex items-center gap-3 rounded-xl border border-ink-200 bg-white p-3">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-50 text-sm font-black text-brand-600">{initials(c.name)}</span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-bold text-ink-900">{c.name}</p>
+                    <p className="text-xs text-ink-500">{c.title} · {c.company}</p>
+                  </div>
+                  <span className="shrink-0 text-[11px] font-bold text-teal-600">{c.years}+ yrs</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-2 text-[10px] text-ink-400">Representative coach profiles.</p>
+          </section>
+        )}
+      </div>
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-xl font-black text-ink-900">Learning Roadmap</h2>

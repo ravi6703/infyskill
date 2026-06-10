@@ -1,0 +1,20 @@
+[
+ { "name": "Aarav Mehta", "title": "Principal ML Engineer", "company": "ex-Flipkart", "years": 11, "clusters": ["Machine Learning", "Deep Learning", "MLOps & AI Infrastructure"] },
+ { "name": "Dr. Neha Iyer", "title": "Head of Applied AI", "company": "ex-Microsoft Research", "years": 14, "clusters": ["Deep Learning", "Generative AI & LLMs", "Machine Learning"] },
+ { "name": "Rohan Desai", "title": "Staff GenAI Engineer", "company": "ex-Razorpay", "years": 9, "clusters": ["Generative AI & LLMs", "Agentic AI", "Web Development"] },
+ { "name": "Karthik Subramanian", "title": "Lead Agentic AI Architect", "company": "ex-Adobe", "years": 12, "clusters": ["Agentic AI", "Generative AI & LLMs", "MLOps & AI Infrastructure"] },
+ { "name": "Priya Nair", "title": "Senior Data Engineer", "company": "ex-Swiggy", "years": 10, "clusters": ["Data Engineering", "Cloud & DevOps", "Data Analysis & BI"] },
+ { "name": "Vikram Rao", "title": "Cloud & DevOps Architect", "company": "ex-Amazon", "years": 13, "clusters": ["Cloud & DevOps", "MLOps & AI Infrastructure"] },
+ { "name": "Ananya Gupta", "title": "Analytics Engineering Lead", "company": "ex-Zomato", "years": 8, "clusters": ["Data Analysis & BI", "Data Engineering"] },
+ { "name": "Sameer Khan", "title": "Principal Security Engineer", "company": "ex-Palo Alto Networks", "years": 15, "clusters": ["Cybersecurity", "MLOps & AI Infrastructure"] },
+ { "name": "Ritu Sharma", "title": "Director of Product", "company": "ex-PhonePe", "years": 12, "clusters": ["Product & Agile", "Generative AI & LLMs"] },
+ { "name": "Arjun Menon", "title": "Engineering Manager, Full-Stack", "company": "ex-Atlassian", "years": 11, "clusters": ["Web Development", "Python & Programming", "Mobile Development"] },
+ { "name": "Fatima Sheikh", "title": "Responsible AI Lead", "company": "ex-Accenture", "years": 10, "clusters": ["AI Governance & Ethics", "Generative AI & LLMs"] },
+ { "name": "Deepak Joshi", "title": "Growth Marketing Director", "company": "ex-CRED", "years": 9, "clusters": ["Marketing & Growth", "Data Analysis & BI"] },
+ { "name": "Sneha Reddy", "title": "VP Finance & FinTech", "company": "ex-Paytm", "years": 14, "clusters": ["Finance & FinTech", "Data Analysis & BI"] },
+ { "name": "Mohit Bansal", "title": "Head of People Analytics", "company": "ex-Infosys", "years": 12, "clusters": ["HR & People", "Data Analysis & BI"] },
+ { "name": "Ishaan Verma", "title": "Supply Chain Transformation Lead", "company": "ex-Tata", "years": 13, "clusters": ["Supply Chain & Operations", "Data Analysis & BI"] },
+ { "name": "Tara Krishnan", "title": "Lead Product Designer", "company": "ex-Freshworks", "years": 10, "clusters": ["Design & UX", "Web Development"] },
+ { "name": "Aditya Kulkarni", "title": "Automation Solutions Consultant", "company": "ex-Zapier partner", "years": 8, "clusters": ["Automation & No-Code", "Generative AI & LLMs"] },
+ { "name": "Meera Pillai", "title": "Senior QA Architect", "company": "ex-ThoughtWorks", "years": 11, "clusters": ["Software Testing & QA", "Web Development"] }
+]
