@@ -4,8 +4,19 @@ import Link from "next/link";
 import { skillsByCluster } from "../../../lib/engine";
 import allSpecs from "../../../data/journeys.json";
 import skillMeta from "../../../data/skills.json";
+import coaches from "../../../data/coaches.json";
 
 const CLUSTER_OF = Object.fromEntries(skillMeta.map((s) => [s.name.toLowerCase(), s.cluster]));
+const initials = (n) => n.split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("");
+// family-level market context (indicative, India)
+const MARKET = {
+  "Core AI Engineering": { demand: "Very High", sectors: "Product cos, GCCs, AI-first startups, IT services" },
+  "Data Careers": { demand: "High", sectors: "Analytics, BFSI, e-commerce, consulting" },
+  "Security": { demand: "High", sectors: "BFSI, GovTech, SaaS, consulting" },
+  "Product, Strategy & Governance": { demand: "Growing fast", sectors: "Enterprises, consulting, RegTech, GCCs" },
+  "Emerging & Specialist": { demand: "Emerging", sectors: "Startups, agencies, SMBs, freelance" },
+  "AI-Augmented Business Functions": { demand: "Growing fast", sectors: "Marketing, HR, Finance & Supply-chain teams" },
+};
 
 const STATUS = {
   available: ["Ready", "chip-green"], planned: ["In production", "chip-blue"], create: ["Coming soon", "chip-peel"],
@@ -22,6 +33,23 @@ export default function SpecDetail({ spec }) {
   const clusters = skillsByCluster(spec.skills).slice(0, 8);
   const [skill, setSkill] = useState(null);
   const [sources, setSources] = useState(false);
+
+  // journey readiness: how much of this role's path is available today
+  const allComp = spec.stages.flatMap((s) => s.components || []);
+  const nAvail = allComp.filter((c) => c.status === "available").length;
+  const readyPct = allComp.length ? Math.round((nAvail / allComp.length) * 100) : 0;
+  const market = MARKET[spec.bucket] || { demand: "Growing", sectors: "Multiple sectors" };
+
+  // coaches matched to this role's skill clusters
+  const roleClusters = useMemo(() => {
+    const c = {};
+    spec.skills.forEach((s) => { const cl = CLUSTER_OF[s.toLowerCase()]; if (cl) c[cl] = (c[cl] || 0) + 1; });
+    return new Set(Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([cl]) => cl));
+  }, [spec.skills]);
+  const roleCoaches = useMemo(() =>
+    coaches.map((co) => ({ co, hit: co.clusters.filter((cl) => roleClusters.has(cl)).length }))
+      .filter((x) => x.hit > 0).sort((a, b) => b.hit - a.hit || b.co.years - a.co.years).slice(0, 3).map((x) => x.co),
+  [roleClusters]);
 
   const skillInfo = useMemo(() => {
     if (!skill) return null;
@@ -67,6 +95,7 @@ export default function SpecDetail({ spec }) {
           </div>
         </div>
         {spec.salary?.growth && <p className="mt-3 text-sm text-brand-100">📈 {spec.salary.growth}</p>}
+        <p className="mt-1 text-sm text-brand-100">🔥 Market demand: <b className="text-white">{market.demand}</b> · hiring across {market.sectors}</p>
         <button onClick={() => setSources(true)} className="mt-3 inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-white hover:bg-white/25">
           ⓘ Where do these numbers come from?
         </button>
@@ -188,8 +217,15 @@ export default function SpecDetail({ spec }) {
         const MIX = [["ASYNC", "bg-brand-500"], ["SYNC", "bg-peel-500"], ["MASTERCLASS", "bg-flame-500"], ["HACKATHON", "bg-rose-500"], ["CAPSTONE", "bg-teal-500"]];
         return (
           <section className="mt-10">
-            <h2 className="text-xl font-black text-ink-900">The full journey — week by week</h2>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <h2 className="text-xl font-black text-ink-900">The full journey — week by week</h2>
+              <span className={`rounded-full px-3 py-1 text-sm font-black ${readyPct >= 60 ? "bg-teal-50 text-teal-700" : readyPct >= 35 ? "bg-peel-50 text-peel-700" : "bg-rose-50 text-rose-600"}`}>{readyPct}% ready today</span>
+            </div>
             <p className="mt-1 text-sm text-ink-500">Every element of this role&apos;s path, mapped to the Board Infinity delivery model. <span className="text-teal-600 font-bold">{nAvail} available now</span>, <span className="text-peel-700 font-bold">{nBuild} to build</span>{nPlan ? <>, <span className="text-ink-400 font-bold">{nPlan} planned</span></> : null} · {weeks} weeks total.</p>
+            {/* readiness bar */}
+            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-ink-100" title={`${readyPct}% of this journey is available today`}>
+              <div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600" style={{ width: `${readyPct}%` }} />
+            </div>
 
             {/* delivery-mix bar */}
             <div className="mt-3 flex h-2.5 w-full overflow-hidden rounded-full">
@@ -248,21 +284,28 @@ export default function SpecDetail({ spec }) {
         );
       })()}
 
-      {/* delivery model */}
-      <section className="mt-10">
-        <h2 className="text-xl font-black text-ink-900">How it&apos;s delivered</h2>
-        <p className="mt-1 text-sm text-ink-500">The Board Infinity blended model — balanced across this specialization.</p>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {PILLARS.map(([icon, name, sub, b], i) => (
-            <div key={name} className={`rounded-xl border border-ink-200 border-t-4 ${b} bg-white p-4`}>
-              <div className="text-2xl">{icon}</div>
-              <p className="mt-1 font-bold text-ink-900">{name}</p>
-              <p className="text-xs text-ink-500">{sub}</p>
-              <p className="mt-2 text-xs font-black text-brand-600">{[spec.mix.ASYNC, spec.mix.SYNC, spec.mix.MASTERCLASS, spec.mix.HACKATHON, spec.mix.CAPSTONE][i]}%</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* coaches who deliver this role's live journey */}
+      {roleCoaches.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xl font-black text-ink-900">Coaches for this role</h2>
+          <p className="mt-1 text-sm text-ink-500">Industry practitioners matched to this role&apos;s skills — they run the live classes, masterclasses &amp; project coaching in the journey above.</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {roleCoaches.map((c, i) => {
+              const leads = i === 0 ? "Masterclass" : i === 1 ? "Project coach" : "Live mentor";
+              return (
+                <div key={c.name} className="rounded-xl border border-ink-200 bg-white p-4 text-center transition hover:-translate-y-0.5 hover:shadow-lift">
+                  <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-brand-100 to-brand-50 text-lg font-black text-brand-600">{initials(c.name)}</span>
+                  <p className="mt-2 font-black text-ink-900">{c.name}</p>
+                  <p className="text-xs text-ink-500">{c.title}</p>
+                  <p className="text-[11px] text-ink-400">{c.company} · {c.years}+ yrs</p>
+                  <span className="mt-2 inline-block chip-peel text-[10px]">Leads: {leads}</span>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-3 text-[10px] text-ink-400">Representative coach profiles, matched by skill.</p>
+        </section>
+      )}
 
       <div className="card mt-10 flex flex-wrap items-center justify-between gap-4 border-brand-200 bg-brand-50 p-6">
         <div>
