@@ -91,11 +91,13 @@ export default function Diagnostic() {
   useEffect(() => {
     if (step !== 3 || !journey || aiQs !== null || aiLoading) return;
     let cancelled = false;
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 22000); // never leave the user stuck
     (async () => {
       setAiLoading(true);
       try {
         const res = await fetch("/api/diagnostic", {
-          method: "POST", headers: { "content-type": "application/json" },
+          method: "POST", headers: { "content-type": "application/json" }, signal: ctrl.signal,
           body: JSON.stringify({ action: "assess", role: journey.role, clusters: clusters.map(([cl]) => cl), profile }),
         });
         const d = await res.json();
@@ -103,7 +105,7 @@ export default function Diagnostic() {
       } catch { if (!cancelled) setAiQs([]); }
       if (!cancelled) setAiLoading(false);
     })();
-    return () => { cancelled = true; };
+    return () => { cancelled = true; clearTimeout(timer); };
   }, [step, journey, aiQs, aiLoading, clusters, profile]);
 
   function pickRole(slug) { setRole(slug); setAiQs(null); setAiAns({}); setAnalysis(null); setStep(3); }
