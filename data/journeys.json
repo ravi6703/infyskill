@@ -1401,7 +1401,13 @@
    "Tableau",
    "Forecasting",
    "Power BI",
-   "No-Code AI Tools"
+   "No-Code AI Tools",
+   "SQL",
+   "Stakeholder Management",
+   "Agile Methodology",
+   "Prompt Engineering",
+   "Predictive Analytics",
+   "Process Automation"
   ],
   "bucket": "Product, Strategy & Governance",
   "salary": {
@@ -1538,7 +1544,7 @@
  },
  {
   "slug": "ai-governance-compliance-officer",
-  "role": "AI Governance & Compliance Officer",
+  "role": "AI Governance & Ethics Officer",
   "weeks": 16,
   "level": "Intermediate→Advanced",
   "persona": "Risk/compliance professionals, lawyers, auditors entering AI governance",
@@ -1643,109 +1649,15 @@
    "LLM Applications",
    "RAG Pipelines",
    "Prompt Injection Defense",
-   "No-Code AI Tools"
+   "No-Code AI Tools",
+   "Fairness",
+   "Bias Mitigation"
   ],
   "bucket": "Product, Strategy & Governance",
   "salary": {
    "india": "₹15–45 LPA",
    "global": "$130K–$220K",
    "growth": "EU AI Act + DPDP enforcement wave"
-  }
- },
- {
-  "slug": "ai-ethics-officer",
-  "role": "AI Ethics Officer",
-  "weeks": 14,
-  "level": "Intermediate",
-  "persona": "Policy, HR, legal and social science professionals moving into responsible AI",
-  "mix": {
-   "ASYNC": 55,
-   "SYNC": 18,
-   "MASTERCLASS": 12,
-   "HACKATHON": 0,
-   "CAPSTONE": 15
-  },
-  "readiness": 100,
-  "stages": [
-   {
-    "name": "Foundation",
-    "components": [
-     {
-      "type": "Async",
-      "content": "The Rise of Generative AI",
-      "status": "available"
-     },
-     {
-      "type": "Async",
-      "content": "No-Code AI Essentials: Master AI Concepts & Use Cases",
-      "status": "available"
-     },
-     {
-      "type": "Async",
-      "content": "Emotional Intelligence in the Workplace",
-      "status": "available"
-     }
-    ]
-   },
-   {
-    "name": "Core",
-    "components": [
-     {
-      "type": "Async",
-      "content": "AI Risk and Compliance: Audit and Governance Foundations",
-      "status": "available"
-     },
-     {
-      "type": "Sync",
-      "content": "Ethics deliberation seminars (weekly, case-based)",
-      "status": "create"
-     },
-     {
-      "type": "Masterclass",
-      "content": "Masterclass: bias, fairness & explainability in practice",
-      "status": "create"
-     }
-    ]
-   },
-   {
-    "name": "Career",
-    "components": [
-     {
-      "type": "Capstone",
-      "content": "Ethical impact assessment of a real AI deployment",
-      "status": "create"
-     }
-    ]
-   }
-  ],
-  "gaps": [
-   "AI ethics & fairness dedicated course (critical gap)",
-   "Explainable AI (XAI) course",
-   "AI & society policy course"
-  ],
-  "skills": [
-   "AI Ethics",
-   "AI Governance",
-   "Regulatory Compliance",
-   "Explainability (XAI)",
-   "Generative AI",
-   "Large Language Models",
-   "Transformers",
-   "Diffusion Models",
-   "GPT",
-   "LLM Applications",
-   "RAG Pipelines",
-   "Prompt Injection Defense",
-   "No-Code AI Tools",
-   "Emotional Intelligence",
-   "Leadership",
-   "Communication Skills"
-  ],
-  "bucket": "Product, Strategy & Governance",
-  "salary": {
-   "india": "₹12–35 LPA",
-   "global": "$120K–$200K",
-   "growth": "Board-level mandate emerging"
   }
  },
  {
