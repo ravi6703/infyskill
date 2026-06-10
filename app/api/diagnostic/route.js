@@ -57,6 +57,21 @@ Exactly 5 questions. correct is the 0-based index of the right option. No explan
       return Response.json({ ok: true, questions: clean });
     }
 
+    if (action === "followup") {
+      const { role, profile = {}, weak = [] } = body;
+      const n = Math.min(Math.max(weak.length, 2), 4);
+      const prompt = `A candidate targeting "${role}" (background=${profile.background || "?"}, experience=${profile.exp || "?"}) scored LOW on these skill areas in a first check: ${weak.join(" | ")}.
+Write ${n} HARDER, more specific multiple-choice questions ONLY on those areas, to confirm whether the gap is real (deeper/applied, not repeats). Keep concise.
+Return JSON: {"questions":[{"q":"short question","options":["a","b","c","d"],"correct":0,"cluster":"<one of the weak areas>"}]}
+Exactly ${n} questions. correct is the 0-based index.`;
+      const data = parse(await callOpenAI(key, prompt, 900));
+      const qs = Array.isArray(data?.questions) ? data.questions : [];
+      const clean = qs.filter((x) => x && x.q && Array.isArray(x.options) && x.options.length >= 2 && Number.isInteger(x.correct))
+        .slice(0, n).map((x) => ({ q: String(x.q), options: x.options.slice(0, 4).map(String), correct: Math.max(0, Math.min(3, x.correct)), cluster: String(x.cluster || weak[0] || "Core") }));
+      if (!clean.length) return Response.json({ ok: false, reason: "parse" });
+      return Response.json({ ok: true, questions: clean });
+    }
+
     if (action === "analyze") {
       const { role, profile = {}, scored = [], overall = 0 } = body;
       const lines = scored.map((s) => `- ${s.cluster}: ${s.correct}/${s.total} correct`).join("\n");
