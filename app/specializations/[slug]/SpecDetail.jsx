@@ -157,49 +157,96 @@ export default function SpecDetail({ spec }) {
         )}
       </section>
 
-      {/* the journey — stages with skills gained + delivery icons (no course content) */}
-      <section className="mt-10">
-        <h2 className="text-xl font-black text-ink-900">Your journey to the role</h2>
-        <p className="mt-1 text-sm text-ink-500">Each stage builds new skills through the blended model. Your week-by-week plan is generated in the diagnostic.</p>
-        <div className="relative mt-5 space-y-4 border-l-2 border-brand-100 pl-6">
-          {(() => {
-            const DELIV = { Async: "▶", Sync: "🎙", Masterclass: "★", Hackathon: "🏆", Capstone: "🎓", Assessment: "✦" };
-            const per = Math.ceil(clusters.length / Math.max(1, spec.stages.length));
-            return spec.stages.map((st, i) => {
-              const types = [...new Set(st.components.map((c) => c.type))];
-              const stageSkills = clusters.slice(i * per, (i + 1) * per).flatMap(([, sks]) => sks.slice(0, 3));
-              return (
-                <div key={st.name} className="relative">
-                  <span className="absolute -left-[31px] top-2 grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-[10px] font-black text-white">{i + 1}</span>
-                  <div className="card p-4">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <p className="font-black text-ink-900">{st.name}</p>
-                      <div className="flex gap-1.5 text-sm" title={types.join(" · ")}>
-                        {types.map((t) => <span key={t} title={t}>{DELIV[t] || "•"}</span>)}
-                      </div>
-                    </div>
-                    {stageSkills.length > 0 && (
-                      <div className="mt-2">
-                        <p className="text-[11px] font-bold uppercase tracking-wider text-teal-600">+ Skills you gain</p>
-                        <div className="mt-1 flex flex-wrap gap-1.5">
-                          {stageSkills.map((s) => <span key={s} className="chip-green">{s}</span>)}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              );
-            });
-          })()}
-          <div className="relative">
-            <span className="absolute -left-[31px] top-2 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎯</span>
-            <div className="card border-peel-200 bg-peel-50 p-4">
-              <p className="font-black text-ink-900">🎯 Outcome — {spec.role}</p>
-              <p className="mt-1 text-sm text-ink-600">Capstone + hackathon portfolio, verified skills, and interview-readiness for <b className="text-teal-600">{spec.salary?.india}</b> roles.</p>
+      {/* the full journey — week by week, with the 5-part delivery model + content availability */}
+      {(() => {
+        const DELIV = {
+          Async:       { icon: "▶", label: "Async", cls: "border-brand-200 bg-brand-50 text-brand-700" },
+          Sync:        { icon: "🎙", label: "Live Sync", cls: "border-peel-200 bg-peel-50 text-peel-700" },
+          Masterclass: { icon: "★", label: "Masterclass", cls: "border-flame-200 bg-flame-50 text-flame-700" },
+          Hackathon:   { icon: "🏆", label: "Hackathon", cls: "border-rose-200 bg-rose-50 text-rose-600" },
+          Capstone:    { icon: "🎓", label: "Capstone", cls: "border-teal-200 bg-teal-50 text-teal-700" },
+          Assessment:  { icon: "✦", label: "Assessment", cls: "border-ink-200 bg-ink-100 text-ink-600" },
+        };
+        const AVAIL = {
+          available: { label: "✓ Available now", cls: "text-teal-600" },
+          create:    { label: "⚙ Board Infinity to build", cls: "text-peel-700" },
+          planned:   { label: "◔ Planned", cls: "text-ink-400" },
+        };
+        const weeks = spec.weeks || 24;
+        const totalC = spec.stages.reduce((s, st) => s + st.components.length, 0) || 1;
+        let acc = 0;
+        const ranges = spec.stages.map((st) => {
+          const w = Math.max(1, Math.round(weeks * st.components.length / totalC));
+          const start = acc + 1; acc += w; return [start, acc];
+        });
+        if (acc !== weeks && ranges.length) ranges[ranges.length - 1][1] = weeks;
+        const allComp = spec.stages.flatMap((s) => s.components);
+        const nAvail = allComp.filter((c) => c.status === "available").length;
+        const nBuild = allComp.filter((c) => c.status === "create").length;
+        const nPlan = allComp.filter((c) => c.status === "planned").length;
+        const per = Math.ceil(clusters.length / Math.max(1, spec.stages.length));
+        const MIX = [["ASYNC", "bg-brand-500"], ["SYNC", "bg-peel-500"], ["MASTERCLASS", "bg-flame-500"], ["HACKATHON", "bg-rose-500"], ["CAPSTONE", "bg-teal-500"]];
+        return (
+          <section className="mt-10">
+            <h2 className="text-xl font-black text-ink-900">The full journey — week by week</h2>
+            <p className="mt-1 text-sm text-ink-500">Every element of this role&apos;s path, mapped to the Board Infinity delivery model. <span className="text-teal-600 font-bold">{nAvail} available now</span>, <span className="text-peel-700 font-bold">{nBuild} to build</span>{nPlan ? <>, <span className="text-ink-400 font-bold">{nPlan} planned</span></> : null} · {weeks} weeks total.</p>
+
+            {/* delivery-mix bar */}
+            <div className="mt-3 flex h-2.5 w-full overflow-hidden rounded-full">
+              {MIX.map(([k, bg]) => <div key={k} className={bg} style={{ width: `${spec.mix[k]}%` }} title={`${k} ${spec.mix[k]}%`} />)}
             </div>
-          </div>
-        </div>
-      </section>
+            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-ink-500">
+              {MIX.map(([k, bg]) => <span key={k}><span className={`mr-1 inline-block h-2 w-2 rounded-full ${bg}`} />{k.charAt(0) + k.slice(1).toLowerCase()} {spec.mix[k]}%</span>)}
+            </div>
+
+            <div className="relative mt-5 space-y-4 border-l-2 border-brand-100 pl-6">
+              {spec.stages.map((st, i) => {
+                const stageSkills = clusters.slice(i * per, (i + 1) * per).flatMap(([, sks]) => sks.slice(0, 3));
+                return (
+                  <div key={st.name} className="relative">
+                    <span className="absolute -left-[31px] top-3 grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-[10px] font-black text-white">{i + 1}</span>
+                    <div className="card p-4">
+                      <div className="flex flex-wrap items-baseline justify-between gap-2">
+                        <p className="font-black text-ink-900">{st.name}</p>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-brand-600">Weeks {ranges[i][0]}–{ranges[i][1]}</span>
+                      </div>
+                      {/* delivery components with availability */}
+                      <div className="mt-3 space-y-1.5">
+                        {st.components.map((c, k) => {
+                          const d = DELIV[c.type] || DELIV.Async; const a = AVAIL[c.status] || AVAIL.available;
+                          return (
+                            <div key={k} className="flex flex-wrap items-center gap-2 rounded-lg border border-ink-100 bg-white px-3 py-2">
+                              <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
+                              <span className="min-w-0 flex-1 text-sm text-ink-800">{c.content}</span>
+                              <span className={`shrink-0 text-[11px] font-bold ${a.cls}`}>{a.label}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      {stageSkills.length > 0 && (
+                        <div className="mt-3">
+                          <p className="text-[11px] font-bold uppercase tracking-wider text-teal-600">+ Skills you gain</p>
+                          <div className="mt-1 flex flex-wrap gap-1.5">
+                            {stageSkills.map((s) => <span key={s} className="chip-green">{s}</span>)}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+              <div className="relative">
+                <span className="absolute -left-[31px] top-3 grid h-5 w-5 place-items-center rounded-full bg-peel-500 text-[10px] text-white">🎯</span>
+                <div className="card border-peel-200 bg-peel-50 p-4">
+                  <p className="font-black text-ink-900">🎯 Outcome — {spec.role}</p>
+                  <p className="mt-1 text-sm text-ink-600">Capstone + hackathon portfolio, verified skills, and interview-readiness for <b className="text-teal-600">{spec.salary?.india}</b> roles.</p>
+                </div>
+              </div>
+            </div>
+            <p className="mt-3 text-[11px] text-ink-400">&quot;Available now&quot; = mapped to existing Board Infinity content; &quot;to build&quot; = live element or content to be produced. Personalise the pace in the <Link href="/diagnostic" className="text-brand-600 hover:underline">diagnostic</Link>.</p>
+          </section>
+        );
+      })()}
 
       {/* delivery model */}
       <section className="mt-10">
