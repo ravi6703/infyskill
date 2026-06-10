@@ -11,6 +11,12 @@ import { sbInsert } from "../../lib/supabase";
 const LEVELS = ["New to this", "Basics", "Comfortable", "Strong"];
 const BACKGROUNDS = [["student", "🎓 Student (final year)"], ["fresher", "🌱 Fresher / recent graduate"], ["working", "💼 Working professional"], ["switcher", "🔄 Career switcher"], ["freelancer", "🚀 Freelancer / founder"]];
 const EXPERIENCE = [["0", "No experience"], ["1-3", "1–3 years"], ["3-7", "3–7 years"], ["7+", "7+ years"]];
+// conditional rules: which experience options are valid for each background
+const EXP_BY_BG = { student: ["0"], fresher: ["0", "1-3"], working: ["1-3", "3-7", "7+"], switcher: ["1-3", "3-7", "7+"], freelancer: ["0", "1-3", "3-7", "7+"] };
+const ALL_EXP = EXPERIENCE.map(([v]) => v);
+// default goals that make sense per background (first = preselected)
+const GOAL_BY_BG = { student: ["first-job", "upskill"], fresher: ["first-job", "switch"], working: ["upskill", "switch"], switcher: ["switch", "first-job"], freelancer: ["freelance", "upskill"] };
+const EXP_HINT = { student: "Final-year students start at no professional experience (internships count as projects in the skill check).", fresher: "Recent graduates: pick 'No experience' or up to ~1–3 years if you've interned.", working: "As a working professional, pick your years of full-time experience.", switcher: "Career switchers carry prior experience — pick your total years.", freelancer: "Count your hands-on professional/freelance years." };
 const EDUCATION = [["eng", "Engineering / CS / Science"], ["biz", "Commerce / Business"], ["other", "Arts / Other"]];
 const TIMELINES = [["3", "3 months", 13], ["6", "6 months", 26], ["12", "12 months", 52]];
 const STYLES = [["project", "🛠 Project-first (build early, learn by doing)"], ["structured", "📚 Structured (concepts first, then build)"]];
@@ -164,15 +170,26 @@ export default function Diagnostic() {
           <div>
             <p className="text-sm font-bold text-ink-700">Where are you today?</p>
             <div className="mt-2 flex flex-wrap gap-2">
-              {BACKGROUNDS.map(([v, l]) => <Btn key={v} on={profile.background === v} onClick={() => setProfile((p) => ({ ...p, background: v }))}>{l}</Btn>)}
+              {BACKGROUNDS.map(([v, l]) => (
+                <Btn key={v} on={profile.background === v} onClick={() => {
+                  setProfile((p) => {
+                    const allow = EXP_BY_BG[v] || ALL_EXP;
+                    const exp = allow.includes(p.exp) ? p.exp : (allow.length === 1 ? allow[0] : null);
+                    return { ...p, background: v, exp };
+                  });
+                  setGoal((GOAL_BY_BG[v] || ["switch"])[0]);
+                }}>{l}</Btn>
+              ))}
             </div>
           </div>
-          <div>
-            <p className="text-sm font-bold text-ink-700">Total work experience</p>
+          <div className={profile.background ? "" : "pointer-events-none opacity-50"}>
+            <p className="text-sm font-bold text-ink-700">Total work experience {!profile.background && <span className="font-normal text-ink-400">— pick where you are first</span>}</p>
             <div className="mt-2 flex flex-wrap gap-2">
-              {EXPERIENCE.map(([v, l]) => <Btn key={v} on={profile.exp === v} onClick={() => setProfile((p) => ({ ...p, exp: v }))}>{l}</Btn>)}
+              {EXPERIENCE.filter(([v]) => (EXP_BY_BG[profile.background] || ALL_EXP).includes(v)).map(([v, l]) =>
+                <Btn key={v} on={profile.exp === v} onClick={() => setProfile((p) => ({ ...p, exp: v }))}>{l}</Btn>)}
             </div>
-            {fastTrack && <p className="mt-2 text-xs text-teal-600">✓ Fast-track enabled — we&apos;ll skip beginner-level modules where your self-assessment allows.</p>}
+            {profile.background && EXP_HINT[profile.background] && <p className="mt-2 text-xs text-ink-400">{EXP_HINT[profile.background]}</p>}
+            {fastTrack && <p className="mt-1 text-xs text-teal-600">✓ Fast-track enabled — we&apos;ll skip beginner-level modules where your skill check allows.</p>}
           </div>
           <div>
             <p className="text-sm font-bold text-ink-700">Education background</p>
@@ -386,7 +403,7 @@ export default function Diagnostic() {
           <div>
             <p className="text-sm font-bold text-ink-700">Your goal</p>
             <div className="mt-2 flex flex-wrap gap-2">
-              {GOALS.map(([v, l]) => <Btn key={v} on={goal === v} onClick={() => setGoal(v)}>{l}</Btn>)}
+              {GOALS.filter(([v]) => !profile.background || (GOAL_BY_BG[profile.background] || GOALS.map(([g]) => g)).includes(v)).map(([v, l]) => <Btn key={v} on={goal === v} onClick={() => setGoal(v)}>{l}</Btn>)}
             </div>
           </div>
           <div className="flex gap-3">
