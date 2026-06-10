@@ -33,6 +33,46 @@ export default function Degree({ params }) {
         </svg>
       </div>
 
+      {/* regulatory alignment */}
+      {d.regulatory && (
+        <section className="mt-8">
+          <h2 className="text-xl font-black text-ink-900">Regulatory alignment</h2>
+          <p className="mt-1 text-sm text-ink-500">Designed to the published norms of {d.regulatory.regulators.join(" + ")}. {d.regulatory.note}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            {d.regulatory.regulators.map((r) => (<span key={r} className="chip border border-brand-200 bg-brand-50 text-brand-700">{r}</span>))}
+            <span className="chip bg-ink-100 text-ink-700">NHEQF Level {d.regulatory.nheqfFinal}</span>
+            <span className="chip bg-ink-100 text-ink-700">{d.credits.target} credits</span>
+            <span className="chip-green">✓ {d.regulatory.award}</span>
+          </div>
+          <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            {d.regulatory.categories.map((c) => (
+              <div key={c.code} className="rounded-xl border border-ink-200 bg-white p-3">
+                <div className="flex items-baseline justify-between">
+                  <p className="text-sm font-bold text-ink-800">{c.name}</p>
+                  <p className="text-lg font-black text-brand-600">{c.credits}</p>
+                </div>
+                <p className="mt-0.5 text-[11px] text-ink-500">
+                  {c.min ? (<>min {c.min} cr {c.credits >= c.min ? <span className="font-bold text-teal-600">· ✓ met</span> : null}</>) : (<>credits</>)}
+                </p>
+              </div>
+            ))}
+          </div>
+          {d.regulatory.exits?.length > 1 && (
+            <div className="mt-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-ink-500">Multiple entry / exit (NEP)</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {d.regulatory.exits.map((e, i) => (
+                  <div key={i} className="rounded-xl border border-ink-200 bg-white px-3 py-2">
+                    <p className="text-[11px] text-ink-400">{e.after} · {e.credits} cr · L{e.nheqf}</p>
+                    <p className="text-sm font-bold text-ink-800">{e.award}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+
       {/* credit & hours model */}
       {d.credits && (
         <section className="mt-8">
@@ -66,8 +106,8 @@ export default function Degree({ params }) {
 
       {/* program journey */}
       <section className="mt-10">
-        <h2 className="text-xl font-black text-ink-900">The program journey — trimester by trimester</h2>
-        <p className="mt-1 text-sm text-ink-500">A focused, one-thing-at-a-time model: each trimester is a short, deep block with its own delivery mix. Click any trimester to expand.</p>
+        <h2 className="text-xl font-black text-ink-900">The program journey — semester by semester</h2>
+        <p className="mt-1 text-sm text-ink-500">A focused, one-thing-at-a-time model: each semester carries its own delivery mix of recorded modules, live sessions, masterclasses and projects. Click any semester to expand.</p>
         <DegreeTerms terms={d.terms} delivery={d.delivery} />
       </section>
 
