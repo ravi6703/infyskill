@@ -2,70 +2,110 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 
-const DELIV = {
+const MODE = {
   Async:       { icon: "▶", label: "Async", cls: "bg-brand-50 text-brand-700 border-brand-200" },
   Sync:        { icon: "🎙", label: "Live Sync", cls: "bg-peel-50 text-peel-700 border-peel-200" },
   Masterclass: { icon: "★", label: "Masterclass", cls: "bg-flame-50 text-flame-700 border-flame-200" },
+  Project:     { icon: "🚀", label: "Project", cls: "bg-teal-50 text-teal-700 border-teal-200" },
   Hackathon:   { icon: "🏆", label: "Hackathon", cls: "bg-rose-50 text-rose-600 border-rose-200" },
   Capstone:    { icon: "🎓", label: "Capstone", cls: "bg-teal-50 text-teal-600 border-teal-500/30" },
+  Mentorship:  { icon: "🤝", label: "Mentorship", cls: "bg-ink-100 text-ink-600 border-ink-200" },
 };
-const PILLARS = [["async", "▶", "Async"], ["sync", "🎙", "Sync"], ["masterclass", "★", "Masterclass"], ["hackathon", "🏆", "Hackathon"], ["capstone", "🎓", "Capstone"]];
-const BG = { async: "bg-brand-500", sync: "bg-peel-500", masterclass: "bg-flame-500", hackathon: "bg-rose-500", capstone: "bg-teal-500" };
 
-// "Year 1 · Trimester 1" -> { year: 1, tri: "Trimester 1" }
 function parse(name) {
   const ym = name.match(/Year\s+(\d+)/i);
   const tm = name.match(/(Trimester\s+\d+|Semester\s+\d+|Term\s+\d+)/i);
   return { year: ym ? +ym[1] : 1, tri: tm ? tm[1] : name };
 }
 
-function CourseRow({ c }) {
-  const d = DELIV[c.delivery] || DELIV.Async;
+// one course = its own blended delivery model (async modules + sync + masterclass + project)
+function CourseCard({ c }) {
   const partial = c.moduleCount && c.selectedCount && c.selectedCount < c.moduleCount;
+  const modes = [
+    ["Async", c.modules?.length],
+    ["Sync", c.sync?.length],
+    ["Masterclass", c.masterclass],
+    ["Project", c.project],
+  ].filter(([, on]) => on);
+
   return (
-    <div className="rounded-xl border border-ink-200 bg-white p-3">
-      <div className="flex flex-wrap items-center gap-3">
-        <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
-        <div className="min-w-0 flex-1">
+    <div className="rounded-xl border border-ink-200 bg-white p-4">
+      {/* course header */}
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div className="min-w-0">
           {c.slug
-            ? <Link href={`/course/${c.slug}`} className="font-bold text-ink-900 hover:text-brand-600">{c.course}</Link>
-            : <span className="font-bold text-ink-900">{c.course}</span>}
+            ? <Link href={`/course/${c.slug}`} className="font-black text-ink-900 hover:text-brand-600">{c.course}</Link>
+            : <span className="font-black text-ink-900">{c.course}</span>}
           <p className="text-xs text-ink-500">{c.outcome}</p>
         </div>
         {c.hours ? <span className="shrink-0 text-[11px] font-bold text-ink-400">{c.hours} hrs</span> : null}
-        {c.skills?.length > 0 && (
-          <div className="hidden flex-wrap gap-1 sm:flex">
-            {c.skills.slice(0, 3).map((s) => <span key={s} className="chip-gray">{s}</span>)}
-          </div>
-        )}
       </div>
 
-      {/* module breakdown — collapsible: which modules of the course this trimester uses */}
-      {c.modules?.length > 0 && (
-        <details className="mt-2.5 border-t border-ink-100 pt-2.5">
-          <summary className="flex cursor-pointer items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-ink-400 hover:text-brand-600">
-            <span>{partial ? <>Selected modules <span className="text-peel-600">({c.selectedCount} of {c.moduleCount})</span></> : <>Modules ({c.moduleCount})</>}</span>
-            <span className="text-brand-500">▾</span>
-          </summary>
-          <ol className="mt-2 space-y-1">
-            {c.modules.map((m, i) => (
-              <li key={i} className="flex items-baseline gap-2 text-xs text-ink-600">
-                <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-brand-50 text-[9px] font-black text-brand-600">{i + 1}</span>
-                <span className="flex-1">{m.title}</span>
-                {m.hours ? <span className="shrink-0 text-[10px] text-ink-400">{m.hours} h</span> : null}
-              </li>
-            ))}
-          </ol>
-        </details>
-      )}
+      {/* this course's delivery blend — the methodology badges */}
+      <div className="mt-2 flex flex-wrap gap-1.5">
+        {modes.map(([m]) => {
+          const d = MODE[m];
+          return <span key={m} className={`chip border ${d.cls}`}>{d.icon} {d.label}</span>;
+        })}
+      </div>
+
+      {/* delivery breakdown — collapsible */}
+      <details className="mt-2.5 border-t border-ink-100 pt-2.5">
+        <summary className="flex cursor-pointer items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-brand-600 hover:text-brand-700">
+          How this course is delivered <span>▾</span>
+        </summary>
+
+        {/* async modules */}
+        {c.modules?.length > 0 && (
+          <div className="mt-2">
+            <p className="text-[10px] font-bold uppercase tracking-wider text-brand-600">▶ Async — self-paced {partial ? <span className="text-peel-600">({c.selectedCount} of {c.moduleCount} modules)</span> : <>({c.moduleCount} modules)</>}</p>
+            <ol className="mt-1 space-y-1">
+              {c.modules.map((m, i) => (
+                <li key={i} className="flex items-baseline gap-2 text-xs text-ink-600">
+                  <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-brand-50 text-[9px] font-black text-brand-600">{i + 1}</span>
+                  <span className="flex-1">{m.title}</span>
+                  {m.hours ? <span className="shrink-0 text-[10px] text-ink-400">{m.hours} h</span> : null}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        {/* live sync sessions */}
+        {c.sync?.length > 0 && (
+          <div className="mt-3">
+            <p className="text-[10px] font-bold uppercase tracking-wider text-peel-700">🎙 Live Sync — instructor-led</p>
+            <ul className="mt-1 space-y-1">
+              {c.sync.map((s, i) => (
+                <li key={i} className="text-xs text-ink-600">• {s.title}{s.note ? <span className="text-ink-400"> — {s.note}</span> : null}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* masterclass */}
+        {c.masterclass && (
+          <div className="mt-3">
+            <p className="text-[10px] font-bold uppercase tracking-wider text-flame-700">★ Masterclass</p>
+            <p className="mt-1 text-xs text-ink-600">{c.masterclass.title}{c.masterclass.note ? <span className="text-ink-400"> — {c.masterclass.note}</span> : null}</p>
+          </div>
+        )}
+
+        {/* project */}
+        {c.project && (
+          <div className="mt-3">
+            <p className="text-[10px] font-bold uppercase tracking-wider text-teal-700">🚀 Project</p>
+            <p className="mt-1 text-xs text-ink-600">{c.project.title}{c.project.note ? <span className="text-ink-400"> — {c.project.note}</span> : null}</p>
+          </div>
+        )}
+      </details>
     </div>
   );
 }
 
-function TriCard({ t, idx, delivery, open, onToggle }) {
+function TriCard({ t, idx, open, onToggle }) {
   const courses = t.courses || [];
-  const recorded = courses.filter((c) => c.delivery === "Async");
-  const live = courses.filter((c) => c.delivery !== "Async");
+  const milestones = t.milestones || [];
   const { tri } = parse(t.name);
   return (
     <div className="relative">
@@ -75,7 +115,7 @@ function TriCard({ t, idx, delivery, open, onToggle }) {
           <div>
             <p className="font-black text-ink-900">{tri}</p>
             <p className="text-xs text-ink-500">
-              {recorded.length} self-paced course{recorded.length !== 1 ? "s" : ""}{live.length ? <> · {live.length} live element{live.length !== 1 ? "s" : ""}</> : null}
+              {courses.length} course{courses.length !== 1 ? "s" : ""}
               {t.credits ? <> · {t.credits} credits · {t.hours} hrs</> : null}
               {t.milestone && t.milestone !== "Focused term" && t.milestone !== t.themes?.[0] ? <> · milestone: <b className="text-teal-600">{t.milestone}</b></> : null}
             </p>
@@ -85,28 +125,30 @@ function TriCard({ t, idx, delivery, open, onToggle }) {
 
         {open && (
           <div className="animate-fadeUp border-t border-ink-100 p-4">
-            {recorded.length > 0 && (
-              <>
-                <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-brand-600">▶ Self-paced courses (recorded)</p>
-                <div className="space-y-2">{recorded.map((c, k) => <CourseRow key={k} c={c} />)}</div>
-              </>
-            )}
-            {live.length > 0 && (
-              <>
-                <p className="mb-2 mt-4 text-[11px] font-bold uppercase tracking-wider text-peel-700">+ Live &amp; applied layer (on top of the content)</p>
-                <div className="space-y-2">{live.map((c, k) => <CourseRow key={k} c={c} />)}</div>
-              </>
-            )}
+            <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-ink-500">Courses this trimester — each with its own delivery model</p>
+            <div className="space-y-2">
+              {courses.map((c, k) => <CourseCard key={k} c={c} />)}
+            </div>
 
-            <p className="mt-4 text-[11px] font-bold uppercase tracking-wider text-ink-500">How this trimester is delivered</p>
-            <div className="mt-2 flex h-2.5 w-full overflow-hidden rounded-full">
-              {PILLARS.map(([k]) => <div key={k} className={BG[k]} style={{ width: `${delivery[k]}%` }} />)}
-            </div>
-            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-ink-500">
-              {PILLARS.map(([k, icon, label]) => (
-                <span key={k}><span className={`mr-1 inline-block h-2 w-2 rounded-full ${BG[k]}`} />{icon} {label} {delivery[k]}%</span>
-              ))}
-            </div>
+            {milestones.length > 0 && (
+              <>
+                <p className="mb-2 mt-4 text-[11px] font-bold uppercase tracking-wider text-peel-700">Trimester milestones (across all courses)</p>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {milestones.map((m, k) => {
+                    const d = MODE[m.type] || MODE.Capstone;
+                    return (
+                      <div key={k} className="flex items-start gap-2 rounded-xl border border-ink-200 bg-ink-50 p-3">
+                        <span className={`chip border ${d.cls} shrink-0`}>{d.icon} {d.label}</span>
+                        <div className="min-w-0">
+                          <p className="text-sm font-bold text-ink-800">{m.title}</p>
+                          {m.outcome ? <p className="text-[11px] text-ink-500">{m.outcome}</p> : null}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </div>
         )}
       </div>
@@ -114,8 +156,7 @@ function TriCard({ t, idx, delivery, open, onToggle }) {
   );
 }
 
-export default function DegreeTerms({ terms, delivery }) {
-  // group terms into years, preserving order
+export default function DegreeTerms({ terms }) {
   const years = useMemo(() => {
     const map = new Map();
     terms.forEach((t, gi) => {
@@ -140,7 +181,7 @@ export default function DegreeTerms({ terms, delivery }) {
   function pickYear(y) {
     setActiveYear(y);
     const yr = years.find((x) => x.year === y);
-    setOpen(yr?.list[0]?._gi ?? -1); // auto-open that year's first trimester
+    setOpen(yr?.list[0]?._gi ?? -1);
   }
 
   return (
@@ -168,7 +209,7 @@ export default function DegreeTerms({ terms, delivery }) {
           Year {cur.year} · {cur.credits} credits · {cur.hours} learning hours
         </div>
         {cur.list.map((t, i) => (
-          <TriCard key={t._gi} t={t} idx={i + 1} delivery={delivery}
+          <TriCard key={t._gi} t={t} idx={i + 1}
             open={open === t._gi} onToggle={() => setOpen(open === t._gi ? -1 : t._gi)} />
         ))}
 

@@ -66,7 +66,22 @@
         "level": 0,
         "skills": []
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Python Programming",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Object-Oriented Programming — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Python Programming & Object-Oriented Programming",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Quantitative Aptitude Mastery— Exam & Recruitment Prep",
@@ -103,40 +118,33 @@
          "Divisibility"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Python Programming",
-       "Problem Solving & Logic"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Python Programming, Problem Solving & Logic — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Problem Solving & Logic",
-      "slug": null,
-      "skills": [
-       "Problem Solving & Logic"
+      "sync": [
+       {
+        "title": "Live session: Quantitative Aptitude",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Vedic Mathematics — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Problem Solving & Logic — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Quantitative Aptitude & Vedic Mathematics",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 43,
-    "credits": 1.4
+    "credits": 1.4,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 1 · Trimester 2",
@@ -191,7 +199,22 @@
          "JPA"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Java",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Data Structures — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Java & Data Structures",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Version Control with Git and GitHub",
@@ -218,40 +241,30 @@
          "Checklists"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Data Structures & Algorithms",
-       "Version Control & Collaboration"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Data Structures & Algorithms, Version Control & Collaboration — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Version Control & Collaboration",
-      "slug": null,
-      "skills": [
-       "Version Control & Collaboration"
+      "sync": [
+       {
+        "title": "Live session: Git",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: GitHub — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Version Control & Collaboration — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": null
      }
     ],
     "hours": 28,
-    "credits": 0.9
+    "credits": 0.9,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 1 · Trimester 3",
@@ -294,7 +307,22 @@
         "level": 1,
         "skills": []
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: REST API Development",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: GraphQL — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply REST API Development & GraphQL",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Managing Databases - End to End Web Development",
@@ -341,52 +369,38 @@
          "Express.js"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Web & APIs",
-       "Databases"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Web & APIs, Databases — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Databases",
-      "slug": null,
-      "skills": [
-       "Databases"
+      "sync": [
+       {
+        "title": "Live session: SQL",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: MongoDB — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Databases — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Hackathon: build a Web & APIs project",
-      "slug": null,
-      "skills": [
-       "REST API Development",
-       "GraphQL",
-       "API Design"
-      ],
-      "delivery": "Hackathon",
-      "outcome": "48-hour team sprint applying REST API Development, GraphQL, API Design — shipped & judged by industry mentors",
-      "hours": 40
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply SQL & MongoDB",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 64,
-    "credits": 2.1
+    "credits": 2.1,
+    "milestones": [
+     {
+      "type": "Hackathon",
+      "title": "Hackathon: build a Web & APIs project",
+      "outcome": "48-hour team sprint applying REST API Development, GraphQL, API Design — shipped & judged by industry mentors"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 1",
@@ -451,7 +465,22 @@
          "Model Deployment"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: scikit-learn",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: FastAPI — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply scikit-learn & FastAPI",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Machine Learning Fundamentals for Java Developers",
@@ -508,40 +537,33 @@
          "ML Pipelines"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Machine Learning",
-       "Feature Engineering & MLOps Intro"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Machine Learning, Feature Engineering & MLOps Intro — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Feature Engineering & MLOps Intro",
-      "slug": null,
-      "skills": [
-       "Feature Engineering & MLOps Intro"
+      "sync": [
+       {
+        "title": "Live session: Machine Learning",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Java — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Feature Engineering & MLOps Intro — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Machine Learning & Java",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 34,
-    "credits": 1.1
+    "credits": 1.1,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 2",
@@ -578,7 +600,25 @@
         "level": 2,
         "skills": []
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Deep Learning",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: PyTorch — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": {
+       "title": "Masterclass: Deep Learning",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Deep Learning & PyTorch",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Deep Learning: Advanced Backbones and Efficient GPU Training",
@@ -625,40 +665,36 @@
          "Distributed Training"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Deep Learning",
-       "GPU & Model Training"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Deep Learning, GPU & Model Training — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: GPU & Model Training",
-      "slug": null,
-      "skills": [
-       "GPU & Model Training"
+      "sync": [
+       {
+        "title": "Live session: PyTorch Lightning",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Vision Transformers — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on GPU & Model Training — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": {
+       "title": "Masterclass: PyTorch Lightning",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply PyTorch Lightning & Vision Transformers",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 24,
-    "credits": 0.8
+    "credits": 0.8,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 3",
@@ -713,7 +749,25 @@
          "Model Versioning"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Transformers",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Natural Language Processing — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": {
+       "title": "Masterclass: Transformers",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Transformers & Natural Language Processing",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
@@ -750,52 +804,38 @@
          "Data Governance"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "NLP & Transformers",
-       "Data Pipelines"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: NLP & Transformers, Data Pipelines — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Data Pipelines",
-      "slug": null,
-      "skills": [
-       "Data Pipelines"
+      "sync": [
+       {
+        "title": "Live session: Google Cloud Dataplex",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Data Lake Management — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Data Pipelines — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Hackathon: build a NLP & Transformers project",
-      "slug": null,
-      "skills": [
-       "Transformers",
-       "Natural Language Processing",
-       "Hugging Face"
-      ],
-      "delivery": "Hackathon",
-      "outcome": "48-hour team sprint applying Transformers, Natural Language Processing, Hugging Face — shipped & judged by industry mentors",
-      "hours": 40
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Google Cloud Dataplex & Data Lake Management",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 58,
-    "credits": 1.9
+    "credits": 1.9,
+    "milestones": [
+     {
+      "type": "Hackathon",
+      "title": "Hackathon: build a NLP & Transformers project",
+      "outcome": "48-hour team sprint applying Transformers, Natural Language Processing, Hugging Face — shipped & judged by industry mentors"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 3 · Trimester 1",
@@ -840,7 +880,25 @@
          "QLoRA"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Fine-Tuning",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: LoRA — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": {
+       "title": "Masterclass: Fine-Tuning",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Fine-Tuning & LoRA",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Generative AI Prompt Engineering Basics",
@@ -877,40 +935,33 @@
          "AI Ethics"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Generative AI & LLMs",
-       "Prompt Engineering"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Generative AI & LLMs, Prompt Engineering — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Prompt Engineering",
-      "slug": null,
-      "skills": [
-       "Prompt Engineering"
+      "sync": [
+       {
+        "title": "Live session: Prompt Engineering",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Generative AI — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Prompt Engineering — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Prompt Engineering & Generative AI",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 18,
-    "credits": 0.6
+    "credits": 0.6,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 3 · Trimester 2",
@@ -975,7 +1026,25 @@
          "RAG Pipelines"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: RAG Pipelines",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: LangGraph — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": {
+       "title": "Masterclass: RAG Pipelines",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply RAG Pipelines & LangGraph",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
@@ -1022,40 +1091,36 @@
          "System Evaluation"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Agentic AI & RAG",
-       "Multi-Agent Systems"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Agentic AI & RAG, Multi-Agent Systems — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Multi-Agent Systems",
-      "slug": null,
-      "skills": [
-       "Multi-Agent Systems"
+      "sync": [
+       {
+        "title": "Live session: Multi-Agent Systems",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: CrewAI — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Multi-Agent Systems — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": {
+       "title": "Masterclass: Multi-Agent Systems",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Multi-Agent Systems & CrewAI",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 32,
-    "credits": 1.1
+    "credits": 1.1,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 3 · Trimester 3",
@@ -1120,7 +1185,22 @@
          "Model Monitoring"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: MLOps",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: CI/CD — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply MLOps & CI/CD",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "AI Risk and Compliance: Audit and Governance Foundations",
@@ -1157,52 +1237,41 @@
          "NIST AI RMF"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "MLOps & Production",
-       "AI Governance & Safety"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: MLOps & Production, AI Governance & Safety — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: AI Governance & Safety",
-      "slug": null,
-      "skills": [
-       "AI Governance & Safety"
+      "sync": [
+       {
+        "title": "Live session: AI Governance",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Red Teaming — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on AI Governance & Safety — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Capstone: Production AI Engineer",
-      "slug": null,
-      "skills": [
-       "MLOps",
-       "CI/CD",
-       "Model Versioning"
-      ],
-      "delivery": "Capstone",
-      "outcome": "Design, build & defend a production-grade project using MLOps, CI/CD, Model Versioning — your portfolio centrepiece",
-      "hours": null
+      "masterclass": {
+       "title": "Masterclass: AI Governance",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply AI Governance & Red Teaming",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 26,
-    "credits": 0.9
+    "credits": 0.9,
+    "milestones": [
+     {
+      "type": "Capstone",
+      "title": "Capstone: Production AI Engineer",
+      "outcome": "Design, build & defend a production-grade project using MLOps, CI/CD, Model Versioning — your portfolio centrepiece"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    }
   ],
   "vsUniversity": {
@@ -1287,7 +1356,19 @@
          "Large Language Models"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Generative AI",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Large Language Models — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
      },
      {
       "course": "Generative AI Prompt Engineering Basics",
@@ -1324,7 +1405,22 @@
          "AI Ethics"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Prompt Engineering",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Generative AI — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Prompt Engineering & Generative AI",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Building Applications with DeepSeek",
@@ -1371,41 +1467,33 @@
          "AI Agents"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Generative AI & LLMs",
-       "Prompt Engineering",
-       "LLM APIs"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Generative AI & LLMs, Prompt Engineering, LLM APIs — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: LLM APIs",
-      "slug": null,
-      "skills": [
-       "LLM APIs"
+      "sync": [
+       {
+        "title": "Live session: DeepSeek",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: AI-Assisted Development — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on LLM APIs — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply DeepSeek & AI-Assisted Development",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 27,
-    "credits": 0.9
+    "credits": 0.9,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Trimester 2 · Agents & RAG",
@@ -1461,7 +1549,25 @@
          "LLM Architecture"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: RAG Pipelines",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: LLM Architecture — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": {
+       "title": "Masterclass: RAG Pipelines",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply RAG Pipelines & LLM Architecture",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "RAG Systems & Agentic Workflows with Pinecone and LangGraph",
@@ -1518,7 +1624,25 @@
          "RAG Pipelines"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: RAG Pipelines",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: LangGraph — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": {
+       "title": "Masterclass: RAG Pipelines",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply RAG Pipelines & LangGraph",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Designing Multi-Agent Systems: Collaboration and Workflows",
@@ -1565,53 +1689,41 @@
          "System Evaluation"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "RAG Pipelines",
-       "Agentic Workflows",
-       "Multi-Agent Systems"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: RAG Pipelines, Agentic Workflows, Multi-Agent Systems — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Multi-Agent Systems",
-      "slug": null,
-      "skills": [
-       "Multi-Agent Systems"
+      "sync": [
+       {
+        "title": "Live session: Multi-Agent Systems",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: CrewAI — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Multi-Agent Systems — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Hackathon: build a RAG Pipelines project",
-      "slug": null,
-      "skills": [
-       "RAG Pipelines",
-       "LLM Architecture",
-       "Prompt Engineering"
-      ],
-      "delivery": "Hackathon",
-      "outcome": "48-hour team sprint applying RAG Pipelines, LLM Architecture, Prompt Engineering — shipped & judged by industry mentors",
-      "hours": 40
+      "masterclass": {
+       "title": "Masterclass: Multi-Agent Systems",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Multi-Agent Systems & CrewAI",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 85,
-    "credits": 2.8
+    "credits": 2.8,
+    "milestones": [
+     {
+      "type": "Hackathon",
+      "title": "Hackathon: build a RAG Pipelines project",
+      "outcome": "48-hour team sprint applying RAG Pipelines, LLM Architecture, Prompt Engineering — shipped & judged by industry mentors"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Trimester 3 · Production & Capstone",
@@ -1657,7 +1769,25 @@
          "QLoRA"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Fine-Tuning",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: LoRA — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": {
+       "title": "Masterclass: Fine-Tuning",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Fine-Tuning & LoRA",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "MLOps and LLMOps: Deploying and Scaling AI in Production",
@@ -1714,7 +1844,22 @@
          "Model Monitoring"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: MLOps",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: CI/CD — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply MLOps & CI/CD",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "AI Risk and Compliance: Audit and Governance Foundations",
@@ -1751,53 +1896,41 @@
          "NIST AI RMF"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Fine-Tuning (LoRA/QLoRA)",
-       "MLOps & Serving",
-       "Evaluation & Guardrails"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Fine-Tuning (LoRA/QLoRA), MLOps & Serving, Evaluation & Guardrails — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Evaluation & Guardrails",
-      "slug": null,
-      "skills": [
-       "Evaluation & Guardrails"
+      "sync": [
+       {
+        "title": "Live session: AI Governance",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Red Teaming — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Evaluation & Guardrails — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Capstone: Production GenAI Engineer",
-      "slug": null,
-      "skills": [
-       "Fine-Tuning",
-       "LoRA",
-       "QLoRA"
-      ],
-      "delivery": "Capstone",
-      "outcome": "Design, build & defend a production-grade project using Fine-Tuning, LoRA, QLoRA — your portfolio centrepiece",
-      "hours": null
+      "masterclass": {
+       "title": "Masterclass: AI Governance",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply AI Governance & Red Teaming",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 36,
-    "credits": 1.2
+    "credits": 1.2,
+    "milestones": [
+     {
+      "type": "Capstone",
+      "title": "Capstone: Production GenAI Engineer",
+      "outcome": "Design, build & defend a production-grade project using Fine-Tuning, LoRA, QLoRA — your portfolio centrepiece"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    }
   ],
   "vsUniversity": {
@@ -1895,7 +2028,22 @@
         "level": 0,
         "skills": []
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Python Programming",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Object-Oriented Programming — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Python Programming & Object-Oriented Programming",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Data Interpretation & Insights: Exam & Recruitment Prep",
@@ -1932,40 +2080,33 @@
          "Data Visualization"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Python for Data",
-       "Statistics & Aptitude"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Python for Data, Statistics & Aptitude — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Statistics & Aptitude",
-      "slug": null,
-      "skills": [
-       "Statistics & Aptitude"
+      "sync": [
+       {
+        "title": "Live session: Data Interpretation",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Tabular Analysis — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Statistics & Aptitude — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Data Interpretation & Tabular Analysis",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 43,
-    "credits": 1.4
+    "credits": 1.4,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 1 · Trimester 2",
@@ -2020,7 +2161,22 @@
          "Express.js"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: SQL",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: MongoDB — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply SQL & MongoDB",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Mastering SQL and Data Management with Teradata",
@@ -2067,40 +2223,36 @@
          "Access Rights Management"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Databases & SQL",
-       "SQL at Scale"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Databases & SQL, SQL at Scale — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: SQL at Scale",
-      "slug": null,
-      "skills": [
-       "SQL at Scale"
+      "sync": [
+       {
+        "title": "Live session: Teradata SQL",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Data Definition Language — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on SQL at Scale — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": {
+       "title": "Masterclass: Teradata SQL",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Teradata SQL & Data Definition Language",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 25,
-    "credits": 0.8
+    "credits": 0.8,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 1 · Trimester 3",
@@ -2185,7 +2337,22 @@
          "Data Visualization"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Microsoft Excel",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Data Analysis — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Microsoft Excel & Data Analysis",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Data Visualization with Tableau",
@@ -2242,52 +2409,38 @@
          "Advanced Calculations"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Excel & Visualization",
-       "Tableau"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Excel & Visualization, Tableau — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Tableau",
-      "slug": null,
-      "skills": [
-       "Tableau"
+      "sync": [
+       {
+        "title": "Live session: Tableau",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Data Visualization — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Tableau — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Hackathon: build a Excel & Visualization project",
-      "slug": null,
-      "skills": [
-       "Microsoft Excel",
-       "Data Analysis",
-       "Data Visualization"
-      ],
-      "delivery": "Hackathon",
-      "outcome": "48-hour team sprint applying Microsoft Excel, Data Analysis, Data Visualization — shipped & judged by industry mentors",
-      "hours": 40
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Tableau & Data Visualization",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 100,
-    "credits": 3.3
+    "credits": 3.3,
+    "milestones": [
+     {
+      "type": "Hackathon",
+      "title": "Hackathon: build a Excel & Visualization project",
+      "outcome": "48-hour team sprint applying Microsoft Excel, Data Analysis, Data Visualization — shipped & judged by industry mentors"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 1",
@@ -2324,7 +2477,22 @@
         "level": 1,
         "skills": []
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Power BI",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: DAX — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Power BI & DAX",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Learn Data Governance Workflows with Databricks Tools",
@@ -2361,40 +2529,33 @@
          "Data Lineage"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Power BI & BI",
-       "Data Governance"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Power BI & BI, Data Governance — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Data Governance",
-      "slug": null,
-      "skills": [
-       "Data Governance"
+      "sync": [
+       {
+        "title": "Live session: Data Governance",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Databricks — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Data Governance — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Data Governance & Databricks",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 11,
-    "credits": 0.4
+    "credits": 0.4,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 2",
@@ -2449,7 +2610,22 @@
          "Semi-Structured Data"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Snowflake",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: SQL — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Snowflake & SQL",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Managing Data Lakes & Pipelines with Google Cloud Dataplex",
@@ -2486,40 +2662,33 @@
          "Data Governance"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Cloud Data Warehousing",
-       "Data Lakes & Pipelines"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Cloud Data Warehousing, Data Lakes & Pipelines — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Data Lakes & Pipelines",
-      "slug": null,
-      "skills": [
-       "Data Lakes & Pipelines"
+      "sync": [
+       {
+        "title": "Live session: Google Cloud Dataplex",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Data Lake Management — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Data Lakes & Pipelines — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Google Cloud Dataplex & Data Lake Management",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 19,
-    "credits": 0.6
+    "credits": 0.6,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 3",
@@ -2584,7 +2753,22 @@
          "Model Deployment"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: scikit-learn",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: FastAPI — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply scikit-learn & FastAPI",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Machine Learning Fundamentals for Java Developers",
@@ -2641,52 +2825,38 @@
          "ML Pipelines"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Machine Learning",
-       "Feature Engineering"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Machine Learning, Feature Engineering — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Feature Engineering",
-      "slug": null,
-      "skills": [
-       "Feature Engineering"
+      "sync": [
+       {
+        "title": "Live session: Machine Learning",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Java — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Feature Engineering — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Hackathon: build a Machine Learning project",
-      "slug": null,
-      "skills": [
-       "scikit-learn",
-       "FastAPI",
-       "Machine Learning Pipelines"
-      ],
-      "delivery": "Hackathon",
-      "outcome": "48-hour team sprint applying scikit-learn, FastAPI, Machine Learning Pipelines — shipped & judged by industry mentors",
-      "hours": 40
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Machine Learning & Java",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 74,
-    "credits": 2.5
+    "credits": 2.5,
+    "milestones": [
+     {
+      "type": "Hackathon",
+      "title": "Hackathon: build a Machine Learning project",
+      "outcome": "48-hour team sprint applying scikit-learn, FastAPI, Machine Learning Pipelines — shipped & judged by industry mentors"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 3 · Trimester 1",
@@ -2741,40 +2911,36 @@
          "Sentiment Analysis"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Forecasting & Time Series",
-       "Anomaly Detection"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Forecasting & Time Series, Anomaly Detection — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Anomaly Detection",
-      "slug": null,
-      "skills": [
-       "Anomaly Detection"
+      "sync": [
+       {
+        "title": "Live session: Machine Learning",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Financial Forecasting — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Anomaly Detection — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": {
+       "title": "Masterclass: Machine Learning",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Machine Learning & Financial Forecasting",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 15,
-    "credits": 0.5
+    "credits": 0.5,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 3 · Trimester 2",
@@ -2819,7 +2985,22 @@
          "RAG Pipelines"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Generative AI",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Large Language Models — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Generative AI & Large Language Models",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "No-Code AI Essentials: Master AI Concepts & Use Cases",
@@ -2856,40 +3037,33 @@
          "Microsoft Copilot"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Generative AI for Data",
-       "AI Dashboards & Automation"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Generative AI for Data, AI Dashboards & Automation — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: AI Dashboards & Automation",
-      "slug": null,
-      "skills": [
-       "AI Dashboards & Automation"
+      "sync": [
+       {
+        "title": "Live session: AI Literacy",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Generative AI — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on AI Dashboards & Automation — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply AI Literacy & Generative AI",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 16,
-    "credits": 0.5
+    "credits": 0.5,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 3 · Trimester 3",
@@ -2898,47 +3072,21 @@
      "Data Ethics & Governance"
     ],
     "milestone": "AI Data Engineer",
-    "courses": [
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Big Data & Deployment",
-       "Data Ethics & Governance"
-      ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Big Data & Deployment, Data Ethics & Governance — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Data Ethics & Governance",
-      "slug": null,
-      "skills": [
-       "Data Ethics & Governance"
-      ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Data Ethics & Governance — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Capstone: AI Data Engineer",
-      "slug": null,
-      "skills": [],
-      "delivery": "Capstone",
-      "outcome": "Design, build & defend a production-grade project using Big Data & Deployment, Data Ethics & Governance — your portfolio centrepiece",
-      "hours": null
-     }
-    ],
+    "courses": [],
     "hours": 0,
-    "credits": 0.0
+    "credits": 0.0,
+    "milestones": [
+     {
+      "type": "Capstone",
+      "title": "Capstone: AI Data Engineer",
+      "outcome": "Design, build & defend a production-grade project using Big Data & Deployment, Data Ethics & Governance — your portfolio centrepiece"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    }
   ],
   "vsUniversity": {
@@ -3024,7 +3172,22 @@
         "level": 0,
         "skills": []
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Financial Analysis",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Marketing Strategy — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Financial Analysis & Marketing Strategy",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Master Financial Analysis & Modeling Fundamentals",
@@ -3071,40 +3234,33 @@
          "Valuation"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Business & Management",
-       "Financial Analysis"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Business & Management, Financial Analysis — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Financial Analysis",
-      "slug": null,
-      "skills": [
-       "Financial Analysis"
+      "sync": [
+       {
+        "title": "Live session: Financial Statement Analysis",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Financial Modeling — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Financial Analysis — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Financial Statement Analysis & Financial Modeling",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 27,
-    "credits": 0.9
+    "credits": 0.9,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 1 · Trimester 2",
@@ -3169,7 +3325,22 @@
          "Social Listening"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Brand Awareness",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Brand Identity — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Brand Awareness & Brand Identity",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Excel Essentials and Beyond",
@@ -3246,40 +3417,33 @@
          "Data Visualization"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "Marketing Foundations",
-       "Business Analytics"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: Marketing Foundations, Business Analytics — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Business Analytics",
-      "slug": null,
-      "skills": [
-       "Business Analytics"
+      "sync": [
+       {
+        "title": "Live session: Microsoft Excel",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Data Analysis — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Business Analytics — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Microsoft Excel & Data Analysis",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 52,
-    "credits": 1.7
+    "credits": 1.7,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 1 · Trimester 3",
@@ -3324,7 +3488,22 @@
          "Microsoft Copilot"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: AI Literacy",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Generative AI — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply AI Literacy & Generative AI",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Generative AI in Marketing",
@@ -3361,52 +3540,38 @@
          "Ad Optimization"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "AI for Business",
-       "Generative AI for Business"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: AI for Business, Generative AI for Business — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Generative AI for Business",
-      "slug": null,
-      "skills": [
-       "Generative AI for Business"
+      "sync": [
+       {
+        "title": "Live session: Generative AI",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Content Marketing — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Generative AI for Business — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Hackathon: build a AI for Business project",
-      "slug": null,
-      "skills": [
-       "AI Literacy",
-       "Generative AI",
-       "No-Code AI Tools"
-      ],
-      "delivery": "Hackathon",
-      "outcome": "48-hour team sprint applying AI Literacy, Generative AI, No-Code AI Tools — shipped & judged by industry mentors",
-      "hours": 40
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Generative AI & Content Marketing",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 56,
-    "credits": 1.9
+    "credits": 1.9,
+    "milestones": [
+     {
+      "type": "Hackathon",
+      "title": "Hackathon: build a AI for Business project",
+      "outcome": "48-hour team sprint applying AI Literacy, Generative AI, No-Code AI Tools — shipped & judged by industry mentors"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 1",
@@ -3471,7 +3636,22 @@
          "Data Storytelling"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Brand Strategy",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Marketing Analytics — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Brand Strategy & Marketing Analytics",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Advanced Google Analytics 4: Optimization and Attribution",
@@ -3528,40 +3708,36 @@
          "Data Visualization"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "AI in Marketing",
-       "Growth & Attribution"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: AI in Marketing, Growth & Attribution — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Growth & Attribution",
-      "slug": null,
-      "skills": [
-       "Growth & Attribution"
+      "sync": [
+       {
+        "title": "Live session: Google Analytics 4",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Marketing Attribution — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Growth & Attribution — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": {
+       "title": "Masterclass: Google Analytics 4",
+       "note": "practitioner deep-dive"
+      },
+      "project": {
+       "title": "Project: apply Google Analytics 4 & Marketing Attribution",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 31,
-    "credits": 1.0
+    "credits": 1.0,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 2",
@@ -3606,7 +3782,22 @@
          "Financial Compliance"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Generative AI",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Financial Analysis — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Generative AI & Financial Analysis",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Strategic Product Management",
@@ -3641,40 +3832,33 @@
         "level": 1,
         "skills": []
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "AI in Finance",
-       "AI Product Management"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: AI in Finance, AI Product Management — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: AI Product Management",
-      "slug": null,
-      "skills": [
-       "AI Product Management"
+      "sync": [
+       {
+        "title": "Live session: Agile Methodology",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Product Strategy — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on AI Product Management — real architectures, trade-offs and industry war stories",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Agile Methodology & Product Strategy",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 20,
-    "credits": 0.7
+    "credits": 0.7,
+    "milestones": [
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    },
    {
     "name": "Year 2 · Trimester 3",
@@ -3719,7 +3903,22 @@
          "Performance Management"
         ]
        }
-      ]
+      ],
+      "sync": [
+       {
+        "title": "Live session: Hybrid Team Management",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: AI Integration — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Hybrid Team Management & AI Integration",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Fundamentals of Management Consulting",
@@ -3766,52 +3965,38 @@
          "SWOT Analysis"
         ]
        }
-      ]
-     },
-     {
-      "course": "Live classes (instructor-led)",
-      "slug": null,
-      "skills": [
-       "AI Transformation & Leadership",
-       "Strategy & Consulting"
       ],
-      "delivery": "Sync",
-      "outcome": "Topics taught live: AI Transformation & Leadership, Strategy & Consulting — worked examples, problem-solving & code review",
-      "hours": null
-     },
-     {
-      "course": "Mentorship & doubt-solving",
-      "slug": null,
-      "skills": [],
-      "delivery": "Sync",
-      "outcome": "Weekly 1:1 coaching and doubt-clearing",
-      "hours": null
-     },
-     {
-      "course": "Masterclass: Strategy & Consulting",
-      "slug": null,
-      "skills": [
-       "Strategy & Consulting"
+      "sync": [
+       {
+        "title": "Live session: Management Consulting",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Strategic Frameworks — problem-solving & code review",
+        "note": ""
+       }
       ],
-      "delivery": "Masterclass",
-      "outcome": "Live practitioner deep-dive on Strategy & Consulting — real architectures, trade-offs and industry war stories",
-      "hours": null
-     },
-     {
-      "course": "Capstone: AI Business Leader",
-      "slug": null,
-      "skills": [
-       "Hybrid Team Management",
-       "AI Integration",
-       "Digital Transformation"
-      ],
-      "delivery": "Capstone",
-      "outcome": "Design, build & defend a production-grade project using Hybrid Team Management, AI Integration, Digital Transformation — your portfolio centrepiece",
-      "hours": null
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Management Consulting & Strategic Frameworks",
+       "note": "graded, portfolio-ready"
+      }
      }
     ],
     "hours": 18,
-    "credits": 0.6
+    "credits": 0.6,
+    "milestones": [
+     {
+      "type": "Capstone",
+      "title": "Capstone: AI Business Leader",
+      "outcome": "Design, build & defend a production-grade project using Hybrid Team Management, AI Integration, Digital Transformation — your portfolio centrepiece"
+     },
+     {
+      "type": "Mentorship",
+      "title": "Weekly mentorship & doubt-solving",
+      "outcome": "1:1 coaching across all courses in this trimester"
+     }
+    ]
    }
   ],
   "vsUniversity": {
