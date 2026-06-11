@@ -519,8 +519,32 @@ export default function Diagnostic() {
             </div>
           </div>
 
+          {/* per-skill scores from the (AI) skill-check */}
+          {Array.isArray(aiQs) && aiQs.length > 0 && Object.keys(ratings).length > 0 && (
+            <div className="card mt-4 p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h3 className="text-lg font-black text-ink-900">Your skill-check scores</h3>
+                {round1Scores && <span className="chip-peel text-[10px]">✓ included a deeper round-2 check</span>}
+              </div>
+              <p className="mt-1 text-xs text-ink-500">How you scored in each area — this drives what your plan emphasises and what it lets you skip.</p>
+              <div className="mt-3 space-y-2">
+                {clusters.filter(([cl]) => ratings[cl] !== undefined).map(([cl]) => {
+                  const pct = Math.round((ratings[cl] / 3) * 100);
+                  const col = pct >= 67 ? "bg-teal-500" : pct >= 34 ? "bg-peel-500" : "bg-rose-500";
+                  return (
+                    <div key={cl} className="flex items-center gap-3">
+                      <span className="w-40 shrink-0 truncate text-sm text-ink-700" title={cl}>{cl}</span>
+                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-ink-100"><div className={`h-full ${col}`} style={{ width: `${pct}%` }} /></div>
+                      <span className="w-9 shrink-0 text-right text-xs font-bold text-ink-500">{pct}%</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {/* AI capability read (from the scored skill-check) */}
-          {analysis && (
+          {Array.isArray(aiQs) && aiQs.length > 0 && (analysis ? (
             <div className="card mt-4 border-brand-200 p-5">
               <p className="text-xs font-bold uppercase tracking-widest text-brand-600">AI capability assessment</p>
               <p className="mt-1 text-base font-bold text-ink-900">{analysis.verdict}</p>
@@ -540,7 +564,12 @@ export default function Diagnostic() {
               </div>
               {analysis.focus && <p className="mt-3 text-sm text-ink-600">🎯 <b className="text-ink-800">Where to start:</b> {analysis.focus}</p>}
             </div>
-          )}
+          ) : (
+            <div className="card mt-4 flex items-center gap-3 border-brand-200 p-5">
+              <div className="h-5 w-5 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600" />
+              <p className="text-sm text-ink-500">Analysing your answers for an AI capability read…</p>
+            </div>
+          ))}
 
           {/* YOU: BEFORE → AFTER — the outcome, from the learner's side */}
           {plan && (
