@@ -237,39 +237,71 @@ export default function CourseDetail({ course }) {
           .map((c) => ({ c, overlap: (c.skills || []).filter((s) => myset.has(s.toLowerCase())).length }))
           .filter((x) => x.overlap >= 2).sort((a, b) => b.overlap - a.overlap).slice(0, 4);
 
-        return (
-          <div className="mt-6 space-y-5">
-            {/* market summary */}
-            <div className="overflow-hidden rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-5">
-              <p className="text-xs font-bold uppercase tracking-widest text-brand-600">Market lens</p>
-              <p className="mt-1 text-lg font-black text-ink-900">{sk.length} skills · in demand across {rolesTouched} AI-era role{rolesTouched !== 1 ? "s" : ""}</p>
-              <p className="mt-1 text-sm text-ink-600">Each skill below is ranked by how many of our tracked roles actually hire for it — so you can see exactly why it&apos;s worth learning.</p>
-            </div>
+        const hot = rows.filter((r) => r.roles.length > 0);
+        const cold = rows.filter((r) => r.roles.length === 0);
 
-            {/* per-skill demand */}
-            <div className="space-y-2">
-              {rows.map(({ skill, roles }) => (
-                <div key={skill} className="card p-4">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <p className="font-black text-ink-900">{skill}</p>
-                    {roles.length > 0
-                      ? <span className="chip-green">🔥 {roles.length} role{roles.length > 1 ? "s" : ""} hire for this</span>
-                      : <span className="chip-gray">Supporting skill</span>}
-                  </div>
-                  <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-ink-100">
-                    <div className="h-full bg-gradient-to-r from-brand-400 to-brand-600" style={{ width: `${Math.round((roles.length / maxR) * 100)}%` }} />
-                  </div>
-                  {roles.length > 0 && (
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      {roles.slice(0, 5).map((r) => (
-                        <Link key={r.slug} href={`/specializations/${r.slug}`} className="chip-blue hover:bg-brand-100">{r.role} →</Link>
-                      ))}
-                      {roles.length > 5 && <span className="chip-gray">+{roles.length - 5} more</span>}
-                    </div>
-                  )}
+        return (
+          <div className="mt-6 space-y-6">
+            {/* market summary — compact KPI tiles */}
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                [sk.length, "skills taught", "text-ink-900"],
+                [hot.length, "hired-for skills", "text-teal-600"],
+                [rolesTouched, `AI-era role${rolesTouched !== 1 ? "s" : ""} reached`, "text-brand-600"],
+              ].map(([n, label, col]) => (
+                <div key={label} className="card flex flex-col p-4">
+                  <span className={`text-3xl font-black leading-none ${col}`}>{n}</span>
+                  <span className="mt-1 text-xs font-bold text-ink-500">{label}</span>
                 </div>
               ))}
             </div>
+
+            {/* in-demand skills — ranked, dense list (no empty bars) */}
+            {hot.length > 0 && (
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="font-black text-ink-900">In-demand skills</h3>
+                  <span className="chip-green text-[10px]">ranked by hiring demand</span>
+                </div>
+                <p className="mt-0.5 text-xs text-ink-500">Skills our tracked AI-era roles actually hire for — most-demanded first. Tap a role to see its full journey.</p>
+                <div className="mt-3 overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-card">
+                  {hot.map(({ skill, roles }, i) => (
+                    <div key={skill} className="flex items-start gap-3 border-b border-ink-100 px-4 py-3.5 transition last:border-0 hover:bg-brand-50/40">
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-50 text-xs font-black text-brand-600">{i + 1}</span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center justify-between gap-2">
+                          <p className="truncate font-bold text-ink-900">{skill}</p>
+                          <span className="shrink-0 text-xs font-black text-teal-600">🔥 {roles.length} role{roles.length > 1 ? "s" : ""}</span>
+                        </div>
+                        <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-ink-100">
+                          <div className="h-full rounded-full bg-gradient-to-r from-brand-400 to-brand-600" style={{ width: `${Math.max(14, Math.round((roles.length / maxR) * 100))}%` }} />
+                        </div>
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                          {roles.slice(0, 4).map((r) => (
+                            <Link key={r.slug} href={`/specializations/${r.slug}`} className="chip-blue text-[11px] hover:bg-brand-100">{r.role} →</Link>
+                          ))}
+                          {roles.length > 4 && <span className="chip-gray text-[11px]">+{roles.length - 4} more</span>}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* foundational skills — compact chip cloud (no broken empty rows) */}
+            {cold.length > 0 && (
+              <div className="card p-4">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="font-black text-ink-900">Foundational skills</h3>
+                  <span className="chip-gray text-[10px]">{cold.length}</span>
+                </div>
+                <p className="mt-0.5 text-xs text-ink-500">The base these roles assume you already have — taught here so nothing&apos;s missing from your foundation.</p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {cold.map(({ skill }) => <span key={skill} className="chip-gray">{skill}</span>)}
+                </div>
+              </div>
+            )}
 
             {/* where to go next */}
             {next.length > 0 && (
