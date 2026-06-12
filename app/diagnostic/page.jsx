@@ -383,7 +383,7 @@ export default function Diagnostic() {
       {step === 3 && journey && round === 1 && Array.isArray(aiQs) && aiQs.length > 0 && (
         <div className="mt-8">
           <h2 className="text-lg font-black text-ink-900">3 · Skill check for {journey.role}</h2>
-          <p className="mt-1 text-sm text-ink-500">A few questions that <b className="text-ink-700">actually test</b> where you stand — generated for your background, not self-rated. We score your answers to find the real gaps.</p>
+          <p className="mt-1 text-sm text-ink-500">A <b className="text-ink-700">{aiQs.length}-question</b> assessment across <b className="text-ink-700">{new Set(aiQs.map((q) => q.cluster)).size} skill areas</b> — two questions each (one concept + one applied scenario), calibrated to your background. We score your answers, not a self-rating, then probe any weak area again in round 2 before building your plan.</p>
           <div className="mt-4 space-y-3">
             {aiQs.map((q, i) => (
               <div key={i} className="card p-4">
