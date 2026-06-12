@@ -98,6 +98,8 @@ export default function CourseDetail({ course }) {
   }, [course.skills, course.domain, data, totalVideos, totalHours, masterCoach, projectCoach]);
 
   const COLOR = { brand: "border-brand-200 bg-brand-50 text-brand-700", peel: "border-peel-200 bg-peel-50 text-peel-700", flame: "border-flame-200 bg-flame-50 text-flame-700", teal: "border-teal-200 bg-teal-50 text-teal-700", rose: "border-rose-200 bg-rose-50 text-rose-600", ink: "border-ink-200 bg-ink-100 text-ink-600" };
+  const DOT = { brand: "bg-brand-500", peel: "bg-peel-500", flame: "bg-flame-500", teal: "bg-teal-500", rose: "bg-rose-500", ink: "bg-ink-500" };
+  const LIVE_LABELS = ["Live classes", "Masterclass", "Applied project", "Hackathon", "Mentorship"];
 
   return (
     <div>
@@ -212,7 +214,7 @@ export default function CourseDetail({ course }) {
         </div>
       </div>
       <p className="mt-1 text-sm text-ink-500">
-        {view === "skill" ? "Every skill in this course, ranked by how many AI-era roles demand it — and where to go next." : "The full curriculum — modules, lessons and videos."}
+        {view === "skill" ? "Every skill in this course, ranked by how many AI-era roles demand it — and where to go next." : "The full blended journey — self-paced modules with live classes, a masterclass, an applied project, a hackathon, mentorship & assessment woven through. ● Live = delivered live by Board Infinity."}
       </p>
 
       {err && <p className="mt-6 text-rose-600">Could not load roadmap: {err}</p>}
@@ -322,17 +324,35 @@ export default function CourseDetail({ course }) {
         );
       })()}
 
-      {data && view === "content" && (
+      {data && view === "content" && (() => {
+        // build the BLENDED timeline: async modules (the backbone) with the live delivery milestones woven in
+        const live = Object.fromEntries(experience.filter((x) => x.label !== "Self-paced content").map((x) => [x.label, x]));
+        const N = data.modules.length;
+        const mid = N >= 3 ? Math.floor(N / 2) : (N >= 2 ? 1 : 0);
+        const nodes = [];
+        data.modules.forEach((m, idx) => {
+          nodes.push({ kind: "module", m, idx });
+          if (idx === 0 && live["Live classes"]) nodes.push({ kind: "live", x: live["Live classes"] });
+          if (idx === mid && idx !== 0 && live["Masterclass"]) nodes.push({ kind: "live", x: live["Masterclass"] });
+          if (idx === N - 1) {
+            if (N < 2 && live["Masterclass"]) nodes.push({ kind: "live", x: live["Masterclass"] });
+            ["Applied project", "Hackathon", "Mentorship", "Assessment"].forEach((k) => { if (live[k]) nodes.push({ kind: "live", x: live[k] }); });
+          }
+        });
+        const liveCount = nodes.filter((n) => n.kind === "live").length;
+
+        return (
         <div className="relative mt-6">
           {/* depth summary */}
           <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-1 rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-sm">
             <span className="font-black text-ink-900">{data.modules.length} modules</span>
             <span className="text-ink-600">{data.lessons.length} lessons</span>
             <span className="text-ink-600">{totalItems} learning items</span>
-            {Object.entries(ITEM_MIX).sort((a, b) => b[1] - a[1]).map(([k, v]) => (
+            <span className="font-bold text-peel-600">● {liveCount} live touchpoints</span>
+            {Object.entries(ITEM_MIX).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([k, v]) => (
               <span key={k} className="text-ink-500">{ICON[k] || "•"} {v} {k.toLowerCase()}{v > 1 ? "s" : ""}</span>
             ))}
-            {totalHours > 0 && <span className="ml-auto font-bold text-brand-600">~{totalHours} hrs total</span>}
+            {totalHours > 0 && <span className="ml-auto font-bold text-brand-600">~{totalHours} hrs self-paced</span>}
           </div>
           {/* center spine */}
           <div className="absolute left-1/2 top-[68px] hidden h-[calc(100%-68px)] w-0.5 -translate-x-1/2 bg-brand-100 md:block" />
@@ -342,7 +362,29 @@ export default function CourseDetail({ course }) {
               <span className="rounded-full bg-brand-500 px-4 py-1.5 text-sm font-black text-white shadow-lift">Start here</span>
             </div>
 
-            {data.modules.map((m, idx) => {
+            {nodes.map((node, ni) => {
+              // ---- LIVE / BLENDED MILESTONE (centered on the spine) ----
+              if (node.kind === "live") {
+                const x = node.x;
+                const isLive = LIVE_LABELS.includes(x.label);
+                return (
+                  <div key={`live-${ni}`} className="relative flex justify-center">
+                    <div className={`relative w-full max-w-xl rounded-2xl border-2 p-4 shadow-card ${COLOR[x.color]}`}>
+                      <span className={`absolute -top-2 left-1/2 hidden h-4 w-4 -translate-x-1/2 rounded-full border-2 border-white md:block ${DOT[x.color]}`} />
+                      <div className="flex flex-wrap items-center justify-center gap-2 text-center">
+                        <span className={`chip border ${COLOR[x.color]} bg-white/70`}>{x.icon} {x.label}</span>
+                        {isLive && <span className="text-[10px] font-black uppercase tracking-wide text-peel-600">● Live</span>}
+                      </div>
+                      <p className="mt-1.5 text-center font-black text-ink-900">{x.title}</p>
+                      <p className="mt-1 text-center text-xs text-ink-600">{x.detail}</p>
+                      {x.coach && <p className="mt-1.5 text-center text-[11px] text-ink-500">led by <b className="text-ink-700">{x.coach.name}</b> · {x.coach.title}</p>}
+                    </div>
+                  </div>
+                );
+              }
+
+              // ---- ASYNC MODULE (alternating, expandable) ----
+              const { m, idx } = node;
               const lessons = data.lessons.filter((l) => l.module_num === m.module_num);
               const mVids = data.items.filter((i) => i.module_num === m.module_num && i.item_type === "Video").length;
               const mHrs = Math.round(Number(m.hours) || 0);
@@ -351,16 +393,15 @@ export default function CourseDetail({ course }) {
               const mods = (m.skills || []).slice(0, 4);
               return (
                 <div key={m.id} className="md:grid md:grid-cols-2 md:gap-8">
-                  {/* spacer for alternating layout */}
                   {side === "right" && <div className="hidden md:block" />}
                   <div className={`relative ${side === "right" ? "md:text-left" : "md:text-right"}`}>
-                    {/* node dot */}
                     <span className={`absolute top-5 hidden h-3 w-3 rounded-full border-2 border-white bg-brand-500 md:block ${side === "right" ? "-left-[18px]" : "-right-[18px]"}`} />
                     <button onClick={() => setOpen(isOpen ? null : m.id)}
                       className={`card w-full p-4 text-left transition hover:border-brand-400 hover:shadow-lift ${side === "right" ? "" : "md:text-right"}`}>
                       <div className={`flex items-center gap-2 ${side === "right" ? "" : "md:flex-row-reverse"}`}>
                         <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-xs font-black text-brand-600">{m.module_num}</span>
                         <span className="font-black text-ink-900">{m.title}</span>
+                        <span className="chip-gray ml-1 text-[9px]">▶ self-paced</span>
                       </div>
                       <div className={`mt-2 flex flex-wrap gap-1.5 ${side === "right" ? "" : "md:justify-end"}`}>
                         {mods.map((s) => <span key={s} className="chip-gray">{s}</span>)}
@@ -394,11 +435,12 @@ export default function CourseDetail({ course }) {
 
             {/* finish node */}
             <div className="flex justify-center pt-2">
-              <span className="rounded-full bg-peel-500 px-4 py-1.5 text-sm font-black text-white shadow-lift">🎯 Course complete — skills earned</span>
+              <span className="rounded-full bg-peel-500 px-4 py-1.5 text-sm font-black text-white shadow-lift">🎯 Course complete — skills earned + certificate</span>
             </div>
           </div>
         </div>
-      )}
+        );
+      })()}
     </div>
   );
 }
