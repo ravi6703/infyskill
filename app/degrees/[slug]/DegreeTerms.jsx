@@ -49,55 +49,40 @@ function CourseCard({ c }) {
         })}
       </div>
 
-      {/* delivery breakdown — collapsible */}
+      {/* delivery breakdown — collapsible, compact (one tight line per mode) */}
       <details className="mt-2.5 border-t border-ink-100 pt-2.5">
-        <summary className="flex cursor-pointer items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-brand-600 hover:text-brand-700">
+        <summary className="flex cursor-pointer items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-brand-600 hover:text-brand-700">
           How this course is delivered <span>▾</span>
         </summary>
-
-        {/* async modules */}
-        {c.modules?.length > 0 && (
-          <div className="mt-2">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-brand-600">▶ Async — self-paced {partial ? <span className="text-peel-600">({c.selectedCount} of {c.moduleCount} modules)</span> : <>({c.moduleCount} modules)</>}</p>
-            <ol className="mt-1 space-y-1">
-              {c.modules.map((m, i) => (
-                <li key={i} className="flex items-baseline gap-2 text-xs text-ink-600">
-                  <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-brand-50 text-[9px] font-black text-brand-600">{i + 1}</span>
-                  <span className="flex-1">{m.title}</span>
-                  {m.hours ? <span className="shrink-0 text-[10px] text-ink-400">{m.hours} h</span> : null}
-                </li>
-              ))}
-            </ol>
-          </div>
-        )}
-
-        {/* live sync sessions */}
-        {c.sync?.length > 0 && (
-          <div className="mt-3">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-peel-700">🎙 Live Sync — instructor-led</p>
-            <ul className="mt-1 space-y-1">
-              {c.sync.map((s, i) => (
-                <li key={i} className="text-xs text-ink-600">• {s.title}{s.note ? <span className="text-ink-400"> — {s.note}</span> : null}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* masterclass */}
-        {c.masterclass && (
-          <div className="mt-3">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-flame-700">★ Masterclass</p>
-            <p className="mt-1 text-xs text-ink-600">{c.masterclass.title}{c.masterclass.note ? <span className="text-ink-400"> — {c.masterclass.note}</span> : null}</p>
-          </div>
-        )}
-
-        {/* project */}
-        {c.project && (
-          <div className="mt-3">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-teal-700">🚀 Project</p>
-            <p className="mt-1 text-xs text-ink-600">{c.project.title}{c.project.note ? <span className="text-ink-400"> — {c.project.note}</span> : null}</p>
-          </div>
-        )}
+        <div className="mt-2.5 space-y-1.5 text-xs leading-relaxed">
+          {c.modules?.length > 0 && (
+            <div className="flex gap-2">
+              <span className="w-[88px] shrink-0 font-bold text-brand-600">▶ Self-paced</span>
+              <span className="flex-1 text-ink-600">
+                {partial ? `${c.selectedCount} of ${c.moduleCount}` : c.moduleCount} module{(partial ? c.selectedCount : c.moduleCount) > 1 ? "s" : ""}{c.hours ? ` · ${c.hours} hrs` : ""}
+                <span className="text-ink-400"> — {c.modules.map((m) => m.title).join("; ")}</span>
+              </span>
+            </div>
+          )}
+          {c.sync?.length > 0 && (
+            <div className="flex gap-2">
+              <span className="w-[88px] shrink-0 font-bold text-peel-700">🎙 Live Sync</span>
+              <span className="flex-1 text-ink-600">{c.sync.length} instructor-led session{c.sync.length > 1 ? "s" : ""} on {c.sync.map((s) => s.title).join(", ")}<span className="text-ink-400"> — worked examples & live Q&A</span></span>
+            </div>
+          )}
+          {c.masterclass && (
+            <div className="flex gap-2">
+              <span className="w-[88px] shrink-0 font-bold text-flame-700">★ Masterclass</span>
+              <span className="flex-1 text-ink-600">{c.masterclass.title}{c.masterclass.note ? <span className="text-ink-400"> — {c.masterclass.note}</span> : null}</span>
+            </div>
+          )}
+          {c.project && (
+            <div className="flex gap-2">
+              <span className="w-[88px] shrink-0 font-bold text-teal-700">🚀 Project</span>
+              <span className="flex-1 text-ink-600">{c.project.title}{c.project.note ? <span className="text-ink-400"> — {c.project.note}</span> : null}</span>
+            </div>
+          )}
+        </div>
       </details>
     </div>
   );
