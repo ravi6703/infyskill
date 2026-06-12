@@ -220,10 +220,18 @@ export default function SpecDetail({ spec }) {
         const nPlan = allComp.filter((c) => c.status === "planned").length;
         const per = Math.ceil(clusters.length / Math.max(1, spec.stages.length));
         const MIX = [["ASYNC", "bg-brand-500"], ["SYNC", "bg-peel-500"], ["MASTERCLASS", "bg-flame-500"], ["HACKATHON", "bg-rose-500"], ["CAPSTONE", "bg-teal-500"]];
+        // the 5-part delivery model + the VALUE each part adds to the learner (the "why", not just the "what")
+        const VALUE = [
+          ["▶", "Self-paced", "border-t-brand-500", "Master the fundamentals anytime, at your own pace"],
+          ["🎙", "Live Sync", "border-t-peel-500", "Get unblocked fast — apply live with a mentor"],
+          ["★", "Masterclass", "border-t-flame-500", "See how experts actually ship it in production"],
+          ["🏆", "Hackathon", "border-t-rose-500", "Prove you can perform under real pressure"],
+          ["🎓", "Capstone", "border-t-teal-500", "Walk away with a portfolio-grade project"],
+        ];
         return (
           <section className="mt-10">
             <h2 className="text-xl font-black text-ink-900">The full journey — week by week</h2>
-            <p className="mt-1 text-sm text-ink-500">Every element of this role&apos;s path, mapped to the Board Infinity delivery model · {weeks} weeks total. Click any item to see what it covers.</p>
+            <p className="mt-1 text-sm text-ink-500">Every element mapped to Board Infinity&apos;s <b className="text-ink-700">5-part delivery model</b> · {weeks} weeks total. See the value each part adds — and what you can do after every stage. Click any item for what it covers.</p>
 
             {/* delivery-mix bar */}
             <div className="mt-3 flex h-2.5 w-full overflow-hidden rounded-full">
@@ -232,6 +240,17 @@ export default function SpecDetail({ spec }) {
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-ink-500">
               {MIX.map(([k, bg]) => <span key={k}><span className={`mr-1 inline-block h-2 w-2 rounded-full ${bg}`} />{k.charAt(0) + k.slice(1).toLowerCase()} {spec.mix[k]}%</span>)}
             </div>
+
+            {/* delivery model — value each part adds */}
+            <div className="mt-4 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-5">
+              {VALUE.map(([icon, label, top, value]) => (
+                <div key={label} className={`rounded-xl border border-ink-200 ${top} border-t-4 bg-white p-3`}>
+                  <p className="text-sm font-black text-ink-900">{icon} {label}</p>
+                  <p className="mt-1 text-xs text-ink-600">{value}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-2 text-[11px] text-ink-400">Plus <b className="text-ink-500">🤝 weekly mentorship</b> and <b className="text-ink-500">✦ skill assessments</b> woven throughout — so progress is coached and verified, not just consumed.</p>
 
             <div className="relative mt-5 space-y-4 border-l-2 border-brand-100 pl-6">
               {spec.stages.map((st, i) => {
@@ -286,6 +305,12 @@ export default function SpecDetail({ spec }) {
                           <div className="mt-1 flex flex-wrap gap-1.5">
                             {stageSkills.map((s) => <span key={s} className="chip-green">{s}</span>)}
                           </div>
+                        </div>
+                      )}
+                      {/* the VALUE — what the learner can DO after this stage */}
+                      {stageSkills.length > 0 && (
+                        <div className="mt-3 rounded-lg bg-teal-50 px-3 py-2">
+                          <p className="text-xs text-ink-700"><span className="font-black text-teal-700">✓ You&apos;ll be able to:</span> put {stageSkills.slice(0, 3).join(", ")} to work on real problems — not just learn the theory.</p>
                         </div>
                       )}
                     </div>
