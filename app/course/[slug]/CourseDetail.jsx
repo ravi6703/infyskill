@@ -115,11 +115,14 @@ export default function CourseDetail({ course }) {
             <h1 className="mt-3 text-3xl font-black text-ink-900">{clean(course.title)}</h1>
           </div>
           {data && (
-            <div className="grid grid-cols-4 gap-4 text-center">
-              <div><p className="text-2xl font-black text-brand-600">{data.modules.length}</p><p className="text-[11px] text-ink-500">modules</p></div>
-              <div><p className="text-2xl font-black text-brand-600">{data.lessons.length}</p><p className="text-[11px] text-ink-500">lessons</p></div>
-              <div><p className="text-2xl font-black text-brand-600">{totalVideos}</p><p className="text-[11px] text-ink-500">videos</p></div>
-              {totalHours > 0 && <div><p className="text-2xl font-black text-brand-600">{totalHours}</p><p className="text-[11px] text-ink-500">hours</p></div>}
+            <div>
+              <p className="mb-1 text-right text-[10px] font-bold uppercase tracking-wider text-brand-600">▶ Self-paced layer</p>
+              <div className="grid grid-cols-4 gap-4 text-center">
+                <div><p className="text-2xl font-black text-brand-600">{data.modules.length}</p><p className="text-[11px] text-ink-500">modules</p></div>
+                <div><p className="text-2xl font-black text-brand-600">{data.lessons.length}</p><p className="text-[11px] text-ink-500">lessons</p></div>
+                <div><p className="text-2xl font-black text-brand-600">{totalVideos}</p><p className="text-[11px] text-ink-500">videos</p></div>
+                {totalHours > 0 && <div><p className="text-2xl font-black text-brand-600">{totalHours}</p><p className="text-[11px] text-ink-500">hours</p></div>}
+              </div>
             </div>
           )}
         </div>
@@ -128,6 +131,17 @@ export default function CourseDetail({ course }) {
           <div className="mt-2 flex flex-wrap gap-2">
             {course.skills.map((s) => <span key={s} className="chip-blue">{s}</span>)}
           </div>
+        </div>
+
+        {/* this is a blended program — the stats above are only the self-paced layer */}
+        <div className="mt-4 border-t border-ink-100 pt-3">
+          <p className="text-xs font-bold uppercase tracking-wider text-peel-600">A blended program — not just recorded videos</p>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {experience.map((x) => <span key={x.label} className={`chip border ${COLOR[x.color]}`}>{x.icon} {x.label}</span>)}
+          </div>
+          <p className="mt-2 text-[11px] text-ink-400">
+            The {data ? `${data.modules.length} modules / ${totalVideos} videos${totalHours > 0 ? ` / ${totalHours} hrs` : ""}` : "self-paced stats"} above are the <b className="text-ink-500">self-paced layer</b> only — the live classes, masterclass, project{(data?.modules?.length || 0) >= 3 ? ", hackathon" : ""}, mentorship &amp; assessment sit on top. <a href="#delivery" className="font-bold text-brand-600 hover:underline">See the full delivery ↓</a>
+          </p>
         </div>
       </div>
 
@@ -153,7 +167,7 @@ export default function CourseDetail({ course }) {
       )}
 
       {/* THE COMPLETE LEARNING EXPERIENCE — holistic, specific, derived from this course's own content */}
-      <section className="mt-6 card p-5">
+      <section id="delivery" className="mt-6 card scroll-mt-24 p-5">
         <p className="text-xs font-bold uppercase tracking-widest text-peel-600">Board Infinity · the complete learning experience</p>
         <h2 className="mt-1 text-lg font-black text-ink-900">What we deliver for this course</h2>
         <p className="mt-1 text-sm text-ink-500">Not just recorded videos — a full blended program. Recorded content is self-paced; everything marked <span className="font-bold text-peel-600">● Live</span> is delivered live by Board Infinity.</p>
