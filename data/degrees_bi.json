@@ -3687,6 +3687,21 @@
       "credits": 4
      },
      {
+      "course": "Mathematics for Data Science I (Linear Algebra & Calculus)",
+      "category": "Major",
+      "credits": 4,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
+     },
+     {
       "course": "Data Interpretation & Insights: Exam & Recruitment Prep",
       "slug": "data-interpretation-insights-exam-recruitment-prep",
       "skills": [
@@ -3739,21 +3754,6 @@
       },
       "category": "Major",
       "credits": 4
-     },
-     {
-      "course": "Mathematics for Data Science I (Linear Algebra & Calculus)",
-      "category": "Major",
-      "credits": 4,
-      "delivery": "Faculty",
-      "outcome": "Academic core — faculty-delivered",
-      "sync": [
-       {
-        "title": "Faculty-led lectures & tutorials",
-        "note": ""
-       }
-      ],
-      "masterclass": null,
-      "project": null
      },
      {
       "course": "Introduction to Data Science & Society",
@@ -4150,19 +4150,78 @@
       "project": null
      },
      {
-      "course": "Data Wrangling & EDA",
-      "category": "SEC",
-      "credits": 3,
-      "delivery": "Faculty",
-      "outcome": "Academic core — faculty-delivered",
+      "course": "Writing Effective Technical Documentation",
+      "slug": "writing-effective-technical-documentation",
+      "skills": [
+       "Technical Writing",
+       "Documentation Design",
+       "Audience Analysis",
+       "API Documentation"
+      ],
+      "delivery": "Async",
+      "category": "AEC",
+      "credits": 2,
+      "outcome": "Industry course mapped to Academic & Professional Writing",
+      "hours": 24,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Fundamentals of Technical Writing",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Technical Writing",
+         "Audience Analysis",
+         "Documentation Process",
+         "Writing Best Practices"
+        ]
+       },
+       {
+        "title": "Design Principles and Essential Writing Tools",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Documentation Design",
+         "Visual Communication",
+         "Content Management",
+         "Collaboration Tools"
+        ]
+       },
+       {
+        "title": "Diverse Technical Document Types and Ethical Practices",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "API Documentation",
+         "User Manuals",
+         "Accessibility",
+         "Localization"
+        ]
+       },
+       {
+        "title": "Advanced Topics and Career Advancement",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Advanced Technical Writing",
+         "Multimedia Documentation",
+         "Portfolio Development",
+         "Emerging Technologies"
+        ]
+       }
+      ],
       "sync": [
        {
-        "title": "Faculty-led lectures & tutorials",
-        "note": ""
+        "title": "Live session: Writing Effective Technical Documentation",
+        "note": "worked examples & Q&A"
        }
       ],
       "masterclass": null,
-      "project": null
+      "project": {
+       "title": "Applied project: Academic & Professional Writing",
+       "note": "graded, portfolio-ready"
+      }
      },
      {
       "course": "Environmental Science",
@@ -4180,8 +4239,8 @@
       "project": null
      }
     ],
-    "hours": 630,
-    "credits": 21,
+    "hours": 600,
+    "credits": 20,
     "milestones": [
      {
       "type": "Mentorship",
@@ -4476,9 +4535,24 @@
       "credits": 4
      },
      {
+      "course": "Data Wrangling & EDA",
+      "category": "SEC",
+      "credits": 2,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
+     },
+     {
       "course": "Indian Knowledge Systems / Design Thinking",
       "category": "VAC",
-      "credits": 4,
+      "credits": 2,
       "delivery": "Faculty",
       "outcome": "Academic core — faculty-delivered",
       "sync": [
@@ -4686,73 +4760,61 @@
       }
      },
      {
-      "course": "Impactful Workplace Communication for Career Launch",
-      "slug": "impactful-workplace-communication-for-career-launch",
+      "course": "AI Risk and Compliance: Audit and Governance Foundations",
+      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
       "skills": [
-       "Communication Skills",
-       "Public Speaking",
-       "Presentation Skills",
-       "Professional Writing"
+       "AI Governance",
+       "Red Teaming",
+       "Adversarial Robustness",
+       "Regulatory Compliance"
       ],
       "delivery": "Async",
-      "category": "AEC",
-      "credits": 2,
-      "outcome": "Industry course mapped to Communication Skills & Technical English",
-      "hours": 24,
+      "outcome": "Master AI Governance & Red Teaming",
+      "hours": 8.5,
       "moduleCount": 4,
-      "selectedCount": 4,
+      "selectedCount": 2,
       "modules": [
        {
-        "title": "Foundations of Self-Awareness & Communication",
-        "hours": 6.0,
-        "level": 0,
+        "title": "Adversarial Robustness & Red Teaming AI Systems",
+        "hours": 4.3,
+        "level": 2,
         "skills": [
-         "Self-Awareness",
-         "Communication Skills",
-         "Active Listening"
+         "Red Teaming",
+         "Adversarial Robustness",
+         "LLM Security"
         ]
        },
        {
-        "title": "Mastering Public Speaking & Presentation Skills",
-        "hours": 6.0,
-        "level": 0,
+        "title": "Regulatory Compliance: EU AI Act NIST RMF & Copyright",
+        "hours": 4.2,
+        "level": 2,
         "skills": [
-         "Public Speaking",
-         "Presentation Skills",
-         "Elevator Pitch"
-        ]
-       },
-       {
-        "title": "Business Communication & Workplace Etiquette",
-        "hours": 6.0,
-        "level": 0,
-        "skills": [
-         "Professional Writing",
-         "Business Etiquette",
-         "Conflict Resolution"
-        ]
-       },
-       {
-        "title": "Personal Branding & Career Growth",
-        "hours": 6.0,
-        "level": 0,
-        "skills": [
-         "Personal Branding",
-         "Goal Setting"
+         "Regulatory Compliance",
+         "EU AI Act",
+         "NIST AI RMF"
         ]
        }
       ],
       "sync": [
        {
-        "title": "Live session: Impactful Workplace Communication for Career Launch",
-        "note": "worked examples & Q&A"
+        "title": "Live session: AI Governance",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Red Teaming — problem-solving & code review",
+        "note": ""
        }
       ],
-      "masterclass": null,
+      "masterclass": {
+       "title": "Masterclass: AI Governance",
+       "note": "practitioner deep-dive"
+      },
       "project": {
-       "title": "Applied project: Communication Skills & Technical English",
+       "title": "Project: apply AI Governance & Red Teaming",
        "note": "graded, portfolio-ready"
-      }
+      },
+      "category": "VAC",
+      "credits": 2
      },
      {
       "course": "Mini Project",
@@ -5098,65 +5160,77 @@
       "credits": 3
      },
      {
-      "course": "AI Risk and Compliance: Audit and Governance Foundations",
-      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
+      "course": "Impactful Workplace Communication for Career Launch",
+      "slug": "impactful-workplace-communication-for-career-launch",
       "skills": [
-       "AI Governance",
-       "Red Teaming",
-       "Adversarial Robustness",
-       "Regulatory Compliance"
+       "Communication Skills",
+       "Public Speaking",
+       "Presentation Skills",
+       "Professional Writing"
       ],
       "delivery": "Async",
-      "outcome": "Master AI Governance & Red Teaming",
-      "hours": 8.5,
+      "category": "AEC",
+      "credits": 2,
+      "outcome": "Industry course mapped to Communication Skills & Technical English",
+      "hours": 24,
       "moduleCount": 4,
-      "selectedCount": 2,
+      "selectedCount": 4,
       "modules": [
        {
-        "title": "Adversarial Robustness & Red Teaming AI Systems",
-        "hours": 4.3,
-        "level": 2,
+        "title": "Foundations of Self-Awareness & Communication",
+        "hours": 6.0,
+        "level": 0,
         "skills": [
-         "Red Teaming",
-         "Adversarial Robustness",
-         "LLM Security"
+         "Self-Awareness",
+         "Communication Skills",
+         "Active Listening"
         ]
        },
        {
-        "title": "Regulatory Compliance: EU AI Act NIST RMF & Copyright",
-        "hours": 4.2,
-        "level": 2,
+        "title": "Mastering Public Speaking & Presentation Skills",
+        "hours": 6.0,
+        "level": 0,
         "skills": [
-         "Regulatory Compliance",
-         "EU AI Act",
-         "NIST AI RMF"
+         "Public Speaking",
+         "Presentation Skills",
+         "Elevator Pitch"
+        ]
+       },
+       {
+        "title": "Business Communication & Workplace Etiquette",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Professional Writing",
+         "Business Etiquette",
+         "Conflict Resolution"
+        ]
+       },
+       {
+        "title": "Personal Branding & Career Growth",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Personal Branding",
+         "Goal Setting"
         ]
        }
       ],
       "sync": [
        {
-        "title": "Live session: AI Governance",
-        "note": "worked examples & live Q&A"
-       },
-       {
-        "title": "Live session: Red Teaming — problem-solving & code review",
-        "note": ""
+        "title": "Live session: Impactful Workplace Communication for Career Launch",
+        "note": "worked examples & Q&A"
        }
       ],
-      "masterclass": {
-       "title": "Masterclass: AI Governance",
-       "note": "practitioner deep-dive"
-      },
+      "masterclass": null,
       "project": {
-       "title": "Project: apply AI Governance & Red Teaming",
+       "title": "Applied project: Communication Skills & Technical English",
        "note": "graded, portfolio-ready"
-      },
-      "category": "VAC",
-      "credits": 3
+      }
      }
     ],
-    "hours": 630,
-    "credits": 21,
+    "hours": 600,
+    "credits": 20,
     "milestones": [
      {
       "type": "Mentorship",
@@ -5436,7 +5510,7 @@
      {
       "course": "Minor III — Domain Capstone",
       "category": "Minor",
-      "credits": 3,
+      "credits": 4,
       "delivery": "Faculty",
       "outcome": "Academic core — faculty-delivered",
       "sync": [
@@ -5449,26 +5523,77 @@
       "project": null
      },
      {
-      "course": "Industry Practicum",
-      "category": "EEC",
-      "credits": 4,
-      "delivery": "Faculty",
-      "outcome": "Academic core — faculty-delivered",
+      "course": "Impactful Workplace Communication for Career Launch",
+      "slug": "impactful-workplace-communication-for-career-launch",
+      "skills": [
+       "Communication Skills",
+       "Public Speaking",
+       "Presentation Skills",
+       "Professional Writing"
+      ],
+      "delivery": "Async",
+      "category": "AEC",
+      "credits": 2,
+      "outcome": "Industry course mapped to Communication Skills & Technical English",
+      "hours": 24,
+      "moduleCount": 4,
+      "selectedCount": 4,
+      "modules": [
+       {
+        "title": "Foundations of Self-Awareness & Communication",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Self-Awareness",
+         "Communication Skills",
+         "Active Listening"
+        ]
+       },
+       {
+        "title": "Mastering Public Speaking & Presentation Skills",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Public Speaking",
+         "Presentation Skills",
+         "Elevator Pitch"
+        ]
+       },
+       {
+        "title": "Business Communication & Workplace Etiquette",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Professional Writing",
+         "Business Etiquette",
+         "Conflict Resolution"
+        ]
+       },
+       {
+        "title": "Personal Branding & Career Growth",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Personal Branding",
+         "Goal Setting"
+        ]
+       }
+      ],
       "sync": [
        {
-        "title": "Faculty-led lectures & tutorials",
-        "note": ""
+        "title": "Live session: Impactful Workplace Communication for Career Launch",
+        "note": "worked examples & Q&A"
        }
       ],
       "masterclass": null,
       "project": {
-       "title": "Lab / tutorial: Industry Practicum",
-       "note": "continuous assessment"
+       "title": "Applied project: Communication Skills & Technical English",
+       "note": "graded, portfolio-ready"
       }
      }
     ],
-    "hours": 630,
-    "credits": 21,
+    "hours": 600,
+    "credits": 20,
     "milestones": [
      {
       "type": "Mentorship",
@@ -5651,7 +5776,7 @@
      {
       "course": "Research Methodology & Seminar",
       "category": "EEC",
-      "credits": 3,
+      "credits": 2,
       "delivery": "Faculty",
       "outcome": "Academic core — faculty-delivered",
       "sync": [
@@ -5685,8 +5810,8 @@
       }
      }
     ],
-    "hours": 630,
-    "credits": 21,
+    "hours": 600,
+    "credits": 20,
     "milestones": [
      {
       "type": "Mentorship",
@@ -5897,9 +6022,24 @@
       }
      },
      {
+      "course": "Skill — Reproducible Research (Git/MLflow)",
+      "category": "SEC",
+      "credits": 2,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
+     },
+     {
       "course": "Capstone / Dissertation — Phase II",
       "category": "EEC",
-      "credits": 6,
+      "credits": 8,
       "delivery": "Faculty",
       "outcome": "Academic core — faculty-delivered",
       "sync": [
@@ -5915,8 +6055,8 @@
       }
      }
     ],
-    "hours": 480,
-    "credits": 16,
+    "hours": 600,
+    "credits": 20,
     "milestones": [
      {
       "type": "Mentorship",
@@ -5929,10 +6069,10 @@
   "credits": {
    "target": 160,
    "targetHours": 4800,
-   "biCredits": 17,
-   "biHours": 520,
-   "facultyCredits": 143,
-   "facultyHours": 4280,
+   "biCredits": 19,
+   "biHours": 568,
+   "facultyCredits": 141,
+   "facultyHours": 4232,
    "nepCap": 64,
    "nepCapHours": 1920,
    "withinNep": true,
@@ -5954,8 +6094,8 @@
      "min": 80,
      "covers": [
       "Programming for Data Science (Python)",
-      "Descriptive Statistics & Probability",
       "Mathematics for Data Science I (Linear Algebra & Calculus)",
+      "Descriptive Statistics & Probability",
       "Data Structures for Analytics",
       "Inferential Statistics & Hypothesis Testing",
       "Databases & SQL",
@@ -5982,7 +6122,7 @@
      "name": "Minor",
      "code": "Minor",
      "label": "Domain Specialization (Minor)",
-     "credits": 11,
+     "credits": 12,
      "min": null,
      "covers": [
       "Minor I — Domain Analytics (Finance/Marketing)",
@@ -6007,30 +6147,33 @@
      "name": "Ability Enhancement",
      "code": "AEC",
      "label": "Communication & Ability",
-     "credits": 4,
-     "min": 6,
+     "credits": 8,
+     "min": 8,
      "covers": [
-      "Communication & Technical Writing",
-      "Professional Communication & Soft Skills"
+      "Communication & Technical English",
+      "Academic & Professional Writing",
+      "Advanced Communication & Presentation",
+      "Technical & Research Communication"
      ]
     },
     {
      "name": "Skill Enhancement",
      "code": "SEC",
      "label": "Skills & Practical Courses",
-     "credits": 9,
-     "min": 6,
+     "credits": 10,
+     "min": 9,
      "covers": [
       "Spreadsheets & Data Tools (Excel)",
       "Data Wrangling & EDA",
-      "Skill — Data Storytelling"
+      "Skill — Data Storytelling",
+      "Skill — Reproducible Research (Git/MLflow)"
      ]
     },
     {
      "name": "Value-Added",
      "code": "VAC",
      "label": "Value-Added (Ethics, IKS, Environment)",
-     "credits": 9,
+     "credits": 6,
      "min": 6,
      "covers": [
       "Environmental Science",
@@ -6053,11 +6196,10 @@
      "name": "Internship/Project/Research",
      "code": "EEC",
      "label": "Internships, Projects & Capstone",
-     "credits": 19,
+     "credits": 16,
      "min": null,
      "covers": [
       "Mini Project",
-      "Industry Practicum",
       "Research Methodology & Seminar",
       "Dissertation — Phase I",
       "Capstone / Dissertation — Phase II"
@@ -6131,9 +6273,9 @@
    {
     "name": "Year 1 · Semester 1",
     "themes": [
-     "Management Foundations"
+     "Management Core I"
     ],
-    "milestone": "Management Foundations",
+    "milestone": "Management Core I",
     "courses": [
      {
       "course": "Fundamentals of Business Management",
@@ -6179,7 +6321,7 @@
        "note": "graded, portfolio-ready"
       },
       "category": "CC",
-      "credits": 4
+      "credits": 3
      },
      {
       "course": "Prepare for CFA Level 1: Economics and Global Markets",
@@ -6192,7 +6334,7 @@
       ],
       "delivery": "Async",
       "category": "CC",
-      "credits": 4,
+      "credits": 3,
       "outcome": "Industry course mapped to Economics for Engineers",
       "hours": 30,
       "moduleCount": 5,
@@ -6328,7 +6470,7 @@
        "note": "graded, portfolio-ready"
       },
       "category": "CC",
-      "credits": 4
+      "credits": 3
      },
      {
       "course": "Coach and Develop High-Performing Teams",
@@ -6459,7 +6601,7 @@
        "note": "graded, portfolio-ready"
       },
       "category": "CC",
-      "credits": 4
+      "credits": 3
      },
      {
       "course": "Impactful Workplace Communication for Career Launch",
@@ -6471,7 +6613,7 @@
        "Professional Writing"
       ],
       "delivery": "Async",
-      "category": "SEC",
+      "category": "CC",
       "credits": 3,
       "outcome": "Industry course mapped to Communication Skills & Technical English",
       "hours": 24,
@@ -6531,7 +6673,37 @@
       }
      },
      {
-      "course": "Business Law, Ethics & Governance",
+      "course": "Business Law & Ethics",
+      "category": "CC",
+      "credits": 3,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
+     },
+     {
+      "course": "IT & Management Information Systems",
+      "category": "CC",
+      "credits": 3,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
+     },
+     {
+      "course": "Business Environment & Sustainability",
       "category": "CC",
       "credits": 3,
       "delivery": "Faculty",
@@ -6546,8 +6718,8 @@
       "project": null
      }
     ],
-    "hours": 750,
-    "credits": 25,
+    "hours": 810,
+    "credits": 27,
     "milestones": [
      {
       "type": "Mentorship",
@@ -6559,9 +6731,9 @@
    {
     "name": "Year 1 · Semester 2",
     "themes": [
-     "Functional Core + AI"
+     "Management Core II"
     ],
-    "milestone": "Functional Core + AI",
+    "milestone": "Management Core II",
     "courses": [
      {
       "course": "Mastering Brand Awareness: Fundamentals to Advanced",
@@ -6635,7 +6807,7 @@
        "note": "graded, portfolio-ready"
       },
       "category": "CC",
-      "credits": 4
+      "credits": 3
      },
      {
       "course": "Master Financial Analysis & Modeling Fundamentals",
@@ -6699,7 +6871,7 @@
        "note": "graded, portfolio-ready"
       },
       "category": "CC",
-      "credits": 4
+      "credits": 3
      },
      {
       "course": "Core HR Concepts and Practices for SHRM Exams Prep",
@@ -6768,59 +6940,164 @@
       }
      },
      {
-      "course": "AI & Automation for Supply Chain Resilience",
-      "slug": "ai-automation-for-supply-chain-resilience",
+      "course": "Quality Improvement and Management",
+      "slug": "quality-improvement-and-management",
       "skills": [
-       "Supply Chain Management",
-       "AI in Logistics",
-       "Predictive Analytics",
-       "Risk Monitoring"
+       "Quality Management",
+       "ISO 9001",
+       "PDCA Cycle",
+       "Statistical Process Control"
       ],
       "delivery": "Async",
       "category": "CC",
-      "credits": 4,
-      "outcome": "Industry course mapped to Operations & Supply Chain Management",
+      "credits": 3,
+      "outcome": "Industry course mapped to Operations Management",
       "hours": 18,
-      "moduleCount": 2,
-      "selectedCount": 2,
+      "moduleCount": 3,
+      "selectedCount": 3,
       "modules": [
        {
-        "title": "Foundations of AI & Automation in Supply Chains",
-        "hours": 9.0,
+        "title": "Fundamentals of Quality Improvement",
+        "hours": 6.0,
         "level": 0,
         "skills": [
-         "Supply Chain Management",
-         "AI in Logistics",
-         "Automation",
-         "Logistics Technology"
+         "Quality Management",
+         "Quality Improvement",
+         "PDCA Cycle",
+         "Customer Focus"
         ]
        },
        {
-        "title": "Building Resilience Through Intelligent Systems",
-        "hours": 9.0,
+        "title": "Quality Management Systems and Tools",
+        "hours": 6.0,
         "level": 0,
         "skills": [
-         "Predictive Analytics",
-         "Risk Monitoring",
-         "Adaptive Decision-Making",
-         "Operational Resilience"
+         "Quality Management",
+         "ISO 9001",
+         "Statistical Process Control",
+         "Quality Tools"
+        ]
+       },
+       {
+        "title": "Enhancing Customer Satisfaction through Quality",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Customer Satisfaction",
+         "Customer-Centric Design",
+         "Continuous Improvement",
+         "Voice of Customer"
         ]
        }
       ],
       "sync": [
        {
-        "title": "Live session: AI & Automation for Supply Chain Resilience",
+        "title": "Live session: Quality Improvement and Management",
         "note": "worked examples & Q&A"
        }
       ],
       "masterclass": {
-       "title": "Masterclass: AI & Automation for Supply Chain Resilience",
+       "title": "Masterclass: Quality Improvement and Management",
        "note": "practitioner-led"
       },
       "project": {
-       "title": "Applied project: Operations & Supply Chain Management",
+       "title": "Applied project: Operations Management",
        "note": "graded, portfolio-ready"
       }
+     },
+     {
+      "course": "Business Research Methods",
+      "category": "CC",
+      "credits": 3,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
+     },
+     {
+      "course": "Operations Research & Decision Science",
+      "category": "CC",
+      "credits": 3,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
+     },
+     {
+      "course": "Fundamentals of Management Consulting",
+      "slug": "fundamentals-of-management-consulting",
+      "skills": [
+       "Management Consulting",
+       "Strategic Frameworks",
+       "Case Interviews",
+       "Guesstimates"
+      ],
+      "delivery": "Async",
+      "outcome": "Master Management Consulting & Strategic Frameworks",
+      "hours": 12.9,
+      "moduleCount": 3,
+      "selectedCount": 3,
+      "modules": [
+       {
+        "title": "Introduction to Management Consulting",
+        "hours": 5.3,
+        "level": 1,
+        "skills": [
+         "Management Consulting",
+         "Career Paths",
+         "Case Interviews"
+        ]
+       },
+       {
+        "title": "Use of guesstimates in Management Consulting",
+        "hours": 3.4,
+        "level": 1,
+        "skills": [
+         "Guesstimates",
+         "Estimation Techniques",
+         "Analytical Thinking"
+        ]
+       },
+       {
+        "title": "Management Consulting tools",
+        "hours": 4.2,
+        "level": 1,
+        "skills": [
+         "Strategic Frameworks",
+         "BCG Matrix",
+         "SWOT Analysis"
+        ]
+       }
+      ],
+      "sync": [
+       {
+        "title": "Live session: Management Consulting",
+        "note": "worked examples & live Q&A"
+       },
+       {
+        "title": "Live session: Strategic Frameworks — problem-solving & code review",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": {
+       "title": "Project: apply Management Consulting & Strategic Frameworks",
+       "note": "graded, portfolio-ready"
+      },
+      "category": "CC",
+      "credits": 3
      },
      {
       "course": "Data Visualization with Tableau",
@@ -6894,80 +7171,68 @@
        "note": "graded, portfolio-ready"
       },
       "category": "CC",
-      "credits": 4
+      "credits": 3
      },
      {
-      "course": "No-Code AI Essentials: Master AI Concepts & Use Cases",
-      "slug": "no-code-ai-essentials-master-ai-concepts-use-cases",
+      "course": "AI Risk and Compliance: Audit and Governance Foundations",
+      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
       "skills": [
-       "AI Literacy",
-       "Generative AI",
-       "No-Code AI Tools",
-       "LLM Applications"
+       "AI Governance",
+       "Red Teaming",
+       "Adversarial Robustness",
+       "Regulatory Compliance"
       ],
       "delivery": "Async",
-      "outcome": "Master AI Literacy & Generative AI",
-      "hours": 11.3,
+      "outcome": "Master AI Governance & Red Teaming",
+      "hours": 8.5,
       "moduleCount": 4,
       "selectedCount": 2,
       "modules": [
        {
-        "title": "Foundations of AI for Business Leaders",
-        "hours": 5.9,
-        "level": 0,
+        "title": "Adversarial Robustness & Red Teaming AI Systems",
+        "hours": 4.3,
+        "level": 2,
         "skills": [
-         "AI Literacy",
-         "Generative AI",
-         "Large Language Models"
+         "Red Teaming",
+         "Adversarial Robustness",
+         "LLM Security"
         ]
        },
        {
-        "title": "No-Code AI Tools & Platforms",
-        "hours": 5.4,
-        "level": 0,
+        "title": "Regulatory Compliance: EU AI Act NIST RMF & Copyright",
+        "hours": 4.2,
+        "level": 2,
         "skills": [
-         "No-Code AI Tools",
-         "ChatGPT",
-         "Microsoft Copilot"
+         "Regulatory Compliance",
+         "EU AI Act",
+         "NIST AI RMF"
         ]
        }
       ],
       "sync": [
        {
-        "title": "Live session: AI Literacy",
+        "title": "Live session: AI Governance",
         "note": "worked examples & live Q&A"
        },
        {
-        "title": "Live session: Generative AI — problem-solving & code review",
+        "title": "Live session: Red Teaming — problem-solving & code review",
         "note": ""
        }
       ],
-      "masterclass": null,
+      "masterclass": {
+       "title": "Masterclass: AI Governance",
+       "note": "practitioner deep-dive"
+      },
       "project": {
-       "title": "Project: apply AI Literacy & Generative AI",
+       "title": "Project: apply AI Governance & Red Teaming",
        "note": "graded, portfolio-ready"
       },
-      "category": "SEC",
+      "category": "CC",
       "credits": 3
-     },
-     {
-      "course": "Entrepreneurship & New Venture Creation",
-      "category": "FE",
-      "credits": 3,
-      "delivery": "Faculty",
-      "outcome": "Academic core — faculty-delivered",
-      "sync": [
-       {
-        "title": "Faculty-led lectures & tutorials",
-        "note": ""
-       }
-      ],
-      "masterclass": null,
-      "project": null
      }
     ],
-    "hours": 750,
-    "credits": 25,
+    "hours": 810,
+    "credits": 27,
     "milestones": [
      {
       "type": "Mentorship",
@@ -6979,9 +7244,9 @@
    {
     "name": "Year 2 · Semester 3",
     "themes": [
-     "AI-Powered Specialization"
+     "AI-Powered Specialization I"
     ],
-    "milestone": "AI-Powered Specialization",
+    "milestone": "AI-Powered Specialization I",
     "courses": [
      {
       "course": "Generative AI in Marketing",
@@ -7035,7 +7300,7 @@
        "note": "graded, portfolio-ready"
       },
       "category": "FE",
-      "credits": 4
+      "credits": 3
      },
      {
       "course": "Generative AI in Finance",
@@ -7089,7 +7354,7 @@
        "note": "graded, portfolio-ready"
       },
       "category": "FE",
-      "credits": 4
+      "credits": 3
      },
      {
       "course": "Generative AI in HR - Impact and Application of Gen AI",
@@ -7208,145 +7473,204 @@
        "note": "graded, portfolio-ready"
       },
       "category": "FE",
-      "credits": 4
+      "credits": 3
      },
      {
-      "course": "AI-Powered Brand Strategy & Marketing Analytics",
-      "slug": "ai-powered-brand-strategy-marketing-analytics",
+      "course": "Email Analytics & AI for Marketing Performance",
+      "slug": "email-analytics-ai-for-marketing-performance",
       "skills": [
-       "Brand Strategy",
-       "Marketing Analytics",
+       "Email Marketing",
        "AI in Marketing",
-       "Predictive Modeling"
+       "Predictive Modeling",
+       "Marketing Analytics"
       ],
       "delivery": "Async",
-      "outcome": "Master Brand Strategy & Marketing Analytics",
-      "hours": 14.3,
+      "category": "FE",
+      "credits": 3,
+      "outcome": "Industry course mapped to Marketing & Customer Analytics",
+      "hours": 24,
       "moduleCount": 4,
       "selectedCount": 4,
       "modules": [
        {
-        "title": "Introduction to AI in Branding",
-        "hours": 4.2,
-        "level": 1,
+        "title": "AI in Content Creation and Personalization",
+        "hours": 6.0,
+        "level": 0,
         "skills": [
          "AI in Marketing",
-         "Brand Strategy",
-         "Responsible AI"
+         "Personalization",
+         "Generative AI"
         ]
        },
        {
-        "title": "Data-Driven Brand Insights and Analytics",
-        "hours": 3.7,
-        "level": 1,
-        "skills": [
-         "Brand Analytics",
-         "Sentiment Analysis",
-         "Brand Equity Measurement"
-        ]
-       },
-       {
-        "title": "AI in Brand Strategy Optimization",
-        "hours": 3.3,
-        "level": 1,
+        "title": "Predictive Segmentation and Send-Time Optimization",
+        "hours": 6.0,
+        "level": 0,
         "skills": [
          "Predictive Modeling",
-         "Marketing Automation",
-         "A/B Testing"
+         "Audience Segmentation",
+         "Send-Time Optimization"
         ]
        },
        {
-        "title": "Capstone Project: AI-Driven Brand Dashboard",
-        "hours": 3.1,
-        "level": 1,
+        "title": "Advanced Analytics and Attribution",
+        "hours": 6.0,
+        "level": 0,
         "skills": [
-         "Power BI",
+         "Marketing Analytics",
+         "Attribution Modeling",
+         "Cohort Analysis"
+        ]
+       },
+       {
+        "title": "The AI-Enhanced Email System",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Lifecycle Marketing",
          "Data Visualization",
-         "Data Storytelling"
+         "Stakeholder Management"
         ]
        }
       ],
       "sync": [
        {
-        "title": "Live session: Brand Strategy",
+        "title": "Live session: Email Analytics & AI for Marketing Performance",
+        "note": "worked examples & Q&A"
+       }
+      ],
+      "masterclass": {
+       "title": "Masterclass: Email Analytics & AI for Marketing Performance",
+       "note": "practitioner-led"
+      },
+      "project": {
+       "title": "Applied project: Marketing & Customer Analytics",
+       "note": "graded, portfolio-ready"
+      }
+     },
+     {
+      "course": "No-Code AI Essentials: Master AI Concepts & Use Cases",
+      "slug": "no-code-ai-essentials-master-ai-concepts-use-cases",
+      "skills": [
+       "AI Literacy",
+       "Generative AI",
+       "No-Code AI Tools",
+       "LLM Applications"
+      ],
+      "delivery": "Async",
+      "outcome": "Master AI Literacy & Generative AI",
+      "hours": 11.3,
+      "moduleCount": 4,
+      "selectedCount": 2,
+      "modules": [
+       {
+        "title": "Foundations of AI for Business Leaders",
+        "hours": 5.9,
+        "level": 0,
+        "skills": [
+         "AI Literacy",
+         "Generative AI",
+         "Large Language Models"
+        ]
+       },
+       {
+        "title": "No-Code AI Tools & Platforms",
+        "hours": 5.4,
+        "level": 0,
+        "skills": [
+         "No-Code AI Tools",
+         "ChatGPT",
+         "Microsoft Copilot"
+        ]
+       }
+      ],
+      "sync": [
+       {
+        "title": "Live session: AI Literacy",
         "note": "worked examples & live Q&A"
        },
        {
-        "title": "Live session: Marketing Analytics — problem-solving & code review",
+        "title": "Live session: Generative AI — problem-solving & code review",
         "note": ""
        }
       ],
       "masterclass": null,
       "project": {
-       "title": "Project: apply Brand Strategy & Marketing Analytics",
+       "title": "Project: apply AI Literacy & Generative AI",
        "note": "graded, portfolio-ready"
       },
       "category": "FE",
       "credits": 3
      },
      {
-      "course": "Fundamentals of Management Consulting",
-      "slug": "fundamentals-of-management-consulting",
+      "course": "Automate Financial Insights with AI Tools & Dashboards",
+      "slug": "automate-financial-insights-with-ai-tools-dashboards",
       "skills": [
-       "Management Consulting",
-       "Strategic Frameworks",
-       "Case Interviews",
-       "Guesstimates"
+       "Power BI",
+       "Tableau",
+       "Streamlit",
+       "Financial Automation"
       ],
       "delivery": "Async",
-      "outcome": "Master Management Consulting & Strategic Frameworks",
-      "hours": 12.9,
-      "moduleCount": 3,
-      "selectedCount": 3,
+      "category": "FE",
+      "credits": 3,
+      "outcome": "Industry course mapped to Minor II — Domain Analytics",
+      "hours": 24,
+      "moduleCount": 4,
+      "selectedCount": 4,
       "modules": [
        {
-        "title": "Introduction to Management Consulting",
-        "hours": 5.3,
-        "level": 1,
+        "title": "Automation Foundations for Financial Analysts",
+        "hours": 6.0,
+        "level": 0,
         "skills": [
-         "Management Consulting",
-         "Career Paths",
-         "Case Interviews"
+         "Financial Automation",
+         "API Integration",
+         "ETL Pipelines"
         ]
        },
        {
-        "title": "Use of guesstimates in Management Consulting",
-        "hours": 3.4,
-        "level": 1,
+        "title": "Dashboards for Real-Time Financial Insights",
+        "hours": 6.0,
+        "level": 0,
         "skills": [
-         "Guesstimates",
-         "Estimation Techniques",
-         "Analytical Thinking"
+         "Power BI",
+         "Tableau",
+         "Data Visualization"
         ]
        },
        {
-        "title": "Management Consulting tools",
-        "hours": 4.2,
-        "level": 1,
+        "title": "Interactive Applications for Modern Analysts",
+        "hours": 6.0,
+        "level": 0,
         "skills": [
-         "Strategic Frameworks",
-         "BCG Matrix",
-         "SWOT Analysis"
+         "Streamlit",
+         "Machine Learning Integration",
+         "Cloud Computing"
+        ]
+       },
+       {
+        "title": "Capstone: AI-Enabled Automated Financial Insights System",
+        "hours": 6.0,
+        "level": 0,
+        "skills": [
+         "Machine Learning Forecasting",
+         "Large Language Models",
+         "Automated Alerts"
         ]
        }
       ],
       "sync": [
        {
-        "title": "Live session: Management Consulting",
-        "note": "worked examples & live Q&A"
-       },
-       {
-        "title": "Live session: Strategic Frameworks — problem-solving & code review",
-        "note": ""
+        "title": "Live session: Automate Financial Insights with AI Tools & Dashboards",
+        "note": "worked examples & Q&A"
        }
       ],
       "masterclass": null,
       "project": {
-       "title": "Project: apply Management Consulting & Strategic Frameworks",
+       "title": "Applied project: Minor II — Domain Analytics",
        "note": "graded, portfolio-ready"
-      },
-      "category": "CC",
-      "credits": 3
+      }
      },
      {
       "course": "Summer Internship Project (SIP)",
@@ -7380,9 +7704,9 @@
    {
     "name": "Year 2 · Semester 4",
     "themes": [
-     "Leadership & Capstone"
+     "AI Specialization II & Capstone"
     ],
-    "milestone": "Leadership & Capstone",
+    "milestone": "AI Specialization II & Capstone",
     "courses": [
      {
       "course": "Case-Based Frameworks for Mastering Management Consulting",
@@ -7395,7 +7719,7 @@
       ],
       "delivery": "Async",
       "category": "FE",
-      "credits": 4,
+      "credits": 3,
       "outcome": "Industry course mapped to AI Strategy & Digital Transformation",
       "hours": 18,
       "moduleCount": 3,
@@ -7588,143 +7912,109 @@
       }
      },
      {
-      "course": "Coach and Develop High-Performing Teams",
-      "slug": "coach-and-develop-high-performing-teams",
+      "course": "AI & Automation for Supply Chain Resilience",
+      "slug": "ai-automation-for-supply-chain-resilience",
       "skills": [
-       "Coaching",
-       "Feedback Frameworks",
-       "Performance Management",
-       "GROW Model"
+       "Supply Chain Management",
+       "AI in Logistics",
+       "Predictive Analytics",
+       "Risk Monitoring"
       ],
       "delivery": "Async",
-      "category": "CC",
+      "category": "FE",
       "credits": 3,
-      "outcome": "Industry course mapped to Organizational Behaviour",
-      "hours": 24,
-      "moduleCount": 4,
-      "selectedCount": 4,
+      "outcome": "Industry course mapped to Operations & Supply Chain Management",
+      "hours": 18,
+      "moduleCount": 2,
+      "selectedCount": 2,
       "modules": [
        {
-        "title": "Foundations of Coaching and Feedback",
-        "hours": 6.0,
+        "title": "Foundations of AI & Automation in Supply Chains",
+        "hours": 9.0,
         "level": 0,
         "skills": [
-         "Coaching",
-         "Feedback Frameworks",
-         "Coaching Mindset",
-         "Mentoring"
+         "Supply Chain Management",
+         "AI in Logistics",
+         "Automation",
+         "Logistics Technology"
         ]
        },
        {
-        "title": "Structuring Performance and Development Conversations",
-        "hours": 6.0,
+        "title": "Building Resilience Through Intelligent Systems",
+        "hours": 9.0,
         "level": 0,
         "skills": [
-         "GROW Model",
-         "Development Planning",
-         "Performance Reviews",
-         "Goal Setting"
-        ]
-       },
-       {
-        "title": "Managing Underperformance and Difficult Conversations",
-        "hours": 6.0,
-        "level": 0,
-        "skills": [
-         "Performance Improvement Plans",
-         "Root Cause Analysis",
-         "Difficult Conversations",
-         "Emotional Intelligence"
-        ]
-       },
-       {
-        "title": "Building a Culture of Continuous Improvement",
-        "hours": 6.0,
-        "level": 0,
-        "skills": [
-         "Continuous Improvement",
-         "Recognition and Motivation",
-         "Team Retrospectives",
-         "Delegation"
+         "Predictive Analytics",
+         "Risk Monitoring",
+         "Adaptive Decision-Making",
+         "Operational Resilience"
         ]
        }
       ],
       "sync": [
        {
-        "title": "Live session: Coach and Develop High-Performing Teams",
+        "title": "Live session: AI & Automation for Supply Chain Resilience",
         "note": "worked examples & Q&A"
        }
       ],
       "masterclass": {
-       "title": "Masterclass: Coach and Develop High-Performing Teams",
+       "title": "Masterclass: AI & Automation for Supply Chain Resilience",
        "note": "practitioner-led"
       },
       "project": {
-       "title": "Applied project: Organizational Behaviour",
+       "title": "Applied project: Operations & Supply Chain Management",
        "note": "graded, portfolio-ready"
       }
      },
      {
-      "course": "AI Risk and Compliance: Audit and Governance Foundations",
-      "slug": "ai-risk-and-compliance-audit-and-governance-foundations",
-      "skills": [
-       "AI Governance",
-       "Red Teaming",
-       "Adversarial Robustness",
-       "Regulatory Compliance"
-      ],
-      "delivery": "Async",
-      "outcome": "Master AI Governance & Red Teaming",
-      "hours": 8.5,
-      "moduleCount": 4,
-      "selectedCount": 2,
-      "modules": [
-       {
-        "title": "Adversarial Robustness & Red Teaming AI Systems",
-        "hours": 4.3,
-        "level": 2,
-        "skills": [
-         "Red Teaming",
-         "Adversarial Robustness",
-         "LLM Security"
-        ]
-       },
-       {
-        "title": "Regulatory Compliance: EU AI Act NIST RMF & Copyright",
-        "hours": 4.2,
-        "level": 2,
-        "skills": [
-         "Regulatory Compliance",
-         "EU AI Act",
-         "NIST AI RMF"
-        ]
-       }
-      ],
+      "course": "People Analytics & HR-Tech",
+      "category": "FE",
+      "credits": 3,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
       "sync": [
        {
-        "title": "Live session: AI Governance",
-        "note": "worked examples & live Q&A"
-       },
-       {
-        "title": "Live session: Red Teaming — problem-solving & code review",
+        "title": "Faculty-led lectures & tutorials",
         "note": ""
        }
       ],
-      "masterclass": {
-       "title": "Masterclass: AI Governance",
-       "note": "practitioner deep-dive"
-      },
-      "project": {
-       "title": "Project: apply AI Governance & Red Teaming",
-       "note": "graded, portfolio-ready"
-      },
-      "category": "CC",
-      "credits": 3
+      "masterclass": null,
+      "project": null
+     },
+     {
+      "course": "AI Product Management",
+      "category": "FE",
+      "credits": 3,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
+     },
+     {
+      "course": "Entrepreneurship & AI Ventures",
+      "category": "FE",
+      "credits": 3,
+      "delivery": "Faculty",
+      "outcome": "Academic core — faculty-delivered",
+      "sync": [
+       {
+        "title": "Faculty-led lectures & tutorials",
+        "note": ""
+       }
+      ],
+      "masterclass": null,
+      "project": null
      },
      {
       "course": "Capstone / Dissertation",
       "category": "EEC",
-      "credits": 8,
+      "credits": 6,
       "delivery": "Faculty",
       "outcome": "Academic core — faculty-delivered",
       "sync": [
@@ -7740,8 +8030,8 @@
       }
      }
     ],
-    "hours": 720,
-    "credits": 24,
+    "hours": 810,
+    "credits": 27,
     "milestones": [
      {
       "type": "Mentorship",
@@ -7752,16 +8042,16 @@
    }
   ],
   "credits": {
-   "target": 101,
-   "targetHours": 3030,
+   "target": 108,
+   "targetHours": 3240,
    "biCredits": 13,
-   "biHours": 376,
-   "facultyCredits": 88,
-   "facultyHours": 2654,
-   "nepCap": 40,
-   "nepCapHours": 1200,
+   "biHours": 404,
+   "facultyCredits": 95,
+   "facultyHours": 2836,
+   "nepCap": 43,
+   "nepCapHours": 1290,
    "withinNep": true,
-   "benchmark": "AICTE MBA model curriculum (~100 cr)"
+   "benchmark": "AICTE MBA model curriculum (54 core + 42 elective)"
   },
   "regulatory": {
    "award": "MBA in AI-Powered Business",
@@ -7775,60 +8065,58 @@
      "name": "Core (Foundation)",
      "code": "CC",
      "label": "Core Courses",
-     "credits": 50,
-     "min": null,
+     "credits": 54,
+     "min": 54,
      "covers": [
       "Principles & Practice of Management",
       "Managerial Economics",
-      "Financial Accounting & Analysis",
+      "Accounting for Managers",
       "Organizational Behaviour",
       "Quantitative Methods & Business Statistics",
-      "Business Law, Ethics & Governance",
+      "Business Communication",
+      "Business Law & Ethics",
+      "IT & Management Information Systems",
+      "Business Environment & Sustainability",
       "Marketing Management",
       "Financial Management",
       "Human Resource Management",
-      "Operations & Supply Chain Management",
-      "Business Analytics & Data Visualization",
+      "Operations Management",
+      "Business Research Methods",
+      "Operations Research & Decision Science",
       "Strategic Management",
-      "Leadership & Change Management",
-      "Business Ethics, Governance & Responsible AI"
+      "Business Analytics & Visualization",
+      "Corporate Governance & Responsible AI"
      ]
     },
     {
      "name": "Functional Elective (AI specialization)",
      "code": "FE",
      "label": "AI-Business Functional Electives",
-     "credits": 31,
-     "min": null,
+     "credits": 42,
+     "min": 42,
      "covers": [
-      "Entrepreneurship & New Venture Creation",
       "Generative AI in Marketing",
       "Generative AI in Finance",
       "Generative AI in HR",
       "AI-Powered Brand & Market Strategy",
       "Marketing & Customer Analytics",
+      "AI for Business — Foundations",
+      "Predictive Analytics for Managers",
       "AI Strategy & Digital Transformation",
       "Financial Forecasting with AI",
-      "No-Code Automation for Business"
-     ]
-    },
-    {
-     "name": "Skill / Value-Added",
-     "code": "SEC",
-     "label": "Skills & Practical Courses",
-     "credits": 6,
-     "min": null,
-     "covers": [
-      "Business Communication",
-      "AI for Business — Foundations"
+      "No-Code Automation for Business",
+      "AI in Supply Chain & Operations",
+      "People Analytics & HR-Tech",
+      "AI Product Management",
+      "Entrepreneurship & AI Ventures"
      ]
     },
     {
      "name": "Internship / Capstone",
      "code": "EEC",
      "label": "Internships, Projects & Capstone",
-     "credits": 14,
-     "min": null,
+     "credits": 12,
+     "min": 6,
      "covers": [
       "Summer Internship Project (SIP)",
       "Capstone / Dissertation"
@@ -7839,17 +8127,17 @@
     {
      "after": "Year 1",
      "award": "PG Diploma in Management",
-     "credits": "~50",
+     "credits": "54",
      "nheqf": "6.0"
     },
     {
      "after": "Year 2",
      "award": "MBA in AI-Powered Business",
-     "credits": "~100",
+     "credits": "108",
      "nheqf": "6.5"
     }
    ],
-   "note": "AICTE Model Curriculum for Management (MBA), 4-semester, with AI-business functional electives + SIP."
+   "note": "AICTE Model Curriculum for Management (MBA): 54 core + 42 elective + experiential, 4 semesters, with AI-business functional electives + SIP."
   },
   "vsUniversity": {
    "biStrength": [
