@@ -113,6 +113,12 @@ const STEPS = [
   "Lens B · scoring job-orientation vs employer-demanded skills",
   "Compiling the gaps + the Board Infinity content that closes them",
 ];
+const DEEP_STEPS = [
+  "Reading your syllabus line by line",
+  "Cross-referencing against AI-era employer demand",
+  "Reasoning about field-specific hiring shifts",
+  "Writing your tailored gap narrative",
+];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export default function DegreeCompare() {
@@ -125,13 +131,49 @@ export default function DegreeCompare() {
   const [fileName, setFileName] = useState("");
   const [analyzing, setAnalyzing] = useState(false);
   const [stage, setStage] = useState(0);
+  const [deep, setDeep] = useState(null);
+  const [deepLoading, setDeepLoading] = useState(false);
+  const [deepStage, setDeepStage] = useState(0);
+  const [deepErr, setDeepErr] = useState("");
 
   // staged, visible analysis so the user sees real work happening (the matching itself is instant & local)
   async function runAnalysis(subjects, name) {
-    setResult(null); setAnalyzing(true); setStage(0);
+    setResult(null); setDeep(null); setDeepErr(""); setAnalyzing(true); setStage(0);
     for (let i = 0; i < STEPS.length; i++) { setStage(i); await sleep(560); }
     analyze(subjects, name);
     setAnalyzing(false);
+  }
+
+  // OPT-IN deep AI pass — reads the actual syllabus + the two-lens result and writes a tailored narrative.
+  // Server-side only (key never reaches the browser). Has a hard timeout so it can never hang.
+  async function runDeep() {
+    if (!result || deepLoading) return;
+    setDeep(null); setDeepErr(""); setDeepLoading(true); setDeepStage(0);
+    let alive = true;
+    const tick = setInterval(() => { if (alive) setDeepStage((s) => Math.min(s + 1, DEEP_STEPS.length - 1)); }, 2200);
+    const ctrl = new AbortController();
+    const tm = setTimeout(() => ctrl.abort(), 38000);
+    const payload = {
+      name: result.name, idealName: result.idealName,
+      syllabusPct: result.syllabusPct, aiReady: result.aiReady,
+      syllabusGaps: result.syllabusGaps, present: result.present,
+      missing: result.aiGaps.map((g) => g.skill),
+      bridges: result.aiGaps.map((g) => ({ skill: g.skill, course: g.course?.title || null })),
+      roles: result.roles.map((r) => r.sp.role),
+    };
+    try {
+      const r = await fetch("/api/curriculum", {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify(payload), signal: ctrl.signal,
+      });
+      const j = await r.json();
+      if (j.ok) setDeep(j.analysis);
+      else setDeepErr(j.reason === "no_key" ? "no_key" : "failed");
+    } catch {
+      setDeepErr("failed");
+    } finally {
+      alive = false; clearInterval(tick); clearTimeout(tm); setDeepLoading(false);
+    }
   }
 
   function analyze(subjects, name) {
@@ -293,6 +335,104 @@ export default function DegreeCompare() {
             <p className="text-sm font-black text-ink-900">Two-lens gap report for <span className="text-brand-600">{result.name}</span></p>
             <p className="mt-0.5 text-xs text-ink-500">We assess your curriculum two ways: <b className="text-ink-700">A — syllabus</b> (vs an ideal program) and <b className="text-ink-700">B — job-orientation</b> (vs what employers hire for) — then show how Board Infinity closes both.</p>
           </div>
+
+          {/* ===== OPT-IN DEEP AI ANALYSIS ===== */}
+          {!deep && !deepLoading && (
+            <div className="overflow-hidden rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-5">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="flex items-center gap-2 font-black text-ink-900"><span className="text-lg">✨</span> Want a deeper read?</p>
+                  <p className="mt-0.5 max-w-2xl text-xs text-ink-500">The report above is instant and rule-based. Run an AI pass to have it <b className="text-ink-700">read your syllabus in context</b> and write a tailored narrative — the critical gaps, why they matter in the AI era, and what to fix first. Takes ~15&nbsp;seconds.</p>
+                </div>
+                <button onClick={runDeep} className="btn-primary shrink-0 text-sm">✨ Run deep AI analysis →</button>
+              </div>
+              {deepErr === "failed" && <p className="mt-2 text-xs font-bold text-rose-600">Couldn&apos;t complete the AI analysis just now — the two-lens report above still stands. Try again in a moment.</p>}
+              {deepErr === "no_key" && <p className="mt-2 text-xs font-bold text-peel-700">Deep analysis isn&apos;t configured on this environment yet. The instant two-lens report above is fully available.</p>}
+            </div>
+          )}
+
+          {deepLoading && (
+            <div className="card border-brand-200 p-6 animate-fadeIn">
+              <div className="flex items-center gap-3">
+                <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-brand-200 border-t-brand-500" />
+                <p className="font-black text-ink-900">AI is analysing your curriculum…</p>
+              </div>
+              <ul className="mt-4 space-y-2.5">
+                {DEEP_STEPS.map((s, i) => (
+                  <li key={i} className="flex items-center gap-2.5 text-sm">
+                    <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-black transition ${i < deepStage ? "bg-teal-500 text-white" : i === deepStage ? "bg-brand-500 text-white" : "bg-ink-100 text-ink-400"}`}>
+                      {i < deepStage ? "✓" : i + 1}
+                    </span>
+                    <span className={i <= deepStage ? "font-bold text-ink-800" : "text-ink-400"}>{s}</span>
+                    {i === deepStage && <span className="ml-auto text-[11px] font-bold text-brand-500">working…</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {deep && (
+            <div className="overflow-hidden rounded-2xl border-2 border-brand-200 bg-white animate-fadeIn">
+              <div className="bg-gradient-to-br from-brand-500 to-brand-700 p-5 text-white">
+                <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-100"><span>✨</span> AI deep analysis</p>
+                <h3 className="mt-1 text-xl font-black text-white">{deep.headline}</h3>
+                {deep.verdict && <p className="mt-2 max-w-3xl text-sm text-brand-50">{deep.verdict}</p>}
+              </div>
+              <div className="space-y-5 p-5">
+                {deep.industryShift && (
+                  <div className="rounded-xl border border-peel-200 bg-peel-50 p-3">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-peel-700">The industry shift</p>
+                    <p className="mt-1 text-sm text-ink-800">{deep.industryShift}</p>
+                  </div>
+                )}
+
+                {deep.strengths?.length > 0 && (
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-teal-600">What you already do well</p>
+                    <ul className="mt-2 space-y-1.5">
+                      {deep.strengths.map((s, i) => <li key={i} className="flex gap-2 text-sm text-ink-700"><span className="text-teal-500">✓</span>{s}</li>)}
+                    </ul>
+                  </div>
+                )}
+
+                {deep.criticalGaps?.length > 0 && (
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-rose-600">Critical gaps — most consequential first</p>
+                    <div className="mt-2 space-y-3">
+                      {deep.criticalGaps.map((g, i) => (
+                        <div key={i} className="rounded-xl border border-ink-200 p-3">
+                          <p className="font-black text-ink-900"><span className="mr-1.5 text-rose-500">{i + 1}.</span>{g.area}</p>
+                          {g.why && <p className="mt-1 text-sm text-ink-600"><b className="text-ink-700">Why it matters:</b> {g.why}</p>}
+                          {g.impact && <p className="mt-0.5 text-sm text-ink-600"><b className="text-ink-700">Risk if ignored:</b> {g.impact}</p>}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {deep.priorityActions?.length > 0 && (
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-brand-600">Fix this first — priority order</p>
+                    <ol className="mt-2 space-y-1.5">
+                      {deep.priorityActions.map((a, i) => (
+                        <li key={i} className="flex gap-2.5 text-sm text-ink-800">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-500 text-[11px] font-black text-white">{i + 1}</span>{a}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+
+                {deep.bridge && (
+                  <div className="rounded-xl bg-brand-50 p-3">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-brand-600">How Board Infinity closes it</p>
+                    <p className="mt-1 text-sm text-ink-800">{deep.bridge}</p>
+                  </div>
+                )}
+                <p className="text-[10px] text-ink-400">AI-generated from your syllabus and the two-lens analysis above. Reasoned only from detected subjects — review before sharing externally.</p>
+              </div>
+            </div>
+          )}
 
           {/* ===== LENS A — Syllabus gap vs ideal program ===== */}
           <div className="card p-5">
