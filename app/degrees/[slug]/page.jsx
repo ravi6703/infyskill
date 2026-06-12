@@ -52,6 +52,7 @@ export default function Degree({ params }) {
                   <div className="min-w-0">
                     <p className="text-sm font-bold text-ink-800">{c.label || c.name}</p>
                     <p className="mt-0.5 text-[11px] text-ink-500">{c.name}{c.min ? (<> · min {c.min} cr {c.credits >= c.min ? <span className="font-bold text-teal-600">✓</span> : null}</>) : null}</p>
+                    {c.desc && <p className="mt-1 text-[10px] italic leading-snug text-ink-400">{c.desc}</p>}
                   </div>
                   <span className="flex shrink-0 items-center gap-1"><span className="text-lg font-black text-brand-600">{c.credits}</span><span className="text-[10px] text-ink-400 transition group-open:rotate-180">▼</span></span>
                 </summary>
