@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import journeys from "../../data/journeys.json";
 import modules from "../../data/modules.json";
-import questionBank from "../../data/diagnostic_bank.json";
+import diagPool from "../../data/diagnostic_pool.json";
+import { buildAdaptive, tierSeed, resumeSeed, LEVELS as ABILITY_LEVELS, LEVEL_COLOR } from "../../lib/adaptive";
 import { buildWeekPlan, clustersFor, skillsByCluster } from "../../lib/engine";
 import WeekPlan from "../../components/WeekPlan";
 import Radar from "../../components/Radar";
@@ -38,18 +39,22 @@ export default function Diagnostic() {
   const [hpw, setHpw] = useState(10);
   const [style, setStyle] = useState("project");
   const [goal, setGoal] = useState("switch");
-  // AI assessment state
-  const [aiQs, setAiQs] = useState(null);   // null=not loaded · []=failed (fallback) · [...]=questions
-  const [aiAns, setAiAns] = useState({});
-  const [aiLoading, setAiLoading] = useState(false);
+  // adaptive assessment state
+  const engineRef = useRef(null);
+  const [assessReady, setAssessReady] = useState(false); // gates the test start (lets résumé load first)
+  const [curQ, setCurQ] = useState(null);          // current adaptive question {cluster,q,level}
+  const [selOpt, setSelOpt] = useState(null);
+  const [sure, setSure] = useState(null);          // confidence on current answer
+  const [aProg, setAProg] = useState({ asked: 0, clusters: 0, clustersDone: 0 });
+  const [capProfile, setCapProfile] = useState(null); // {perCluster,readiness,totalItems}
+  const [aiQs, setAiQs] = useState(null);          // fallback self-rating trigger ([] = no pool)
   const [analysis, setAnalysis] = useState(null);
-  // adaptive round 2
-  const [round, setRound] = useState(1);
-  const [aiQs2, setAiQs2] = useState(null);
-  const [aiAns2, setAiAns2] = useState({});
-  const [round1Scores, setRound1Scores] = useState(null);
-  const [ai2Loading, setAi2Loading] = useState(false);
   const [analysisLoading, setAnalysisLoading] = useState(false);
+  // résumé evidence (optional, privacy-safe — raw text never persisted)
+  const [resumeProfile, setResumeProfile] = useState(null);
+  const [resumeBusy, setResumeBusy] = useState("");
+  // P3 transparency: per-cluster override to force-include foundations the test said you can skip
+  const [overrides, setOverrides] = useState({});
   // "help me find my role" state
   const [findMode, setFindMode] = useState(false);
   const [prefs, setPrefs] = useState({ excites: null, aptitude: null, impact: null });
@@ -75,12 +80,16 @@ export default function Diagnostic() {
 
   const plan = useMemo(() => {
     if (step !== 5 || !journey) return null;
-    const known = clusters.filter(([cl]) => (ratings[cl] || 0) >= 2).map(([cl]) => cl);
+    // graded ability per cluster (0..3) from the adaptive assessment; overrides force-include foundations
+    const ability = {};
+    clusters.forEach(([cl]) => { if (ratings[cl] !== undefined && !overrides[cl]) ability[cl] = ratings[cl]; });
+    const known = clusters.filter(([cl]) => (ratings[cl] || 0) >= 2 && !overrides[cl]).map(([cl]) => cl);
     return buildWeekPlan(journey.skills, modules, {
       knownClusters: known, knownSkills: tools, hoursPerWeek: hpw, roleName: journey.role,
       maxWeeks, fastTrack, projectFirst: style === "project",
+      clusterAbility: ability, goal,
     });
-  }, [step, journey, ratings, tools, hpw, clusters, maxWeeks, fastTrack, style]);
+  }, [step, journey, ratings, tools, hpw, clusters, maxWeeks, fastTrack, style, goal, overrides]);
 
   // cluster score = the better of (self-rating) or (fraction of its sub-skills ticked)
   const clusterScore = (cl) => {
@@ -95,60 +104,78 @@ export default function Diagnostic() {
     return Math.round((clusters.reduce((a, [cl]) => a + clusterScore(cl), 0) / clusters.length) * 100);
   }, [clusters, ratings, tools, clusterSkills]);
 
-  // load an AI-generated, profile-adapted assessment when entering step 3
+  // start the ADAPTIVE assessment once the learner clicks Start (lets optional résumé load first)
   useEffect(() => {
-    if (step !== 3 || !journey || aiQs !== null || aiLoading) return;
-    // ROUND 1 — try the pre-built bank first (instant, no API, no token cost).
-    // Keyed by role-slug × experience tier; round 2 (adaptive) + analysis stay live below.
-    const tier = profile.exp === "0" ? "0" : profile.exp === "1-3" ? "1-3" : "adv";
-    const banked = questionBank[`${journey.slug}|${tier}`] || questionBank[`${journey.slug}|1-3`];
-    if (banked && banked.length) { setAiQs(banked); return; }
-    // fallback — role/tier not in the bank → generate live (today's behaviour, never breaks)
-    let cancelled = false;
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 22000); // never leave the user stuck
-    (async () => {
-      setAiLoading(true);
-      try {
-        const res = await fetch("/api/diagnostic", {
-          method: "POST", headers: { "content-type": "application/json" }, signal: ctrl.signal,
-          body: JSON.stringify({ action: "assess", role: journey.role, clusters: clusters.map(([cl]) => cl), profile }),
-        });
-        const d = await res.json();
-        if (!cancelled) setAiQs(d.ok && d.questions?.length ? d.questions : []);
-      } catch { if (!cancelled) setAiQs([]); }
-      if (!cancelled) setAiLoading(false);
-    })();
-    return () => { cancelled = true; clearTimeout(timer); };
-  }, [step, journey, aiQs, aiLoading, clusters, profile]);
+    if (step !== 3 || !journey || engineRef.current || capProfile) return;
+    const rolePool = diagPool[journey.slug];
+    if (!rolePool || !rolePool.clusters?.length) { setAiQs([]); return; } // no pool → self-rating fallback
+    if (!assessReady) return; // wait for the Start button (so optional résumé can load first)
+    const base = tierSeed(profile.exp);
+    const seed = {};
+    rolePool.clusters.forEach((c) => { seed[c] = base; });
+    if (resumeProfile?.areas) Object.assign(seed, resumeSeed(resumeProfile.areas)); // verify résumé claims
+    const eng = buildAdaptive(rolePool, rolePool.clusters, seed, {});
+    engineRef.current = eng;
+    setCurQ(eng.current()); setAProg(eng.progress());
+  }, [step, journey, profile.exp, resumeProfile, capProfile, assessReady]);
 
-  function resetAssessment() { setAiQs(null); setAiAns({}); setAnalysis(null); setRound(1); setAiQs2(null); setAiAns2({}); setRound1Scores(null); }
+  function resetAssessment() {
+    engineRef.current = null; setCurQ(null); setSelOpt(null); setSure(null);
+    setCapProfile(null); setAnalysis(null); setAiQs(null); setRatings({}); setOverrides({});
+    setAProg({ asked: 0, clusters: 0, clustersDone: 0 });
+    setAssessReady(false); setResumeProfile(null); setResumeBusy("");
+  }
   function pickRole(slug) { setRole(slug); resetAssessment(); setStep(3); }
   function gotoAssessment() { resetAssessment(); setStep(3); }
 
-  const scoreRound = (qs, ans) => {
-    const per = {};
-    qs.forEach((q, i) => { const cl = q.cluster; per[cl] = per[cl] || { c: 0, t: 0 }; per[cl].t++; if (ans[i] === q.correct) per[cl].c++; });
-    return per;
-  };
-  const mergeScores = (a, b) => {
-    const m = JSON.parse(JSON.stringify(a || {}));
-    Object.entries(b || {}).forEach(([cl, v]) => { m[cl] = m[cl] || { c: 0, t: 0 }; m[cl].c += v.c; m[cl].t += v.t; });
-    return m;
-  };
-  function finalize(per) {
+  // adaptive: record answer + confidence, route to the next item, or finish → capability profile
+  function answerAdaptive() {
+    const eng = engineRef.current;
+    if (!eng || selOpt === null || sure === null) return;
+    eng.answer(selOpt, sure);
+    setSelOpt(null); setSure(null);
+    if (eng.done()) finalizeFromProfile(eng.result());
+    else { setCurQ(eng.current()); setAProg(eng.progress()); }
+  }
+  function finalizeFromProfile(res) {
+    setCapProfile(res);
     const newRatings = {};
-    Object.entries(per).forEach(([cl, { c, t }]) => { const p = t ? c / t : 0; newRatings[cl] = p >= 0.75 ? 3 : p >= 0.5 ? 2 : p >= 0.25 ? 1 : 0; });
+    res.perCluster.forEach((p) => { newRatings[p.cluster] = p.score; }); // 0..3 level → existing rating scale
     setRatings(newRatings);
-    let tc = 0, tt = 0; Object.values(per).forEach(({ c, t }) => { tc += c; tt += t; });
-    const overall = tt ? Math.round((tc / tt) * 100) : 0;
     setAnalysis(null); setAnalysisLoading(true);
     const ctrl = new AbortController(); const tm = setTimeout(() => ctrl.abort(), 15000);
     fetch("/api/diagnostic", {
       method: "POST", headers: { "content-type": "application/json" }, signal: ctrl.signal,
-      body: JSON.stringify({ action: "analyze", role: journey.role, profile, overall, scored: Object.entries(per).map(([cluster, { c, t }]) => ({ cluster, correct: c, total: t })) }),
+      body: JSON.stringify({ action: "analyze", role: journey.role, profile: { ...profile, goal }, readiness: res.readiness,
+        scored: res.perCluster.map((p) => ({ cluster: p.cluster, label: p.label, confidence: p.confidence })) }),
     }).then((r) => r.json()).then((d) => { if (d.ok) setAnalysis(d.analysis); }).catch(() => {}).finally(() => { clearTimeout(tm); setAnalysisLoading(false); });
     setStep(4);
+  }
+
+  // résumé upload (optional) → extract evidence-based profile → seeds & targets the test. Raw text not persisted.
+  async function handleResume(e) {
+    const file = e.target.files?.[0]; if (!file || !journey) return;
+    setResumeBusy("Reading " + file.name + " …");
+    try {
+      let text = "";
+      const lower = file.name.toLowerCase();
+      if (lower.endsWith(".pdf")) {
+        const pdfjs = await import(/* webpackIgnore: true */ "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.mjs");
+        pdfjs.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.mjs";
+        const pdf = await pdfjs.getDocument({ data: await file.arrayBuffer() }).promise;
+        for (let i = 1; i <= pdf.numPages; i++) { const c = await (await pdf.getPage(i)).getTextContent(); text += c.items.map((t) => t.str).join(" ") + "\n"; }
+      } else if (lower.endsWith(".docx")) {
+        await new Promise((res, rej) => { if (window.mammoth) return res(); const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
+        text = (await window.mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() })).value;
+      } else text = await file.text();
+      setResumeBusy("Analysing your experience …");
+      const rolePool = diagPool[journey.slug];
+      const res = await fetch("/api/diagnostic", { method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ action: "extract", role: journey.role, clusters: rolePool?.clusters || clusters.map(([c]) => c), text }) });
+      const d = await res.json();
+      if (d.ok) { setResumeProfile(d.profile); setResumeBusy(""); }
+      else setResumeBusy(d.reason === "too_short" ? "Couldn't read enough from that file — you can skip this." : "Couldn't analyse that file — you can skip this.");
+    } catch { setResumeBusy("Couldn't read that file — you can skip and take the test directly."); }
   }
 
   async function recommend() {
@@ -168,29 +195,6 @@ export default function Diagnostic() {
     setRecLoading(false);
   }
 
-  async function submitAssessment() {
-    const per1 = scoreRound(aiQs, aiAns);
-    const weak = Object.entries(per1).filter(([, { c, t }]) => t > 0 && c / t < 0.5).sort((a, b) => a[1].c / a[1].t - b[1].c / b[1].t).map(([cl]) => cl).slice(0, 3);
-    if (weak.length === 0) { finalize(per1); return; }
-    // adaptive: fetch a harder round on the weak areas
-    setRound1Scores(per1); setAi2Loading(true); setAiQs2(null); setRound(2);
-    const ctrl = new AbortController(); const tm = setTimeout(() => ctrl.abort(), 18000);
-    try {
-      const res = await fetch("/api/diagnostic", {
-        method: "POST", headers: { "content-type": "application/json" }, signal: ctrl.signal,
-        body: JSON.stringify({ action: "followup", role: journey.role, profile, weak }),
-      });
-      clearTimeout(tm);
-      const d = await res.json();
-      if (d.ok && d.questions?.length) setAiQs2(d.questions);
-      else { finalize(per1); return; } // no follow-up available → finalize on round 1
-    } catch { clearTimeout(tm); finalize(per1); return; } // timeout/error → finalize on round 1, never stuck
-    setAi2Loading(false);
-  }
-  function submitFollowup() {
-    const per2 = scoreRound(aiQs2, aiAns2);
-    finalize(mergeScores(round1Scores, per2));
-  }
 
   function finish() {
     setStep(5);
@@ -326,89 +330,82 @@ export default function Diagnostic() {
         </div>
       )}
 
-      {step === 3 && journey && round === 1 && (aiQs === null || aiLoading) && (
+      {/* step 3 intro — optional résumé calibration, then start the adaptive test */}
+      {step === 3 && journey && !assessReady && !capProfile && diagPool[journey.slug] && (
         <div className="mt-8">
           <h2 className="text-lg font-black text-ink-900">3 · Skill check for {journey.role}</h2>
-          <p className="mt-1 text-sm text-ink-500">Generating a short, personalised assessment for your profile…</p>
-          <div className="card mt-4 grid place-items-center gap-3 p-10 text-center">
-            <div className="h-8 w-8 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600" />
-            <p className="text-sm text-ink-500">Writing questions adapted to a {BACKGROUNDS.find(([v]) => v === profile.background)?.[1].replace(/^[^ ]+ /, "") || "candidate"} targeting {journey.role}…</p>
-          </div>
-        </div>
-      )}
+          <p className="mt-1 text-sm text-ink-500">An <b className="text-ink-700">adaptive</b> assessment that finds your true level in each skill area — harder when you&apos;re right, easier when you&apos;re not. ~2–3 minutes, runs instantly in your browser.</p>
 
-      {/* round 2 — adaptive deeper check on weak areas */}
-      {step === 3 && journey && round === 2 && (aiQs2 === null || ai2Loading) && (
-        <div className="mt-8">
-          <h2 className="text-lg font-black text-ink-900">3 · Deeper check — round 2</h2>
-          <p className="mt-1 text-sm text-ink-500">You did well on some areas — generating a few harder questions on the ones that need a closer look…</p>
-          <div className="card mt-4 grid place-items-center gap-3 p-10 text-center">
-            <div className="h-8 w-8 animate-spin rounded-full border-2 border-peel-200 border-t-peel-600" />
-            <p className="text-sm text-ink-500">Probing your weaker areas to confirm the real gaps…</p>
-          </div>
-        </div>
-      )}
-
-      {step === 3 && journey && round === 2 && Array.isArray(aiQs2) && aiQs2.length > 0 && (
-        <div className="mt-8">
-          <h2 className="text-lg font-black text-ink-900">Round 2 · Deeper check</h2>
-          <p className="mt-1 text-sm text-ink-500">A second, <b className="text-peel-700">harder</b> round focused only on the areas you scored low — to confirm whether the gap is real before we build your plan.</p>
-          <div className="mt-4 space-y-3">
-            {aiQs2.map((q, i) => (
-              <div key={i} className="card p-4">
-                <div className="flex flex-wrap items-start gap-2">
-                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-peel-50 text-xs font-black text-peel-700">{i + 1}</span>
-                  <p className="flex-1 font-bold text-ink-900">{q.q}</p>
-                  <span className="chip-gray shrink-0 text-[10px]">{q.cluster}</span>
-                </div>
-                <div className="mt-2 space-y-1.5 pl-8">
-                  {q.options.map((o, oi) => (
-                    <button key={oi} onClick={() => setAiAns2((a) => ({ ...a, [i]: oi }))}
-                      className={`flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-left text-sm transition ${aiAns2[i] === oi ? "border-peel-500 bg-peel-50 text-ink-900" : "border-ink-200 bg-white text-ink-700 hover:border-peel-300"}`}>
-                      <span className={`grid h-4 w-4 shrink-0 place-items-center rounded-full border ${aiAns2[i] === oi ? "border-peel-600 bg-peel-600 text-white" : "border-ink-300"}`}>{aiAns2[i] === oi ? "●" : ""}</span>
-                      <span className="flex-1">{o}</span>
-                    </button>
-                  ))}
-                </div>
+          <div className="card mt-4 border-brand-200 p-5">
+            <p className="text-sm font-bold text-ink-800">Optional: calibrate to your résumé</p>
+            <p className="mt-0.5 text-xs text-ink-500">Upload your résumé and we&apos;ll start each area at the right difficulty and verify what you&apos;ve actually done — so the test is shorter and sharper. Totally optional.</p>
+            {!resumeProfile ? (
+              <div className="mt-3 flex flex-wrap items-center gap-3">
+                <label className="btn-ghost cursor-pointer text-sm">
+                  📄 Upload résumé (PDF/DOCX)
+                  <input type="file" accept=".pdf,.docx,.txt" className="hidden" onChange={handleResume} />
+                </label>
+                {resumeBusy && <span className="text-xs font-bold text-brand-600">{resumeBusy}</span>}
               </div>
-            ))}
-          </div>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <button disabled={Object.keys(aiAns2).length < aiQs2.length} onClick={submitFollowup} className="btn-primary disabled:opacity-40">See my results →</button>
-            <span className="text-xs text-ink-400">{Object.keys(aiAns2).length}/{aiQs2.length} answered</span>
-          </div>
-        </div>
-      )}
-
-      {step === 3 && journey && round === 1 && Array.isArray(aiQs) && aiQs.length > 0 && (
-        <div className="mt-8">
-          <h2 className="text-lg font-black text-ink-900">3 · Skill check for {journey.role}</h2>
-          <p className="mt-1 text-sm text-ink-500">A <b className="text-ink-700">{aiQs.length}-question</b> assessment across <b className="text-ink-700">{new Set(aiQs.map((q) => q.cluster)).size} skill areas</b> — two questions each (one concept + one applied scenario), calibrated to your background. We score your answers, not a self-rating, then probe any weak area again in round 2 before building your plan.</p>
-          <div className="mt-4 space-y-3">
-            {aiQs.map((q, i) => (
-              <div key={i} className="card p-4">
-                <div className="flex flex-wrap items-start gap-2">
-                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-50 text-xs font-black text-brand-600">{i + 1}</span>
-                  <p className="flex-1 font-bold text-ink-900">{q.q}</p>
-                  <span className="chip-gray shrink-0 text-[10px]">{q.cluster}</span>
+            ) : (
+              <div className="mt-3 rounded-xl border border-teal-200 bg-teal-50 p-3">
+                <p className="text-sm font-bold text-teal-700">✓ Résumé read — {resumeProfile.seniority} level{resumeProfile.years ? `, ~${resumeProfile.years} yrs` : ""}</p>
+                {resumeProfile.summary && <p className="mt-0.5 text-xs text-ink-600">{resumeProfile.summary}</p>}
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {Object.entries(resumeProfile.areas).filter(([, v]) => v !== "none").map(([c, v]) => <span key={c} className="chip border border-teal-300 bg-white text-teal-700 text-[10px]">{c}: {v}</span>)}
                 </div>
-                <div className="mt-2 space-y-1.5 pl-8">
-                  {q.options.map((o, oi) => (
-                    <button key={oi} onClick={() => setAiAns((a) => ({ ...a, [i]: oi }))}
-                      className={`flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-left text-sm transition ${aiAns[i] === oi ? "border-brand-500 bg-brand-50 text-ink-900" : "border-ink-200 bg-white text-ink-700 hover:border-brand-300"}`}>
-                      <span className={`grid h-4 w-4 shrink-0 place-items-center rounded-full border ${aiAns[i] === oi ? "border-brand-600 bg-brand-600 text-white" : "border-ink-300"}`}>{aiAns[i] === oi ? "●" : ""}</span>
-                      <span className="flex-1">{o}</span>
-                    </button>
-                  ))}
-                </div>
+                <button onClick={() => setResumeProfile(null)} className="mt-2 text-[11px] font-bold text-ink-500 hover:text-ink-800">remove</button>
               </div>
-            ))}
+            )}
+            <p className="mt-2 text-[10px] text-ink-400">🔒 Your résumé is read in the moment to calibrate the test and is <b>not stored</b>. The test still verifies your real level — we never just trust the résumé.</p>
           </div>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+
+          <div className="mt-5 flex items-center gap-3">
             <button onClick={() => setStep(2)} className="btn-ghost">← Back</button>
-            <button disabled={Object.keys(aiAns).length < aiQs.length} onClick={submitAssessment} className="btn-primary disabled:opacity-40">See my results →</button>
-            <span className="text-xs text-ink-400">{Object.keys(aiAns).length}/{aiQs.length} answered</span>
+            <button onClick={() => setAssessReady(true)} className="btn-primary">{resumeProfile ? "Start calibrated skill check →" : "Start skill check →"}</button>
           </div>
+        </div>
+      )}
+
+      {/* ADAPTIVE assessment — one question at a time, difficulty steps up/down to find your true level */}
+      {step === 3 && journey && curQ && !capProfile && (
+        <div className="mt-8">
+          <h2 className="text-lg font-black text-ink-900">3 · Skill check for {journey.role}</h2>
+          <p className="mt-1 text-sm text-ink-500">An <b className="text-ink-700">adaptive</b> assessment — it gets harder when you&apos;re right and easier when you&apos;re not, to find your true level in each skill area. Answer honestly; your confidence counts too.{resumeProfile ? <span className="text-teal-600"> · calibrated to your résumé</span> : null}</p>
+          <div className="mt-3 flex items-center gap-3">
+            <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-ink-100">
+              <div className="h-full bg-brand-500 transition-all" style={{ width: `${Math.round((aProg.clustersDone / Math.max(1, aProg.clusters)) * 100)}%` }} />
+            </div>
+            <span className="shrink-0 text-[11px] font-bold text-ink-400">{aProg.clustersDone}/{aProg.clusters} areas · {aProg.asked} answered</span>
+          </div>
+          <div className="card mt-4 p-5">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span className="chip-blue text-[11px]">{curQ.cluster}</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-ink-400">{["", "Foundational", "Applied", "Advanced"][curQ.level]} level</span>
+            </div>
+            <p className="mt-3 text-lg font-bold text-ink-900">{curQ.q.q}</p>
+            <div className="mt-3 space-y-1.5">
+              {curQ.q.options.map((o, oi) => (
+                <button key={oi} onClick={() => setSelOpt(oi)}
+                  className={`flex w-full items-center gap-2 rounded-lg border px-3 py-2.5 text-left text-sm transition ${selOpt === oi ? "border-brand-500 bg-brand-50 text-ink-900" : "border-ink-200 bg-white text-ink-700 hover:border-brand-300"}`}>
+                  <span className={`grid h-4 w-4 shrink-0 place-items-center rounded-full border text-[9px] ${selOpt === oi ? "border-brand-600 bg-brand-600 text-white" : "border-ink-300"}`}>{selOpt === oi ? "●" : ""}</span>
+                  <span className="flex-1">{o}</span>
+                </button>
+              ))}
+            </div>
+            <div className={`mt-4 transition ${selOpt === null ? "pointer-events-none opacity-40" : ""}`}>
+              <p className="text-xs font-bold text-ink-500">How sure are you?</p>
+              <div className="mt-1.5 flex gap-2">
+                <button onClick={() => setSure(true)} className={`chip border ${sure === true ? "border-teal-500 bg-teal-50 text-teal-700" : "border-ink-200 bg-white text-ink-600"}`}>😎 Confident</button>
+                <button onClick={() => setSure(false)} className={`chip border ${sure === false ? "border-peel-500 bg-peel-50 text-peel-700" : "border-ink-200 bg-white text-ink-600"}`}>🤔 Not sure</button>
+              </div>
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <button onClick={() => setStep(2)} className="btn-ghost">← Back</button>
+              <button disabled={selOpt === null || sure === null} onClick={answerAdaptive} className="btn-primary disabled:opacity-40">Next →</button>
+            </div>
+          </div>
+          <p className="mt-2 text-[11px] text-ink-400">Runs instantly in your browser — no waiting. Your confidence helps us tell solid knowledge from a lucky guess.</p>
         </div>
       )}
 
@@ -531,23 +528,24 @@ export default function Diagnostic() {
             </div>
           </div>
 
-          {/* per-skill scores from the (AI) skill-check */}
-          {Array.isArray(aiQs) && aiQs.length > 0 && Object.keys(ratings).length > 0 && (
+          {/* capability profile — measured level per area, from the adaptive assessment */}
+          {capProfile && (
             <div className="card mt-4 p-5">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="text-lg font-black text-ink-900">Your skill-check scores</h3>
-                {round1Scores && <span className="chip-peel text-[10px]">✓ included a deeper round-2 check</span>}
+                <h3 className="text-lg font-black text-ink-900">Your capability profile</h3>
+                <span className="chip-gray text-[10px]">{capProfile.totalItems} adaptive questions · evidence-based</span>
               </div>
-              <p className="mt-1 text-xs text-ink-500">How you scored in each area — this drives what your plan emphasises and what it lets you skip.</p>
+              <p className="mt-1 text-xs text-ink-500">Your measured level in each area — this is what drives the plan below: what it emphasises and what it lets you skip.</p>
               <div className="mt-3 space-y-2">
-                {clusters.filter(([cl]) => ratings[cl] !== undefined).map(([cl]) => {
-                  const pct = Math.round((ratings[cl] / 3) * 100);
-                  const col = pct >= 67 ? "bg-teal-500" : pct >= 34 ? "bg-peel-500" : "bg-rose-500";
+                {capProfile.perCluster.map((p) => {
+                  const pct = Math.round((p.score / 3) * 100);
+                  const col = p.score >= 3 ? "bg-teal-500" : p.score >= 2 ? "bg-brand-500" : p.score >= 1 ? "bg-peel-500" : "bg-rose-500";
                   return (
-                    <div key={cl} className="flex items-center gap-3">
-                      <span className="w-40 shrink-0 truncate text-sm text-ink-700" title={cl}>{cl}</span>
-                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-ink-100"><div className={`h-full ${col}`} style={{ width: `${pct}%` }} /></div>
-                      <span className="w-9 shrink-0 text-right text-xs font-bold text-ink-500">{pct}%</span>
+                    <div key={p.cluster} className="flex items-center gap-3">
+                      <span className="w-40 shrink-0 truncate text-sm text-ink-700" title={p.cluster}>{p.cluster}</span>
+                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-ink-100"><div className={`h-full ${col}`} style={{ width: `${Math.max(8, pct)}%` }} /></div>
+                      <span className="w-24 shrink-0 text-right text-xs font-bold text-ink-600">{p.label}</span>
+                      {p.confidence === "low" && <span className="shrink-0 text-[10px] text-peel-600" title="Low confidence — answered unsurely or inconsistently. Worth a closer look.">~shaky</span>}
                     </div>
                   );
                 })}
@@ -555,8 +553,8 @@ export default function Diagnostic() {
             </div>
           )}
 
-          {/* AI capability read (from the scored skill-check) */}
-          {Array.isArray(aiQs) && aiQs.length > 0 && (analysis ? (
+          {/* AI capability read (from the adaptive assessment) */}
+          {capProfile && (analysis ? (
             <div className="card mt-4 border-brand-200 p-5">
               <p className="text-xs font-bold uppercase tracking-widest text-brand-600">AI capability assessment</p>
               <p className="mt-1 text-base font-bold text-ink-900">{analysis.verdict}</p>
@@ -582,6 +580,32 @@ export default function Diagnostic() {
               <p className="text-sm text-ink-500">Analysing your answers for an AI capability read…</p>
             </div>
           ) : null)}
+
+          {/* WHY YOUR PLAN LOOKS LIKE THIS — transparency + overrides (P3) */}
+          {plan && capProfile && (
+            <div className="card mt-4 border-brand-200 p-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-600">Why your plan looks like this</p>
+              <ul className="mt-2 space-y-1.5 text-sm text-ink-700">
+                {capProfile.perCluster.filter((p) => p.score >= 2 && !overrides[p.cluster]).map((p) => (
+                  <li key={p.cluster}>
+                    ✓ Trimmed <b>{p.cluster}</b> foundations — you tested <b className="text-teal-600">{p.label}</b>.
+                    <button onClick={() => setOverrides((o) => ({ ...o, [p.cluster]: true }))} className="ml-1 text-[11px] font-bold text-brand-600 hover:underline">include anyway</button>
+                  </li>
+                ))}
+                {capProfile.perCluster.filter((p) => p.score <= 1).map((p) => (
+                  <li key={p.cluster}>→ Full coverage + extra practice for <b>{p.cluster}</b> — measured <b className="text-rose-600">{p.label}</b>.</li>
+                ))}
+                <li>🎯 Emphasis tuned to your goal: <b>{GOALS.find(([v]) => v === goal)?.[1] || goal}</b>.</li>
+                <li>{style === "project" ? "🛠 Project-first — you start building early; the hackathon lands sooner." : "📚 Structured — concepts build first, then the build."}</li>
+                {Object.keys(overrides).length > 0 && (
+                  <li className="text-ink-500">↩ Re-including foundations you chose to keep: {Object.keys(overrides).join(", ")} — <button onClick={() => setOverrides({})} className="text-[11px] font-bold text-brand-600 hover:underline">reset</button></li>
+                )}
+                {plan.feasibility?.tight && (
+                  <li className="text-peel-700">⏱ Full coverage needs ~{plan.feasibility.neededWeeks} weeks at {hpw} hrs/week vs your {maxWeeks}-week target — raise hours/week or extend the deadline to fit everything.</li>
+                )}
+              </ul>
+            </div>
+          )}
 
           {/* YOU: BEFORE → AFTER — the outcome, from the learner's side */}
           {plan && (
