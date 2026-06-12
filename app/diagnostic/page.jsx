@@ -48,6 +48,7 @@ export default function Diagnostic() {
   const [aiAns2, setAiAns2] = useState({});
   const [round1Scores, setRound1Scores] = useState(null);
   const [ai2Loading, setAi2Loading] = useState(false);
+  const [analysisLoading, setAnalysisLoading] = useState(false);
   // "help me find my role" state
   const [findMode, setFindMode] = useState(false);
   const [prefs, setPrefs] = useState({ excites: null, aptitude: null, impact: null });
@@ -134,10 +135,12 @@ export default function Diagnostic() {
     setRatings(newRatings);
     let tc = 0, tt = 0; Object.values(per).forEach(({ c, t }) => { tc += c; tt += t; });
     const overall = tt ? Math.round((tc / tt) * 100) : 0;
+    setAnalysis(null); setAnalysisLoading(true);
+    const ctrl = new AbortController(); const tm = setTimeout(() => ctrl.abort(), 15000);
     fetch("/api/diagnostic", {
-      method: "POST", headers: { "content-type": "application/json" },
+      method: "POST", headers: { "content-type": "application/json" }, signal: ctrl.signal,
       body: JSON.stringify({ action: "analyze", role: journey.role, profile, overall, scored: Object.entries(per).map(([cluster, { c, t }]) => ({ cluster, correct: c, total: t })) }),
-    }).then((r) => r.json()).then((d) => { if (d.ok) setAnalysis(d.analysis); }).catch(() => {});
+    }).then((r) => r.json()).then((d) => { if (d.ok) setAnalysis(d.analysis); }).catch(() => {}).finally(() => { clearTimeout(tm); setAnalysisLoading(false); });
     setStep(4);
   }
 
@@ -164,15 +167,17 @@ export default function Diagnostic() {
     if (weak.length === 0) { finalize(per1); return; }
     // adaptive: fetch a harder round on the weak areas
     setRound1Scores(per1); setAi2Loading(true); setAiQs2(null); setRound(2);
+    const ctrl = new AbortController(); const tm = setTimeout(() => ctrl.abort(), 18000);
     try {
       const res = await fetch("/api/diagnostic", {
-        method: "POST", headers: { "content-type": "application/json" },
+        method: "POST", headers: { "content-type": "application/json" }, signal: ctrl.signal,
         body: JSON.stringify({ action: "followup", role: journey.role, profile, weak }),
       });
+      clearTimeout(tm);
       const d = await res.json();
       if (d.ok && d.questions?.length) setAiQs2(d.questions);
       else { finalize(per1); return; } // no follow-up available → finalize on round 1
-    } catch { finalize(per1); return; }
+    } catch { clearTimeout(tm); finalize(per1); return; } // timeout/error → finalize on round 1, never stuck
     setAi2Loading(false);
   }
   function submitFollowup() {
@@ -564,12 +569,12 @@ export default function Diagnostic() {
               </div>
               {analysis.focus && <p className="mt-3 text-sm text-ink-600">🎯 <b className="text-ink-800">Where to start:</b> {analysis.focus}</p>}
             </div>
-          ) : (
+          ) : analysisLoading ? (
             <div className="card mt-4 flex items-center gap-3 border-brand-200 p-5">
               <div className="h-5 w-5 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600" />
               <p className="text-sm text-ink-500">Analysing your answers for an AI capability read…</p>
             </div>
-          ))}
+          ) : null)}
 
           {/* YOU: BEFORE → AFTER — the outcome, from the learner's side */}
           {plan && (
