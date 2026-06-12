@@ -106,6 +106,15 @@ async function extractDocx(file) {
   return r.value;
 }
 
+const STEPS = [
+  "Extracting subjects & topics from your document",
+  "Tagging each subject against the InfyAI skill taxonomy",
+  "Lens A · matching subject-by-subject vs the ideal AI-era program",
+  "Lens B · scoring job-orientation vs employer-demanded skills",
+  "Compiling the gaps + the Board Infinity content that closes them",
+];
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 export default function DegreeCompare() {
   const [refId, setRefId] = useState(refs[0].id);
   const [text, setText] = useState("");
@@ -114,6 +123,16 @@ export default function DegreeCompare() {
   const [sent, setSent] = useState(false);
   const [parsing, setParsing] = useState("");
   const [fileName, setFileName] = useState("");
+  const [analyzing, setAnalyzing] = useState(false);
+  const [stage, setStage] = useState(0);
+
+  // staged, visible analysis so the user sees real work happening (the matching itself is instant & local)
+  async function runAnalysis(subjects, name) {
+    setResult(null); setAnalyzing(true); setStage(0);
+    for (let i = 0; i < STEPS.length; i++) { setStage(i); await sleep(560); }
+    analyze(subjects, name);
+    setAnalyzing(false);
+  }
 
   function analyze(subjects, name) {
     const names = subjects.map((s) => (typeof s === "string" ? s : s.name));
@@ -163,7 +182,7 @@ export default function DegreeCompare() {
     const r = refs[0];
     const subs = r.subjects.map((s) => (typeof s === "string" ? s : s.name));
     setText(subs.join("\n"));
-    analyze(r.subjects, "Sample curriculum");
+    runAnalysis(r.subjects, "Sample curriculum");
   }
   function cleanLines(raw) {
     return raw.split(/\n+/)
@@ -175,7 +194,7 @@ export default function DegreeCompare() {
   }
   function runPaste() {
     const subs = cleanLines(text);
-    if (subs.length) analyze(subs, fileName || "Your uploaded curriculum");
+    if (subs.length) runAnalysis(subs, fileName || "Your uploaded curriculum");
   }
   async function handleFile(e) {
     const file = e.target.files?.[0];
@@ -190,7 +209,7 @@ export default function DegreeCompare() {
       else raw = await file.text(); // txt / csv / md
       setText(raw);
       const subs = cleanLines(raw);
-      if (subs.length) { analyze(subs, file.name); setParsing(`Parsed ${subs.length} subject lines from ${file.name}.`); }
+      if (subs.length) { setParsing(`Parsed ${subs.length} subject lines from ${file.name}.`); runAnalysis(subs, file.name); }
       else setParsing("Couldn't detect subject lines — paste the curriculum text below instead.");
     } catch (err) {
       setParsing("Couldn't read that file. Try a .txt export or paste the text below.");
@@ -246,6 +265,27 @@ export default function DegreeCompare() {
         </details>
         <button onClick={loadSample} className="mt-3 text-xs font-bold text-brand-600 hover:underline">No syllabus handy? Load a sample →</button>
       </div>
+
+      {analyzing && (
+        <div className="card mt-8 border-brand-200 p-6 animate-fadeIn">
+          <div className="flex items-center gap-3">
+            <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-brand-200 border-t-brand-500" />
+            <p className="font-black text-ink-900">Analysing your curriculum…</p>
+          </div>
+          <p className="mt-1 text-xs text-ink-500">Two-lens gap analysis — runs entirely in your browser. Your syllabus is never uploaded to a server.</p>
+          <ul className="mt-4 space-y-2.5">
+            {STEPS.map((s, i) => (
+              <li key={i} className="flex items-center gap-2.5 text-sm">
+                <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-black transition ${i < stage ? "bg-teal-500 text-white" : i === stage ? "bg-brand-500 text-white" : "bg-ink-100 text-ink-400"}`}>
+                  {i < stage ? "✓" : i + 1}
+                </span>
+                <span className={i <= stage ? "font-bold text-ink-800" : "text-ink-400"}>{s}</span>
+                {i === stage && <span className="ml-auto text-[11px] font-bold text-brand-500">working…</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {result && (
         <div className="mt-8 space-y-6">

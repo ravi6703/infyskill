@@ -26,7 +26,7 @@ export default function Nav() {
               {label}
             </Link>
           ))}
-          <Link href="/diagnostic" className="ml-2 rounded-lg bg-brand-500 px-3 py-1.5 text-white hover:bg-brand-600">Start free →</Link>
+          <Link href="/catalog" className="ml-2 rounded-lg bg-brand-500 px-3 py-1.5 text-white hover:bg-brand-600">Start free →</Link>
         </nav>
       </div>
     </header>
