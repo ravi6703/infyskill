@@ -2,7 +2,7 @@
 
 > **Purpose of this file:** the single source of truth for the InfyAI project. Read it at the start of any session to get full context. Update it at the end of any session that changes decisions, state, or conventions. Tell Claude *"update the project doc"* and it will sync this file.
 
-_Last updated: 2026-06-12 · current version: v9.41 (adaptive diagnostic engine + résumé calibration + personalized journey wiring)_
+_Last updated: 2026-06-12 · current version: v9.42 (PDF upload fix — UMD pdf.js loader)_
 
 **Project files (in this folder):** `InfyAI_PROJECT.md` (this doc) · `InfyAI_Founder_Demo_Playbook.md` (demo script + not-now list) · `InfyAI_SkillTagging_Verification.md` (skill-tag audit & cluster remediation list) · `InfyAI_Specialization_Journey_Gaps.md` (per-role journey gaps: map vs build) · `InfyAI_Gap_Report.xlsx` (the gap report as a workbook: Summary/Priorities, Journey Gaps, Skill-Cluster Fixes — internal, not on website) · `InfyAI_Journey_Availability_Internal.xlsx` (per-role available-vs-to-build, internal).
 
@@ -77,6 +77,8 @@ Park these unless a real buyer/pilot demands them: student accounts/auth, paymen
 ---
 
 ## 7. Changelog (append newest at top)
+
+- **v9.42** — **Fixed PDF upload (résumé + university syllabus).** Root cause found via live browser debug: the dynamic **ESM `import()` of `pdf.min.mjs` from cdnjs FAILS in production** ("Failed to fetch dynamically imported module") — so résumé upload (diagnostic) and syllabus upload (`/degrees/compare`) both silently fell to the catch. Fix: load pdf.js as the **UMD build via a classic `<script>` tag** (`window.pdfjsLib`) + the `.js` worker (not `.mjs`). Verified end-to-end in the live browser: résumé `.txt`, `.docx` and a standard PDF all parse → extract → profile shown; adaptive test then runs and advances. (A quirky fpdf-generated test PDF extracted too little — real exports from Word/Docs/reportlab work fine.)
 
 - **v9.41** — **Career Diagnostic rebuilt as a genuine adaptive assessment → personalized journey (plan: `InfyAI_Diagnostic_Redesign_Plan.md`).** P1: a **difficulty-laddered item pool** (`data/diagnostic_pool.json`, 20 roles × clusters × L1/L2/L3, 492 items) drives a **client-side adaptive (CAT-lite) test** (`lib/adaptive.js`) — per cluster it seeds a difficulty, steps **up on correct / down on wrong**, brackets your level in ~2–3 items, captures **confidence (sure/not sure)**, and outputs a **capability profile** (Novice/Developing/Proficient/Advanced + confidence). Instant, no API, no token cost. P2: `lib/engine.js` now takes **graded per-cluster ability** (Advanced skips basics/keeps advanced, Novice gets full + foundation boost), **wires `goal`** (first-job → interview prep mid-journey; switch → positioning; upskill → leaner), **deepens project-first** (weekly build + earlier hackathon), and computes a **feasibility check** (hours vs deadline → honest "tight" flag). P2.5: optional **résumé upload** (`extract` action) → evidence-based profile **seeds & verifies** the test (claims confirmed, not trusted); raw text never persisted. P3: **"Why your plan looks like this"** transparency + per-cluster **override** ("include foundations anyway"). P4: **persona diff-matrix + sanity rules** (`InfyAI_Diagnostic_Validation.md`) — all pass (ability ↓ → modules ↓; goal/style addons present; infeasible flagged). Route adds `ladder`/`extract`, level-based `analyze`. Deployed; `/diagnostic` 200, `extract` verified. LinkedIn-by-URL intentionally deferred (not reliably possible without paid enrichment).
 
