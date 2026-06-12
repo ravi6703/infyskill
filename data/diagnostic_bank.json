@@ -1,0 +1,2762 @@
+{
+ "ai-machine-learning-engineer|0": [
+  {
+   "q": "What is the output of print(2 ** 3)?",
+   "options": [
+    "6",
+    "8",
+    "9",
+    "3"
+   ],
+   "correct": 1,
+   "cluster": "Python & Programming"
+  },
+  {
+   "q": "Which activation function is commonly used in neural networks?",
+   "options": [
+    "ReLU",
+    "Linear",
+    "Logistic",
+    "Tanh"
+   ],
+   "correct": 0,
+   "cluster": "Deep Learning"
+  },
+  {
+   "q": "What is overfitting in machine learning?",
+   "options": [
+    "Model performs well on training data",
+    "Model performs well on test data",
+    "Model is too simple",
+    "Model is too complex"
+   ],
+   "correct": 3,
+   "cluster": "Machine Learning"
+  },
+  {
+   "q": "Which service is commonly used for deploying machine learning models in the cloud?",
+   "options": [
+    "AWS Lambda",
+    "Google Docs",
+    "Microsoft Word",
+    "Dropbox"
+   ],
+   "correct": 0,
+   "cluster": "Cloud & DevOps"
+  }
+ ],
+ "ai-machine-learning-engineer|1-3": [
+  {
+   "q": "What is the purpose of the 'with' statement in Python?",
+   "options": [
+    "Manage resources",
+    "Define a function",
+    "Create a class",
+    "Import a module"
+   ],
+   "correct": 0,
+   "cluster": "Python & Programming"
+  },
+  {
+   "q": "Which activation function is commonly used in hidden layers of a neural network?",
+   "options": [
+    "Softmax",
+    "ReLU",
+    "Sigmoid",
+    "Tanh"
+   ],
+   "correct": 1,
+   "cluster": "Deep Learning"
+  },
+  {
+   "q": "What does overfitting mean in machine learning?",
+   "options": [
+    "Model performs poorly on training data",
+    "Model generalizes well",
+    "Model performs well on training but poorly on test",
+    "Model is too simple"
+   ],
+   "correct": 2,
+   "cluster": "Machine Learning"
+  },
+  {
+   "q": "Which service is commonly used for deploying machine learning models in the cloud?",
+   "options": [
+    "AWS S3",
+    "Google Cloud Functions",
+    "Azure ML",
+    "Heroku"
+   ],
+   "correct": 2,
+   "cluster": "Cloud & DevOps"
+  }
+ ],
+ "ai-machine-learning-engineer|adv": [
+  {
+   "q": "What is the primary purpose of dropout in neural networks?",
+   "options": [
+    "Prevent overfitting",
+    "Increase accuracy",
+    "Speed up training",
+    "Reduce data size"
+   ],
+   "correct": 0,
+   "cluster": "Deep Learning"
+  },
+  {
+   "q": "Which metric is best for evaluating an imbalanced classification model?",
+   "options": [
+    "Accuracy",
+    "F1 Score",
+    "Precision",
+    "Recall"
+   ],
+   "correct": 1,
+   "cluster": "Machine Learning"
+  },
+  {
+   "q": "In a CI/CD pipeline for ML, what is the main goal of model versioning?",
+   "options": [
+    "Track changes",
+    "Improve performance",
+    "Reduce costs",
+    "Enhance security"
+   ],
+   "correct": 0,
+   "cluster": "MLOps & AI Infrastructure"
+  },
+  {
+   "q": "Which AWS service is best for deploying a scalable ML model?",
+   "options": [
+    "EC2",
+    "S3",
+    "Lambda",
+    "SageMaker"
+   ],
+   "correct": 3,
+   "cluster": "Cloud & DevOps"
+  }
+ ],
+ "agentic-ai-engineer|0": [
+  {
+   "q": "What is an agentic AI?",
+   "options": [
+    "A self-learning system",
+    "A type of LLM",
+    "A cloud service",
+    "A programming language"
+   ],
+   "correct": 0,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which model is commonly used for text generation?",
+   "options": [
+    "CNN",
+    "RNN",
+    "GPT",
+    "SVM"
+   ],
+   "correct": 2,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What does CI/CD stand for?",
+   "options": [
+    "Continuous Integration/Continuous Deployment",
+    "Cloud Integration/Cloud Deployment",
+    "Code Improvement/Code Development",
+    "Container Integration/Container Deployment"
+   ],
+   "correct": 0,
+   "cluster": "Cloud & DevOps"
+  },
+  {
+   "q": "Which of the following is a Python data structure?",
+   "options": [
+    "Array",
+    "List",
+    "Matrix",
+    "Set"
+   ],
+   "correct": 1,
+   "cluster": "Python & Programming"
+  }
+ ],
+ "agentic-ai-engineer|1-3": [
+  {
+   "q": "What is a key feature of agentic AI?",
+   "options": [
+    "Autonomy",
+    "Data Storage",
+    "User Interface",
+    "Network Security"
+   ],
+   "correct": 0,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which of the following is a common use case for LLMs?",
+   "options": [
+    "Image Recognition",
+    "Text Generation",
+    "Data Encryption",
+    "Network Monitoring"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which service is commonly used for container orchestration in cloud environments?",
+   "options": [
+    "AWS Lambda",
+    "Docker Compose",
+    "Kubernetes",
+    "GitHub Actions"
+   ],
+   "correct": 2,
+   "cluster": "Cloud & DevOps"
+  },
+  {
+   "q": "What is the output of print(type([])) in Python?",
+   "options": [
+    "<class 'list'>",
+    "<class 'dict'>",
+    "<class 'tuple'>",
+    "<class 'set'>"
+   ],
+   "correct": 0,
+   "cluster": "Python & Programming"
+  }
+ ],
+ "agentic-ai-engineer|adv": [
+  {
+   "q": "What is a key challenge in ensuring agentic AI aligns with human values?",
+   "options": [
+    "Value misalignment",
+    "Data scarcity",
+    "Computational limits",
+    "Latency issues"
+   ],
+   "correct": 0,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which technique is best for fine-tuning a generative model on a specific domain?",
+   "options": [
+    "Transfer learning",
+    "Reinforcement learning",
+    "Data augmentation",
+    "Unsupervised learning"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In a cloud environment, what is a primary benefit of using container orchestration?",
+   "options": [
+    "Cost reduction",
+    "Improved security",
+    "Scalability",
+    "Faster coding"
+   ],
+   "correct": 2,
+   "cluster": "Cloud & DevOps"
+  },
+  {
+   "q": "Which Python library is most suitable for building neural networks?",
+   "options": [
+    "Pandas",
+    "NumPy",
+    "TensorFlow",
+    "Matplotlib"
+   ],
+   "correct": 2,
+   "cluster": "Python & Programming"
+  }
+ ],
+ "mlops-ai-platform-engineer|0": [
+  {
+   "q": "What does CI/CD stand for?",
+   "options": [
+    "Continuous Integration/Continuous Deployment",
+    "Cloud Integration/Cloud Deployment",
+    "Container Integration/Container Deployment",
+    "Code Integration/Code Deployment"
+   ],
+   "correct": 0,
+   "cluster": "Cloud & DevOps"
+  },
+  {
+   "q": "Which tool is commonly used for MLOps?",
+   "options": [
+    "Docker",
+    "TensorFlow",
+    "Kubernetes",
+    "Jupyter"
+   ],
+   "correct": 2,
+   "cluster": "MLOps & AI Infrastructure"
+  },
+  {
+   "q": "What is a common use of LLMs?",
+   "options": [
+    "Image generation",
+    "Text summarization",
+    "Data cleaning",
+    "Model training"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is the purpose of unit testing?",
+   "options": [
+    "Test entire application",
+    "Test individual components",
+    "Test user interface",
+    "Test performance"
+   ],
+   "correct": 1,
+   "cluster": "Software Testing & QA"
+  }
+ ],
+ "mlops-ai-platform-engineer|1-3": [
+  {
+   "q": "What is the primary benefit of using containers in MLOps?",
+   "options": [
+    "Scalability",
+    "Cost reduction",
+    "Data storage",
+    "User interface"
+   ],
+   "correct": 0,
+   "cluster": "Cloud & DevOps"
+  },
+  {
+   "q": "Which tool is commonly used for model deployment in MLOps?",
+   "options": [
+    "TensorFlow",
+    "Docker",
+    "Kubernetes",
+    "Pandas"
+   ],
+   "correct": 2,
+   "cluster": "MLOps & AI Infrastructure"
+  },
+  {
+   "q": "In a generative AI model, what does LLM stand for?",
+   "options": [
+    "Large Language Model",
+    "Linear Learning Model",
+    "Low Latency Model",
+    "Layered Logic Model"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a key aspect of software testing in AI applications?",
+   "options": [
+    "User feedback",
+    "Model accuracy",
+    "Code efficiency",
+    "Server uptime"
+   ],
+   "correct": 1,
+   "cluster": "Software Testing & QA"
+  }
+ ],
+ "mlops-ai-platform-engineer|adv": [
+  {
+   "q": "Which service is best for deploying scalable ML models in AWS?",
+   "options": [
+    "Lambda",
+    "SageMaker",
+    "EC2",
+    "ECS"
+   ],
+   "correct": 1,
+   "cluster": "MLOps & AI Infrastructure"
+  },
+  {
+   "q": "What is a key benefit of using Docker in MLOps?",
+   "options": [
+    "Faster training",
+    "Environment consistency",
+    "Reduced costs",
+    "More data"
+   ],
+   "correct": 1,
+   "cluster": "Cloud & DevOps"
+  },
+  {
+   "q": "In a generative model, what is the purpose of the latent space?",
+   "options": [
+    "Data storage",
+    "Model training",
+    "Feature extraction",
+    "Data generation"
+   ],
+   "correct": 3,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which testing method is best for validating ML model performance?",
+   "options": [
+    "Unit testing",
+    "Integration testing",
+    "A/B testing",
+    "Load testing"
+   ],
+   "correct": 2,
+   "cluster": "Software Testing & QA"
+  }
+ ],
+ "data-engineer-ai-era|0": [
+  {
+   "q": "What is ETL in data processing?",
+   "options": [
+    "Extract, Transform, Load",
+    "Edit, Transform, Load",
+    "Extract, Transfer, Load",
+    "Edit, Transfer, Load"
+   ],
+   "correct": 0,
+   "cluster": "Data Engineering"
+  },
+  {
+   "q": "Which Python library is commonly used for data manipulation?",
+   "options": [
+    "NumPy",
+    "Matplotlib",
+    "Requests",
+    "Flask"
+   ],
+   "correct": 0,
+   "cluster": "Python & Programming"
+  },
+  {
+   "q": "What does SQL stand for?",
+   "options": [
+    "Structured Query Language",
+    "Simple Query Language",
+    "Structured Question Language",
+    "Simple Question Language"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "Which function is used to read a CSV file in Python?",
+   "options": [
+    "read_csv()",
+    "open_csv()",
+    "load_csv()",
+    "import_csv()"
+   ],
+   "correct": 0,
+   "cluster": "Python & Programming"
+  }
+ ],
+ "data-engineer-ai-era|1-3": [
+  {
+   "q": "What is ETL in data engineering?",
+   "options": [
+    "Extract, Transform, Load",
+    "Extract, Transfer, Load",
+    "Evaluate, Transform, Load",
+    "Extract, Transform, Link"
+   ],
+   "correct": 0,
+   "cluster": "Data Engineering"
+  },
+  {
+   "q": "Which Python library is best for data manipulation?",
+   "options": [
+    "NumPy",
+    "Matplotlib",
+    "Pandas",
+    "Scikit-learn"
+   ],
+   "correct": 2,
+   "cluster": "Python & Programming"
+  },
+  {
+   "q": "What SQL command retrieves data from a database?",
+   "options": [
+    "INSERT",
+    "UPDATE",
+    "SELECT",
+    "DELETE"
+   ],
+   "correct": 2,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "In Python, how do you read a CSV file?",
+   "options": [
+    "open('file.csv')",
+    "pd.read_csv('file.csv')",
+    "csv.read('file.csv')",
+    "read.csv('file.csv')"
+   ],
+   "correct": 1,
+   "cluster": "Python & Programming"
+  }
+ ],
+ "data-engineer-ai-era|adv": [
+  {
+   "q": "What is the primary purpose of a data lake?",
+   "options": [
+    "Store structured data only",
+    "Store unstructured data only",
+    "Store all data types",
+    "Store data for immediate analysis"
+   ],
+   "correct": 2,
+   "cluster": "Data Engineering"
+  },
+  {
+   "q": "Which Python library is best for data manipulation?",
+   "options": [
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "Scikit-learn"
+   ],
+   "correct": 1,
+   "cluster": "Python & Programming"
+  },
+  {
+   "q": "What is a common trade-off when normalizing a database?",
+   "options": [
+    "Increased redundancy",
+    "Decreased query performance",
+    "Easier data retrieval",
+    "Simplified schema design"
+   ],
+   "correct": 1,
+   "cluster": "Data Engineering"
+  },
+  {
+   "q": "Which visualization is best for showing trends over time?",
+   "options": [
+    "Bar chart",
+    "Pie chart",
+    "Line chart",
+    "Scatter plot"
+   ],
+   "correct": 2,
+   "cluster": "Data Analysis & BI"
+  }
+ ],
+ "genai-application-developer|0": [
+  {
+   "q": "What does LLM stand for?",
+   "options": [
+    "Large Language Model",
+    "Local Learning Machine",
+    "Linear Logic Model",
+    "Low-Level Machine"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which of these is a key feature of Agentic AI?",
+   "options": [
+    "Autonomy",
+    "Static Responses",
+    "Manual Input Required",
+    "No Learning"
+   ],
+   "correct": 0,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "What is the primary goal of Deep Learning?",
+   "options": [
+    "Data Storage",
+    "Pattern Recognition",
+    "Manual Coding",
+    "Simple Calculations"
+   ],
+   "correct": 1,
+   "cluster": "Deep Learning"
+  },
+  {
+   "q": "Which tool is commonly used for MLOps?",
+   "options": [
+    "Docker",
+    "Notepad",
+    "Excel",
+    "Paint"
+   ],
+   "correct": 0,
+   "cluster": "MLOps & AI Infrastructure"
+  }
+ ],
+ "genai-application-developer|1-3": [
+  {
+   "q": "Which model is commonly used for text generation in Generative AI?",
+   "options": [
+    "RNN",
+    "CNN",
+    "GPT",
+    "SVM"
+   ],
+   "correct": 2,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a key benefit of using agentic AI?",
+   "options": [
+    "Data storage",
+    "Autonomous decision-making",
+    "Data preprocessing",
+    "Model training"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which technique is essential for reducing overfitting in deep learning?",
+   "options": [
+    "Dropout",
+    "Normalization",
+    "Regularization",
+    "All of the above"
+   ],
+   "correct": 3,
+   "cluster": "Deep Learning"
+  },
+  {
+   "q": "What is a primary purpose of MLOps?",
+   "options": [
+    "Data collection",
+    "Model deployment",
+    "Model training",
+    "Data labeling"
+   ],
+   "correct": 1,
+   "cluster": "MLOps & AI Infrastructure"
+  }
+ ],
+ "genai-application-developer|adv": [
+  {
+   "q": "What is the primary advantage of using LLMs for text generation?",
+   "options": [
+    "High accuracy",
+    "Speed of training",
+    "Contextual understanding",
+    "Low resource usage"
+   ],
+   "correct": 2,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In an agentic AI system, what is the main focus?",
+   "options": [
+    "Data collection",
+    "Autonomous decision-making",
+    "User interaction",
+    "Model training"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which technique is commonly used to prevent overfitting in deep learning?",
+   "options": [
+    "Batch normalization",
+    "Gradient descent",
+    "Data augmentation",
+    "Dropout"
+   ],
+   "correct": 3,
+   "cluster": "Deep Learning"
+  },
+  {
+   "q": "What is a key benefit of using MLOps in AI projects?",
+   "options": [
+    "Faster model training",
+    "Improved collaboration",
+    "Reduced cloud costs",
+    "Simplified coding"
+   ],
+   "correct": 1,
+   "cluster": "MLOps & AI Infrastructure"
+  }
+ ],
+ "llm-fine-tuning-rag-engineer|0": [
+  {
+   "q": "What does LLM stand for?",
+   "options": [
+    "Large Language Model",
+    "Long Language Model",
+    "Learning Language Model",
+    "Logical Language Model"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which of the following is a common use of generative AI?",
+   "options": [
+    "Image recognition",
+    "Text generation",
+    "Data storage",
+    "Network security"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is the primary goal of agentic AI?",
+   "options": [
+    "To assist humans",
+    "To operate independently",
+    "To analyze data",
+    "To store information"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which layer in a neural network is typically responsible for feature extraction?",
+   "options": [
+    "Input layer",
+    "Output layer",
+    "Hidden layer",
+    "Activation layer"
+   ],
+   "correct": 2,
+   "cluster": "Deep Learning"
+  }
+ ],
+ "llm-fine-tuning-rag-engineer|1-3": [
+  {
+   "q": "What does LLM stand for?",
+   "options": [
+    "Large Language Model",
+    "Linear Learning Model",
+    "Local Logic Machine",
+    "Layered Learning Method"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In RAG, what does 'R' stand for?",
+   "options": [
+    "Retrieval",
+    "Reinforcement",
+    "Recognition",
+    "Response"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which technique enhances model creativity in agentic AI?",
+   "options": [
+    "Regularization",
+    "Exploration",
+    "Overfitting",
+    "Normalization"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "What is a common loss function used in deep learning?",
+   "options": [
+    "Mean Squared Error",
+    "Accuracy",
+    "Precision",
+    "Recall"
+   ],
+   "correct": 0,
+   "cluster": "Deep Learning"
+  }
+ ],
+ "llm-fine-tuning-rag-engineer|adv": [
+  {
+   "q": "What is a key benefit of fine-tuning LLMs on domain-specific data?",
+   "options": [
+    "Improved relevance",
+    "Increased size",
+    "Reduced training time",
+    "Simplified architecture"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In RAG, what is the primary role of the retriever?",
+   "options": [
+    "Generate responses",
+    "Select relevant documents",
+    "Fine-tune the model",
+    "Evaluate outputs"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which technique is most effective for reducing overfitting in deep learning?",
+   "options": [
+    "Data augmentation",
+    "Increasing layers",
+    "Reducing epochs",
+    "Decreasing learning rate"
+   ],
+   "correct": 0,
+   "cluster": "Deep Learning"
+  },
+  {
+   "q": "What is a potential risk of using agentic AI in sensitive applications?",
+   "options": [
+    "Increased efficiency",
+    "Unpredictable behavior",
+    "Higher accuracy",
+    "Faster response times"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  }
+ ],
+ "ai-solutions-architect|0": [
+  {
+   "q": "What does LLM stand for?",
+   "options": [
+    "Large Language Model",
+    "Linear Logic Model",
+    "Lasting Learning Method",
+    "Lightweight Language Module"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which is a common use of Agentic AI?",
+   "options": [
+    "Image editing",
+    "Automated customer support",
+    "Data storage",
+    "Web design"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "What is a primary function of MLOps?",
+   "options": [
+    "Deploying models",
+    "Writing code",
+    "Designing websites",
+    "Creating databases"
+   ],
+   "correct": 0,
+   "cluster": "MLOps & AI Infrastructure"
+  },
+  {
+   "q": "Which language is widely used for AI programming?",
+   "options": [
+    "Java",
+    "C++",
+    "Python",
+    "Ruby"
+   ],
+   "correct": 2,
+   "cluster": "Python & Programming"
+  }
+ ],
+ "ai-solutions-architect|1-3": [
+  {
+   "q": "What is a key benefit of using LLMs in applications?",
+   "options": [
+    "a) Faster processing",
+    "b) Improved user engagement",
+    "c) Lower costs",
+    "d) Simpler code"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which tool is commonly used for deploying machine learning models?",
+   "options": [
+    "a) Docker",
+    "b) Excel",
+    "c) WordPress",
+    "d) Notepad"
+   ],
+   "correct": 0,
+   "cluster": "MLOps & AI Infrastructure"
+  },
+  {
+   "q": "In a web application, what does REST stand for?",
+   "options": [
+    "a) Representational State Transfer",
+    "b) Real-time Event Streaming",
+    "c) Remote Execution Service",
+    "d) Rapid Engineering System Tool"
+   ],
+   "correct": 0,
+   "cluster": "Web Development"
+  },
+  {
+   "q": "Which cloud service is best for scalable AI workloads?",
+   "options": [
+    "a) IaaS",
+    "b) PaaS",
+    "c) SaaS",
+    "d) FaaS"
+   ],
+   "correct": 1,
+   "cluster": "Cloud & DevOps"
+  }
+ ],
+ "ai-solutions-architect|adv": [
+  {
+   "q": "Which model is best for generating human-like text?",
+   "options": [
+    "GPT-3",
+    "SVM",
+    "KNN",
+    "Random Forest"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a key challenge in deploying agent-based systems?",
+   "options": [
+    "Data privacy",
+    "Scalability",
+    "Latency",
+    "Model accuracy"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which framework is commonly used for CI/CD in web development?",
+   "options": [
+    "Flask",
+    "Django",
+    "Jenkins",
+    "React"
+   ],
+   "correct": 2,
+   "cluster": "Web Development"
+  },
+  {
+   "q": "What is the primary purpose of MLOps?",
+   "options": [
+    "Model training",
+    "Data collection",
+    "Model deployment",
+    "Data visualization"
+   ],
+   "correct": 2,
+   "cluster": "MLOps & AI Infrastructure"
+  }
+ ],
+ "ai-security-specialist-ai-red-teamer|0": [
+  {
+   "q": "What is the primary goal of cybersecurity?",
+   "options": [
+    "Protect data",
+    "Increase profits",
+    "Improve software",
+    "Enhance user experience"
+   ],
+   "correct": 0,
+   "cluster": "Cybersecurity"
+  },
+  {
+   "q": "Which of the following is a common AI bias?",
+   "options": [
+    "Data privacy",
+    "Overfitting",
+    "Underfitting",
+    "Discrimination"
+   ],
+   "correct": 3,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "What does a firewall do?",
+   "options": [
+    "Encrypt data",
+    "Block unauthorized access",
+    "Backup files",
+    "Improve speed"
+   ],
+   "correct": 1,
+   "cluster": "Cybersecurity"
+  },
+  {
+   "q": "Why is transparency important in AI?",
+   "options": [
+    "To reduce costs",
+    "To ensure fairness",
+    "To speed up processes",
+    "To increase complexity"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  }
+ ],
+ "ai-security-specialist-ai-red-teamer|1-3": [
+  {
+   "q": "What is a common method to test AI systems for vulnerabilities?",
+   "options": [
+    "Penetration testing",
+    "Code review",
+    "User feedback",
+    "Data analysis"
+   ],
+   "correct": 0,
+   "cluster": "Cybersecurity"
+  },
+  {
+   "q": "Which principle emphasizes transparency in AI decision-making?",
+   "options": [
+    "Accountability",
+    "Fairness",
+    "Explainability",
+    "Security"
+   ],
+   "correct": 2,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "In a red team exercise, what is the primary goal?",
+   "options": [
+    "Improve system performance",
+    "Identify vulnerabilities",
+    "Train users",
+    "Enhance user experience"
+   ],
+   "correct": 1,
+   "cluster": "Cybersecurity"
+  },
+  {
+   "q": "What is a key ethical concern when deploying AI?",
+   "options": [
+    "Cost efficiency",
+    "Data privacy",
+    "System speed",
+    "User interface"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  }
+ ],
+ "ai-security-specialist-ai-red-teamer|adv": [
+  {
+   "q": "What is the primary goal of AI red teaming?",
+   "options": [
+    "Identify vulnerabilities",
+    "Develop new algorithms",
+    "Enhance user experience",
+    "Increase data storage"
+   ],
+   "correct": 0,
+   "cluster": "Cybersecurity"
+  },
+  {
+   "q": "Which framework is essential for ensuring ethical AI deployment?",
+   "options": [
+    "NIST Cybersecurity Framework",
+    "ISO 27001",
+    "AI Ethics Guidelines",
+    "GDPR"
+   ],
+   "correct": 2,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "In a penetration test of an AI system, which attack vector is often overlooked?",
+   "options": [
+    "Data poisoning",
+    "SQL injection",
+    "Phishing",
+    "DDoS"
+   ],
+   "correct": 0,
+   "cluster": "Cybersecurity"
+  },
+  {
+   "q": "What is a major ethical concern when using AI in surveillance?",
+   "options": [
+    "Cost efficiency",
+    "Data accuracy",
+    "Privacy invasion",
+    "System reliability"
+   ],
+   "correct": 2,
+   "cluster": "AI Governance & Ethics"
+  }
+ ],
+ "ai-product-manager|0": [
+  {
+   "q": "What is the primary goal of Agile methodology?",
+   "options": [
+    "Deliver value quickly",
+    "Reduce costs",
+    "Increase documentation",
+    "Limit team collaboration"
+   ],
+   "correct": 0,
+   "cluster": "Product & Agile"
+  },
+  {
+   "q": "Which of the following best describes a Generative AI model?",
+   "options": [
+    "Predicts future events",
+    "Generates new content",
+    "Classifies data",
+    "Analyzes trends"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Why is AI governance important?",
+   "options": [
+    "To increase profits",
+    "To ensure ethical use",
+    "To reduce competition",
+    "To simplify coding"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "What is a key factor in consulting for AI products?",
+   "options": [
+    "Technical skills only",
+    "Understanding client needs",
+    "Focusing on competitors",
+    "Avoiding documentation"
+   ],
+   "correct": 1,
+   "cluster": "Business & Consulting"
+  }
+ ],
+ "ai-product-manager|1-3": [
+  {
+   "q": "What is the primary goal of an MVP in Agile?",
+   "options": [
+    "Maximize features",
+    "Gather user feedback",
+    "Reduce costs",
+    "Increase team size"
+   ],
+   "correct": 1,
+   "cluster": "Product & Agile"
+  },
+  {
+   "q": "Which of the following is a key benefit of using LLMs?",
+   "options": [
+    "High energy consumption",
+    "Complexity in deployment",
+    "Natural language understanding",
+    "Limited scalability"
+   ],
+   "correct": 2,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a major ethical concern with AI in product management?",
+   "options": [
+    "Increased productivity",
+    "Bias in algorithms",
+    "Lower costs",
+    "Faster delivery"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "In a consulting context, what is crucial for understanding client needs?",
+   "options": [
+    "Technical jargon",
+    "Market research",
+    "Personal opinions",
+    "Internal metrics"
+   ],
+   "correct": 1,
+   "cluster": "Business & Consulting"
+  }
+ ],
+ "ai-product-manager|adv": [
+  {
+   "q": "What is the primary goal of a Minimum Viable Product (MVP)?",
+   "options": [
+    "Maximize features",
+    "Gather user feedback",
+    "Ensure scalability",
+    "Reduce costs"
+   ],
+   "correct": 1,
+   "cluster": "Product & Agile"
+  },
+  {
+   "q": "Which metric is most important for evaluating LLM performance?",
+   "options": [
+    "F1 Score",
+    "User engagement",
+    "Response time",
+    "Training cost"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a key consideration in AI ethics when deploying models?",
+   "options": [
+    "Cost efficiency",
+    "Data privacy",
+    "Feature richness",
+    "Market demand"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "In consulting, what is the best approach to align AI solutions with client needs?",
+   "options": [
+    "Focus on technology",
+    "Conduct user interviews",
+    "Analyze competitors",
+    "Limit scope"
+   ],
+   "correct": 1,
+   "cluster": "Business & Consulting"
+  }
+ ],
+ "ai-business-analyst|0": [
+  {
+   "q": "What does BI stand for in data analysis?",
+   "options": [
+    "Business Intelligence",
+    "Binary Integration",
+    "Basic Information",
+    "Business Integration"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "Which model generates text based on prompts?",
+   "options": [
+    "Decision Tree",
+    "Generative Pre-trained Transformer",
+    "Linear Regression",
+    "Support Vector Machine"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a benefit of no-code tools?",
+   "options": [
+    "Requires coding skills",
+    "Speeds up development",
+    "Increases complexity",
+    "Limits functionality"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "What is a key principle of Agile methodology?",
+   "options": [
+    "Fixed scope",
+    "Iterative development",
+    "Long-term planning",
+    "Waterfall approach"
+   ],
+   "correct": 1,
+   "cluster": "Product & Agile"
+  }
+ ],
+ "ai-business-analyst|1-3": [
+  {
+   "q": "What is the primary purpose of a data dashboard?",
+   "options": [
+    "Visualize data trends",
+    "Store data",
+    "Perform complex calculations",
+    "Generate random data"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "Which of the following is a common use of LLMs?",
+   "options": [
+    "Data entry automation",
+    "Text summarization",
+    "Data storage",
+    "Image recognition"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a key benefit of no-code tools?",
+   "options": [
+    "Require extensive coding knowledge",
+    "Speed up development",
+    "Increase complexity",
+    "Limit user access"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "Which principle is essential for AI governance?",
+   "options": [
+    "Maximizing profits",
+    "Transparency",
+    "Minimizing user feedback",
+    "Complexity in algorithms"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  }
+ ],
+ "ai-business-analyst|adv": [
+  {
+   "q": "Which metric best evaluates the effectiveness of a BI dashboard?",
+   "options": [
+    "User engagement",
+    "Data accuracy",
+    "Visual appeal",
+    "Loading speed"
+   ],
+   "correct": 1,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What is a common limitation of LLMs in generating text?",
+   "options": [
+    "High cost",
+    "Limited creativity",
+    "Context retention",
+    "Speed of generation"
+   ],
+   "correct": 2,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which tool is best for automating repetitive tasks without coding?",
+   "options": [
+    "Python",
+    "Zapier",
+    "SQL",
+    "JavaScript"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "What is a key principle of Agile methodology?",
+   "options": [
+    "Extensive documentation",
+    "Fixed scope",
+    "Iterative development",
+    "Long release cycles"
+   ],
+   "correct": 2,
+   "cluster": "Product & Agile"
+  }
+ ],
+ "prompt-engineer-ai-interaction-designer|0": [
+  {
+   "q": "What does LLM stand for?",
+   "options": [
+    "Large Language Model",
+    "Linear Learning Machine",
+    "Last Layer Model",
+    "Logical Language Method"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which of the following is an example of agentic AI?",
+   "options": [
+    "A chatbot answering FAQs",
+    "A self-driving car",
+    "A search engine",
+    "A photo editing app"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "What is a key principle of UX design?",
+   "options": [
+    "Aesthetic appeal",
+    "User-centered design",
+    "Technical complexity",
+    "Speed of development"
+   ],
+   "correct": 1,
+   "cluster": "Design & UX"
+  },
+  {
+   "q": "Which tool is commonly used for no-code automation?",
+   "options": [
+    "Python",
+    "Zapier",
+    "Java",
+    "C++"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  }
+ ],
+ "prompt-engineer-ai-interaction-designer|1-3": [
+  {
+   "q": "What is a common use case for LLMs?",
+   "options": [
+    "Text summarization",
+    "Image recognition",
+    "Data encryption",
+    "Network security"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which design principle enhances user engagement?",
+   "options": [
+    "Simplicity",
+    "Complexity",
+    "Uniformity",
+    "Obscurity"
+   ],
+   "correct": 0,
+   "cluster": "Design & UX"
+  },
+  {
+   "q": "What tool can automate data workflows without coding?",
+   "options": [
+    "Zapier",
+    "Python",
+    "R",
+    "SQL"
+   ],
+   "correct": 0,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "Which metric is key for evaluating AI model performance?",
+   "options": [
+    "Accuracy",
+    "Color",
+    "Size",
+    "Shape"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  }
+ ],
+ "prompt-engineer-ai-interaction-designer|adv": [
+  {
+   "q": "What is the primary purpose of prompt engineering in LLMs?",
+   "options": [
+    "To optimize model performance",
+    "To reduce training time",
+    "To increase model size",
+    "To enhance data collection"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In an agentic AI scenario, what is a key consideration for ethical deployment?",
+   "options": [
+    "User engagement",
+    "Data privacy",
+    "Cost efficiency",
+    "Aesthetic design"
+   ],
+   "correct": 1,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which design principle is crucial for creating intuitive AI interactions?",
+   "options": [
+    "Minimalism",
+    "Complexity",
+    "Ambiguity",
+    "Redundancy"
+   ],
+   "correct": 0,
+   "cluster": "Design & UX"
+  },
+  {
+   "q": "What is a common trade-off when automating workflows with no-code tools?",
+   "options": [
+    "Speed vs. quality",
+    "Cost vs. user experience",
+    "Customization vs. simplicity",
+    "Scalability vs. security"
+   ],
+   "correct": 2,
+   "cluster": "Automation & No-Code"
+  }
+ ],
+ "ai-governance-compliance-officer|0": [
+  {
+   "q": "What is AI governance primarily concerned with?",
+   "options": [
+    "Data privacy",
+    "Algorithm efficiency",
+    "Cost reduction",
+    "User interface design"
+   ],
+   "correct": 0,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "Which of the following is a potential ethical issue with LLMs?",
+   "options": [
+    "High processing speed",
+    "Bias in training data",
+    "Low energy consumption",
+    "User engagement"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What does no-code automation allow users to do?",
+   "options": [
+    "Write complex code",
+    "Design hardware",
+    "Create applications without coding",
+    "Manage databases manually"
+   ],
+   "correct": 2,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "Why is transparency important in AI systems?",
+   "options": [
+    "To increase sales",
+    "To reduce costs",
+    "To build trust and accountability",
+    "To enhance graphics"
+   ],
+   "correct": 2,
+   "cluster": "AI Governance & Ethics"
+  }
+ ],
+ "ai-governance-compliance-officer|1-3": [
+  {
+   "q": "What is a key principle of AI ethics?",
+   "options": [
+    "Transparency",
+    "Obscurity",
+    "Profit",
+    "Speed"
+   ],
+   "correct": 0,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "Which is a common risk of Generative AI?",
+   "options": [
+    "Data scarcity",
+    "Bias in outputs",
+    "High costs",
+    "Low engagement"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What does no-code automation primarily enable?",
+   "options": [
+    "Complex coding",
+    "User empowerment",
+    "Data analysis",
+    "Hardware control"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "In AI governance, what is the purpose of audits?",
+   "options": [
+    "Increase profits",
+    "Ensure compliance",
+    "Reduce workload",
+    "Enhance creativity"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  }
+ ],
+ "ai-governance-compliance-officer|adv": [
+  {
+   "q": "What is a key principle of AI governance?",
+   "options": [
+    "Transparency",
+    "Speed",
+    "Cost",
+    "Complexity"
+   ],
+   "correct": 0,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "Which is a common ethical concern with LLMs?",
+   "options": [
+    "Data privacy",
+    "Speed of generation",
+    "User interface",
+    "Cost of deployment"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In automation, what is a trade-off of no-code solutions?",
+   "options": [
+    "Speed vs. customization",
+    "Cost vs. quality",
+    "Scalability vs. simplicity",
+    "Security vs. accessibility"
+   ],
+   "correct": 0,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "What should be prioritized when assessing AI impact?",
+   "options": [
+    "Efficiency",
+    "Ethical implications",
+    "Market share",
+    "Technical complexity"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  }
+ ],
+ "ai-augmented-marketing-specialist|0": [
+  {
+   "q": "What is a primary goal of digital marketing?",
+   "options": [
+    "Increase brand awareness",
+    "Reduce costs",
+    "Eliminate competition",
+    "Limit customer feedback"
+   ],
+   "correct": 0,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "Which tool helps visualize data trends?",
+   "options": [
+    "Spreadsheet",
+    "Word processor",
+    "Email client",
+    "Presentation software"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What does LLM stand for in AI?",
+   "options": [
+    "Large Language Model",
+    "Linear Learning Method",
+    "Low-Level Machine",
+    "Logical Link Model"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a common method for gathering customer insights?",
+   "options": [
+    "Surveys",
+    "Cold calls",
+    "Random guessing",
+    "Ignoring feedback"
+   ],
+   "correct": 0,
+   "cluster": "Business & Consulting"
+  }
+ ],
+ "ai-augmented-marketing-specialist|1-3": [
+  {
+   "q": "What is a key metric for measuring marketing campaign success?",
+   "options": [
+    "ROI",
+    "CPU",
+    "RAM",
+    "SEO"
+   ],
+   "correct": 0,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "Which tool is best for visualizing sales data trends?",
+   "options": [
+    "Excel",
+    "Photoshop",
+    "Word",
+    "PowerPoint"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What does LLM stand for in AI?",
+   "options": [
+    "Large Language Model",
+    "Local Learning Machine",
+    "Linear Logic Model",
+    "Labeled Learning Method"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In consulting, what is a common first step in a project?",
+   "options": [
+    "Define the problem",
+    "Implement solutions",
+    "Gather feedback",
+    "Select tools"
+   ],
+   "correct": 0,
+   "cluster": "Business & Consulting"
+  }
+ ],
+ "ai-augmented-marketing-specialist|adv": [
+  {
+   "q": "Which metric best indicates customer acquisition cost efficiency?",
+   "options": [
+    "LTV/CAC",
+    "CTR",
+    "ROI",
+    "Bounce Rate"
+   ],
+   "correct": 0,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "What is the primary benefit of A/B testing in marketing?",
+   "options": [
+    "Cost reduction",
+    "Improved targeting",
+    "Data-driven decisions",
+    "Brand loyalty"
+   ],
+   "correct": 2,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "Which model is best for predicting customer lifetime value?",
+   "options": [
+    "Linear regression",
+    "Decision trees",
+    "Survival analysis",
+    "K-means clustering"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "For generating personalized content, which LLM approach is most effective?",
+   "options": [
+    "Fine-tuning",
+    "Zero-shot learning",
+    "Data augmentation",
+    "Transfer learning"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  }
+ ],
+ "ai-content-strategist-creator|0": [
+  {
+   "q": "What is the primary goal of content marketing?",
+   "options": [
+    "Drive sales",
+    "Increase brand awareness",
+    "Create viral content",
+    "Reduce costs"
+   ],
+   "correct": 1,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "Which metric is most useful for measuring content engagement?",
+   "options": [
+    "Page views",
+    "Bounce rate",
+    "Social shares",
+    "Email open rate"
+   ],
+   "correct": 2,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "What does LLM stand for in AI?",
+   "options": [
+    "Large Language Model",
+    "Linear Learning Model",
+    "Lasting Learning Method",
+    "Low-Level Model"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which tool would you use to generate text content using AI?",
+   "options": [
+    "Canva",
+    "ChatGPT",
+    "Google Analytics",
+    "Hootsuite"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  }
+ ],
+ "ai-content-strategist-creator|1-3": [
+  {
+   "q": "What is a key benefit of using AI in content marketing?",
+   "options": [
+    "Increased creativity",
+    "Faster content creation",
+    "Higher costs",
+    "Less data analysis"
+   ],
+   "correct": 1,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "Which metric is most important for measuring content effectiveness?",
+   "options": [
+    "Word count",
+    "Engagement rate",
+    "SEO ranking",
+    "Content length"
+   ],
+   "correct": 1,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "What does LLM stand for in AI?",
+   "options": [
+    "Large Language Model",
+    "Linear Learning Machine",
+    "Long-term Learning Model",
+    "Layered Logic Mechanism"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "When generating content with AI, what is crucial to ensure quality?",
+   "options": [
+    "Using complex vocabulary",
+    "Human oversight",
+    "Maximizing output speed",
+    "Ignoring audience feedback"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  }
+ ],
+ "ai-content-strategist-creator|adv": [
+  {
+   "q": "Which metric is best for measuring content engagement?",
+   "options": [
+    "CTR",
+    "Bounce Rate",
+    "Time on Page",
+    "Impressions"
+   ],
+   "correct": 2,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "What is a key consideration when using LLMs for content generation?",
+   "options": [
+    "Cost",
+    "Speed",
+    "Relevance",
+    "All of the above"
+   ],
+   "correct": 3,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which strategy best enhances organic reach?",
+   "options": [
+    "Paid Ads",
+    "SEO Optimization",
+    "Social Media Shares",
+    "Email Marketing"
+   ],
+   "correct": 1,
+   "cluster": "Marketing & Growth"
+  },
+  {
+   "q": "When fine-tuning a language model, what is a critical trade-off?",
+   "options": [
+    "Quality vs. Speed",
+    "Cost vs. Output",
+    "Data Size vs. Accuracy",
+    "All of the above"
+   ],
+   "correct": 3,
+   "cluster": "Generative AI & LLMs"
+  }
+ ],
+ "ai-in-finance-fintech-analyst|0": [
+  {
+   "q": "What does ROI stand for in finance?",
+   "options": [
+    "Return on Investment",
+    "Rate of Interest",
+    "Revenue of Investment",
+    "Return on Income"
+   ],
+   "correct": 0,
+   "cluster": "Finance & FinTech"
+  },
+  {
+   "q": "Which tool is commonly used for data visualization?",
+   "options": [
+    "Excel",
+    "Photoshop",
+    "Word",
+    "PowerPoint"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What is a common use of Generative AI in finance?",
+   "options": [
+    "Creating financial reports",
+    "Predicting stock prices",
+    "Analyzing market trends",
+    "Automating transactions"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which metric indicates a company's profitability?",
+   "options": [
+    "Gross Margin",
+    "Market Share",
+    "Liquidity Ratio",
+    "Debt Ratio"
+   ],
+   "correct": 0,
+   "cluster": "Finance & FinTech"
+  }
+ ],
+ "ai-in-finance-fintech-analyst|1-3": [
+  {
+   "q": "What is the primary purpose of a financial model?",
+   "options": [
+    "Forecasting future performance",
+    "Calculating current assets",
+    "Analyzing past trends",
+    "Reducing operational costs"
+   ],
+   "correct": 0,
+   "cluster": "Finance & FinTech"
+  },
+  {
+   "q": "Which tool is commonly used for data visualization?",
+   "options": [
+    "Excel",
+    "Python",
+    "SQL",
+    "Java"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What is a common use case for LLMs in finance?",
+   "options": [
+    "Automating trades",
+    "Sentiment analysis on news",
+    "Risk assessment",
+    "Portfolio management"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which metric is essential for evaluating a company's profitability?",
+   "options": [
+    "Net Income",
+    "Market Share",
+    "Customer Retention",
+    "Debt Ratio"
+   ],
+   "correct": 0,
+   "cluster": "Finance & FinTech"
+  }
+ ],
+ "ai-in-finance-fintech-analyst|adv": [
+  {
+   "q": "What is a key benefit of using AI in credit scoring?",
+   "options": [
+    "Increased accuracy",
+    "Higher fees",
+    "Longer processing times",
+    "Less data required"
+   ],
+   "correct": 0,
+   "cluster": "Finance & FinTech"
+  },
+  {
+   "q": "Which tool is best for visualizing large datasets?",
+   "options": [
+    "Excel",
+    "Tableau",
+    "Notepad",
+    "PowerPoint"
+   ],
+   "correct": 1,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What is a common risk of deploying LLMs in finance?",
+   "options": [
+    "Increased transparency",
+    "Data privacy issues",
+    "Faster transactions",
+    "Lower costs"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "How can sentiment analysis improve investment strategies?",
+   "options": [
+    "By predicting weather patterns",
+    "By analyzing social media trends",
+    "By reducing transaction fees",
+    "By automating trades"
+   ],
+   "correct": 1,
+   "cluster": "Finance & FinTech"
+  }
+ ],
+ "ai-hr-tech-specialist|0": [
+  {
+   "q": "What is the primary purpose of an HRIS?",
+   "options": [
+    "Track employee data",
+    "Generate financial reports",
+    "Analyze market trends",
+    "Automate social media"
+   ],
+   "correct": 0,
+   "cluster": "HR & People"
+  },
+  {
+   "q": "Which of the following best describes a generative AI model?",
+   "options": [
+    "A model that predicts future events",
+    "A model that creates new content",
+    "A model that analyzes data",
+    "A model that stores information"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What is a common use of data analysis in HR?",
+   "options": [
+    "Creating job descriptions",
+    "Evaluating employee performance",
+    "Setting salary ranges",
+    "Designing office layout"
+   ],
+   "correct": 1,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "Which tool would you use for no-code automation?",
+   "options": [
+    "Python",
+    "Zapier",
+    "Excel",
+    "SQL"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  }
+ ],
+ "ai-hr-tech-specialist|1-3": [
+  {
+   "q": "What is a key benefit of using AI in HR processes?",
+   "options": [
+    "Reduced bias",
+    "Increased paperwork",
+    "Longer hiring times",
+    "Less data"
+   ],
+   "correct": 0,
+   "cluster": "HR & People"
+  },
+  {
+   "q": "Which model is commonly used for generating text in AI applications?",
+   "options": [
+    "Random Forest",
+    "Linear Regression",
+    "GPT",
+    "K-Means"
+   ],
+   "correct": 2,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "How can automation improve financial reporting?",
+   "options": [
+    "Increases manual entry",
+    "Reduces accuracy",
+    "Speeds up data processing",
+    "Limits data access"
+   ],
+   "correct": 2,
+   "cluster": "Finance & FinTech"
+  },
+  {
+   "q": "What tool can help visualize HR data trends?",
+   "options": [
+    "Spreadsheet",
+    "Word Processor",
+    "Email Client",
+    "Presentation Software"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  }
+ ],
+ "ai-hr-tech-specialist|adv": [
+  {
+   "q": "What is a key benefit of using AI in recruitment?",
+   "options": [
+    "Bias reduction",
+    "Higher costs",
+    "Longer hiring times",
+    "Less candidate engagement"
+   ],
+   "correct": 0,
+   "cluster": "HR & People"
+  },
+  {
+   "q": "Which metric is crucial for evaluating LLM performance?",
+   "options": [
+    "Accuracy",
+    "Speed",
+    "Complexity",
+    "Cost"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In FinTech, what does 'regulatory compliance' primarily ensure?",
+   "options": [
+    "Profit maximization",
+    "Market expansion",
+    "Legal adherence",
+    "User experience"
+   ],
+   "correct": 2,
+   "cluster": "Finance & FinTech"
+  },
+  {
+   "q": "What is a common use of BI tools in HR?",
+   "options": [
+    "Employee engagement surveys",
+    "Payroll processing",
+    "Performance tracking",
+    "Recruitment marketing"
+   ],
+   "correct": 2,
+   "cluster": "Data Analysis & BI"
+  }
+ ],
+ "ai-supply-chain-operations-analyst|0": [
+  {
+   "q": "What is the primary goal of supply chain management?",
+   "options": [
+    "Reduce costs",
+    "Increase sales",
+    "Improve customer satisfaction",
+    "All of the above"
+   ],
+   "correct": 3,
+   "cluster": "Business & Consulting"
+  },
+  {
+   "q": "Which tool is commonly used for data visualization?",
+   "options": [
+    "Excel",
+    "Word",
+    "PowerPoint",
+    "Notepad"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What does RPA stand for in automation?",
+   "options": [
+    "Robotic Process Automation",
+    "Rapid Process Analysis",
+    "Real-time Process Adjustment",
+    "Resource Planning Automation"
+   ],
+   "correct": 0,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "In data analysis, what is a common first step?",
+   "options": [
+    "Collect data",
+    "Visualize data",
+    "Analyze results",
+    "Present findings"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  }
+ ],
+ "ai-supply-chain-operations-analyst|1-3": [
+  {
+   "q": "What is the primary goal of supply chain optimization?",
+   "options": [
+    "Reduce costs",
+    "Increase inventory",
+    "Enhance marketing",
+    "Expand workforce"
+   ],
+   "correct": 0,
+   "cluster": "Business & Consulting"
+  },
+  {
+   "q": "Which tool is best for visualizing supply chain data?",
+   "options": [
+    "Excel",
+    "Word",
+    "PowerPoint",
+    "Notepad"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What does RPA stand for in automation?",
+   "options": [
+    "Robotic Process Automation",
+    "Rapid Process Analysis",
+    "Resource Planning Application",
+    "Real-time Performance Assessment"
+   ],
+   "correct": 0,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "In a supply chain context, what does 'lead time' refer to?",
+   "options": [
+    "Time to deliver",
+    "Time to produce",
+    "Time to order",
+    "Time to analyze"
+   ],
+   "correct": 0,
+   "cluster": "Business & Consulting"
+  }
+ ],
+ "ai-supply-chain-operations-analyst|adv": [
+  {
+   "q": "What is the primary benefit of using AI in supply chain forecasting?",
+   "options": [
+    "Increased accuracy",
+    "Higher costs",
+    "Complexity",
+    "Less data needed"
+   ],
+   "correct": 0,
+   "cluster": "Business & Consulting"
+  },
+  {
+   "q": "Which tool is best for visualizing supply chain data trends?",
+   "options": [
+    "Excel",
+    "Tableau",
+    "Word",
+    "Notepad"
+   ],
+   "correct": 1,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What is a key consideration when automating supply chain processes?",
+   "options": [
+    "Cost of automation",
+    "Employee satisfaction",
+    "Data privacy",
+    "All of the above"
+   ],
+   "correct": 3,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "In a scenario where demand spikes unexpectedly, what should be prioritized?",
+   "options": [
+    "Inventory reduction",
+    "Supplier communication",
+    "Customer feedback",
+    "Cost minimization"
+   ],
+   "correct": 1,
+   "cluster": "Business & Consulting"
+  }
+ ],
+ "ai-automation-consultant-smb-no-code|0": [
+  {
+   "q": "What is a no-code platform?",
+   "options": [
+    "A platform requiring coding skills",
+    "A platform for building apps without coding",
+    "A platform for AI training",
+    "A platform for data analysis"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "Which of these is a common use of Generative AI?",
+   "options": [
+    "Creating images from text",
+    "Writing code",
+    "Debugging software",
+    "Data entry automation"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "What does 'agentic AI' refer to?",
+   "options": [
+    "AI that acts autonomously",
+    "AI that requires human input",
+    "AI for data storage",
+    "AI for simple tasks"
+   ],
+   "correct": 0,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which tool would you use for automating repetitive tasks without coding?",
+   "options": [
+    "Python",
+    "Zapier",
+    "Java",
+    "C++"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  }
+ ],
+ "ai-automation-consultant-smb-no-code|1-3": [
+  {
+   "q": "What is a primary benefit of using no-code platforms for automation?",
+   "options": [
+    "Speed of deployment",
+    "High coding skills required",
+    "Limited customization",
+    "Only for large enterprises"
+   ],
+   "correct": 0,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "Which of the following best describes a generative AI model?",
+   "options": [
+    "It generates text based on input",
+    "It only classifies data",
+    "It requires extensive coding",
+    "It cannot learn from data"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In an agentic AI system, what is the main feature?",
+   "options": [
+    "It operates without human intervention",
+    "It requires constant human oversight",
+    "It only follows pre-defined rules",
+    "It cannot adapt to new situations"
+   ],
+   "correct": 0,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "Which tool is commonly used for building no-code automation workflows?",
+   "options": [
+    "Zapier",
+    "Python",
+    "Java",
+    "C++"
+   ],
+   "correct": 0,
+   "cluster": "Automation & No-Code"
+  }
+ ],
+ "ai-automation-consultant-smb-no-code|adv": [
+  {
+   "q": "Which tool is best for automating repetitive tasks without coding?",
+   "options": [
+    "Zapier",
+    "Python",
+    "Java",
+    "C++"
+   ],
+   "correct": 0,
+   "cluster": "Automation & No-Code"
+  },
+  {
+   "q": "What is a common limitation of using LLMs for content generation?",
+   "options": [
+    "High accuracy",
+    "Bias in training data",
+    "Low speed",
+    "No context understanding"
+   ],
+   "correct": 1,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "In agentic AI, what is a primary concern when deploying in business?",
+   "options": [
+    "Cost",
+    "User interface",
+    "Ethical implications",
+    "Speed"
+   ],
+   "correct": 2,
+   "cluster": "Agentic AI"
+  },
+  {
+   "q": "When integrating no-code solutions, what is a critical trade-off?",
+   "options": [
+    "Customization vs. speed",
+    "Cost vs. quality",
+    "Scalability vs. simplicity",
+    "Support vs. independence"
+   ],
+   "correct": 0,
+   "cluster": "Automation & No-Code"
+  }
+ ],
+ "ai-data-analyst-analytics-engineer|0": [
+  {
+   "q": "What does BI stand for in data analytics?",
+   "options": [
+    "Business Intelligence",
+    "Binary Information",
+    "Basic Integration",
+    "Business Integration"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "Which Python library is commonly used for data manipulation?",
+   "options": [
+    "Pandas",
+    "NumPy",
+    "Matplotlib",
+    "Scikit-learn"
+   ],
+   "correct": 0,
+   "cluster": "Python & Programming"
+  },
+  {
+   "q": "What is the purpose of ETL in data engineering?",
+   "options": [
+    "Extract, Transform, Load",
+    "Evaluate, Test, Launch",
+    "Enter, Train, Learn",
+    "Export, Transfer, Log"
+   ],
+   "correct": 0,
+   "cluster": "Data Engineering"
+  },
+  {
+   "q": "Which SQL command is used to retrieve data?",
+   "options": [
+    "SELECT",
+    "GET",
+    "FETCH",
+    "RETRIEVE"
+   ],
+   "correct": 0,
+   "cluster": "Data Analysis & BI"
+  }
+ ],
+ "ai-data-analyst-analytics-engineer|1-3": [
+  {
+   "q": "What does 'ETL' stand for in data processing?",
+   "options": [
+    "Extract, Transform, Load",
+    "Evaluate, Test, Learn",
+    "Extract, Test, Load",
+    "Evaluate, Transform, Load"
+   ],
+   "correct": 0,
+   "cluster": "Data Engineering"
+  },
+  {
+   "q": "Which Python library is commonly used for data manipulation?",
+   "options": [
+    "NumPy",
+    "Matplotlib",
+    "Flask",
+    "Django"
+   ],
+   "correct": 0,
+   "cluster": "Python & Programming"
+  },
+  {
+   "q": "In a BI tool, what is a dashboard primarily used for?",
+   "options": [
+    "Data storage",
+    "Data visualization",
+    "Data cleaning",
+    "Data extraction"
+   ],
+   "correct": 1,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "What function in Python would you use to read a CSV file?",
+   "options": [
+    "read_csv()",
+    "load_csv()",
+    "import_csv()",
+    "open_csv()"
+   ],
+   "correct": 0,
+   "cluster": "Python & Programming"
+  }
+ ],
+ "ai-data-analyst-analytics-engineer|adv": [
+  {
+   "q": "What is the primary purpose of a data warehouse?",
+   "options": [
+    "Store raw data",
+    "Support BI queries",
+    "Process real-time data",
+    "Run machine learning models"
+   ],
+   "correct": 1,
+   "cluster": "Data Analysis & BI"
+  },
+  {
+   "q": "Which Python library is best for data manipulation?",
+   "options": [
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "Scikit-learn"
+   ],
+   "correct": 1,
+   "cluster": "Python & Programming"
+  },
+  {
+   "q": "In ETL, what does 'T' stand for?",
+   "options": [
+    "Transform",
+    "Transport",
+    "Translate",
+    "Track"
+   ],
+   "correct": 0,
+   "cluster": "Data Engineering"
+  },
+  {
+   "q": "Which SQL function calculates the average?",
+   "options": [
+    "SUM()",
+    "AVG()",
+    "COUNT()",
+    "MEDIAN()"
+   ],
+   "correct": 1,
+   "cluster": "Data Analysis & BI"
+  }
+ ],
+ "ai-operations-transformation-manager|0": [
+  {
+   "q": "What does LLM stand for in AI?",
+   "options": [
+    "Large Language Model",
+    "Linear Learning Model",
+    "Lasting Learning Mechanism",
+    "Logical Language Method"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which skill is essential for team conflict resolution?",
+   "options": [
+    "Technical expertise",
+    "Leadership",
+    "Data analysis",
+    "Programming"
+   ],
+   "correct": 1,
+   "cluster": "Leadership & Soft Skills"
+  },
+  {
+   "q": "What is a key principle of AI ethics?",
+   "options": [
+    "Maximizing profits",
+    "Transparency",
+    "Speed of deployment",
+    "Complexity"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "Which tool helps automate tasks without coding?",
+   "options": [
+    "Python",
+    "Zapier",
+    "Java",
+    "C++"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  }
+ ],
+ "ai-operations-transformation-manager|1-3": [
+  {
+   "q": "What is a primary benefit of using LLMs in customer support?",
+   "options": [
+    "24/7 availability",
+    "Reduced training time",
+    "Higher employee satisfaction",
+    "Increased manual oversight"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "Which skill is most important for leading a diverse AI team?",
+   "options": [
+    "Technical expertise",
+    "Empathy",
+    "Project management",
+    "Data analysis"
+   ],
+   "correct": 1,
+   "cluster": "Leadership & Soft Skills"
+  },
+  {
+   "q": "What is a key principle of AI governance?",
+   "options": [
+    "Maximize profits",
+    "Ensure transparency",
+    "Limit user access",
+    "Focus on speed"
+   ],
+   "correct": 1,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "Which tool is best for automating repetitive tasks without coding?",
+   "options": [
+    "Python",
+    "Zapier",
+    "TensorFlow",
+    "Java"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  }
+ ],
+ "ai-operations-transformation-manager|adv": [
+  {
+   "q": "Which approach is best for fine-tuning a generative AI model for a specific industry?",
+   "options": [
+    "Transfer learning",
+    "Random initialization",
+    "Data augmentation",
+    "Feature extraction"
+   ],
+   "correct": 0,
+   "cluster": "Generative AI & LLMs"
+  },
+  {
+   "q": "How should a manager handle team conflicts during an AI project?",
+   "options": [
+    "Ignore them",
+    "Mediate discussions",
+    "Assign blame",
+    "Change team members"
+   ],
+   "correct": 1,
+   "cluster": "Leadership & Soft Skills"
+  },
+  {
+   "q": "What is a key consideration when implementing AI governance?",
+   "options": [
+    "Maximizing profits",
+    "Minimizing costs",
+    "Ensuring transparency",
+    "Speed of deployment"
+   ],
+   "correct": 2,
+   "cluster": "AI Governance & Ethics"
+  },
+  {
+   "q": "Which tool is best for automating repetitive tasks without coding?",
+   "options": [
+    "Python",
+    "Zapier",
+    "Java",
+    "C++"
+   ],
+   "correct": 1,
+   "cluster": "Automation & No-Code"
+  }
+ ]
+}

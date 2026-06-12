@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import journeys from "../../data/journeys.json";
 import modules from "../../data/modules.json";
+import questionBank from "../../data/diagnostic_bank.json";
 import { buildWeekPlan, clustersFor, skillsByCluster } from "../../lib/engine";
 import WeekPlan from "../../components/WeekPlan";
 import Radar from "../../components/Radar";
@@ -97,6 +98,12 @@ export default function Diagnostic() {
   // load an AI-generated, profile-adapted assessment when entering step 3
   useEffect(() => {
     if (step !== 3 || !journey || aiQs !== null || aiLoading) return;
+    // ROUND 1 — try the pre-built bank first (instant, no API, no token cost).
+    // Keyed by role-slug × experience tier; round 2 (adaptive) + analysis stay live below.
+    const tier = profile.exp === "0" ? "0" : profile.exp === "1-3" ? "1-3" : "adv";
+    const banked = questionBank[`${journey.slug}|${tier}`] || questionBank[`${journey.slug}|1-3`];
+    if (banked && banked.length) { setAiQs(banked); return; }
+    // fallback — role/tier not in the bank → generate live (today's behaviour, never breaks)
     let cancelled = false;
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), 22000); // never leave the user stuck
