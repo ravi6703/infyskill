@@ -29,6 +29,22 @@ const EXCITES = [["Building & shipping systems", "Building & shipping systems"],
 const APTITUDE = [["Coding & logic", "Coding & logic"], ["Math & statistics", "Math & statistics"], ["Communication & leadership", "Communication & leadership"], ["Design & UX", "Design & UX"], ["Domain / business knowledge", "Domain / business knowledge"]];
 const IMPACT = [["Cutting-edge AI", "Cutting-edge AI"], ["Data & analytics", "Data & analytics"], ["Product & business", "Product & business"], ["Security & trust", "Security & trust"], ["Marketing / HR / Finance / Ops", "Marketing / HR / Finance / Ops"]];
 
+// Load pdf.js as a classic UMD script (window.pdfjsLib). The ESM .mjs dynamic import fails in this
+// environment ("Failed to fetch dynamically imported module"); the UMD build + .js worker is reliable.
+function loadPdfJs() {
+  return new Promise((res, rej) => {
+    if (window.pdfjsLib) return res(window.pdfjsLib);
+    const s = document.createElement("script");
+    s.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+    s.onload = () => {
+      try { window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"; } catch {}
+      res(window.pdfjsLib);
+    };
+    s.onerror = () => rej(new Error("pdfjs_load_failed"));
+    document.head.appendChild(s);
+  });
+}
+
 export default function Diagnostic() {
   const [step, setStep] = useState(1);
   const [profile, setProfile] = useState({ background: null, exp: null, edu: null, currentRole: "" });
@@ -160,8 +176,7 @@ export default function Diagnostic() {
       let text = "";
       const lower = file.name.toLowerCase();
       if (lower.endsWith(".pdf")) {
-        const pdfjs = await import(/* webpackIgnore: true */ "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.mjs");
-        pdfjs.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.mjs";
+        const pdfjs = await loadPdfJs();
         const pdf = await pdfjs.getDocument({ data: await file.arrayBuffer() }).promise;
         for (let i = 1; i <= pdf.numPages; i++) { const c = await (await pdf.getPage(i)).getTextContent(); text += c.items.map((t) => t.str).join(" ") + "\n"; }
       } else if (lower.endsWith(".docx")) {
