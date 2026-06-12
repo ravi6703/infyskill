@@ -31,7 +31,7 @@ export default function Specializations() {
 
   return (
     <div>
-      <h1 className="text-3xl font-black text-ink-900">Specializations</h1>
+      <h1 className="text-3xl font-black text-ink-900">Specialisations</h1>
       <p className="mt-2 max-w-3xl text-ink-500">
         {specs.length} AI-era job roles — drawn from Board Infinity&apos;s content and emerging new-age roles. Each is a complete career specialization:
         the skills you&apos;ll achieve, the blended journey, and the outcome you&apos;re prepared for.

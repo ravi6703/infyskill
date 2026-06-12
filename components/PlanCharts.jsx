@@ -47,7 +47,7 @@ export function PhaseChart({ weeks }) {
   }
   const entries = Object.entries(phases);
   const total = entries.reduce((a, [, h]) => a + h, 0);
-  const COLORS = { "Foundation": "#0ea5e9", "Core Build": "#6366f1", "Specialization": "#8b5cf6", "Career Launch": "#f43f5e" };
+  const COLORS = { "Foundation": "#0ea5e9", "Core Build": "#6366f1", "Specialisation": "#8b5cf6", "Career Launch": "#f43f5e" };
   return (
     <div className="space-y-2">
       {entries.map(([p, h]) => (

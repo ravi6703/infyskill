@@ -37,7 +37,7 @@ export async function POST(req) {
   try { body = await req.json(); } catch { return Response.json({ ok: false, reason: "bad_request" }); }
 
   const {
-    name = "this curriculum", idealName = "an ideal AI-era program",
+    name = "this curriculum", idealName = "an ideal AI-era programme",
     syllabusPct = 0, aiReady = 0,
     syllabusGaps = [], missing = [], present = [], bridges = [], roles = [],
   } = body || {};

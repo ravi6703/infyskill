@@ -5,15 +5,15 @@ import { HeroArt, Motif, NodeBand } from "../components/Art";
 
 const stats = [
   [courses.length, "Skill-tagged courses"],
-  [specializations.length, "AI-era specializations"],
-  ["4", "Degree programs"],
+  [specializations.length, "AI-era specialisations"],
+  ["4", "Degree programmes"],
   ["5-part", "Blended delivery model"],
 ];
 
 const products = [
-  ["/degrees", "Degree Programs", "Board Infinity's best-of-best degree programs — trimester curriculum, blended delivery model and the roles graduates land. Map your university's curriculum against them.", "chip-rose", "degree"],
+  ["/degrees", "Degree Programmes", "Board Infinity's best-of-best degree programmes — trimester curriculum, blended delivery model and the roles graduates land. Map your university's curriculum against them.", "chip-rose", "degree"],
   ["/specializations", "Specializations", "AI-era job roles built from our content + new-age roles. See the full journey, skills and outcomes to land the role.", "chip-peel", "specialization"],
-  ["/catalog", "Course Catalog", "Browse every course by category. Each course is skill-tagged and opens a visual learning roadmap — like roadmap.sh, for Board Infinity.", "chip-blue", "catalog"],
+  ["/catalog", "Course Catalogue", "Browse every course by category. Each course is skill-tagged and opens a visual learning roadmap — like roadmap.sh, for Board Infinity.", "chip-blue", "catalog"],
 ];
 
 const POP_SKILLS = ["Generative AI", "LangChain", "Python", "RAG Pipelines", "MLOps", "Prompt Engineering", "Deep Learning", "Power BI", "AI Agents", "Fine-Tuning", "Data Pipelines", "Computer Vision"];
@@ -24,14 +24,14 @@ export default function Home() {
       <section className="grid items-center gap-8 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 px-6 py-12 text-white md:grid-cols-2 md:py-16">
         <div className="animate-fadeUp">
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-100">Board Infinity · InfyAI · For universities</p>
-          <h1 className="text-4xl font-black sm:text-5xl">Bring AI-era programs to your <span className="text-peel-400">institution</span></h1>
+          <h1 className="text-4xl font-black sm:text-5xl">Bring AI-era programmes to your <span className="text-peel-400">institution</span></h1>
           <p className="mt-4 max-w-xl text-brand-50">
-            Upload your curriculum — InfyAI tags the skills, benchmarks it against AI-era programs, shows the gaps, and returns
+            Upload your curriculum — InfyAI tags the skills, benchmarks it against AI-era programmes, shows the gaps, and returns
             a blended delivery plan (self-paced + live + masterclass + hackathon + capstone) and the roles your students graduate into.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/degrees/compare" className="btn bg-white text-brand-600 hover:bg-brand-50">Compare your curriculum →</Link>
-            <Link href="/degrees" className="btn border border-white/40 text-white hover:bg-white/10">See the degree programs</Link>
+            <Link href="/degrees" className="btn border border-white/40 text-white hover:bg-white/10">See the degree programmes</Link>
           </div>
           <p className="mt-4 text-sm text-brand-100">Learner?{" "}
             <Link href="/diagnostic" className="font-bold text-white underline underline-offset-2 hover:text-peel-200">Take the free career diagnostic →</Link>
@@ -77,7 +77,7 @@ export default function Home() {
         <div>
           <p className="text-xs font-bold uppercase tracking-widest text-brand-600">For universities &amp; institutions</p>
           <h2 className="mt-1 text-2xl font-black text-ink-900">Already have a curriculum? See how AI-era ready it is.</h2>
-          <p className="mt-1 max-w-2xl text-sm text-ink-600">Upload your syllabus (PDF, Word, or paste). We tag the skills, benchmark against AI-era programs, flag the exact gaps — what faculty keeps vs what we deliver — and propose a bridged blended plan with the roles your students graduate into.</p>
+          <p className="mt-1 max-w-2xl text-sm text-ink-600">Upload your syllabus (PDF, Word, or paste). We tag the skills, benchmark against AI-era programmes, flag the exact gaps — what faculty keeps vs what we deliver — and propose a bridged blended plan with the roles your students graduate into.</p>
         </div>
         <Link href="/degrees/compare" className="btn-primary mt-4 shrink-0 md:mt-0">Compare my curriculum →</Link>
       </section>

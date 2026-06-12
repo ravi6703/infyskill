@@ -133,9 +133,9 @@ export default function CourseDetail({ course }) {
           </div>
         </div>
 
-        {/* this is a blended program — the stats above are only the self-paced layer */}
+        {/* this is a blended programme — the stats above are only the self-paced layer */}
         <div className="mt-4 border-t border-ink-100 pt-3">
-          <p className="text-xs font-bold uppercase tracking-wider text-peel-600">A blended program — not just recorded videos</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-peel-600">A blended programme — not just recorded videos</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {experience.map((x) => <span key={x.label} className={`chip border ${COLOR[x.color]}`}>{x.icon} {x.label}</span>)}
           </div>
@@ -170,7 +170,7 @@ export default function CourseDetail({ course }) {
       <section id="delivery" className="mt-6 card scroll-mt-24 p-5">
         <p className="text-xs font-bold uppercase tracking-widest text-peel-600">Board Infinity · the complete learning experience</p>
         <h2 className="mt-1 text-lg font-black text-ink-900">What we deliver for this course</h2>
-        <p className="mt-1 text-sm text-ink-500">Not just recorded videos — a full blended program. Recorded content is self-paced; everything marked <span className="font-bold text-peel-600">● Live</span> is delivered live by Board Infinity.</p>
+        <p className="mt-1 text-sm text-ink-500">Not just recorded videos — a full blended programme. Recorded content is self-paced; everything marked <span className="font-bold text-peel-600">● Live</span> is delivered live by Board Infinity.</p>
         <div className="relative mt-4 space-y-2 border-l-2 border-brand-100 pl-5">
           {experience.map((x, i) => {
             const isLive = ["Live classes", "Masterclass", "Applied project", "Hackathon", "Mentorship"].includes(x.label);

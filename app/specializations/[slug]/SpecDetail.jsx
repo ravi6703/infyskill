@@ -64,7 +64,7 @@ export default function SpecDetail({ spec }) {
     const otherRoles = demandRoles.filter((s) => s.slug !== spec.slug);
     const related = spec.skills.filter((k) => k !== skill && (CLUSTER_OF[k.toLowerCase()] || "") === cluster).slice(0, 6);
     const idx = spec.skills.indexOf(skill);
-    const phase = idx < spec.skills.length / 3 ? "Foundation stage" : idx < (spec.skills.length * 2) / 3 ? "Core stage" : "Specialization stage";
+    const phase = idx < spec.skills.length / 3 ? "Foundation stage" : idx < (spec.skills.length * 2) / 3 ? "Core stage" : "Specialisation stage";
     const leverage = demandRoles.length >= 6 ? "high" : demandRoles.length >= 3 ? "medium" : "focused";
     return { cluster, demand: demandRoles.length, otherRoles: otherRoles.slice(0, 6), related, phase, leverage };
   }, [skill, spec.slug, spec.skills]);
@@ -76,7 +76,7 @@ export default function SpecDetail({ spec }) {
 
   return (
     <div>
-      <Link href="/specializations" className="text-sm font-bold text-brand-600">← All specializations</Link>
+      <Link href="/specializations" className="text-sm font-bold text-brand-600">← All specialisations</Link>
 
       {/* hero */}
       <div className="mt-3 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 p-6 text-white">
@@ -161,7 +161,7 @@ export default function SpecDetail({ spec }) {
               </div>
               <div className="rounded-xl bg-ink-50 p-3 text-center">
                 <p className={`text-sm font-black ${skillInfo.leverage === "high" ? "text-teal-600" : skillInfo.leverage === "medium" ? "text-brand-600" : "text-ink-600"}`}>
-                  {skillInfo.leverage === "high" ? "High leverage" : skillInfo.leverage === "medium" ? "Transferable" : "Specialized"}
+                  {skillInfo.leverage === "high" ? "High leverage" : skillInfo.leverage === "medium" ? "Transferable" : "Specialised"}
                 </p>
                 <p className="text-[11px] text-ink-500">career leverage</p>
               </div>

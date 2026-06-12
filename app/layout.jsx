@@ -4,12 +4,12 @@ import Nav from "../components/Nav";
 
 export const metadata = {
   title: "InfyAI — Board Infinity",
-  description: "Skill-tagged course catalog, AI-era specializations and Board Infinity degree programs with a blended delivery model.",
+  description: "Skill-tagged course catalogue, AI-era specialisations and Board Infinity degree programmes with a blended delivery model.",
   icons: { icon: "/favicon.svg" },
 };
 
 const footerCols = [
-  ["Explore", [["/catalog", "Course Catalog"], ["/specializations", "Specializations"], ["/degrees", "Degree Programs"], ["/diagnostic", "Career Diagnostic"]]],
+  ["Explore", [["/catalog", "Course Catalogue"], ["/specializations", "Specialisations"], ["/degrees", "Degree Programmes"], ["/diagnostic", "Career Diagnostic"]]],
   ["Board Infinity", [["https://www.boardinfinity.com", "About"], ["https://www.boardinfinity.com/college", "For Higher-Ed"], ["https://www.boardinfinity.com/programs", "All Courses"]]],
 ];
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-3">
             <div>
               <img src="/bi-logo.svg" alt="Board Infinity" className="h-9 w-auto" />
-              <p className="mt-3 text-xs text-ink-500">Asia&apos;s #1 career-first learning ecosystem. InfyAI — skill intelligence, specializations & degree programs.</p>
+              <p className="mt-3 text-xs text-ink-500">Asia&apos;s #1 career-first learning ecosystem. InfyAI — skill intelligence, specializations & degree programmes.</p>
             </div>
             {footerCols.map(([title, items]) => (
               <div key={title}>

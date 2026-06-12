@@ -111,7 +111,7 @@ async function extractDocx(file) {
 const STEPS = [
   "Extracting subjects & topics from your document",
   "Tagging each subject against the InfyAI skill taxonomy",
-  "Lens A · matching subject-by-subject vs the ideal AI-era program",
+  "Lens A · matching subject-by-subject vs the ideal AI-era programme",
   "Lens B · scoring job-orientation vs employer-demanded skills",
   "Compiling the gaps + the Board Infinity content that closes them",
 ];
@@ -285,11 +285,11 @@ export default function DegreeCompare() {
 
   return (
     <div>
-      <Link href="/degrees" className="text-sm font-bold text-brand-600">← Degree programs</Link>
+      <Link href="/degrees" className="text-sm font-bold text-brand-600">← Degree programmes</Link>
       <div className="mt-3 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 p-6 text-white">
         <p className="text-xs font-bold uppercase tracking-widest text-brand-100">For universities</p>
         <h1 className="mt-1 text-3xl font-black text-white">How future-ready is your curriculum?</h1>
-        <p className="mt-2 max-w-2xl text-brand-50">Upload your syllabus. We run a two-lens gap analysis — <b>syllabus</b> (vs an ideal AI-era program) and <b>job-orientation</b> (vs what employers hire for) — and show exactly what&apos;s missing plus the Board Infinity content + roles that close the gap.</p>
+        <p className="mt-2 max-w-2xl text-brand-50">Upload your syllabus. We run a two-lens gap analysis — <b>syllabus</b> (vs an ideal AI-era programme) and <b>job-orientation</b> (vs what employers hire for) — and show exactly what&apos;s missing plus the Board Infinity content + roles that close the gap.</p>
       </div>
 
       <div className="card mt-6 p-5">
@@ -305,7 +305,7 @@ export default function DegreeCompare() {
         <details className="mt-3">
           <summary className="cursor-pointer text-xs font-bold text-ink-500">…or paste subjects manually (one per line)</summary>
           <textarea className="input mt-2 h-28 font-mono text-xs" placeholder={"Database Management Systems\nMachine Learning\nOperating Systems\n…"} value={text} onChange={(e) => setText(e.target.value)} />
-          <button onClick={runPaste} className="btn-primary mt-2 text-sm">Analyze my curriculum →</button>
+          <button onClick={runPaste} className="btn-primary mt-2 text-sm">Analyse my curriculum →</button>
         </details>
         <button onClick={loadSample} className="mt-3 text-xs font-bold text-brand-600 hover:underline">No syllabus handy? Load a sample →</button>
       </div>
@@ -445,7 +445,7 @@ export default function DegreeCompare() {
               </div>
               <span className={`text-2xl font-black ${result.syllabusPct >= 70 ? "text-teal-600" : result.syllabusPct >= 45 ? "text-peel-600" : "text-rose-600"}`}>{result.syllabusPct}%<span className="ml-1 text-xs font-bold text-ink-500">syllabus match</span></span>
             </div>
-            <p className="mt-1 text-xs text-ink-400">Your curriculum is matched subject-by-subject against a benchmark AI-era program ({result.idealRef}). Subjects below appear in the ideal program but not in yours.</p>
+            <p className="mt-1 text-xs text-ink-400">Your curriculum is matched subject-by-subject against a benchmark AI-era programme ({result.idealRef}). Subjects below appear in the ideal program but not in yours.</p>
             {result.syllabusGaps.length > 0 ? (
               <div className="mt-3">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-peel-700">Subjects/topics your curriculum is missing</p>

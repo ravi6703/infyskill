@@ -161,7 +161,7 @@ export default function DegreeTerms({ terms }) {
   const cur = years.find((y) => y.year === activeYear) || years[0];
   const [open, setOpen] = useState(cur?.list[0]?._gi ?? 0);
 
-  const YEAR_LABEL = (y) => ["", "Foundations", "Specialization", "Industry & capstone", "Advanced"][y] || "Year";
+  const YEAR_LABEL = (y) => ["", "Foundations", "Specialisation", "Industry & capstone", "Advanced"][y] || "Year";
 
   function pickYear(y) {
     setActiveYear(y);

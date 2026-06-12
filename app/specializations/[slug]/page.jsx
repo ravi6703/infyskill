@@ -7,7 +7,7 @@ export function generateStaticParams() {
 }
 export function generateMetadata({ params }) {
   const s = specs.find((x) => x.slug === params.slug);
-  return { title: `${s ? s.role : "Specialization"} — InfyAI` };
+  return { title: `${s ? s.role : "Specialisation"} — InfyAI` };
 }
 
 export default function Page({ params }) {

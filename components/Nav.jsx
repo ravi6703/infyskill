@@ -3,9 +3,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  ["/catalog", "Course Catalog"],
-  ["/specializations", "Specializations"],
-  ["/degrees", "Degree Programs"],
+  ["/catalog", "Course Catalogue"],
+  ["/specializations", "Specialisations"],
+  ["/degrees", "Degree Programmes"],
   ["/diagnostic", "Career Diagnostic"],
 ];
 

@@ -8,7 +8,7 @@ import coursesAll from "../data/courses.json";
 import { alternativesFor } from "../lib/engine";
 import { sbSelect } from "../lib/supabase";
 
-const PHASE_DOT = { "Foundation": "bg-sky-500", "Core Build": "bg-brand-500", "Specialization": "bg-violet-500", "Career Launch": "bg-rose-500" };
+const PHASE_DOT = { "Foundation": "bg-sky-500", "Core Build": "bg-brand-500", "Specialisation": "bg-violet-500", "Career Launch": "bg-rose-500" };
 const LEVEL = ["Beginner", "Intermediate", "Advanced"];
 const LEVEL_CLS = ["bg-teal-50 text-teal-700", "bg-sky-100 text-sky-700", "bg-violet-100 text-violet-700"];
 const slugOf = Object.fromEntries(coursesAll.map((c) => [c.title, c.slug]));
@@ -152,7 +152,7 @@ export default function WeekPlan({ plan, planKey }) {
           href={`https://wa.me/?text=${encodeURIComponent(`My ${plan.totalWeeks}-week learning journey on InfyAI by Board Infinity — ${plan.totalHours} hours, ${plan.moduleCount} modules. Build yours: https://infyskill.vercel.app/diagnostic`)}`}>Share</a>
         <button onClick={() => { setCustomize(!customize); setSwapOpen(null); setAddOpen(null); }}
           className={`btn text-xs ${customize ? "bg-brand-600 text-white" : "border border-ink-300 text-ink-700"}`}>
-          ✏️ {customize ? "Done customizing" : "Customize plan"}
+          ✏️ {customize ? "Done customising" : "Customise plan"}
         </button>
         {editCount > 0 && (
           <span className="flex items-center gap-2 text-xs">

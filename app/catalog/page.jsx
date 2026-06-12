@@ -54,7 +54,7 @@ export default function Catalog() {
 
   return (
     <div>
-      <h1 className="text-3xl font-black text-ink-900">Course Catalog</h1>
+      <h1 className="text-3xl font-black text-ink-900">Course Catalogue</h1>
       <p className="mt-2 text-ink-500">{courses.length} courses across {domains.length} categories, <b className="text-ink-700">ranked by AI-era hiring demand</b> — the skills our tracked roles hire for surface first. Every course is skill-tagged; open one for its visual roadmap.</p>
 
       <div className="card mt-6 grid grid-cols-1 gap-3 p-4 sm:grid-cols-[1fr_auto_auto] sm:items-center">

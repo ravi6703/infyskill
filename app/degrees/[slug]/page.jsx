@@ -20,7 +20,7 @@ export default function Degree({ params }) {
 
   return (
     <div>
-      <Link href="/degrees" className="text-sm font-bold text-brand-600">← All degree programs</Link>
+      <Link href="/degrees" className="text-sm font-bold text-brand-600">← All degree programmes</Link>
 
       <div className="relative mt-3 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 p-6 text-white">
         <span className="chip bg-white/15 text-white">{d.level} · {d.duration}</span>

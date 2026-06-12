@@ -61,7 +61,7 @@ export default function Compare() {
 
   return (
     <div>
-      <h1 className="text-3xl font-black text-ink-900">Compare Specializations</h1>
+      <h1 className="text-3xl font-black text-ink-900">Compare Specialisations</h1>
       <p className="mt-2 max-w-3xl text-ink-500">Pick up to 3 roles. Compare on skills, outcomes and how easily you can pivot between them — salary is just one parameter.</p>
 
       <div className="card mt-6 p-4">

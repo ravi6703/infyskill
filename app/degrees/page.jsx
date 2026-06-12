@@ -2,7 +2,7 @@ import Link from "next/link";
 import degrees from "../../data/degrees_bi.json";
 import { Motif } from "../../components/Art";
 
-export const metadata = { title: "Degree Programs — InfyAI" };
+export const metadata = { title: "Degree Programmes — InfyAI" };
 const MOTIF = ["degree", "specialization", "catalog", "diagnostic"];
 
 const GAINS = [
@@ -17,9 +17,9 @@ const GAINS = [
 export default function Degrees() {
   return (
     <div>
-      <h1 className="text-3xl font-black text-ink-900">Board Infinity Degree Programs</h1>
+      <h1 className="text-3xl font-black text-ink-900">Board Infinity Degree Programmes</h1>
       <p className="mt-2 max-w-3xl text-ink-500">
-        Not a university syllabus retro-fitted — these are Board Infinity&apos;s own best-of-best programs, designed from our content library and
+        Not a university syllabus retro-fitted — these are Board Infinity&apos;s own best-of-best programmes, designed from our content library and
         delivered through the blended model. Each shows the journey, the roles you graduate into, and how it out-performs a standard university degree.
       </p>
       <Link href="/degrees/compare" className="btn-ghost mt-4 text-sm">🎓 For universities: compare your curriculum &amp; see the gap →</Link>
