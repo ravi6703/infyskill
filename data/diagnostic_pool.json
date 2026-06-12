@@ -1,0 +1,6784 @@
+{
+ "ai-machine-learning-engineer": {
+  "role": "AI / Machine Learning Engineer",
+  "clusters": [
+   "Python & Programming",
+   "Deep Learning",
+   "Machine Learning",
+   "Cloud & DevOps",
+   "MLOps & AI Infrastructure",
+   "Web Development"
+  ],
+  "pool": {
+   "Python & Programming": {
+    "1": [
+     {
+      "q": "What is the primary purpose of the Python programming language?",
+      "options": [
+       "Data analysis",
+       "Web development",
+       "General-purpose programming",
+       "Game development"
+      ],
+      "correct": 2,
+      "cluster": "Python & Programming",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a built-in data type in Python?",
+      "options": [
+       "Array",
+       "List",
+       "Matrix",
+       "Table"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to process a large dataset and perform data cleaning before feeding it into your model. Which Python library would you choose for efficient data manipulation?",
+      "options": [
+       "Pandas",
+       "NumPy",
+       "Matplotlib",
+       "SciPy"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 2
+     },
+     {
+      "q": "You want to deploy a Python application that requires real-time data processing. Which framework would be best suited for this task?",
+      "options": [
+       "Flask",
+       "Django",
+       "FastAPI",
+       "Pyramid"
+      ],
+      "correct": 2,
+      "cluster": "Python & Programming",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In Python, which method is most efficient for merging two large lists?",
+      "options": [
+       "a) Using list.extend()",
+       "b) Using the '+' operator",
+       "c) Using itertools.chain()",
+       "d) Using list.append()"
+      ],
+      "correct": 2,
+      "cluster": "Python & Programming",
+      "level": 3
+     },
+     {
+      "q": "When debugging a memory leak in a Python application, which tool is most effective?",
+      "options": [
+       "a) cProfile",
+       "b) memory_profiler",
+       "c) PyLint",
+       "d) unittest"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 3
+     }
+    ]
+   },
+   "Deep Learning": {
+    "1": [
+     {
+      "q": "What is a key characteristic of deep learning?",
+      "options": [
+       "Requires less data than traditional ML",
+       "Uses neural networks",
+       "Is always supervised",
+       "Does not require tuning"
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common activation function in neural networks?",
+      "options": [
+       "Linear",
+       "Exponential",
+       "Sigmoid",
+       "Polynomial"
+      ],
+      "correct": 2,
+      "cluster": "Deep Learning",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with building a neural network for image classification. Which deep learning framework would you choose for ease of use and flexibility?",
+      "options": [
+       "TensorFlow",
+       "Keras",
+       "PyTorch",
+       "Caffe"
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 2
+     },
+     {
+      "q": "You need to implement a convolutional neural network for a project. Which layer type is essential for extracting features from images?",
+      "options": [
+       "Dense",
+       "Pooling",
+       "Convolutional",
+       "Dropout"
+      ],
+      "correct": 2,
+      "cluster": "Deep Learning",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a common trade-off when using dropout in a deep learning model?",
+      "options": [
+       "a) Increased training time",
+       "b) Reduced model complexity",
+       "c) Overfitting prevention",
+       "d) Increased inference time"
+      ],
+      "correct": 3,
+      "cluster": "Deep Learning",
+      "level": 3
+     },
+     {
+      "q": "When choosing an activation function for a deep network, which factor is most critical?",
+      "options": [
+       "a) Non-linearity",
+       "b) Computational efficiency",
+       "c) Gradient behavior",
+       "d) Output range"
+      ],
+      "correct": 2,
+      "cluster": "Deep Learning",
+      "level": 3
+     }
+    ]
+   },
+   "Machine Learning": {
+    "1": [
+     {
+      "q": "What is the main goal of machine learning?",
+      "options": [
+       "To create algorithms",
+       "To predict outcomes",
+       "To analyze data",
+       "To visualize information"
+      ],
+      "correct": 1,
+      "cluster": "Machine Learning",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a type of supervised learning?",
+      "options": [
+       "Clustering",
+       "Regression",
+       "Dimensionality reduction",
+       "Association"
+      ],
+      "correct": 1,
+      "cluster": "Machine Learning",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are working on a regression problem and need to select the best algorithm. Which of the following would be a good starting point?",
+      "options": [
+       "K-Nearest Neighbors",
+       "Support Vector Machine",
+       "Linear Regression",
+       "Decision Tree"
+      ],
+      "correct": 2,
+      "cluster": "Machine Learning",
+      "level": 2
+     },
+     {
+      "q": "You have a dataset with missing values. Which technique would be most appropriate for handling them before training your model?",
+      "options": [
+       "Drop rows with missing values",
+       "Impute with mean",
+       "Use a random forest",
+       "Ignore them"
+      ],
+      "correct": 1,
+      "cluster": "Machine Learning",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In a machine learning context, what is a potential downside of using a very complex model?",
+      "options": [
+       "a) Increased interpretability",
+       "b) Longer training time",
+       "c) Better generalization",
+       "d) Higher accuracy on training data"
+      ],
+      "correct": 1,
+      "cluster": "Machine Learning",
+      "level": 3
+     },
+     {
+      "q": "When dealing with imbalanced datasets, which technique is least likely to improve model performance?",
+      "options": [
+       "a) Oversampling the minority class",
+       "b) Using class weights",
+       "c) Undersampling the majority class",
+       "d) Increasing the model complexity"
+      ],
+      "correct": 3,
+      "cluster": "Machine Learning",
+      "level": 3
+     }
+    ]
+   },
+   "Cloud & DevOps": {
+    "1": [
+     {
+      "q": "What is a primary benefit of using cloud services in AI?",
+      "options": [
+       "Increased hardware costs",
+       "Scalability",
+       "Limited accessibility",
+       "Complex setup"
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a cloud service model?",
+      "options": [
+       "IaaS",
+       "PaaS",
+       "SaaS",
+       "All of the above"
+      ],
+      "correct": 3,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to deploy a machine learning model on a cloud platform. Which service would be most appropriate for managing containerized applications?",
+      "options": [
+       "AWS Lambda",
+       "Google Cloud Functions",
+       "Kubernetes",
+       "AWS EC2"
+      ],
+      "correct": 2,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     },
+     {
+      "q": "You want to set up a CI/CD pipeline for your machine learning project. Which tool would be best for automating the deployment process?",
+      "options": [
+       "Jenkins",
+       "GitHub Actions",
+       "CircleCI",
+       "Travis CI"
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "Which cloud service is best suited for deploying a scalable machine learning model?",
+      "options": [
+       "a) AWS Lambda",
+       "b) Google Cloud Functions",
+       "c) Azure Machine Learning",
+       "d) Amazon S3"
+      ],
+      "correct": 2,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     },
+     {
+      "q": "What is a key consideration when choosing between containerization and serverless architecture for ML deployment?",
+      "options": [
+       "a) Cost-effectiveness",
+       "b) Scalability",
+       "c) State management",
+       "d) Development speed"
+      ],
+      "correct": 2,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     }
+    ]
+   },
+   "MLOps & AI Infrastructure": {
+    "1": [
+     {
+      "q": "What does MLOps primarily focus on?",
+      "options": [
+       "Data preprocessing",
+       "Model deployment",
+       "Feature engineering",
+       "Data augmentation"
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common tool used in MLOps?",
+      "options": [
+       "TensorFlow",
+       "Docker",
+       "Pandas",
+       "NumPy"
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to monitor the performance of your deployed machine learning models. Which tool would you choose for this purpose?",
+      "options": [
+       "Prometheus",
+       "Grafana",
+       "MLflow",
+       "TensorBoard"
+      ],
+      "correct": 2,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 2
+     },
+     {
+      "q": "You are implementing version control for your machine learning models. Which approach is best for tracking model changes?",
+      "options": [
+       "Git",
+       "DVC",
+       "MLflow",
+       "Docker"
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In MLOps, what is the primary purpose of continuous integration?",
+      "options": [
+       "a) To automate model training",
+       "b) To ensure code quality",
+       "c) To monitor model performance",
+       "d) To manage data pipelines"
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 3
+     },
+     {
+      "q": "When implementing model versioning in MLOps, what is a critical factor to consider?",
+      "options": [
+       "a) Model size",
+       "b) Deployment frequency",
+       "c) Reproducibility",
+       "d) Training time"
+      ],
+      "correct": 2,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 3
+     }
+    ]
+   },
+   "Web Development": {
+    "1": [
+     {
+      "q": "What is a key function of web development?",
+      "options": [
+       "Data analysis",
+       "Creating websites",
+       "Machine learning",
+       "Network security"
+      ],
+      "correct": 1,
+      "cluster": "Web Development",
+      "level": 1
+     },
+     {
+      "q": "Which language is commonly used for front-end web development?",
+      "options": [
+       "Python",
+       "Java",
+       "HTML",
+       "C++"
+      ],
+      "correct": 2,
+      "cluster": "Web Development",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are developing a web application that interacts with a machine learning model. Which framework would be most suitable for building the backend?",
+      "options": [
+       "Flask",
+       "React",
+       "Angular",
+       "Vue"
+      ],
+      "correct": 0,
+      "cluster": "Web Development",
+      "level": 2
+     },
+     {
+      "q": "You need to create a RESTful API for your machine learning model. Which library would help you achieve this efficiently?",
+      "options": [
+       "FastAPI",
+       "Django REST Framework",
+       "Flask-RESTful",
+       "Express.js"
+      ],
+      "correct": 0,
+      "cluster": "Web Development",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In web development, which approach is best for serving real-time predictions from a model?",
+      "options": [
+       "a) Batch processing",
+       "b) REST API",
+       "c) Static HTML",
+       "d) WebSocket"
+      ],
+      "correct": 1,
+      "cluster": "Web Development",
+      "level": 3
+     },
+     {
+      "q": "What is a common challenge when integrating a machine learning model into a web application?",
+      "options": [
+       "a) Model accuracy",
+       "b) Data privacy",
+       "c) User interface design",
+       "d) Model training"
+      ],
+      "correct": 1,
+      "cluster": "Web Development",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "agentic-ai-engineer": {
+  "role": "Agentic AI Engineer",
+  "clusters": [
+   "Agentic AI",
+   "Generative AI & LLMs",
+   "Cloud & DevOps",
+   "Python & Programming"
+  ],
+  "pool": {
+   "Agentic AI": {
+    "1": [
+     {
+      "q": "What does 'Agentic AI' primarily refer to?",
+      "options": [
+       "AI that can make independent decisions",
+       "AI that processes large datasets",
+       "AI that generates human-like text",
+       "AI that operates solely on user commands"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following best describes an 'agent' in AI?",
+      "options": [
+       "A software that performs tasks autonomously",
+       "A user interface for AI interactions",
+       "A data storage solution for AI models",
+       "A programming language for AI development"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to design an AI system that can autonomously negotiate deals. Which approach would best ensure it understands human emotions during negotiations?",
+      "options": [
+       "Reinforcement Learning with emotional datasets",
+       "Supervised Learning on historical negotiation data",
+       "Rule-based systems for decision making",
+       "Unsupervised Learning for pattern recognition"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 2
+     },
+     {
+      "q": "Your team is developing an agentic AI that must learn from user interactions. What is the most effective method to continuously improve its performance?",
+      "options": [
+       "Batch training every month",
+       "Real-time learning from user feedback",
+       "Periodic manual adjustments",
+       "Static rule updates"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When designing an agentic AI system, which trade-off is most critical when balancing autonomy and safety?",
+      "options": [
+       "High autonomy with potential risks",
+       "Low autonomy with limited functionality",
+       "Moderate autonomy with complex oversight",
+       "No autonomy with full control"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     },
+     {
+      "q": "In an agentic AI, how should you handle a situation where the AI's decision-making leads to unintended consequences?",
+      "options": [
+       "Ignore the consequences",
+       "Reprogram the AI to avoid similar decisions",
+       "Analyze and adjust the decision-making framework",
+       "Limit the AI's decision-making capabilities"
+      ],
+      "correct": 2,
+      "cluster": "Agentic AI",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What is a key feature of Generative AI?",
+      "options": [
+       "It can create new content",
+       "It only analyzes existing data",
+       "It is limited to structured data",
+       "It requires extensive human input"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Machine",
+       "Low-Level Model",
+       "Limited Logic Model"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with generating creative content for marketing. Which generative AI model would be most suitable for producing high-quality text?",
+      "options": [
+       "GPT-3",
+       "BERT",
+       "SVM",
+       "Random Forest"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "For a project requiring image generation based on textual descriptions, which generative AI approach should you choose?",
+      "options": [
+       "GANs (Generative Adversarial Networks)",
+       "Decision Trees",
+       "K-means Clustering",
+       "Linear Regression"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a common trade-off when selecting a generative AI model for high-quality output?",
+      "options": [
+       "Speed vs. quality",
+       "Complexity vs. simplicity",
+       "Cost vs. performance",
+       "Flexibility vs. rigidity"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "When fine-tuning a large language model, which approach best balances training time and model performance?",
+      "options": [
+       "Train on a large dataset for longer",
+       "Use a smaller dataset with more epochs",
+       "Selectively fine-tune specific layers",
+       "Train with no validation"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Cloud & DevOps": {
+    "1": [
+     {
+      "q": "What is a primary benefit of using Cloud services in DevOps?",
+      "options": [
+       "Scalability of resources",
+       "Increased manual processes",
+       "Higher costs for storage",
+       "Limited accessibility"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common tool used in DevOps?",
+      "options": [
+       "Docker",
+       "Photoshop",
+       "Excel",
+       "Notepad"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to deploy a machine learning model that requires scaling based on user demand. Which cloud service would best support this?",
+      "options": [
+       "AWS Lambda",
+       "Google Sheets",
+       "Local server",
+       "Static hosting"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     },
+     {
+      "q": "Your application needs to ensure high availability and quick recovery from failures. What cloud architecture pattern would you implement?",
+      "options": [
+       "Monolithic architecture",
+       "Microservices architecture",
+       "Single-instance deployment",
+       "Static content delivery"
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In a cloud environment, which design decision most impacts scalability for an AI application?",
+      "options": [
+       "Choosing the right instance type",
+       "Using a monolithic architecture",
+       "Implementing synchronous processing",
+       "Limiting data storage options"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     },
+     {
+      "q": "What is a key trade-off when deciding between serverless architecture and traditional servers for AI workloads?",
+      "options": [
+       "Cost vs. control",
+       "Speed vs. reliability",
+       "Complexity vs. ease of use",
+       "Scalability vs. performance"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     }
+    ]
+   },
+   "Python & Programming": {
+    "1": [
+     {
+      "q": "Which of the following is a popular programming language for AI development?",
+      "options": [
+       "Python",
+       "HTML",
+       "JavaScript",
+       "CSS"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 1
+     },
+     {
+      "q": "What is the purpose of a function in Python?",
+      "options": [
+       "To encapsulate reusable code",
+       "To create a new variable",
+       "To format strings",
+       "To store data in a list"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are writing a script to automate data processing. Which Python library would be most effective for handling large datasets?",
+      "options": [
+       "Pandas",
+       "Matplotlib",
+       "Flask",
+       "NumPy"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 2
+     },
+     {
+      "q": "You need to create a web application with a backend API in Python. Which framework would be the best choice?",
+      "options": [
+       "Django",
+       "Pygame",
+       "Tkinter",
+       "Beautiful Soup"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When debugging a Python application, what is the most effective way to handle an unexpected exception in production?",
+      "options": [
+       "Log the error and restart the application",
+       "Ignore the error and continue",
+       "Implement a try-except block to handle it",
+       "Stop the application and investigate immediately"
+      ],
+      "correct": 2,
+      "cluster": "Python & Programming",
+      "level": 3
+     },
+     {
+      "q": "In Python, what is the trade-off when using list comprehensions versus traditional loops for large datasets?",
+      "options": [
+       "Readability vs. performance",
+       "Memory usage vs. speed",
+       "Complexity vs. simplicity",
+       "Scalability vs. maintainability"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "mlops-ai-platform-engineer": {
+  "role": "MLOps / AI Platform Engineer",
+  "clusters": [
+   "Cloud & DevOps",
+   "MLOps & AI Infrastructure",
+   "Generative AI & LLMs",
+   "Deep Learning",
+   "Software Testing & QA",
+   "Web Development"
+  ],
+  "pool": {
+   "Cloud & DevOps": {
+    "1": [
+     {
+      "q": "What does the term 'cloud computing' refer to?",
+      "options": [
+       "Storing data on local servers",
+       "Using remote servers to store and process data",
+       "Running applications on personal computers",
+       "Networking devices in a local area"
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common cloud service model?",
+      "options": [
+       "Infrastructure as a Service (IaaS)",
+       "Software as a Solution (SaaS)",
+       "Platform as a Model (PaaM)",
+       "Data as a Service (DaaS)"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to deploy a machine learning model that requires scaling based on incoming traffic. Which service would be most suitable for this task?",
+      "options": [
+       "AWS Lambda",
+       "Amazon EC2",
+       "Google Cloud Functions",
+       "Azure Functions"
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     },
+     {
+      "q": "Your team is using Docker for containerization. Which orchestration tool would you choose to manage the deployment and scaling of these containers?",
+      "options": [
+       "Kubernetes",
+       "Docker Swarm",
+       "Apache Mesos",
+       "Nomad"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When deploying a machine learning model on AWS, which service would best facilitate continuous integration and deployment (CI/CD) for model updates?",
+      "options": [
+       "AWS Lambda",
+       "AWS SageMaker",
+       "AWS EC2",
+       "AWS Batch"
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     },
+     {
+      "q": "In a Kubernetes cluster, which resource type is most suitable for managing the deployment of a scalable ML model serving application?",
+      "options": [
+       "Pod",
+       "Deployment",
+       "Service",
+       "StatefulSet"
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     }
+    ]
+   },
+   "MLOps & AI Infrastructure": {
+    "1": [
+     {
+      "q": "What is MLOps primarily concerned with?",
+      "options": [
+       "Model deployment and monitoring",
+       "Data preprocessing only",
+       "User interface design",
+       "Hardware optimization"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 1
+     },
+     {
+      "q": "Which tool is commonly used for version control in MLOps?",
+      "options": [
+       "Jupyter Notebook",
+       "Git",
+       "TensorFlow",
+       "Docker"
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with setting up a CI/CD pipeline for a machine learning project. Which tool would best facilitate model versioning and deployment?",
+      "options": [
+       "Jenkins",
+       "GitLab CI",
+       "MLflow",
+       "CircleCI"
+      ],
+      "correct": 2,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 2
+     },
+     {
+      "q": "You want to monitor model performance in production. Which approach would you take to ensure continuous evaluation?",
+      "options": [
+       "A/B Testing",
+       "Batch Evaluation",
+       "Online Learning",
+       "Data Drift Detection"
+      ],
+      "correct": 3,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is the primary trade-off when choosing between a managed MLOps platform and building an in-house solution?",
+      "options": [
+       "Cost vs. Control",
+       "Speed vs. Scalability",
+       "Simplicity vs. Flexibility",
+       "Security vs. Usability"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 3
+     },
+     {
+      "q": "In a distributed training setup, what is the main challenge when synchronizing model weights across multiple nodes?",
+      "options": [
+       "Network latency",
+       "Data imbalance",
+       "Model complexity",
+       "Resource allocation"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Model",
+       "Local Logic Machine",
+       "Layered Learning Method"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a popular framework for building generative AI models?",
+      "options": [
+       "Keras",
+       "Pandas",
+       "Flask",
+       "NumPy"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are developing a chatbot using a generative AI model. Which framework would you use to fine-tune the model for specific responses?",
+      "options": [
+       "Hugging Face Transformers",
+       "OpenAI GPT-3",
+       "Google BERT",
+       "Rasa"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "For a project requiring real-time text generation, which model architecture would be most effective?",
+      "options": [
+       "Transformer",
+       "LSTM",
+       "CNN",
+       "RNN"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When fine-tuning a generative language model, what is a critical consideration to prevent overfitting?",
+      "options": [
+       "Using a larger dataset",
+       "Increasing the learning rate",
+       "Reducing the model size",
+       "Applying dropout regularization"
+      ],
+      "correct": 3,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "What is a common pitfall when using transfer learning with large language models?",
+      "options": [
+       "Insufficient training data",
+       "Ignoring domain-specific vocabulary",
+       "Using too many layers",
+       "Choosing the wrong optimizer"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Deep Learning": {
+    "1": [
+     {
+      "q": "What is a key characteristic of deep learning?",
+      "options": [
+       "It uses shallow neural networks.",
+       "It relies on large amounts of labeled data.",
+       "It requires manual feature extraction.",
+       "It is only applicable to image data."
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 1
+     },
+     {
+      "q": "Which type of neural network is commonly used for image recognition?",
+      "options": [
+       "Recurrent Neural Network (RNN)",
+       "Convolutional Neural Network (CNN)",
+       "Generative Adversarial Network (GAN)",
+       "Feedforward Neural Network"
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to optimize a deep learning model's training time. Which technique would you apply first?",
+      "options": [
+       "Data Augmentation",
+       "Transfer Learning",
+       "Hyperparameter Tuning",
+       "Regularization"
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 2
+     },
+     {
+      "q": "In a neural network, you notice overfitting. What is the most effective approach to mitigate this issue?",
+      "options": [
+       "Increase training data",
+       "Reduce model complexity",
+       "Add dropout layers",
+       "Use batch normalization"
+      ],
+      "correct": 2,
+      "cluster": "Deep Learning",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is the main advantage of using batch normalization in deep learning models?",
+      "options": [
+       "Reduces overfitting",
+       "Improves convergence speed",
+       "Increases model interpretability",
+       "Simplifies model architecture"
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 3
+     },
+     {
+      "q": "When designing a neural network, what is a key consideration when choosing activation functions?",
+      "options": [
+       "Computational cost",
+       "Gradient saturation",
+       "Model size",
+       "Data type"
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 3
+     }
+    ]
+   },
+   "Software Testing & QA": {
+    "1": [
+     {
+      "q": "What is the purpose of software testing?",
+      "options": [
+       "To increase software cost",
+       "To identify bugs and ensure quality",
+       "To write code faster",
+       "To limit software functionality"
+      ],
+      "correct": 1,
+      "cluster": "Software Testing & QA",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a type of software testing?",
+      "options": [
+       "Regression testing",
+       "Data analysis",
+       "User interface design",
+       "Code compilation"
+      ],
+      "correct": 0,
+      "cluster": "Software Testing & QA",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are implementing automated tests for a machine learning application. Which testing approach would be most relevant?",
+      "options": [
+       "Unit Testing",
+       "Integration Testing",
+       "Model Validation",
+       "End-to-End Testing"
+      ],
+      "correct": 2,
+      "cluster": "Software Testing & QA",
+      "level": 2
+     },
+     {
+      "q": "To ensure your model's predictions are reliable, which method would you use to validate its performance?",
+      "options": [
+       "Cross-Validation",
+       "Holdout Method",
+       "Bootstrap Sampling",
+       "Time Series Split"
+      ],
+      "correct": 0,
+      "cluster": "Software Testing & QA",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In a software testing pipeline, what is the primary benefit of implementing automated regression tests?",
+      "options": [
+       "Faster feedback loops",
+       "Reduced manual effort",
+       "Higher code coverage",
+       "Easier bug tracking"
+      ],
+      "correct": 0,
+      "cluster": "Software Testing & QA",
+      "level": 3
+     },
+     {
+      "q": "What is a potential drawback of relying solely on unit tests for validating machine learning code?",
+      "options": [
+       "Limited test coverage",
+       "Increased complexity",
+       "Higher execution time",
+       "Difficulty in debugging"
+      ],
+      "correct": 0,
+      "cluster": "Software Testing & QA",
+      "level": 3
+     }
+    ]
+   },
+   "Web Development": {
+    "1": [
+     {
+      "q": "What does HTML stand for?",
+      "options": [
+       "HyperText Markup Language",
+       "HighText Machine Language",
+       "HyperText Markup Logic",
+       "HighText Markup Language"
+      ],
+      "correct": 0,
+      "cluster": "Web Development",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a popular JavaScript framework?",
+      "options": [
+       "Django",
+       "Flask",
+       "React",
+       "Ruby on Rails"
+      ],
+      "correct": 2,
+      "cluster": "Web Development",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with building a web application that serves machine learning predictions. Which framework would be most suitable for rapid development?",
+      "options": [
+       "Flask",
+       "Django",
+       "FastAPI",
+       "Spring Boot"
+      ],
+      "correct": 2,
+      "cluster": "Web Development",
+      "level": 2
+     },
+     {
+      "q": "For a web application that requires real-time data updates, which technology would you implement?",
+      "options": [
+       "REST API",
+       "GraphQL",
+       "WebSockets",
+       "SOAP"
+      ],
+      "correct": 2,
+      "cluster": "Web Development",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a common challenge when integrating a machine learning model into a web application?",
+      "options": [
+       "Latency in model inference",
+       "Data serialization formats",
+       "Frontend-backend communication",
+       "User authentication"
+      ],
+      "correct": 0,
+      "cluster": "Web Development",
+      "level": 3
+     },
+     {
+      "q": "When deploying a web application that uses a machine learning model, what is a critical consideration for scaling?",
+      "options": [
+       "Database optimization",
+       "Load balancing",
+       "Caching strategies",
+       "Code minification"
+      ],
+      "correct": 1,
+      "cluster": "Web Development",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "data-engineer-ai-era": {
+  "role": "Data Engineer (AI-era)",
+  "clusters": [
+   "Data Engineering",
+   "Python & Programming",
+   "Data Analysis & BI"
+  ],
+  "pool": {
+   "Data Engineering": {
+    "1": [
+     {
+      "q": "What is the primary purpose of a data pipeline?",
+      "options": [
+       "To visualize data",
+       "To collect and process data",
+       "To store data permanently",
+       "To secure data"
+      ],
+      "correct": 1,
+      "cluster": "Data Engineering",
+      "level": 1
+     },
+     {
+      "q": "What does ETL stand for in data processing?",
+      "options": [
+       "Extract, Transform, Load",
+       "Extract, Transfer, Load",
+       "Evaluate, Transform, Load",
+       "Extract, Transform, Link"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to design a data pipeline that ingests streaming data from IoT devices and processes it in real-time. Which tool would you choose for this task?",
+      "options": [
+       "Apache Kafka",
+       "Apache Hive",
+       "Amazon Redshift",
+       "MySQL"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 2
+     },
+     {
+      "q": "Your team is tasked with moving a large dataset from a traditional SQL database to a cloud data warehouse. Which approach would be most efficient?",
+      "options": [
+       "ETL using Apache Airflow",
+       "Manual CSV export/import",
+       "Direct SQL dump",
+       "Using a REST API"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When designing a data pipeline, which factor is most critical to ensure scalability?",
+      "options": [
+       "Data volume estimation",
+       "Choice of programming language",
+       "Data storage format",
+       "Network bandwidth"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 3
+     },
+     {
+      "q": "In a streaming data pipeline, what is a common trade-off when choosing between batch and real-time processing?",
+      "options": [
+       "Latency vs. throughput",
+       "Complexity vs. simplicity",
+       "Cost vs. performance",
+       "Flexibility vs. rigidity"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 3
+     }
+    ]
+   },
+   "Python & Programming": {
+    "1": [
+     {
+      "q": "Which data type is used to represent a whole number in Python?",
+      "options": [
+       "String",
+       "Float",
+       "Integer",
+       "List"
+      ],
+      "correct": 2,
+      "cluster": "Python & Programming",
+      "level": 1
+     },
+     {
+      "q": "What keyword is used to define a function in Python?",
+      "options": [
+       "def",
+       "function",
+       "func",
+       "define"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are building a data processing script in Python that requires high performance and efficiency. Which library would you use for numerical computations?",
+      "options": [
+       "Pandas",
+       "NumPy",
+       "Matplotlib",
+       "Scikit-learn"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 2
+     },
+     {
+      "q": "You need to automate a data extraction process from a web API using Python. Which library is best suited for handling HTTP requests?",
+      "options": [
+       "Beautiful Soup",
+       "Requests",
+       "Pandas",
+       "SQLAlchemy"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a key consideration when using Python for data processing in large datasets?",
+      "options": [
+       "Use of list comprehensions",
+       "Memory management",
+       "Function naming conventions",
+       "Code readability"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 3
+     },
+     {
+      "q": "When debugging a Python ETL script, which approach is most effective for identifying performance bottlenecks?",
+      "options": [
+       "Code reviews",
+       "Profiling the code",
+       "Adding more logging",
+       "Refactoring for clarity"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 3
+     }
+    ]
+   },
+   "Data Analysis & BI": {
+    "1": [
+     {
+      "q": "What is the primary goal of data analysis?",
+      "options": [
+       "To store data efficiently",
+       "To interpret and derive insights from data",
+       "To create data models",
+       "To secure data from breaches"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     },
+     {
+      "q": "Which tool is commonly used for creating dashboards in BI?",
+      "options": [
+       "Excel",
+       "Notepad",
+       "Command Line",
+       "Paint"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with creating a dashboard to visualize sales data. Which tool would best allow you to connect to multiple data sources and create interactive visualizations?",
+      "options": [
+       "Tableau",
+       "Excel",
+       "PowerPoint",
+       "Notepad"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     },
+     {
+      "q": "Your company wants to analyze customer behavior using large datasets. Which method would be most effective for identifying trends and patterns?",
+      "options": [
+       "Descriptive statistics",
+       "Data warehousing",
+       "Machine learning",
+       "Data entry"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In data analysis, what is a significant trade-off when choosing between accuracy and interpretability of a model?",
+      "options": [
+       "Simplicity vs. complexity",
+       "Speed vs. thoroughness",
+       "Cost vs. benefit",
+       "Scalability vs. detail"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     },
+     {
+      "q": "When visualizing data for business intelligence, which factor should be prioritized to ensure effective communication?",
+      "options": [
+       "Aesthetic appeal",
+       "Data accuracy",
+       "Audience understanding",
+       "Data completeness"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "genai-application-developer": {
+  "role": "GenAI Application Developer",
+  "clusters": [
+   "Generative AI & LLMs",
+   "Agentic AI",
+   "Deep Learning",
+   "Machine Learning",
+   "MLOps & AI Infrastructure",
+   "Cloud & DevOps"
+  ],
+  "pool": {
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does Generative AI primarily focus on?",
+      "options": [
+       "Creating new content",
+       "Analyzing existing data",
+       "Classifying images",
+       "Optimizing algorithms"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "What is a common application of LLMs?",
+      "options": [
+       "Image recognition",
+       "Natural language processing",
+       "Data mining",
+       "Robotic control"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with developing a chatbot using a large language model. Which approach would best improve the chatbot's contextual understanding?",
+      "options": [
+       "Fine-tuning the model on domain-specific data",
+       "Using a simpler rule-based system",
+       "Implementing a keyword extraction algorithm",
+       "Deploying a pre-trained model without modifications"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "In a project to generate creative content, which technique would you use to ensure diversity in the outputs from a generative model?",
+      "options": [
+       "Temperature sampling",
+       "Greedy decoding",
+       "Beam search",
+       "Top-k sampling"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When fine-tuning a large language model, which approach is best for balancing performance and training time?",
+      "options": [
+       "Use a smaller dataset for quicker iterations",
+       "Increase batch size to speed up training",
+       "Limit the number of epochs to prevent overfitting",
+       "Use a more complex model architecture for better results"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "In deploying a generative AI model, which consideration is most critical for ensuring ethical use?",
+      "options": [
+       "Model size and performance",
+       "User data privacy and consent",
+       "Integration with existing systems",
+       "Cost of cloud resources"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Agentic AI": {
+    "1": [
+     {
+      "q": "What is Agentic AI designed to do?",
+      "options": [
+       "Assist in decision making",
+       "Generate text",
+       "Classify data",
+       "Store information"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a characteristic of Agentic AI?",
+      "options": [
+       "Autonomous behavior",
+       "Data visualization",
+       "Supervised learning",
+       "Batch processing"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are developing an AI agent to automate customer service. Which method would you choose to enhance the agent's decision-making capabilities?",
+      "options": [
+       "Reinforcement learning",
+       "Supervised learning",
+       "Unsupervised learning",
+       "Transfer learning"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 2
+     },
+     {
+      "q": "To improve an agent's performance in a dynamic environment, which approach would be most effective?",
+      "options": [
+       "Using a fixed set of rules",
+       "Implementing continuous learning",
+       "Adopting a batch learning approach",
+       "Limiting the agent's interactions"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When designing an agentic AI system, what is a key factor in ensuring it behaves as intended?",
+      "options": [
+       "Using a single objective function",
+       "Incorporating human feedback loops",
+       "Limiting the model's complexity",
+       "Focusing solely on performance metrics"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 3
+     },
+     {
+      "q": "What is a significant trade-off when implementing multi-agent systems?",
+      "options": [
+       "Increased computational resources",
+       "Simplified communication protocols",
+       "Reduced model diversity",
+       "Faster convergence rates"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     }
+    ]
+   },
+   "Deep Learning": {
+    "1": [
+     {
+      "q": "What is a fundamental concept of Deep Learning?",
+      "options": [
+       "Neural networks",
+       "Decision trees",
+       "Support vector machines",
+       "Clustering algorithms"
+      ],
+      "correct": 0,
+      "cluster": "Deep Learning",
+      "level": 1
+     },
+     {
+      "q": "Which layer is typically used in Deep Learning models?",
+      "options": [
+       "Input layer",
+       "Output layer",
+       "Hidden layer",
+       "All of the above"
+      ],
+      "correct": 3,
+      "cluster": "Deep Learning",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with building a neural network for image classification. Which deep learning technique would help you avoid overfitting?",
+      "options": [
+       "Data augmentation",
+       "Increasing the model size",
+       "Reducing training epochs",
+       "Using a single dense layer"
+      ],
+      "correct": 0,
+      "cluster": "Deep Learning",
+      "level": 2
+     },
+     {
+      "q": "For a project requiring real-time object detection, which architecture would you choose?",
+      "options": [
+       "Convolutional Neural Networks (CNNs)",
+       "Recurrent Neural Networks (RNNs)",
+       "Generative Adversarial Networks (GANs)",
+       "Support Vector Machines (SVMs)"
+      ],
+      "correct": 0,
+      "cluster": "Deep Learning",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "Which design decision is crucial when building a deep learning model for image classification?",
+      "options": [
+       "Choosing the activation function",
+       "Determining the input image size",
+       "Selecting the optimizer",
+       "All of the above"
+      ],
+      "correct": 3,
+      "cluster": "Deep Learning",
+      "level": 3
+     },
+     {
+      "q": "What is a common edge case to consider when deploying a convolutional neural network?",
+      "options": [
+       "Training on augmented data only",
+       "Handling images with varying aspect ratios",
+       "Using dropout layers excessively",
+       "Limiting the number of training epochs"
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 3
+     }
+    ]
+   },
+   "Machine Learning": {
+    "1": [
+     {
+      "q": "What does Machine Learning primarily involve?",
+      "options": [
+       "Rule-based programming",
+       "Data-driven predictions",
+       "Manual data entry",
+       "Static algorithms"
+      ],
+      "correct": 1,
+      "cluster": "Machine Learning",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a type of Machine Learning?",
+      "options": [
+       "Reinforcement learning",
+       "Data mining",
+       "Database management",
+       "Software engineering"
+      ],
+      "correct": 0,
+      "cluster": "Machine Learning",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are implementing a predictive model for sales forecasting. Which technique would best handle non-linear relationships in your data?",
+      "options": [
+       "Linear regression",
+       "Decision trees",
+       "K-means clustering",
+       "Principal component analysis"
+      ],
+      "correct": 1,
+      "cluster": "Machine Learning",
+      "level": 2
+     },
+     {
+      "q": "To improve model accuracy in a classification task, which method would you employ?",
+      "options": [
+       "Feature selection",
+       "Increasing the dataset size with noise",
+       "Using a less complex model",
+       "Reducing the number of features"
+      ],
+      "correct": 0,
+      "cluster": "Machine Learning",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In machine learning model evaluation, what is a critical aspect of choosing between precision and recall?",
+      "options": [
+       "The size of the dataset",
+       "The cost of false positives vs. false negatives",
+       "The complexity of the model",
+       "The interpretability of the model"
+      ],
+      "correct": 1,
+      "cluster": "Machine Learning",
+      "level": 3
+     },
+     {
+      "q": "When dealing with imbalanced datasets, which technique is often most effective?",
+      "options": [
+       "Using a more complex model",
+       "Oversampling the minority class",
+       "Reducing the size of the majority class",
+       "Ignoring the imbalance"
+      ],
+      "correct": 1,
+      "cluster": "Machine Learning",
+      "level": 3
+     }
+    ]
+   },
+   "MLOps & AI Infrastructure": {
+    "1": [
+     {
+      "q": "What does MLOps aim to improve?",
+      "options": [
+       "Model deployment",
+       "Data collection",
+       "User interface design",
+       "Hardware performance"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 1
+     },
+     {
+      "q": "Which practice is part of MLOps?",
+      "options": [
+       "Continuous integration",
+       "Data visualization",
+       "Web development",
+       "Network security"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to deploy a machine learning model into production. Which tool would you use for continuous integration and deployment?",
+      "options": [
+       "Docker",
+       "Excel",
+       "Tableau",
+       "Notepad"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 2
+     },
+     {
+      "q": "For monitoring model performance in production, which approach is most effective?",
+      "options": [
+       "Using static reports",
+       "Implementing real-time dashboards",
+       "Conducting quarterly reviews",
+       "Relying on user feedback only"
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In MLOps, what is a primary concern when automating model deployment?",
+      "options": [
+       "Model interpretability",
+       "Version control of datasets",
+       "Monitoring model drift",
+       "All of the above"
+      ],
+      "correct": 3,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 3
+     },
+     {
+      "q": "What is a significant trade-off when selecting between on-premises and cloud-based AI infrastructure?",
+      "options": [
+       "Scalability vs. control",
+       "Cost vs. performance",
+       "Latency vs. availability",
+       "Simplicity vs. complexity"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 3
+     }
+    ]
+   },
+   "Cloud & DevOps": {
+    "1": [
+     {
+      "q": "What is a primary benefit of using Cloud in AI?",
+      "options": [
+       "Scalability",
+       "Increased latency",
+       "Limited storage",
+       "Higher costs"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a Cloud service model?",
+      "options": [
+       "PaaS",
+       "HTML",
+       "CSS",
+       "JavaScript"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are deploying an AI application to the cloud. Which service would you choose for scalable storage?",
+      "options": [
+       "Amazon S3",
+       "Microsoft Word",
+       "Google Docs",
+       "Local hard drive"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     },
+     {
+      "q": "To ensure high availability of your AI service, which strategy would you implement?",
+      "options": [
+       "Load balancing across multiple instances",
+       "Using a single server",
+       "Deploying on a local machine",
+       "Limiting user access"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "Which factor is most critical when configuring a cloud environment for AI workloads?",
+      "options": [
+       "Data storage solutions",
+       "Network bandwidth",
+       "Compute resource allocation",
+       "User access controls"
+      ],
+      "correct": 2,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     },
+     {
+      "q": "In a CI/CD pipeline for AI models, what is a key consideration for testing?",
+      "options": [
+       "Automating data preprocessing",
+       "Validating model performance against benchmarks",
+       "Ensuring compatibility with legacy systems",
+       "Focusing on deployment speed"
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "llm-fine-tuning-rag-engineer": {
+  "role": "LLM Fine-Tuning / RAG Engineer",
+  "clusters": [
+   "Generative AI & LLMs",
+   "Agentic AI",
+   "Deep Learning"
+  ],
+  "pool": {
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Model",
+       "Logical Language Model",
+       "Layered Learning Method"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a primary use of Generative AI?",
+      "options": [
+       "Data analysis",
+       "Content creation",
+       "Database management",
+       "Network security"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to fine-tune a language model for a customer service chatbot. Which approach should you take to optimize the model for conversational context?",
+      "options": [
+       "Use a large dataset of customer interactions.",
+       "Train the model from scratch with random data.",
+       "Apply reinforcement learning without any prior data.",
+       "Utilize only a small set of FAQs."
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "You are tasked with improving the generation quality of a text summarization model. What is the best method to enhance its performance?",
+      "options": [
+       "Implement few-shot learning with diverse examples.",
+       "Reduce the model size to speed up processing.",
+       "Limit training to only one summarization style.",
+       "Use a fixed dataset without updates."
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When fine-tuning a language model for a specific domain, what is a key trade-off to consider regarding dataset size?",
+      "options": [
+       "Smaller datasets can lead to overfitting.",
+       "Larger datasets always improve performance.",
+       "Smaller datasets are easier to manage.",
+       "Larger datasets require less training time."
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "In the context of RAG (Retrieval-Augmented Generation), what is a critical design decision when selecting a retriever?",
+      "options": [
+       "Choosing a retriever that is too complex can slow down response time.",
+       "Using a retriever with a lower accuracy is always preferable.",
+       "The retriever should always be the same size as the generator model.",
+       "A retriever should be selected based on its training dataset only."
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Agentic AI": {
+    "1": [
+     {
+      "q": "What is the main characteristic of Agentic AI?",
+      "options": [
+       "It operates solely on pre-defined rules.",
+       "It can make decisions autonomously.",
+       "It requires constant human supervision.",
+       "It is only used for data processing."
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following best describes an agent in Agentic AI?",
+      "options": [
+       "A passive observer",
+       "An active decision-maker",
+       "A data collector",
+       "A programming tool"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are developing an agent that needs to perform tasks autonomously in a dynamic environment. Which AI approach is most suitable?",
+      "options": [
+       "Rule-based systems that follow predefined scripts.",
+       "Deep reinforcement learning to adapt to changes.",
+       "Supervised learning with static datasets.",
+       "Unsupervised learning for clustering tasks."
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     },
+     {
+      "q": "To enhance the decision-making capabilities of an AI agent, which technique should you implement?",
+      "options": [
+       "Transfer learning from unrelated tasks.",
+       "Multi-agent collaboration for shared learning.",
+       "Using only historical data without real-time feedback.",
+       "Focus solely on supervised learning."
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When implementing agentic AI, what is a significant edge case to consider regarding user intent?",
+      "options": [
+       "Users may change their intent mid-interaction.",
+       "User intent is always clear from initial input.",
+       "Agentic AI should ignore ambiguous user requests.",
+       "User intent is static and predictable."
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     },
+     {
+      "q": "What is a potential drawback of using reinforcement learning in agentic AI systems?",
+      "options": [
+       "It may require extensive training data.",
+       "It always leads to optimal solutions.",
+       "It is easier to implement than supervised learning.",
+       "It guarantees faster convergence."
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     }
+    ]
+   },
+   "Deep Learning": {
+    "1": [
+     {
+      "q": "What is a key feature of Deep Learning?",
+      "options": [
+       "It uses shallow neural networks.",
+       "It requires minimal data.",
+       "It learns from large amounts of data.",
+       "It is only applicable to structured data."
+      ],
+      "correct": 2,
+      "cluster": "Deep Learning",
+      "level": 1
+     },
+     {
+      "q": "Which type of neural network is commonly used in Deep Learning?",
+      "options": [
+       "Convolutional Neural Network",
+       "Linear Regression Model",
+       "Decision Tree",
+       "Support Vector Machine"
+      ],
+      "correct": 0,
+      "cluster": "Deep Learning",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with improving the accuracy of a deep learning model for image classification. What is the best strategy?",
+      "options": [
+       "Increase the dataset size with augmented images.",
+       "Reduce the number of layers in the model.",
+       "Train without any validation set.",
+       "Use only grayscale images for training."
+      ],
+      "correct": 0,
+      "cluster": "Deep Learning",
+      "level": 2
+     },
+     {
+      "q": "For a project requiring real-time object detection, which deep learning framework would you choose for its speed and efficiency?",
+      "options": [
+       "TensorFlow with Keras for quick prototyping.",
+       "PyTorch for its dynamic computation graph.",
+       "Scikit-learn for its simplicity.",
+       "MXNet for its low-level operations."
+      ],
+      "correct": 1,
+      "cluster": "Deep Learning",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In deep learning, what is a common trade-off when choosing between model complexity and interpretability?",
+      "options": [
+       "More complex models are generally less interpretable.",
+       "Simpler models always outperform complex ones.",
+       "Complex models are easier to debug.",
+       "Interpretability is irrelevant in deep learning."
+      ],
+      "correct": 0,
+      "cluster": "Deep Learning",
+      "level": 3
+     },
+     {
+      "q": "When debugging a neural network, what is an important consideration regarding layer architecture?",
+      "options": [
+       "Adding more layers always improves performance.",
+       "Layer architecture should match the dataset size.",
+       "Overly complex architectures can lead to vanishing gradients.",
+       "All architectures are equally effective for any problem."
+      ],
+      "correct": 2,
+      "cluster": "Deep Learning",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-solutions-architect": {
+  "role": "AI Solutions Architect",
+  "clusters": [
+   "Generative AI & LLMs",
+   "Agentic AI",
+   "Web Development",
+   "MLOps & AI Infrastructure",
+   "Cloud & DevOps",
+   "Python & Programming"
+  ],
+  "pool": {
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Model",
+       "Logical Learning Machine",
+       "Layered Logic Model"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common use case for Generative AI?",
+      "options": [
+       "Image generation",
+       "Data encryption",
+       "Network security",
+       "Database management"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with developing a chatbot using a large language model. Which approach would best enhance its conversational capabilities?",
+      "options": [
+       "Fine-tune the model on domain-specific dialogues.",
+       "Use a rule-based system for responses.",
+       "Limit the model to predefined responses.",
+       "Implement a simple keyword matching system."
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "You need to generate creative content for marketing using AI. Which tool would you choose to optimize the output?",
+      "options": [
+       "A text summarization tool.",
+       "A generative text model with temperature settings.",
+       "A grammar checking tool.",
+       "A simple text editor."
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When designing a generative AI model, which factor is most critical in balancing quality and computational cost?",
+      "options": [
+       "Model size",
+       "Training data quality",
+       "Inference speed",
+       "Regularization techniques"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "In fine-tuning a large language model, what is a significant trade-off when increasing the dataset size?",
+      "options": [
+       "Overfitting risk",
+       "Training time",
+       "Model interpretability",
+       "Deployment complexity"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Agentic AI": {
+    "1": [
+     {
+      "q": "What is the primary function of agentic AI?",
+      "options": [
+       "To perform tasks autonomously",
+       "To analyze data",
+       "To store information",
+       "To visualize data"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 1
+     },
+     {
+      "q": "Which term describes AI that can take actions in an environment?",
+      "options": [
+       "Reactive AI",
+       "Agentic AI",
+       "Supervised AI",
+       "Static AI"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are developing an AI agent that needs to perform tasks autonomously. Which framework would best support this requirement?",
+      "options": [
+       "A traditional scripting language.",
+       "An agent-based architecture with reinforcement learning.",
+       "A simple web form.",
+       "A standard database management system."
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     },
+     {
+      "q": "To improve decision-making in a real-time application, which approach should you take for your AI agent?",
+      "options": [
+       "Implement a static decision tree.",
+       "Use a multi-agent system for collaboration.",
+       "Rely solely on historical data.",
+       "Limit the agent's capabilities to predefined rules."
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When implementing agentic AI, which design decision is crucial for ensuring ethical behavior?",
+      "options": [
+       "Reward function design",
+       "Model architecture",
+       "Data preprocessing",
+       "Hyperparameter tuning"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     },
+     {
+      "q": "What is a potential drawback of using reinforcement learning in agentic AI systems?",
+      "options": [
+       "High data requirements",
+       "Low adaptability",
+       "Limited scalability",
+       "Increased interpretability"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     }
+    ]
+   },
+   "Web Development": {
+    "1": [
+     {
+      "q": "Which language is primarily used for web development?",
+      "options": [
+       "Python",
+       "HTML",
+       "Java",
+       "C++"
+      ],
+      "correct": 1,
+      "cluster": "Web Development",
+      "level": 1
+     },
+     {
+      "q": "What does CSS stand for in web development?",
+      "options": [
+       "Cascading Style Sheets",
+       "Computer Style Sheets",
+       "Creative Style Sheets",
+       "Coded Style Sheets"
+      ],
+      "correct": 0,
+      "cluster": "Web Development",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to build a web application that integrates an AI model for predictions. Which framework would be most suitable?",
+      "options": [
+       "Django with TensorFlow integration.",
+       "A static HTML page.",
+       "A basic PHP script.",
+       "A simple Java application."
+      ],
+      "correct": 0,
+      "cluster": "Web Development",
+      "level": 2
+     },
+     {
+      "q": "For a responsive web application that uses AI, which technology should you prioritize for the frontend?",
+      "options": [
+       "A server-side rendering framework.",
+       "A modern JavaScript framework like React.",
+       "A static site generator.",
+       "A basic HTML/CSS layout."
+      ],
+      "correct": 1,
+      "cluster": "Web Development",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In web development, what is a common trade-off when choosing between server-side rendering and client-side rendering?",
+      "options": [
+       "SEO benefits",
+       "Performance on low-end devices",
+       "Development speed",
+       "Code maintainability"
+      ],
+      "correct": 0,
+      "cluster": "Web Development",
+      "level": 3
+     },
+     {
+      "q": "What is a significant edge case to consider when developing a web application that relies on third-party APIs?",
+      "options": [
+       "API rate limits",
+       "User interface design",
+       "Database schema",
+       "Deployment environment"
+      ],
+      "correct": 0,
+      "cluster": "Web Development",
+      "level": 3
+     }
+    ]
+   },
+   "MLOps & AI Infrastructure": {
+    "1": [
+     {
+      "q": "What is MLOps primarily concerned with?",
+      "options": [
+       "Machine learning lifecycle management",
+       "Data visualization",
+       "Web application development",
+       "Database optimization"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 1
+     },
+     {
+      "q": "Which tool is commonly used for version control in MLOps?",
+      "options": [
+       "Docker",
+       "Git",
+       "Kubernetes",
+       "TensorFlow"
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are setting up a CI/CD pipeline for an AI model deployment. Which tool would best facilitate this process?",
+      "options": [
+       "A manual deployment script.",
+       "Jenkins with Docker integration.",
+       "A simple file transfer protocol.",
+       "A basic version control system."
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 2
+     },
+     {
+      "q": "To monitor the performance of your AI models in production, which approach should you implement?",
+      "options": [
+       "Use logging without analysis.",
+       "Set up automated performance monitoring tools.",
+       "Rely on manual checks.",
+       "Ignore performance metrics."
+      ],
+      "correct": 1,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In MLOps, what is a critical consideration when automating model deployment?",
+      "options": [
+       "Version control",
+       "Model accuracy",
+       "Data preprocessing",
+       "User feedback"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 3
+     },
+     {
+      "q": "What is a common challenge in maintaining CI/CD pipelines for machine learning models?",
+      "options": [
+       "Data drift",
+       "Code reviews",
+       "Infrastructure costs",
+       "Testing frameworks"
+      ],
+      "correct": 0,
+      "cluster": "MLOps & AI Infrastructure",
+      "level": 3
+     }
+    ]
+   },
+   "Cloud & DevOps": {
+    "1": [
+     {
+      "q": "What is a primary benefit of using cloud services?",
+      "options": [
+       "Reduced physical hardware",
+       "Faster internet speeds",
+       "Increased local storage",
+       "Enhanced desktop applications"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a cloud computing model?",
+      "options": [
+       "IaaS",
+       "PaaS",
+       "SaaS",
+       "All of the above"
+      ],
+      "correct": 3,
+      "cluster": "Cloud & DevOps",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to deploy an AI application in a cloud environment. Which service would be the most efficient for scalability?",
+      "options": [
+       "A virtual private server.",
+       "A managed Kubernetes service.",
+       "A basic web hosting service.",
+       "A local server setup."
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     },
+     {
+      "q": "For continuous integration of your AI model, which cloud tool would best support version control and collaboration?",
+      "options": [
+       "A simple file storage solution.",
+       "GitHub with Actions.",
+       "A basic text editor.",
+       "An offline version control system."
+      ],
+      "correct": 1,
+      "cluster": "Cloud & DevOps",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When choosing a cloud provider for AI workloads, what is a key trade-off to consider?",
+      "options": [
+       "Cost vs. performance",
+       "Ease of use vs. flexibility",
+       "Security vs. accessibility",
+       "Support vs. documentation"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     },
+     {
+      "q": "What is a potential downside of using serverless architecture for AI applications?",
+      "options": [
+       "Cold start latency",
+       "Scalability issues",
+       "Complex deployment",
+       "Limited language support"
+      ],
+      "correct": 0,
+      "cluster": "Cloud & DevOps",
+      "level": 3
+     }
+    ]
+   },
+   "Python & Programming": {
+    "1": [
+     {
+      "q": "Which programming language is known for its simplicity and readability?",
+      "options": [
+       "Java",
+       "C#",
+       "Python",
+       "Ruby"
+      ],
+      "correct": 2,
+      "cluster": "Python & Programming",
+      "level": 1
+     },
+     {
+      "q": "What is a common use of Python in AI?",
+      "options": [
+       "Web design",
+       "Data analysis",
+       "Graphic design",
+       "Game development"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are developing a data processing script in Python for an AI project. Which library would be most effective for data manipulation?",
+      "options": [
+       "NumPy for numerical data.",
+       "A basic text processing library.",
+       "A simple logging library.",
+       "An outdated data handling tool."
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 2
+     },
+     {
+      "q": "To implement machine learning algorithms in Python, which library would you choose for ease of use and functionality?",
+      "options": [
+       "Matplotlib for visualization.",
+       "Scikit-learn for machine learning.",
+       "A basic text editor.",
+       "An outdated statistical package."
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In Python programming, what is a trade-off when using asynchronous programming for I/O-bound tasks?",
+      "options": [
+       "Complexity vs. performance",
+       "Readability vs. speed",
+       "Memory usage vs. execution time",
+       "Library support vs. functionality"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 3
+     },
+     {
+      "q": "What is a significant edge case to handle when using Python's multiprocessing for parallel processing?",
+      "options": [
+       "Inter-process communication",
+       "Thread safety",
+       "Memory leaks",
+       "Error handling"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-security-specialist-ai-red-teamer": {
+  "role": "AI Security Specialist / AI Red Teamer",
+  "clusters": [
+   "Cybersecurity",
+   "AI Governance & Ethics"
+  ],
+  "pool": {
+   "Cybersecurity": {
+    "1": [
+     {
+      "q": "What is the primary goal of cybersecurity?",
+      "options": [
+       "Protecting data and systems",
+       "Increasing internet speed",
+       "Enhancing user experience",
+       "Reducing hardware costs"
+      ],
+      "correct": 0,
+      "cluster": "Cybersecurity",
+      "level": 1
+     },
+     {
+      "q": "What does the term 'phishing' refer to?",
+      "options": [
+       "A type of fishing technique",
+       "A method of social engineering",
+       "A software development process",
+       "A data encryption method"
+      ],
+      "correct": 1,
+      "cluster": "Cybersecurity",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with assessing the security of an AI model used for financial predictions. Which approach should you take to identify potential vulnerabilities in the model's training data?",
+      "options": [
+       "Conduct a thorough code review of the model's architecture.",
+       "Implement adversarial attacks to test the model's robustness.",
+       "Analyze the model's performance metrics over time.",
+       "Focus on the hardware security of the servers hosting the model."
+      ],
+      "correct": 1,
+      "cluster": "Cybersecurity",
+      "level": 2
+     },
+     {
+      "q": "During a red teaming exercise, you discover that an AI model can be easily manipulated by altering its input data. What is your best course of action?",
+      "options": [
+       "Report the findings and suggest a review of the model's input validation.",
+       "Ignore the findings as they are not critical to the model's overall function.",
+       "Focus on creating a more complex input to challenge the model.",
+       "Develop a new model that does not rely on input data."
+      ],
+      "correct": 0,
+      "cluster": "Cybersecurity",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When assessing the security of an AI model, which factor is most critical to consider for potential adversarial attacks?",
+      "options": [
+       "Model complexity",
+       "Training data quality",
+       "Deployment environment",
+       "User access controls"
+      ],
+      "correct": 1,
+      "cluster": "Cybersecurity",
+      "level": 3
+     },
+     {
+      "q": "In a red team exercise targeting an AI system, which approach is most effective for uncovering vulnerabilities?",
+      "options": [
+       "Focusing solely on input data manipulation",
+       "Simulating real-world attack scenarios",
+       "Using automated vulnerability scanners",
+       "Conducting a code review of the model"
+      ],
+      "correct": 1,
+      "cluster": "Cybersecurity",
+      "level": 3
+     }
+    ]
+   },
+   "AI Governance & Ethics": {
+    "1": [
+     {
+      "q": "What is AI governance primarily concerned with?",
+      "options": [
+       "Regulating AI technologies",
+       "Developing new algorithms",
+       "Improving hardware performance",
+       "Expanding internet access"
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     },
+     {
+      "q": "Which principle is essential in AI ethics?",
+      "options": [
+       "Maximizing profits",
+       "Ensuring transparency",
+       "Minimizing costs",
+       "Enhancing competition"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "A company is using an AI system for hiring decisions. What should you prioritize to ensure compliance with ethical standards?",
+      "options": [
+       "Ensure the AI system is trained on diverse datasets.",
+       "Focus solely on improving the accuracy of the AI model.",
+       "Limit access to the AI system to senior management only.",
+       "Regularly update the AI model with the latest algorithms."
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     },
+     {
+      "q": "You are reviewing an AI system that has been flagged for potential bias in its decision-making process. What should be your first step?",
+      "options": [
+       "Analyze the decision-making process and identify biased patterns.",
+       "Replace the AI model with a more advanced one.",
+       "Conduct a user survey to gather feedback on the AI's performance.",
+       "Limit the AI's functionality to reduce risk."
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When implementing AI governance, which principle should be prioritized to ensure ethical use of AI technologies?",
+      "options": [
+       "Maximizing profit for stakeholders",
+       "Ensuring transparency and accountability",
+       "Minimizing operational costs",
+       "Focusing on rapid deployment"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     },
+     {
+      "q": "In the context of AI ethics, what is a significant trade-off when designing an AI system for public safety?",
+      "options": [
+       "Accuracy vs. interpretability",
+       "Speed vs. thoroughness",
+       "Cost vs. performance",
+       "Complexity vs. usability"
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-product-manager": {
+  "role": "AI Product Manager",
+  "clusters": [
+   "Product & Agile",
+   "Generative AI & LLMs",
+   "AI Governance & Ethics",
+   "Business & Consulting"
+  ],
+  "pool": {
+   "Product & Agile": {
+    "1": [
+     {
+      "q": "What is the primary purpose of a product backlog in Agile methodology?",
+      "options": [
+       "To track team performance",
+       "To prioritize product features",
+       "To manage project budget",
+       "To assign tasks to team members"
+      ],
+      "correct": 1,
+      "cluster": "Product & Agile",
+      "level": 1
+     },
+     {
+      "q": "In Agile, what does the term 'sprint' refer to?",
+      "options": [
+       "A project phase",
+       "A time-boxed iteration",
+       "A team meeting",
+       "A product release"
+      ],
+      "correct": 1,
+      "cluster": "Product & Agile",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your team is developing a new AI feature for a product. What is the best approach to gather user feedback during the development process?",
+      "options": [
+       "Conduct a focus group after the product launch",
+       "Use an iterative prototyping approach with user testing",
+       "Send out a survey to all users post-launch",
+       "Implement the feature without user input"
+      ],
+      "correct": 1,
+      "cluster": "Product & Agile",
+      "level": 2
+     },
+     {
+      "q": "You are managing a product backlog for an AI project. What method should you use to prioritize features effectively?",
+      "options": [
+       "Prioritize based on team preferences",
+       "Use the MoSCoW method to categorize features",
+       "Select features randomly",
+       "Focus solely on the most complex features"
+      ],
+      "correct": 1,
+      "cluster": "Product & Agile",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When prioritizing features for an AI product, which factor should be weighed most heavily?",
+      "options": [
+       "User impact",
+       "Development cost",
+       "Technical feasibility",
+       "Market demand"
+      ],
+      "correct": 0,
+      "cluster": "Product & Agile",
+      "level": 3
+     },
+     {
+      "q": "In an Agile environment, how should a team handle a significant change in AI model performance mid-sprint?",
+      "options": [
+       "Continue as planned",
+       "Reassess sprint goals",
+       "Notify stakeholders only",
+       "Implement changes immediately"
+      ],
+      "correct": 1,
+      "cluster": "Product & Agile",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Machine",
+       "Logical Language Method",
+       "Limited Learning Model"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common application of generative AI?",
+      "options": [
+       "Data analysis",
+       "Image generation",
+       "Database management",
+       "Network security"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to choose a model for generating text responses in your application. Which approach should you take?",
+      "options": [
+       "Use a rule-based system for predictable outputs",
+       "Implement a fine-tuned transformer model",
+       "Select a simple keyword matching algorithm",
+       "Utilize a basic template-based response system"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "Your team is debating between using an open-source LLM and a proprietary one. What is a key factor to consider?",
+      "options": [
+       "The cost of the proprietary model",
+       "The popularity of the open-source model",
+       "The ease of integration with existing systems",
+       "The number of features in the proprietary model"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is the primary concern when deploying a generative AI model in a production environment?",
+      "options": [
+       "Scalability",
+       "User engagement",
+       "Data privacy",
+       "Model accuracy"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "Which scenario best illustrates the challenge of bias in generative AI outputs?",
+      "options": [
+       "Model trained on diverse data",
+       "Model generating stereotypical content",
+       "Model with high accuracy",
+       "Model used in multiple languages"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "AI Governance & Ethics": {
+    "1": [
+     {
+      "q": "What is the main goal of AI governance?",
+      "options": [
+       "To maximize profits",
+       "To ensure ethical use of AI",
+       "To develop new algorithms",
+       "To increase data storage"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     },
+     {
+      "q": "Which principle is essential in AI ethics?",
+      "options": [
+       "Transparency",
+       "Speed",
+       "Cost-effectiveness",
+       "Complexity"
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are developing an AI tool that processes sensitive user data. What is the first step to ensure compliance with ethical standards?",
+      "options": [
+       "Create a marketing strategy",
+       "Conduct a risk assessment for data usage",
+       "Launch the product and adjust later",
+       "Focus on user interface design"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     },
+     {
+      "q": "Your organization is implementing AI solutions. What is a crucial aspect of establishing an ethical framework?",
+      "options": [
+       "Focusing solely on profitability",
+       "Involving diverse stakeholders in the decision-making process",
+       "Avoiding transparency to protect proprietary information",
+       "Limiting discussions to technical teams only"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When considering AI governance, which aspect is most critical for ensuring compliance?",
+      "options": [
+       "User feedback mechanisms",
+       "Transparency in algorithms",
+       "Speed of deployment",
+       "Cost of implementation"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     },
+     {
+      "q": "In the context of AI ethics, what is a key challenge when using customer data for model training?",
+      "options": [
+       "Data volume",
+       "Data accuracy",
+       "Informed consent",
+       "Data variety"
+      ],
+      "correct": 2,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     }
+    ]
+   },
+   "Business & Consulting": {
+    "1": [
+     {
+      "q": "What is a key focus of business consulting?",
+      "options": [
+       "Product development",
+       "Market research",
+       "Organizational improvement",
+       "Software engineering"
+      ],
+      "correct": 2,
+      "cluster": "Business & Consulting",
+      "level": 1
+     },
+     {
+      "q": "Which metric is commonly used to measure business performance?",
+      "options": [
+       "Customer satisfaction",
+       "Algorithm accuracy",
+       "Data volume",
+       "Network latency"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are consulting with a client who wants to integrate AI into their business model. What should you assess first?",
+      "options": [
+       "The client's current technology stack",
+       "The latest AI trends in the market",
+       "Potential competitors in the industry",
+       "The client's financial resources"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 2
+     },
+     {
+      "q": "Your client is unsure about the ROI of an AI project. What is the best way to demonstrate potential value?",
+      "options": [
+       "Provide case studies from unrelated industries",
+       "Estimate cost savings based on similar projects",
+       "Focus on the technical complexity of the AI solution",
+       "Suggest a long-term vision without immediate metrics"
+      ],
+      "correct": 1,
+      "cluster": "Business & Consulting",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is the most effective way to align AI product strategy with business objectives?",
+      "options": [
+       "Regular stakeholder meetings",
+       "Focus on technical capabilities",
+       "Market trend analysis",
+       "User testing"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 3
+     },
+     {
+      "q": "When evaluating the ROI of an AI project, which metric should be prioritized?",
+      "options": [
+       "Cost savings",
+       "User satisfaction",
+       "Market share",
+       "Employee productivity"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-business-analyst": {
+  "role": "AI Business Analyst",
+  "clusters": [
+   "Data Analysis & BI",
+   "Generative AI & LLMs",
+   "Automation & No-Code",
+   "Product & Agile",
+   "AI Governance & Ethics"
+  ],
+  "pool": {
+   "Data Analysis & BI": {
+    "1": [
+     {
+      "q": "What is the primary purpose of data visualization?",
+      "options": [
+       "To analyze data",
+       "To present data clearly",
+       "To store data",
+       "To collect data"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common tool for business intelligence?",
+      "options": [
+       "Photoshop",
+       "Tableau",
+       "Word",
+       "Excel"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your team has collected large datasets from various sources. Which tool would you use to visualize trends and insights effectively?",
+      "options": [
+       "Tableau",
+       "Notepad",
+       "Photoshop",
+       "Slack"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     },
+     {
+      "q": "You need to analyze customer behavior data to improve sales strategies. Which approach would be most effective?",
+      "options": [
+       "A/B Testing",
+       "Focus Groups",
+       "Surveys",
+       "Social Media Monitoring"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When analyzing a dataset, which method is best for identifying outliers without skewing the results?",
+      "options": [
+       "Z-score analysis",
+       "Mean and standard deviation",
+       "Interquartile range",
+       "Visual inspection"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     },
+     {
+      "q": "In a BI dashboard, what is the trade-off of using real-time data vs. historical data?",
+      "options": [
+       "Real-time data is always more accurate",
+       "Historical data provides better trend analysis",
+       "Real-time data requires more resources",
+       "Historical data is easier to visualize"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Logic Model",
+       "Last Level Memory",
+       "Layered Learning Model"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is an example of generative AI?",
+      "options": [
+       "Chatbots",
+       "Data entry software",
+       "Spreadsheet applications",
+       "Email clients"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with creating a chatbot for customer service. Which generative AI tool would best facilitate this?",
+      "options": [
+       "ChatGPT",
+       "Excel",
+       "PowerPoint",
+       "Photoshop"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "To generate personalized marketing content at scale, which method would you choose?",
+      "options": [
+       "Manual Copywriting",
+       "Template-Based Generation",
+       "Generative AI",
+       "Email Automation"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a primary concern when deploying a generative AI model in a customer service application?",
+      "options": [
+       "Model training time",
+       "User engagement metrics",
+       "Data privacy and security",
+       "Cost of cloud computing"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "When fine-tuning a large language model, what is a potential drawback of using a smaller dataset?",
+      "options": [
+       "Increased training time",
+       "Overfitting risk",
+       "Higher computational costs",
+       "Limited model accuracy"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Automation & No-Code": {
+    "1": [
+     {
+      "q": "What is a no-code platform designed for?",
+      "options": [
+       "Programming advanced algorithms",
+       "Building applications without coding",
+       "Data analysis",
+       "Creating databases"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a benefit of automation?",
+      "options": [
+       "Increased manual labor",
+       "Reduced efficiency",
+       "Consistency in tasks",
+       "Higher error rates"
+      ],
+      "correct": 2,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to automate data entry tasks for your team. Which no-code platform would be the best fit?",
+      "options": [
+       "Zapier",
+       "Visual Studio",
+       "Jupyter Notebook",
+       "Photoshop"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     },
+     {
+      "q": "For a project requiring quick deployment of workflows, which approach would you take?",
+      "options": [
+       "Custom Coding",
+       "No-Code Tools",
+       "Hiring Developers",
+       "Extensive Documentation"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "Which scenario best illustrates the trade-off of using no-code tools for automation?",
+      "options": [
+       "Faster deployment vs. limited customization",
+       "Higher initial costs vs. lower maintenance",
+       "Ease of use vs. scalability",
+       "Integration capabilities vs. user training"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     },
+     {
+      "q": "What is a common edge case to consider when implementing an automated workflow?",
+      "options": [
+       "User interface design",
+       "Error handling for unexpected inputs",
+       "Cost of automation tools",
+       "Training staff on new processes"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     }
+    ]
+   },
+   "Product & Agile": {
+    "1": [
+     {
+      "q": "What is the main focus of Agile methodology?",
+      "options": [
+       "Rigid planning",
+       "Customer collaboration",
+       "Long-term contracts",
+       "Documentation"
+      ],
+      "correct": 1,
+      "cluster": "Product & Agile",
+      "level": 1
+     },
+     {
+      "q": "Which role is typically responsible for managing product backlogs in Agile?",
+      "options": [
+       "Project Manager",
+       "Product Owner",
+       "Scrum Master",
+       "Business Analyst"
+      ],
+      "correct": 1,
+      "cluster": "Product & Agile",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your team is adopting Agile methodology. Which practice should you implement first?",
+      "options": [
+       "Daily Stand-ups",
+       "Waterfall Planning",
+       "Long-term Documentation",
+       "Fixed Roles"
+      ],
+      "correct": 0,
+      "cluster": "Product & Agile",
+      "level": 2
+     },
+     {
+      "q": "To prioritize features in your product backlog, which technique would be most effective?",
+      "options": [
+       "MoSCoW Method",
+       "Random Selection",
+       "User Surveys",
+       "Historical Data Analysis"
+      ],
+      "correct": 0,
+      "cluster": "Product & Agile",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In an Agile environment, what is a key trade-off when prioritizing features for an AI product?",
+      "options": [
+       "Time to market vs. feature completeness",
+       "User feedback vs. technical feasibility",
+       "Cost vs. quality",
+       "Team capacity vs. project scope"
+      ],
+      "correct": 0,
+      "cluster": "Product & Agile",
+      "level": 3
+     },
+     {
+      "q": "When iterating on an AI product, what is a potential drawback of frequent changes based on user feedback?",
+      "options": [
+       "Increased user satisfaction",
+       "Risk of feature creep",
+       "Enhanced team collaboration",
+       "Faster innovation"
+      ],
+      "correct": 1,
+      "cluster": "Product & Agile",
+      "level": 3
+     }
+    ]
+   },
+   "AI Governance & Ethics": {
+    "1": [
+     {
+      "q": "What is AI governance primarily concerned with?",
+      "options": [
+       "Maximizing profits",
+       "Ensuring ethical use of AI",
+       "Increasing data storage",
+       "Enhancing user experience"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a key ethical concern in AI?",
+      "options": [
+       "Speed of processing",
+       "Data privacy",
+       "Cost of implementation",
+       "User interface design"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your company is implementing AI solutions. Which ethical consideration should be prioritized?",
+      "options": [
+       "Data Privacy",
+       "Cost Reduction",
+       "Speed of Implementation",
+       "Market Competition"
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     },
+     {
+      "q": "When evaluating AI models for bias, which approach is most effective?",
+      "options": [
+       "Random Sampling",
+       "Diverse Data Testing",
+       "Expert Opinion",
+       "User Feedback"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a critical ethical consideration when deploying AI systems in decision-making?",
+      "options": [
+       "Cost-effectiveness",
+       "Transparency and accountability",
+       "Speed of deployment",
+       "User interface design"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     },
+     {
+      "q": "In terms of AI governance, what is a significant trade-off when implementing strict data privacy measures?",
+      "options": [
+       "Increased user trust vs. reduced data availability",
+       "Higher operational costs vs. improved efficiency",
+       "Longer development times vs. faster market entry",
+       "Limited user engagement vs. enhanced data insights"
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "prompt-engineer-ai-interaction-designer": {
+  "role": "Prompt Engineer / AI Interaction Designer",
+  "clusters": [
+   "Generative AI & LLMs",
+   "Agentic AI",
+   "Design & UX",
+   "Automation & No-Code",
+   "Data Analysis & BI",
+   "Python & Programming"
+  ],
+  "pool": {
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Logic Model",
+       "Learning Layer Model",
+       "Language Learning Machine"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common application of Generative AI?",
+      "options": [
+       "Text generation",
+       "Data encryption",
+       "Network routing",
+       "Web hosting"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with generating marketing copy for a new product launch. Which tool would best help you create varied and engaging text?",
+      "options": [
+       "GPT-3",
+       "Canva",
+       "Tableau",
+       "Zapier"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "You need to create a chatbot that can handle customer inquiries autonomously. Which approach would be most effective?",
+      "options": [
+       "Rule-based scripting",
+       "Reinforcement learning",
+       "Supervised learning with LLMs",
+       "Static FAQ page"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When designing a prompt for a generative AI model, which factor is most critical to ensure high-quality output?",
+      "options": [
+       "Clarity and specificity of the prompt",
+       "Length of the prompt",
+       "Use of technical jargon",
+       "Inclusion of multiple questions"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "What is a potential downside of using overly complex prompts in LLMs?",
+      "options": [
+       "Increased likelihood of irrelevant outputs",
+       "Faster response times",
+       "Higher creativity in responses",
+       "Reduced computational costs"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Agentic AI": {
+    "1": [
+     {
+      "q": "What is the primary goal of Agentic AI?",
+      "options": [
+       "To act autonomously",
+       "To assist human decision-making",
+       "To analyze data",
+       "To generate content"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following best describes an agent in AI?",
+      "options": [
+       "A software program that can perform tasks",
+       "A hardware device",
+       "A type of neural network",
+       "A user interface"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are developing an AI assistant that needs to make decisions based on user input. Which framework would you choose?",
+      "options": [
+       "OpenAI API",
+       "TensorFlow",
+       "Rasa",
+       "Scikit-learn"
+      ],
+      "correct": 2,
+      "cluster": "Agentic AI",
+      "level": 2
+     },
+     {
+      "q": "For a project requiring real-time user interaction, which method would best enhance the AI's responsiveness?",
+      "options": [
+       "Batch processing",
+       "Event-driven architecture",
+       "Sequential processing",
+       "Static responses"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In developing agentic AI, what is a major ethical concern to consider?",
+      "options": [
+       "Autonomy vs. control",
+       "Speed of decision-making",
+       "Cost of implementation",
+       "User interface design"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     },
+     {
+      "q": "Which trade-off might you face when designing an agentic AI system?",
+      "options": [
+       "Complexity vs. user trust",
+       "Functionality vs. aesthetics",
+       "Cost vs. performance",
+       "Scalability vs. reliability"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     }
+    ]
+   },
+   "Design & UX": {
+    "1": [
+     {
+      "q": "What is a key principle of UX design?",
+      "options": [
+       "User-centered design",
+       "Cost reduction",
+       "Speed of development",
+       "Technical complexity"
+      ],
+      "correct": 0,
+      "cluster": "Design & UX",
+      "level": 1
+     },
+     {
+      "q": "Which term refers to the visual layout of a digital product?",
+      "options": [
+       "Wireframe",
+       "Prototype",
+       "Algorithm",
+       "Database"
+      ],
+      "correct": 0,
+      "cluster": "Design & UX",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are designing a user interface for an AI tool. What is the best practice to ensure usability?",
+      "options": [
+       "Use complex jargon to impress users",
+       "Conduct user testing early and often",
+       "Focus solely on aesthetics",
+       "Limit user feedback opportunities"
+      ],
+      "correct": 1,
+      "cluster": "Design & UX",
+      "level": 2
+     },
+     {
+      "q": "When creating a prototype for an AI application, which method should you prioritize?",
+      "options": [
+       "High-fidelity mockups",
+       "Wireframes",
+       "User interviews",
+       "Final product development"
+      ],
+      "correct": 1,
+      "cluster": "Design & UX",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When creating a user interface for an AI tool, what is a key consideration?",
+      "options": [
+       "Balancing functionality with simplicity",
+       "Using as many features as possible",
+       "Prioritizing aesthetics over usability",
+       "Minimizing user feedback opportunities"
+      ],
+      "correct": 0,
+      "cluster": "Design & UX",
+      "level": 3
+     },
+     {
+      "q": "What is a common challenge when iterating on UX design for AI applications?",
+      "options": [
+       "Incorporating user feedback effectively",
+       "Reducing the number of features",
+       "Maintaining brand consistency",
+       "Ensuring fast loading times"
+      ],
+      "correct": 0,
+      "cluster": "Design & UX",
+      "level": 3
+     }
+    ]
+   },
+   "Automation & No-Code": {
+    "1": [
+     {
+      "q": "What is the primary purpose of automation?",
+      "options": [
+       "To reduce manual effort",
+       "To increase human error",
+       "To complicate processes",
+       "To enhance creativity"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is an example of a no-code tool?",
+      "options": [
+       "Webflow",
+       "Visual Studio",
+       "Eclipse",
+       "GitHub"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to automate data entry tasks across multiple applications. Which no-code tool would be most suitable?",
+      "options": [
+       "Zapier",
+       "Python scripts",
+       "Tableau",
+       "R Markdown"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     },
+     {
+      "q": "To streamline your workflow without coding, which platform would allow you to integrate various services?",
+      "options": [
+       "Jupyter Notebook",
+       "Airtable",
+       "Visual Studio Code",
+       "SQL Server"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a critical consideration when automating workflows with no-code tools?",
+      "options": [
+       "Integration with existing systems",
+       "User interface design",
+       "Cost of the no-code platform",
+       "Documentation quality"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     },
+     {
+      "q": "Which trade-off should be assessed when choosing between no-code and traditional coding?",
+      "options": [
+       "Speed of deployment vs. customization",
+       "Cost vs. user experience",
+       "Complexity vs. scalability",
+       "Documentation vs. support"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     }
+    ]
+   },
+   "Data Analysis & BI": {
+    "1": [
+     {
+      "q": "What does BI stand for in data analysis?",
+      "options": [
+       "Business Intelligence",
+       "Binary Integration",
+       "Basic Information",
+       "Big Insights"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common data visualization tool?",
+      "options": [
+       "Tableau",
+       "Photoshop",
+       "Word",
+       "PowerPoint"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to analyze customer data to identify trends. Which BI tool would provide the best visualization capabilities?",
+      "options": [
+       "Excel",
+       "Power BI",
+       "Notepad",
+       "Google Docs"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     },
+     {
+      "q": "For a project requiring predictive analytics, which data analysis approach should you use?",
+      "options": [
+       "Descriptive analysis",
+       "Predictive modeling",
+       "Prescriptive analysis",
+       "Exploratory data analysis"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In data analysis, what is a potential pitfall of relying solely on automated insights?",
+      "options": [
+       "Overlooking context and nuance",
+       "Increased analysis speed",
+       "Reduction in human error",
+       "Cost savings on analysis tools"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     },
+     {
+      "q": "What is a common trade-off when visualizing complex data sets?",
+      "options": [
+       "Detail vs. clarity",
+       "Cost vs. effectiveness",
+       "Speed vs. accuracy",
+       "Interactivity vs. simplicity"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     }
+    ]
+   },
+   "Python & Programming": {
+    "1": [
+     {
+      "q": "Which programming language is widely used for AI development?",
+      "options": [
+       "Python",
+       "HTML",
+       "CSS",
+       "SQL"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 1
+     },
+     {
+      "q": "What is a common use of Python in programming?",
+      "options": [
+       "Data analysis",
+       "Web design",
+       "Graphic design",
+       "Video editing"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You want to automate a repetitive data processing task using Python. Which library would be most effective?",
+      "options": [
+       "Pandas",
+       "NumPy",
+       "Matplotlib",
+       "Flask"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 2
+     },
+     {
+      "q": "To create a simple web application for an AI model, which framework would you choose?",
+      "options": [
+       "Django",
+       "Pandas",
+       "NumPy",
+       "Jupyter"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When debugging a Python application, what is an essential practice?",
+      "options": [
+       "Writing unit tests",
+       "Using complex data structures",
+       "Minimizing comments in code",
+       "Avoiding version control"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 3
+     },
+     {
+      "q": "What is a key consideration when optimizing Python code for performance?",
+      "options": [
+       "Trade-off between readability and speed",
+       "Use of advanced libraries only",
+       "Avoiding built-in functions",
+       "Focusing solely on memory usage"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-governance-compliance-officer": {
+  "role": "AI Governance & Ethics Officer",
+  "clusters": [
+   "AI Governance & Ethics",
+   "Generative AI & LLMs",
+   "Automation & No-Code"
+  ],
+  "pool": {
+   "AI Governance & Ethics": {
+    "1": [
+     {
+      "q": "What is the primary goal of AI governance?",
+      "options": [
+       "To maximize profits",
+       "To ensure ethical use of AI",
+       "To create advanced algorithms",
+       "To reduce operational costs"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     },
+     {
+      "q": "Which principle is essential in AI ethics?",
+      "options": [
+       "Data collection",
+       "Transparency",
+       "Speed of deployment",
+       "Cost-effectiveness"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with implementing an AI system in a healthcare setting. What is the first step to ensure ethical compliance?",
+      "options": [
+       "Conduct a risk assessment for data privacy.",
+       "Select the most advanced AI model available.",
+       "Focus on maximizing system efficiency.",
+       "Involve only technical staff in the decision-making process."
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     },
+     {
+      "q": "A company wants to use AI for hiring. Which approach should be taken to minimize bias?",
+      "options": [
+       "Use historical hiring data without modification.",
+       "Implement regular audits on AI decisions.",
+       "Prioritize speed over accuracy in hiring.",
+       "Limit the number of candidates evaluated."
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a potential ethical concern when deploying AI in hiring processes?",
+      "options": [
+       "Bias in algorithmic decisions",
+       "Increased efficiency in recruitment",
+       "Cost reduction for companies",
+       "Improved candidate experience"
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     },
+     {
+      "q": "When considering data privacy, which approach is often seen as a trade-off against model performance?",
+      "options": [
+       "Anonymization of data",
+       "Using more training data",
+       "Implementing real-time feedback",
+       "Increasing model complexity"
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Local Learning Machine",
+       "Linear Logic Model",
+       "Longitudinal Learning Method"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common application of generative AI?",
+      "options": [
+       "Data entry",
+       "Image generation",
+       "Hardware design",
+       "Network security"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your team is developing a generative AI tool for content creation. What is the best practice to ensure the content is appropriate?",
+      "options": [
+       "Allow users to generate content without restrictions.",
+       "Implement content filters and review mechanisms.",
+       "Focus solely on user engagement metrics.",
+       "Provide no guidance on content usage."
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "A client wants to use a large language model for customer service. What should you advise regarding data handling?",
+      "options": [
+       "Use customer data without anonymization.",
+       "Ensure data is anonymized and secure.",
+       "Store all interactions for future analysis.",
+       "Limit data usage to the model's training phase."
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a significant challenge when fine-tuning a generative AI model?",
+      "options": [
+       "Preventing overfitting to training data",
+       "Reducing the model size",
+       "Increasing training speed",
+       "Enhancing user interface design"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "In generative AI, what is a common ethical dilemma regarding content creation?",
+      "options": [
+       "Authenticity of generated content",
+       "Speed of content generation",
+       "Cost of computational resources",
+       "User engagement metrics"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Automation & No-Code": {
+    "1": [
+     {
+      "q": "What is a key benefit of no-code platforms?",
+      "options": [
+       "Requires extensive coding knowledge",
+       "Speeds up application development",
+       "Limits user creativity",
+       "Increases software costs"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     },
+     {
+      "q": "Which of the following best describes automation?",
+      "options": [
+       "Manual task execution",
+       "Use of technology to perform tasks",
+       "Increased human oversight",
+       "Reduction of software tools"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are implementing a no-code automation tool for a marketing team. What is the first step to ensure successful adoption?",
+      "options": [
+       "Train only the IT department on the tool.",
+       "Gather input from end-users on their needs.",
+       "Focus on advanced features from the start.",
+       "Limit access to a select group of employees."
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     },
+     {
+      "q": "A business wants to automate its reporting process using no-code tools. What should be prioritized?",
+      "options": [
+       "Complexity of the automation.",
+       "User-friendly interfaces for ease of use.",
+       "Integration with as many systems as possible.",
+       "Customization of every report generated."
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "What is a critical consideration when automating workflows using no-code tools?",
+      "options": [
+       "Ensuring scalability of solutions",
+       "Minimizing user training requirements",
+       "Maximizing visual appeal of interfaces",
+       "Reducing the number of features"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     },
+     {
+      "q": "When implementing automation, what is a potential risk regarding job displacement?",
+      "options": [
+       "Increased operational efficiency",
+       "Resistance from employees",
+       "Higher initial investment costs",
+       "Improved accuracy in tasks"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-augmented-marketing-specialist": {
+  "role": "AI-Augmented Marketing Specialist",
+  "clusters": [
+   "Marketing & Growth",
+   "Data Analysis & BI",
+   "Generative AI & LLMs",
+   "Business & Consulting"
+  ],
+  "pool": {
+   "Marketing & Growth": {
+    "1": [
+     {
+      "q": "What is the primary goal of marketing?",
+      "options": [
+       "To increase brand awareness",
+       "To develop products",
+       "To manage finances",
+       "To conduct research"
+      ],
+      "correct": 0,
+      "cluster": "Marketing & Growth",
+      "level": 1
+     },
+     {
+      "q": "What does the term 'target audience' refer to?",
+      "options": [
+       "A group of potential customers",
+       "A marketing strategy",
+       "A product feature",
+       "A sales technique"
+      ],
+      "correct": 0,
+      "cluster": "Marketing & Growth",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with increasing brand awareness for a new product launch. Which strategy should you prioritize?",
+      "options": [
+       "Leverage social media influencers to promote the product",
+       "Focus solely on email marketing to existing customers",
+       "Increase PPC advertising without a clear target audience",
+       "Create a detailed blog post about the product features"
+      ],
+      "correct": 0,
+      "cluster": "Marketing & Growth",
+      "level": 2
+     },
+     {
+      "q": "Your company wants to expand into a new market segment. What tool would best help you analyze potential customer demographics?",
+      "options": [
+       "A/B testing software",
+       "Customer relationship management (CRM) system",
+       "Market research analysis tool",
+       "Email marketing platform"
+      ],
+      "correct": 2,
+      "cluster": "Marketing & Growth",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When optimizing a marketing campaign using AI, which factor should be prioritized to balance cost and reach?",
+      "options": [
+       "Maximizing impressions",
+       "Targeting niche audiences",
+       "Increasing ad spend",
+       "Improving click-through rates"
+      ],
+      "correct": 3,
+      "cluster": "Marketing & Growth",
+      "level": 3
+     },
+     {
+      "q": "In a scenario where customer data is sparse, which approach is best for forecasting future marketing performance?",
+      "options": [
+       "Using historical averages",
+       "Implementing machine learning models",
+       "Conducting A/B testing",
+       "Relying on expert opinions"
+      ],
+      "correct": 1,
+      "cluster": "Marketing & Growth",
+      "level": 3
+     }
+    ]
+   },
+   "Data Analysis & BI": {
+    "1": [
+     {
+      "q": "What is the purpose of data analysis in business?",
+      "options": [
+       "To summarize data",
+       "To create visual content",
+       "To generate leads",
+       "To develop software"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     },
+     {
+      "q": "What does BI stand for in a business context?",
+      "options": [
+       "Business Intelligence",
+       "Business Integration",
+       "Business Investment",
+       "Business Innovation"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to present data insights from last quarter's sales. What visualization tool should you use for clarity?",
+      "options": [
+       "A simple spreadsheet",
+       "A complex statistical software",
+       "A data visualization tool like Tableau",
+       "A word processor document"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     },
+     {
+      "q": "To track customer behavior effectively, which metric should you prioritize?",
+      "options": [
+       "Total sales revenue",
+       "Customer acquisition cost",
+       "Customer lifetime value",
+       "Number of website visitors"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When analyzing campaign performance data, which metric should be prioritized to assess long-term customer value?",
+      "options": [
+       "Click-through rate",
+       "Cost per acquisition",
+       "Customer lifetime value",
+       "Return on ad spend"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     },
+     {
+      "q": "If data from multiple sources shows conflicting results, what is the best first step to resolve the discrepancies?",
+      "options": [
+       "Trust the most recent data",
+       "Conduct a deeper analysis of each source",
+       "Discard the least reliable source",
+       "Aggregate the data blindly"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What is generative AI primarily used for?",
+      "options": [
+       "Creating content",
+       "Analyzing data",
+       "Managing projects",
+       "Conducting surveys"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "What does LLM stand for in AI?",
+      "options": [
+       "Large Language Model",
+       "Logical Learning Machine",
+       "Linear Logic Model",
+       "Linguistic Learning Model"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to create personalized marketing content for a campaign. Which generative AI tool would be most effective?",
+      "options": [
+       "A basic text editor",
+       "A content generation platform like Jasper",
+       "A spreadsheet for tracking metrics",
+       "An image editing software"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "For a chatbot that answers customer queries, which LLM approach should you consider?",
+      "options": [
+       "Rule-based scripting",
+       "Using a pre-trained language model like GPT",
+       "Static FAQ pages",
+       "Manual customer support only"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In generative AI, which factor is crucial when deciding between a pre-trained model and fine-tuning for a specific task?",
+      "options": [
+       "Model size",
+       "Training time",
+       "Data availability",
+       "Computational resources"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "When deploying a generative AI model, what is the most important consideration for ensuring ethical use?",
+      "options": [
+       "Model accuracy",
+       "Data privacy",
+       "Computational efficiency",
+       "User engagement"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Business & Consulting": {
+    "1": [
+     {
+      "q": "What is a key function of consulting in business?",
+      "options": [
+       "Providing expert advice",
+       "Manufacturing products",
+       "Conducting marketing campaigns",
+       "Managing employee relations"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 1
+     },
+     {
+      "q": "What does a business consultant typically analyze?",
+      "options": [
+       "Company performance",
+       "Employee satisfaction",
+       "Market trends",
+       "Product design"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "A client wants to improve their business strategy. Which consulting approach should you recommend?",
+      "options": [
+       "Implementing a one-size-fits-all solution",
+       "Conducting a SWOT analysis tailored to their business",
+       "Focusing only on cost-cutting measures",
+       "Adopting the latest technology without assessment"
+      ],
+      "correct": 1,
+      "cluster": "Business & Consulting",
+      "level": 2
+     },
+     {
+      "q": "When advising a startup, what is the best initial step to ensure sustainable growth?",
+      "options": [
+       "Developing a detailed business plan",
+       "Focusing solely on product development",
+       "Investing heavily in advertising immediately",
+       "Hiring a large team right away"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In a consulting project, what is the best way to assess the feasibility of a proposed marketing strategy?",
+      "options": [
+       "Conduct a SWOT analysis",
+       "Develop a detailed budget",
+       "Gather client testimonials",
+       "Benchmark against competitors"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 3
+     },
+     {
+      "q": "When advising a client on technology investments, which factor should be weighed most heavily against potential ROI?",
+      "options": [
+       "Implementation complexity",
+       "Market trends",
+       "Vendor reputation",
+       "User adoption rates"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-content-strategist-creator": {
+  "role": "AI Content Strategist / Creator",
+  "clusters": [
+   "Marketing & Growth",
+   "Generative AI & LLMs"
+  ],
+  "pool": {
+   "Marketing & Growth": {
+    "1": [
+     {
+      "q": "What is the primary goal of content marketing?",
+      "options": [
+       "Increase brand awareness",
+       "Reduce production costs",
+       "Enhance product features",
+       "Streamline logistics"
+      ],
+      "correct": 0,
+      "cluster": "Marketing & Growth",
+      "level": 1
+     },
+     {
+      "q": "Which metric is commonly used to measure content engagement?",
+      "options": [
+       "Page views",
+       "Inventory turnover",
+       "Employee satisfaction",
+       "Market share"
+      ],
+      "correct": 0,
+      "cluster": "Marketing & Growth",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with increasing brand awareness for a new product launch. Which approach would best utilize social media to engage potential customers?",
+      "options": [
+       "Create a series of informative blog posts about the product.",
+       "Run targeted ads on social media platforms highlighting user-generated content.",
+       "Send out a press release to traditional media outlets.",
+       "Host a webinar discussing industry trends related to the product."
+      ],
+      "correct": 1,
+      "cluster": "Marketing & Growth",
+      "level": 2
+     },
+     {
+      "q": "Your company wants to understand customer sentiment about its latest service. Which tool would you use to analyze social media conversations effectively?",
+      "options": [
+       "A/B testing software to compare different service versions.",
+       "A social listening tool that tracks mentions and sentiment analysis.",
+       "An email marketing platform to survey customers directly.",
+       "A project management tool to organize feedback sessions."
+      ],
+      "correct": 1,
+      "cluster": "Marketing & Growth",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When developing a content strategy for a new product launch, which metric should be prioritized to measure initial engagement effectiveness?",
+      "options": [
+       "Customer acquisition cost",
+       "Social media shares",
+       "Email open rates",
+       "Conversion rate"
+      ],
+      "correct": 3,
+      "cluster": "Marketing & Growth",
+      "level": 3
+     },
+     {
+      "q": "If a content piece is underperforming in SEO despite high-quality writing, what should be the first step in troubleshooting?",
+      "options": [
+       "Revise the content for better readability",
+       "Analyze keyword usage and optimization",
+       "Increase the promotion budget",
+       "Change the content format"
+      ],
+      "correct": 1,
+      "cluster": "Marketing & Growth",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Logical Learning Machine",
+       "Linear Logic Model",
+       "Lasting Learning Method"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common application of generative AI?",
+      "options": [
+       "Image generation",
+       "Data storage",
+       "Network security",
+       "Hardware design"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to generate personalized content for a diverse audience segment. Which generative AI tool would be most effective for this task?",
+      "options": [
+       "A keyword research tool to identify popular search terms.",
+       "A text generation model that creates tailored content based on user profiles.",
+       "An analytics dashboard to track content performance.",
+       "A graphic design tool to create visual content."
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "Your team is developing a chatbot to assist customers with inquiries. Which approach should you take to ensure it provides accurate responses?",
+      "options": [
+       "Train the chatbot on a limited dataset of FAQs.",
+       "Use a large language model trained on diverse customer interactions.",
+       "Implement a rule-based system with predefined responses.",
+       "Focus on integrating it with the company’s CRM for data access."
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When using a generative AI model for content creation, which factor is most critical to ensure brand voice consistency?",
+      "options": [
+       "Training the model on diverse datasets",
+       "Providing clear guidelines and examples",
+       "Limiting the model's creativity",
+       "Regularly updating the model's parameters"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "In a scenario where an AI-generated article has factual inaccuracies, what is the best approach to rectify the issue?",
+      "options": [
+       "Edit the article manually without retraining the model",
+       "Retrain the model with corrected data and regenerate",
+       "Ignore the inaccuracies if engagement is high",
+       "Use a different AI model for future articles"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-in-finance-fintech-analyst": {
+  "role": "AI in Finance / FinTech Analyst",
+  "clusters": [
+   "Finance & FinTech",
+   "Data Analysis & BI",
+   "Generative AI & LLMs"
+  ],
+  "pool": {
+   "Finance & FinTech": {
+    "1": [
+     {
+      "q": "What is the primary purpose of a financial statement?",
+      "options": [
+       "To provide a summary of a company's financial performance",
+       "To predict future stock prices",
+       "To analyze market trends",
+       "To set interest rates"
+      ],
+      "correct": 0,
+      "cluster": "Finance & FinTech",
+      "level": 1
+     },
+     {
+      "q": "What does FinTech primarily refer to?",
+      "options": [
+       "Financial technology innovations",
+       "Traditional banking methods",
+       "Investment strategies",
+       "Real estate management"
+      ],
+      "correct": 0,
+      "cluster": "Finance & FinTech",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are analyzing a company's financial health using a combination of traditional metrics and alternative data sources. Which approach would best enhance your analysis?",
+      "options": [
+       "Use only historical financial statements",
+       "Incorporate social media sentiment analysis",
+       "Focus solely on market trends",
+       "Rely on expert opinions"
+      ],
+      "correct": 1,
+      "cluster": "Finance & FinTech",
+      "level": 2
+     },
+     {
+      "q": "A fintech startup is looking to optimize its loan approval process. Which tool would be most effective for assessing credit risk in real-time?",
+      "options": [
+       "Manual credit score checks",
+       "Machine learning algorithms",
+       "Standardized credit reports",
+       "Customer interviews"
+      ],
+      "correct": 1,
+      "cluster": "Finance & FinTech",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When assessing the impact of AI on loan approval processes, which trade-off is most critical to consider?",
+      "options": [
+       "Speed of approval vs. accuracy of risk assessment",
+       "Cost of implementation vs. customer satisfaction",
+       "Data privacy vs. model transparency",
+       "Scalability vs. regulatory compliance"
+      ],
+      "correct": 0,
+      "cluster": "Finance & FinTech",
+      "level": 3
+     },
+     {
+      "q": "In a financial forecasting model, what edge case might significantly affect the model's reliability?",
+      "options": [
+       "Sudden market crashes",
+       "Regular economic growth",
+       "Seasonal sales patterns",
+       "Stable interest rates"
+      ],
+      "correct": 0,
+      "cluster": "Finance & FinTech",
+      "level": 3
+     }
+    ]
+   },
+   "Data Analysis & BI": {
+    "1": [
+     {
+      "q": "What is the main goal of data analysis in business?",
+      "options": [
+       "To visualize data only",
+       "To inform decision-making",
+       "To collect data",
+       "To store data securely"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     },
+     {
+      "q": "What does BI stand for in the context of data analysis?",
+      "options": [
+       "Business Intelligence",
+       "Binary Information",
+       "Business Integration",
+       "Basic Insights"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to visualize sales data over the last five years for a presentation. Which BI tool would best facilitate this task?",
+      "options": [
+       "Excel pivot tables",
+       "Google Docs",
+       "PowerPoint slides",
+       "Email reports"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     },
+     {
+      "q": "A company wants to track customer behavior across multiple platforms. Which data analysis method would provide the most comprehensive insights?",
+      "options": [
+       "A/B testing",
+       "Descriptive analytics",
+       "Predictive modeling",
+       "Data warehousing"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When designing a dashboard for financial KPIs, what is a key trade-off to consider?",
+      "options": [
+       "Detail of data vs. usability",
+       "Real-time data vs. historical data",
+       "Visual complexity vs. information density",
+       "Customization vs. standardization"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     },
+     {
+      "q": "In data visualization, which edge case could lead to misleading interpretations of financial data?",
+      "options": [
+       "Outliers not being displayed",
+       "Using pie charts for percentage comparisons",
+       "Inconsistent time intervals on axes",
+       "Color choices that are not colorblind-friendly"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does Generative AI primarily create?",
+      "options": [
+       "New data and content",
+       "Data storage solutions",
+       "Financial reports",
+       "Market predictions"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "What is an LLM in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Machine",
+       "Logical Learning Model",
+       "Layered Logic Machine"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with generating personalized marketing content for a financial product. Which generative AI tool would be most suitable?",
+      "options": [
+       "Basic text editors",
+       "Chatbots with scripted responses",
+       "Natural language processing models",
+       "Spreadsheet software"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "A bank wants to automate customer service inquiries. Which application of LLMs would be the best fit?",
+      "options": [
+       "Static FAQ pages",
+       "Interactive voice response systems",
+       "Chatbots powered by LLMs",
+       "Email autoresponders"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When implementing LLMs for customer service in finance, what is a crucial design decision?",
+      "options": [
+       "Balancing response accuracy with response time",
+       "Using generic training data vs. specialized financial data",
+       "Prioritizing user engagement over compliance",
+       "Focusing on text generation over sentiment analysis"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "What is a significant trade-off when deploying generative AI for personalized financial advice?",
+      "options": [
+       "Personalization vs. data privacy",
+       "Complexity of algorithms vs. user accessibility",
+       "Cost of deployment vs. potential ROI",
+       "Speed of response vs. depth of analysis"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-hr-tech-specialist": {
+  "role": "AI HR-Tech Specialist",
+  "clusters": [
+   "HR & People",
+   "Generative AI & LLMs",
+   "Finance & FinTech",
+   "Business & Consulting",
+   "Data Analysis & BI",
+   "Automation & No-Code"
+  ],
+  "pool": {
+   "HR & People": {
+    "1": [
+     {
+      "q": "What is the primary function of Human Resources?",
+      "options": [
+       "Recruiting and hiring employees",
+       "Managing financial accounts",
+       "Developing software",
+       "Creating marketing strategies"
+      ],
+      "correct": 0,
+      "cluster": "HR & People",
+      "level": 1
+     },
+     {
+      "q": "What does employee engagement measure?",
+      "options": [
+       "Employee satisfaction with pay",
+       "Employee involvement in their work",
+       "Employee attendance records",
+       "Employee compliance with policies"
+      ],
+      "correct": 1,
+      "cluster": "HR & People",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with improving employee engagement through feedback collection. Which tool would best facilitate real-time feedback from employees?",
+      "options": [
+       "Pulse surveys",
+       "Annual performance reviews",
+       "Focus groups",
+       "Suggestion boxes"
+      ],
+      "correct": 0,
+      "cluster": "HR & People",
+      "level": 2
+     },
+     {
+      "q": "A manager wants to identify skills gaps in their team. What approach should you recommend?",
+      "options": [
+       "Conduct a skills inventory",
+       "Implement a mentorship program",
+       "Organize team-building activities",
+       "Increase overtime hours"
+      ],
+      "correct": 0,
+      "cluster": "HR & People",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When implementing an AI-driven recruitment tool, what is a key trade-off to consider between candidate experience and data privacy?",
+      "options": [
+       "Enhanced personalization vs. data retention policies",
+       "Faster processing times vs. thorough background checks",
+       "Lower costs vs. higher quality candidates",
+       "Broader outreach vs. targeted selection"
+      ],
+      "correct": 0,
+      "cluster": "HR & People",
+      "level": 3
+     },
+     {
+      "q": "In designing an employee engagement AI system, which edge case should be prioritized to avoid bias?",
+      "options": [
+       "Cultural differences in feedback interpretation",
+       "Variability in employee roles across departments",
+       "Differences in tenure affecting engagement levels",
+       "All of the above"
+      ],
+      "correct": 3,
+      "cluster": "HR & People",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Machine",
+       "Logical Language Mechanism",
+       "Layered Logic Model"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "What is a common application of generative AI?",
+      "options": [
+       "Data storage",
+       "Content creation",
+       "Network security",
+       "Hardware design"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to create a personalized onboarding experience for new hires using generative AI. Which tool would be most effective?",
+      "options": [
+       "Chatbots for FAQs",
+       "Standardized training manuals",
+       "In-person orientation sessions",
+       "Email newsletters"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "A company wants to generate tailored job descriptions quickly. Which generative AI tool should you recommend?",
+      "options": [
+       "AI writing assistant",
+       "Job description templates",
+       "Recruitment software",
+       "Manual drafting"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When using generative AI to create training materials, what is a critical design decision regarding content accuracy?",
+      "options": [
+       "Using only peer-reviewed sources vs. a broader range of materials",
+       "Incorporating multimedia elements vs. text-only content",
+       "Focusing on specific industries vs. general applicability",
+       "Creating interactive content vs. static documents"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "What is a significant trade-off when deploying LLMs for customer support in multiple languages?",
+      "options": [
+       "Quality of translation vs. response time",
+       "Cost of implementation vs. user satisfaction",
+       "Complexity of integration vs. functionality",
+       "Scalability vs. personalization"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Finance & FinTech": {
+    "1": [
+     {
+      "q": "What is the primary purpose of FinTech?",
+      "options": [
+       "To enhance traditional financial services",
+       "To develop new hardware",
+       "To create social media platforms",
+       "To manage human resources"
+      ],
+      "correct": 0,
+      "cluster": "Finance & FinTech",
+      "level": 1
+     },
+     {
+      "q": "What does blockchain technology primarily provide?",
+      "options": [
+       "Centralized data storage",
+       "Decentralized transaction records",
+       "High-speed internet",
+       "Traditional banking services"
+      ],
+      "correct": 1,
+      "cluster": "Finance & FinTech",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your finance team needs to automate expense reporting. Which solution would be the most efficient?",
+      "options": [
+       "Excel spreadsheets",
+       "Expense management software",
+       "Manual receipts collection",
+       "Monthly budget meetings"
+      ],
+      "correct": 1,
+      "cluster": "Finance & FinTech",
+      "level": 2
+     },
+     {
+      "q": "To enhance financial forecasting, which tool should you implement for real-time data analysis?",
+      "options": [
+       "Static reports",
+       "Business intelligence software",
+       "Paper-based ledgers",
+       "Email updates"
+      ],
+      "correct": 1,
+      "cluster": "Finance & FinTech",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In financial forecasting, what is a common edge case that can lead to inaccurate predictions?",
+      "options": [
+       "Unexpected market disruptions",
+       "Seasonal sales fluctuations",
+       "Changes in consumer behavior",
+       "All of the above"
+      ],
+      "correct": 3,
+      "cluster": "Finance & FinTech",
+      "level": 3
+     },
+     {
+      "q": "When designing a budgeting tool, which design decision can significantly impact user adoption?",
+      "options": [
+       "Complexity of features vs. user-friendliness",
+       "Integration with existing systems vs. standalone functionality",
+       "Customization options vs. standard templates",
+       "Real-time updates vs. periodic reports"
+      ],
+      "correct": 0,
+      "cluster": "Finance & FinTech",
+      "level": 3
+     }
+    ]
+   },
+   "Business & Consulting": {
+    "1": [
+     {
+      "q": "What is the main goal of business consulting?",
+      "options": [
+       "To sell products",
+       "To improve business performance",
+       "To conduct market research",
+       "To manage finances"
+      ],
+      "correct": 1,
+      "cluster": "Business & Consulting",
+      "level": 1
+     },
+     {
+      "q": "What does SWOT analysis evaluate?",
+      "options": [
+       "Market trends",
+       "Strengths, weaknesses, opportunities, threats",
+       "Financial ratios",
+       "Employee performance"
+      ],
+      "correct": 1,
+      "cluster": "Business & Consulting",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are consulting for a startup that needs to streamline its project management. Which approach would be most beneficial?",
+      "options": [
+       "Agile methodology",
+       "Traditional waterfall model",
+       "Extended project timelines",
+       "Increased meetings"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 2
+     },
+     {
+      "q": "A client wants to improve their market analysis process. What tool should you suggest?",
+      "options": [
+       "Competitive analysis software",
+       "Quarterly reports",
+       "Social media monitoring",
+       "Customer surveys"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In consulting, what is a critical judgment call when recommending AI solutions to clients?",
+      "options": [
+       "Balancing innovation with client readiness",
+       "Focusing solely on cost-effectiveness",
+       "Prioritizing speed of implementation",
+       "Emphasizing technology over human factors"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 3
+     },
+     {
+      "q": "What is an essential trade-off when advising a client on digital transformation?",
+      "options": [
+       "Short-term gains vs. long-term sustainability",
+       "Employee training vs. immediate deployment",
+       "Customization vs. off-the-shelf solutions",
+       "Innovation vs. risk management"
+      ],
+      "correct": 0,
+      "cluster": "Business & Consulting",
+      "level": 3
+     }
+    ]
+   },
+   "Data Analysis & BI": {
+    "1": [
+     {
+      "q": "What is the purpose of data visualization?",
+      "options": [
+       "To create complex algorithms",
+       "To represent data graphically",
+       "To store large datasets",
+       "To write code"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     },
+     {
+      "q": "What does BI stand for in data analysis?",
+      "options": [
+       "Business Intelligence",
+       "Binary Information",
+       "Basic Integration",
+       "Business Integration"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to visualize sales data for a presentation. Which tool would be the most effective?",
+      "options": [
+       "PowerPoint slides",
+       "Data visualization software",
+       "Printed reports",
+       "Email summaries"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     },
+     {
+      "q": "To identify trends in customer behavior, which analysis method should you use?",
+      "options": [
+       "Descriptive analytics",
+       "Random sampling",
+       "Qualitative interviews",
+       "Focus groups"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In data analysis, what is a common edge case that can skew results?",
+      "options": [
+       "Outlier data points",
+       "Inconsistent data entry formats",
+       "Missing values",
+       "All of the above"
+      ],
+      "correct": 3,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     },
+     {
+      "q": "When designing a BI dashboard, what is a critical design decision regarding user experience?",
+      "options": [
+       "Simplicity vs. comprehensive data presentation",
+       "Real-time data vs. historical trends",
+       "Visual appeal vs. functionality",
+       "Customization options vs. standard layouts"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     }
+    ]
+   },
+   "Automation & No-Code": {
+    "1": [
+     {
+      "q": "What is automation primarily used for?",
+      "options": [
+       "To increase manual labor",
+       "To streamline repetitive tasks",
+       "To enhance customer service",
+       "To develop new products"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     },
+     {
+      "q": "What does no-code development allow users to do?",
+      "options": [
+       "Write complex code",
+       "Build applications without coding",
+       "Manage databases",
+       "Create hardware"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your team wants to automate repetitive tasks in HR. Which no-code platform would be most suitable?",
+      "options": [
+       "Zapier",
+       "Microsoft Word",
+       "Google Docs",
+       "PowerPoint"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     },
+     {
+      "q": "A company needs to streamline its data entry processes. Which approach should you recommend?",
+      "options": [
+       "Manual entry",
+       "No-code automation tools",
+       "Hiring additional staff",
+       "Extended training sessions"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In automation, what is a significant trade-off when choosing between low-code and no-code platforms?",
+      "options": [
+       "Flexibility vs. ease of use",
+       "Cost vs. functionality",
+       "Speed of deployment vs. customization",
+       "Integration capabilities vs. user-friendliness"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     },
+     {
+      "q": "What is a critical consideration when integrating automation into existing workflows?",
+      "options": [
+       "Impact on employee roles vs. efficiency gains",
+       "Initial setup costs vs. long-term savings",
+       "Scalability vs. immediate results",
+       "User training vs. system complexity"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-supply-chain-operations-analyst": {
+  "role": "AI Supply Chain & Operations Analyst",
+  "clusters": [
+   "Business & Consulting",
+   "Data Analysis & BI",
+   "Automation & No-Code"
+  ],
+  "pool": {
+   "Business & Consulting": {
+    "1": [
+     {
+      "q": "What is the primary goal of supply chain management?",
+      "options": [
+       "To maximize profits",
+       "To minimize costs",
+       "To improve customer satisfaction",
+       "To reduce inventory levels"
+      ],
+      "correct": 2,
+      "cluster": "Business & Consulting",
+      "level": 1
+     },
+     {
+      "q": "Which of the following best describes a supply chain?",
+      "options": [
+       "A single company’s operations",
+       "A network of organizations involved in producing and delivering a product",
+       "The financial management of a company",
+       "The marketing strategies of a business"
+      ],
+      "correct": 1,
+      "cluster": "Business & Consulting",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You are tasked with optimizing the supply chain for a new product launch. Which approach should you take to identify bottlenecks in the current process?",
+      "options": [
+       "Conduct a SWOT analysis",
+       "Implement a Kanban system",
+       "Use process mapping tools",
+       "Run a customer satisfaction survey"
+      ],
+      "correct": 2,
+      "cluster": "Business & Consulting",
+      "level": 2
+     },
+     {
+      "q": "Your team needs to present a supply chain risk assessment to stakeholders. Which tool would best visualize the potential risks and their impacts?",
+      "options": [
+       "Gantt chart",
+       "Heat map",
+       "Flowchart",
+       "Pie chart"
+      ],
+      "correct": 1,
+      "cluster": "Business & Consulting",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When evaluating a new supply chain software, which factor is most critical to ensure long-term success?",
+      "options": [
+       "Cost of implementation",
+       "User adoption rates",
+       "Integration with existing systems",
+       "Vendor support quality"
+      ],
+      "correct": 2,
+      "cluster": "Business & Consulting",
+      "level": 3
+     },
+     {
+      "q": "In a scenario where demand forecasting is consistently inaccurate, what is the best initial step to address the issue?",
+      "options": [
+       "Increase inventory levels",
+       "Revise forecasting models",
+       "Conduct a root cause analysis",
+       "Change suppliers"
+      ],
+      "correct": 2,
+      "cluster": "Business & Consulting",
+      "level": 3
+     }
+    ]
+   },
+   "Data Analysis & BI": {
+    "1": [
+     {
+      "q": "What does BI stand for in data analysis?",
+      "options": [
+       "Business Intelligence",
+       "Business Integration",
+       "Binary Information",
+       "Basic Insights"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common data visualization tool?",
+      "options": [
+       "Microsoft Word",
+       "Tableau",
+       "Adobe Photoshop",
+       "Slack"
+      ],
+      "correct": 1,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to analyze sales data to forecast inventory needs. Which BI tool would be most effective for this task?",
+      "options": [
+       "Excel pivot tables",
+       "Google Forms",
+       "Trello",
+       "Zapier"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     },
+     {
+      "q": "Your company wants to track supply chain performance metrics in real-time. Which data visualization tool would you recommend?",
+      "options": [
+       "Tableau",
+       "Microsoft Word",
+       "Slack",
+       "Notion"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "Which method is most effective for identifying trends in large datasets?",
+      "options": [
+       "Descriptive statistics",
+       "Data visualization",
+       "Data mining",
+       "Predictive analytics"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     },
+     {
+      "q": "When analyzing supply chain data, which metric should be prioritized to assess operational efficiency?",
+      "options": [
+       "Lead time",
+       "Order accuracy",
+       "Inventory turnover",
+       "Supplier reliability"
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     }
+    ]
+   },
+   "Automation & No-Code": {
+    "1": [
+     {
+      "q": "What is the primary function of automation in operations?",
+      "options": [
+       "To increase manual labor",
+       "To streamline repetitive tasks",
+       "To enhance customer service",
+       "To reduce product quality"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     },
+     {
+      "q": "Which of the following tools is commonly used for no-code automation?",
+      "options": [
+       "Python",
+       "Zapier",
+       "Java",
+       "C++"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You want to automate order processing to reduce manual errors. Which no-code platform would best suit this requirement?",
+      "options": [
+       "Zapier",
+       "WordPress",
+       "Salesforce",
+       "Shopify"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     },
+     {
+      "q": "Your team needs to streamline communication between suppliers and logistics. Which automation tool would be most effective?",
+      "options": [
+       "Airtable",
+       "Mailchimp",
+       "Asana",
+       "Slack"
+      ],
+      "correct": 3,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In automating a supply chain process, what is the primary trade-off when choosing between a custom solution and an off-the-shelf tool?",
+      "options": [
+       "Cost vs. flexibility",
+       "Speed vs. accuracy",
+       "Complexity vs. usability",
+       "Integration vs. scalability"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     },
+     {
+      "q": "Which scenario best illustrates a potential edge case in a no-code automation platform?",
+      "options": [
+       "A sudden spike in order volume",
+       "A system update from a third-party vendor",
+       "A user changing their access permissions",
+       "A new product line being introduced"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-automation-consultant-smb-no-code": {
+  "role": "AI Automation Consultant (SMB / No-Code)",
+  "clusters": [
+   "Automation & No-Code",
+   "Generative AI & LLMs",
+   "Agentic AI"
+  ],
+  "pool": {
+   "Automation & No-Code": {
+    "1": [
+     {
+      "q": "What is the primary purpose of no-code platforms?",
+      "options": [
+       "To require extensive programming knowledge",
+       "To enable users to build applications without coding",
+       "To limit automation capabilities",
+       "To focus solely on data analysis"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     },
+     {
+      "q": "Which of the following best describes automation?",
+      "options": [
+       "Manual intervention in processes",
+       "Using technology to perform tasks automatically",
+       "A method of data entry",
+       "A form of project management"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "A small business wants to automate their email marketing campaigns without coding. Which tool would be most suitable?",
+      "options": [
+       "Mailchimp",
+       "Zapier",
+       "Trello",
+       "Slack"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     },
+     {
+      "q": "You need to streamline the process of collecting customer feedback through forms and surveys. What no-code platform should you use?",
+      "options": [
+       "Airtable",
+       "Typeform",
+       "Asana",
+       "Jira"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When automating a repetitive task using a no-code platform, which factor should be prioritized to ensure scalability?",
+      "options": [
+       "User interface design",
+       "Integration with existing systems",
+       "Cost of the no-code tool",
+       "Number of users"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     },
+     {
+      "q": "In a no-code automation project, what is the primary trade-off when choosing between speed of deployment and customization?",
+      "options": [
+       "Speed may limit functionality",
+       "Customization increases costs",
+       "Speed reduces user adoption",
+       "Customization slows down integration"
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     }
+    ]
+   },
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Machine",
+       "Low-Level Model",
+       "Logical Language Mechanism"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "Generative AI is primarily used for which of the following?",
+      "options": [
+       "Data storage",
+       "Creating new content",
+       "Data encryption",
+       "Network security"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "A company wants to generate personalized marketing content using AI. Which generative AI tool would be best for this task?",
+      "options": [
+       "GPT-3",
+       "TensorFlow",
+       "Tableau",
+       "Power BI"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "You are tasked with creating product descriptions for an e-commerce site using AI. Which approach should you take?",
+      "options": [
+       "Using a template",
+       "Employing a generative AI model",
+       "Hiring a copywriter",
+       "Using a spreadsheet"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When deploying a generative AI model, which consideration is crucial for ensuring ethical use?",
+      "options": [
+       "Model training duration",
+       "Data diversity in training",
+       "Cost of cloud resources",
+       "User interface complexity"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "What is a potential drawback of using a large language model for customer support automation?",
+      "options": [
+       "Increased customer engagement",
+       "High initial setup cost",
+       "Risk of generating misleading information",
+       "Limited language support"
+      ],
+      "correct": 2,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Agentic AI": {
+    "1": [
+     {
+      "q": "What is the main function of agentic AI?",
+      "options": [
+       "To assist users in manual tasks",
+       "To act autonomously and make decisions",
+       "To analyze data sets",
+       "To store information securely"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a characteristic of agentic AI?",
+      "options": [
+       "Requires constant human supervision",
+       "Can operate independently in specific contexts",
+       "Is limited to data processing",
+       "Focuses only on user interface design"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "A business wants to implement an AI solution that can autonomously handle customer inquiries. Which type of AI should they consider?",
+      "options": [
+       "Supervised learning",
+       "Agentic AI",
+       "Reinforcement learning",
+       "Unsupervised learning"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     },
+     {
+      "q": "You need to create a virtual assistant that can perform tasks for users. Which approach is most appropriate?",
+      "options": [
+       "Rule-based system",
+       "Agentic AI",
+       "Data analysis",
+       "Traditional programming"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In agentic AI systems, what is a critical design decision when balancing autonomy and control?",
+      "options": [
+       "Level of user input required",
+       "Complexity of the AI algorithms",
+       "User interface aesthetics",
+       "Frequency of system updates"
+      ],
+      "correct": 0,
+      "cluster": "Agentic AI",
+      "level": 3
+     },
+     {
+      "q": "What is a key trade-off when implementing agentic AI in high-stakes environments?",
+      "options": [
+       "Increased operational efficiency",
+       "Reduction in human oversight",
+       "Higher initial development costs",
+       "Improved user satisfaction"
+      ],
+      "correct": 1,
+      "cluster": "Agentic AI",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-data-analyst-analytics-engineer": {
+  "role": "AI Data Analyst / Analytics Engineer",
+  "clusters": [
+   "Data Analysis & BI",
+   "Python & Programming",
+   "Data Engineering"
+  ],
+  "pool": {
+   "Data Analysis & BI": {
+    "1": [
+     {
+      "q": "What is the primary purpose of data visualization?",
+      "options": [
+       "To present data in a graphical format",
+       "To store data efficiently",
+       "To clean data",
+       "To analyze data statistically"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common tool for business intelligence?",
+      "options": [
+       "Excel",
+       "Python",
+       "SQL",
+       "Java"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to visualize sales data for a quarterly report. Which tool would you use to create interactive dashboards?",
+      "options": [
+       "Tableau",
+       "Excel",
+       "Google Docs",
+       "Notepad"
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     },
+     {
+      "q": "You have a dataset with missing values. What is the best approach to handle these values before analysis?",
+      "options": [
+       "Delete rows with missing values",
+       "Replace with mean",
+       "Use a predictive model",
+       "Impute with median"
+      ],
+      "correct": 3,
+      "cluster": "Data Analysis & BI",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When designing a dashboard, which trade-off should you consider between data granularity and performance?",
+      "options": [
+       "Higher granularity improves insights but slows performance.",
+       "Lower granularity provides less insight but enhances performance.",
+       "Both higher granularity and performance can be achieved.",
+       "Performance is irrelevant if the data is insightful."
+      ],
+      "correct": 0,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     },
+     {
+      "q": "In a BI tool, how would you handle a situation where data updates frequently but historical accuracy is critical?",
+      "options": [
+       "Overwrite historical data with the latest updates.",
+       "Create a separate historical table for each update.",
+       "Use a versioning system to track changes over time.",
+       "Ignore historical accuracy in favor of real-time data."
+      ],
+      "correct": 2,
+      "cluster": "Data Analysis & BI",
+      "level": 3
+     }
+    ]
+   },
+   "Python & Programming": {
+    "1": [
+     {
+      "q": "What does a Python list allow you to do?",
+      "options": [
+       "Store multiple items in a single variable",
+       "Create a database",
+       "Visualize data",
+       "Perform statistical analysis"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 1
+     },
+     {
+      "q": "Which keyword is used to define a function in Python?",
+      "options": [
+       "def",
+       "function",
+       "create",
+       "method"
+      ],
+      "correct": 0,
+      "cluster": "Python & Programming",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to automate data extraction from an API for a weekly report. Which Python library would be most suitable?",
+      "options": [
+       "Pandas",
+       "Requests",
+       "NumPy",
+       "Matplotlib"
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 2
+     },
+     {
+      "q": "You want to analyze a large dataset efficiently. Which data structure would you choose in Python?",
+      "options": [
+       "List",
+       "Tuple",
+       "DataFrame",
+       "Dictionary"
+      ],
+      "correct": 2,
+      "cluster": "Python & Programming",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When optimizing a Python script for data processing, which of the following would be the best trade-off between readability and performance?",
+      "options": [
+       "Use complex one-liners for better performance.",
+       "Prioritize readability, even if it slows down processing.",
+       "Balance between clear functions and efficient algorithms.",
+       "Avoid any optimization to maintain code simplicity."
+      ],
+      "correct": 2,
+      "cluster": "Python & Programming",
+      "level": 3
+     },
+     {
+      "q": "If you encounter a memory error while processing large datasets, what is the best initial approach?",
+      "options": [
+       "Increase the machine's RAM immediately.",
+       "Optimize the code to use generators instead of lists.",
+       "Split the dataset into smaller chunks and process sequentially.",
+       "Ignore the error and continue processing."
+      ],
+      "correct": 1,
+      "cluster": "Python & Programming",
+      "level": 3
+     }
+    ]
+   },
+   "Data Engineering": {
+    "1": [
+     {
+      "q": "What is the main purpose of ETL in data engineering?",
+      "options": [
+       "Extract, Transform, Load",
+       "Evaluate, Test, Log",
+       "Edit, Transfer, Link",
+       "Encode, Transform, Load"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 1
+     },
+     {
+      "q": "Which of the following is a common data storage solution?",
+      "options": [
+       "CSV files",
+       "Python scripts",
+       "Excel formulas",
+       "HTML pages"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "You need to transform raw data into a structured format for analysis. Which tool is best suited for ETL processes?",
+      "options": [
+       "Apache Spark",
+       "Jupyter Notebook",
+       "Power BI",
+       "Excel"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 2
+     },
+     {
+      "q": "You are tasked with building a data pipeline. Which technology would you use to orchestrate the workflow?",
+      "options": [
+       "Airflow",
+       "Tableau",
+       "Pandas",
+       "Django"
+      ],
+      "correct": 0,
+      "cluster": "Data Engineering",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "In a data pipeline, what is a critical consideration when choosing between batch processing and stream processing?",
+      "options": [
+       "Batch processing is always faster than stream processing.",
+       "Stream processing is better for real-time insights but more complex.",
+       "Batch processing requires less infrastructure than stream processing.",
+       "Both methods yield identical results in all scenarios."
+      ],
+      "correct": 1,
+      "cluster": "Data Engineering",
+      "level": 3
+     },
+     {
+      "q": "When designing a data warehouse schema, which trade-off must you consider between normalization and query performance?",
+      "options": [
+       "Normalization always leads to better query performance.",
+       "Denormalization can improve performance but increase redundancy.",
+       "Normalized schemas are easier to maintain but slower to query.",
+       "Both approaches yield the same performance outcomes."
+      ],
+      "correct": 1,
+      "cluster": "Data Engineering",
+      "level": 3
+     }
+    ]
+   }
+  }
+ },
+ "ai-operations-transformation-manager": {
+  "role": "AI Operations / Transformation Manager",
+  "clusters": [
+   "Generative AI & LLMs",
+   "Leadership & Soft Skills",
+   "AI Governance & Ethics",
+   "Automation & No-Code"
+  ],
+  "pool": {
+   "Generative AI & LLMs": {
+    "1": [
+     {
+      "q": "What is Generative AI primarily used for?",
+      "options": [
+       "Creating new content",
+       "Analyzing data",
+       "Managing databases",
+       "Performing calculations"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     },
+     {
+      "q": "What does LLM stand for in the context of AI?",
+      "options": [
+       "Large Language Model",
+       "Linear Learning Machine",
+       "Logical Language Mechanism",
+       "Layered Learning Model"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your team is tasked with developing a new customer support chatbot using generative AI. Which approach should you prioritize to ensure the chatbot understands user queries effectively?",
+      "options": [
+       "Use a pre-trained LLM and fine-tune it with specific customer data.",
+       "Create a rule-based system based on common queries.",
+       "Implement a basic FAQ page instead.",
+       "Focus solely on integrating voice recognition."
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     },
+     {
+      "q": "You need to present the benefits of LLMs to stakeholders. What is the best way to demonstrate their value?",
+      "options": [
+       "Showcase a live demo of the LLM generating responses.",
+       "Provide a detailed technical report on LLM architecture.",
+       "Discuss the theoretical limitations of LLMs.",
+       "Present case studies of unrelated AI technologies."
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When deploying a generative AI model, which factor is most critical to ensure ethical use?",
+      "options": [
+       "a) Model size",
+       "b) Training data diversity",
+       "c) Computational efficiency",
+       "d) User interface design"
+      ],
+      "correct": 1,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     },
+     {
+      "q": "In fine-tuning an LLM for a specific task, which trade-off is most significant?",
+      "options": [
+       "a) Increased training time vs. model accuracy",
+       "b) Model interpretability vs. performance",
+       "c) Data privacy vs. model robustness",
+       "d) Deployment cost vs. user engagement"
+      ],
+      "correct": 0,
+      "cluster": "Generative AI & LLMs",
+      "level": 3
+     }
+    ]
+   },
+   "Leadership & Soft Skills": {
+    "1": [
+     {
+      "q": "What is a key trait of effective leadership?",
+      "options": [
+       "Micromanagement",
+       "Empathy",
+       "Indifference",
+       "Rigidity"
+      ],
+      "correct": 1,
+      "cluster": "Leadership & Soft Skills",
+      "level": 1
+     },
+     {
+      "q": "Which skill is essential for conflict resolution?",
+      "options": [
+       "Avoidance",
+       "Communication",
+       "Competition",
+       "Isolation"
+      ],
+      "correct": 1,
+      "cluster": "Leadership & Soft Skills",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your team is facing conflicts regarding project priorities. What is the best approach to resolve this?",
+      "options": [
+       "Hold a team meeting to discuss and align on priorities.",
+       "Make a unilateral decision to move forward.",
+       "Ignore the conflicts and hope they resolve themselves.",
+       "Assign tasks based on seniority alone."
+      ],
+      "correct": 0,
+      "cluster": "Leadership & Soft Skills",
+      "level": 2
+     },
+     {
+      "q": "You notice a team member is struggling with their workload. What should you do first?",
+      "options": [
+       "Offer to help them prioritize their tasks.",
+       "Reassign their tasks to someone else immediately.",
+       "Tell them to work harder.",
+       "Set a deadline for completion without discussion."
+      ],
+      "correct": 0,
+      "cluster": "Leadership & Soft Skills",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "As a leader, how should you prioritize team feedback when implementing AI solutions?",
+      "options": [
+       "a) Always prioritize technical feedback",
+       "b) Balance feedback with business objectives",
+       "c) Ignore feedback to maintain project momentum",
+       "d) Only consider feedback from senior members"
+      ],
+      "correct": 1,
+      "cluster": "Leadership & Soft Skills",
+      "level": 3
+     },
+     {
+      "q": "What is the most effective way to handle conflict within a cross-functional team during an AI project?",
+      "options": [
+       "a) Enforce a top-down decision",
+       "b) Facilitate open dialogue and compromise",
+       "c) Assign blame to the least experienced member",
+       "d) Avoid addressing the conflict altogether"
+      ],
+      "correct": 1,
+      "cluster": "Leadership & Soft Skills",
+      "level": 3
+     }
+    ]
+   },
+   "AI Governance & Ethics": {
+    "1": [
+     {
+      "q": "What is AI governance primarily concerned with?",
+      "options": [
+       "Maximizing profits",
+       "Ensuring ethical use",
+       "Increasing productivity",
+       "Reducing costs"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     },
+     {
+      "q": "What does bias in AI refer to?",
+      "options": [
+       "Data accuracy",
+       "Algorithm fairness",
+       "Model complexity",
+       "User experience"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your organization is implementing AI solutions. What is the first step to ensure ethical compliance?",
+      "options": [
+       "Establish a framework for ethical AI use.",
+       "Start deploying AI tools without guidelines.",
+       "Focus solely on performance metrics.",
+       "Consult only technical teams for input."
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     },
+     {
+      "q": "You need to assess the fairness of an AI model. Which action is most appropriate?",
+      "options": [
+       "Conduct a bias audit using diverse datasets.",
+       "Rely on the model's accuracy alone.",
+       "Ask the developers for their opinion.",
+       "Ignore fairness concerns if the model performs well."
+      ],
+      "correct": 0,
+      "cluster": "AI Governance & Ethics",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "Which approach best ensures compliance with AI governance frameworks?",
+      "options": [
+       "a) Regularly updating the model without oversight",
+       "b) Implementing a comprehensive audit trail",
+       "c) Relying solely on external audits",
+       "d) Focusing only on initial compliance checks"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     },
+     {
+      "q": "In addressing bias in AI systems, what is a crucial step to take?",
+      "options": [
+       "a) Disregard bias if performance is high",
+       "b) Regularly review and update training data",
+       "c) Limit the model's exposure to diverse data",
+       "d) Focus solely on post-deployment monitoring"
+      ],
+      "correct": 1,
+      "cluster": "AI Governance & Ethics",
+      "level": 3
+     }
+    ]
+   },
+   "Automation & No-Code": {
+    "1": [
+     {
+      "q": "What does no-code development allow users to do?",
+      "options": [
+       "Write complex code",
+       "Create applications without coding",
+       "Debug existing software",
+       "Manage databases manually"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     },
+     {
+      "q": "What is automation primarily aimed at?",
+      "options": [
+       "Increasing manual effort",
+       "Reducing human intervention",
+       "Enhancing creativity",
+       "Improving social interaction"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 1
+     }
+    ],
+    "2": [
+     {
+      "q": "Your team wants to automate a repetitive data entry task. Which no-code tool would be most effective?",
+      "options": [
+       "Use a no-code platform that integrates with existing software.",
+       "Develop a custom code solution from scratch.",
+       "Continue doing it manually to save time.",
+       "Outsource the task to a third-party vendor."
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     },
+     {
+      "q": "You are tasked with creating a workflow automation. What is the best approach to ensure user adoption?",
+      "options": [
+       "Involve end-users in the design process.",
+       "Implement the automation without user feedback.",
+       "Focus only on technical efficiency.",
+       "Limit user access to the automation tool."
+      ],
+      "correct": 0,
+      "cluster": "Automation & No-Code",
+      "level": 2
+     }
+    ],
+    "3": [
+     {
+      "q": "When automating processes, what is a key consideration for selecting the right no-code tool?",
+      "options": [
+       "a) The tool's popularity among users",
+       "b) The tool's ability to integrate with existing systems",
+       "c) The tool's marketing claims",
+       "d) The tool's cost alone"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     },
+     {
+      "q": "What is a significant risk when scaling no-code solutions across an organization?",
+      "options": [
+       "a) Increased development speed",
+       "b) Lack of governance and oversight",
+       "c) Enhanced collaboration among teams",
+       "d) Improved user satisfaction"
+      ],
+      "correct": 1,
+      "cluster": "Automation & No-Code",
+      "level": 3
+     }
+    ]
+   }
+  }
+ }
+}
