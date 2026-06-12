@@ -34,12 +34,12 @@ export function HeroArt({ className = "" }) {
 
 // Small motif per product card / section. variant: catalog | specialization | degree | diagnostic | university
 export function Motif({ variant = "catalog", className = "" }) {
-  const C = { blue: "#0066CC", peel: "#FCA106", teal: "#3AAE89", rose: "#D13845", ink: "#C1C8D1" };
+  const C = { blue: "#148AFF", peel: "#FCA106", teal: "#05C170", rose: "#D13845", ink: "#C1C8D1" };
   const wrap = (children) => (
     <svg viewBox="0 0 120 90" className={className} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>{children}</svg>
   );
   if (variant === "catalog") return wrap(<>
-    {[0,1,2].map(i=>(<rect key={i} x={12+i*34} y={20+ i*6} width="28" height="50" rx="5" fill={i===1?C.blue:"#E6F7FF"} stroke={C.blue} strokeWidth="1.5"/>))}
+    {[0,1,2].map(i=>(<rect key={i} x={12+i*34} y={20+ i*6} width="28" height="50" rx="5" fill={i===1?C.blue:"#F5FAFF"} stroke={C.blue} strokeWidth="1.5"/>))}
     <circle cx="92" cy="24" r="9" fill={C.peel}/>
   </>);
   if (variant === "specialization") return wrap(<>
@@ -59,7 +59,7 @@ export function Motif({ variant = "catalog", className = "" }) {
     <path d="M38 45 L46 53 L60 36" stroke={C.teal} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
   </>);
   if (variant === "university") return wrap(<>
-    <rect x="24" y="34" width="72" height="40" rx="4" fill="#E6F7FF" stroke={C.blue} strokeWidth="1.5"/>
+    <rect x="24" y="34" width="72" height="40" rx="4" fill="#F5FAFF" stroke={C.blue} strokeWidth="1.5"/>
     <path d="M24 34 L60 16 L96 34 Z" fill={C.blue}/>
     {[36,54,72].map((x,i)=>(<rect key={i} x={x} y="46" width="10" height="28" fill="#fff" stroke={C.blue} strokeWidth="1"/>))}
   </>);
@@ -74,7 +74,7 @@ export function NodeBand({ className = "" }) {
         const x = 50 + i * 85, y = 20 + (i % 2) * 40;
         return <g key={i}>
           {i < 6 && <line x1={x} y1={y} x2={x + 85} y2={20 + ((i + 1) % 2) * 40} stroke="#A3DDFF" strokeWidth="1.5" />}
-          <circle cx={x} cy={y} r="5" fill="#0066CC" />
+          <circle cx={x} cy={y} r="5" fill="#148AFF" />
         </g>;
       })}
     </svg>

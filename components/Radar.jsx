@@ -19,7 +19,7 @@ export default function Radar({ data, size = 320 }) {
         return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="#E2E8F0" strokeWidth="1" />;
       })}
       <polygon points={poly("target")} fill="none" stroke="#475569" strokeWidth="1.5" strokeDasharray="4 3" />
-      <polygon points={poly("plan")} fill="rgba(0,102,204,0.18)" stroke="#0066CC" strokeWidth="2" />
+      <polygon points={poly("plan")} fill="rgba(20,138,255,0.18)" stroke="#148AFF" strokeWidth="2" />
       {data.map((d, i) => {
         const [x, y] = pt(i, 118);
         return (

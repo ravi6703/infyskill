@@ -45,14 +45,14 @@ export async function POST(req) {
 Candidate: background=${profile.background || "?"}, experience=${profile.exp || "?"}, education=${profile.edu || "?"}, current="${profile.currentRole || "n/a"}".
 Calibrate difficulty to: ${level}.
 Skill areas to probe (use EXACTLY these strings as the "cluster" field): ${clusters.join(" | ") || "core skills for this role"}.
-Write 5 concise multiple-choice questions that TEST understanding (mix conceptual + practical scenario), spread across the skill areas, adapted to the candidate's profile. Keep each question and option short.
+Write 4 concise multiple-choice questions that TEST understanding (mix conceptual + practical scenario), spread across the skill areas, adapted to the candidate's profile. Keep each question and option short.
 Return JSON of the shape:
 {"questions":[{"q":"short question","options":["a","b","c","d"],"correct":0,"cluster":"<one of the skill areas>"}]}
-Exactly 5 questions. correct is the 0-based index of the right option. No explanations.`;
-      const data = parse(await callOpenAI(key, prompt, 1100));
+Exactly 4 questions. correct is the 0-based index of the right option. No explanations.`;
+      const data = parse(await callOpenAI(key, prompt, 850));
       const qs = Array.isArray(data?.questions) ? data.questions : [];
       const clean = qs.filter((x) => x && x.q && Array.isArray(x.options) && x.options.length >= 2 && Number.isInteger(x.correct))
-        .slice(0, 5).map((x) => ({ q: String(x.q), options: x.options.slice(0, 4).map(String), correct: Math.max(0, Math.min(3, x.correct)), cluster: String(x.cluster || clusters[0] || "Core") }));
+        .slice(0, 4).map((x) => ({ q: String(x.q), options: x.options.slice(0, 4).map(String), correct: Math.max(0, Math.min(3, x.correct)), cluster: String(x.cluster || clusters[0] || "Core") }));
       if (!clean.length) return Response.json({ ok: false, reason: "parse" });
       return Response.json({ ok: true, questions: clean });
     }

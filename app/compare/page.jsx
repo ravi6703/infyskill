@@ -4,7 +4,7 @@ import Link from "next/link";
 import specs from "../../data/journeys.json";
 import skillMeta from "../../data/skills.json";
 
-const COLORS = ["#0066CC", "#3AAE89", "#FCA106"];
+const COLORS = ["#148AFF", "#05C170", "#FCA106"];
 const CLUSTER_OF = Object.fromEntries(skillMeta.map((s) => [s.name.toLowerCase(), s.cluster]));
 const shortName = (r) => r.replace(/ \(.*\)/, "").replace(/ \/.*/, "").replace(/AI[- ]?/i, "").trim().split(" ").slice(0, 2).join(" ") || r;
 const salaryHigh = (s) => parseFloat((s?.india || "0").replace(/[^\d–-]/g, "").split(/[–-]/).pop() || 0);

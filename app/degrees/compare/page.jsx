@@ -208,7 +208,7 @@ export default function DegreeCompare() {
   // circular readiness gauge
   function Gauge({ value }) {
     const r = 52, c = 2 * Math.PI * r, off = c * (1 - value / 100);
-    const col = value >= 60 ? "#3AAE89" : value >= 35 ? "#FCA106" : "#D13845";
+    const col = value >= 60 ? "#05C170" : value >= 35 ? "#FCA106" : "#D13845";
     return (
       <svg viewBox="0 0 130 130" className="h-32 w-32 shrink-0">
         <circle cx="65" cy="65" r={r} fill="none" stroke="#E2E8F0" strokeWidth="11" />

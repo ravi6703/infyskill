@@ -19,13 +19,18 @@ module.exports = {
         floaty: "floaty 6s ease-in-out infinite",
       },
       colors: {
-        sky2: "#00B2FF",
-        teal: { 50: "#E6F9F1", 500: "#3AAE89", 600: "#2C8E70" },
-        // Board Infinity — Primary Blue
+        sky2: "#3D9EFF",
+        // Board Infinity — Success Green (#05C170)
+        teal: {
+          50: "#F7FDFA", 100: "#E6F9F1", 200: "#8CE2BD", 300: "#58D59F",
+          400: "#38CD8D", 500: "#05C170", 600: "#05B066", 700: "#048C52",
+          800: "#036B3F", 900: "#024A2B",
+        },
+        // Board Infinity — Primary Blue (#148AFF, from brand design tokens)
         brand: {
-          50: "#E6F7FF", 100: "#A3DDFF", 200: "#74C0F2", 300: "#49A2E6",
-          400: "#2384D9", 500: "#0066CC", 600: "#004DA6", 700: "#003780",
-          800: "#002459", 900: "#001333",
+          50: "#F5FAFF", 100: "#E6F3FF", 200: "#99CCFF", 300: "#75BAFF",
+          400: "#3D9EFF", 500: "#148AFF", 600: "#0073E5", 700: "#005BB8",
+          800: "#00447F", 900: "#002E55",
         },
         // Orange Peel (highlights / CTAs)
         peel: {
@@ -45,16 +50,17 @@ module.exports = {
           400: "#FF956B", 500: "#F46C40", 600: "#CF4F2B", 700: "#A8351B",
           800: "#82200E", 900: "#5C1309",
         },
-        // Neutral ramp
+        // Neutral ramp — Board Infinity / Ant grays
         ink: {
           0: "#FFFFFF", 50: "#FAFAFA", 100: "#F5F5F5", 200: "#F0F0F0",
-          300: "#D9D9D9", 400: "#C1C8D1", 500: "#728197", 600: "#4A5464",
-          700: "#3A4250", 800: "#23282F", 900: "#1A1E24", 950: "#0F1216",
+          300: "#D9D9D9", 400: "#BFBFBF", 500: "#8C8C8C", 600: "#595959",
+          700: "#434343", 800: "#262626", 900: "#1A1A1A", 950: "#000000",
         },
       },
+      borderRadius: { DEFAULT: "10px", lg: "10px", xl: "12px" },
       boxShadow: {
-        card: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
-        lift: "0 8px 24px rgba(0,102,204,0.10)",
+        card: "0 1px 3px rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        lift: "0 4px 6px -1px rgba(20,138,255,0.12), 0 2px 4px -2px rgba(20,138,255,0.10)",
       },
     },
   },
