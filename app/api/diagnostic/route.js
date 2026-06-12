@@ -41,19 +41,23 @@ export async function POST(req) {
       const level = profile.exp === "0" ? "absolute fundamentals (fresher / no experience) — test foundational understanding"
         : profile.exp === "1-3" ? "early-career applied — test ability to apply concepts on the job"
         : "experienced / advanced — test applied judgement, trade-offs and edge cases";
-      const prompt = `Design a SHORT diagnostic that measures a candidate's REAL capability for the role "${role}".
+      // CREDIBLE ASSESSMENT: 2 questions per skill area (1 conceptual + 1 applied) across the top areas,
+      // so every core cluster is probed twice → reliable per-area scoring, not a single noisy guess.
+      const probe = (clusters.length ? clusters : ["core skills for this role"]).slice(0, 6);
+      const count = probe.length * 2;
+      const prompt = `Design a RIGOROUS diagnostic that measures a candidate's REAL capability for the role "${role}".
 Candidate: background=${profile.background || "?"}, experience=${profile.exp || "?"}, education=${profile.edu || "?"}, current="${profile.currentRole || "n/a"}".
 Calibrate difficulty to: ${level}.
-Skill areas to probe (use EXACTLY these strings as the "cluster" field): ${clusters.join(" | ") || "core skills for this role"}.
-Write 4 concise multiple-choice questions that TEST understanding (mix conceptual + practical scenario), spread across the skill areas, adapted to the candidate's profile. Keep each question and option short.
+Skill areas to probe (use EXACTLY these strings as the "cluster" field): ${probe.join(" | ")}.
+Write EXACTLY ${count} multiple-choice questions — for EACH skill area write 2 questions: one CONCEPTUAL (tests understanding of a key idea) and one APPLIED (a short real-world scenario where they must choose the right approach). Distractors must be plausible, not obviously wrong. Keep each question and option concise. Adapt difficulty to the candidate's profile.
 Return JSON of the shape:
 {"questions":[{"q":"short question","options":["a","b","c","d"],"correct":0,"cluster":"<one of the skill areas>"}]}
-Exactly 4 questions. correct is the 0-based index of the right option. No explanations.`;
-      const data = parse(await callOpenAI(key, prompt, 850));
+Exactly ${count} questions, 2 per skill area, balanced. correct is the 0-based index of the right option. No explanations.`;
+      const data = parse(await callOpenAI(key, prompt, 2200));
       const qs = Array.isArray(data?.questions) ? data.questions : [];
       const clean = qs.filter((x) => x && x.q && Array.isArray(x.options) && x.options.length >= 2 && Number.isInteger(x.correct))
-        .slice(0, 4).map((x) => ({ q: String(x.q), options: x.options.slice(0, 4).map(String), correct: Math.max(0, Math.min(3, x.correct)), cluster: String(x.cluster || clusters[0] || "Core") }));
-      if (!clean.length) return Response.json({ ok: false, reason: "parse" });
+        .slice(0, count).map((x) => ({ q: String(x.q), options: x.options.slice(0, 4).map(String), correct: Math.max(0, Math.min(3, x.correct)), cluster: String(x.cluster || clusters[0] || "Core") }));
+      if (clean.length < 4) return Response.json({ ok: false, reason: "parse" });
       return Response.json({ ok: true, questions: clean });
     }
 
